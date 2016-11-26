@@ -1,0 +1,21 @@
+# Unix
+alias l="ls -lAh"
+alias ll="ls -al"
+alias la="ls -A"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="mvim"
+alias v="$VISUAL"
+
+# Bundler
+alias b="bundle"
+
+# Homebrew
+alias br="brew"
+
+# Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias s="rspec"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
