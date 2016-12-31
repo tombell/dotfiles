@@ -16,39 +16,36 @@ set title
 set cmdheight=2
 set shortmess=filtIoOA
 
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
-
 if &compatible
   set nocompatible
 end
 
 call plug#begin()
 
-Plug 'ajh17/Spacegray.vim'
-Plug 'jacoborus/tender.vim'
+" Colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'whatyouhide/vim-gotham'
 
+" Languages and syntaxes
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'fatih/vim-go'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
+Plug 'jelera/vim-javascript-syntax'
 
+" Utility
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
-Plug 'rizzatti/dash.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'nicholaides/words-to-avoid.vim'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
 
 filetype plugin indent on
 
-let macvim_skip_colorscheme = 1
+syntax on
 set background=dark
 colorscheme gruvbox
 
