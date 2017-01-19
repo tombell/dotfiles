@@ -99,7 +99,7 @@ nnoremap <leader><leader> <c-^>
 function! StripWhitespace()
   exec ':%s/ \+$//gc'
 endfunction
-map <leader>s :call StripWhitespace()<CR>
+map <leader>s :call StripWhitespace()<cr>
 
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
