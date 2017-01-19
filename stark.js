@@ -30,6 +30,12 @@ const sound3 = Bind.on("3", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
+const screensaver = Bind.on("s", MODIFIERS, function() {
+  Stark.run("/usr/bin/open", ["/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app"]);
+});
+
+// -----------------------------------------------------------------------------
+
 const small = Bind.on("z", MODIFIERS, function() {
   const win = Window.focusedWindow();
   if (!win) {
