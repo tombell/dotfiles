@@ -16,20 +16,16 @@ const MARGIN = 10
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-const soundInternal = Bind.on("1", MODIFIERS, function() {
+const sound1 = Bind.on("1", MODIFIERS, function() {
   Stark.run("/usr/local/bin/soundsource", ["-o", "Internal Speakers"])
 });
 
-const soundExternal = Bind.on("2", MODIFIERS, function() {
+const sound2 = Bind.on("2", MODIFIERS, function() {
   Stark.run("/usr/local/bin/soundsource", ["-o", "Creative T15 Wireless"])
 });
 
-const soundHeadphones = Bind.on("3", MODIFIERS, function() {
+const sound3 = Bind.on("3", MODIFIERS, function() {
   Stark.run("/usr/local/bin/soundsource", ["-o", "Headphones"])
-});
-
-const soundBTHeadphones = Bind.on("4", MODIFIERS, function() {
-  Stark.run("/usr/local/bin/soundsource", ["-o", "Philips SHQ6500"])
 });
 
 // -----------------------------------------------------------------------------
@@ -85,6 +81,25 @@ const large = Bind.on("c", MODIFIERS, function() {
 
   const width = r.width - (MARGIN * 2);
   const height = r.height - (MARGIN * 2);
+
+  win.setFrame({ x, y, width, height });
+});
+
+// -----------------------------------------------------------------------------
+
+const center = Bind.on("f", MODIFIERS, function() {
+  const win = Window.focusedWindow();
+  if (!win) {
+    return;
+  }
+
+  const r = win.screen().frameWithoutDockOrMenu;
+
+  const width = r.width / 2;
+  const height = r.height - (MARGIN * 2);
+
+  const x = r.x + (width / 2);
+  const y = r.y + MARGIN;
 
   win.setFrame({ x, y, width, height });
 });
@@ -187,65 +202,3 @@ const twitter = Bind.on("t", MODIFIERS, function() {
 });
 
 // -----------------------------------------------------------------------------
-
-// const starkDidLaunch = Event.on("starkDidLaunch", function(win) {
-//   Stark.log("starkDidLaunch");
-// });
-
-// // -----------------------------------------------------------------------------
-
-// const screensDidChange = Event.on("screensDidChange", function(win) {
-//   Stark.log("screensDidChange");
-// });
-
-// // -----------------------------------------------------------------------------
-
-// const applicationDidLaunch = Event.on("applicationDidLaunch", function(win) {
-//   Stark.log("applicationDidLaunch");
-// });
-
-// const applicationDidTerminate = Event.on("applicationDidTerminate", function(win) {
-//   Stark.log("applicationDidTerminate");
-// });
-
-// const applicationDidActive = Event.on("applicationDidActive", function(win) {
-//   Stark.log("applicationDidActive");
-// });
-
-// const applicationDidHide = Event.on("applicationDidHide", function(win) {
-//   Stark.log("applicationDidHide");
-// });
-
-// const applicationDidShow = Event.on("applicationDidShow", function(win) {
-//   Stark.log("applicationDidShow");
-// });
-
-// // -----------------------------------------------------------------------------
-
-// const windowDidOpen = Event.on("windowDidOpen", function(win) {
-//   Stark.log("windowDidOpen");
-// });
-
-// const windowDidClose = Event.on("windowDidClose", function(win) {
-//   Stark.log("windowDidClose");
-// });
-
-// const windowDidFocus = Event.on("windowDidFocus", function(win) {
-//   Stark.log("windowDidFocus");
-// });
-
-// const windowDidMove = Event.on("windowDidMove", function(win) {
-//   Stark.log("windowDidMove");
-// });
-
-// const windowDidResize = Event.on("windowDidResize", function(win) {
-//   Stark.log("windowDidResize");
-// });
-
-// const windowDidMinimize = Event.on("windowDidMinimize", function(win) {
-//   Stark.log("windowDidMinimize");
-// });
-
-// const windowDidUnminimize = Event.on("windowDidUnminimize", function(win) {
-//   Stark.log("windowDidUnminimize");
-// });
