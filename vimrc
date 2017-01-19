@@ -126,3 +126,5 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
+
+map <leader>g :Goyo<cr>
