@@ -16,33 +16,31 @@ const MARGIN = 10
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-const sound1 = Bind.on("1", MODIFIERS, function() {
+Bind.on("1", MODIFIERS, () => {
   Stark.run("/usr/local/bin/soundsource", ["-o", "Internal Speakers"])
 });
 
-const sound2 = Bind.on("2", MODIFIERS, function() {
+Bind.on("2", MODIFIERS, () => {
   Stark.run("/usr/local/bin/soundsource", ["-o", "Creative T15 Wireless"])
 });
 
-const sound3 = Bind.on("3", MODIFIERS, function() {
-  Stark.run("/usr/local/bin/soundsource", ["-o", "Headphones"])
+// -----------------------------------------------------------------------------
+
+Bind.on("s", MODIFIERS, () => {
+  Stark.run("/usr/bin/open", [
+    "/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app"
+  ]);
 });
 
 // -----------------------------------------------------------------------------
 
-const screensaver = Bind.on("s", MODIFIERS, function() {
-  Stark.run("/usr/bin/open", ["/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app"]);
-});
-
-// -----------------------------------------------------------------------------
-
-const small = Bind.on("z", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("z", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = (r.width / GRID_WIDTH) * 2;
   const y = r.y + (r.height / GRID_HEIGHT) * 2;
@@ -55,13 +53,13 @@ const small = Bind.on("z", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const medium = Bind.on("x", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("x", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = r.width / GRID_WIDTH;
   const y = r.y + (r.height / GRID_HEIGHT);
@@ -74,13 +72,13 @@ const medium = Bind.on("x", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const large = Bind.on("c", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("c", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
@@ -93,13 +91,13 @@ const large = Bind.on("c", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const center = Bind.on("f", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("f", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const width = r.width / 2;
   const height = r.height - (MARGIN * 2);
@@ -112,13 +110,13 @@ const center = Bind.on("f", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const left = Bind.on("h", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("h", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
@@ -131,13 +129,13 @@ const left = Bind.on("h", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const right = Bind.on("l", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("l", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = (r.x + (r.width / 2)) + (MARGIN / 2);
   const y = r.y + MARGIN;
@@ -150,13 +148,13 @@ const right = Bind.on("l", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const topLeft = Bind.on("j", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("j", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
@@ -169,13 +167,13 @@ const topLeft = Bind.on("j", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const topRight = Bind.on("k", MODIFIERS, function() {
-  const win = Window.focusedWindow();
+Bind.on("k", MODIFIERS, () => {
+  const win = Window.focused();
   if (!win) {
     return;
   }
 
-  const r = win.screen().frameWithoutDockOrMenu;
+  const r = win.screen.frameWithoutDockOrMenu;
 
   const x = (r.x + (r.width / 2)) + (MARGIN / 2);
   const y = r.y + MARGIN;
@@ -188,14 +186,14 @@ const topRight = Bind.on("k", MODIFIERS, function() {
 
 // -----------------------------------------------------------------------------
 
-const twitter = Bind.on("t", MODIFIERS, function() {
+Bind.on("t", MODIFIERS, () => {
   const app = App.find("Tweetbot");
   if (!app) {
     return;
   }
 
-  _.each(app.allWindows(), function(win) {
-    const r = win.screen().frameWithoutDockOrMenu;
+  _.each(app.windows(), (win) => {
+    const r = win.screen.frameWithoutDockOrMenu;
 
     const x = r.x + MARGIN;
     const y = r.y + MARGIN;
