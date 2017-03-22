@@ -28,11 +28,11 @@ Plug 'morhetz/gruvbox'
 " Languages and syntaxes
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'fatih/vim-go'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/swift.vim'
 Plug 'othree/html5.vim'
+Plug 'othree/yajs.vim'
 
 " Utility
 Plug 'ctrlpvim/ctrlp.vim'
