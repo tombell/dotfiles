@@ -1,3 +1,3 @@
 set vb
 set guioptions=e
-set guifont=InputMono:h12
+set guifont=Hack:h12

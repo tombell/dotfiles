@@ -32,7 +32,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nicholaides/words-to-avoid.vim'
 
-" Languages and markup
+" Languages
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
@@ -43,7 +43,7 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
 " Colors
-Plug 'morhetz/gruvbox'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -51,7 +51,7 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme tender
 
 " Softtabs, 2 spaces
 set tabstop=2
