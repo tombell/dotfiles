@@ -20,27 +20,30 @@ if &compatible
   set nocompatible
 end
 
+let g:jsx_ext_required = 0
+
 call plug#begin()
 
-" Colorschemes
-Plug 'morhetz/gruvbox'
+" tpope utilities
+Plug 'tpope/vim-commentary'
 
-" Languages and syntaxes
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'fatih/vim-go'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'kchmck/vim-coffee-script'
-Plug 'keith/swift.vim'
-Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
-
-" Utility
+" Workflow
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'gregsexton/MatchTag'
-Plug 'junegunn/goyo.vim'
 Plug 'nicholaides/words-to-avoid.vim'
-Plug 'tpope/vim-commentary'
+
+" Languages and markup
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'cespare/vim-toml'
+Plug 'fatih/vim-go'
+Plug 'kchmck/vim-coffee-script'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+
+" Colors
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -127,4 +130,5 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
-map <leader>g :Goyo<cr>
+" Get rid of the tooltips
+set noballooneval

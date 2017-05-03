@@ -1,7 +1,7 @@
 git_prompt_info() {
   current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
   if [[ -n $current_branch ]]; then
-    echo "%{$fg_bold[black]%}$current_branch%{$reset_color%} "
+    echo "%{$fg[magenta]%}$current_branch%{$reset_color%} "
   fi
 }
 setopt promptsubst
