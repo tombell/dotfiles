@@ -16,16 +16,6 @@ const MARGIN = 10
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-Bind.on("1", MODIFIERS, () => {
-  Stark.run("/usr/local/bin/soundsource", ["-o", "Internal Speakers"])
-});
-
-Bind.on("2", MODIFIERS, () => {
-  Stark.run("/usr/local/bin/soundsource", ["-o", "Creative T15 Wireless"])
-});
-
-// -----------------------------------------------------------------------------
-
 Bind.on("s", MODIFIERS, () => {
   Stark.run("/usr/bin/open", [
     "/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app"
