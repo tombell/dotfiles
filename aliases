@@ -11,12 +11,11 @@ alias v="$VISUAL"
 alias br="brew"
 alias brc="brew cask"
 
-# Bundler
+# Ruby
 alias b="bundle"
 
-# Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
+# Heroku
+alias h="heroku"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
