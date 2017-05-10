@@ -11,11 +11,12 @@ alias v="$VISUAL"
 alias br="brew"
 alias brc="brew cask"
 
+# Cloud
+alias n="now"
+alias h="heroku"
+
 # Ruby
 alias b="bundle"
-
-# Heroku
-alias h="heroku"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
