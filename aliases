@@ -15,6 +15,9 @@ alias brc="brew cask"
 alias n="now"
 alias h="heroku"
 
+# Node
+alias y="yarn"
+
 # Ruby
 alias b="bundle"
 
