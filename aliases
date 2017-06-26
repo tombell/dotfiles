@@ -11,12 +11,9 @@ alias v="$VISUAL"
 alias br="brew"
 alias brc="brew cask"
 
-# Cloud
-alias n="now"
-alias h="heroku"
-
 # Node
 alias y="yarn"
+alias n="npm"
 
 # Ruby
 alias b="bundle"
