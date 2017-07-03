@@ -44,6 +44,7 @@ Plug 'pangloss/vim-javascript'
 
 " Colors
 Plug 'jacoborus/tender.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -51,7 +52,8 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-colorscheme tender
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " Softtabs, 2 spaces
 set tabstop=2
