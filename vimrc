@@ -43,16 +43,18 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
 " Colors
-Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 filetype plugin indent on
 
+if has("termguicolors")
+  set termguicolors
+endif
+
 syntax on
 set background=dark
-let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 
 " Softtabs, 2 spaces
@@ -65,21 +67,26 @@ set expandtab
 set nojoinspaces
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-" if executable('ag')
-"   " Use Ag over Grep
-"   set grepprg=ag\ --nogroup\ --nocolor
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
 
-"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 
-"   " ag is fast enough that CtrlP doesn't need to cache
-"   let g:ctrlp_use_caching = 0
-" endif
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
+  " Use Rg over Grep
   set grepprg=rg\ --color=never
+
+  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+
+  " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
 
@@ -94,12 +101,12 @@ set numberwidth=5
 " Tab completion
 set wildmode=list:longest,list:full
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
