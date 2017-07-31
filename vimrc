@@ -31,6 +31,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nicholaides/words-to-avoid.vim'
+Plug 'w0rp/ale'
 
 " Languages
 Plug 'cakebaker/scss-syntax.vim'
@@ -148,3 +149,11 @@ vnoremap Q gq
 
 " Get rid of the tooltips
 set noballooneval
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'scss': ['stylelint'],
+\}
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
