@@ -31,7 +31,6 @@ Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nicholaides/words-to-avoid.vim'
-Plug 'w0rp/ale'
 
 " Languages
 Plug 'cakebaker/scss-syntax.vim'
