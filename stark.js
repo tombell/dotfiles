@@ -18,7 +18,7 @@ const MARGIN = 5
 
 Bind.on("s", MODIFIERS, () => {
   Stark.run("/usr/bin/open", [
-    "/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app"
+    "/System/Library/CoreServices/ScreenSaverEngine.app"
   ]);
 });
 
