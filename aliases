@@ -7,16 +7,5 @@ alias mkdir="mkdir -p"
 alias e="mvim"
 alias v="$VISUAL"
 
-# Homebrew
-alias br="brew"
-alias brc="brew cask"
-
-# Node
-alias y="yarn"
-alias n="npm"
-
-# Ruby
-alias b="bundle"
-
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
