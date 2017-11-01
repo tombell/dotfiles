@@ -24,6 +24,7 @@ Bind.on("s", MODIFIERS, () => {
 
 Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -43,6 +44,7 @@ Bind.on("z", MODIFIERS, () => {
 
 Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -62,6 +64,7 @@ Bind.on("x", MODIFIERS, () => {
 
 Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -81,6 +84,7 @@ Bind.on("c", MODIFIERS, () => {
 
 Bind.on("f", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -100,6 +104,7 @@ Bind.on("f", MODIFIERS, () => {
 
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -119,6 +124,7 @@ Bind.on("h", MODIFIERS, () => {
 
 Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -138,6 +144,7 @@ Bind.on("l", MODIFIERS, () => {
 
 Bind.on("j", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -157,6 +164,7 @@ Bind.on("j", MODIFIERS, () => {
 
 Bind.on("k", MODIFIERS, () => {
   const win = Window.focused();
+
   if (!win) {
     return;
   }
@@ -176,6 +184,7 @@ Bind.on("k", MODIFIERS, () => {
 
 Bind.on("t", MODIFIERS, () => {
   const app = App.find("Tweetbot");
+
   if (!app) {
     return;
   }
