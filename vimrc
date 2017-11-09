@@ -40,10 +40,10 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
 
 " Colors
-Plug 'morhetz/gruvbox'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -53,9 +53,11 @@ if has("termguicolors")
   set termguicolors
 endif
 
+let g:badwolf_css_props_highlight = 1
+
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme badwolf
 
 " Softtabs, 2 spaces
 set tabstop=2
