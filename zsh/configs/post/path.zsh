@@ -13,6 +13,6 @@ fi
 
 GOPATH=$PROJECTS/go
 
-PATH="$(brew --prefix go)/libexec/bin:$GOPATH/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
 
 export -U PATH GOPATH
