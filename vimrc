@@ -44,8 +44,7 @@ Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 
 " Colors
-Plug 'sjl/badwolf'
-Plug 'dracula/vim'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -55,11 +54,9 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let g:badwolf_css_props_highlight = 1
-
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme tender
 
 " Softtabs, 2 spaces
 set tabstop=2
