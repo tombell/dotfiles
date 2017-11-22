@@ -44,6 +44,7 @@ Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 
 " Colors
+Plug 'ayu-theme/ayu-vim'
 Plug 'jacoborus/tender.vim'
 
 call plug#end()
@@ -54,9 +55,11 @@ if has("termguicolors")
   set termguicolors
 endif
 
-syntax on
+let ayucolor="mirage"
 set background=dark
-colorscheme tender
+
+syntax on
+colorscheme ayu
 
 " Softtabs, 2 spaces
 set tabstop=2
