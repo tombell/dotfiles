@@ -45,6 +45,7 @@ Plug 'othree/yajs.vim'
 
 " Colors
 Plug 'sjl/badwolf'
+Plug 'dracula/vim'
 
 call plug#end()
 
@@ -58,7 +59,7 @@ let g:badwolf_css_props_highlight = 1
 
 syntax on
 set background=dark
-colorscheme badwolf
+colorscheme dracula
 
 " Softtabs, 2 spaces
 set tabstop=2
