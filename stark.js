@@ -3,14 +3,17 @@
 // -----------------------------------------------------------------------------
 
 // Default modifier keys for binds
-const MODIFIERS = ['ctrl', 'shift']
+const MODIFIERS = ['ctrl', 'shift'];
+
+// Default modifier keys for resizing windows binds
+const RESIZE_MODIFIERS = ['shift', 'alt'];
 
 // Grid width and height for centering windows with different sizes
-const GRID_WIDTH = 12
-const GRID_HEIGHT = 10
+const GRID_WIDTH = 12;
+const GRID_HEIGHT = 10;
 
 // Margin to have around each window edge
-const MARGIN = 4
+const MARGIN = 4;
 
 // -----------------------------------------------------------------------------
 // FUNCTIONS
@@ -78,6 +81,66 @@ Bind.on("right", MODIFIERS, () => {
   const y = win.topLeft.y;
 
   win.setTopLeft({ x, y });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("up", RESIZE_MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const width = win.size.width;
+  const height = win.size.height - 40;
+
+  win.setSize({ width, height });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("down", RESIZE_MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const width = win.size.width;
+  const height = win.size.height + 40;
+
+  win.setSize({ width, height });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("left", RESIZE_MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const width = win.size.width - 40;
+  const height = win.size.height;
+
+  win.setSize({ width, height });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("right", RESIZE_MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const width = win.size.width + 40;
+  const height = win.size.height;
+
+  win.setSize({ width, height });
 });
 
 // -----------------------------------------------------------------------------
