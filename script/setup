@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(dirname "$0")/.."
+
+script/defaults
+
+env RCRC=$HOME/.dotfiles/rcrc rcup
