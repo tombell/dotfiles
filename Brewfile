@@ -1,6 +1,8 @@
 tap "caskroom/cask"
 tap "caskroom/fonts"
 tap "caskroom/versions"
+tap "thoughtbot/formulae"
+tap "tombell/formulae"
 
 # Shells
 
