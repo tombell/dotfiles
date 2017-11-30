@@ -22,6 +22,66 @@ Bind.on("s", MODIFIERS, () => {
 
 // -----------------------------------------------------------------------------
 
+Bind.on("up", MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const x = win.topLeft.x;
+  const y = win.topLeft.y - 40;
+
+  win.setTopLeft({ x, y });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("down", MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const x = win.topLeft.x;
+  const y = win.topLeft.y + 40;
+
+  win.setTopLeft({ x, y });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("left", MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const x = win.topLeft.x - 40;
+  const y = win.topLeft.y;
+
+  win.setTopLeft({ x, y });
+});
+
+// -----------------------------------------------------------------------------
+
+Bind.on("right", MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const x = win.topLeft.x + 40;
+  const y = win.topLeft.y;
+
+  win.setTopLeft({ x, y });
+});
+
+// -----------------------------------------------------------------------------
+
 Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
 
