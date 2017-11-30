@@ -1,8 +1,6 @@
 tap "caskroom/cask"
 tap "caskroom/fonts"
 tap "caskroom/versions"
-tap "thoughtbot/formulae"
-tap "tombell/formulae"
 
 # Shells
 
@@ -24,7 +22,7 @@ brew "rbenv-gemset"
 # CLI Utilities
 
 brew "git"
-brew "rcm"
+brew "thoughtbot/formulae/rcm"
 brew "ripgrep"
 
 # Fonts
@@ -40,7 +38,7 @@ cask "google-chrome"
 cask "1password"
 cask "iterm2-nightly"
 cask "the-unarchiver"
-cask "stark"
+cask "tombell/formulae/stark"
 
 # Social
 
