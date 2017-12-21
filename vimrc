@@ -12,7 +12,7 @@ set incsearch
 set laststatus=2
 set autowrite
 
-set title
+set notitle
 set cmdheight=2
 set shortmess=filtIoOA
 
