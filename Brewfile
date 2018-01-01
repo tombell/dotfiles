@@ -47,7 +47,6 @@ cask "tombell/formulae/stark"
 cask "battle-net"
 cask "discord"
 cask "slack-beta"
-cask "textual"
 
 # Media
 
