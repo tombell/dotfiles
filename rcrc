@@ -1,2 +1,2 @@
-EXCLUDES="README.md LICENSE script/setup script/defaults Brewfile Brewfile.work"
+EXCLUDES="README.md LICENSE Brewfile Brewfile.work"
 DOTFILES_DIRS="$HOME/.dotfiles"
