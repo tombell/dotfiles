@@ -1,9 +1,7 @@
 tap "caskroom/cask"
 tap "caskroom/versions"
-tap "zestia/formulae"
-
-cask "java8"
-cask "android-sdk"
-cask "intellij-idea-ce"
 
 brew "gradle"
+
+cask "java8"
+cask "android-studio"
