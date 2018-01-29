@@ -12,8 +12,8 @@ brew "zsh"
 
 # Editors
 
+brew "vim", args: ["without-python"]
 brew "macvim", args: ["without-python"]
-brew "vim", args: ["without-perl", "without-python", "without-ruby"]
 
 # Languages
 
@@ -21,7 +21,6 @@ brew "dep"
 brew "go"
 brew "nodenv"
 brew "rbenv"
-brew "rbenv-gemset"
 
 # CLI Utilities
 
@@ -40,7 +39,7 @@ cask "google-chrome"
 # Utilities
 
 cask "1password"
-cask "iterm2-nightly"
+cask "iterm2"
 cask "the-unarchiver"
 cask "tombell/formulae/stark"
 
@@ -48,9 +47,9 @@ cask "tombell/formulae/stark"
 
 cask "battle-net"
 cask "discord"
-cask "slack-beta"
+cask "slack"
 
 # Media
 
 cask "spotify"
-cask "vlc-nightly"
+cask "vlc"
