@@ -1,3 +1,5 @@
+# vim: set ft=ruby:
+
 tap "caskroom/cask"
 tap "caskroom/fonts"
 tap "caskroom/versions"
