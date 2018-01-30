@@ -21,6 +21,7 @@ brew "dep"
 brew "go"
 brew "nodenv"
 brew "rbenv"
+brew "rbenv-gemset"
 
 # CLI Utilities
 
