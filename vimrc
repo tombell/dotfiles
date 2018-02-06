@@ -105,6 +105,10 @@ inoremap <S-Tab> <c-n>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
 " Strip trailing whitespace
 function! StripWhitespace()
   exec ':%s/ \+$//gc'
