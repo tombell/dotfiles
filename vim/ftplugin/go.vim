@@ -1,5 +1,3 @@
-let g:go_fmt_command = "goimports"
-
 setlocal listchars=tab:\ \ ,trail:·,nbsp:·
 setlocal tabstop=4
 setlocal shiftwidth=4
