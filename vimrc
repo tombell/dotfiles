@@ -45,7 +45,6 @@ Plug 'othree/yajs.vim'
 
 " Colors
 Plug 'ayu-theme/ayu-vim'
-Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -140,11 +139,3 @@ vnoremap Q gq
 
 " Get rid of the tooltips
 set noballooneval
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'scss': ['stylelint'],
-\}
-
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
