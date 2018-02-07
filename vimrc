@@ -38,8 +38,6 @@ Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
-Plug 'keith/swift.vim'
-Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 
@@ -108,14 +106,6 @@ nnoremap <leader><leader> <c-^>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-
-" Strip trailing whitespace
-function! StripWhitespace()
-  exec ':%s/ \+$//gc'
-endfunction
-map <leader>s :call StripWhitespace()<cr>
-
-noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
