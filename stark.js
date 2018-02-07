@@ -24,6 +24,8 @@ Bind.on("s", MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
+// WINDOW MOVEMENT
+// -----------------------------------------------------------------------------
 
 Bind.on("up", MODIFIERS, () => {
   const win = Window.focused();
@@ -38,8 +40,6 @@ Bind.on("up", MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("down", MODIFIERS, () => {
   const win = Window.focused();
 
@@ -53,8 +53,6 @@ Bind.on("down", MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("left", MODIFIERS, () => {
   const win = Window.focused();
 
@@ -67,8 +65,6 @@ Bind.on("left", MODIFIERS, () => {
 
   win.setTopLeft({ x, y });
 });
-
-// -----------------------------------------------------------------------------
 
 Bind.on("right", MODIFIERS, () => {
   const win = Window.focused();
@@ -84,6 +80,8 @@ Bind.on("right", MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
+// WINDOW RESIZING
+// -----------------------------------------------------------------------------
 
 Bind.on("up", RESIZE_MODIFIERS, () => {
   const win = Window.focused();
@@ -98,8 +96,6 @@ Bind.on("up", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("down", RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
@@ -112,8 +108,6 @@ Bind.on("down", RESIZE_MODIFIERS, () => {
 
   win.setSize({ width, height });
 });
-
-// -----------------------------------------------------------------------------
 
 Bind.on("left", RESIZE_MODIFIERS, () => {
   const win = Window.focused();
@@ -128,8 +122,6 @@ Bind.on("left", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("right", RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
@@ -143,6 +135,8 @@ Bind.on("right", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
+// -----------------------------------------------------------------------------
+// WINDOW CENTERING
 // -----------------------------------------------------------------------------
 
 Bind.on("z", MODIFIERS, () => {
@@ -163,8 +157,6 @@ Bind.on("z", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
 
@@ -182,8 +174,6 @@ Bind.on("x", MODIFIERS, () => {
 
   win.setFrame({ x, y, width, height });
 });
-
-// -----------------------------------------------------------------------------
 
 Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
@@ -204,6 +194,8 @@ Bind.on("c", MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
+// WINDOW POSITIONING
+// -----------------------------------------------------------------------------
 
 Bind.on("f", MODIFIERS, () => {
   const win = Window.focused();
@@ -223,8 +215,6 @@ Bind.on("f", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
 
@@ -242,8 +232,6 @@ Bind.on("h", MODIFIERS, () => {
 
   win.setFrame({ x, y, width, height });
 });
-
-// -----------------------------------------------------------------------------
 
 Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
@@ -263,8 +251,6 @@ Bind.on("l", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-// -----------------------------------------------------------------------------
-
 Bind.on("j", MODIFIERS, () => {
   const win = Window.focused();
 
@@ -282,8 +268,6 @@ Bind.on("j", MODIFIERS, () => {
 
   win.setFrame({ x, y, width, height });
 });
-
-// -----------------------------------------------------------------------------
 
 Bind.on("k", MODIFIERS, () => {
   const win = Window.focused();
@@ -303,6 +287,8 @@ Bind.on("k", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
+// -----------------------------------------------------------------------------
+// APP SPECIFIC POSITIONING
 // -----------------------------------------------------------------------------
 
 Bind.on("t", MODIFIERS, () => {
@@ -324,5 +310,3 @@ Bind.on("t", MODIFIERS, () => {
     win.setFrame({ x, y, width, height });
   });
 });
-
-// -----------------------------------------------------------------------------
