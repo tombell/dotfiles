@@ -105,7 +105,9 @@ nnoremap <leader><leader> <c-^>
 
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+
+nnoremap <leader>a :cclose<cr>
+nnoremap <leader>A :lclose<cr>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
