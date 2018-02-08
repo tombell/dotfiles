@@ -1,9 +1,0 @@
-# vim: set ft=ruby:
-
-tap "caskroom/cask"
-tap "caskroom/versions"
-
-brew "gradle"
-
-cask "java8"
-cask "android-studio"
