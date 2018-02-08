@@ -52,7 +52,7 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let ayucolor="mirage"
+let ayucolor="dark"
 set background=dark
 
 syntax on
