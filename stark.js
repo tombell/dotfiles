@@ -15,6 +15,9 @@ const GRID_HEIGHT = 10;
 // Margin to have around each window edge
 const MARGIN = 4;
 
+// Size for resizing/positioning increments/decrements.
+const RESIZE_POSITION_AMOUNT = 40;
+
 // -----------------------------------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------------------------------
@@ -35,7 +38,7 @@ Bind.on("up", MODIFIERS, () => {
   }
 
   const x = win.topLeft.x;
-  const y = win.topLeft.y - 40;
+  const y = win.topLeft.y - RESIZE_POSITION_AMOUNT;
 
   win.setTopLeft({ x, y });
 });
@@ -48,7 +51,7 @@ Bind.on("down", MODIFIERS, () => {
   }
 
   const x = win.topLeft.x;
-  const y = win.topLeft.y + 40;
+  const y = win.topLeft.y + RESIZE_POSITION_AMOUNT;
 
   win.setTopLeft({ x, y });
 });
@@ -60,7 +63,7 @@ Bind.on("left", MODIFIERS, () => {
     return;
   }
 
-  const x = win.topLeft.x - 40;
+  const x = win.topLeft.x - RESIZE_POSITION_AMOUNT;
   const y = win.topLeft.y;
 
   win.setTopLeft({ x, y });
@@ -73,7 +76,7 @@ Bind.on("right", MODIFIERS, () => {
     return;
   }
 
-  const x = win.topLeft.x + 40;
+  const x = win.topLeft.x + RESIZE_POSITION_AMOUNT;
   const y = win.topLeft.y;
 
   win.setTopLeft({ x, y });
@@ -91,7 +94,7 @@ Bind.on("up", RESIZE_MODIFIERS, () => {
   }
 
   const width = win.size.width;
-  const height = win.size.height - 40;
+  const height = win.size.height - RESIZE_POSITION_AMOUNT;
 
   win.setSize({ width, height });
 });
@@ -104,7 +107,7 @@ Bind.on("down", RESIZE_MODIFIERS, () => {
   }
 
   const width = win.size.width;
-  const height = win.size.height + 40;
+  const height = win.size.height + RESIZE_POSITION_AMOUNT;
 
   win.setSize({ width, height });
 });
@@ -116,7 +119,7 @@ Bind.on("left", RESIZE_MODIFIERS, () => {
     return;
   }
 
-  const width = win.size.width - 40;
+  const width = win.size.width - RESIZE_POSITION_AMOUNT;
   const height = win.size.height;
 
   win.setSize({ width, height });
@@ -129,7 +132,7 @@ Bind.on("right", RESIZE_MODIFIERS, () => {
     return;
   }
 
-  const width = win.size.width + 40;
+  const width = win.size.width + RESIZE_POSITION_AMOUNT;
   const height = win.size.height;
 
   win.setSize({ width, height });
