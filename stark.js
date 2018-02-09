@@ -8,6 +8,9 @@ const MODIFIERS = ['ctrl', 'shift'];
 // Default modifier keys for resizing windows binds
 const RESIZE_MODIFIERS = ['shift', 'alt'];
 
+// Default modifier keys for positioning windows binds.
+const POSITION_MODIFIERS = ['ctrl', 'shift'];
+
 // Grid width and height for centering windows with different sizes
 const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
@@ -30,7 +33,7 @@ Bind.on("s", MODIFIERS, () => {
 // WINDOW MOVEMENT
 // -----------------------------------------------------------------------------
 
-Bind.on("up", MODIFIERS, () => {
+Bind.on("up", POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -43,7 +46,7 @@ Bind.on("up", MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("down", MODIFIERS, () => {
+Bind.on("down", POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -56,7 +59,7 @@ Bind.on("down", MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("left", MODIFIERS, () => {
+Bind.on("left", POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -69,7 +72,7 @@ Bind.on("left", MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("right", MODIFIERS, () => {
+Bind.on("right", POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
