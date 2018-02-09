@@ -44,11 +44,15 @@ cask "iterm2"
 cask "the-unarchiver"
 cask "tombell/formulae/stark"
 
-# Social
+# Chat
 
-cask "battle-net"
 cask "discord"
 cask "slack"
+
+# Instant Messaging
+
+cask "telegram"
+cask "whatsapp"
 
 # Media
 
