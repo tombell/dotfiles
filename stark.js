@@ -203,24 +203,6 @@ Bind.on("c", MODIFIERS, () => {
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
 
-Bind.on("f", MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const r = win.screen.frameWithoutDockOrMenu;
-
-  const width = r.width / 2;
-  const height = r.height - (MARGIN * 2);
-
-  const x = r.x + (width / 2);
-  const y = r.y + MARGIN;
-
-  win.setFrame({ x, y, width, height });
-});
-
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
 
