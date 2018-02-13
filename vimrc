@@ -28,6 +28,7 @@ call plug#begin()
 Plug 'tpope/vim-commentary'
 
 " Workflow
+Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'nicholaides/words-to-avoid.vim'
