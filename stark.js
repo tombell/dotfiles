@@ -16,7 +16,7 @@ const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
 
 // Margin to have around each window edge
-const MARGIN = 4;
+const MARGIN = 10;
 
 // Size for resizing/positioning increments/decrements.
 const RESIZE_POSITION_AMOUNT = 40;
