@@ -41,7 +41,7 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
 
 " Colors
 Plug 'ayu-theme/ayu-vim'
