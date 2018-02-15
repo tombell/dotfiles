@@ -39,6 +39,7 @@ Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 
