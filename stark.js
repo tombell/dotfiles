@@ -276,26 +276,6 @@ Bind.on("k", MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
-// APP EVENTS
-// -----------------------------------------------------------------------------
-
-Event.on("applicationDidLaunch", (app) => {
-  if (app.name === 'iTerm2') {
-    _.each(app.windows({ visible: true }), (win) => {
-      const r = win.screen.frameWithoutDockOrMenu;
-
-      const x = r.x + MARGIN;
-      const y = r.y + MARGIN;
-
-      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-      const height = r.height - (MARGIN * 2);
-
-      win.setFrame({ x, y, width, height });
-    });
-  }
-});
-
-// -----------------------------------------------------------------------------
 // APP POSITIONING
 // -----------------------------------------------------------------------------
 
@@ -317,4 +297,42 @@ Bind.on("t", MODIFIERS, () => {
 
     win.setFrame({ x, y, width, height });
   });
+});
+
+// -----------------------------------------------------------------------------
+// EVENTS
+// -----------------------------------------------------------------------------
+
+Event.on("applicationDidLaunch", (app) => {
+  if (app.name === 'iTerm2') {
+    _.each(app.windows({ visible: true }), (win) => {
+      const r = win.screen.frameWithoutDockOrMenu;
+
+      const x = r.x + MARGIN;
+      const y = r.y + MARGIN;
+
+      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+      const height = r.height - (MARGIN * 2);
+
+      win.setFrame({ x, y, width, height });
+    });
+
+    return;
+  }
+});
+
+Event.on("windowDidOpen", (win) => {
+  if (win.app.name === 'MacVim') {
+    const r = win.screen.frameWithoutDockOrMenu;
+
+    const x = (r.x + (r.width / 2)) + (MARGIN / 2);
+    const y = r.y + MARGIN;
+
+    const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+    const height = r.height - (MARGIN * 2);
+
+    win.setFrame({ x, y, width, height });
+
+    return;
+  }
 });
