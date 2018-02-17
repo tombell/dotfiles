@@ -37,6 +37,7 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
 " Colors
+Plug 'jacoborus/tender.vim'
 Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
@@ -48,9 +49,10 @@ if has("termguicolors")
 endif
 
 let ayucolor="mirage"
+set background=dark
 
 syntax on
-colorscheme ayu
+colorscheme tender
 
 set noballooneval
 
