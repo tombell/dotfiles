@@ -1,4 +1,3 @@
-" Leader
 let mapleader = ","
 
 set backspace=2
@@ -20,20 +19,14 @@ if &compatible
   set nocompatible
 end
 
-let g:jsx_ext_required = 0
-
 call plug#begin()
 
-" tpope utilities
+" Utility
 Plug 'tpope/vim-commentary'
-
-" Workflow
-Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'nicholaides/words-to-avoid.vim'
 
-" Languages
+" Syntaxes
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
@@ -54,13 +47,13 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let ayucolor="dark"
-set background=dark
+let ayucolor="mirage"
 
 syntax on
 colorscheme ayu
 
-" Softtabs, 2 spaces
+set noballooneval
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -69,27 +62,19 @@ set expandtab
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-" Use ripgrep https://github.com/BurntSushi/ripgrep
 if executable('rg')
-  " Use Rg over Grep
   set grepprg=rg\ --color=never
 
-  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-
-  " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
 
-" Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
 
-" Numbers
 set number
 set numberwidth=5
 
-" Tab completion
 set wildmode=list:longest,list:full
 function! InsertTabWrapper()
   let col = col('.') - 1
@@ -135,5 +120,3 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
-" Get rid of the tooltips
-set noballooneval
