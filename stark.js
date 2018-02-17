@@ -304,7 +304,7 @@ Bind.on("t", MODIFIERS, () => {
 // -----------------------------------------------------------------------------
 
 Event.on("applicationDidLaunch", (app) => {
-  if (app.name === 'iTerm2') {
+  if (app.name === 'iTerm2' && !app.isTerminated) {
     _.each(app.windows({ visible: true }), (win) => {
       const r = win.screen.frameWithoutDockOrMenu;
 
@@ -316,22 +316,6 @@ Event.on("applicationDidLaunch", (app) => {
 
       win.setFrame({ x, y, width, height });
     });
-
-    return;
-  }
-});
-
-Event.on("windowDidOpen", (win) => {
-  if (win.app.name === 'MacVim') {
-    const r = win.screen.frameWithoutDockOrMenu;
-
-    const x = (r.x + (r.width / 2)) + (MARGIN / 2);
-    const y = r.y + MARGIN;
-
-    const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-    const height = r.height - (MARGIN * 2);
-
-    win.setFrame({ x, y, width, height });
 
     return;
   }
