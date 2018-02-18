@@ -22,9 +22,9 @@ end
 call plug#begin()
 
 " Utility
-Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
 
 " Syntaxes
 Plug 'cakebaker/scss-syntax.vim'
@@ -37,8 +37,8 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
 " Colors
-Plug 'jacoborus/tender.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
