@@ -21,19 +21,25 @@ const MARGIN = 10;
 // Size for resizing/positioning increments/decrements.
 const RESIZE_POSITION_AMOUNT = 40;
 
+// App names
+const apps = {
+  iterm: 'iTerm2',
+  tweetbot: 'Tweetbot',
+};
+
 // -----------------------------------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-Bind.on("s", MODIFIERS, () => {
-  Stark.run("/usr/bin/open", ["/System/Library/CoreServices/ScreenSaverEngine.app"]);
+Bind.on('s', MODIFIERS, () => {
+  Stark.run('/usr/bin/open', ['/System/Library/CoreServices/ScreenSaverEngine.app']);
 });
 
 // -----------------------------------------------------------------------------
 // WINDOW MOVEMENT
 // -----------------------------------------------------------------------------
 
-Bind.on("up", POSITION_MODIFIERS, () => {
+Bind.on('up', POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -46,7 +52,7 @@ Bind.on("up", POSITION_MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("down", POSITION_MODIFIERS, () => {
+Bind.on('down', POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -59,7 +65,7 @@ Bind.on("down", POSITION_MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("left", POSITION_MODIFIERS, () => {
+Bind.on('left', POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -72,7 +78,7 @@ Bind.on("left", POSITION_MODIFIERS, () => {
   win.setTopLeft({ x, y });
 });
 
-Bind.on("right", POSITION_MODIFIERS, () => {
+Bind.on('right', POSITION_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -89,7 +95,7 @@ Bind.on("right", POSITION_MODIFIERS, () => {
 // WINDOW RESIZING
 // -----------------------------------------------------------------------------
 
-Bind.on("up", RESIZE_MODIFIERS, () => {
+Bind.on('up', RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -102,7 +108,7 @@ Bind.on("up", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
-Bind.on("down", RESIZE_MODIFIERS, () => {
+Bind.on('down', RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -115,7 +121,7 @@ Bind.on("down", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
-Bind.on("left", RESIZE_MODIFIERS, () => {
+Bind.on('left', RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -128,7 +134,7 @@ Bind.on("left", RESIZE_MODIFIERS, () => {
   win.setSize({ width, height });
 });
 
-Bind.on("right", RESIZE_MODIFIERS, () => {
+Bind.on('right', RESIZE_MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -145,7 +151,7 @@ Bind.on("right", RESIZE_MODIFIERS, () => {
 // WINDOW CENTERING
 // -----------------------------------------------------------------------------
 
-Bind.on("z", MODIFIERS, () => {
+Bind.on('z', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -163,7 +169,7 @@ Bind.on("z", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on("x", MODIFIERS, () => {
+Bind.on('x', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -181,7 +187,7 @@ Bind.on("x", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on("c", MODIFIERS, () => {
+Bind.on('c', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -203,7 +209,7 @@ Bind.on("c", MODIFIERS, () => {
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
 
-Bind.on("h", MODIFIERS, () => {
+Bind.on('h', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -221,7 +227,7 @@ Bind.on("h", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on("l", MODIFIERS, () => {
+Bind.on('l', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -239,7 +245,7 @@ Bind.on("l", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on("j", MODIFIERS, () => {
+Bind.on('j', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -257,7 +263,7 @@ Bind.on("j", MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on("k", MODIFIERS, () => {
+Bind.on('k', MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -279,8 +285,8 @@ Bind.on("k", MODIFIERS, () => {
 // APP POSITIONING
 // -----------------------------------------------------------------------------
 
-Bind.on("t", MODIFIERS, () => {
-  const app = App.find("Tweetbot");
+Bind.on('t', MODIFIERS, () => {
+  const app = App.find(apps.tweetbot);
 
   if (!app) {
     return;
@@ -303,8 +309,8 @@ Bind.on("t", MODIFIERS, () => {
 // EVENTS
 // -----------------------------------------------------------------------------
 
-Event.on("applicationDidLaunch", (app) => {
-  if (app.name === 'iTerm2' && !app.isTerminated) {
+Event.on('applicationDidLaunch', (app) => {
+  if (app.name === apps.iterm && !app.isTerminated) {
     _.each(app.windows({ visible: true }), (win) => {
       const r = win.screen.frameWithoutDockOrMenu;
 
