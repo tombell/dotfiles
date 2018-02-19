@@ -123,4 +123,3 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
-
