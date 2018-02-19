@@ -9,3 +9,6 @@ alias v="$VISUAL"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+# GitHub issues/pull requests subscribed too
+alias ghs='curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/issues?filter=subscribed&state=all" | jq ".[].html_url" | xargs open'
