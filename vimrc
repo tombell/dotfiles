@@ -26,6 +26,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 " Syntaxes
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
