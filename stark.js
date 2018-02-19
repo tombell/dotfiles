@@ -24,6 +24,7 @@ const RESIZE_POSITION_AMOUNT = 40;
 // App names
 const apps = {
   iterm: 'iTerm2',
+  macvim: 'MacVim',
   tweetbot: 'Tweetbot',
 };
 
