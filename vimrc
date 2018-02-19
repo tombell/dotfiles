@@ -25,6 +25,7 @@ call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -53,6 +54,8 @@ endif
 set background=dark
 syntax on
 colorscheme tender
+
+let g:lightline = { 'colorscheme': 'tender' }
 
 set noballooneval
 
