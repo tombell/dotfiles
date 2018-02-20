@@ -39,6 +39,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
