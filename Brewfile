@@ -23,6 +23,12 @@ brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
 
+# My formula tools
+
+brew "tombell/formulae/coin"
+brew "tombell/formulae/prettytest"
+brew "tombell/formulae/releasekit"
+
 # CLI Utilities
 
 brew "git"
@@ -42,7 +48,6 @@ cask "google-chrome"
 cask "1password"
 cask "iterm2"
 cask "the-unarchiver"
-cask "tombell/formulae/stark"
 
 # Chat
 
@@ -58,3 +63,6 @@ cask "whatsapp"
 
 cask "spotify"
 cask "vlc"
+
+# My cask tools
+cask "tombell/formulae/stark"
