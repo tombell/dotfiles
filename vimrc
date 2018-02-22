@@ -21,6 +21,9 @@ end
 
 call plug#begin()
 
+" Mine
+Plug 'tombell/trailing.vim'
+
 " Utility
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
