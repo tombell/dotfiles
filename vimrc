@@ -25,19 +25,18 @@ call plug#begin()
 Plug 'tombell/trailing.vim'
 
 " Utility
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-commentary'
 
 " Syntaxes
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
