@@ -211,6 +211,22 @@ Bind.on('c', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
+Bind.on('g', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const r = win.screen.frameWithoutDockOrMenu;
+
+  const { y, width, height } = win.frame;
+
+  const x = (r.width / 2) - (width / 2);
+
+  win.setTopLeft({ x, y });
+});
+
 // -----------------------------------------------------------------------------
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
