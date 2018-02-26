@@ -14,8 +14,6 @@ function! s:goyo_enter()
     set fullscreen
     set linespace=7
   endif
-  let &l:statusline = '%M'
-  hi StatusLine ctermfg=red guifg=red cterm=NONE gui=NONE
   Limelight
 endfunction
 
