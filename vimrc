@@ -92,22 +92,22 @@ set wildmode=list:longest,list:full
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
+    return "\<Tab>"
   else
-    return "\<c-p>"
+    return "\<C-p>"
   endif
 endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
+inoremap <S-Tab> <C-n>
 
 " Switch between the last two files
-nnoremap <leader><leader> <c-^>
+nnoremap <Leader><Leader> <C-^>
 
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 
-nnoremap <leader>a :cclose<cr>
-nnoremap <leader>A :lclose<cr>
+" Close quickfix and location list windows
+nnoremap <Leader>a :cclose<Bar>:lclose<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
