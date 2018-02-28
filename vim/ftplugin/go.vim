@@ -15,6 +15,8 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_template_autocreate = 0
 
+let g:go_metalinter_enabled = ['golint', 'errcheck']
+
 setlocal omnifunc=go#complete#Complete
 
 inoremap <C-space> <C-x><C-o>
