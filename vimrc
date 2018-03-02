@@ -132,3 +132,6 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
+
+" Easier omnicomplete triggering
+inoremap <C-space> <C-x><C-o>
