@@ -304,6 +304,65 @@ Bind.on('k', MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
+// SPACES MANAGEMENT
+// -----------------------------------------------------------------------------
+
+function moveWindowToSpace(win, space) {
+  const current = Space.active();
+  current.removeWindows([win]);
+  space.addWindows([win]);
+}
+
+function moveWindowToSpaceAndFocus(win, space) {
+  moveWindowToSpace(win, space);
+  win.focus();
+}
+
+Bind.on('1', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const [one] = Space.all();
+  moveWindowToSpace(win, one);
+});
+
+Bind.on('2', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const [one, two] = Space.all();
+  moveWindowToSpace(win, two);
+});
+
+Bind.on('3', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const [one, two, three] = Space.all();
+  moveWindowToSpace(win, three);
+});
+
+Bind.on('4', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const [one, two, three, four] = Space.all();
+  moveWindowToSpace(win, four);
+});
+
+// -----------------------------------------------------------------------------
 // APP POSITIONING
 // -----------------------------------------------------------------------------
 
