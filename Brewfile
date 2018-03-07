@@ -2,7 +2,7 @@
 
 tap "caskroom/cask"
 tap "caskroom/fonts"
-tap "caskroom/versions"
+tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
 
@@ -23,17 +23,18 @@ brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
 
+# CLI Utilities
+
+brew "fzf"
+brew "git"
+brew "thoughtbot/formulae/rcm"
+brew "ripgrep"
+
 # My formula tools
 
 brew "tombell/formulae/coin"
 brew "tombell/formulae/prettytest"
 brew "tombell/formulae/releasekit"
-
-# CLI Utilities
-
-brew "git"
-brew "thoughtbot/formulae/rcm"
-brew "ripgrep"
 
 # Fonts
 

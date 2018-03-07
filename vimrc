@@ -64,6 +64,10 @@ let g:lightline = { 'colorscheme': 'tender' }
 
 set noballooneval
 
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+let g:is_posix = 1
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
