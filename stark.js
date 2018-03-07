@@ -407,3 +407,19 @@ Event.on('applicationDidLaunch', (app) => {
     return;
   }
 });
+
+Event.on('windowDidOpen', (win) => {
+  if (win.app.name == apps.macvim && !win.app.isTerminated) {
+    _.each(win.app.windows({ visible: true }), (w) => {
+      const r = w.screen.frameWithoutDockOrMenu;
+
+      const x = (r.x + (r.width / 2)) + (MARGIN / 2);
+      const y = r.y + MARGIN;
+
+      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+      const height = r.height - (MARGIN * 2);
+
+      w.setFrame({ x, y, width, height });
+    });
+  }
+});
