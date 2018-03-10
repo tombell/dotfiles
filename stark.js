@@ -33,7 +33,7 @@ const apps = {
 // -----------------------------------------------------------------------------
 
 Bind.on('s', MODIFIERS, () => {
-  Stark.run('/usr/bin/open', ['/System/Library/CoreServices/ScreenSaverEngine.app']);
+  Stark.run('/usr/local/bin/lock', []);
 });
 
 // -----------------------------------------------------------------------------
