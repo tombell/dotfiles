@@ -15,3 +15,6 @@ alias ghs='curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.c
 
 # watch twitch stream using mpv/youtube-dl
 alias twitch='function _twitch() { mpv "https://twitch.tv/$1"; }; _twitch'
+
+# watch youtube video using mpv/youtube-dl
+alias youtube='function _youtube() { mpv "https://www.youtube.com/watch?v=$1"; }; _youtube'
