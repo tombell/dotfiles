@@ -7,8 +7,11 @@ alias mkdir="mkdir -p"
 alias e="mvim"
 alias v="$VISUAL"
 
-# Pretty print the path
+# pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# GitHub issues/pull requests subscribed too
+# get issues and pull requests subscribed to on github
 alias ghs='curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/issues?filter=subscribed&state=all" | jq ".[].html_url" | xargs open'
+
+# watch twitch stream using mpv/youtube-dl
+alias twitch='function _twitch() { mpv "https://twitch.tv/$1"; }; _twitch'
