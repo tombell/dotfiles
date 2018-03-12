@@ -15,7 +15,9 @@ tap "tombell/formulae"
 # ------------------------------------------------------------------------------
 
 # Utilities
+brew "curl"
 brew "git"
+brew "openssl"
 brew "thoughtbot/formulae/rcm"
 brew "ripgrep"
 
