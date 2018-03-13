@@ -72,7 +72,6 @@ cask "slack"
 # Media
 cask "mpv"
 cask "spotify"
-cask "vlc"
 
 # Fonts
 cask "font-hack"
