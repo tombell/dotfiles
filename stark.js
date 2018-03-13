@@ -39,7 +39,29 @@ Bind.on('s', MODIFIERS, () => {
 // -----------------------------------------------------------------------------
 // DEBUG & PLAYGROUND
 // -----------------------------------------------------------------------------
+
 Bind.on('d', MODIFIERS, () => {});
+
+// -----------------------------------------------------------------------------
+// SPOTIFY CONTROLLING
+// -----------------------------------------------------------------------------
+
+Bind.on('q', MODIFIERS, () => {
+  Stark.run('/usr/bin/osascript', [
+    '-e', `tell application "Spotify"`,
+    '-e',`  set player position to 0`,
+    '-e',`  previous track`,
+    '-e', `end tell`,
+  ]);
+});
+
+Bind.on('w', MODIFIERS, () => {
+  Stark.run('/usr/bin/osascript', ['-e', `tell application "Spotify" to playpause`]);
+});
+
+Bind.on('e', MODIFIERS, () => {
+  Stark.run('/usr/bin/osascript', ['-e', `tell application "Spotify" to next track`]);
+});
 
 // -----------------------------------------------------------------------------
 // WINDOW MOVEMENT
