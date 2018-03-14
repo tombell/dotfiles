@@ -5,21 +5,12 @@
 // Default modifier keys for binds
 const MODIFIERS = ['ctrl', 'shift'];
 
-// Default modifier keys for resizing windows binds
-const RESIZE_MODIFIERS = ['shift', 'alt'];
-
-// Default modifier keys for positioning windows binds.
-const POSITION_MODIFIERS = ['ctrl', 'shift'];
-
 // Grid width and height for centering windows with different sizes
 const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
 
 // Margin to have around each window edge
 const MARGIN = 10;
-
-// Size for resizing/positioning increments/decrements.
-const RESIZE_POSITION_AMOUNT = 40;
 
 // App names
 const apps = {
@@ -61,118 +52,6 @@ Bind.on('w', MODIFIERS, () => {
 
 Bind.on('e', MODIFIERS, () => {
   Stark.run('/usr/bin/osascript', ['-e', `tell application "Spotify" to next track`]);
-});
-
-// -----------------------------------------------------------------------------
-// WINDOW MOVEMENT
-// -----------------------------------------------------------------------------
-
-Bind.on('up', POSITION_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const x = win.topLeft.x;
-  const y = win.topLeft.y - RESIZE_POSITION_AMOUNT;
-
-  win.setTopLeft({ x, y });
-});
-
-Bind.on('down', POSITION_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const x = win.topLeft.x;
-  const y = win.topLeft.y + RESIZE_POSITION_AMOUNT;
-
-  win.setTopLeft({ x, y });
-});
-
-Bind.on('left', POSITION_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const x = win.topLeft.x - RESIZE_POSITION_AMOUNT;
-  const y = win.topLeft.y;
-
-  win.setTopLeft({ x, y });
-});
-
-Bind.on('right', POSITION_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const x = win.topLeft.x + RESIZE_POSITION_AMOUNT;
-  const y = win.topLeft.y;
-
-  win.setTopLeft({ x, y });
-});
-
-// -----------------------------------------------------------------------------
-// WINDOW RESIZING
-// -----------------------------------------------------------------------------
-
-Bind.on('up', RESIZE_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const width = win.size.width;
-  const height = win.size.height - RESIZE_POSITION_AMOUNT;
-
-  win.setSize({ width, height });
-});
-
-Bind.on('down', RESIZE_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const width = win.size.width;
-  const height = win.size.height + RESIZE_POSITION_AMOUNT;
-
-  win.setSize({ width, height });
-});
-
-Bind.on('left', RESIZE_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const width = win.size.width - RESIZE_POSITION_AMOUNT;
-  const height = win.size.height;
-
-  win.setSize({ width, height });
-});
-
-Bind.on('right', RESIZE_MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const width = win.size.width + RESIZE_POSITION_AMOUNT;
-  const height = win.size.height;
-
-  win.setSize({ width, height });
 });
 
 // -----------------------------------------------------------------------------
