@@ -25,8 +25,8 @@ brew "ripgrep"
 brew "zsh"
 
 # Editors
-brew "vim", args: ["without-python"]
-brew "macvim", args: ["without-python"]
+brew "vim"
+brew "macvim"
 
 # Languages
 brew "dep"
