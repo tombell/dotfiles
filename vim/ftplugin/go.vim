@@ -15,4 +15,6 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_template_autocreate = 0
 
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_enabled = ['golint', 'errcheck']
