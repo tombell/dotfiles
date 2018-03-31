@@ -17,6 +17,7 @@ const apps = {
   iterm: 'iTerm2',
   macvim: 'MacVim',
   tweetbot: 'Tweetbot',
+  virtualbox: 'VirtualBox',
 };
 
 // -----------------------------------------------------------------------------
@@ -297,6 +298,22 @@ Event.on('applicationDidLaunch', (app) => {
       const r = win.screen.frameWithoutDockOrMenu;
 
       const x = r.x + MARGIN;
+      const y = r.y + MARGIN;
+
+      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+      const height = r.height - (MARGIN * 2);
+
+      win.setFrame({ x, y, width, height });
+    });
+
+    return;
+  }
+
+  if (app.name === apps.virtualbox && !app.isTerminated) {
+    _.each(app.windows({ visible: true }), (win) => {
+      const r = win.screen.frameWithoutDockOrMenu;
+
+      const x = (r.x + (r.width / 2)) + (MARGIN / 2);
       const y = r.y + MARGIN;
 
       const width = r.width / 2 - (MARGIN + (MARGIN / 2));
