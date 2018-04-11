@@ -18,15 +18,15 @@ tap "tombell/formulae"
 brew "curl"
 brew "git"
 brew "openssl"
-brew "thoughtbot/formulae/rcm"
 brew "ripgrep"
+brew "thoughtbot/formulae/rcm"
 
 # Shells
 brew "zsh"
 
 # Editors
-brew "vim"
-brew "macvim"
+brew "macvim", args: ["build-from-source"]
+brew "vim", args: ["build-from-source"]
 
 # Languages
 brew "dep"
@@ -43,15 +43,18 @@ brew "youtube-dl"
 
 # My formulae
 brew "tombell/formulae/coin"
+brew "tombell/formulae/lock"
+brew "tombell/formulae/lodge"
 brew "tombell/formulae/prettytest"
 brew "tombell/formulae/releasekit"
+brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
 # CASKS
 # ------------------------------------------------------------------------------
 
 # Utilities
-cask "1password"
+cask "1password-beta"
 cask "appcleaner"
 cask "the-unarchiver"
 
@@ -63,7 +66,7 @@ cask "google-chrome"
 
 # Chat
 cask "discord"
-cask "slack"
+cask "slack-beta"
 
 # Instant Messaging
 # cask "telegram"
