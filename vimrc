@@ -25,7 +25,6 @@ call plug#begin()
 Plug 'tombell/trailing.vim'
 
 " Utility
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
@@ -40,9 +39,6 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'kchmck/vim-coffee-script'
-Plug 'keith/swift.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 
