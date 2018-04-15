@@ -23,6 +23,7 @@ brew "thoughtbot/formulae/rcm"
 
 # Shells
 brew "zsh"
+brew "zsh-syntax-highlighting"
 
 # Editors
 brew "macvim", args: ["build-from-source"]
