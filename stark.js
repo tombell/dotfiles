@@ -41,8 +41,8 @@ Bind.on('d', MODIFIERS, () => {});
 Bind.on('q', MODIFIERS, () => {
   Stark.run('/usr/bin/osascript', [
     '-e', `tell application "Spotify"`,
-    '-e',`  set player position to 0`,
-    '-e',`  previous track`,
+    '-e', `  set player position to 0`,
+    '-e', `  previous track`,
     '-e', `end tell`,
   ]);
 });
