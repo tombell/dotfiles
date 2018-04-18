@@ -21,29 +21,41 @@ end
 
 call plug#begin()
 
-" Mine
-Plug 'tombell/trailing.vim'
+" Colors
+Plug 'jacoborus/tender.vim'
 
-" Utility
+" Editing
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
-" Syntaxes
-Plug 'cakebaker/scss-syntax.vim'
+" Syntaxes: Misc
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'hail2u/vim-css3-syntax'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'kchmck/vim-coffee-script'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'joukevandermaas/vim-ember-hbs'
 
-" Colors
-Plug 'jacoborus/tender.vim'
+" Syntaxes: Go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Syntaxes: Stylesheets
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+
+" Syntaxes: JavaScript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" Syntaxes: TypeScript
+Plug 'Quramy/tsuquyomi'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'tasn/vim-tsx'
+
+" Syntaxes: CoffeeScript
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
