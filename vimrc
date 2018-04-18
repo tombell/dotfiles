@@ -42,7 +42,6 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Syntaxes: Stylesheets
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 
 " Syntaxes: JavaScript
