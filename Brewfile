@@ -80,6 +80,7 @@ cask "mpv"
 cask "spotify"
 
 # Fonts
+cask "font-codenewroman-nerd-font-mono"
 cask "font-hack"
 
 # My casks
