@@ -23,6 +23,7 @@ call plug#begin()
 
 " Colors
 Plug 'jacoborus/tender.vim'
+Plug 'sjl/badwolf'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -63,8 +64,11 @@ if has("termguicolors")
   set termguicolors
 endif
 
+let g:badwolf_html_link_underline = 0
+let g:badwolf_css_props_highlight = 1
+
 syntax on
-colorscheme tender
+colorscheme goodwolf
 
 let g:lightline = { 'colorscheme': 'tender' }
 
