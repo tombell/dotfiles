@@ -35,7 +35,6 @@ Plug 'tpope/vim-commentary'
 
 " Syntaxes: Misc
 Plug 'cespare/vim-toml'
-Plug 'othree/html5.vim'
 Plug 'joukevandermaas/vim-ember-hbs'
 
 " Syntaxes: Go
