@@ -22,7 +22,6 @@ end
 call plug#begin()
 
 " Colors
-Plug 'jacoborus/tender.vim'
 Plug 'cocopon/iceberg.vim'
 
 " Editing
