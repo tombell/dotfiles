@@ -57,7 +57,7 @@ brew "tombell/formulae/tldr"
 # ------------------------------------------------------------------------------
 
 # Utilities
-cask "1password-beta"
+cask "1password"
 cask "appcleaner"
 cask "the-unarchiver"
 
@@ -69,7 +69,7 @@ cask "google-chrome"
 
 # Chat
 cask "discord"
-cask "slack-beta"
+cask "slack"
 
 # Instant Messaging
 # cask "telegram"
