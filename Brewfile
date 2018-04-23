@@ -28,8 +28,8 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 
 # Editors
-brew "macvim", args: ["build-from-source"]
-brew "vim", args: ["build-from-source"]
+brew "macvim"
+brew "vim"
 
 # Languages
 brew "dep"
