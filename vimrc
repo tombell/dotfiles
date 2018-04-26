@@ -26,8 +26,8 @@ Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/pgmnt.vim'
 
 " Colors
+" Plug '~/Code/riff.vim'
 Plug 'cocopon/iceberg.vim'
-Plug '~/Code/riff.vim'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -51,7 +51,6 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Syntaxes: JavaScript
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 
 " Syntaxes: TypeScript
 Plug 'Quramy/tsuquyomi'
@@ -70,7 +69,7 @@ if has("termguicolors")
 endif
 
 syntax on
-set background=dark
+" set background=light
 colorscheme iceberg
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
