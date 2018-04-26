@@ -5,4 +5,4 @@ git_prompt_info() {
   fi
 }
 setopt promptsubst
-PS1='%{$fg[yellow]%}%~ %{$reset_color%}$(git_prompt_info)%{$fg[green]%}▸%{$reset_color%} '
+PS1='%{$fg[yellow]%}%c %{$reset_color%}$(git_prompt_info)%{$fg[green]%}▸%{$reset_color%} '
