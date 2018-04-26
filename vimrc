@@ -21,21 +21,27 @@ end
 
 call plug#begin()
 
+" Colorscheme development
+Plug 'cocopon/colorswatch.vim'
+Plug 'cocopon/pgmnt.vim'
+
 " Colors
 Plug 'cocopon/iceberg.vim'
+Plug '~/Code/riff.vim'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
+" Writing
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
+
 " Syntaxes: Misc
-Plug 'cespare/vim-toml'
-Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
 " Syntaxes: Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -53,7 +59,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tasn/vim-tsx'
 
 " Syntaxes: CoffeeScript
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
@@ -64,9 +70,8 @@ if has("termguicolors")
 endif
 
 syntax on
+set background=dark
 colorscheme iceberg
-
-let g:lightline = { 'colorscheme': 'iceberg' }
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
