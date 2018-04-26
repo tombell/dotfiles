@@ -1,6 +1,6 @@
 set vb
 set guioptions=e
-set guifont=PragmataPro:h11
+set guifont=PragmataPro:h12
 
 let &transparency=1
 
