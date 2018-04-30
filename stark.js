@@ -17,7 +17,6 @@ const apps = {
   iterm: 'iTerm2',
   macvim: 'MacVim',
   tweetbot: 'Tweetbot',
-  virtualbox: 'VirtualBox',
 };
 
 // -----------------------------------------------------------------------------
@@ -33,6 +32,14 @@ Bind.on('s', MODIFIERS, () => {
 // -----------------------------------------------------------------------------
 
 Bind.on('d', MODIFIERS, () => {});
+
+// -----------------------------------------------------------------------------
+// ITERM CONTROLLING
+// -----------------------------------------------------------------------------
+
+Bind.on('i', MODIFIERS, () => {
+  Stark.run('/usr/bin/osascript', ['-e', `tell application "iTerm" to create window with default profile`,]);
+});
 
 // -----------------------------------------------------------------------------
 // SPOTIFY CONTROLLING
@@ -209,59 +216,17 @@ Bind.on('k', MODIFIERS, () => {
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
 
-function moveWindowToSpace(win, space) {
-  const current = Space.active();
-  current.removeWindows([win]);
-  space.addWindows([win]);
-}
+[1, 2, 3, 4].forEach((space) => {
+  Bind.on(`${space}`, MODIFIERS, () => {
+    const win = Window.focused();
 
-function moveWindowToSpaceAndFocus(win, space) {
-  moveWindowToSpace(win, space);
-  win.focus();
-}
+    if (!win) {
+      return;
+    }
 
-Bind.on('1', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const [one] = Space.all();
-  moveWindowToSpace(win, one);
-});
-
-Bind.on('2', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const [one, two] = Space.all();
-  moveWindowToSpace(win, two);
-});
-
-Bind.on('3', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const [one, two, three] = Space.all();
-  moveWindowToSpace(win, three);
-});
-
-Bind.on('4', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const [one, two, three, four] = Space.all();
-  moveWindowToSpace(win, four);
+    Space.active().removeWindows([win]);
+    Space.all()[space - 1].addWindows([win]);
+  });
 });
 
 // -----------------------------------------------------------------------------
@@ -308,20 +273,18 @@ Event.on('applicationDidLaunch', (app) => {
 
     return;
   }
+});
 
-  if (app.name === apps.virtualbox && !app.isTerminated) {
-    _.each(app.windows({ visible: true }), (win) => {
-      const r = win.screen.frameWithoutDockOrMenu;
+Event.on('windowDidOpen', (win) => {
+  if (win.app.name === apps.iterm && !win.app.isTerminated) {
+    const r = win.screen.frameWithoutDockOrMenu;
 
-      const x = (r.x + (r.width / 2)) + (MARGIN / 2);
-      const y = r.y + MARGIN;
+    const x = r.x + MARGIN;
+    const y = r.y + MARGIN;
 
-      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-      const height = r.height - (MARGIN * 2);
+    const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+    const height = r.height - (MARGIN * 2);
 
-      win.setFrame({ x, y, width, height });
-    });
-
-    return;
+    win.setFrame({ x, y, width, height });
   }
 });
