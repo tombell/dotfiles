@@ -9,7 +9,6 @@ tap "caskroom/fonts"
 tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
-tap "universal-ctags/universal-ctags"
 
 # ------------------------------------------------------------------------------
 # FORMULAE
@@ -21,7 +20,6 @@ brew "git"
 brew "openssl"
 brew "ripgrep"
 brew "thoughtbot/formulae/rcm"
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 
 # Shells
 brew "zsh"
