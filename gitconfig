@@ -1,5 +1,3 @@
-[init]
-  templatedir = ~/.git_template
 [user]
   name = Tom Bell
   email = tomb@tomb.io
