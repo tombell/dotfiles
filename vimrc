@@ -28,6 +28,7 @@ Plug 'cocopon/pgmnt.vim'
 " Colors
 " Plug '~/Code/riff.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -69,8 +70,9 @@ if has("termguicolors")
 endif
 
 syntax on
-" set background=light
-colorscheme iceberg
+let ayucolor="light"
+set background=light
+colorscheme ayu
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
