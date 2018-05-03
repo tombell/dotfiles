@@ -26,11 +26,9 @@ Plug 'cocopon/colorswatch.vim'
 Plug 'cocopon/pgmnt.vim'
 
 " Colors
-" Plug '~/Code/riff.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'andreypopp/vim-colors-plain'
-Plug 'reedes/vim-colors-pencil'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -71,10 +69,17 @@ if has("termguicolors")
   set termguicolors
 endif
 
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'allow_bold': 0
+  \     }
+  \   }
+  \ }
+
 syntax on
-let ayucolor="light"
 set background=light
-colorscheme pencil
+colorscheme PaperColor
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
