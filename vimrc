@@ -29,6 +29,8 @@ Plug 'cocopon/pgmnt.vim'
 " Plug '~/Code/riff.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'andreypopp/vim-colors-plain'
+Plug 'reedes/vim-colors-pencil'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -72,7 +74,7 @@ endif
 syntax on
 let ayucolor="light"
 set background=light
-colorscheme ayu
+colorscheme pencil
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
