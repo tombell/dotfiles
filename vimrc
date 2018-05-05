@@ -69,17 +69,8 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'allow_bold': 0
-  \     }
-  \   }
-  \ }
-
 syntax on
-set background=light
-colorscheme PaperColor
+colorscheme iceberg
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
