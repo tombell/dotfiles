@@ -45,7 +45,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
 " Syntaxes: Go
-Plug 'fatih/vim-go', { 'tag': 'v1.17', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'commit': 'e2e06cebb8c29baa7699f4bd1fe2c01ac26f6e38', 'do': ':GoInstallBinaries' }
 
 " Syntaxes: Stylesheets
 Plug 'hail2u/vim-css3-syntax'
