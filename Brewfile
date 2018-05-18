@@ -39,7 +39,7 @@ brew "rbenv-gemset"
 brew "ruby"
 
 # Media
-brew "imagemagick"
+# brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
@@ -80,6 +80,9 @@ cask "spotify"
 # Fonts
 # cask "font-codenewroman-nerd-font-mono"
 # cask "font-hack"
+
+# Games
+cask "openemu"
 
 # My casks
 cask "rustyrobots/formulae/stark"
