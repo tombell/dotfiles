@@ -274,17 +274,3 @@ Event.on('applicationDidLaunch', (app) => {
     return;
   }
 });
-
-Event.on('windowDidOpen', (win) => {
-  if (win.app.name === apps.iterm && !win.app.isTerminated) {
-    const r = win.screen.frameWithoutDockOrMenu;
-
-    const x = r.x + MARGIN;
-    const y = r.y + MARGIN;
-
-    const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-    const height = r.height - (MARGIN * 2);
-
-    win.setFrame({ x, y, width, height });
-  }
-});
