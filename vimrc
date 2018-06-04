@@ -22,12 +22,11 @@ end
 call plug#begin()
 
 " Colorscheme development
-Plug 'cocopon/colorswatch.vim'
-Plug 'cocopon/pgmnt.vim'
+" Plug 'cocopon/colorswatch.vim'
+" Plug 'cocopon/pgmnt.vim'
 
 " Colors
 Plug 'cocopon/iceberg.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Editing
@@ -116,6 +115,7 @@ set completeopt-=preview
 
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
+inoremap <C-right> →
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
