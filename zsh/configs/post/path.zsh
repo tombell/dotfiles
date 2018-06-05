@@ -1,5 +1,6 @@
 PATH="/usr/local/opt/curl/bin:$PATH"
 PATH="/usr/local/opt/openssl/bin:$PATH"
+PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # load rbenv if available
 if command -v rbenv >/dev/null; then
