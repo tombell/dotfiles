@@ -115,6 +115,11 @@ set completeopt-=preview
 
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
+
+" Easier unicode arrows in insert mode
+inoremap <C-up> ↑
+inoremap <C-down> ↓
+inoremap <C-left> ←
 inoremap <C-right> →
 
 " Switch between the last two files
