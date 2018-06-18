@@ -45,10 +45,10 @@ brew "youtube-dl"
 # My formulae
 brew "tombell/formulae/coin"
 brew "tombell/formulae/lock"
-# brew "tombell/formulae/lodge"
+brew "tombell/formulae/lodge"
 brew "tombell/formulae/prettytest"
-# brew "tombell/formulae/releasekit"
-# brew "tombell/formulae/tldr"
+brew "tombell/formulae/releasekit"
+brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
 # CASKS
@@ -81,7 +81,7 @@ cask "spotify"
 # cask "font-hack"
 
 # Games
-cask "openemu"
+# cask "openemu"
 
 # My casks
 cask "rustyrobots/formulae/stark"
