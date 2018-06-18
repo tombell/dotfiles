@@ -1,4 +1,5 @@
 PATH="/usr/local/opt/curl/bin:$PATH"
+PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 PATH="/usr/local/opt/openssl/bin:$PATH"
 PATH="/usr/local/opt/sqlite/bin:$PATH"
 
