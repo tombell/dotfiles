@@ -21,10 +21,6 @@ end
 
 call plug#begin()
 
-" Colorscheme development
-" Plug 'cocopon/colorswatch.vim'
-" Plug 'cocopon/pgmnt.vim'
-
 " Colors
 Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -56,9 +52,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'Quramy/tsuquyomi'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'tasn/vim-tsx'
-
-" Syntaxes: CoffeeScript
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
@@ -154,3 +147,7 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
+
+if has('python3')
+  silent! python3 1
+endif
