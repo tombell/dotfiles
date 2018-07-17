@@ -16,4 +16,4 @@ let g:PaperColor_Theme_Options = {
   \ }
 
 set background=light
-colorscheme PaperColor
+colorscheme sacredforest
