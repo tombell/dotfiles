@@ -24,7 +24,6 @@ call plug#begin()
 " Colors
 Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'KKPMW/sacredforest-vim'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
