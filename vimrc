@@ -21,8 +21,11 @@ end
 
 call plug#begin()
 
+Plug 'cocopon/colorswatch.vim'
+Plug 'cocopon/pgmnt.vim'
+
 " Colors
-Plug 'cocopon/iceberg.vim'
+" Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Editing
@@ -62,7 +65,7 @@ if has("termguicolors")
 endif
 
 syntax on
-colorscheme iceberg
+colorscheme PaperColor
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
