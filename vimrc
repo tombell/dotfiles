@@ -21,11 +21,11 @@ end
 
 call plug#begin()
 
-Plug 'cocopon/colorswatch.vim'
-Plug 'cocopon/pgmnt.vim'
+" Colorscheme design
+" Plug 'cocopon/colorswatch.vim'
+" Plug 'cocopon/pgmnt.vim'
 
 " Colors
-" Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Editing
