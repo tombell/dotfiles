@@ -3,6 +3,8 @@ setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal noexpandtab
 
+let g:go_gocode_propose_source = 1
+
 let g:go_fmt_command = "goimports"
 
 let g:go_highlight_types = 1
