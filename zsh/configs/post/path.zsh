@@ -13,9 +13,8 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-GO111MODULE=on
 GOPATH=$PROJECTS/go
 
 PATH="$GOPATH/bin:$PATH"
 
-export -U PATH GOPATH GO111MODULE
+export -U PATH GOPATH
