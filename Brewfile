@@ -17,6 +17,7 @@ tap "tombell/formulae"
 # Utilities
 brew "curl"
 brew "git"
+brew "jq"
 brew "openssl"
 brew "ripgrep"
 brew "thoughtbot/formulae/rcm"
@@ -32,23 +33,22 @@ brew "vim"
 # Languages
 brew "dep"
 brew "go"
-brew "node"
 brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
-brew "ruby"
 
 # Media
 # brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
-brew "tombell/formulae/coin"
+# brew "tombell/formulae/coin"
 brew "tombell/formulae/lock"
-brew "tombell/formulae/lodge"
+# brew "tombell/formulae/lodge"
+brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
-brew "tombell/formulae/releasekit"
-brew "tombell/formulae/tldr"
+# brew "tombell/formulae/releasekit"
+# brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
 # CASKS
@@ -57,12 +57,15 @@ brew "tombell/formulae/tldr"
 # Utilities
 cask "1password"
 cask "appcleaner"
+cask "hex-fiend"
+cask "numi"
 cask "the-unarchiver"
 
 # Terminals
 cask "iterm2"
 
 # Browsers
+cask "firefox"
 cask "google-chrome"
 
 # Chat
@@ -76,6 +79,9 @@ cask "slack"
 # Media
 cask "mpv"
 cask "spotify"
+
+# Audio
+cask "xact"
 
 # Fonts
 # cask "font-hack"
