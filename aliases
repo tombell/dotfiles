@@ -4,7 +4,8 @@ alias ll="ls -al"
 alias la="ls -A"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
-alias e="mvim"
+# alias e="mvim"
+alias e="/Applications/MacVim.app/Contents/bin/mvim"
 alias v="$VISUAL"
 
 # pretty print the path
