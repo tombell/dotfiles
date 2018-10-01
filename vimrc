@@ -41,6 +41,7 @@ Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 " Syntaxes: Misc
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 
 " Syntaxes: Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
