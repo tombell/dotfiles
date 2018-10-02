@@ -15,7 +15,6 @@ const MARGIN = 10;
 // App names
 const apps = {
   iterm: 'iTerm2',
-  macvim: 'MacVim',
   tweetbot: 'Tweetbot',
 };
 
