@@ -65,10 +65,8 @@ Bind.on('z', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = (r.width / GRID_WIDTH) * 2;
   const y = r.y + (r.height / GRID_HEIGHT) * 2;
-
   const width = (r.width / GRID_WIDTH) * 8;
   const height = (r.height / GRID_HEIGHT) * 6;
 
@@ -83,10 +81,8 @@ Bind.on('x', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = r.width / GRID_WIDTH;
   const y = r.y + (r.height / GRID_HEIGHT);
-
   const width = (r.width / GRID_WIDTH) * 10;
   const height = (r.height / GRID_HEIGHT) * 8;
 
@@ -101,10 +97,8 @@ Bind.on('c', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
-
   const width = r.width - (MARGIN * 2);
   const height = r.height - (MARGIN * 2);
 
@@ -119,9 +113,7 @@ Bind.on('g', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
-  const { y, width, height } = win.frame;
-
+  const { y, width } = win.frame;
   const x = (r.width / 2) - (width / 2);
 
   win.setTopLeft({ x, y });
@@ -139,10 +131,8 @@ Bind.on('h', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
-
   const width = r.width / 2 - (MARGIN + (MARGIN / 2));
   const height = r.height - (MARGIN * 2);
 
@@ -157,10 +147,8 @@ Bind.on('l', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = (r.x + (r.width / 2)) + (MARGIN / 2);
   const y = r.y + MARGIN;
-
   const width = r.width / 2 - (MARGIN + (MARGIN / 2));
   const height = r.height - (MARGIN * 2);
 
@@ -175,10 +163,8 @@ Bind.on('j', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = r.x + MARGIN;
   const y = r.y + MARGIN;
-
   const width = r.width / 2 - (MARGIN + (MARGIN / 2));
   const height = r.height / 2 - (MARGIN + (MARGIN / 2));
 
@@ -193,10 +179,8 @@ Bind.on('k', MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-
   const x = (r.x + (r.width / 2)) + (MARGIN / 2);
   const y = r.y + MARGIN;
-
   const width = r.width / 2 - (MARGIN + (MARGIN / 2));
   const height = r.height / 2 - (MARGIN + (MARGIN / 2));
 
@@ -233,10 +217,8 @@ Bind.on('t', MODIFIERS, () => {
 
   _.each(app.windows(), (win) => {
     const r = win.screen.frameWithoutDockOrMenu;
-
     const x = r.x + MARGIN;
     const y = r.y + MARGIN;
-
     const width = r.width / 4 - (MARGIN + (MARGIN / 2));
     const height = r.height - (MARGIN * 2);
 
@@ -250,18 +232,14 @@ Bind.on('t', MODIFIERS, () => {
 
 Event.on('applicationDidLaunch', (app) => {
   if (app.name === apps.iterm && !app.isTerminated) {
-    _.each(app.windows({ visible: true }), (win) => {
+    app.windows({ visible: true }).forEach((win) => {
       const r = win.screen.frameWithoutDockOrMenu;
-
       const x = r.x + MARGIN;
       const y = r.y + MARGIN;
-
       const width = r.width / 2 - (MARGIN + (MARGIN / 2));
       const height = r.height - (MARGIN * 2);
 
       win.setFrame({ x, y, width, height });
     });
-
-    return;
   }
 });
