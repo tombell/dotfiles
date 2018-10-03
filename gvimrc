@@ -15,5 +15,8 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 
-set background=light
-colorscheme PaperColor
+" set background=light
+" colorscheme PaperColor
+
+set background=dark
+colorscheme tender
