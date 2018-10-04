@@ -30,4 +30,5 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Toggle goyo
 nnoremap <Leader>G :Goyo<CR>
 
+let g:markdown_enable_mappings = 0
 let g:markdown_enable_insert_mappings = 0
