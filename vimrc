@@ -147,8 +147,4 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
-if has('python3')
-  silent! python3 1
-endif
-
 autocmd BufNewFile,BufRead *.handlebars set ft=handlebars
