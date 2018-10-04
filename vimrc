@@ -30,10 +30,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
-" Writing
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
-
 " Syntaxes: Misc
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
