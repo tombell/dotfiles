@@ -13,8 +13,8 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-GOPATH=$PROJECTS/go
+GOPATH=$HOME/.go
 
-PATH="$GOPATH/bin:$PATH"
+PATH="$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH"
 
 export -U PATH GOPATH
