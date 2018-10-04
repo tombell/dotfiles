@@ -21,13 +21,8 @@ end
 
 call plug#begin()
 
-" Colorscheme design
-" Plug 'cocopon/colorswatch.vim'
-" Plug 'cocopon/pgmnt.vim'
-
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
-" Plug 'jacoborus/tender.vim'
 
 " Editing
 Plug 'ctrlpvim/ctrlp.vim'
