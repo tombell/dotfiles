@@ -24,29 +24,31 @@ call plug#begin()
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
 
+" JavaScript and TypeScript
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'peitalin/vim-jsx-typescript'
+
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Stylesheets
+Plug 'hail2u/vim-css3-syntax'
+
+" Templates
+Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
+
+" Writing
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+
 " Editing
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
-" Syntaxes: Misc
-Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-
-" Syntaxes: Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-
-" Syntaxes: Stylesheets
-Plug 'hail2u/vim-css3-syntax'
-
-" Syntaxes: JavaScript
-Plug 'pangloss/vim-javascript'
-
-" Syntaxes: TypeScript
-Plug 'Quramy/tsuquyomi'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'tasn/vim-tsx'
+" Utility
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -107,9 +109,6 @@ inoremap <C-space> <C-x><C-o>
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-
 " Close quickfix and location list windows
 nnoremap <Leader>a :cclose<Bar>:lclose<CR>
 
@@ -119,12 +118,6 @@ let g:html_indent_tags = 'li\|p'
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " Always use vertical diffs
 set diffopt+=vertical
@@ -136,5 +129,3 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
-
-autocmd BufNewFile,BufRead *.handlebars set ft=handlebars
