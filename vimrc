@@ -24,6 +24,9 @@ call plug#begin()
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
 
+" Utility
+Plug 'ctrlpvim/ctrlp.vim'
+
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -46,9 +49,6 @@ Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
-
-" Utility
-Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
