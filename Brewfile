@@ -27,7 +27,7 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 
 # Editors
-brew "macvim"
+# brew "macvim"
 brew "vim"
 
 # Languages
@@ -62,7 +62,7 @@ cask "numi"
 cask "the-unarchiver"
 
 # Terminals
-cask "iterm2"
+cask "iterm2-nightly"
 
 # Browsers
 cask "firefox"
@@ -70,7 +70,7 @@ cask "google-chrome"
 
 # Chat
 cask "discord"
-cask "slack"
+cask "slack-beta"
 
 # Instant Messaging
 # cask "telegram"
