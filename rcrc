@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile LICENSE README.md"
+EXCLUDES="Brewfile LICENSE README.md macos"
 DOTFILES_DIRS="$HOME/.dotfiles"
