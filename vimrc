@@ -23,6 +23,7 @@ call plug#begin()
 
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'jacoborus/tender.vim'
 
 " Utility
 Plug 'ctrlpvim/ctrlp.vim'
@@ -59,7 +60,8 @@ if has("termguicolors")
 endif
 
 syntax on
-colorscheme PaperColor
+set background=dark
+colorscheme tender
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
