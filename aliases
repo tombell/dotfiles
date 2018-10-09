@@ -4,8 +4,7 @@ alias ll="ls -al"
 alias la="ls -A"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
-# alias e="mvim"
-alias e="/Applications/MacVim.app/Contents/bin/mvim"
+alias e="nvim"
 alias v="$VISUAL"
 
 # pretty print the path
@@ -13,9 +12,3 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # get issues and pull requests subscribed to on github
 alias ghs='curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/issues?filter=subscribed&state=all" | jq ".[].html_url" | xargs open'
-
-# watch twitch stream using mpv/youtube-dl
-alias twitch='function _twitch() { mpv "https://twitch.tv/$1"; }; _twitch'
-
-# watch youtube video using mpv/youtube-dl
-alias youtube='function _youtube() { mpv "https://www.youtube.com/watch?v=$1"; }; _youtube'
