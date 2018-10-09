@@ -1,3 +1,5 @@
-" Automatically wrap at 72 characters and spell check commit messages
-setlocal textwidth=72
+" Enable spellchecking
 setlocal spell
+
+" Automatically wrap at 72 characters
+setlocal textwidth=72
