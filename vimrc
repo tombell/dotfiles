@@ -27,6 +27,7 @@ Plug 'jacoborus/tender.vim'
 
 " Utility
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
