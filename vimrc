@@ -33,7 +33,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'tombell/vim-jsx-typescript'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
