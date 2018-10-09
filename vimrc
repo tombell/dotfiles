@@ -103,8 +103,6 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
 
-set completeopt-=preview
-
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
 
