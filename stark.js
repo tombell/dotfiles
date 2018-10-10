@@ -60,7 +60,7 @@ Bind.on('e', MODIFIERS, () => {
 Bind.on('i', MODIFIERS, () => {
   Stark.run('/usr/bin/osascript', [
     '-e', `tell application "iTerm2"`,
-    '-e', `  create window with profile "Vim"`,
+    '-e', `  create window with profile "Default"`,
     '-e', `end tell`,
   ]);
 });
