@@ -6,6 +6,7 @@
 
 tap "caskroom/cask"
 tap "caskroom/fonts"
+tap "caskroom/versions"
 tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
@@ -27,27 +28,26 @@ brew "zsh"
 brew "zsh-syntax-highlighting"
 
 # Editors
-# brew "macvim"
+brew "neovim"
 brew "vim"
 
 # Languages
-brew "dep"
 brew "go"
 brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
 
 # Media
-# brew "imagemagick"
+brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
-brew "tombell/formulae/coin"
+# brew "tombell/formulae/coin"
 brew "tombell/formulae/lock"
-brew "tombell/formulae/lodge"
+# brew "tombell/formulae/lodge"
 brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
-brew "tombell/formulae/releasekit"
+# brew "tombell/formulae/releasekit"
 brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
@@ -62,10 +62,10 @@ cask "numi"
 cask "the-unarchiver"
 
 # Terminals
-cask "iterm2-nightly"
+cask "iterm2-beta"
 
 # Browsers
-cask "firefox"
+# cask "firefox"
 cask "google-chrome"
 
 # Chat
@@ -84,10 +84,7 @@ cask "spotify"
 cask "xact"
 
 # Fonts
-# cask "font-hack"
-
-# Games
-# cask "openemu"
+cask "font-hack"
 
 # My casks
 cask "rustyrobots/formulae/stark"
