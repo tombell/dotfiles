@@ -4,7 +4,7 @@ alias ll="ls -al"
 alias la="ls -A"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
-alias e="nvim"
+alias e="$VISUAL"
 alias v="$VISUAL"
 
 # pretty print the path
