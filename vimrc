@@ -130,3 +130,6 @@ nnoremap N Nzzzv
 " Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
+
+" Remove preview window when using completion
+set completeopt-=preview
