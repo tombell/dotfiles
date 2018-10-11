@@ -4,5 +4,7 @@ git_prompt_info() {
     echo "%{$fg[blue]%}($current_branch)%{$reset_color%} "
   fi
 }
+
 setopt promptsubst
+
 PS1='%{$fg[yellow]%}%c %{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}▲ %{$reset_color%}'
