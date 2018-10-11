@@ -20,5 +20,3 @@ let g:go_template_autocreate = 0
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_enabled = ['golint']
-
-let g:go_addtags_transform = 'camelcase'
