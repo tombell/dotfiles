@@ -21,6 +21,10 @@ end
 
 call plug#begin()
 
+if has('nvim')
+  Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+endif
+
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
