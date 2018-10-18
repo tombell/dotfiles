@@ -8,6 +8,7 @@ set history=50
 set ruler
 set showcmd
 set incsearch
+set nohlsearch
 set laststatus=2
 set autowrite
 
