@@ -1,6 +1,6 @@
 .git/
 tags
-/log
-/node_modules/
-/tmp
-/vendor/
+log
+node_modules/
+tmp
+vendor/
