@@ -17,7 +17,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 
 " Configure metalinter options
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_enabled = ['golint']
 
