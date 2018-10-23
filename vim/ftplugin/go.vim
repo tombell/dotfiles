@@ -22,4 +22,4 @@ let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_metalinter_enabled = ['golint']
 
 " Completions hacks
-let g:go_gocode_propose_source = 1
+" let g:go_gocode_propose_source = 1
