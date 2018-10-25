@@ -38,7 +38,8 @@ Plug 'cocopon/pgmnt.vim'
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
+Plug 'pocke/tsuquyomi', { 'branch': 'typescript-3.1' }
 Plug 'tombell/vim-jsx-typescript'
 
 " Go
