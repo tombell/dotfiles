@@ -27,19 +27,16 @@ if has('nvim')
 endif
 
 " Colors
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'jacoborus/tender.vim'
 
 " Utility
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
-Plug 'cocopon/pgmnt.vim'
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-Plug 'tombell/vim-jsx-typescript'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
