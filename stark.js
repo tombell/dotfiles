@@ -203,7 +203,7 @@ Bind.on('k', MODIFIERS, () => {
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
 
-[1, 2, 3, 4].forEach((space) => {
+[1, 2, 3, 4, 5].forEach((space) => {
   Bind.on(`${space}`, MODIFIERS, () => {
     const win = Window.focused();
 
