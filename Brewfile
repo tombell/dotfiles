@@ -42,12 +42,12 @@ brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
-brew "tombell/formulae/coin"
+# brew "tombell/formulae/coin"
 brew "tombell/formulae/lock"
-brew "tombell/formulae/lodge"
+# brew "tombell/formulae/lodge"
 brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
-brew "tombell/formulae/releasekit"
+# brew "tombell/formulae/releasekit"
 brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
@@ -58,7 +58,6 @@ brew "tombell/formulae/tldr"
 cask "1password"
 cask "appcleaner"
 cask "hex-fiend"
-cask "numi"
 cask "the-unarchiver"
 
 # Terminals
@@ -72,19 +71,12 @@ cask "google-chrome"
 cask "discord"
 cask "slack"
 
-# Instant Messaging
-# cask "telegram"
-# cask "whatsapp"
-
 # Media
 cask "mpv"
 cask "spotify"
 
 # Audio
 cask "xact"
-
-# Fonts
-# cask "font-hack"
 
 # My casks
 cask "rustyrobots/formulae/stark"
