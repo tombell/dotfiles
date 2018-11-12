@@ -147,6 +147,38 @@ Bind.on('l', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
+Bind.on('j', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const r = win.screen.frameWithoutDockOrMenu;
+  const x = r.x + MARGIN;
+  const y = r.y + MARGIN;
+  const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+  const height = r.height / 2 - (MARGIN + (MARGIN / 2));
+
+  win.setFrame({ x, y, width, height });
+});
+
+Bind.on('k', MODIFIERS, () => {
+  const win = Window.focused();
+
+  if (!win) {
+    return;
+  }
+
+  const r = win.screen.frameWithoutDockOrMenu;
+  const x = (r.x + (r.width / 2)) + (MARGIN / 2);
+  const y = r.y + MARGIN;
+  const width = r.width / 2 - (MARGIN + (MARGIN / 2));
+  const height = r.height / 2 - (MARGIN + (MARGIN / 2));
+
+  win.setFrame({ x, y, width, height });
+});
+
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
