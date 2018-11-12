@@ -27,12 +27,6 @@ Bind.on('s', MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
-// DEBUG & PLAYGROUND
-// -----------------------------------------------------------------------------
-
-Bind.on('d', MODIFIERS, () => {});
-
-// -----------------------------------------------------------------------------
 // SPOTIFY CONTROLLING
 // -----------------------------------------------------------------------------
 
@@ -117,20 +111,6 @@ Bind.on('c', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('g', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const r = win.screen.frameWithoutDockOrMenu;
-  const { y, width } = win.frame;
-  const x = (r.width / 2) - (width / 2);
-
-  win.setTopLeft({ x, y });
-});
-
 // -----------------------------------------------------------------------------
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
@@ -163,38 +143,6 @@ Bind.on('l', MODIFIERS, () => {
   const y = r.y + MARGIN;
   const width = r.width / 2 - (MARGIN + (MARGIN / 2));
   const height = r.height - (MARGIN * 2);
-
-  win.setFrame({ x, y, width, height });
-});
-
-Bind.on('j', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const r = win.screen.frameWithoutDockOrMenu;
-  const x = r.x + MARGIN;
-  const y = r.y + MARGIN;
-  const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-  const height = r.height / 2 - (MARGIN + (MARGIN / 2));
-
-  win.setFrame({ x, y, width, height });
-});
-
-Bind.on('k', MODIFIERS, () => {
-  const win = Window.focused();
-
-  if (!win) {
-    return;
-  }
-
-  const r = win.screen.frameWithoutDockOrMenu;
-  const x = (r.x + (r.width / 2)) + (MARGIN / 2);
-  const y = r.y + MARGIN;
-  const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-  const height = r.height / 2 - (MARGIN + (MARGIN / 2));
 
   win.setFrame({ x, y, width, height });
 });
@@ -255,5 +203,3 @@ Event.on('applicationDidLaunch', (app) => {
     });
   }
 });
-
-Event.on('windowDidOpen', (win) => {});
