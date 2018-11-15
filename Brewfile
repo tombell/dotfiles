@@ -38,7 +38,7 @@ brew "rbenv"
 brew "rbenv-gemset"
 
 # Media
-brew "imagemagick"
+# brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
@@ -56,7 +56,6 @@ brew "tombell/formulae/tldr"
 
 # Utilities
 cask "1password"
-cask "appcleaner"
 cask "hex-fiend"
 cask "the-unarchiver"
 
@@ -73,7 +72,7 @@ cask "slack"
 
 # Media
 cask "mpv"
-cask "spotify"
+# cask "spotify"
 
 # Audio
 cask "xact"
