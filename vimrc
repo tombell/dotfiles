@@ -41,6 +41,9 @@ Plug 'Quramy/tsuquyomi'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+" SQL
+Plug 'exu/pgsql.vim'
+
 " Stylesheets
 Plug 'hail2u/vim-css3-syntax'
 
@@ -135,3 +138,5 @@ vnoremap Q gq
 
 " Remove preview window when using completion
 set completeopt-=preview
+
+let g:sql_type_default = 'pgsql'
