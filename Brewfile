@@ -16,8 +16,8 @@ tap "tombell/formulae"
 # ------------------------------------------------------------------------------
 
 # Utilities
-brew "curl"
 brew "git"
+brew "hexyl"
 brew "jq"
 brew "openssl"
 brew "ripgrep"
@@ -29,7 +29,6 @@ brew "zsh-syntax-highlighting"
 
 # Editors
 brew "neovim"
-brew "vim"
 
 # Languages
 brew "go"
@@ -38,16 +37,12 @@ brew "rbenv"
 brew "rbenv-gemset"
 
 # Media
-# brew "imagemagick"
 brew "youtube-dl"
 
 # My formulae
-# brew "tombell/formulae/coin"
 brew "tombell/formulae/lock"
-# brew "tombell/formulae/lodge"
 brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
-# brew "tombell/formulae/releasekit"
 brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
@@ -56,7 +51,6 @@ brew "tombell/formulae/tldr"
 
 # Utilities
 cask "1password"
-cask "hex-fiend"
 cask "the-unarchiver"
 
 # Terminals
@@ -71,11 +65,14 @@ cask "discord"
 cask "slack"
 
 # Media
+cask "dupeguru"
 cask "mpv"
-# cask "spotify"
 
 # Audio
 cask "xact"
+
+# Fonts
+cask "font-hack"
 
 # My casks
 cask "rustyrobots/formulae/stark"
