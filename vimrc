@@ -138,5 +138,3 @@ vnoremap Q gq
 
 " Remove preview window when using completion
 set completeopt-=preview
-
-let g:sql_type_default = 'pgsql'
