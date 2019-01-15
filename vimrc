@@ -33,13 +33,13 @@ Plug 'jacoborus/tender.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
 
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " SQL
 Plug 'exu/pgsql.vim'
