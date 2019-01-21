@@ -36,7 +36,7 @@ Plug 'jremmen/vim-ripgrep'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
-" JavaScript and TypeScript
+" JavaScript/TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
@@ -50,11 +50,9 @@ Plug 'hail2u/vim-css3-syntax'
 " Templates
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
-" Writing
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-
 " Editing
 Plug 'editorconfig/editorconfig-vim'
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
