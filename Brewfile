@@ -51,6 +51,7 @@ brew "tombell/formulae/tldr"
 
 # Utilities
 cask "1password"
+cask "paragon-ntfs"
 cask "the-unarchiver"
 
 # Terminals
