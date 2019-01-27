@@ -54,6 +54,9 @@ cask "1password"
 cask "paragon-ntfs"
 cask "the-unarchiver"
 
+# Development
+cask "postico"
+
 # Terminals
 cask "iterm2"
 
