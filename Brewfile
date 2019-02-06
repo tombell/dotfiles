@@ -17,7 +17,6 @@ tap "tombell/formulae"
 
 # Utilities
 brew "git"
-brew "hexyl"
 brew "jq"
 brew "openssl"
 brew "ripgrep"
