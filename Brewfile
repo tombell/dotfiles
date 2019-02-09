@@ -15,28 +15,20 @@ tap "tombell/formulae"
 # FORMULAE
 # ------------------------------------------------------------------------------
 
-# Utilities
 brew "git"
-brew "jq"
-brew "openssl"
-brew "ripgrep"
-brew "thoughtbot/formulae/rcm"
-
-# Shells
-brew "zsh"
-brew "zsh-syntax-highlighting"
-
-# Editors
-brew "neovim"
-
-# Languages
 brew "go"
+brew "jq"
+brew "neovim"
 brew "nodenv"
+brew "openssl"
 brew "rbenv"
 brew "rbenv-gemset"
-
-# Media
+brew "ripgrep"
+brew "shellcheck"
+brew "thoughtbot/formulae/rcm"
 brew "youtube-dl"
+brew "zsh"
+brew "zsh-syntax-highlighting"
 
 # My formulae
 brew "tombell/formulae/lock"
@@ -48,34 +40,18 @@ brew "tombell/formulae/tldr"
 # CASKS
 # ------------------------------------------------------------------------------
 
-# Utilities
 cask "1password"
-cask "paragon-ntfs"
-cask "the-unarchiver"
-
-# Development
-cask "postico"
-
-# Terminals
-cask "iterm2"
-
-# Browsers
+cask "discord"
+cask "dupeguru"
 # cask "firefox"
 cask "google-chrome"
-
-# Chat
-cask "discord"
-cask "slack"
-
-# Media
-cask "dupeguru"
+cask "iterm2"
 cask "mpv"
-
-# Audio
+cask "paragon-ntfs"
+cask "postico"
+cask "slack"
+cask "the-unarchiver"
 cask "xact"
-
-# Fonts
-cask "font-hack"
 
 # My casks
 cask "rustyrobots/formulae/stark"
