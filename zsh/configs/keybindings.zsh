@@ -8,5 +8,3 @@ bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 bindkey "^R" history-incremental-search-backward
 bindkey "^P" history-search-backward
-bindkey "^N" insert-last-word
-bindkey "^Q" push-line-or-edit
