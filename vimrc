@@ -39,6 +39,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " JavaScript/TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
 
 " SQL
@@ -49,6 +50,9 @@ Plug 'hail2u/vim-css3-syntax'
 
 " Templates
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
+
+" Caddy
+Plug 'isobit/vim-caddyfile'
 
 " Editing
 Plug 'editorconfig/editorconfig-vim'
