@@ -8,6 +8,6 @@ fi
 
 GOPATH=$HOME/.go
 
-PATH="$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
 
 export -U PATH GOPATH
