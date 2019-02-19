@@ -7,6 +7,7 @@
 tap "caskroom/cask"
 tap "caskroom/fonts"
 tap "caskroom/versions"
+tap "homebrew/cask-drivers"
 tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
