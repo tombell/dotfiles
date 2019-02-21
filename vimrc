@@ -38,7 +38,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " JavaScript/TypeScript
 Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
 
