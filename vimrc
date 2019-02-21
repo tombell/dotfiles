@@ -57,7 +57,6 @@ Plug 'isobit/vim-caddyfile'
 " Editing
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
