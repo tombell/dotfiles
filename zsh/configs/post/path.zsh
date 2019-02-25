@@ -8,6 +8,7 @@ fi
 
 GOPATH=$HOME/.go
 
+PATH="$HOME/.deno/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 
 export -U PATH GOPATH
