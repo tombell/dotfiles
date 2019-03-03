@@ -4,10 +4,10 @@
 # TAPS
 # ------------------------------------------------------------------------------
 
-tap "caskroom/cask"
-tap "caskroom/fonts"
-tap "caskroom/versions"
+tap "homebrew/cask"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
