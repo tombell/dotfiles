@@ -33,14 +33,23 @@ Plug 'jacoborus/tender.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
 
+" Editing
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
+
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
-" JavaScript/TypeScript
+" JavaScript
 Plug 'pangloss/vim-javascript'
+
+" TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
+
+" Swift
+Plug 'keith/swift.vim', { 'for': 'swift' }
 
 " SQL
 Plug 'exu/pgsql.vim'
@@ -48,16 +57,11 @@ Plug 'exu/pgsql.vim'
 " Stylesheets
 Plug 'hail2u/vim-css3-syntax'
 
+" Markdown
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+
 " Templates
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
-
-" Caddy
-Plug 'isobit/vim-caddyfile'
-
-" Editing
-Plug 'editorconfig/editorconfig-vim'
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-commentary'
 
 call plug#end()
 
