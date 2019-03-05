@@ -16,6 +16,7 @@ tap "tombell/formulae"
 # FORMULAE
 # ------------------------------------------------------------------------------
 
+brew "fzf"
 brew "git"
 brew "go"
 brew "jq"
