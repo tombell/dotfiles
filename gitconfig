@@ -24,9 +24,6 @@
   excludesfile = ~/.gitignore
   autocrlf = input
 
-[commit]
-  template = ~/.gitmessage
-
 [fetch]
   prune = true
 
