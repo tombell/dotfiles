@@ -26,15 +26,11 @@ if has('nvim')
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 endif
 
-" Colors
 Plug 'jacoborus/tender.vim'
 
-" Utility
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
-
-" Editing
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-commentary'
 
 " Go
@@ -48,20 +44,18 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
 
-" Swift
-Plug 'keith/swift.vim', { 'for': 'swift' }
-
 " SQL
-Plug 'exu/pgsql.vim'
+Plug 'exu/pgsql.vim', { 'for': 'sql' }
 
 " Stylesheets
 Plug 'hail2u/vim-css3-syntax'
 
+" Templating
+Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
+
 " Markdown
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 
-" Templates
-Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
 call plug#end()
 
@@ -83,9 +77,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
