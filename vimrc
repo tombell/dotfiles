@@ -28,9 +28,12 @@ endif
 
 Plug 'jacoborus/tender.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'jremmen/vim-ripgrep'
+" Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-commentary'
 
 " Go
@@ -55,7 +58,6 @@ Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
 " Markdown
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-
 
 call plug#end()
 
@@ -150,3 +152,25 @@ au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
   \  let b:liquid_subtype = 'markdown' |
   \  set ft=liquid |
   \ endif
+
+" Use ctrl-p for fuzzy file finding
+nnoremap <silent> <C-p> :Files<cr>
+
+" Default fzf layout
+let g:fzf_layout = { 'down': '~30%' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
