@@ -59,6 +59,9 @@ Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 " Markdown
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
 
+" TOML
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+
 call plug#end()
 
 filetype plugin indent on
