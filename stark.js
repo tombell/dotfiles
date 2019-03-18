@@ -27,39 +27,6 @@ Bind.on('s', MODIFIERS, () => {
 });
 
 // -----------------------------------------------------------------------------
-// SPOTIFY CONTROLLING
-// -----------------------------------------------------------------------------
-
-Bind.on('q', MODIFIERS, () => {
-  Stark.run('/usr/bin/osascript', [
-    '-e', `tell application "Spotify"`,
-    '-e', `  set player position to 0`,
-    '-e', `  previous track`,
-    '-e', `end tell`,
-  ]);
-});
-
-Bind.on('w', MODIFIERS, () => {
-  Stark.run('/usr/bin/osascript', ['-e', `tell application "Spotify" to playpause`]);
-});
-
-Bind.on('e', MODIFIERS, () => {
-  Stark.run('/usr/bin/osascript', ['-e', `tell application "Spotify" to next track`]);
-});
-
-// -----------------------------------------------------------------------------
-// ITERM CONTROLLING
-// -----------------------------------------------------------------------------
-
-Bind.on('i', MODIFIERS, () => {
-  Stark.run('/usr/bin/osascript', [
-    '-e', `tell application "iTerm2"`,
-    '-e', `  create window with profile "Default"`,
-    '-e', `end tell`,
-  ]);
-});
-
-// -----------------------------------------------------------------------------
 // WINDOW CENTERING
 // -----------------------------------------------------------------------------
 
