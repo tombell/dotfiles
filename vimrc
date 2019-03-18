@@ -30,10 +30,7 @@ Plug 'jacoborus/tender.vim'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-commentary'
 
 " Go
