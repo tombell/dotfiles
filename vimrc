@@ -27,6 +27,7 @@ if has('nvim')
 endif
 
 Plug 'jacoborus/tender.vim'
+Plug 'kadekillary/Turtles'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -69,7 +70,7 @@ endif
 
 syntax on
 set background=dark
-colorscheme tender
+colorscheme turtles
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
