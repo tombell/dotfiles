@@ -26,11 +26,15 @@ if has('nvim')
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 endif
 
+" Colors
 Plug 'jacoborus/tender.vim'
 Plug 'kadekillary/Turtles'
 
+" fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+" Utility
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 
@@ -45,9 +49,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
 
-" SQL
-Plug 'exu/pgsql.vim', { 'for': 'sql' }
-
 " Stylesheets
 Plug 'hail2u/vim-css3-syntax'
 
@@ -56,9 +57,6 @@ Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
 " Markdown
 Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
-
-" TOML
-Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 call plug#end()
 
