@@ -38,6 +38,7 @@ Plug 'junegunn/fzf.vim'
 " Utility
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'itchyny/vim-gitbranch'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -69,7 +70,7 @@ endif
 
 syntax on
 set background=dark
-colorscheme turtles
+colorscheme dracula
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
@@ -161,16 +162,46 @@ let g:fzf_layout = { 'down': '~10%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+\ { 'fg'      : ['fg', 'Normal'],
+  \ 'bg'      : ['bg', 'Normal'],
+  \ 'hl'      : ['fg', 'Comment'],
+  \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+'     : ['fg', 'Statement'],
+  \ 'info'    : ['fg', 'PreProc'],
+  \ 'border'  : ['fg', 'Ignore'],
+  \ 'prompt'  : ['fg', 'Conditional'],
+  \ 'pointer' : ['fg', 'Exception'],
+  \ 'marker'  : ['fg', 'Keyword'],
+  \ 'spinner' : ['fg', 'Label'],
+  \ 'header'  : ['fg', 'Comment'] }
+
+function! StatuslineGitBranch()
+  let l:branchname = gitbranch#name()
+  return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
+endfunction
+
+" Configure a new statusline
+set statusline=
+
+" Git branch information
+set statusline+=%2*%{StatuslineGitBranch()}
+
+" Current file information
+set statusline+=\%*
+set statusline+=%1*\ ‹‹
+set statusline+=%1*\ %f
+set statusline+=%1*\ ››
+set statusline+=%1*\ %m
+
+" Line and column number information
+set statusline+=%=
+set statusline+=%2*\ ‹‹
+set statusline+=%2*\ %l
+set statusline+=%2*\ ::
+set statusline+=%2*\ %c
+set statusline+=%2*\ ››\ %*
+
+hi User1 guifg=#f8f8f2 guibg=#44475a
+hi User2 guifg=#000000 guibg=#bd93f9
+hi User3 guifg=#000000 guibg=#98D750
