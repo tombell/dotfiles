@@ -44,8 +44,6 @@ brew "tombell/formulae/tldr"
 
 cask "1password"
 cask "discord"
-cask "dupeguru"
-# cask "firefox"
 cask "google-chrome"
 cask "iterm2"
 cask "mpv"
