@@ -157,7 +157,7 @@ au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
 nnoremap <silent> <C-p> :Files<cr>
 
 " Default fzf layout
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~10%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
