@@ -4,6 +4,9 @@ setlocal spell
 " Automatically wrap at 80 characters
 setlocal textwidth=80
 
-" Disable vim-markdown mappings
-let g:markdown_enable_mappings = 0
-let g:markdown_enable_insert_mappings = 0
+" Disable folding
+let g:vim_markdown_folding_disabled = 1
+
+" Enable TOML and YAML front matter
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1

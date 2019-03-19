@@ -55,8 +55,11 @@ Plug 'hail2u/vim-css3-syntax'
 " Templating
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
 
+" TOML
+Plug 'cespare/vim-toml'
+
 " Markdown
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
