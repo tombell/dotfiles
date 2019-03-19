@@ -29,7 +29,6 @@ endif
 " Colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jacoborus/tender.vim'
-Plug 'kadekillary/Turtles'
 
 " fzf
 Plug '/usr/local/opt/fzf'
