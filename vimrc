@@ -177,32 +177,27 @@ let g:fzf_colors =
   \ 'spinner' : ['fg', 'Label'],
   \ 'header'  : ['fg', 'Comment'] }
 
-function! StatuslineGitBranch()
-  let l:branchname = gitbranch#name()
-  return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
-endfunction
-
-" Configure a new statusline
-set statusline=
-
-" Git branch information
-set statusline+=%2*%{StatuslineGitBranch()}
-
-" Current file information
-set statusline+=\%*
-set statusline+=%1*\ ‹‹
-set statusline+=%1*\ %f
-set statusline+=%1*\ ››
-set statusline+=%1*\ %m
-
-" Line and column number information
-set statusline+=%=
-set statusline+=%2*\ ‹‹
-set statusline+=%2*\ %l
-set statusline+=%2*\ ::
-set statusline+=%2*\ %c
-set statusline+=%2*\ ››\ %*
-
+" Define user colours for statusline
 hi User1 guifg=#f8f8f2 guibg=#44475a
 hi User2 guifg=#000000 guibg=#bd93f9
 hi User3 guifg=#000000 guibg=#98D750
+
+" Start a new statusline
+set statusline=
+
+" Display git branch information
+set statusline+=%2*\ %{gitbranch#name()}\ "
+
+" File path information
+set statusline+=\%*
+set statusline+=%1*\ %f
+set statusline+=%1*\ %m
+
+" File information
+set statusline+=%=
+set statusline+=%*\ %y
+set statusline+=%*\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
+
+" Line and column number information
+set statusline+=%2*\ %l :: %c\ "
+set statusline+=%*
