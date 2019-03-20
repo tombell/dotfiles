@@ -7,7 +7,10 @@ setlocal noexpandtab
 let g:go_template_autocreate = 0
 
 " Use goimports when saving
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
+
+" Use gopls for definitions
+let g:go_def_mode = 'guru'
 
 " Enable extra highlighting options
 let g:go_highlight_types = 1
