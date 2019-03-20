@@ -188,16 +188,16 @@ set statusline=
 " Display git branch information
 set statusline+=%2*\ %{gitbranch#name()}\ "
 
-" File path information
+" Display the file path and modified flag
 set statusline+=\%*
 set statusline+=%1*\ %f
 set statusline+=%1*\ %m
 
-" File information
+" Display the file type, encoding, and file format
 set statusline+=%=
 set statusline+=%*\ %y
 set statusline+=%*\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
 
-" Line and column number information
-set statusline+=%2*\ %l :: %c\ "
+" Display line number and column number
+set statusline+=%2*\ %3l\/%c\ "
 set statusline+=%*
