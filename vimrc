@@ -189,15 +189,11 @@ set statusline=
 set statusline+=%2*\ %{gitbranch#name()}\ "
 
 " Display the file path and modified flag
-set statusline+=\%*
-set statusline+=%1*\ %f
-set statusline+=%1*\ %m
+set statusline+=%1*\ %f\ %m
 
 " Display the file type, encoding, and file format
 set statusline+=%=
-set statusline+=%*\ %y
-set statusline+=%*\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
+set statusline+=%*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
 
 " Display line number and column number
-set statusline+=%2*\ %3l\/%c\ "
-set statusline+=%*
+set statusline+=%2*\ %3l\/%c\ %*
