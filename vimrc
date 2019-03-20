@@ -147,7 +147,7 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " Detect when a html or markdown file required liquid highlighting
 au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html set ft=liquid
-au BufNewFile,BufRead *.html,*.xml,*.textile
+au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '---' | set ft=liquid | endif
 au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
   \ if getline(1) == '---' |
