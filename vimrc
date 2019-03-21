@@ -196,4 +196,4 @@ set statusline+=%=
 set statusline+=%*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
 
 " Display line number and column number
-set statusline+=%2*\ %3l\/%c\ %*
+set statusline+=%2*\ %l\/%c\ %*
