@@ -7,8 +7,6 @@ if command -v nodenv >/dev/null; then
 fi
 
 GOPATH=$HOME/.go
-
-PATH="$HOME/.deno/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 
 export -U PATH GOPATH
