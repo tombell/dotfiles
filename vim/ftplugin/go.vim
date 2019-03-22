@@ -10,7 +10,7 @@ let g:go_template_autocreate = 0
 let g:go_fmt_command = 'goimports'
 
 " Use gopls for definitions
-let g:go_def_mode = 'guru'
+let g:go_def_mode = 'gopls'
 
 " Enable extra highlighting options
 let g:go_highlight_types = 1
