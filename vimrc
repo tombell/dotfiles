@@ -145,7 +145,7 @@ set completeopt-=preview
 " Set ruby path to be the rbenv shims directory
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-" Detect when a html or markdown file required liquid highlighting
+" Detect when a html or markdown file requires liquid highlighting
 au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html set ft=liquid
 au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '---' | set ft=liquid | endif
@@ -154,6 +154,10 @@ au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
   \  let b:liquid_subtype = 'markdown' |
   \  set ft=liquid |
   \ endif
+
+" Detect when a html file requires Go HTML template highlighting.
+au BufNewFile,BufRead *.html,*.xml
+  \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
 
 " Use ctrl-p for fuzzy file finding
 nnoremap <silent> <C-p> :Files<cr>
