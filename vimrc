@@ -187,18 +187,8 @@ hi User2 guifg=#272936 guibg=#bd93f9
 
 " Start a new statusline
 set statusline=
-
-" Display git branch information
-set statusline+=%2*\ %{gitbranch#name()}\ "
-
-" Display the file path and modified flag
-set statusline+=%1*\ %f\ %m
-
-" Align next sections to the right
+set statusline+=%2*\ ±\ %{gitbranch#name()}\ "
+set statusline+=%1*\ %f\%m
 set statusline+=%=
-
-" Display the file type, encoding, and file format
 set statusline+=%1*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
-
-" Display line number and column number
 set statusline+=%2*\ %l\/%c\ %*
