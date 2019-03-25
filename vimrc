@@ -145,7 +145,7 @@ set completeopt-=preview
 " Set ruby path to be the rbenv shims directory
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-" Detect when a html or markdown file required liquid highlighting
+" Detect when a html or markdown file requires liquid highlighting
 au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html set ft=liquid
 au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '---' | set ft=liquid | endif
@@ -154,6 +154,10 @@ au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
   \  let b:liquid_subtype = 'markdown' |
   \  set ft=liquid |
   \ endif
+
+" Detect when a html file requires Go HTML template highlighting.
+au BufNewFile,BufRead *.html,*.xml
+  \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
 
 " Use ctrl-p for fuzzy file finding
 nnoremap <silent> <C-p> :Files<cr>
@@ -179,21 +183,12 @@ let g:fzf_colors =
 
 " Define user colours for statusline
 hi User1 guifg=#f8f8f2 guibg=#44475a
-hi User2 guifg=#000000 guibg=#bd93f9
-hi User3 guifg=#000000 guibg=#98D750
+hi User2 guifg=#272936 guibg=#bd93f9
 
 " Start a new statusline
 set statusline=
-
-" Display git branch information
-set statusline+=%2*\ %{gitbranch#name()}\ "
-
-" Display the file path and modified flag
-set statusline+=%1*\ %f\ %m
-
-" Display the file type, encoding, and file format
+set statusline+=%2*\ ±\ %{gitbranch#name()}\ "
+set statusline+=%1*\ %f\%m
 set statusline+=%=
-set statusline+=%*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
-
-" Display line number and column number
+set statusline+=%1*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
 set statusline+=%2*\ %l\/%c\ %*
