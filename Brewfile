@@ -36,7 +36,6 @@ brew "zsh-syntax-highlighting"
 brew "tombell/formulae/lock"
 brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
-brew "tombell/formulae/tldr"
 
 # ------------------------------------------------------------------------------
 # CASKS
