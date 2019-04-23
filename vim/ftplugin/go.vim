@@ -9,8 +9,9 @@ let g:go_template_autocreate = 0
 " Use goimports when saving
 let g:go_fmt_command = 'goimports'
 
-" Use gopls for definitions
+" Use gopls for definitions and information
 let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
 
 " Enable extra highlighting options
 let g:go_highlight_types = 1
