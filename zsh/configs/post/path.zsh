@@ -9,5 +9,6 @@ fi
 GOPATH=$HOME/.go
 PATH="$GOPATH/bin:$PATH"
 PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
 
 export -U PATH GOPATH
