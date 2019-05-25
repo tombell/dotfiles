@@ -36,10 +36,9 @@ Plug 'junegunn/fzf.vim'
 " Utility
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
-Plug 'itchyny/vim-gitbranch'
 
 " Go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
@@ -53,10 +52,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'hail2u/vim-css3-syntax'
 
 " Templating
-Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'handlebars' }
-
-" TOML
-Plug 'cespare/vim-toml'
+Plug 'joukevandermaas/vim-ember-hbs'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
@@ -186,15 +182,3 @@ let g:fzf_colors =
   \ 'marker'  : ['fg', 'Keyword'],
   \ 'spinner' : ['fg', 'Label'],
   \ 'header'  : ['fg', 'Comment'] }
-
-" Define user colours for statusline
-hi User1 guifg=#f8f8f2 guibg=#44475a
-hi User2 guifg=#272936 guibg=#bd93f9
-
-" Start a new statusline
-set statusline=
-set statusline+=%2*\ ±\ %{gitbranch#name()}\ "
-set statusline+=%1*\ %f\%m
-set statusline+=%=
-set statusline+=%1*\ %y\ %{(&fenc!=''?&fenc:&enc)}\ \[%{&ff}]\ "
-set statusline+=%2*\ %l\/%c\ %*
