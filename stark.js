@@ -189,16 +189,4 @@ Bind.on('t', MODIFIERS, () => {
 // EVENTS
 // -----------------------------------------------------------------------------
 
-Event.on('applicationDidLaunch', (app) => {
-  if (app.name === apps.iterm && !app.isTerminated) {
-    app.windows({ visible: true }).forEach((win) => {
-      const r = win.screen.frameWithoutDockOrMenu;
-      const x = r.x + MARGIN;
-      const y = r.y + MARGIN;
-      const width = r.width / 2 - (MARGIN + (MARGIN / 2));
-      const height = r.height - (MARGIN * 2);
-
-      win.setFrame({ x, y, width, height });
-    });
-  }
-});
+Event.on('applicationDidLaunch', (app) => {});
