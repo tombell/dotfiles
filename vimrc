@@ -36,7 +36,6 @@ Plug 'junegunn/fzf.vim'
 " Utility
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
-Plug 'w0rp/ale'
 
 " Go
 Plug 'fatih/vim-go'
@@ -183,13 +182,3 @@ let g:fzf_colors =
   \ 'marker'  : ['fg', 'Keyword'],
   \ 'spinner' : ['fg', 'Label'],
   \ 'header'  : ['fg', 'Comment'] }
-
-let g:ale_linters_explicit = 1
-let g:ale_linters = {
-\   'go': ['govet', 'golint'],
-\}
-
-let g:ale_set_signs = 0
-let g:ale_open_list = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
