@@ -27,7 +27,7 @@ if has('nvim')
 endif
 
 " Colors
-Plug 'arcticicestudio/nord-vim'
+Plug 'srcery-colors/srcery-vim'
 
 " fzf
 Plug '/usr/local/opt/fzf'
@@ -67,7 +67,7 @@ endif
 
 syntax on
 set background=dark
-colorscheme nord
+colorscheme srcery
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
