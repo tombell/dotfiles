@@ -57,6 +57,12 @@ Plug 'joukevandermaas/vim-ember-hbs'
 " Markdown
 Plug 'plasticboy/vim-markdown'
 
+" Prettier
+Plug 'prettier/vim-prettier', {
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript' ] }
+
 call plug#end()
 
 filetype plugin indent on
