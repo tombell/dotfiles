@@ -18,6 +18,7 @@ tap "tombell/formulae"
 # FORMULAE
 # ------------------------------------------------------------------------------
 
+# Core formulae
 brew "fzf"
 brew "git"
 brew "go"
@@ -45,15 +46,16 @@ brew "tombell/formulae/zengarden"
 # CASKS
 # ------------------------------------------------------------------------------
 
+# Core casks
 cask "1password"
 cask "appcleaner"
 cask "discord"
 cask "dupeguru"
 cask "google-chrome"
 cask "iterm2-nightly"
-# cask "logitech-options"
+cask "logitech-options"
 cask "mpv"
-# cask "paragon-ntfs"
+cask "paragon-ntfs"
 cask "rekordbox"
 cask "sketch"
 cask "slack-beta"
