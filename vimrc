@@ -51,9 +51,6 @@ Plug 'Quramy/tsuquyomi'
 " Stylesheets
 Plug 'hail2u/vim-css3-syntax'
 
-" Handlebars
-Plug 'joukevandermaas/vim-ember-hbs'
-
 " Markdown
 Plug 'plasticboy/vim-markdown'
 
