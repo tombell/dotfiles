@@ -52,7 +52,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'hail2u/vim-css3-syntax'
 
 " Markdown
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 
 " Prettier
 Plug 'prettier/vim-prettier', {
