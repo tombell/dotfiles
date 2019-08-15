@@ -42,6 +42,7 @@ Plug 'fatih/vim-go'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " TypeScript
 Plug 'leafgarland/typescript-vim'
