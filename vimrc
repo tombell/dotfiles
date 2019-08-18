@@ -37,8 +37,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 
+" SQL
+Plug 'lifepillar/pgsql.vim'
+
 " Go
 Plug 'fatih/vim-go'
+
+" Ruby
+Plug 'tpope/vim-rails'
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
@@ -150,6 +156,9 @@ set completeopt-=preview
 
 " Set ruby path to be the rbenv shims directory
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+" Set all SQL files to use PSQL highlighting
+let g:sql_type_default = 'pgsql'
 
 " Detect when a html or markdown file requires liquid highlighting
 au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html set ft=liquid
