@@ -37,6 +37,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 
+" TOML
+Plug 'cespare/vim-toml'
+
 " SQL
 Plug 'lifepillar/pgsql.vim'
 
