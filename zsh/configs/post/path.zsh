@@ -8,7 +8,9 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-GOPATH=$HOME/.go
-PATH="$GOPATH/bin:$PATH:"
+ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 
-export -U PATH GOPATH
+GOPATH=$HOME/.go
+PATH="$GOPATH/bin:$HOME/Library/Android/sdk/platform-tools:$PATH:"
+
+export -U PATH GOPATH ANDROID_SDK_ROOT
