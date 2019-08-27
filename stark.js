@@ -12,12 +12,6 @@ const GRID_HEIGHT = 10;
 // Margin to have around each window edge
 const MARGIN = 10;
 
-// App names
-const apps = {
-  iterm: 'iTerm2',
-  tweetbot: 'Tweetbot',
-};
-
 // -----------------------------------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------------------------------
@@ -162,31 +156,3 @@ Bind.on('k', MODIFIERS, () => {
     Space.all()[space - 1].addWindows([win]);
   });
 });
-
-// -----------------------------------------------------------------------------
-// APP POSITIONING
-// -----------------------------------------------------------------------------
-
-Bind.on('t', MODIFIERS, () => {
-  const app = App.find(apps.tweetbot);
-
-  if (!app) {
-    return;
-  }
-
-  _.each(app.windows(), (win) => {
-    const r = win.screen.frameWithoutDockOrMenu;
-    const x = r.x + MARGIN;
-    const y = r.y + MARGIN;
-    const width = r.width / 4 - (MARGIN + (MARGIN / 2));
-    const height = r.height - (MARGIN * 2);
-
-    win.setFrame({ x, y, width, height });
-  });
-});
-
-// -----------------------------------------------------------------------------
-// EVENTS
-// -----------------------------------------------------------------------------
-
-Event.on('applicationDidLaunch', (app) => {});
