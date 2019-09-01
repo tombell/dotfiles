@@ -184,7 +184,7 @@ au BufNewFile,BufRead *.html,*.xml
 nnoremap <silent> <C-p> :Files<cr>
 
 " Default fzf layout
-let g:fzf_layout = { 'down': '~10%' }
+let g:fzf_layout = { 'down': '~25%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
