@@ -70,6 +70,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', {
   \ 'for': [
     \ 'javascript',
+    \ 'ruby',
     \ 'typescript' ] }
 
 call plug#end()
