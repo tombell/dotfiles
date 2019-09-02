@@ -35,6 +35,8 @@ Plug 'junegunn/fzf.vim'
 
 " Utility
 Plug 'editorconfig/editorconfig-vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
 " TOML
@@ -68,6 +70,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', {
   \ 'for': [
     \ 'javascript',
+    \ 'ruby',
     \ 'typescript' ] }
 
 call plug#end()
@@ -181,7 +184,7 @@ au BufNewFile,BufRead *.html,*.xml
 nnoremap <silent> <C-p> :Files<cr>
 
 " Default fzf layout
-let g:fzf_layout = { 'down': '~10%' }
+let g:fzf_layout = { 'down': '~25%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
