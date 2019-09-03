@@ -39,6 +39,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
+" Prettier
+Plug 'prettier/vim-prettier', {
+  \ 'for': [
+    \ 'javascript',
+    \ 'ruby',
+    \ 'typescript' ] }
+
 " TOML
 Plug 'cespare/vim-toml'
 
@@ -66,12 +73,8 @@ Plug 'hail2u/vim-css3-syntax'
 " Markdown
 Plug 'plasticboy/vim-markdown'
 
-" Prettier
-Plug 'prettier/vim-prettier', {
-  \ 'for': [
-    \ 'javascript',
-    \ 'ruby',
-    \ 'typescript' ] }
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
