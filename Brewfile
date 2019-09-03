@@ -6,7 +6,6 @@
 
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 # Third party taps
@@ -22,15 +21,13 @@ tap "tombell/formulae"
 brew "fzf"
 brew "git"
 brew "go"
-brew "jq"
 brew "neovim"
 brew "nodenv"
-brew "openssl"
 brew "rbenv"
 brew "rbenv-gemset"
 brew "ripgrep"
-brew "youtube-dl"
 brew "zsh"
+brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 # Thoughtbot formulae
@@ -40,6 +37,7 @@ brew "thoughtbot/formulae/rcm"
 brew "tombell/formulae/lock"
 brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
+brew "tombell/formulae/releasekit"
 brew "tombell/formulae/zengarden"
 
 # ------------------------------------------------------------------------------
@@ -50,17 +48,13 @@ brew "tombell/formulae/zengarden"
 cask "1password"
 cask "appcleaner"
 cask "discord"
-cask "dupeguru"
 cask "google-chrome"
-cask "iterm2-nightly"
+cask "iterm2"
 cask "logitech-options"
 cask "mpv"
 cask "paragon-ntfs"
-cask "rekordbox"
-cask "sketch"
-cask "slack-beta"
+cask "slack"
 cask "the-unarchiver"
-cask "xact"
 
 # Rusty Robots casks
 cask "rustyrobots/formulae/stark"
