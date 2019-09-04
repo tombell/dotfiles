@@ -53,6 +53,7 @@ cask "iterm2"
 cask "logitech-options"
 cask "mpv"
 cask "paragon-ntfs"
+cask "postico"
 cask "slack"
 cask "the-unarchiver"
 
