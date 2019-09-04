@@ -26,10 +26,10 @@ if has('nvim')
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 endif
 
-" Colors
+" Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" fzf
+" Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
