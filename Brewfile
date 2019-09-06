@@ -9,7 +9,6 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 
 # Third party taps
-tap "rustyrobots/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
 
@@ -57,5 +56,5 @@ cask "postico"
 cask "slack"
 cask "the-unarchiver"
 
-# Rusty Robots casks
-cask "rustyrobots/formulae/stark"
+# My casks
+cask "tombell/formulae/stark"
