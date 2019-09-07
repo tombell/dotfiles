@@ -164,16 +164,6 @@ set completeopt-=preview
 " Set all SQL files to use PSQL highlighting
 let g:sql_type_default = 'pgsql'
 
-" Detect when a html or markdown file requires liquid highlighting
-au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html set ft=liquid
-au BufNewFile,BufRead *.html,*.xml
-  \ if getline(1) == '---' | set ft=liquid | endif
-au BufNewFile,BufRead *.markdown,*.mkd,*.mkdn,*.md
-  \ if getline(1) == '---' |
-  \  let b:liquid_subtype = 'markdown' |
-  \  set ft=liquid |
-  \ endif
-
 " Detect when a html file requires Go HTML template highlighting.
 au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
