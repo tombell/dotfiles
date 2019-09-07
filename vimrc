@@ -46,11 +46,17 @@ Plug 'prettier/vim-prettier', {
     \ 'ruby',
     \ 'typescript' ] }
 
+" Markdown
+Plug 'plasticboy/vim-markdown'
+
 " TOML
 Plug 'cespare/vim-toml'
 
 " SQL
 Plug 'lifepillar/pgsql.vim'
+
+" Stylesheets
+Plug 'hail2u/vim-css3-syntax'
 
 " Go
 Plug 'fatih/vim-go'
@@ -67,12 +73,6 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
-
-" Stylesheets
-Plug 'hail2u/vim-css3-syntax'
-
-" Markdown
-Plug 'plasticboy/vim-markdown'
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
