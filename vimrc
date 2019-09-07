@@ -56,7 +56,7 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'fatih/vim-go'
 
 " Ruby
-Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rails'
 
 " JavaScript
