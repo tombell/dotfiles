@@ -33,7 +33,6 @@ brew "thoughtbot/formulae/rcm"
 
 # My formulae
 brew "tombell/formulae/lock"
-brew "tombell/formulae/moniker"
 brew "tombell/formulae/prettytest"
 brew "tombell/formulae/releasekit"
 brew "tombell/formulae/zengarden"
