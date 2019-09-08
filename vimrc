@@ -43,11 +43,7 @@ Plug 'tpope/vim-commentary'
 Plug 'prettier/vim-prettier', {
   \ 'for': [
     \ 'javascript',
-    \ 'ruby',
     \ 'typescript' ] }
-
-" Markdown
-Plug 'plasticboy/vim-markdown'
 
 " TOML
 Plug 'cespare/vim-toml'
