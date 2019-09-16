@@ -7,6 +7,9 @@ alias v="$VISUAL"
 # pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# Temporarily map nvim until https://github.com/Homebrew/homebrew-core/issues/44324 is resolved.
+alias nvim="nvim 2> /dev/null"
+
 # make sure vim runs neovim
 alias vim="nvim"
 
