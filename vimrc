@@ -161,9 +161,9 @@ nnoremap Q gqap
 vnoremap Q gq
 
 " Remap W to same as w
-command W w
-command Wq wq
-command WQ wq
+command! W w
+command! Wq wq
+command! WQ wq
 
 " Remove preview window when using completion
 set completeopt-=preview
