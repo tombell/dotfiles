@@ -71,8 +71,13 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
 
-" Haskell
-Plug 'neovimhaskell/haskell-vim'
+" Completion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rudism/deoplete-tsuquyomi'
+
+  let g:deoplete#enable_at_startup = 1
+endif
 
 call plug#end()
 
@@ -170,7 +175,7 @@ let g:sql_type_default = 'pgsql'
 au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
 
-" Use ctrl-p for fuzzy file finding
+" Use Ctrl-P for fuzzy file finding
 nnoremap <silent> <C-p> :Files<cr>
 
 " Default fzf layout
