@@ -27,8 +27,8 @@ if has('nvim')
 endif
 
 " Themes
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -85,6 +85,9 @@ endif
 syntax on
 set background=dark
 colorscheme challenger_deep
+
+" Override the background color of line numbers.
+hi LineNr guibg=#1e1c31
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
