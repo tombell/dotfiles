@@ -28,6 +28,7 @@ endif
 
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -77,13 +78,13 @@ call plug#end()
 
 filetype plugin indent on
 
-if has("termguicolors")
+if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme challenger_deep
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
@@ -159,7 +160,7 @@ set completeopt-=preview
 " Set all SQL files to use PSQL highlighting
 let g:sql_type_default = 'pgsql'
 
-" Detect when a html file requires Go HTML template highlighting.
+" Detect when a html file requires Go HTML template highlighting
 au BufNewFile,BufRead *.html,*.xml
   \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
 
