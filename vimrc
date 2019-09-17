@@ -151,6 +151,8 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
+command W w
+
 " Remove preview window when using completion
 set completeopt-=preview
 
