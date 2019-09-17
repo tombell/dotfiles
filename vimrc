@@ -91,11 +91,11 @@ syntax on
 set background=dark
 colorscheme challenger_deep
 
-" Override the background color of line numbers.
+" Override the background color of line numbers
 hi LineNr guibg=#1e1c31
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
-" shell for syntax highlighting purposes.
+" shell for syntax highlighting purposes
 let g:is_posix = 1
 
 set tabstop=2
@@ -106,7 +106,7 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" Use one space, not two, after punctuation.
+" Use one space, not two, after punctuation
 set nojoinspaces
 
 set textwidth=80
