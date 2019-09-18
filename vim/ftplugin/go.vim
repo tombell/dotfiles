@@ -20,6 +20,6 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['golint']
 
 if has('nvim')
-  " Tell deoplete to use omnicomplete
+  " Setup deoplete for Go
   call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 endif

@@ -23,7 +23,10 @@ end
 call plug#begin()
 
 if has('nvim')
+  " Required by tsuquyomi
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+
+  " Completion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'rudism/deoplete-tsuquyomi'
 
