@@ -46,6 +46,9 @@ Plug 'prettier/vim-prettier', {
     \ 'javascript',
     \ 'typescript' ] }
 
+" Testing
+Plug 'janko/vim-test'
+
 " TOML
 Plug 'cespare/vim-toml'
 
@@ -59,6 +62,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'fatih/vim-go'
 
 " Ruby
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rails'
 
