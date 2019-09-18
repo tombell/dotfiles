@@ -24,6 +24,10 @@ call plug#begin()
 
 if has('nvim')
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'rudism/deoplete-tsuquyomi'
+
+  let g:deoplete#enable_at_startup = 1
 endif
 
 " Themes
@@ -74,14 +78,6 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
-
-" Completion
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'rudism/deoplete-tsuquyomi'
-
-  let g:deoplete#enable_at_startup = 1
-endif
 
 call plug#end()
 
