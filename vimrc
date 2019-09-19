@@ -157,10 +157,6 @@ set completeopt-=preview
 " Set all SQL files to use PSQL highlighting
 let g:sql_type_default = 'pgsql'
 
-" Detect when a html file requires Go HTML template highlighting
-au BufNewFile,BufRead *.html,*.xml
-  \ if getline(1) == '+++' | set ft=gohtmltmpl | endif
-
 " Use Ctrl-P for fuzzy file finding
 nnoremap <silent> <C-p> :Files<cr>
 
