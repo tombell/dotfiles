@@ -138,9 +138,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Always use vertical diffs
-set diffopt+=vertical
-
 " Keep search matches in the middle of the window
 nnoremap n nzzzv
 nnoremap N Nzzzv
