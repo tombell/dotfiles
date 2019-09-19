@@ -22,10 +22,8 @@ end
 
 call plug#begin()
 
-if has('nvim')
-  " Required by tsuquyomi
-  Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
-endif
+" Required by tsuquyomi
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Themes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
