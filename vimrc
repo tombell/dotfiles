@@ -25,12 +25,6 @@ call plug#begin()
 if has('nvim')
   " Required by tsuquyomi
   Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
-
-  " Completion
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'rudism/deoplete-tsuquyomi'
-
-  let g:deoplete#enable_at_startup = 1
 endif
 
 " Themes
@@ -56,15 +50,6 @@ Plug 'prettier/vim-prettier', {
 " Testing
 Plug 'janko/vim-test'
 
-" TOML
-Plug 'cespare/vim-toml'
-
-" SQL
-Plug 'lifepillar/pgsql.vim'
-
-" Stylesheets
-Plug 'hail2u/vim-css3-syntax'
-
 " Go
 Plug 'fatih/vim-go'
 
@@ -81,6 +66,11 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'Quramy/tsuquyomi'
+
+" Misc. language support
+Plug 'cespare/vim-toml'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'lifepillar/pgsql.vim'
 
 call plug#end()
 
