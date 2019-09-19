@@ -46,9 +46,6 @@ Plug 'prettier/vim-prettier', {
     \ 'javascript',
     \ 'typescript' ] }
 
-" Testing
-Plug 'janko/vim-test'
-
 " Go
 Plug 'fatih/vim-go'
 
