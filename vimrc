@@ -29,7 +29,6 @@ endif
 
 " Themes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
