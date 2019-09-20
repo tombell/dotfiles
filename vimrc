@@ -39,17 +39,13 @@ Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
 " Prettier
-Plug 'prettier/vim-prettier', {
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript' ] }
+Plug 'prettier/vim-prettier'
 
 " Go
 Plug 'fatih/vim-go'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rails'
 
 " JavaScript
