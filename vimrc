@@ -66,9 +66,7 @@ call plug#end()
 
 filetype plugin indent on
 
-if has('nvim') || has('termguicolors')
-  set termguicolors
-endif
+set termguicolors
 
 syntax on
 set background=dark
@@ -110,6 +108,12 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
 
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+set splitbelow
+set splitright
+
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
 
@@ -118,13 +122,6 @@ nnoremap <Leader><Leader> <C-^>
 
 " Close quickfix and location list windows
 nnoremap <Leader>a :cclose<Bar>:lclose<CR>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -140,35 +137,31 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
-" Remap W to same as w
 command! W w
 command! Wq wq
 command! WQ wq
 
+nnoremap <silent> <C-p> :Files<cr>
+nnoremap <silent> <C-f> :Rg<cr>
+
 " Remove preview window when using completion
 set completeopt-=preview
 
-" Set all SQL files to use PSQL highlighting
 let g:sql_type_default = 'pgsql'
 
-" Use Ctrl-P for fuzzy file finding
-nnoremap <silent> <C-p> :Files<cr>
-
-" Default fzf layout
 let g:fzf_layout = { 'down': '~25%' }
 
-" Customize fzf colors to match your color scheme
 let g:fzf_colors =
-\ { 'fg'      : ['fg', 'Normal'],
-  \ 'bg'      : ['bg', 'Normal'],
-  \ 'hl'      : ['fg', 'Comment'],
-  \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+'     : ['fg', 'Statement'],
-  \ 'info'    : ['fg', 'PreProc'],
-  \ 'border'  : ['fg', 'Ignore'],
-  \ 'prompt'  : ['fg', 'Conditional'],
-  \ 'pointer' : ['fg', 'Exception'],
-  \ 'marker'  : ['fg', 'Keyword'],
-  \ 'spinner' : ['fg', 'Label'],
-  \ 'header'  : ['fg', 'Comment'] }
+  \ { 'fg'      : ['fg', 'Normal'],
+    \ 'bg'      : ['bg', 'Normal'],
+    \ 'hl'      : ['fg', 'Comment'],
+    \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+'     : ['fg', 'Statement'],
+    \ 'info'    : ['fg', 'PreProc'],
+    \ 'border'  : ['fg', 'Ignore'],
+    \ 'prompt'  : ['fg', 'Conditional'],
+    \ 'pointer' : ['fg', 'Exception'],
+    \ 'marker'  : ['fg', 'Keyword'],
+    \ 'spinner' : ['fg', 'Label'],
+    \ 'header'  : ['fg', 'Comment'] }
