@@ -26,7 +26,7 @@ call plug#begin()
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Themes
-Plug 'kadekillary/Turtles'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -70,10 +70,7 @@ set termguicolors
 
 syntax on
 set background=dark
-colorscheme turtles
-
-" Override the background color of line numbers
-hi LineNr guibg=#191919
+colorscheme dracula
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
