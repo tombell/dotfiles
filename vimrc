@@ -26,7 +26,7 @@ call plug#begin()
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Themes
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'kadekillary/Turtles'
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -70,10 +70,10 @@ set termguicolors
 
 syntax on
 set background=dark
-colorscheme challenger_deep
+colorscheme turtles
 
 " Override the background color of line numbers
-hi LineNr guibg=#1e1c31
+hi LineNr guibg=#191919
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
