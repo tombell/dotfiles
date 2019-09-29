@@ -50,8 +50,8 @@ Plug 'tpope/vim-rails'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
-Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Misc. language support
@@ -134,10 +134,6 @@ nnoremap N Nzzzv
 nnoremap Q gqap
 vnoremap Q gq
 
-command! W w
-command! Wq wq
-command! WQ wq
-
 nnoremap <silent> <C-p> :Files<cr>
 nnoremap <silent> <C-f> :Rg<cr>
 
@@ -145,7 +141,17 @@ nnoremap <silent> <C-f> :Rg<cr>
 nnoremap <Space> za
 vnoremap <Space> za
 
-" Remove preview window when using completion
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+command! -bang Wqa wqa<bang>
+
 set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
