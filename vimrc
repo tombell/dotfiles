@@ -108,6 +108,9 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
+set foldlevelstart=99
+set foldmethod=syntax
+
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
 
@@ -138,6 +141,10 @@ command! WQ wq
 nnoremap <silent> <C-p> :Files<cr>
 nnoremap <silent> <C-f> :Rg<cr>
 
+" Use space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
+
 " Remove preview window when using completion
 set completeopt-=preview
 
@@ -160,7 +167,7 @@ let g:fzf_colors =
     \ 'spinner' : ['fg', 'Label'],
     \ 'header'  : ['fg', 'Comment'] }
 
-augroup fixjsx
+augroup fix_jsx_filetypes
   " Fix HTML tags highlighting
   hi link jsxTagName jsxComponentName
 
