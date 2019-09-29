@@ -156,8 +156,6 @@ set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
 
-let g:fzf_layout = { 'down': '~25%' }
-
 let g:fzf_colors =
   \ { 'fg'      : ['fg', 'Normal'],
     \ 'bg'      : ['bg', 'Normal'],
@@ -173,12 +171,9 @@ let g:fzf_colors =
     \ 'spinner' : ['fg', 'Label'],
     \ 'header'  : ['fg', 'Comment'] }
 
+" Fix some highlighting issues with JSX/TSX
 augroup fix_jsx_filetypes
-  " Fix HTML tags highlighting
   hi link jsxTagName jsxComponentName
-
-  " Handle filetypes for JSX and TSX until plugins are updated with default
-  " filetypes in nvim
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
