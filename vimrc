@@ -48,14 +48,11 @@ Plug 'fatih/vim-go'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
-" JavaScript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-
-" TypeScript
-Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
+" JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Misc. language support
 Plug 'cespare/vim-toml'
@@ -162,3 +159,13 @@ let g:fzf_colors =
     \ 'marker'  : ['fg', 'Keyword'],
     \ 'spinner' : ['fg', 'Label'],
     \ 'header'  : ['fg', 'Comment'] }
+
+augroup fixjsx
+  " Fix HTML tags highlighting
+  hi link jsxTagName jsxComponentName
+
+  " Handle filetypes for JSX and TSX until plugins are updated with default
+  " filetypes in nvim
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
