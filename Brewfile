@@ -33,9 +33,9 @@ brew "thoughtbot/formulae/rcm"
 
 # My formulae
 brew "tombell/formulae/lock"
-brew "tombell/formulae/prettytest"
-brew "tombell/formulae/releasekit"
-brew "tombell/formulae/zengarden"
+# brew "tombell/formulae/prettytest"
+# brew "tombell/formulae/releasekit"
+# brew "tombell/formulae/zengarden"
 
 # ------------------------------------------------------------------------------
 # CASKS
