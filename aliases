@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 alias l="ls -lAh"
 alias ll="ls -al"
 alias la="ls -A"
@@ -15,4 +17,53 @@ alias vim="nvim"
 # mixcloud for uploads
 rb2mc() {
   curl -F "playlist=@$1" https://rekordbox-playlist-api.herokuapp.com
+}
+
+# functions for modifying github repo settings
+
+_patch_github_repo() {
+  local nwo="$1"
+  local data="$2"
+
+  curl -H "Authorization: token $GITHUB_TOKEN" \
+       -X PATCH \
+       -d "$data" \
+       -s \
+       "https://api.github.com/repos/$nwo" > /dev/null
+}
+
+enable_issues() {
+  local nwo="$1"
+  echo "Enabling issues for $nwo..."
+  _patch_github_repo "$nwo" '{"has_issues": true}'
+}
+
+disable_issues() {
+  local nwo="$1"
+  echo "Disabling issues for $nwo..."
+  _patch_github_repo "$nwo" '{"has_issues": false}'
+}
+
+enable_projects() {
+  local nwo="$1"
+  echo "Enabling projects for $nwo..."
+  _patch_github_repo "$nwo" '{"has_projects": true}'
+}
+
+disable_projects() {
+  local nwo="$1"
+  echo "Disabling projects for $nwo..."
+  _patch_github_repo "$nwo" '{"has_projects": false}'
+}
+
+enable_wiki() {
+  local nwo="$1"
+  echo "Enabling wiki for $nwo..."
+  _patch_github_repo "$nwo" '{"has_wiki": true}'
+}
+
+disable_wiki() {
+  local nwo="$1"
+  echo "Disabling wiki for $nwo..."
+  _patch_github_repo "$nwo" '{"has_wiki": false}'
 }
