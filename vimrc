@@ -11,14 +11,9 @@ set incsearch
 set nohlsearch
 set laststatus=2
 set autowrite
-
 set notitle
 set cmdheight=2
 set shortmess=filtIoOA
-
-if &compatible
-  set nocompatible
-end
 
 call plug#begin()
 
@@ -138,22 +133,10 @@ nnoremap Q gqap
 vnoremap Q gq
 
 nnoremap <silent> <C-p> :Files<cr>
-nnoremap <silent> <C-f> :Rg<cr>
 
 " Use space to toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
-
-command! -bang E e<bang>
-command! -bang Q q<bang>
-command! -bang W w<bang>
-command! -bang QA qa<bang>
-command! -bang Qa qa<bang>
-command! -bang Wa wa<bang>
-command! -bang WA wa<bang>
-command! -bang Wq wq<bang>
-command! -bang WQ wq<bang>
-command! -bang Wqa wqa<bang>
 
 set completeopt-=preview
 
@@ -181,6 +164,7 @@ augroup fix_jsx_filetypes
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
+" Configure linters for ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \  'ruby': ['rubocop']
