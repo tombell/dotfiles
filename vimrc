@@ -180,3 +180,5 @@ augroup fix_jsx_filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
+
+let g:ale_linters = {}
