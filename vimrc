@@ -25,6 +25,9 @@ call plug#begin()
 " Required by tsuquyomi
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
+" Linting
+Plug 'dense-analysis/ale'
+
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 
