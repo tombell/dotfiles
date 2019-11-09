@@ -181,4 +181,7 @@ augroup fix_jsx_filetypes
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
-let g:ale_linters = {}
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\  'ruby': ['rubocop']
+\}
