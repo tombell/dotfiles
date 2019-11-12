@@ -164,8 +164,11 @@ augroup fix_jsx_filetypes
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
-" Configure linters for ALE
-let g:ale_linters_explicit = 1
 let g:ale_linters = {
-\  'ruby': ['rubocop']
+\   'ruby': ['rubocop'],
 \}
+
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_ruby_rubocop_executable = 'bundle'
