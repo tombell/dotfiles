@@ -33,9 +33,6 @@ brew "thoughtbot/formulae/rcm"
 
 # My formulae
 brew "tombell/formulae/lock"
-# brew "tombell/formulae/prettytest"
-# brew "tombell/formulae/releasekit"
-# brew "tombell/formulae/zengarden"
 
 # ------------------------------------------------------------------------------
 # CASKS
@@ -47,11 +44,10 @@ cask "appcleaner"
 cask "discord"
 cask "google-chrome"
 cask "iterm2"
-# cask "logitech-options"
+cask "logitech-options"
 cask "mpv"
-# cask "paragon-ntfs"
-# cask "postico"
-cask "slack"
+cask "paragon-ntfs"
+cask "postico"
 cask "the-unarchiver"
 
 # My casks
