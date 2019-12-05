@@ -32,7 +32,6 @@ Plug 'junegunn/fzf.vim'
 
 " Utility
 Plug 'editorconfig/editorconfig-vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
