@@ -1,3 +1,5 @@
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # export env var for projects path
 export PROJECTS="$HOME/Code"
 
