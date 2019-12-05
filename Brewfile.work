@@ -17,4 +17,7 @@ tap "homebrew/cask"
 # ------------------------------------------------------------------------------
 
 # Core casks
+cask "chromedriver"
 cask "slack"
+cask "visual-studio-code"
+cask "zoomus"
