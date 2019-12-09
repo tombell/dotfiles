@@ -1,2 +1,2 @@
-EXCLUDES="Brewfile* LICENSE README.md"
+EXCLUDES="Brewfile* LICENSE README.md private-build-plans.toml"
 DOTFILES_DIRS="$HOME/.dotfiles"
