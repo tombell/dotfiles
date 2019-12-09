@@ -48,6 +48,7 @@ cask "logitech-options"
 cask "mpv"
 cask "paragon-ntfs"
 cask "postico"
+cask "protonmail-bridge"
 cask "the-unarchiver"
 
 # My casks
