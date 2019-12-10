@@ -22,6 +22,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/molokai'
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -57,7 +58,7 @@ set termguicolors
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme molokai
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
