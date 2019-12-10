@@ -32,6 +32,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
 
 " Prettier
 Plug 'prettier/vim-prettier'
