@@ -20,6 +20,9 @@ call plug#begin()
 " Required by tsuquyomi
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
+" Linting
+Plug 'dense-analysis/ale'
+
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/molokai'
@@ -39,6 +42,10 @@ Plug 'prettier/vim-prettier'
 
 " Go
 Plug 'fatih/vim-go'
+
+" Ruby
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
@@ -157,3 +164,12 @@ augroup fix_jsx_filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
+
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
+
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_ruby_rubocop_executable = 'bundle'
