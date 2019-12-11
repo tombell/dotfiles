@@ -16,9 +16,7 @@ const MARGIN = 10;
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-Bind.on('s', MODIFIERS, () => {
-  Stark.run('/usr/local/bin/lock', []);
-});
+Bind.on('s', MODIFIERS, () => Stark.run('/usr/local/bin/lock', []));
 
 // -----------------------------------------------------------------------------
 // WINDOW CENTERING
