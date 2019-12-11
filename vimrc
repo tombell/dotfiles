@@ -1,20 +1,3 @@
-let mapleader = ","
-
-set backspace=2
-set nobackup
-set nowritebackup
-set noswapfile
-set history=50
-set ruler
-set showcmd
-set incsearch
-set nohlsearch
-set laststatus=2
-set autowrite
-set notitle
-set cmdheight=2
-set shortmess=filtIoOA
-
 call plug#begin()
 
 " Required by tsuquyomi
@@ -62,6 +45,22 @@ call plug#end()
 
 filetype plugin indent on
 
+let mapleader = ","
+
+set backspace=2
+set nobackup
+set nowritebackup
+set noswapfile
+set history=50
+set ruler
+set showcmd
+set incsearch
+set nohlsearch
+set laststatus=2
+set autowrite
+set notitle
+set cmdheight=2
+set shortmess=filtIoOA
 set termguicolors
 
 syntax on
@@ -159,8 +158,9 @@ let g:fzf_colors =
     \ 'header'  : ['fg', 'Comment'] }
 
 " Fix some highlighting issues with JSX/TSX
-augroup fix_jsx_filetypes
+augroup Fix_JSX_TSX_filetypes
   hi link jsxTagName jsxComponentName
+
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
@@ -172,4 +172,3 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
-let g:ale_ruby_rubocop_executable = 'bundle'
