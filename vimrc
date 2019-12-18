@@ -8,6 +8,7 @@ Plug 'dense-analysis/ale'
 
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'whatyouhide/vim-gotham'
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -39,6 +40,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'lifepillar/pgsql.vim'
+Plug 'keith/swift.vim'
 
 call plug#end()
 
@@ -64,7 +66,7 @@ set termguicolors
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme gotham
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
