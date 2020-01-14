@@ -52,4 +52,4 @@ cask "protonmail-bridge"
 cask "the-unarchiver"
 
 # My casks
-cask "tombell/formulae/stark"
+cask "stark"
