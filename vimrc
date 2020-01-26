@@ -3,12 +3,8 @@ call plug#begin()
 " Required by tsuquyomi
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
-" Linting
-Plug 'dense-analysis/ale'
-
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'whatyouhide/vim-gotham'
 
 " Fuzzy file-finding
 Plug '/usr/local/opt/fzf'
@@ -25,10 +21,6 @@ Plug 'prettier/vim-prettier'
 " Go
 Plug 'fatih/vim-go'
 
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
@@ -39,7 +31,6 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'lifepillar/pgsql.vim'
-Plug 'keith/swift.vim'
 
 call plug#end()
 
