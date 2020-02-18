@@ -34,3 +34,9 @@
 [pretty]
   colored = format:%C(yellow)%h%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset
   graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
