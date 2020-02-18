@@ -155,11 +155,3 @@ augroup Fix_JSX_TSX_filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
-
-let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\}
-
-let g:ale_linters_explicit = 1
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
