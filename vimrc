@@ -27,6 +27,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Misc. language support
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
