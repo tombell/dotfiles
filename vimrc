@@ -1,34 +1,31 @@
 call plug#begin()
 
-" Required by tsuquyomi
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
-" Themes
+" Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" Fuzzy file-finding
+" FZF
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
-" Utility
+" Utilities
 Plug 'editorconfig/editorconfig-vim'
+Plug 'prettier/vim-prettier'
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
-" Prettier
-Plug 'prettier/vim-prettier'
-
 " Go
 Plug 'fatih/vim-go'
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-
-" Rust
-Plug 'rust-lang/rust.vim'
 
 " Misc. language support
 Plug 'cespare/vim-toml'
