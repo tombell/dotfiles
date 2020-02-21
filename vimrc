@@ -59,7 +59,7 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme minimo
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
@@ -136,20 +136,24 @@ set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
 
-let g:fzf_colors =
-  \ { 'fg'      : ['fg', 'Normal'],
-    \ 'bg'      : ['bg', 'Normal'],
-    \ 'hl'      : ['fg', 'Comment'],
-    \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+'     : ['fg', 'Statement'],
-    \ 'info'    : ['fg', 'PreProc'],
-    \ 'border'  : ['fg', 'Ignore'],
-    \ 'prompt'  : ['fg', 'Conditional'],
-    \ 'pointer' : ['fg', 'Exception'],
-    \ 'marker'  : ['fg', 'Keyword'],
-    \ 'spinner' : ['fg', 'Label'],
-    \ 'header'  : ['fg', 'Comment'] }
+" let g:fzf_colors =
+"   \ { 'fg'      : ['fg', 'Normal'],
+"     \ 'bg'      : ['bg', 'Normal'],
+"     \ 'hl'      : ['fg', 'Comment'],
+"     \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"     \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
+"     \ 'hl+'     : ['fg', 'Statement'],
+"     \ 'info'    : ['fg', 'PreProc'],
+"     \ 'border'  : ['fg', 'Ignore'],
+"     \ 'prompt'  : ['fg', 'Conditional'],
+"     \ 'pointer' : ['fg', 'Exception'],
+"     \ 'marker'  : ['fg', 'Keyword'],
+"     \ 'spinner' : ['fg', 'Label'],
+"     \ 'header'  : ['fg', 'Comment'] }
+
+" Disable fzf status line
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " Fix some highlighting issues with JSX/TSX
 augroup Fix_JSX_TSX_filetypes
