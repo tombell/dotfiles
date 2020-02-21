@@ -20,6 +20,7 @@ Plug 'fatih/vim-go'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
@@ -53,6 +54,7 @@ set notitle
 set cmdheight=2
 set shortmess=filtIoOA
 set termguicolors
+set hidden
 
 syntax on
 set background=dark
