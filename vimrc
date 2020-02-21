@@ -3,7 +3,6 @@ call plug#begin()
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'bajoz/minimo'
 
 " FZF
