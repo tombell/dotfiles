@@ -13,12 +13,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # make sure vim runs neovim
 alias vim="nvim"
 
-# convert rekordbox playlist txt file into "artist - title" output to paste into
-# mixcloud for uploads
-rb2mc() {
-  curl -F "playlist=@$1" https://rekordbox-playlist-api.herokuapp.com
-}
-
 # functions for modifying github repo settings
 
 _patch_github_repo() {
