@@ -135,21 +135,6 @@ set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
 
-" let g:fzf_colors =
-"   \ { 'fg'      : ['fg', 'Normal'],
-"     \ 'bg'      : ['bg', 'Normal'],
-"     \ 'hl'      : ['fg', 'Comment'],
-"     \ 'fg+'     : ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"     \ 'bg+'     : ['bg', 'CursorLine', 'CursorColumn'],
-"     \ 'hl+'     : ['fg', 'Statement'],
-"     \ 'info'    : ['fg', 'PreProc'],
-"     \ 'border'  : ['fg', 'Ignore'],
-"     \ 'prompt'  : ['fg', 'Conditional'],
-"     \ 'pointer' : ['fg', 'Exception'],
-"     \ 'marker'  : ['fg', 'Keyword'],
-"     \ 'spinner' : ['fg', 'Label'],
-"     \ 'header'  : ['fg', 'Comment'] }
-
 " Disable fzf status line
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
@@ -162,4 +147,6 @@ augroup Fix_JSX_TSX_filetypes
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
-let g:racer_experimental_completer = 1
+" Override colors
+hi ColorColumn guibg=#303030
+hi StatusLine guifg=#b2b2b2 guibg=#303030
