@@ -148,5 +148,6 @@ augroup Fix_JSX_TSX_filetypes
 augroup END
 
 " Override colors
+hi Error guifg=#d75f5f guibg=#262626
 hi ColorColumn guibg=#303030
 hi StatusLine guifg=#b2b2b2 guibg=#303030
