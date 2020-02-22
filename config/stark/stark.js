@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 // Default modifier keys for binds
-const MODIFIERS = ['ctrl', 'shift'];
+const MODIFIERS = ["ctrl", "shift"];
 
 // Grid width and height for centering windows with different sizes
 const GRID_WIDTH = 12;
@@ -16,13 +16,25 @@ const MARGIN = 10;
 // FUNCTIONS
 // -----------------------------------------------------------------------------
 
-Bind.on('s', MODIFIERS, () => Stark.run('/usr/local/bin/lock', []));
+Bind.on("s", MODIFIERS, () => Stark.run("/usr/local/bin/lock", []));
+
+Bind.on("return", MODIFIERS, () => {
+  if (App.find("iTerm2")) {
+    Stark.run("/usr/bin/osascript", [
+      "-e",
+      `tell application "iTerm2" to create window with default profile`
+    ]);
+    return;
+  }
+
+  Stark.run("/usr/bin/open", ["-a", "iTerm"]);
+});
 
 // -----------------------------------------------------------------------------
 // WINDOW CENTERING
 // -----------------------------------------------------------------------------
 
-Bind.on('z', MODIFIERS, () => {
+Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -38,7 +50,7 @@ Bind.on('z', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('x', MODIFIERS, () => {
+Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -54,7 +66,7 @@ Bind.on('x', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('c', MODIFIERS, () => {
+Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -74,7 +86,7 @@ Bind.on('c', MODIFIERS, () => {
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
 
-Bind.on('h', MODIFIERS, () => {
+Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -90,7 +102,7 @@ Bind.on('h', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('l', MODIFIERS, () => {
+Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -106,7 +118,7 @@ Bind.on('l', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('j', MODIFIERS, () => {
+Bind.on("j", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
@@ -122,7 +134,7 @@ Bind.on('j', MODIFIERS, () => {
   win.setFrame({ x, y, width, height });
 });
 
-Bind.on('k', MODIFIERS, () => {
+Bind.on("k", MODIFIERS, () => {
   const win = Window.focused();
 
   if (!win) {
