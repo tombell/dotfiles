@@ -149,6 +149,6 @@ augroup END
 
 " Override colors
 hi Error        guifg=#d75f5f guibg=#262626
-hi ColorColumn  guibg=#303030
+hi ColorColumn  guifg=NONE    guibg=#303030
 hi StatusLine   guifg=#b2b2b2 guibg=#303030
 hi StatusLineNC guifg=#444444 guibg=#303030
