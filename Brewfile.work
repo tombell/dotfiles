@@ -19,6 +19,8 @@ brew "qt"
 # ------------------------------------------------------------------------------
 
 # Core casks
+cask "adoptopenjdk8"
+cask "android-studio"
 cask "chromedriver"
 cask "slack"
 cask "visual-studio-code"
