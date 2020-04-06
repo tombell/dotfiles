@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
-Plug 'bajoz/minimo'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " FZF
 Plug '/usr/local/opt/fzf'
@@ -61,7 +61,7 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme minimo
+colorscheme dracula
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
@@ -149,9 +149,3 @@ augroup Fix_JSX_TSX_filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
-
-" Override colors
-hi Error        guifg=#d75f5f guibg=#262626
-hi ColorColumn  guifg=NONE    guibg=#303030
-hi StatusLine   guifg=#b2b2b2 guibg=#303030
-hi StatusLineNC guifg=#444444 guibg=#303030
