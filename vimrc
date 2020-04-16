@@ -138,9 +138,7 @@ set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
 
-" Disable fzf status line
-autocmd! FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+let g:fzf_preview_window = ''
 
 " Fix some highlighting issues with JSX/TSX
 augroup Fix_JSX_TSX_filetypes
