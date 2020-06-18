@@ -5,6 +5,9 @@
 [push]
   default = current
 
+[pull]
+  ff = only
+
 [color]
   ui = auto
 
