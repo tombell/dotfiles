@@ -19,8 +19,8 @@ Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
 
 " Rust
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+" Plug 'rust-lang/rust.vim'
+" Plug 'racer-rust/vim-racer'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
