@@ -25,7 +25,7 @@ brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
 brew "ripgrep"
-brew "zsh"
+# brew "zsh"
 brew "zsh-syntax-highlighting"
 
 # Thoughtbot formulae
