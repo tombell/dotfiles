@@ -13,24 +13,6 @@ const GRID_HEIGHT = 10;
 const MARGIN = 14;
 
 // -----------------------------------------------------------------------------
-// FUNCTIONS
-// -----------------------------------------------------------------------------
-
-Bind.on("s", MODIFIERS, () => Stark.run("/usr/local/bin/lock", []));
-
-Bind.on("return", MODIFIERS, () => {
-  if (App.find("iTerm2")) {
-    Stark.run("/usr/bin/osascript", [
-      "-e",
-      `tell application "iTerm2" to create window with default profile`
-    ]);
-    return;
-  }
-
-  Stark.run("/usr/bin/open", ["-a", "iTerm"]);
-});
-
-// -----------------------------------------------------------------------------
 // WINDOW CENTERING
 // -----------------------------------------------------------------------------
 

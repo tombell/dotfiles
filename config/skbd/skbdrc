@@ -1,1 +1,5 @@
+# quickly lock the screen.
+ctrl + shift - s: /usr/local/bin/lock
 
+# launch a new iTerm2 window, whether it is open or not.
+ctrl + shift - return: /usr/bin/osascript -e 'tell application "iTerm2" to create window with default profile'
