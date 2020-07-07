@@ -1,2 +1,2 @@
-EXCLUDES="brew/Brewfile* LICENSE README.md"
+EXCLUDES="bin/* brew/Brewfile* LICENSE README.md"
 DOTFILES_DIRS="$HOME/.dotfiles"

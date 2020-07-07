@@ -2,7 +2,7 @@
 ctrl + shift - s: lock
 
 # launch a new iTerm2 window, whether it is open or not.
-ctrl + shift - return: osascript -e 'tell application "iTerm2" to create window with default profile'
+ctrl + shift - return: $HOME/.dotfiles/bin/iterm.sh
 
 # launch mpv with the URL from the clipboard.
 ctrl + shift - m: open -na /Applications/mpv.app $(pbpaste)
