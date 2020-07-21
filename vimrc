@@ -4,7 +4,6 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'nerdypepper/vim-colors-plain', { 'branch': 'duotone' }
 
 " FZF
 Plug '/usr/local/opt/fzf'
