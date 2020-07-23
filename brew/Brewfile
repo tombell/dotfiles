@@ -6,6 +6,7 @@
 
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 # Third party taps
@@ -33,6 +34,7 @@ brew "thoughtbot/formulae/rcm"
 
 # My formulae
 brew "tombell/formulae/lock"
+brew "tombell/formulae/skbd"
 
 # ------------------------------------------------------------------------------
 # CASKS
@@ -45,9 +47,9 @@ cask "discord"
 cask "font-iosevka-ss08"
 cask "google-chrome"
 cask "iterm2"
-cask "logitech-options"
+# cask "logitech-options"
 cask "mpv"
-cask "paragon-ntfs"
+# cask "paragon-ntfs"
 cask "postico"
 cask "protonmail-bridge"
 cask "the-unarchiver"
