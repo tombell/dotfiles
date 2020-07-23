@@ -1,1 +1,2 @@
+brew/*.lock.json
 vim/autoload/plug.vim.old
