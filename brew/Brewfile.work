@@ -5,6 +5,7 @@
 # ------------------------------------------------------------------------------
 
 tap "homebrew/cask"
+tap "heroku/brew"
 
 # ------------------------------------------------------------------------------
 # FORMULAE
@@ -13,6 +14,7 @@ tap "homebrew/cask"
 # Core formulae
 brew "git-lfs"
 brew "heroku"
+brew "postgresql"
 brew "qt"
 brew "redis"
 brew "watchman"
