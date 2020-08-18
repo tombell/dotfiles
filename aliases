@@ -11,3 +11,5 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # make sure vim runs neovim
 alias vim="nvim"
+
+alias tx="transmission-remote"
