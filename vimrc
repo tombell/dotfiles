@@ -29,7 +29,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Swift
-Plug 'arzg/vim-swift'
+" Plug 'arzg/vim-swift'
 
 " Misc. language support
 Plug 'cespare/vim-toml'
