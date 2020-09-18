@@ -4,6 +4,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'co1ncidence/bliss', { 'rtp': 'vim' }
 
 " FZF
 Plug '/usr/local/opt/fzf'
@@ -61,7 +62,7 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme bliss
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
