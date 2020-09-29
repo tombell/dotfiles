@@ -4,7 +4,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'co1ncidence/bliss', { 'rtp': '.vim' }
+Plug 'co1ncidence/bliss'
 
 " FZF
 Plug '/usr/local/opt/fzf'
