@@ -62,7 +62,7 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme bliss
+colorscheme dracula
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
