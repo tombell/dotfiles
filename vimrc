@@ -4,7 +4,6 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'co1ncidence/bliss'
 
 " FZF
 Plug '/usr/local/opt/fzf'
@@ -19,18 +18,11 @@ Plug 'tpope/vim-commentary'
 " Go
 Plug 'fatih/vim-go'
 
-" Rust
-" Plug 'rust-lang/rust.vim'
-" Plug 'racer-rust/vim-racer'
-
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
-
-" Swift
-" Plug 'arzg/vim-swift'
 
 " Misc. language support
 Plug 'cespare/vim-toml'
@@ -103,9 +95,6 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-set foldlevelstart=99
-set foldmethod=syntax
-
 " Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
 
@@ -130,10 +119,6 @@ nnoremap Q gqap
 vnoremap Q gq
 
 nnoremap <silent> <C-p> :Files<cr>
-
-" Use space to toggle folds
-nnoremap <Space> za
-vnoremap <Space> za
 
 set completeopt-=preview
 
