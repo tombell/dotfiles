@@ -124,7 +124,7 @@ set completeopt-=preview
 
 let g:sql_type_default = 'pgsql'
 
-let g:fzf_preview_window = ''
+let g:fzf_preview_window = []
 
 " Fix some highlighting issues with JSX/TSX
 augroup Fix_JSX_TSX_filetypes
