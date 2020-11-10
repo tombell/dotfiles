@@ -44,19 +44,11 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
-# aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
-
-# local config
 [[ -f ~/.localrc ]] && source ~/.localrc
-
-# zsh-syntax-highlighting
-if [[ -f "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-  source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+[[ -f "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_AVD_HOME=~/.android/avd
-
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
