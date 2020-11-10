@@ -6,7 +6,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " FZF
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Utilities
