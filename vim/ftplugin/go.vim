@@ -9,9 +9,6 @@ let g:go_template_autocreate = 0
 " Use goimports when saving
 let g:go_fmt_command = 'goimports'
 
-" Use gopls when renaming
-let g:go_rename_command = 'gopls'
-
 " Enable extra highlighting options
 let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
