@@ -4,6 +4,7 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'franbach/miramare'
 
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
