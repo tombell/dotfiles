@@ -5,6 +5,8 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 " Colour schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'franbach/miramare'
+" Plug 'cocopon/colorswatch.vim'
+" Plug 'cocopon/inspecthi.vim'
 
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -21,7 +23,7 @@ Plug 'fatih/vim-go'
 
 " JavaScript & TypeScript
 Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
@@ -55,7 +57,15 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme miramare
+
+" JSX/TSX tweaks
+hi link jsxTagName jsxComponentName
+hi link jsxCloseString Green
+
+" TypeScript tweaks
+hi link typescriptTypeAnnotation Operator
+hi link typescriptObjectColon Operator
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
@@ -127,11 +137,3 @@ let g:sql_type_default = 'pgsql'
 
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'down': '20%' }
-
-" Fix some highlighting issues with JSX/TSX
-augroup Fix_JSX_TSX_filetypes
-  hi link jsxTagName jsxComponentName
-
-  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-augroup END
