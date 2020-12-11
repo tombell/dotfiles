@@ -57,7 +57,7 @@ set hidden
 
 syntax on
 set background=dark
-colorscheme miramare
+colorscheme dracula
 
 " JSX/TSX tweaks
 hi link jsxTagName jsxComponentName
