@@ -60,10 +60,6 @@ colorscheme dracula
 hi link jsxTagName jsxComponentName
 hi link jsxCloseString Green
 
-" TypeScript tweaks
-hi link typescriptTypeAnnotation Operator
-hi link typescriptObjectColon Operator
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
 let g:is_posix = 1
