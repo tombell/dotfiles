@@ -56,10 +56,6 @@ syntax on
 set background=dark
 colorscheme dracula
 
-" JSX/TSX tweaks
-hi link jsxTagName jsxComponentName
-hi link jsxCloseString Green
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes
 let g:is_posix = 1
