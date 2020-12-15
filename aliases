@@ -12,11 +12,10 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # make sure vim runs neovim
 alias vim="nvim"
 
-# easier transmission usage
-alias tx="transmission-remote"
-
 # homebrew
+alias bi="brew install"
+alias bic="brew install --cask"
 alias bl="brew list -1"
 alias blc="brew list -1 --cask"
-alias bcu="brew cleanup -s"
 alias bu="brew upgrade"
+alias bcu="brew cleanup -s"
