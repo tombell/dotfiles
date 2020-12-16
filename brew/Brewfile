@@ -26,6 +26,7 @@ brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
 brew "ripgrep"
+brew "tmux"
 brew "zsh-syntax-highlighting"
 
 # Thoughtbot formulae
@@ -50,7 +51,8 @@ cask "logitech-options"
 cask "mpv"
 cask "paragon-ntfs"
 cask "postico"
+cask "telegram"
 cask "the-unarchiver"
 
 # My casks
-cask "stark"
+cask "tombel/formulae/stark"
