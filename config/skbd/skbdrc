@@ -2,10 +2,7 @@
 ctrl + shift - s: lock
 
 # launch a new iTerm2 window, whether it is open or not.
-# ctrl + shift - return: $HOME/.dotfiles/bin/iterm.sh
+ctrl + shift - return: $HOME/.dotfiles/bin/iterm.sh
 
 # launch mpv with the URL from the clipboard.
 ctrl + shift - m: open -na /Applications/mpv.app $(pbpaste)
-
-# make a note of the current playing track to a text file.
-# ctrl + shift - t: $HOME/.dotfiles/bin/note-current-track.sh
