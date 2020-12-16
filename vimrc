@@ -60,8 +60,6 @@ syntax on
 set background=dark
 colorscheme dracula
 
-" When the type of shell script is /bin/sh, assume a POSIX-compatible
-" shell for syntax highlighting purposes
 let g:is_posix = 1
 
 set tabstop=2
@@ -69,10 +67,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" Use one space, not two, after punctuation
 set nojoinspaces
 
 set textwidth=80
@@ -93,40 +89,31 @@ endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
 
-" Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
 set splitbelow
 set splitright
 
-" Easier omnicomplete triggering
 inoremap <C-space> <C-x><C-o>
 
-" Switch between the last two files
-nnoremap <Leader><Leader> <C-^>
+set completeopt-=preview
 
-" Close quickfix and location list windows
 nnoremap <Leader>a :cclose<Bar>:lclose<CR>
 
-" Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Keep search matches in the middle of the window
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Reflow paragraph in normal and visual mode
 nnoremap Q gqap
 vnoremap Q gq
 
 nnoremap <silent> <C-p> :Files<cr>
 
-set completeopt-=preview
-
-let g:sql_type_default = 'pgsql'
-
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'down': '20%' }
+
+let g:sql_type_default = 'pgsql'
