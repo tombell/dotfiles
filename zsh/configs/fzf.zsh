@@ -2,7 +2,7 @@
 FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 # Set the default FZF options
-FZF_DEFAULT_OPTS='--height 25%'
+FZF_DEFAULT_OPTS='--height 20%'
 
 # Set the FZF color scheme to dracula
 FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
