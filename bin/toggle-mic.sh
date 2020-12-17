@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+# Comment out lines 6, 7, 9, and 18 if not using aggregate device
+
 mic_device="Bose QuietComfort 35 Series II"
 aggregate_device="Mic"
 
