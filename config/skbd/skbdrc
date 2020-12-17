@@ -6,3 +6,6 @@ ctrl + shift - return: $HOME/.dotfiles/bin/iterm.sh
 
 # launch mpv with the URL from the clipboard.
 ctrl + shift - m: open -na /Applications/mpv.app $(pbpaste)
+
+# toggle microphone globally
+ctrl + shift - v: $HOME/.dotfiles/bin/toggle-mic.sh
