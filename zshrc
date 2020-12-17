@@ -52,3 +52,5 @@ _load_settings "$HOME/.zsh/configs"
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_AVD_HOME=~/.android/avd
+
+export DISABLE_SPRING=1
