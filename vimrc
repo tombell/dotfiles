@@ -24,10 +24,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
-" Ruby
-Plug 'tpope/vim-rails'
-Plug 'janko-m/vim-test'
-
 " Misc. language support
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
