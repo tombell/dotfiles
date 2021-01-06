@@ -56,4 +56,4 @@ cask "telegram"
 cask "the-unarchiver"
 
 # My casks
-cask "tombel/formulae/stark"
+cask "tombell/formulae/stark"
