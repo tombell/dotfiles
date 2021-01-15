@@ -11,7 +11,7 @@ Plug 'junegunn/fzf.vim'
 
 " Utilities
 Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript'] }
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
