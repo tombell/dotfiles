@@ -15,6 +15,9 @@ Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript'] }
 Plug 'tombell/trailing.vim'
 Plug 'tpope/vim-commentary'
 
+" Formatting & Linting
+Plug 'dense-analysis/ale'
+
 " Go
 Plug 'fatih/vim-go'
 
@@ -113,3 +116,9 @@ let g:fzf_preview_window = []
 let g:fzf_layout = { 'down': '20%' }
 
 let g:sql_type_default = 'pgsql'
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\   'typescript': ['eslint'],
+\}
