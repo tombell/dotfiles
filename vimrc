@@ -27,6 +27,9 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
+" Swift & XCode
+Plug 'keith/swift.vim'
+
 " Misc. language support
 Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
