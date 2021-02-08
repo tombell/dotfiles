@@ -1,41 +1,49 @@
-call plug#begin()
+function! PackInit() abort
+  packadd minpac
 
-Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" Colour schemes
-Plug 'dracula/vim', { 'as': 'dracula' }
+  " misc
+  call minpac#add('Shougo/vimproc.vim', {'do': {-> system('make')}})
 
-" FZF
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+  " colour schemes
+  call minpac#add('dracula/vim', {'name': 'dracula'})
 
-" Utilities
-Plug 'editorconfig/editorconfig-vim'
-Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript'] }
-Plug 'tombell/trailing.vim'
-Plug 'tpope/vim-commentary'
+  " fzf
+  call minpac#add('junegunn/fzf', {'do': {-> fzf#install()}})
+  call minpac#add('junegunn/fzf.vim')
 
-" Formatting & Linting
-Plug 'dense-analysis/ale'
+  " utilities
+  call minpac#add('editorconfig/editorconfig-vim')
+  call minpac#add('tombell/trailing.vim')
+  call minpac#add('tpope/vim-commentary')
 
-" Go
-Plug 'fatih/vim-go'
+  " formatting and linting
+  call minpac#add('prettier/vim-prettier')
+  call minpac#add('dense-analysis/ale')
 
-" JavaScript & TypeScript
-Plug 'Quramy/tsuquyomi'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+  " golang
+  call minpac#add('fatih/vim-go')
 
-" Swift & XCode
-Plug 'keith/swift.vim'
+  " javascript and typescript
+  call minpac#add('Quramy/tsuquyomi')
+  call minpac#add('HerringtonDarkholme/yats.vim')
+  call minpac#add('pangloss/vim-javascript')
+  call minpac#add('MaxMEllon/vim-jsx-pretty')
 
-" Misc. language support
-Plug 'cespare/vim-toml'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'lifepillar/pgsql.vim'
+  " swift
+  call minpac#add('keith/swift.vim')
 
-call plug#end()
+  " misc. language support
+  call minpac#add('cespare/vim-toml')
+  call minpac#add('hail2u/vim-css3-syntax')
+  call minpac#add('lifepillar/pgsql.vim')
+endfunction
+
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
 
 filetype plugin indent on
 
@@ -60,6 +68,7 @@ set hidden
 
 syntax on
 set background=dark
+packadd dracula
 colorscheme dracula
 
 let g:is_posix = 1
@@ -116,7 +125,7 @@ vnoremap Q gq
 nnoremap <silent> <C-p> :Files<cr>
 
 let g:fzf_preview_window = []
-let g:fzf_layout = { 'down': '20%' }
+let g:fzf_layout = {'down': '20%'}
 
 let g:sql_type_default = 'pgsql'
 
