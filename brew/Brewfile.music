@@ -18,4 +18,3 @@ brew "tombell/formulae/moniker"
 
 cask "dupeguru"
 cask "rekordbox"
-cask "xact"
