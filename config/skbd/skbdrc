@@ -8,4 +8,4 @@ ctrl + shift - return: $HOME/.dotfiles/bin/iterm.sh
 ctrl + shift - m: open -na /Applications/mpv.app $(pbpaste)
 
 # toggle microphone globally
-ctrl + shift - v: $HOME/.dotfiles/bin/toggle-mic.sh
+ctrl + shift - v: $HOME/.dotfiles/bin/toggle-mic
