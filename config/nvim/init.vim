@@ -44,16 +44,21 @@ set number
 set numberwidth=5
 
 set wildmode=list:longest,list:full
+
 function! InsertTabWrapper()
-  let col = col(".") - 1
-  if !col || getline(".")[col - 1] !~ "\k"
-    return "\<Tab>"
+  let col = col('.') - 1
+  if !col
+    return "\<tab>"
+  endif
+  let char = getline('.')[col - 1]
+  if char =~ '\k'
+    return "\<c-p>"
   else
-    return "\<C-p>"
+    return "\<tab>"
   endif
 endfunction
-inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
-inoremap <S-Tab> <C-n>
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
 
 let g:html_indent_tags = "li\|p"
 
