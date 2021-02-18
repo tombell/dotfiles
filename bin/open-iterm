@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-if [ ! pgrep -f "iTerm" > /dev/null ]; then
+pid=$(pgrep -f "iTerm")
+
+if [ ! "$pid" ]; then
   open -a "/Applications/iTerm.app"
 else
   if ! osascript -e 'tell application "iTerm2" to create window with default profile' > /dev/null; then
