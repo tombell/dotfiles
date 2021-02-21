@@ -21,7 +21,6 @@ function! PackInit() abort
 
   " formatting and linting
   call minpac#add('prettier/vim-prettier')
-  call minpac#add('dense-analysis/ale')
 
   " golang
   call minpac#add('fatih/vim-go')

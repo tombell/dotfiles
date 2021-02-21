@@ -88,9 +88,3 @@ let g:fzf_preview_window = []
 let g:fzf_layout = {"down": "20%"}
 
 let g:sql_type_default = "pgsql"
-
-let g:ale_linters = {
-\   "javascript": ["eslint"],
-\   "ruby": ["rubocop"],
-\   "typescript": ["eslint"],
-\}
