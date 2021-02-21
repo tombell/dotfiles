@@ -16,5 +16,7 @@ brew "tombell/formulae/moniker"
 # CASKS
 # ------------------------------------------------------------------------------
 
+cask "ableton-live-intro"
 cask "dupeguru"
 cask "rekordbox"
+cask "splice"
