@@ -17,3 +17,4 @@ tap "homebrew/cask"
 # Core casks
 cask "logitech-camera-settings"
 cask "obs"
+cask "philips-hue-sync"
