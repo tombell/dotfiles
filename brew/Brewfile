@@ -27,6 +27,7 @@ brew "rbenv"
 brew "rbenv-gemset"
 brew "ripgrep"
 brew "tmux"
+brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 # Thoughtbot formulae

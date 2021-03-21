@@ -48,6 +48,7 @@ _load_settings "$HOME/.zsh/configs"
 [[ -f ~/.localrc ]] && source ~/.localrc
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 [[ -f "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
