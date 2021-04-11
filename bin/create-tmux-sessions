@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-cd ~/Code/backstage   && tmux new-session -d -s backstage
-cd ~/Code/doorbell    && tmux new-session -d -s doorbell
-cd ~/Code/foundations && tmux new-session -d -s foundations
-cd ~/Code/frontdoor   && tmux new-session -d -s frontdoor
-cd ~/Code/letterbox   && tmux new-session -d -s letterbox
-cd ~/Code/living      && tmux new-session -d -s living
-cd ~/Code/marketing   && tmux new-session -d -s marketing
-cd ~/Code/piggybank   && tmux new-session -d -s piggybank
-cd ~/Code/switchboard && tmux new-session -d -s switchboard
+components=(
+  backstage
+  doorbell
+  foundations
+  frontdoor
+  letterbox
+  living
+  marketing
+  piggybank
+  switchboard
+)
+
+for c in "${components[@]}"; do
+  cd "$HOME/Code/$c" && tmux new-session -d -s "$c"
+done
