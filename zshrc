@@ -1,5 +1,3 @@
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
 # export env var for projects path
 export PROJECTS="$HOME/Code"
 
@@ -44,14 +42,13 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
-[[ -f ~/.aliases ]] && source ~/.aliases
-[[ -f ~/.localrc ]] && source ~/.localrc
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-[[ -f "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[[ -f "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+files=(~/.aliases ~/.localrc ~/.fzf.zsh)
+for f in "${files[@]}"; do
+  [[ -f "$f" ]] && source "$f"
+done
 
-export ANDROID_HOME=~/Library/Android/sdk
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
-export ANDROID_AVD_HOME=~/.android/avd
+[[ -f "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
+  && source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-export DISABLE_SPRING=1
+[[ -f "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] \
+  && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
