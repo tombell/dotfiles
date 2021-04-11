@@ -18,6 +18,7 @@ tap "tombell/formulae"
 # ------------------------------------------------------------------------------
 
 # Core formulae
+brew "entr"
 brew "fzf"
 brew "git"
 brew "go"
