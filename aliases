@@ -22,3 +22,6 @@ alias bs="brew search"
 
 # cleanup
 alias rmds="rm -fr ~/**/.DS_Store"
+
+# find todo comments in code
+alias todo="rg -F 'TODO'"
