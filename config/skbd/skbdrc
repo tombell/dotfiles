@@ -3,9 +3,3 @@ ctrl + shift - s: lock
 
 # launch a new iTerm2 window, whether it is open or not.
 ctrl + shift - return: $HOME/.dotfiles/bin/open-iterm
-
-# launch mpv with the URL from the clipboard.
-ctrl + shift - m: open -na /Applications/mpv.app $(pbpaste)
-
-# toggle microphone globally
-ctrl + shift - v: $HOME/.dotfiles/bin/toggle-mic
