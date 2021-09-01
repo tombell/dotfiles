@@ -6,6 +6,7 @@ components=(
   doorbell
   foundations
   frontdoor
+  knock-knock
   letterbox
   living
   marketing
