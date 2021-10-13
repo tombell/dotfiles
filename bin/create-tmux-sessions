@@ -3,6 +3,7 @@ set -e
 
 components=(
   backstage
+  contractor
   doorbell
   foundations
   frontdoor
