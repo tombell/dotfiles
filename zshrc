@@ -47,6 +47,8 @@ for f in "${files[@]}"; do
   [[ -f "$f" ]] && source "$f"
 done
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5a6477"
+
 [[ -f "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
   && source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
