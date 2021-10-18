@@ -8,7 +8,7 @@ function! PackInit() abort
   call minpac#add('Shougo/vimproc.vim', {'do': {-> system('make')}})
 
   " colour schemes
-  call minpac#add('dracula/vim', {'name': 'dracula'})
+  call minpac#add('sainnhe/sonokai')
 
   " fzf
   call minpac#add('junegunn/fzf', {'do': {-> fzf#install()}})

@@ -23,8 +23,8 @@ set hidden
 
 syntax on
 set background=dark
-packadd dracula
-colorscheme dracula
+let g:sonokai_style = "atlantis"
+colorscheme sonokai
 
 let g:is_posix = 1
 
