@@ -17,6 +17,7 @@
   br = branch
   ci = commit
   co = checkout
+  cp = cherry-pick
   dc = diff --cached
   di = diff
   l = log --pretty=oneline --abbrev-commit --max-count=15
