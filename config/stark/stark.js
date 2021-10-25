@@ -147,7 +147,7 @@ spaces.forEach(space => {
       return;
     }
 
-    Space.active().removeWindows([win]);
     Space.all()[space - 1].addWindows([win]);
+    Space.active().removeWindows([win]);
   });
 });
