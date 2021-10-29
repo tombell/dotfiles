@@ -14,10 +14,8 @@ alias vim="nvim"
 
 # homebrew
 alias bcu="brew cleanup -s"
-alias bi="brew install"
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
-alias bu="brew upgrade"
 
 # cleanup
 alias rmds="rm -fr ~/**/.DS_Store"
