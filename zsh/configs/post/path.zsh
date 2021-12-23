@@ -8,10 +8,6 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-if command -v goenv >/dev/null; then
-  eval "$(goenv init - --no-rehash)"
-fi
-
 GOPATH=$HOME/.go
 
 PATH="$GOPATH/bin:$PATH"
