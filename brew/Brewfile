@@ -1,36 +1,24 @@
 # vim: set ft=ruby:
 
-# ------------------------------------------------------------------------------
-# TAPS
-# ------------------------------------------------------------------------------
-
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
 
-# ------------------------------------------------------------------------------
-# FORMULAE
-# ------------------------------------------------------------------------------
-
 brew "fzf"
+brew "lock"
 brew "neovim"
+brew "rcm"
 brew "ripgrep"
-brew "thoughtbot/formulae/rcm"
+brew "skbd"
 brew "tmux"
-brew "tombell/formulae/lock"
-brew "tombell/formulae/skbd"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-
-# ------------------------------------------------------------------------------
-# CASKS
-# ------------------------------------------------------------------------------
 
 cask "1password"
 cask "appcleaner"
 cask "cleanymmac"
 cask "discord"
+cask "doppler"
 cask "font-iosevka-ss08"
 cask "google-chrome"
 cask "iterm2"
@@ -39,7 +27,6 @@ cask "mpv"
 cask "paragon-ntfs"
 cask "soundsource"
 cask "spotify"
+cask "stark"
 cask "telegram"
 cask "the-unarchiver"
-cask "tombell/formulae/doppler"
-cask "tombell/formulae/stark"
