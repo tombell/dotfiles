@@ -31,9 +31,6 @@ function! PackInit() abort
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('MaxMEllon/vim-jsx-pretty')
 
-  " swift
-  call minpac#add('keith/swift.vim')
-
   " misc. language support
   call minpac#add('cespare/vim-toml')
   call minpac#add('hail2u/vim-css3-syntax')
