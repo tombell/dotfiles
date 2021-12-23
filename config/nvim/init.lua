@@ -1,58 +1,62 @@
+local cmd = vim.cmd
+local g = vim.g
+local o = vim.o
+
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-vim.cmd [[source ~/.config/nvim/packages.vim]]
+cmd [[source ~/.config/nvim/packages.vim]]
 
-vim.cmd [[filetype plugin indent on]]
+cmd [[filetype plugin indent on]]
 
-vim.g.mapleader = ','
+g.mapleader = ','
 
-vim.o.backspace = [[indent,eol,start]]
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.swapfile = false
-vim.o.history = 50
-vim.o.ruler = true
-vim.o.showcmd = true
-vim.o.incsearch = true
-vim.o.hlsearch = false
-vim.o.laststatus = 2
-vim.o.autowrite = true
-vim.o.title = true
-vim.o.cmdheight = 2
-vim.o.shortmess = 'filtIoOA'
-vim.o.termguicolors = true
-vim.o.hidden = true
+o.backspace = [[indent,eol,start]]
+o.backup = false
+o.writebackup = false
+o.swapfile = false
+o.history = 50
+o.ruler = true
+o.showcmd = true
+o.incsearch = true
+o.hlsearch = false
+o.laststatus = 2
+o.autowrite = true
+o.title = true
+o.cmdheight = 2
+o.shortmess = 'filtIoOA'
+o.termguicolors = true
+o.hidden = true
 
-vim.cmd [[syntax on]]
-vim.o.background = "dark"
-vim.g.sonokai_style = "atlantis"
-vim.cmd [[colorscheme sonokai]]
+cmd [[syntax on]]
+o.background = "dark"
+g.sonokai_style = "atlantis"
+cmd [[colorscheme sonokai]]
 
-vim.g.is_posix = 1
+g.is_posix = 1
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.softtabstop = 2
+o.expandtab = true
 
-vim.o.list = true
-vim.o.listchars = [[tab:»·,trail:·,nbsp:·]]
+o.list = true
+o.listchars = [[tab:»·,trail:·,nbsp:·]]
 
-vim.o.joinspaces = false
+o.joinspaces = false
 
-vim.o.textwidth = 80
-vim.o.colorcolumn = '+1'
+o.textwidth = 80
+o.colorcolumn = '+1'
 
-vim.o.number = true
-vim.o.numberwidth = 5
+o.number = true
+o.numberwidth = 5
 
-vim.o.wildmode = [[list:longest,list:full]]
+o.wildmode = [[list:longest,list:full]]
 
-vim.cmd [[
+cmd [[
   function! InsertTabWrapper()
     let col = col('.') - 1
     if !col
@@ -70,14 +74,14 @@ vim.cmd [[
 map('i', '<tab>', 'InsertTabWrapper()', { expr = true })
 map('i', '<s-tab>', '<C-n>')
 
-vim.g.html_indent_tags = "li|p"
+g.html_indent_tags = "li|p"
 
-vim.o.splitbelow = true
-vim.o.splitright = true
+o.splitbelow = true
+o.splitright = true
 
 map('i', '<C-space>', '<C-x><C-o>')
 
-vim.o.completeopt = "menu"
+o.completeopt = "menu"
 
 map('n', '<Leader>a', ':cclose<Bar>:lclose<cr>')
 
@@ -94,7 +98,7 @@ map('v', 'Q', 'gq')
 
 map('n', '<C-p>', ':Files<cr>', { silent = true })
 
-vim.g.fzf_preview_window = {}
-vim.g.fzf_layout = { down = "20%" }
+g.fzf_preview_window = {}
+g.fzf_layout = { down = "20%" }
 
-vim.g.sql_type_default = "pgsql"
+g.sql_type_default = "pgsql"
