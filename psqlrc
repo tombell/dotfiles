@@ -11,9 +11,6 @@
 -- SELECT * FROM<enter>. %R shows what type of input it expects.
 \set PROMPT2 '[more] %R > '
 
--- Show how long each query takes to execute
-\timing */
-
 -- Use best available output format
 \x auto
 \set VERBOSITY verbose
