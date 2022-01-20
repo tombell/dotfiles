@@ -4,7 +4,6 @@ tap "heroku/brew"
 
 brew "git-lfs"
 brew "heroku"
-brew "postgresql"
 brew "redis"
 brew "watchman"
 
