@@ -1,11 +1,8 @@
 # vim: set ft=ruby:
 
-brew "entr"
 brew "git"
 brew "go"
 brew "nodenv"
 brew "postgresql"
 brew "rbenv"
 brew "rbenv-gemset"
-
-cask "postico"
