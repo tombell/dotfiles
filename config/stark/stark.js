@@ -19,9 +19,7 @@ const MARGIN = 14;
 Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   const r = win.screen.frameWithoutDockOrMenu;
 
@@ -36,9 +34,7 @@ Bind.on("z", MODIFIERS, () => {
 Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   const r = win.screen.frameWithoutDockOrMenu;
 
@@ -53,9 +49,7 @@ Bind.on("x", MODIFIERS, () => {
 Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   const r = win.screen.frameWithoutDockOrMenu;
   const x = r.x + MARGIN;
@@ -78,9 +72,7 @@ Bind.on("c", MODIFIERS, () => {
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   const r = win.screen.frameWithoutDockOrMenu;
 
@@ -95,9 +87,7 @@ Bind.on("h", MODIFIERS, () => {
 Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   const r = win.screen.frameWithoutDockOrMenu;
 
