@@ -113,17 +113,8 @@ Bind.on("l", MODIFIERS, () => {
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
 
-const numOfSpaces = Space.all().length;
-const spaces = [...Array(numOfSpaces).keys()].map(i => i + 1);
-
-spaces.forEach(space => {
-  Bind.on(`${space}`, MODIFIERS, () => {
-    const win = Window.focused();
-
-    if (!win) {
-      return;
-    }
-
-    Space.all()[space - 1].moveWindows([win]);
+[...Array(Space.all().length).keys()].forEach((space) => {
+  Bind.on(`${space + 1}`, MODIFIERS, () => {
+    Space.all()[space].moveWindows([Window.focused()].filter(Boolean));
   });
 });
