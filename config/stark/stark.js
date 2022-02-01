@@ -24,12 +24,13 @@ Bind.on("z", MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-  const x = (r.width / GRID_WIDTH) * 2;
-  const y = r.y + (r.height / GRID_HEIGHT) * 2;
-  const width = (r.width / GRID_WIDTH) * 8;
-  const height = (r.height / GRID_HEIGHT) * 6;
 
-  win.setFrame({ x, y, width, height });
+  win.setFrame({
+    x: (r.width / GRID_WIDTH) * 2,
+    y: r.y + (r.height / GRID_HEIGHT) * 2,
+    width: (r.width / GRID_WIDTH) * 8,
+    height: (r.height / GRID_HEIGHT) * 6,
+  });
 });
 
 Bind.on("x", MODIFIERS, () => {
@@ -40,12 +41,13 @@ Bind.on("x", MODIFIERS, () => {
   }
 
   const r = win.screen.frameWithoutDockOrMenu;
-  const x = r.width / GRID_WIDTH;
-  const y = r.y + r.height / GRID_HEIGHT;
-  const width = (r.width / GRID_WIDTH) * 10;
-  const height = (r.height / GRID_HEIGHT) * 8;
 
-  win.setFrame({ x, y, width, height });
+  win.setFrame({
+    x: r.width / GRID_WIDTH,
+    y: r.y + r.height / GRID_HEIGHT,
+    width: (r.width / GRID_WIDTH) * 10,
+    height: (r.height / GRID_HEIGHT) * 8,
+  });
 });
 
 Bind.on("c", MODIFIERS, () => {
@@ -61,7 +63,12 @@ Bind.on("c", MODIFIERS, () => {
   const width = r.width - MARGIN * 2;
   const height = r.height - MARGIN * 2;
 
-  win.setFrame({ x, y, width, height });
+  win.setFrame({
+    x: r.x + MARGIN,
+    y: r.y + MARGIN,
+    width: r.width - MARGIN * 2,
+    height: r.height - MARGIN * 2,
+  });
 });
 
 // -----------------------------------------------------------------------------
