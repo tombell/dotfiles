@@ -12,6 +12,9 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # make sure vim runs neovim
 alias vim="nvim"
 
+# change into dotfiles directory
+alias d="cd ~/.dotfiles"
+
 # homebrew
 alias bcu="brew cleanup -s"
 alias bl="brew list -1 --formula"
