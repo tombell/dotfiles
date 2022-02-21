@@ -8,6 +8,7 @@ components=(
   foundations
   frontdoor
   knock-knock
+  ledger
   letterbox
   living
   log-book
