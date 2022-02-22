@@ -33,8 +33,7 @@ o.hidden = true
 
 cmd [[syntax on]]
 o.background = "dark"
--- g.sonokai_style = "atlantis"
-cmd [[colorscheme aquarium]]
+cmd [[colorscheme sonokai]]
 
 g.is_posix = 1
 
