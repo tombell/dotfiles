@@ -9,6 +9,7 @@ function! PackInit() abort
 
   " colour schemes
   call minpac#add('sainnhe/sonokai')
+  call minpac#add('FrenzyExists/aquarium-vim')
 
   " fzf
   call minpac#add('junegunn/fzf', {'do': {-> fzf#install()}})
