@@ -25,3 +25,6 @@ alias rmds="rm -fr ~/**/.DS_Store"
 
 # find todo comments in code
 alias todo="rg -F 'TODO'"
+
+# find and kill a process
+alias pk="ps aux | tail -n +2 | fzf -m | awk '{print \$2}' | xargs kill -9"
