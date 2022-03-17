@@ -19,5 +19,7 @@ components=(
 )
 
 for c in "${components[@]}"; do
-  cd "$HOME/Code/$c" && tmux new-session -d -s "$c"
+  cd "$HOME/Code/$c"
+  tmux new-session -d -s "$c" -n "server"
+  tmux new-window -t "$c:2" -n "editor"
 done
