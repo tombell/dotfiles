@@ -1,13 +1,13 @@
 # Load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 
-# Completion; use cache if updated within 24h
+# Use cache if updated within 24h
 autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
-  compinit -d $HOME/.zcompdump;
+  compinit -d $HOME/.zcompdump
 else
-  compinit -C;
-fi;
+  compinit -C
+fi
 
 # Matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
