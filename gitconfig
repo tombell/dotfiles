@@ -24,7 +24,6 @@
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
   st = status -sb
-  psh = push
 
 [core]
   excludesfile = ~/.gitignore
