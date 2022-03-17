@@ -21,4 +21,4 @@ vim.g.go_jump_to_error = 0
 vim.g.go_metalinter_command = 'golangci-lint'
 vim.g.go_metalinter_autosave = 1
 
-vim.cmd [[autocmd BufEnter *.go nmap <leader>r  <Plug>(go-rename)]]
+vim.cmd [[autocmd BufEnter *.go nmap <leader>r <Plug>(go-rename)]]
