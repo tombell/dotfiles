@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-components=(
+memoir=(
+  memoir
+  memoir-app
+)
+
+stark=(
+  skbd
+  stark
+  swm
+)
+
+work=(
   backstage
   contractor
   doorbell
@@ -18,8 +29,32 @@ components=(
   switchboard
 )
 
-for c in "${components[@]}"; do
-  cd "$HOME/Code/$c"
-  tmux new-session -d -s "$c" -n "server"
-  tmux new-window -t "$c:2" -n "editor"
-done
+start_sessions() {
+  local arr=("$@")
+
+  for c in "${arr[@]}"; do
+    cd "$HOME/Code/$c"
+    tmux new-session -d -s "$c" -n "server"
+    tmux new-window -t "$c:2" -n "editor"
+  done
+}
+
+main() {
+  case ${1:-"work"} in
+    work)
+      start_sessions "${work[@]}"
+      ;;
+    memoir)
+      start_sessions "${memoir[@]}"
+      ;;
+    stark)
+      start_sessions "${stark[@]}"
+      ;;
+    *)
+      echo "error: unknown environment"
+      exit 1
+      ;;
+  esac
+}
+
+main "$1"
