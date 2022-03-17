@@ -7,8 +7,8 @@ FZF_DEFAULT_OPTS='--height 20%'
 # Set the FZF color scheme to dracula
 FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=dark
---color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
---color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
+--color=fg:-1,bg:-1,hl:#9ed072,fg+:-1,bg+:-1,hl+:#f39660
+--color=info:#b39df3,prompt:#9ed072,pointer:#fc5d7c,marker:#fc5d7c,spinner:#fc5d7c
 '
 
 export -U FZF_DEFAULT_COMMAND FZF_DEFAULT_OPTS
