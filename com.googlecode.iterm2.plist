@@ -1690,6 +1690,8 @@ Clear Buffer</string>
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>Selection Respects Soft Boundaries</key>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
