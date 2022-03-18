@@ -86,6 +86,5 @@ g.sql_type_default = "pgsql"
 
 map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
   expr = true,
-  noremap = true,
   silent = true,
 })
