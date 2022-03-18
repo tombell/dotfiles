@@ -6,4 +6,4 @@ end
 
 vim.cmd [[autocmd FileType qf setlocal wrap]]
 
-map('n', '<Leader>r', ':TsuRenameSymbol<cr>')
+map('n', '<leader>r', ':TsuRenameSymbol<cr>')

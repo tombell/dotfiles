@@ -71,23 +71,23 @@ cmd [[
 ]]
 
 map('i', '<tab>', 'InsertTabWrapper()', { expr = true })
-map('i', '<s-tab>', '<C-n>')
+map('i', '<s-tab>', '<c-n>')
 
 g.html_indent_tags = "li|p"
 
 o.splitbelow = true
 o.splitright = true
 
-map('i', '<C-space>', '<C-x><C-o>')
+map('i', '<c-space>', '<c-x><c-o>')
 
 o.completeopt = "menu"
 
-map('n', '<Leader>a', ':cclose<Bar>:lclose<cr>')
+map('n', '<leader>a', ':cclose<bar>:lclose<cr>')
 
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-l>', '<C-w>l')
+map('n', '<c-j>', '<c-w>j')
+map('n', '<c-k>', '<c-w>k')
+map('n', '<c-h>', '<c-w>h')
+map('n', '<c-l>', '<c-w>l')
 
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
@@ -95,7 +95,7 @@ map('n', 'N', 'Nzzzv')
 map('n', 'Q', 'gqap')
 map('v', 'Q', 'gq')
 
-map('n', '<C-p>', ':Files<cr>', { silent = true })
+map('n', '<c-p>', ':Files<cr>', { silent = true })
 
 g.fzf_preview_window = {}
 g.fzf_layout = { down = "20%" }
