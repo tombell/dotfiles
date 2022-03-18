@@ -19,9 +19,6 @@ function! PackInit() abort
   call minpac#add('tombell/trailing.vim')
   call minpac#add('tpope/vim-commentary')
 
-  " formatting and linting
-  call minpac#add('prettier/vim-prettier')
-
   " golang
   call minpac#add('fatih/vim-go')
 
