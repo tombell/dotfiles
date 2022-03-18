@@ -22,6 +22,9 @@ function! PackInit() abort
   " golang
   call minpac#add('fatih/vim-go')
 
+  " json
+  call minpac#add('neoclide/jsonc.vim')
+
   " javascript and typescript
   call minpac#add('HerringtonDarkholme/yats.vim')
   call minpac#add('pangloss/vim-javascript')
