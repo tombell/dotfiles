@@ -4,9 +4,6 @@ function! PackInit() abort
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-  " misc
-  call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-
   " colour schemes
   call minpac#add('sainnhe/sonokai')
 
@@ -19,11 +16,14 @@ function! PackInit() abort
   call minpac#add('tombell/trailing.vim')
   call minpac#add('tpope/vim-commentary')
 
-  " golang
-  call minpac#add('fatih/vim-go')
+  " language servers
+  call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
   " json
   call minpac#add('neoclide/jsonc.vim')
+
+  " golang
+  call minpac#add('fatih/vim-go')
 
   " javascript and typescript
   call minpac#add('HerringtonDarkholme/yats.vim')
