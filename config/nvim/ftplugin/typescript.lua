@@ -16,3 +16,5 @@ map('n', 'gd', '<Plug>(coc-definition)', opts)
 map('n', 'gy', '<Plug>(coc-type-definition)', opts)
 map('n', 'gi', '<Plug>(coc-implementation)', opts)
 map('n', 'gr', '<Plug>(coc-references)', opts)
+
+map('n', 'qf', '<Plug>(coc-fix-current)', { noremap = false })
