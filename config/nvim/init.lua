@@ -1,3 +1,5 @@
+require('plugins')
+
 local cmd = vim.cmd
 local g = vim.g
 local o = vim.o
@@ -7,8 +9,6 @@ local function map(mode, lhs, rhs, opts)
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
-cmd [[source ~/.config/nvim/packages.vim]]
 
 cmd [[filetype plugin indent on]]
 
@@ -88,3 +88,4 @@ map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
   expr = true,
   silent = true,
 })
+
