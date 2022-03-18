@@ -1,3 +1,9 @@
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
 vim.bo.tabstop = 4
 vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
@@ -21,4 +27,4 @@ vim.g.go_jump_to_error = 0
 vim.g.go_metalinter_command = 'golangci-lint'
 vim.g.go_metalinter_autosave = 1
 
-vim.cmd [[autocmd BufEnter *.go nmap <leader>r <Plug>(go-rename)]]
+map('n', '<Leader>r', ':GoRename<cr>')
