@@ -51,27 +51,9 @@ o.textwidth = 80
 o.colorcolumn = '+1'
 
 o.number = true
-o.numberwidth = 5
+o.numberwidth = 4
 
 o.wildmode = [[list:longest,list:full]]
-
-cmd [[
-  function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col
-      return "\<tab>"
-    endif
-    let char = getline('.')[col - 1]
-    if char =~ '\k'
-      return "\<C-p>"
-    else
-      return "\<tab>"
-    endif
-  endfunction
-]]
-
-map('i', '<tab>', 'InsertTabWrapper()', { expr = true })
-map('i', '<s-tab>', '<c-n>')
 
 g.html_indent_tags = "li|p"
 
@@ -101,3 +83,9 @@ g.fzf_preview_window = {}
 g.fzf_layout = { down = "20%" }
 
 g.sql_type_default = "pgsql"
+
+map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>\\<c-r>=coc#on_enter()\\<cr>"', {
+  expr = true,
+  noremap = true,
+  silent = true,
+})

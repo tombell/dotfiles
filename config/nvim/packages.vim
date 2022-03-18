@@ -5,7 +5,7 @@ function! PackInit() abort
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " misc
-  call minpac#add('Shougo/vimproc.vim', {'do': {-> system('make')}})
+  call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 
   " colour schemes
   call minpac#add('sainnhe/sonokai')
@@ -23,7 +23,6 @@ function! PackInit() abort
   call minpac#add('fatih/vim-go')
 
   " javascript and typescript
-  call minpac#add('Quramy/tsuquyomi')
   call minpac#add('HerringtonDarkholme/yats.vim')
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('MaxMEllon/vim-jsx-pretty')
