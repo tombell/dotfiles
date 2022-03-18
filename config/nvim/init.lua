@@ -84,7 +84,7 @@ g.fzf_layout = { down = "20%" }
 
 g.sql_type_default = "pgsql"
 
-map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>\\<c-r>=coc#on_enter()\\<cr>"', {
+map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
   expr = true,
   noremap = true,
   silent = true,
