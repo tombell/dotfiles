@@ -55,7 +55,7 @@ vim.api.nvim_set_keymap('i', '<c-space>', '<c-x><c-o>', { noremap = true })
 
 vim.o.completeopt = 'menu'
 
-vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
 vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', { noremap = true })
@@ -74,8 +74,3 @@ vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
 
 vim.g.sql_type_default = 'pgsql'
-
-vim.api.nvim_set_keymap('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
-  expr = true,
-  silent = true,
-})
