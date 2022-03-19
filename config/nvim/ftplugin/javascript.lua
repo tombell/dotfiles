@@ -1,12 +1,8 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+require('map')
 
 vim.o.signcolumn = 'number'
 
-vim.cmd [[autocmd FileType qf setlocal wrap]]
+vim.cmd('autocmd FileType qf setlocal wrap')
 
 map('n', '<leader>r', '<Plug>(coc-rename)', { noremap = false })
 

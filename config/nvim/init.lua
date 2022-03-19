@@ -1,8 +1,5 @@
+require('map')
 require('plugins')
-
-local cmd = vim.cmd
-local g = vim.g
-local o = vim.o
 
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
@@ -10,82 +7,81 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-cmd [[filetype plugin indent on]]
+vim.cmd('filetype plugin indent on')
 
-g.mapleader = ','
+vim.g.mapleader = ','
 
-o.backspace = [[indent,eol,start]]
-o.backup = false
-o.writebackup = false
-o.swapfile = false
-o.history = 50
-o.ruler = true
-o.showcmd = true
-o.incsearch = true
-o.hlsearch = false
-o.laststatus = 2
-o.autowrite = true
-o.title = true
-o.cmdheight = 2
-o.shortmess = 'filtIoOA'
-o.termguicolors = true
-o.hidden = true
+vim.o.backspace = 'indent,eol,start'
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.swapfile = false
+vim.o.history = 50
+vim.o.ruler = true
+vim.o.showcmd = true
+vim.o.incsearch = true
+vim.o.hlsearch = false
+vim.o.laststatus = 2
+vim.o.autowrite = true
+vim.o.title = true
+vim.o.cmdheight = 2
+vim.o.shortmess = 'filtIoOA'
+vim.o.termguicolors = true
+vim.o.hidden = true
 
-cmd [[syntax on]]
-o.background = "dark"
-cmd [[colorscheme sonokai]]
+vim.cmd('syntax on')
+vim.o.background = 'dark'
+vim.cmd('colorscheme sonokai')
 
-g.is_posix = 1
+vim.g.is_posix = 1
 
-o.tabstop = 2
-o.shiftwidth = 2
-o.softtabstop = 2
-o.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
 
-o.list = true
-o.listchars = [[tab:»·,trail:·,nbsp:·]]
+vim.o.list = true
+vim.o.listchars = 'tab:»·,trail:·,nbsp:·'
 
-o.joinspaces = false
+vim.o.joinspaces = false
 
-o.textwidth = 80
-o.colorcolumn = '+1'
+vim.o.textwidth = 80
+vim.o.colorcolumn = '+1'
 
-o.number = true
-o.numberwidth = 4
+vim.o.number = true
+vim.o.numberwidth = 4
 
-o.wildmode = [[list:longest,list:full]]
+vim.o.wildmode = 'list:longest,list:full'
 
-g.html_indent_tags = "li|p"
+vim.g.html_indent_tags = 'li|p'
 
-o.splitbelow = true
-o.splitright = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-map('i', '<c-space>', '<c-x><c-o>')
+vim.map('i', '<c-space>', '<c-x><c-o>')
 
-o.completeopt = "menu"
+vim.o.completeopt = 'menu'
 
-map('n', '<leader>a', ':cclose<bar>:lclose<cr>')
+vim.map('n', '<leader>a', ':cclose<bar>:lclose<cr>')
 
-map('n', '<c-j>', '<c-w>j')
-map('n', '<c-k>', '<c-w>k')
-map('n', '<c-h>', '<c-w>h')
-map('n', '<c-l>', '<c-w>l')
+vim.map('n', '<c-j>', '<c-w>j')
+vim.map('n', '<c-k>', '<c-w>k')
+vim.map('n', '<c-h>', '<c-w>h')
+vim.map('n', '<c-l>', '<c-w>l')
 
-map('n', 'n', 'nzzzv')
-map('n', 'N', 'Nzzzv')
+vim.map('n', 'n', 'nzzzv')
+vim.map('n', 'N', 'Nzzzv')
 
-map('n', 'Q', 'gqap')
-map('v', 'Q', 'gq')
+vim.map('n', 'Q', 'gqap')
+vim.map('v', 'Q', 'gq')
 
-map('n', '<c-p>', ':Files<cr>', { silent = true })
+vim.map('n', '<c-p>', ':Files<cr>', { silent = true })
 
-g.fzf_preview_window = {}
-g.fzf_layout = { down = "20%" }
+vim.g.fzf_preview_window = {}
+vim.g.fzf_layout = { down = '20%' }
 
-g.sql_type_default = "pgsql"
+vim.g.sql_type_default = 'pgsql'
 
 map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
   expr = true,
   silent = true,
 })
-
