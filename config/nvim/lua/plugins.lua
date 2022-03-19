@@ -17,7 +17,15 @@ vim.fn['plug#']('tpope/vim-commentary')
 
 -- language servers
 
-vim.fn['plug#']('neoclide/coc.nvim', { branch = 'release' })
+vim.fn['plug#']('neoclide/coc.nvim', {
+  branch = 'release',
+  ['for'] = {
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+  },
+})
 
 -- json
 

@@ -51,10 +51,6 @@ vim.g.html_indent_tags = 'li|p'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.api.nvim_set_keymap('i', '<c-space>', '<c-x><c-o>', { noremap = true })
-
-vim.o.completeopt = 'menu'
-
 vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
@@ -76,13 +72,19 @@ vim.g.fzf_layout = { down = '20%' }
 vim.g.sql_type_default = 'pgsql'
 
 vim.cmd [[
-  function! s:check_back_space() abort
+  function! InsertTabWrapper()
     let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
+    if !col
+      return "\<tab>"
+    endif
+    let char = getline('.')[col - 1]
+    if char =~ '\k'
+      return "\<C-p>"
+    else
+      return "\<tab>"
+    endif
   endfunction
-
-  inoremap <silent><expr> <Tab>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
 ]]
+
+vim.api.nvim_set_keymap('i', '<tab>', 'InsertTabWrapper()', { noremap = true, expr = true })
+vim.api.nvim_set_keymap('i', '<s-tab>', '<c-n>', { noremap = true })
