@@ -1,11 +1,4 @@
-require('map')
 require('plugins')
-
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
 
 vim.cmd('filetype plugin indent on')
 
@@ -49,6 +42,7 @@ vim.o.colorcolumn = '+1'
 
 vim.o.number = true
 vim.o.numberwidth = 4
+vim.o.signcolumn = 'number'
 
 vim.o.wildmode = 'list:longest,list:full'
 
@@ -57,31 +51,31 @@ vim.g.html_indent_tags = 'li|p'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.map('i', '<c-space>', '<c-x><c-o>')
+vim.api.nvim_set_keymap('i', '<c-space>', '<c-x><c-o>', { noremap = true })
 
 vim.o.completeopt = 'menu'
 
-vim.map('n', '<leader>a', ':cclose<bar>:lclose<cr>')
+vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true })
 
-vim.map('n', '<c-j>', '<c-w>j')
-vim.map('n', '<c-k>', '<c-w>k')
-vim.map('n', '<c-h>', '<c-w>h')
-vim.map('n', '<c-l>', '<c-w>l')
+vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-h>', '<c-w>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-l>', '<c-w>l', { noremap = true })
 
-vim.map('n', 'n', 'nzzzv')
-vim.map('n', 'N', 'Nzzzv')
+vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
+vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
 
-vim.map('n', 'Q', 'gqap')
-vim.map('v', 'Q', 'gq')
+vim.api.nvim_set_keymap('n', 'Q', 'gqap', { noremap = true })
+vim.api.nvim_set_keymap('v', 'Q', 'gq', { noremap = true })
 
-vim.map('n', '<c-p>', ':Files<cr>', { silent = true })
+vim.api.nvim_set_keymap('n', '<c-p>', ':Files<cr>', { silent = true })
 
 vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
 
 vim.g.sql_type_default = 'pgsql'
 
-map('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
+vim.api.nvim_set_keymap('i', '<cr>', 'pumvisible() ? coc#_select_confirm() : "\\<c-g>u\\<cr>"', {
   expr = true,
   silent = true,
 })
