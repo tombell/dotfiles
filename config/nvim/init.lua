@@ -1,61 +1,50 @@
-local cmd = vim.cmd
-local g = vim.g
-local o = vim.o
+vim.cmd('filetype plugin indent on')
 
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+vim.g.mapleader = ','
 
-cmd [[source ~/.config/nvim/packages.vim]]
+vim.o.backspace = 'indent,eol,start'
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.swapfile = false
+vim.o.history = 50
+vim.o.ruler = true
+vim.o.showcmd = true
+vim.o.incsearch = true
+vim.o.hlsearch = false
+vim.o.laststatus = 2
+vim.o.autowrite = true
+vim.o.title = true
+vim.o.cmdheight = 2
+vim.o.shortmess = 'filtIoOA'
+vim.o.termguicolors = true
+vim.o.hidden = true
 
-cmd [[filetype plugin indent on]]
+vim.cmd('syntax on')
+vim.o.background = 'dark'
+vim.cmd('colorscheme sonokai')
 
-g.mapleader = ','
+vim.g.is_posix = 1
 
-o.backspace = [[indent,eol,start]]
-o.backup = false
-o.writebackup = false
-o.swapfile = false
-o.history = 50
-o.ruler = true
-o.showcmd = true
-o.incsearch = true
-o.hlsearch = false
-o.laststatus = 2
-o.autowrite = true
-o.title = true
-o.cmdheight = 2
-o.shortmess = 'filtIoOA'
-o.termguicolors = true
-o.hidden = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
 
-cmd [[syntax on]]
-o.background = "dark"
-cmd [[colorscheme sonokai]]
+vim.o.list = true
+vim.o.listchars = 'tab:»·,trail:·,nbsp:·'
 
-g.is_posix = 1
+vim.o.joinspaces = false
 
-o.tabstop = 2
-o.shiftwidth = 2
-o.softtabstop = 2
-o.expandtab = true
+vim.o.textwidth = 80
+vim.o.colorcolumn = '+1'
 
-o.list = true
-o.listchars = [[tab:»·,trail:·,nbsp:·]]
+vim.o.number = true
+vim.o.numberwidth = 4
+vim.o.signcolumn = 'number'
 
-o.joinspaces = false
+vim.o.wildmode = 'list:longest,list:full'
 
-o.textwidth = 80
-o.colorcolumn = '+1'
-
-o.number = true
-o.numberwidth = 5
-
-o.wildmode = [[list:longest,list:full]]
-
-cmd [[
+vim.cmd [[
   function! InsertTabWrapper()
     let col = col('.') - 1
     if !col
@@ -70,34 +59,30 @@ cmd [[
   endfunction
 ]]
 
-map('i', '<tab>', 'InsertTabWrapper()', { expr = true })
-map('i', '<s-tab>', '<c-n>')
+vim.api.nvim_set_keymap('i', '<tab>', 'InsertTabWrapper()', { noremap = true, expr = true })
+vim.api.nvim_set_keymap('i', '<s-tab>', '<c-n>', { noremap = true })
 
-g.html_indent_tags = "li|p"
+vim.g.html_indent_tags = 'li|p'
 
-o.splitbelow = true
-o.splitright = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-map('i', '<c-space>', '<c-x><c-o>')
+vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true, silent = true })
 
-o.completeopt = "menu"
+vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-h>', '<c-w>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-l>', '<c-w>l', { noremap = true })
 
-map('n', '<leader>a', ':cclose<bar>:lclose<cr>')
+vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
+vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
 
-map('n', '<c-j>', '<c-w>j')
-map('n', '<c-k>', '<c-w>k')
-map('n', '<c-h>', '<c-w>h')
-map('n', '<c-l>', '<c-w>l')
+vim.api.nvim_set_keymap('n', 'Q', 'gqap', { noremap = true })
+vim.api.nvim_set_keymap('v', 'Q', 'gq', { noremap = true })
 
-map('n', 'n', 'nzzzv')
-map('n', 'N', 'Nzzzv')
+vim.api.nvim_set_keymap('n', '<c-p>', ':Files<cr>', { silent = true })
 
-map('n', 'Q', 'gqap')
-map('v', 'Q', 'gq')
+vim.g.fzf_preview_window = {}
+vim.g.fzf_layout = { down = '20%' }
 
-map('n', '<c-p>', ':Files<cr>', { silent = true })
-
-g.fzf_preview_window = {}
-g.fzf_layout = { down = "20%" }
-
-g.sql_type_default = "pgsql"
+vim.g.sql_type_default = 'pgsql'
