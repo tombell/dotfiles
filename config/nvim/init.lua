@@ -46,6 +46,24 @@ vim.o.signcolumn = 'number'
 
 vim.o.wildmode = 'list:longest,list:full'
 
+vim.cmd [[
+  function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col
+      return "\<tab>"
+    endif
+    let char = getline('.')[col - 1]
+    if char =~ '\k'
+      return "\<C-p>"
+    else
+      return "\<tab>"
+    endif
+  endfunction
+]]
+
+vim.api.nvim_set_keymap('i', '<tab>', 'InsertTabWrapper()', { noremap = true, expr = true })
+vim.api.nvim_set_keymap('i', '<s-tab>', '<c-n>', { noremap = true })
+
 vim.g.html_indent_tags = 'li|p'
 
 vim.o.splitbelow = true
@@ -70,21 +88,3 @@ vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
 
 vim.g.sql_type_default = 'pgsql'
-
-vim.cmd [[
-  function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col
-      return "\<tab>"
-    endif
-    let char = getline('.')[col - 1]
-    if char =~ '\k'
-      return "\<C-p>"
-    else
-      return "\<tab>"
-    endif
-  endfunction
-]]
-
-vim.api.nvim_set_keymap('i', '<tab>', 'InsertTabWrapper()', { noremap = true, expr = true })
-vim.api.nvim_set_keymap('i', '<s-tab>', '<c-n>', { noremap = true })
