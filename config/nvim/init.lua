@@ -1,3 +1,5 @@
+require("plugins")
+
 vim.cmd('filetype plugin indent on')
 
 vim.g.mapleader = ','
