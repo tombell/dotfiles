@@ -878,13 +878,13 @@ Clear Buffer</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.098039217293262482</real>
+				<real>0.61960784313725492</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.094117648899555206</real>
+				<real>0.58039215686274515</real>
 				<key>Red Component</key>
-				<real>0.094117648899555206</real>
+				<real>0.54509803921568623</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -1060,13 +1060,13 @@ Clear Buffer</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.098039217293262482</real>
+				<real>0.61960784313725492</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.094117648899555206</real>
+				<real>0.58039215686274515</real>
 				<key>Red Component</key>
-				<real>0.094117648899555206</real>
+				<real>0.54509803921568623</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
