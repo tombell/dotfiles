@@ -88,3 +88,5 @@ vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
 
 vim.g.sql_type_default = 'pgsql'
+
+vim.g.ruby_path = '$HOME/.rbenv/shims'
