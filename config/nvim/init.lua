@@ -69,6 +69,8 @@ vim.g.html_indent_tags = 'li|p'
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+vim.api.nvim_set_keymap('i', '<c-space>', '<c-x><c-o>', { noremap = false })
+
 vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
