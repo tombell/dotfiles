@@ -3,3 +3,6 @@ ctrl + shift - s: lock
 
 # launch a new iTerm2 window, whether it is open or not.
 ctrl + shift - return: $HOME/.dotfiles/bin/open-iterm
+
+# launch a new Alacritty window, whether it is open or not.
+ctrl + shift - v: $HOME/.dotfiles/bin/open-alacritty
