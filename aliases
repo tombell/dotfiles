@@ -9,9 +9,6 @@ alias e="$VISUAL"
 # pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# make sure vim runs neovim
-alias vim="nvim"
-
 # change into dotfiles directory
 alias d="cd ~/.dotfiles"
 
@@ -21,13 +18,10 @@ alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
 
 # cleanup
-alias rmds="rm -fr ~/**/.DS_Store"
+alias rmds="rm -fr ~/**/.DS_Store ~/.*/.DS_Store"
 
 # find todo comments in code
 alias todo="rg -F 'TODO'"
-
-# find and kill a process
-alias pk="ps aux | tail -n +2 | fzf -m | awk '{print \$2}' | xargs kill -9"
 
 # tmux
 ta() { tmux a -t $1 \; select-window -t server \; }
