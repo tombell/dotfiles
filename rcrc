@@ -1,2 +1,2 @@
-EXCLUDES="bin/* brew/Brewfile* LICENSE README.md com.googlecode.iterm2.plist"
+EXCLUDES="bin/* brew/* config/iterm2/* LICENSE README.md"
 DOTFILES_DIRS="$HOME/.dotfiles"
