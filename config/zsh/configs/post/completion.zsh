@@ -1,5 +1,5 @@
 # Load our own completion functions
-fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
+fpath=(~/.config/zsh/completion /usr/local/share/zsh/site-functions $fpath)
 
 # Use cache if updated within 24h
 autoload -Uz compinit

@@ -2,12 +2,13 @@
 export PROJECTS="$HOME/Code"
 
 # load custom executable functions
-for function in ~/.zsh/functions/*; do
+for function in ~/.config/zsh/functions/*; do
   source $function
 done
 
-# extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
-# these are loaded first, second, and third, respectively.
+# extra files in ~/.config/zsh/configs/pre , ~/.config/zsh/configs , and
+# ~/.config/zsh/configs/post these are loaded first, second, and third,
+# respectively.
 _load_settings() {
   _dir="$1"
   if [ -d "$_dir" ]; then
@@ -40,7 +41,7 @@ _load_settings() {
     fi
   fi
 }
-_load_settings "$HOME/.zsh/configs"
+_load_settings "$HOME/.config/zsh/configs"
 
 files=(~/.aliases ~/.localrc)
 for f in "${files[@]}"; do
