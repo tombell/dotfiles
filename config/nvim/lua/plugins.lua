@@ -2,7 +2,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 -- color schemes
 
-vim.fn['plug#']('sainnhe/sonokai')
+vim.fn['plug#']('catppuccin/nvim', { as = 'catppuccin' })
 
 -- fzf
 

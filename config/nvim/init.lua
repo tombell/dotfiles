@@ -23,7 +23,7 @@ vim.o.hidden = true
 
 vim.cmd('syntax on')
 vim.o.background = 'dark'
-vim.cmd('colorscheme sonokai')
+vim.cmd('colorscheme catppuccin')
 
 vim.g.is_posix = 1
 
