@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-if ! alacritty msg create-window > /dev/null; then
-  open -a Alacritty
-fi
