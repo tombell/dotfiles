@@ -1,8 +1,0 @@
-# vim: set ft=ruby:
-
-tap "tombell/formulae"
-
-brew "moniker"
-
-cask "dupeguru"
-cask "rekordbox"
