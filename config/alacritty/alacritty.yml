@@ -55,3 +55,4 @@ colors:
 
 key_bindings:
   - { key: Key3, mods: Alt, chars: "#" }
+  - { key: T, mods: Command, action: CreateNewWindow }
