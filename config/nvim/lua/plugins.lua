@@ -45,6 +45,7 @@ vim.fn['plug#']('MaxMEllon/vim-jsx-pretty')
 
 vim.fn['plug#']('cespare/vim-toml')
 vim.fn['plug#']('hail2u/vim-css3-syntax')
+vim.fn['plug#']('keith/swift.vim')
 vim.fn['plug#']('lifepillar/pgsql.vim')
 
 vim.call('plug#end')
