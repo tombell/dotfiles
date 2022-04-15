@@ -23,6 +23,7 @@
   l = log --pretty=oneline --abbrev-commit --max-count=15
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
+  r = restore
   st = status -sb
 
 [core]
