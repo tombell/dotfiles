@@ -22,6 +22,7 @@ vim.fn['plug#']('neoclide/coc.nvim', {
   ['for'] = {
     'javascript',
     'javascriptreact',
+    'swift',
     'typescript',
     'typescriptreact',
   },
