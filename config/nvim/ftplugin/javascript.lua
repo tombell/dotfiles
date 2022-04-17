@@ -1,7 +1,7 @@
-vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', { noremap = false, silent = true })
+vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
+vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
+vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', { silent = true })
+vim.keymap.set('n', 'gr', '<Plug>(coc-references)', { silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>r', '<Plug>(coc-rename)', { noremap = false })
-vim.api.nvim_set_keymap('n', 'qf', '<Plug>(coc-fix-current)', { noremap = false })
+vim.keymap.set('n', '<leader>r', '<Plug>(coc-rename)')
+vim.keymap.set('n', 'qf', '<Plug>(coc-fix-current)')

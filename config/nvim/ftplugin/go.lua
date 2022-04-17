@@ -18,4 +18,4 @@ vim.g.go_jump_to_error = 0
 vim.g.go_metalinter_command = 'golangci-lint'
 vim.g.go_metalinter_autosave = 1
 
-vim.api.nvim_set_keymap('n', '<leader>r', ':GoRename<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>r', ':GoRename<cr>')

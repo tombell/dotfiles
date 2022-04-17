@@ -61,30 +61,30 @@ vim.cmd [[
   endfunction
 ]]
 
-vim.api.nvim_set_keymap('i', '<tab>', 'InsertTabWrapper()', { noremap = true, expr = true })
-vim.api.nvim_set_keymap('i', '<s-tab>', '<c-n>', { noremap = true })
+vim.keymap.set('i', '<tab>', 'InsertTabWrapper()', { expr = true })
+vim.keymap.set('i', '<s-tab>', '<c-n>')
 
 vim.g.html_indent_tags = 'li|p'
 
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.api.nvim_set_keymap('i', '<c-space>', '<c-x><c-o>', { noremap = false })
+vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { noremap = false })
 
-vim.api.nvim_set_keymap('n', '<leader>a', ':cclose<bar>:lclose<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>a', ':cclose<bar>:lclose<cr>', { silent = true })
 
-vim.api.nvim_set_keymap('n', '<c-j>', '<c-w>j', { noremap = true })
-vim.api.nvim_set_keymap('n', '<c-k>', '<c-w>k', { noremap = true })
-vim.api.nvim_set_keymap('n', '<c-h>', '<c-w>h', { noremap = true })
-vim.api.nvim_set_keymap('n', '<c-l>', '<c-w>l', { noremap = true })
+vim.keymap.set('n', '<c-j>', '<c-w>j')
+vim.keymap.set('n', '<c-k>', '<c-w>k')
+vim.keymap.set('n', '<c-h>', '<c-w>h')
+vim.keymap.set('n', '<c-l>', '<c-w>l')
 
-vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
-vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
-vim.api.nvim_set_keymap('n', 'Q', 'gqap', { noremap = true })
-vim.api.nvim_set_keymap('v', 'Q', 'gq', { noremap = true })
+vim.keymap.set('n', 'Q', 'gqap')
+vim.keymap.set('v', 'Q', 'gq')
 
-vim.api.nvim_set_keymap('n', '<c-p>', ':Files<cr>', { silent = true })
+vim.keymap.set('n', '<c-p>', ':Files<cr>', { silent = true })
 
 vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
