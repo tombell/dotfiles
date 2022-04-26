@@ -4,12 +4,10 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 vim.fn['plug#']('catppuccin/nvim', { as = 'catppuccin' })
 
--- fzf
+-- utilities
 
 vim.fn['plug#']('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
 vim.fn['plug#']('junegunn/fzf.vim')
-
--- utilities
 
 vim.fn['plug#']('editorconfig/editorconfig-vim')
 vim.fn['plug#']('tombell/trailing.vim')
@@ -25,28 +23,37 @@ vim.fn['plug#']('neoclide/coc.nvim', {
     'swift',
     'typescript',
     'typescriptreact',
+    'zig',
   },
 })
-
--- json
-
-vim.fn['plug#']('neoclide/jsonc.vim')
 
 -- golang
 
 vim.fn['plug#']('fatih/vim-go')
 
--- javascript and typescript
+-- typescript/javascript
 
 vim.fn['plug#']('HerringtonDarkholme/yats.vim')
 vim.fn['plug#']('pangloss/vim-javascript')
 vim.fn['plug#']('MaxMEllon/vim-jsx-pretty')
 
--- misc. language support
+-- toml
 
 vim.fn['plug#']('cespare/vim-toml')
-vim.fn['plug#']('hail2u/vim-css3-syntax')
+
+-- swift
 vim.fn['plug#']('keith/swift.vim')
+
+-- sql
+
 vim.fn['plug#']('lifepillar/pgsql.vim')
+
+-- css
+
+vim.fn['plug#']('hail2u/vim-css3-syntax')
+
+-- jsonc
+
+vim.fn['plug#']('neoclide/jsonc.vim')
 
 vim.call('plug#end')
