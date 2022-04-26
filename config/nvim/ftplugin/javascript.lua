@@ -1,1 +1,1 @@
-require("javascript")
+require("typescript")
