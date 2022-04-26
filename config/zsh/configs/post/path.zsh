@@ -12,7 +12,7 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-if [ -d $HOME/.spicetify ]; then
+if [[ -d $HOME/.spicetify ]]; then
   PATH=$HOME/.spicetify:$PATH
 fi
 
