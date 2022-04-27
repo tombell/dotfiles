@@ -61,20 +61,20 @@ vim.cmd [[
   endfunction
 ]]
 
-vim.keymap.set('i', '<tab>', 'InsertTabWrapper()', { expr = true })
-vim.keymap.set('i', '<s-tab>', '<c-n>')
+vim.keymap.set('i', '<Tab>', 'InsertTabWrapper()', { expr = true })
+vim.keymap.set('i', '<S-Tab>', '<C-n>')
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { noremap = false })
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { noremap = false })
 
-vim.keymap.set('n', '<leader>a', ':cclose<bar>:lclose<cr>', { silent = true })
+vim.keymap.set('n', '<Leader>a', ':cclose|:lclose<CR>', { silent = true })
 
-vim.keymap.set('n', '<c-j>', '<c-w>j')
-vim.keymap.set('n', '<c-k>', '<c-w>k')
-vim.keymap.set('n', '<c-h>', '<c-w>h')
-vim.keymap.set('n', '<c-l>', '<c-w>l')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
@@ -82,7 +82,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'Q', 'gqap')
 vim.keymap.set('v', 'Q', 'gq')
 
-vim.keymap.set('n', '<c-p>', ':Files<cr>', { silent = true })
+vim.keymap.set('n', '<C-p>', ':Files<CR>', { silent = true })
 
 vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
