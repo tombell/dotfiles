@@ -10,7 +10,6 @@ vim.fn['plug#']('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
 vim.fn['plug#']('junegunn/fzf.vim')
 
 vim.fn['plug#']('editorconfig/editorconfig-vim')
-vim.fn['plug#']('tombell/trailing.vim')
 vim.fn['plug#']('tpope/vim-commentary')
 
 -- language servers
