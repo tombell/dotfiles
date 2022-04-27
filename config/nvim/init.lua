@@ -1,4 +1,5 @@
 require("plugins")
+require("lsp")
 
 vim.cmd('filetype plugin indent on')
 
