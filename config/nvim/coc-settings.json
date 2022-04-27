@@ -1,0 +1,17 @@
+{
+  // coc-tsserver
+  "tsserver.disableAutomaticTypeAcquisition": true,
+
+  // coc-solargraph
+  "solargraph.promptDownload": false,
+  "solargraph.useBundler": true,
+
+  // custom language servers
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"],
+    },
+  },
+}
