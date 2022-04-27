@@ -12,12 +12,6 @@ vim.fn['plug#']('junegunn/fzf.vim')
 vim.fn['plug#']('editorconfig/editorconfig-vim')
 vim.fn['plug#']('tpope/vim-commentary')
 
--- language servers
-
--- golang
-
-vim.fn['plug#']('fatih/vim-go')
-
 -- typescript/javascript
 
 vim.fn['plug#']('HerringtonDarkholme/yats.vim')
