@@ -6,7 +6,7 @@ window:
   decorations: Buttonless
 
 font:
-  size: 11.5
+  size: 11.0
   normal:
     family: Iosevka Term SS08
     style: Regular
@@ -33,23 +33,23 @@ colors:
     text: '#1e1d2f'
     cursor: '#f5e0dc'
   normal:
-    black:   '#6e6c7e'
-    red:     '#f28fad'
-    green:   '#abe9b3'
-    yellow:  '#fae3b0'
-    blue:    '#96cdfb'
+    black: '#6e6c7e'
+    red: '#f28fad'
+    green: '#abe9b3'
+    yellow: '#fae3b0'
+    blue: '#96cdfb'
     magenta: '#f5c2e7'
-    cyan:    '#89dceb'
-    white:   '#d9e0ee'
+    cyan: '#89dceb'
+    white: '#d9e0ee'
   bright:
-    black:   '#988ba2'
-    red:     '#f28fad'
-    green:   '#abe9b3'
-    yellow:  '#fae3b0'
-    blue:    '#96cdfb'
+    black: '#988ba2'
+    red: '#f28fad'
+    green: '#abe9b3'
+    yellow: '#fae3b0'
+    blue: '#96cdfb'
     magenta: '#f5c2e7'
-    cyan:    '#89dceb'
-    white:   '#d9e0ee'
+    cyan: '#89dceb'
+    white: '#d9e0ee'
   indexed_colors:
     - { index: 16, color: '0xf8bd96' }
     - { index: 17, color: '0xf5e0dc' }
