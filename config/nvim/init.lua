@@ -25,8 +25,6 @@ vim.cmd('syntax on')
 vim.opt.background = 'dark'
 vim.cmd('colorscheme catppuccin')
 
-vim.g.is_posix = 1
-
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
@@ -66,8 +64,6 @@ vim.cmd [[
 vim.keymap.set('i', '<tab>', 'InsertTabWrapper()', { expr = true })
 vim.keymap.set('i', '<s-tab>', '<c-n>')
 
-vim.g.html_indent_tags = 'li|p'
-
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
@@ -90,6 +86,10 @@ vim.keymap.set('n', '<c-p>', ':Files<cr>', { silent = true })
 
 vim.g.fzf_preview_window = {}
 vim.g.fzf_layout = { down = '20%' }
+
+vim.g.is_posix = 1
+
+vim.g.html_indent_tags = 'li|p'
 
 vim.g.sql_type_default = 'pgsql'
 
