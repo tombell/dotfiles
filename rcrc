@@ -1,2 +1,2 @@
-EXCLUDES="bin/* brew/* config/iterm2/* LICENSE README.md"
+EXCLUDES="bin/* brew/* LICENSE README.md"
 DOTFILES_DIRS="$HOME/.dotfiles"
