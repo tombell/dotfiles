@@ -4,49 +4,49 @@ vim.cmd('filetype plugin indent on')
 
 vim.g.mapleader = ','
 
-vim.o.backspace = 'indent,eol,start'
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.swapfile = false
-vim.o.history = 50
-vim.o.ruler = true
-vim.o.showcmd = true
-vim.o.incsearch = true
-vim.o.hlsearch = false
-vim.o.laststatus = 2
-vim.o.autowrite = true
-vim.o.title = true
-vim.o.cmdheight = 2
-vim.o.shortmess = 'filtIoOA'
-vim.o.termguicolors = true
-vim.o.hidden = true
+vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+vim.opt.history = 50
+vim.opt.ruler = true
+vim.opt.showcmd = true
+vim.opt.incsearch = true
+vim.opt.hlsearch = false
+vim.opt.laststatus = 2
+vim.opt.autowrite = true
+vim.opt.title = true
+vim.opt.cmdheight = 2
+vim.opt.shortmess = 'filtIoOA'
+vim.opt.termguicolors = true
+vim.opt.hidden = true
 
 vim.cmd('syntax on')
-vim.o.background = 'dark'
+vim.opt.background = 'dark'
 vim.cmd('colorscheme catppuccin')
 
 vim.g.is_posix = 1
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
 
-vim.o.list = true
-vim.o.listchars = 'tab:»·,trail:·,nbsp:·'
+vim.opt.list = true
+vim.opt.listchars = { tab = '»·', trail = '·', nbsp = '·' }
 
-vim.o.joinspaces = false
+vim.opt.joinspaces = false
 
-vim.o.textwidth = 80
-vim.o.colorcolumn = '+1'
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = '+1'
 
-vim.o.number = true
-vim.o.numberwidth = 4
-vim.o.signcolumn = 'number'
+vim.opt.number = true
+vim.opt.numberwidth = 4
+vim.opt.signcolumn = 'number'
 
-vim.o.completeopt = 'menu'
+vim.opt.completeopt = 'menu'
 
-vim.o.wildmode = 'list:longest,list:full'
+vim.opt.wildmode = { list = 'longest', list = 'full' }
 
 vim.cmd [[
   function! InsertTabWrapper()
@@ -68,8 +68,8 @@ vim.keymap.set('i', '<s-tab>', '<c-n>')
 
 vim.g.html_indent_tags = 'li|p'
 
-vim.o.splitbelow = true
-vim.o.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { noremap = false })
 
