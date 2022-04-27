@@ -15,18 +15,6 @@ vim.fn['plug#']('tpope/vim-commentary')
 
 -- language servers
 
-vim.fn['plug#']('neoclide/coc.nvim', {
-  branch = 'release',
-  ['for'] = {
-    'javascript',
-    'javascriptreact',
-    'swift',
-    'typescript',
-    'typescriptreact',
-    'zig',
-  },
-})
-
 -- golang
 
 vim.fn['plug#']('fatih/vim-go')
@@ -51,9 +39,5 @@ vim.fn['plug#']('lifepillar/pgsql.vim')
 -- css
 
 vim.fn['plug#']('hail2u/vim-css3-syntax')
-
--- jsonc
-
-vim.fn['plug#']('neoclide/jsonc.vim')
 
 vim.call('plug#end')
