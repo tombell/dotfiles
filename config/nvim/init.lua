@@ -44,6 +44,8 @@ vim.o.number = true
 vim.o.numberwidth = 4
 vim.o.signcolumn = 'number'
 
+vim.o.completeopt = 'menu'
+
 vim.o.wildmode = 'list:longest,list:full'
 
 vim.cmd [[
