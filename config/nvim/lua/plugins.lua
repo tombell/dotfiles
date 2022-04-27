@@ -12,6 +12,10 @@ vim.fn['plug#']('junegunn/fzf.vim')
 vim.fn['plug#']('editorconfig/editorconfig-vim')
 vim.fn['plug#']('tpope/vim-commentary')
 
+-- language servers
+
+vim.fn['plug#']('neovim/nvim-lspconfig')
+
 -- typescript/javascript
 
 vim.fn['plug#']('HerringtonDarkholme/yats.vim')
