@@ -45,7 +45,7 @@ vim.opt.signcolumn = 'number'
 
 vim.opt.completeopt = 'menu'
 
-vim.opt.wildmode = { list = 'longest', list = 'full' }
+vim.opt.wildmode = 'list:longest,list:full'
 
 vim.cmd [[
   function! InsertTabWrapper()
