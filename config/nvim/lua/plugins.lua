@@ -4,10 +4,12 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 vim.fn['plug#']('catppuccin/nvim', { as = 'catppuccin' })
 
--- utilities
+-- fuzzy finding
 
-vim.fn['plug#']('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
-vim.fn['plug#']('junegunn/fzf.vim')
+vim.fn['plug#']('nvim-lua/plenary.nvim')
+vim.fn['plug#']('nvim-telescope/telescope.nvim')
+
+-- utilities
 
 vim.fn['plug#']('editorconfig/editorconfig-vim')
 vim.fn['plug#']('tpope/vim-commentary')

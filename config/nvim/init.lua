@@ -83,10 +83,10 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'Q', 'gqap')
 vim.keymap.set('v', 'Q', 'gq')
 
-vim.keymap.set('n', '<C-p>', ':Files<CR>', { silent = true })
+local find_files = require('telescope.builtin').find_files
+local get_dropdown = require('telescope.themes').get_dropdown
 
-vim.g.fzf_preview_window = {}
-vim.g.fzf_layout = { down = '20%' }
+vim.keymap.set('n', '<C-p>', function() find_files(get_dropdown()) end)
 
 vim.g.is_posix = 1
 
