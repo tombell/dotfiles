@@ -76,7 +76,11 @@ local find_files = require("telescope.builtin").find_files
 local get_dropdown = require("telescope.themes").get_dropdown
 
 vim.keymap.set("n", "<C-p>", function()
-  find_files(get_dropdown())
+  find_files(get_dropdown {})
+end)
+
+vim.keymap.set("n", "<Leader>p", function()
+  find_files(get_dropdown { no_ignore = true })
 end)
 
 vim.api.nvim_create_autocmd("BufWinLeave", {
