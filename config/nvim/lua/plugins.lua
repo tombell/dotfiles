@@ -1,42 +1,45 @@
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+local plug = vim.fn['plug#']
+
 -- color schemes
 
-vim.fn['plug#']('catppuccin/nvim', { as = 'catppuccin' })
+plug('catppuccin/nvim', { as = 'catppuccin' })
 
 -- fuzzy finding
 
-vim.fn['plug#']('nvim-lua/plenary.nvim')
-vim.fn['plug#']('nvim-telescope/telescope.nvim')
+plug('nvim-lua/plenary.nvim')
+plug('nvim-telescope/telescope.nvim')
 
 -- utilities
 
-vim.fn['plug#']('editorconfig/editorconfig-vim')
-vim.fn['plug#']('tpope/vim-commentary')
+plug('editorconfig/editorconfig-vim')
+plug('tpope/vim-commentary')
 
 -- language servers
 
-vim.fn['plug#']('neovim/nvim-lspconfig')
+plug('neovim/nvim-lspconfig')
 
 -- typescript/javascript
 
-vim.fn['plug#']('HerringtonDarkholme/yats.vim')
-vim.fn['plug#']('pangloss/vim-javascript')
-vim.fn['plug#']('MaxMEllon/vim-jsx-pretty')
+plug('HerringtonDarkholme/yats.vim')
+plug('pangloss/vim-javascript')
+plug('MaxMEllon/vim-jsx-pretty')
 
 -- toml
 
-vim.fn['plug#']('cespare/vim-toml')
+plug('cespare/vim-toml')
 
 -- swift
-vim.fn['plug#']('keith/swift.vim')
+
+plug('keith/swift.vim')
 
 -- sql
 
-vim.fn['plug#']('lifepillar/pgsql.vim')
+plug('lifepillar/pgsql.vim')
 
 -- css
 
-vim.fn['plug#']('hail2u/vim-css3-syntax')
+plug('hail2u/vim-css3-syntax')
 
 vim.call('plug#end')
