@@ -1,30 +1,23 @@
 require("plugins")
 require("lsp")
 
-vim.cmd('filetype plugin indent on')
+vim.cmd('colorscheme catppuccin')
 
 vim.g.mapleader = ','
 
-vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.g.ruby_path = '$HOME/.rbenv/shims'
+vim.g.sql_type_default = 'pgsql'
+
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
-vim.opt.history = 50
-vim.opt.ruler = true
-vim.opt.showcmd = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
-vim.opt.title = true
 vim.opt.cmdheight = 2
 vim.opt.shortmess = 'filtIoOA'
 vim.opt.termguicolors = true
-vim.opt.hidden = true
-
-vim.cmd('syntax on')
-vim.opt.background = 'dark'
-vim.cmd('colorscheme catppuccin')
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -33,8 +26,6 @@ vim.opt.expandtab = true
 
 vim.opt.list = true
 vim.opt.listchars = { tab = '»·', trail = '·', nbsp = '·' }
-
-vim.opt.joinspaces = false
 
 vim.opt.textwidth = 80
 vim.opt.colorcolumn = '+1'
@@ -45,7 +36,8 @@ vim.opt.signcolumn = 'number'
 
 vim.opt.completeopt = 'menu'
 
-vim.opt.wildmode = 'list:longest,list:full'
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.cmd [[
   function! InsertTabWrapper()
@@ -64,9 +56,6 @@ vim.cmd [[
 
 vim.keymap.set('i', '<Tab>', 'InsertTabWrapper()', { expr = true })
 vim.keymap.set('i', '<S-Tab>', '<C-n>')
-
-vim.opt.splitbelow = true
-vim.opt.splitright = true
 
 vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', { noremap = false })
 
@@ -87,11 +76,3 @@ local find_files = require('telescope.builtin').find_files
 local get_dropdown = require('telescope.themes').get_dropdown
 
 vim.keymap.set('n', '<C-p>', function() find_files(get_dropdown()) end)
-
-vim.g.is_posix = 1
-
-vim.g.html_indent_tags = 'li|p'
-
-vim.g.sql_type_default = 'pgsql'
-
-vim.g.ruby_path = '$HOME/.rbenv/shims'
