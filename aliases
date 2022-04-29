@@ -18,10 +18,11 @@ alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
 
 # cleanup
-alias rmds="rm -fr ~/**/.DS_Store ~/.*/.DS_Store"
+alias rmds="find . -name \".DS_Store\" -delete"
 
 # find todo comments in code
 alias todo="rg -F 'TODO'"
 
 # tmux
 ta() { tmux a -t $1 \; select-window -t server \; }
+alias tl="tmux ls"
