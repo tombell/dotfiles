@@ -10,8 +10,10 @@ require("packer").startup(function()
   }
 
   -- fuzzy finding
-  use "nvim-lua/plenary.nvim"
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   -- utilities
   use "editorconfig/editorconfig-vim"
