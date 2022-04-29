@@ -32,12 +32,12 @@ vim.keymap.set("n", "Q", "gqap")
 vim.keymap.set("v", "Q", "gq")
 
 local find_files = require("telescope.builtin").find_files
-local get_dropdown = require("telescope.themes").get_dropdown
+local get_ivy = require("telescope.themes").get_ivy
 
 vim.keymap.set("n", "<C-p>", function()
-  find_files(get_dropdown {})
+  find_files(get_ivy { previewer = false })
 end)
 
 vim.keymap.set("n", "<Leader>p", function()
-  find_files(get_dropdown { no_ignore = true })
+  find_files(get_ivy { previewer = false, no_ignore = true })
 end)
