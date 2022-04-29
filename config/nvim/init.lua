@@ -3,7 +3,7 @@ if require "core.first_load"() then
 end
 
 require "core.globals"
+require "core.plugins"
 require "core.options"
 require "core.mappings"
 require "core.autocmd"
-require "core.plugins"
