@@ -1,15 +1,8 @@
+; vim: set ft=gitconfig:
+
 [user]
   name = Tom Bell
   email = tomb@tomb.io
-
-[push]
-  default = current
-
-[pull]
-  ff = only
-
-[color]
-  ui = auto
 
 [alias]
   aa = add --all
@@ -23,15 +16,25 @@
   l = log --pretty=oneline --abbrev-commit --max-count=15
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
-  r = restore
+  r = rebase
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase --interactive
+  rs = rebase --skip
   st = status -sb
 
-[core]
-  excludesfile = ~/.config/git/ignore
-  autocrlf = input
+[push]
+  default = current
+
+[pull]
+  ff = only
 
 [fetch]
   prune = true
+
+[core]
+  autocrlf = input
+  excludesfile = ~/.config/git/ignore
 
 [rebase]
   autosquash = true
