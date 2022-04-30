@@ -9,7 +9,11 @@ require("packer").startup(function()
 
   use {
     "nvim-telescope/telescope.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    config = [[require("core.plugins.telescope")]],
+    requires = {
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-lua/plenary.nvim",
+    },
   }
 
   use "editorconfig/editorconfig-vim"
