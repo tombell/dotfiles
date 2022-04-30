@@ -19,26 +19,19 @@ require("packer").startup(function()
   use "editorconfig/editorconfig-vim"
   use "tpope/vim-commentary"
 
+  -- highlighting
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = 'require("core.plugins.treesitter")',
+  }
+
   -- lsp
   use {
     "neovim/nvim-lspconfig",
     config = 'require("core.plugins.lsp")',
   }
 
-  -- javascript/typescript
-  use "HerringtonDarkholme/yats.vim"
-  use "pangloss/vim-javascript"
-  use "MaxMEllon/vim-jsx-pretty"
-
-  -- toml
-  use "cespare/vim-toml"
-
-  -- swift
-  use "keith/swift.vim"
-
   -- sql
   use "lifepillar/pgsql.vim"
-
-  -- css
-  use "hail2u/vim-css3-syntax"
 end)
