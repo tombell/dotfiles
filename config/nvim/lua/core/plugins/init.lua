@@ -7,21 +7,7 @@ require("packer").startup(function()
     config = [[require("core.plugins.catppuccin")]],
   }
 
-  use {
-    "nvim-telescope/telescope.nvim",
-    config = [[require("core.plugins.telescope")]],
-    requires = {
-      "nvim-telescope/telescope-ui-select.nvim",
-      "nvim-lua/plenary.nvim",
-    },
-  }
-
   use "gpanders/editorconfig.nvim"
-
-  use {
-    "numToStr/Comment.nvim",
-    config = [[require("core.plugins.comment")]],
-  }
 
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -32,6 +18,22 @@ require("packer").startup(function()
   use {
     "neovim/nvim-lspconfig",
     config = [[require("core.plugins.lsp")]],
+  }
+
+  use {
+    "nvim-telescope/telescope.nvim",
+    config = [[require("core.plugins.telescope")]],
+    requires = {
+      "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+  }
+
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  use {
+    "numToStr/Comment.nvim",
+    config = [[require("core.plugins.comment")]],
   }
 
   use "lifepillar/pgsql.vim"
