@@ -4,7 +4,7 @@ require("packer").startup(function()
   use {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = 'require("core.plugins.catppuccin")',
+    config = [[require("core.plugins.catppuccin")]],
   }
 
   use {
@@ -18,12 +18,12 @@ require("packer").startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = 'require("core.plugins.treesitter")',
+    config = [[require("core.plugins.treesitter")]],
   }
 
   use {
     "neovim/nvim-lspconfig",
-    config = 'require("core.plugins.lsp")',
+    config = [[require("core.plugins.lsp")]],
   }
 
   use "lifepillar/pgsql.vim"
