@@ -16,7 +16,7 @@ require("packer").startup(function()
     },
   }
 
-  use "editorconfig/editorconfig-vim"
+  use "gpanders/editorconfig.nvim"
 
   use {
     "numToStr/Comment.nvim",
