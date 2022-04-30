@@ -17,7 +17,11 @@ require("packer").startup(function()
   }
 
   use "editorconfig/editorconfig-vim"
-  use "tpope/vim-commentary"
+
+  use {
+    "numToStr/Comment.nvim",
+    config = [[require("core.plugins.comment")]],
+  }
 
   use {
     "nvim-treesitter/nvim-treesitter",
