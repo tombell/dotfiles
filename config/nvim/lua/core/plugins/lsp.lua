@@ -65,3 +65,5 @@ lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = false })

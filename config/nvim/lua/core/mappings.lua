@@ -16,8 +16,6 @@ vim.cmd [[
 vim.keymap.set("i", "<Tab>", "InsertTabWrapper()", { expr = true })
 vim.keymap.set("i", "<S-Tab>", "<C-n>")
 
-vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = false })
-
 vim.keymap.set("n", "<Leader>a", ":cclose|:lclose<CR>", { silent = true })
 
 vim.keymap.set("n", "<C-j>", "<C-w>j")
