@@ -17,7 +17,7 @@ require("packer").startup(function()
 
   use {
     "neovim/nvim-lspconfig",
-    config = [[require("core.plugins.lsp")]],
+    config = [[require("core.plugins.lspconfig")]],
   }
 
   use {
