@@ -5,6 +5,8 @@ local on_attach = function(client, bufnr)
 
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
+  vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = false })
+
   vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
@@ -65,5 +67,3 @@ lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
-
-vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", { noremap = false })
