@@ -3,12 +3,16 @@ vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 vim.bo.expandtab = false
 
+local go_group = vim.api.nvim_create_augroup("go_group", { clear = true })
+
 vim.api.nvim_create_autocmd("BufWritePre", {
+  group = go_group,
   pattern = "*.go",
   callback = vim.lsp.buf.formatting_sync,
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
+  group = go_group,
   pattern = "*.go",
   callback = function()
     local params = vim.lsp.util.make_range_params()
