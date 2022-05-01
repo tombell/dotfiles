@@ -1,19 +1,15 @@
-vim.cmd [[
-  function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col
-      return "\<tab>"
-    endif
-    let char = getline('.')[col - 1]
-    if char =~ '\k'
-      return "\<C-p>"
-    else
-      return "\<tab>"
-    endif
-  endfunction
-]]
+local tab_wrapper = function()
+  local col = vim.fn.col "."
+  local char = vim.fn.getline("."):sub(col - 1, col - 1)
 
-vim.keymap.set("i", "<Tab>", "InsertTabWrapper()", { expr = true })
+  if char == "" or string.match(char, "%s") ~= nil then
+    return "<Tab>"
+  end
+
+  return "<C-p>"
+end
+
+vim.keymap.set("i", "<Tab>", tab_wrapper, { expr = true })
 vim.keymap.set("i", "<S-Tab>", "<C-n>")
 
 vim.keymap.set("n", "<Leader>c", ":cclose|:lclose<CR>", { silent = true })
