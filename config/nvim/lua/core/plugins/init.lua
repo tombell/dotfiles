@@ -23,11 +23,19 @@ packer.startup(function()
   }
 
   use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = [[require("core.plugins.null_ls")]],
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
+
+  use {
     "nvim-telescope/telescope.nvim",
     config = [[require("core.plugins.telescope")]],
     requires = {
-      "nvim-telescope/telescope-ui-select.nvim",
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
   }
 
