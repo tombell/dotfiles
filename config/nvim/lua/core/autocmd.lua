@@ -1,12 +1,11 @@
-vim.api.nvim_create_autocmd("BufWinLeave", {
-  callback = function()
-    vim.wo.spell = false
-  end,
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("spell_group", { clear = true }),
+  pattern = { "markdown", "gitcomit" },
+  command = "setlocal spell",
 })
 
-local PackerCompile = vim.api.nvim_create_augroup("PackerCompile", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
-  group = PackerCompile,
+  group = vim.api.nvim_create_augroup("packer_group", { clear = true }),
   pattern = "*/nvim/lua/core/plugins/init.lua",
   command = "source <afile> | PackerCompile",
   once = false,
