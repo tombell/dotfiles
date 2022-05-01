@@ -23,6 +23,6 @@ catppuccin.setup {
   },
 }
 
-vim.cmd "colorscheme catppuccin"
+vim.cmd [[colorscheme catppuccin]]
 
-vim.api.nvim_command "highlight VertSplit guifg=#302D41"
+vim.cmd [[highlight VertSplit guifg=#302D41]]
