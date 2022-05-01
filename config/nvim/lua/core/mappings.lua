@@ -33,7 +33,7 @@ local find_files = require("telescope.builtin").find_files
 local get_ivy = require("telescope.themes").get_ivy
 
 vim.keymap.set("n", "<C-p>", function()
-  find_files(get_ivy { previewer = false })
+  find_files(get_ivy { previewer = false, hidden = true })
 end)
 
 vim.keymap.set("n", "<Leader>p", function()
