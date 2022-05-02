@@ -12,6 +12,5 @@ vim.g.sql_type_default = "pgsql"
 vim.g.ruby_path = "$HOME/.rbenv/shims"
 
 require "core.plugins"
-require "core.options"
 require "core.mappings"
 require "core.autocmd"
