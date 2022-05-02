@@ -1,3 +1,6 @@
+local imap = require("tombell.keymap").imap
+local nmap = require("tombell.keymap").nmap
+
 local lspconfig = require "lspconfig"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -5,30 +8,19 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 local on_attach = function(client, bufnr)
-  local opts = { buffer = 0 }
-
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", opts)
+  imap { "<C-Space>", "<C-x><C-o>", { buffer = 0 } }
 
-  vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
-  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+  nmap { "<C-]>", vim.lsp.buf.definition, { buffer = 0 } }
+  nmap { "gy", vim.lsp.buf.type_definition, { buffer = 0 } }
+  nmap { "gi", vim.lsp.buf.implementation, { buffer = 0 } }
+  nmap { "gr", vim.lsp.buf.references, { buffer = 0 } }
 
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+  nmap { "K", vim.lsp.buf.hover, { buffer = 0 } }
 
-  vim.keymap.set("n", "<Leader>a", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, opts)
-
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-
-  if client.resolved_capabilities.document_formatting then
-    vim.keymap.set("n", "<Leader>f", vim.lsp.buf.formatting, opts)
-  elseif client.resolved_capabilities.document_range_formatting then
-    vim.keymap.set("n", "<Leader>f", vim.lsp.buf.formatting, opts)
-  end
+  nmap { "<Leader>a", vim.lsp.buf.code_action, { buffer = 0 } }
+  nmap { "<Leader>r", vim.lsp.buf.rename, { buffer = 0 } }
 
   vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
 end

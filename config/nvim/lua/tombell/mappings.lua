@@ -1,3 +1,6 @@
+local imap = require("tombell.keymap").imap
+local nmap = require("tombell.keymap").nmap
+
 local tab_wrapper = function()
   local col = vim.fn.col "."
   local char = vim.fn.getline("."):sub(col - 1, col - 1)
@@ -9,29 +12,35 @@ local tab_wrapper = function()
   return "<C-p>"
 end
 
-vim.keymap.set("i", "<Tab>", tab_wrapper, { expr = true })
-vim.keymap.set("i", "<S-Tab>", "<C-n>")
+imap { "<Tab>", tab_wrapper, { expr = true } }
+imap { "<S-Tab>", "<C-n>" }
 
-vim.keymap.set("n", "<Leader>c", ":cclose|:lclose<CR>", { silent = true })
+nmap { "<Leader>c", ":cclose|:lclose<CR>", { silent = true } }
 
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+nmap { "<C-j>", "<C-w>j" }
+nmap { "<C-k>", "<C-w>k" }
+nmap { "<C-h>", "<C-w>h" }
+nmap { "<C-l>", "<C-w>l" }
 
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+nmap { "n", "nzzzv" }
+nmap { "N", "Nzzzv" }
 
-vim.keymap.set("n", "Q", "gqap")
-vim.keymap.set("v", "Q", "gq")
+nmap { "Q", "gqap" }
+nmap { "Q", "gq" }
 
 local find_files = require("telescope.builtin").find_files
 local get_ivy = require("telescope.themes").get_ivy
 
-vim.keymap.set("n", "<C-p>", function()
-  find_files(get_ivy { previewer = false, hidden = true })
-end)
+nmap {
+  "<C-p>",
+  function()
+    find_files(get_ivy { previewer = false, hidden = true })
+  end,
+}
 
-vim.keymap.set("n", "<Leader>p", function()
-  find_files(get_ivy { previewer = false, no_ignore = true })
-end)
+nmap {
+  "<Leader>p",
+  function()
+    find_files(get_ivy { previewer = false, no_ignore = true })
+  end,
+}
