@@ -6,7 +6,7 @@ packer.startup(function()
   use {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = [[require("core.plugins.catppuccin")]],
+    config = [[require("tombell.plugins.catppuccin")]],
   }
 
   use "gpanders/editorconfig.nvim"
@@ -14,17 +14,17 @@ packer.startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = [[require("core.plugins.treesitter")]],
+    config = [[require("tombell.plugins.treesitter")]],
   }
 
   use {
     "neovim/nvim-lspconfig",
-    config = [[require("core.plugins.lspconfig")]],
+    config = [[require("tombell.plugins.lspconfig")]],
   }
 
   use {
     "jose-elias-alvarez/null-ls.nvim",
-    config = [[require("core.plugins.null_ls")]],
+    config = [[require("tombell.plugins.null_ls")]],
     requires = {
       "nvim-lua/plenary.nvim",
     },
@@ -32,7 +32,7 @@ packer.startup(function()
 
   use {
     "nvim-telescope/telescope.nvim",
-    config = [[require("core.plugins.telescope")]],
+    config = [[require("tombell.plugins.telescope")]],
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
@@ -43,7 +43,7 @@ packer.startup(function()
 
   use {
     "numToStr/Comment.nvim",
-    config = [[require("core.plugins.comment")]],
+    config = [[require("tombell.plugins.comment")]],
   }
 
   use "lifepillar/pgsql.vim"
