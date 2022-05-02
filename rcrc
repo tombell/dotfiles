@@ -1,2 +1,2 @@
-EXCLUDES="bin/* brew/* config/nvim/stylua.toml LICENSE README.md"
+EXCLUDES="bin/* config/nvim/stylua.toml Brewfile LICENSE README.md"
 DOTFILES_DIRS="$HOME/.dotfiles"
