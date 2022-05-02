@@ -29,11 +29,20 @@ local on_attach = function(client, bufnr)
   elseif client.resolved_capabilities.document_range_formatting then
     vim.keymap.set("n", "<Leader>f", vim.lsp.buf.formatting, opts)
   end
+
+  vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- gopls
+local servers = { "sourcekit", "tsserver" }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
 lspconfig.gopls.setup {
   settings = {
     gopls = {
@@ -50,24 +59,11 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
 }
 
--- solargraph
 lspconfig.solargraph.setup {
   cmd = { "bundle", "exec", "solargraph", "stdio" },
   settings = {
     diagnostics = true,
   },
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
--- sourcekit
-lspconfig.sourcekit.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
--- tsserver
-lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
