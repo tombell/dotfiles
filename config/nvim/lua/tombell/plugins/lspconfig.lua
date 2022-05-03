@@ -59,3 +59,9 @@ lspconfig.solargraph.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+lspconfig.tailwindcss.setup {
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
