@@ -1,6 +1,5 @@
 GOPATH=$HOME/.go
 
-PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/.dotfiles/bin:$PATH"
 
 if command -v rbenv >/dev/null; then
