@@ -62,3 +62,10 @@ packer.startup(function()
 
   use "mattn/vim-goaddtags"
 end)
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("packer_group", { clear = true }),
+  pattern = "*/nvim/lua/core/plugins/init.lua",
+  command = "source <afile> | PackerSync",
+  once = false,
+})
