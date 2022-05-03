@@ -27,30 +27,25 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local servers = { "sourcekit", "tsserver" }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+if vim.fn.executable "gopls" then
+  lspconfig.gopls.setup {
+    settings = {
+      gopls = {
+        analyses = {
+          nilness = true,
+          shadow = true,
+          unusedparams = true,
+          useany = true,
+        },
+        staticcheck = true,
+      },
+    },
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
 
-lspconfig.gopls.setup {
-  settings = {
-    gopls = {
-      analyses = {
-        nilness = true,
-        shadow = true,
-        unusedparams = true,
-        useany = true,
-      },
-      staticcheck = true,
-    },
-  },
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
+-- add check for solargraph
 lspconfig.solargraph.setup {
   cmd = { "bundle", "exec", "solargraph", "stdio" },
   settings = {
@@ -60,8 +55,24 @@ lspconfig.solargraph.setup {
   capabilities = capabilities,
 }
 
-lspconfig.tailwindcss.setup {
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+if vim.fn.executable "sourcekit-lsp" == 1 then
+  lspconfig.sourcekit.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
+if vim.fn.executable "tailwindcss-language-server" == 1 then
+  lspconfig.tailwindcss.setup {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
+if vim.fn.executable "typescript-language-server" == 1 then
+  lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
