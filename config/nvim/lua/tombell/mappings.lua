@@ -36,7 +36,11 @@ local get_ivy = require("telescope.themes").get_ivy
 nmap {
   "<C-p>",
   function()
-    find_files(get_ivy { previewer = false, hidden = true })
+    find_files(get_ivy {
+      find_command = { "rg", "--files", "--glob", "!.git/*" },
+      previewer = false,
+      hidden = true,
+    })
   end,
 }
 
