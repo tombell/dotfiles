@@ -1,18 +1,20 @@
 local imap = require("tombell.keymap").imap
 local nmap = require("tombell.keymap").nmap
 
-local tab_wrapper = function()
-  local col = vim.fn.col "."
-  local char = vim.fn.getline("."):sub(col - 1, col - 1)
+imap {
+  "<Tab>",
+  function()
+    local col = vim.fn.col "." - 1
 
-  if char == "" or string.match(char, "%s") ~= nil then
-    return "<Tab>"
-  end
+    if col == 0 or vim.fn.getline("."):sub(col, col):match "%s" then
+      return "<Tab>"
+    end
 
-  return "<C-p>"
-end
+    return "<C-p>"
+  end,
+  { expr = true },
+}
 
-imap { "<Tab>", tab_wrapper, { expr = true } }
 imap { "<S-Tab>", "<C-n>" }
 
 nmap { "<Leader>c", ":cclose|:lclose<CR>", { silent = true } }
