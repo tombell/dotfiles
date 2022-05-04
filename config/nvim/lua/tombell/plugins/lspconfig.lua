@@ -46,14 +46,10 @@ if vim.fn.executable "gopls" then
 end
 
 -- add check for solargraph
-lspconfig.solargraph.setup {
-  cmd = { "bundle", "exec", "solargraph", "stdio" },
-  settings = {
-    diagnostics = true,
-  },
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+-- lspconfig.solargraph.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- }
 
 if vim.fn.executable "sourcekit-lsp" == 1 then
   lspconfig.sourcekit.setup {
