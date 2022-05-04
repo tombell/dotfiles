@@ -10,7 +10,6 @@ configs.setup {
     "javascript",
     "lua",
     "markdown",
-    "ruby",
     "scss",
     "swift",
     "toml",
