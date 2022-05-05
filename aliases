@@ -19,7 +19,3 @@ alias blc="brew list -1 --cask"
 
 # find todo comments in code
 alias todo="rg -F 'TODO'"
-
-# tmux
-ta() { tmux a -t $1 \; select-window -t server \; }
-alias tl="tmux ls"
