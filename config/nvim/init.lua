@@ -6,8 +6,6 @@ end
 
 vim.g.mapleader = ","
 
-vim.g.sql_type_default = "pgsql"
-
 -- Ruby files load slow if you don't set this when using rbenv
 vim.g.ruby_path = "/Users/tombell/.rbenv/shims/ruby"
 
