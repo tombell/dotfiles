@@ -12,5 +12,4 @@ vim.g.sql_type_default = "pgsql"
 vim.g.ruby_path = "/Users/tombell/.rbenv/shims/ruby"
 
 require "tombell.plugins"
-require "tombell.mappings"
 require "tombell.autocmd"
