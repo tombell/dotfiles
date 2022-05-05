@@ -29,24 +29,3 @@ nmap { "N", "Nzzzv" }
 
 nmap { "Q", "gqap" }
 nmap { "Q", "gq" }
-
-local find_files = require("telescope.builtin").find_files
-local get_ivy = require("telescope.themes").get_ivy
-
-nmap {
-  "<C-p>",
-  function()
-    find_files(get_ivy {
-      find_command = { "rg", "--files", "--glob", "!.git/*" },
-      previewer = false,
-      hidden = true,
-    })
-  end,
-}
-
-nmap {
-  "<Leader>p",
-  function()
-    find_files(get_ivy { previewer = false, no_ignore = true })
-  end,
-}
