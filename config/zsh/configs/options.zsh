@@ -3,3 +3,5 @@ setopt extendedglob
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
+
+export LESSHISTFILE=-
