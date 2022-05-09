@@ -10,7 +10,7 @@ const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
 
 // Margin to have around each window edge
-const MARGIN = 7;
+const MARGIN = 8;
 
 // -----------------------------------------------------------------------------
 // WINDOW CENTERING
