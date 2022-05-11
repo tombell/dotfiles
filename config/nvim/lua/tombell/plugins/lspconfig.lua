@@ -51,13 +51,6 @@ end
 --   capabilities = capabilities,
 -- }
 
-if vim.fn.executable "sourcekit-lsp" == 1 then
-  lspconfig.sourcekit.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
-
 if vim.fn.executable "tailwindcss-language-server" == 1 then
   lspconfig.tailwindcss.setup {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
