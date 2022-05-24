@@ -53,7 +53,7 @@ end
 
 if vim.fn.executable "tailwindcss-language-server" == 1 then
   lspconfig.tailwindcss.setup {
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    filetypes = { "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
     on_attach = on_attach,
     capabilities = capabilities,
   }
