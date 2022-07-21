@@ -19,3 +19,7 @@ alias blc="brew list -1 --cask"
 
 # find todo comments in code
 alias todo="rg -F 'TODO'"
+
+# node/js/ts
+alias j="npx jest"
+alias t="npm test"
