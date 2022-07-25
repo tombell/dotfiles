@@ -1,6 +1,7 @@
 GOPATH=$HOME/.go
 
 PATH="$HOME/.dotfiles/bin:$PATH"
+PATH="/opt/homebrew/bin:$PATH"
 
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
