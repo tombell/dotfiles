@@ -21,5 +21,7 @@ alias blc="brew list -1 --cask"
 alias todo="rg -F 'TODO'"
 
 # node/js/ts
+alias n="npm"
+alias nx="npx"
 alias j="npx jest"
 alias t="npm test"
