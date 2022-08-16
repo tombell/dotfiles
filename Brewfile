@@ -1,5 +1,6 @@
 # vim: set ft=ruby:
 
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
@@ -29,6 +30,7 @@ cask "discord"
 # cask "doppler"
 cask "font-iosevka-ss08"
 cask "google-chrome"
+cask "logi-options-plus"
 cask "mpv"
 # cask "paragon-ntfs"
 cask "soundsource"
