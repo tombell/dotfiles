@@ -8,6 +8,7 @@ configs.setup {
     "gomod",
     "html",
     "javascript",
+    "latex",
     "lua",
     "markdown",
     "scss",
