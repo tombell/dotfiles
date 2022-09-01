@@ -42,7 +42,7 @@ if File.exist? "/tmp/work"
 
   brew "git-lfs"
   brew "heroku"
-  brew "postgresql"
+  brew "postgresql@14"
   brew "redis"
   # brew "watchman"
 
