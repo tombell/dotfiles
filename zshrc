@@ -43,7 +43,7 @@ _load_settings() {
 }
 _load_settings "$HOME/.config/zsh/configs"
 
-files=(~/.aliases ~/.localrc)
+files=(~/.localrc)
 for f in "${files[@]}"; do
   [[ -f "$f" ]] && source "$f"
 done

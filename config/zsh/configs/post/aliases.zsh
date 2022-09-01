@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 alias l="ls -lAh"
 alias ll="ls -al"
 alias la="ls -A"
