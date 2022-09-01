@@ -1,6 +1,5 @@
 # vim: set ft=ruby:
 
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "starkwm/formulae"
 tap "thoughtbot/formulae"
