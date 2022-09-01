@@ -2,6 +2,10 @@
 ctrl + shift - s:
   lock
 
+################################################################################
+# Terminal
+################################################################################
+
 # launch a new iTerm2 window, whether it is open or not.
 # ctrl + shift - return:
 #   if ! osascript -e 'tell application "iTerm2" to create window with default profile' > /dev/null; then open -a iTerm; fi
@@ -10,6 +14,11 @@ ctrl + shift - s:
 ctrl + shift - return:
   if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
 
+
+################################################################################
+# Sound
+################################################################################
+
 # enable the Headphone EQ FX in SoundSource
 ctrl + shift - left:
   shortcuts run "Enable Headphone EQ"
@@ -17,3 +26,13 @@ ctrl + shift - left:
 # disable the Headphone EQ FX in SoundSource
 ctrl + shift - right:
   shortcuts run "Disable Headphone EQ"
+
+################################################################################
+# Lights
+################################################################################
+
+ctrl + alt - q:
+  shortcuts run "Bedside On"
+
+ctrl + alt - w:
+  shortcuts run "Bedside off"
