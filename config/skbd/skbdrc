@@ -9,3 +9,11 @@ ctrl + shift - s:
 # launch a new Alacritty window, whether it is open or not.
 ctrl + shift - return:
   if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
+
+# enable the Headphone EQ FX in SoundSource
+ctrl + shift - left:
+  shortcuts run "Enable Headphone EQ"
+
+# disable the Headphone EQ FX in SoundSource
+ctrl + shift - right:
+  shortcuts run "Disable Headphone EQ"
