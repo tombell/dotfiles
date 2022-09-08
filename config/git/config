@@ -19,6 +19,7 @@
   r = rebase
   ra = rebase --abort
   rc = rebase --continue
+  re = restore
   ri = rebase --interactive
   rs = rebase --skip
   st = status -sb
