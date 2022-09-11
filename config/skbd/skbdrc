@@ -31,8 +31,14 @@ ctrl + shift - right:
 # Lights
 ################################################################################
 
-ctrl + alt - q:
+ctrl + cmd - 1:
   shortcuts run "Bedside On"
 
-ctrl + alt - w:
+ctrl + cmd - 2:
   shortcuts run "Bedside off"
+
+ctrl + opt - 1:
+  shortcuts run "Living Room On"
+
+ctrl + opt - 2:
+  shortcuts run "Living Room Off"
