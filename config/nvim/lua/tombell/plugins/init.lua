@@ -45,29 +45,22 @@ packer.startup(function()
     end,
     requires = {
       "nvim-lua/plenary.nvim",
-      -- "nvim-telescope/telescope-ui-select.nvim",
     },
   }
 
   use "stevearc/dressing.nvim"
-
-  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   use {
     "numToStr/Comment.nvim",
     config = function()
       require "tombell.plugins.comment"
     end,
+    requires = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
   }
 
   use "lifepillar/pgsql.vim"
 
   use "mattn/vim-goaddtags"
 end)
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("packer_group", { clear = true }),
-  pattern = "*/nvim/lua/core/plugins/init.lua",
-  command = "source <afile> | PackerSync",
-  once = false,
-})
