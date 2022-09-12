@@ -45,9 +45,11 @@ packer.startup(function()
     end,
     requires = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-ui-select.nvim",
+      -- "nvim-telescope/telescope-ui-select.nvim",
     },
   }
+
+  use "stevearc/dressing.nvim"
 
   use "JoosepAlviste/nvim-ts-context-commentstring"
 

@@ -14,14 +14,7 @@ telescope.setup {
       },
     },
   },
-  extensions = {
-    ["ui-select"] = {
-      themes.get_cursor { winblend = 5 },
-    },
-  },
 }
-
-telescope.load_extension "ui-select"
 
 nmap {
   "<C-p>",
