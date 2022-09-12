@@ -45,15 +45,9 @@ if vim.fn.executable "gopls" then
   }
 end
 
--- add check for solargraph
--- lspconfig.solargraph.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
 if vim.fn.executable "tailwindcss-language-server" == 1 then
   lspconfig.tailwindcss.setup {
-    filetypes = { "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    filetypes = { "css", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" },
     on_attach = on_attach,
     capabilities = capabilities,
   }
