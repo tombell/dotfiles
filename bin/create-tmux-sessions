@@ -28,7 +28,26 @@ work=(
   switchboard
 )
 
-start_sessions() {
+start_memoir_sessions() {
+  local arr=("$@")
+
+  for c in "${arr[@]}"; do
+    cd "$HOME/Code/$c"
+    tmux new-session -d -s "$c" -n "server"
+    tmux new-window -t "$c:2" -n "editor"
+  done
+}
+
+start_stark_sessions() {
+  local arr=("$@")
+
+  for c in "${arr[@]}"; do
+    cd "$HOME/Code/$c"
+    tmux new-session -d -s "$c" -n "editor"
+  done
+}
+
+start_work_sessions() {
   local arr=("$@")
 
   for c in "${arr[@]}"; do
@@ -40,14 +59,14 @@ start_sessions() {
 
 main() {
   case ${1:-"work"} in
-    work)
-      start_sessions "${work[@]}"
-      ;;
     memoir)
-      start_sessions "${memoir[@]}"
+      start_memoir_sessions "${memoir[@]}"
       ;;
     stark)
-      start_sessions "${stark[@]}"
+      start_stark_sessions "${stark[@]}"
+      ;;
+    work)
+      start_work_sessions "${work[@]}"
       ;;
     *)
       echo "error: unknown environment"
