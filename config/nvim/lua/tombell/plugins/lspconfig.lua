@@ -21,8 +21,6 @@ local on_attach = function(client, bufnr)
 
   nmap { "<Leader>a", vim.lsp.buf.code_action, { buffer = 0 } }
   nmap { "<Leader>r", vim.lsp.buf.rename, { buffer = 0 } }
-
-  vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
