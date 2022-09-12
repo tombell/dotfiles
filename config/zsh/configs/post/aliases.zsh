@@ -18,7 +18,8 @@ alias blc="brew list -1 --cask"
 # find todo comments in code
 alias todo="rg -F 'TODO'"
 
-# node/js/ts
+# npm/pnpm
 alias j="npx jest"
 alias t="npm test"
 alias tc="npx tsc --noEmit"
+alias pn="pnpm"
