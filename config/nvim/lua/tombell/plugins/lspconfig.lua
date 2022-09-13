@@ -10,17 +10,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  imap { "<C-Space>", "<C-x><C-o>", { buffer = 0 } }
+  imap { "<C-Space>", "<C-x><C-o>", { buffer = bufnr } }
 
-  nmap { "<C-]>", vim.lsp.buf.definition, { buffer = 0 } }
-  nmap { "gy", vim.lsp.buf.type_definition, { buffer = 0 } }
-  nmap { "gi", vim.lsp.buf.implementation, { buffer = 0 } }
-  nmap { "gr", vim.lsp.buf.references, { buffer = 0 } }
+  nmap { "<C-]>", vim.lsp.buf.definition, { buffer = bufnr } }
+  nmap { "gy", vim.lsp.buf.type_definition, { buffer = bufnr } }
+  nmap { "gi", vim.lsp.buf.implementation, { buffer = bufnr } }
+  nmap { "gr", vim.lsp.buf.references, { buffer = bufnr } }
 
-  nmap { "K", vim.lsp.buf.hover, { buffer = 0 } }
+  nmap { "K", vim.lsp.buf.hover, { buffer = bufnr } }
 
-  nmap { "<Leader>a", vim.lsp.buf.code_action, { buffer = 0 } }
-  nmap { "<Leader>r", vim.lsp.buf.rename, { buffer = 0 } }
+  nmap { "<Leader>a", vim.lsp.buf.code_action, { buffer = bufnr } }
+  nmap { "<Leader>r", vim.lsp.buf.rename, { buffer = bufnr } }
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
