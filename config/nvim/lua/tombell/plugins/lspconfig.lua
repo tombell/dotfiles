@@ -25,7 +25,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-if vim.fn.executable "gopls" then
+if vim.fn.executable "gopls" == 1 then
   lspconfig.gopls.setup {
     settings = {
       gopls = {
