@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+tmux list-sessions -F "#S" | sort | fzf-tmux -d 20% | xargs tmux switch -t
