@@ -1,6 +1,6 @@
 GOPATH=$HOME/.go
 
-PATH="$HOME/.dotfiles/bin:$PATH"
+PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 
 if [[ -d "/opt/homebrew/bin" ]]; then
   PATH="/opt/homebrew/bin:$PATH"
