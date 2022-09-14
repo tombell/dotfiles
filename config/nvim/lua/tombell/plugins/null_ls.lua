@@ -12,6 +12,7 @@ null_ls.setup {
 
     -- diagnostics
     null_ls.builtins.diagnostics.eslint.with { prefer_local = prefer_local },
+    null_ls.builtins.diagnostics.rubocop,
 
     -- formatting
     -- null_ls.builtins.formatting.goimports,
