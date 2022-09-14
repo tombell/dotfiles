@@ -4,7 +4,6 @@ local nmap = require("tombell.keymap").nmap
 local telescope = require "telescope"
 local actions = require "telescope.actions"
 local builtin = require "telescope.builtin"
-local themes = require "telescope.themes"
 
 telescope.setup {
   defaults = {
@@ -14,25 +13,23 @@ telescope.setup {
       },
     },
   },
+  extensions = {
+    file_browser = {
+      hijack_netrw = true,
+      previewer = false,
+    },
+  },
 }
+
+telescope.load_extension "file_browser"
 
 nmap {
   "<C-p>",
   function()
-    builtin.find_files(themes.get_ivy {
+    builtin.find_files {
       find_command = { "rg", "--files", "--glob", "!.git/*" },
-      previewer = false,
       hidden = true,
-    })
-  end,
-}
-
-nmap {
-  "<Leader>p",
-  function()
-    builtin.find_files(themes.get_ivy {
       previewer = false,
-      no_ignore = true,
-    })
+    }
   end,
 }
