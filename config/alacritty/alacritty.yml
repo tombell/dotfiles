@@ -103,3 +103,6 @@ colors:
   indexed_colors:
     - { index: 16, color: "#FAB387" }
     - { index: 17, color: "#F5E0DC" }
+
+key_bindings:
+  - { key: Key3, mods: Alt, chars: "#" }
