@@ -10,6 +10,7 @@ catpuccin.setup {
   },
   highlight_overrides = {
     mocha = {
+      TelescopeBorder = { fg = mocha.surface2 },
       VertSplit = { fg = mocha.surface0 },
       commentTSDanger = { fg = mocha.red, bg = mocha.base },
       commentTSNote = { fg = mocha.blue, bg = mocha.base },
