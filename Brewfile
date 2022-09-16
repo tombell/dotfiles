@@ -3,7 +3,6 @@
 brew "fzf"
 brew "git"
 brew "go"
-brew "gomodifytags"
 brew "gopls"
 brew "neovim"
 brew "nodenv"
