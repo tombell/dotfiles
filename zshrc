@@ -1,57 +1,98 @@
-# export env var for projects path
+export CLICOLOR=1
+
 export PROJECTS="$HOME/Code"
+export GOPATH=$HOME/.go
 
-# load custom executable functions
-for function in ~/.config/zsh/functions/*; do
-  source $function
-done
+export LESSHISTFILE=-
 
-# extra files in ~/.config/zsh/configs/pre , ~/.config/zsh/configs , and
-# ~/.config/zsh/configs/post these are loaded first, second, and third,
-# respectively.
-_load_settings() {
-  _dir="$1"
-  if [ -d "$_dir" ]; then
-    if [ -d "$_dir/pre" ]; then
-      for config in "$_dir"/pre/**/*(N-.); do
-        . $config
-      done
-    fi
+export VISUAL=nvim
+export EDITOR=$VISUAL
 
-    for config in "$_dir"/**/*(N-.); do
-      case "$config" in
-        "$_dir"/pre/*)
-          :
-          ;;
-        "$_dir"/post/*)
-          :
-          ;;
-        *)
-          if [ -f $config ]; then
-            . $config
-          fi
-          ;;
-      esac
-    done
+autoload -U colors
+colors
 
-    if [ -d "$_dir/post" ]; then
-      for config in "$_dir"/post/**/*(N-.); do
-        . $config
-      done
-    fi
-  fi
-}
-_load_settings "$HOME/.config/zsh/configs"
+setopt extendedglob
+unsetopt nomatch
+setopt promptsubst
+setopt hist_ignore_all_dups
+setopt inc_append_history
 
-files=(~/.localrc)
-for f in "${files[@]}"; do
-  [[ -f "$f" ]] && source "$f"
-done
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5a6477"
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+
+c() { cd "$PROJECTS/$1" }
+
+fpath=(~/.config/zsh/completion /usr/local/share/zsh/site-functions $fpath)
+
+autoload -Uz compinit
+if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+  compinit -d $HOME/.zcompdump
+else
+  compinit -C
+fi
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' insert-tab pending
+
+if [[ -d "/opt/homebrew/bin" ]]; then
+  PATH="/opt/homebrew/bin:$PATH"
+fi
+
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init - --no-rehash)"
+fi
+
+if command -v nodenv >/dev/null; then
+  eval "$(nodenv init - --no-rehash)"
+fi
+
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
+[[ -f ~/.localrc ]] && source ~/.localrc
 
 [[ -f "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] \
   && source "$(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 [[ -f "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] \
   && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+git_prompt_info() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [[ -n $current_branch ]]; then
+    echo "%{$fg[blue]%}⸤$current_branch⸣ "
+  fi
+}
+
+PROMPT='%{$fg[green]%}%c $(git_prompt_info)%{$fg[magenta]%}▶ %{$reset_color%}'
+
+alias l="ls -lAh"
+alias ll="ls -al"
+alias la="ls -A"
+
+alias e="$VISUAL"
+
+alias path='echo $PATH | tr -s ":" "\n"'
+
+alias d="cd ~/.dotfiles"
+
+alias bcu="brew cleanup -s"
+alias bl="brew list -1 --formula"
+alias blc="brew list -1 --cask"
+
+alias todo="rg -F 'TODO'"
+
+alias j="npx jest"
+alias t="npm test"
+alias tc="npx tsc --noEmit"
