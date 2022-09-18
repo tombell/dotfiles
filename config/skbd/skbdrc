@@ -15,11 +15,11 @@ ctrl + shift - return:
 ################################################################################
 
 # enable the Headphone EQ FX in SoundSource
-ctrl + shift - left:
+ctrl + shift - [:
   shortcuts run "Enable Headphone EQ"
 
 # disable the Headphone EQ FX in SoundSource
-ctrl + shift - right:
+ctrl + shift - ]:
   shortcuts run "Disable Headphone EQ"
 
 ################################################################################
