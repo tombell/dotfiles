@@ -11,6 +11,7 @@ configs.setup {
     "latex",
     "lua",
     "markdown",
+    "markdown_inline",
     "scss",
     "swift",
     "toml",
