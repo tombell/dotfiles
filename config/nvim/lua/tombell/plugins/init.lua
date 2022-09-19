@@ -52,6 +52,13 @@ packer.startup(function()
   use "stevearc/dressing.nvim"
 
   use {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require "tombell.plugins.lualine"
+    end,
+  }
+
+  use {
     "numToStr/Comment.nvim",
     config = function()
       require "tombell.plugins.comment"
