@@ -1,39 +1,48 @@
-# quickly lock the screen.
+################################################################################
+# Utility
+################################################################################
+
 ctrl + shift - s:
   lock
 
 ################################################################################
-# Terminal
+# Applications
 ################################################################################
 
-# launch a new Alacritty window, whether it is open or not.
 ctrl + shift - return:
   if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
+
+ctrl + shift - b:
+  open -na "Google Chrome" --args --new-window
 
 ################################################################################
 # Sound
 ################################################################################
 
-# enable the Headphone EQ FX in SoundSource
 ctrl + shift - [:
   shortcuts run "Enable Headphone EQ"
 
-# disable the Headphone EQ FX in SoundSource
 ctrl + shift - ]:
   shortcuts run "Disable Headphone EQ"
 
 ################################################################################
-# Lights
+# Hue Lights
 ################################################################################
 
-ctrl + cmd - 1:
-  shortcuts run "Bedside On"
+alt - 1:
+  shortcuts run "Guest Bedroom On"
 
-ctrl + cmd - 2:
-  shortcuts run "Bedside off"
+alt - 2:
+  shortcuts run "Guest Bedroom Off"
 
-ctrl + opt - 1:
+ctrl + alt - 1:
   shortcuts run "Living Room On"
 
-ctrl + opt - 2:
+ctrl + alt - 2:
   shortcuts run "Living Room Off"
+
+ctrl + alt - 3:
+  shortcuts run "Bedside On"
+
+ctrl + alt - 4:
+  shortcuts run "Bedside off"
