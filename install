@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+echo "==> Installing homebrew formulae and casks..."
+brew bundle
+
+echo "==> Installing dotfiles..."
+env RCRC=$HOME/.dotfiles/rcrc rcup
