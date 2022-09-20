@@ -4,6 +4,6 @@ These are my dotfiles for macOS (and Linux).
 
 ## Installation
 
-Install the dotfiles:
+Install Homebrew formulae and casks, and install dotfiles:
 
-    env RCRC=$HOME/.dotfiles/rcrc rcup
+    ./install
