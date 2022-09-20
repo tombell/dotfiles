@@ -31,6 +31,19 @@ packer.startup(function()
   }
 
   use {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require "tombell.plugins.lsp.cmp"
+    end,
+    requires = {
+      "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+    },
+  }
+
+  use {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
       require "tombell.plugins.lsp.null-ls"
