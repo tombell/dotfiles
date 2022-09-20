@@ -52,7 +52,7 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
-export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 
 [[ -f ~/.localrc ]] && source ~/.localrc
 
