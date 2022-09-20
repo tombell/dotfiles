@@ -4,17 +4,14 @@ local mocha = require("catppuccin.palettes").get_palette "mocha"
 vim.g.catppuccin_flavour = "mocha"
 
 catpuccin.setup {
-  compile = {
-    enabled = true,
-    path = vim.fn.stdpath "cache" .. "/catppuccin",
-  },
   highlight_overrides = {
     mocha = {
       TelescopeBorder = { fg = mocha.surface2 },
-      VertSplit = { fg = mocha.surface0 },
-      commentTSDanger = { fg = mocha.red, bg = mocha.base },
-      commentTSNote = { fg = mocha.blue, bg = mocha.base },
-      commentTSWarning = { fg = mocha.yellow, bg = mocha.base },
+      Todo = { fg = mocha.yellow, bg = mocha.base, style = { "italic" } },
+      VertSplit = { fg = mocha.surface1 },
+      commentTSDanger = { fg = mocha.red, bg = mocha.base, style = { "italic" } },
+      commentTSNote = { fg = mocha.blue, bg = mocha.base, style = { "italic" } },
+      commentTSWarning = { fg = mocha.yellow, bg = mocha.base, style = { "italic" } },
     },
   },
 }
