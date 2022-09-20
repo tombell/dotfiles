@@ -8,6 +8,13 @@ packer.startup(function()
   use "stevearc/dressing.nvim"
 
   use {
+    "lukas-reineke/virt-column.nvim",
+    config = function()
+      require "tombell.plugins.virt-column"
+    end,
+  }
+
+  use {
     "catppuccin/nvim",
     as = "catppuccin",
     config = function()
