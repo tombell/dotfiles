@@ -22,7 +22,8 @@ vim.opt.colorcolumn = "+1"
 
 vim.opt.number = true
 vim.opt.numberwidth = 4
-vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "yes:2"
+vim.opt.cursorline = true
 
 vim.opt.completeopt = "menu"
 
