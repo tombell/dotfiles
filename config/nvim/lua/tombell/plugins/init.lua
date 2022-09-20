@@ -67,6 +67,4 @@ packer.startup(function()
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
   }
-
-  use "mattn/vim-goaddtags"
 end)
