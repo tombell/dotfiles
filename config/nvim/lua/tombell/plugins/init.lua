@@ -26,14 +26,14 @@ packer.startup(function()
   use {
     "neovim/nvim-lspconfig",
     config = function()
-      require "tombell.plugins.lspconfig"
+      require "tombell.plugins.lsp.servers"
     end,
   }
 
   use {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require "tombell.plugins.null_ls"
+      require "tombell.plugins.lsp.null-ls"
     end,
     requires = {
       "nvim-lua/plenary.nvim",
