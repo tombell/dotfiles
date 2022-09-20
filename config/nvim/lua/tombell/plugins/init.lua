@@ -68,7 +68,5 @@ packer.startup(function()
     },
   }
 
-  use "lifepillar/pgsql.vim"
-
   use "mattn/vim-goaddtags"
 end)
