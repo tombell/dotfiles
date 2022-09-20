@@ -1,31 +1,49 @@
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
-vim.opt.incsearch = true
-vim.opt.hlsearch = false
-vim.opt.laststatus = 3
-vim.opt.autowrite = true
-vim.opt.cmdheight = 2
-vim.opt.shortmess = "filtIoOA"
-vim.opt.termguicolors = true
+local o = vim.o
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
+-- Enable 24-bit RGB colours in the terminal
+o.termguicolors = true
 
-vim.opt.list = true
-vim.opt.listchars = { tab = "»·", trail = "·", nbsp = "·" }
+-- Disable backup files and swap files
+o.backup = false
+o.writebackup = false
+o.swapfile = false
 
-vim.opt.textwidth = 80
-vim.opt.colorcolumn = "+1"
+-- Disable highlighting search results
+o.hlsearch = false
 
-vim.opt.number = true
-vim.opt.numberwidth = 4
-vim.opt.signcolumn = "yes:2"
-vim.opt.cursorline = true
+-- Setup the command height
+o.cmdheight = 2
 
-vim.opt.completeopt = "menu"
+-- Setup the short
+o.shortmess = "filtIoOA"
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+-- Only show statusbar for current buffer
+o.laststatus = 3
+
+-- Setup tab settings
+o.tabstop = 2
+o.shiftwidth = 2
+o.softtabstop = 2
+o.expandtab = true
+
+-- Enable list characters
+o.list = true
+o.listchars = "tab:»·,trail:·,nbsp:·"
+
+-- Enable the text width and indicator
+o.textwidth = 80
+o.colorcolumn = "+1"
+
+-- Setup line numbers and sign coloumn
+o.number = true
+o.signcolumn = "yes:2"
+
+-- Enable the cursor line
+o.cursorline = true
+
+-- Setup the completion options
+o.completeopt = "menu"
+
+-- Enable intuitive splits
+o.splitbelow = true
+o.splitright = true
