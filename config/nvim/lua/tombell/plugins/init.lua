@@ -3,6 +3,10 @@ local packer = require "packer"
 packer.startup(function()
   use "wbthomason/packer.nvim"
 
+  use "gpanders/editorconfig.nvim"
+
+  use "stevearc/dressing.nvim"
+
   use {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -10,8 +14,6 @@ packer.startup(function()
       require "tombell.plugins.catppuccin"
     end,
   }
-
-  use "gpanders/editorconfig.nvim"
 
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -48,8 +50,6 @@ packer.startup(function()
       "nvim-telescope/telescope-file-browser.nvim",
     },
   }
-
-  use "stevearc/dressing.nvim"
 
   use {
     "nvim-lualine/lualine.nvim",
