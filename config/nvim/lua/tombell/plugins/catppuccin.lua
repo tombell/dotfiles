@@ -8,7 +8,7 @@ catpuccin.setup {
     mocha = {
       TelescopeBorder = { fg = mocha.surface2 },
       Todo = { fg = mocha.yellow, bg = mocha.base, style = { "italic" } },
-      VertSplit = { fg = mocha.surface1 },
+      VertSplit = { fg = mocha.surface0 },
       commentTSDanger = { fg = mocha.red, bg = mocha.base, style = { "italic" } },
       commentTSNote = { fg = mocha.blue, bg = mocha.base, style = { "italic" } },
       commentTSWarning = { fg = mocha.yellow, bg = mocha.base, style = { "italic" } },
