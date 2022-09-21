@@ -4,7 +4,7 @@ brew "fzf"
 brew "git"
 brew "go"
 brew "gopls"
-brew "neovim"
+brew "neovim", args: ['HEAD']
 brew "nodenv"
 brew "rbenv"
 brew "rbenv-gemset"
