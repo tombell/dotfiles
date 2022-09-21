@@ -40,6 +40,8 @@ fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' insert-tab pending
 
+export PATH="/usr/local/sbin:$PATH"
+
 if [[ -d "/opt/homebrew/bin" ]]; then
   PATH="/opt/homebrew/bin:$PATH"
 fi
