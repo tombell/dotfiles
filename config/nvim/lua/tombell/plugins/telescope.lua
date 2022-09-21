@@ -13,6 +13,7 @@ telescope.setup {
       },
     },
   },
+
   extensions = {
     file_browser = {
       disable_devicons = true,
