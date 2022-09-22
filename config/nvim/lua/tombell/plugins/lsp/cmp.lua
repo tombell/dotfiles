@@ -8,8 +8,13 @@ end
 
 cmp.setup {
   enabled = function()
+    local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+    if buftype == "prompt" then
+      return false
+    end
+
     local context = require "cmp.config.context"
-    return not (context.in_treesitter_capture "comment" or context.in_syntax_group "Comment")
+    return not context.in_treesitter_capture "comment" and not context.in_syntax_group "Comment"
   end,
 
   snippet = {
