@@ -13,7 +13,6 @@ brew "starkwm/formulae/skbd"
 brew "stylua"
 brew "thoughtbot/formulae/rcm"
 brew "tmux"
-brew "tombell/formulae/lock"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
