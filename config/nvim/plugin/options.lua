@@ -42,7 +42,7 @@ o.signcolumn = "yes:2"
 o.cursorline = true
 
 -- Setup the completion options
-o.completeopt = "menu"
+o.completeopt = "menu,menuone,noselect"
 
 -- Enable intuitive splits
 o.splitbelow = true
