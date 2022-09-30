@@ -96,5 +96,4 @@ alias blc="brew list -1 --cask"
 alias todo="rg -F 'TODO'"
 
 alias j="npx jest"
-alias t="npm test"
 alias tc="npx tsc --noEmit"
