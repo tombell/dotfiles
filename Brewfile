@@ -30,7 +30,6 @@ cask "soundsource"
 cask "starkwm/formulae/stark"
 cask "telegram"
 cask "the-unarchiver"
-cask "via"
 
 if File.exist? "/tmp/work"
   brew "git-lfs"
