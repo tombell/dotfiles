@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-echo "==> Installing homebrew formulae and casks..."
-brew bundle
+OS=$(uname)
+
+if [[ $OS == "Darwin" ]]; then
+  echo "==> Installing homebrew formulae and casks..."
+  brew bundle
+fi
 
 echo "==> Installing dotfiles..."
 env RCRC=$HOME/.dotfiles/rcrc rcup
