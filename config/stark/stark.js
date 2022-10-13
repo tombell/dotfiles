@@ -2,20 +2,19 @@
 // CONSTANTS
 // -----------------------------------------------------------------------------
 
-// Default modifier keys for binds
 const MODIFIERS = ["ctrl", "shift"];
+const FULL_MODIFIERS = ["ctrl", "shift", "alt"];
 
-// Grid width and height for centering windows with different sizes
 const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
 
-// Margin to have around each window edge
 const MARGIN = 16;
 
 // -----------------------------------------------------------------------------
 // WINDOW CENTERING
 // -----------------------------------------------------------------------------
 
+// Small
 Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
   const { width, height, y } = win?.screen.frameWithoutDockOrMenu;
@@ -28,6 +27,7 @@ Bind.on("z", MODIFIERS, () => {
   });
 });
 
+// Medium
 Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
   const { width, height, y } = win?.screen.frameWithoutDockOrMenu;
@@ -40,6 +40,7 @@ Bind.on("x", MODIFIERS, () => {
   });
 });
 
+// Full
 Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
   const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
@@ -56,6 +57,7 @@ Bind.on("c", MODIFIERS, () => {
 // WINDOW POSITIONING
 // -----------------------------------------------------------------------------
 
+// Left-half
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
   const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
@@ -68,6 +70,20 @@ Bind.on("h", MODIFIERS, () => {
   });
 });
 
+// Left-two thirds
+Bind.on("h", FULL_MODIFIERS, () => {
+  const win = Window.focused();
+  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+
+  win?.setFrame({
+    x: x + MARGIN,
+    y: y + MARGIN,
+    width: ((width / 3) * 2) - (MARGIN + MARGIN / 2),
+    height: height - MARGIN * 2,
+  });
+});
+
+// Right-half
 Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
   const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
@@ -76,6 +92,19 @@ Bind.on("l", MODIFIERS, () => {
     x: x + width / 2 + MARGIN / 2,
     y: y + MARGIN,
     width: width / 2 - (MARGIN + MARGIN / 2),
+    height: height - MARGIN * 2,
+  });
+});
+
+// Right-one third
+Bind.on("l", FULL_MODIFIERS, () => {
+  const win = Window.focused();
+  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+
+  win?.setFrame({
+    x: x + ((width / 3) * 2) + MARGIN / 2,
+    y: y + MARGIN,
+    width: (width / 3) - (MARGIN + MARGIN / 2),
     height: height - MARGIN * 2,
   });
 });
