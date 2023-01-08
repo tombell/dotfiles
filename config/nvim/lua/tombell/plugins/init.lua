@@ -87,4 +87,11 @@ packer.startup(function()
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
   }
+
+  use {
+    "rafaelsq/nvim-goc.lua",
+    config = function()
+      require "tombell.plugins.gocoverage"
+    end,
+  }
 end)
