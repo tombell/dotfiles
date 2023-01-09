@@ -2,7 +2,7 @@
 // CONSTANTS
 // -----------------------------------------------------------------------------
 
-const MODIFIERS = ["ctrl", "shift"];
+const MODIFIERS = ["⌃", "⇧"];
 const FULL_MODIFIERS = ["ctrl", "shift", "alt"];
 
 const GRID_WIDTH = 12;
