@@ -3,8 +3,6 @@ local packer = require "packer"
 packer.startup(function()
   use "wbthomason/packer.nvim"
 
-  use "gpanders/editorconfig.nvim"
-
   use "stevearc/dressing.nvim"
 
   use {
