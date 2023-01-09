@@ -24,6 +24,9 @@ draw_bold_text_with_bright_colors: true
 
 custom_cursor_colors: false
 
+key_bindings:
+  - { key: Key3, mods: Alt, chars: "#" }
+
 colors:
   primary:
     background: "#1E1E2E" # base
@@ -102,6 +105,3 @@ colors:
   indexed_colors:
     - { index: 16, color: "#FAB387" }
     - { index: 17, color: "#F5E0DC" }
-
-key_bindings:
-  - { key: Key3, mods: Alt, chars: "#" }
