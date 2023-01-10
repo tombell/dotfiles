@@ -2,43 +2,43 @@
 # Applications
 ################################################################################
 
-ctrl + shift - return:
+⌃ + ⇧ - return:
   if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
 
-ctrl + shift - b:
+⌃ + ⇧ - b:
   open -na "Google Chrome" --args --new-window
 
-ctrl + shift - F:
+⌃ + ⇧ - F:
   open -a Finder
 
 ################################################################################
 # Sound
 ################################################################################
 
-ctrl + shift - [:
+⌃ + ⇧ - [:
   shortcuts run "Enable Headphone EQ"
 
-ctrl + shift - ]:
+⌃ + ⇧ - ]:
   shortcuts run "Disable Headphone EQ"
 
 ################################################################################
 # Hue Lights
 ################################################################################
 
-alt - 1:
+⌥ - 1:
   shortcuts run "Guest Bedroom On"
 
-alt - 2:
+⌥ - 2:
   shortcuts run "Guest Bedroom Off"
 
-ctrl + alt - 1:
+⌃ + ⌥ - 1:
   shortcuts run "Living Room On"
 
-ctrl + alt - 2:
+⌃ + ⌥ - 2:
   shortcuts run "Living Room Off"
 
-ctrl + alt - 3:
+⌃ + ⌥ - 3:
   shortcuts run "Bedside On"
 
-ctrl + alt - 4:
+⌃ + ⌥ - 4:
   shortcuts run "Bedside off"
