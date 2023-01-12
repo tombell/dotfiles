@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 const MODIFIERS = ["⌃", "⇧"];
-const FULL_MODIFIERS = ["ctrl", "shift", "alt"];
+const FULL_MODIFIERS = MODIFIERS.concat(["⌥"]);
 
 const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
