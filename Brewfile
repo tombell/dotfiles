@@ -37,7 +37,7 @@ if File.exist? "/tmp/work"
   brew "redis"
 
   cask "chromedriver"
-  cask "paw"
+  cask "rapidapi"
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
