@@ -21,7 +21,7 @@ function U.mappings(buf)
   nmap { "gd", vim.lsp.buf.definition, { buffer = buf } }
   nmap { "gy", vim.lsp.buf.type_definition, { buffer = buf } }
   nmap { "gi", vim.lsp.buf.implementation, { buffer = buf } }
-  nmap { "gr", vim.lsp.buf.references, { buffer = buf } }
+  nmap { "gr", require("telescope.builtin").lsp_references, { buffer = buf } }
 
   nmap { "K", vim.lsp.buf.hover, { buffer = buf } }
 
