@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-curl --max-time 3 "https://cht.sh/$1/$2?style=algol_nu"
