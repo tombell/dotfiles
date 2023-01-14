@@ -1,4 +1,3 @@
-local imap = require("tombell.keymap").imap
 local nmap = require("tombell.keymap").nmap
 
 nmap { "<Leader>c", ":cclose|:lclose<CR>", { silent = true } }
