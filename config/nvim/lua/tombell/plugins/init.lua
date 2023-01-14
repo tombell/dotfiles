@@ -13,6 +13,13 @@ packer.startup(function()
   }
 
   use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require "tombell.plugins.gitsigns"
+    end,
+  }
+
+  use {
     "catppuccin/nvim",
     as = "catppuccin",
     config = function()
