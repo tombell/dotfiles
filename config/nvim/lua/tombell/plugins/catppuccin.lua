@@ -4,6 +4,7 @@ local mocha = require("catppuccin.palettes").get_palette "mocha"
 vim.g.catppuccin_flavour = "mocha"
 
 catpuccin.setup {
+  no_italic = true,
   highlight_overrides = {
     mocha = {
       TelescopeBorder = { fg = mocha.surface2 },
