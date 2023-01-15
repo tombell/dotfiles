@@ -18,19 +18,8 @@ configs.setup {
     "typescript",
     "yaml",
   },
-
-  sync_install = false,
-
-  highlight = {
-    enable = true,
-    disable = {},
-    additional_vim_regex_highlighting = false,
-  },
-
-  indent = {
-    enable = true,
-  },
-
+  highlight = { enable = true },
+  indent = { enable = true },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

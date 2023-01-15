@@ -11,13 +11,11 @@ cmp.setup {
     local context = require "cmp.config.context"
     return not context.in_treesitter_capture "comment" and not context.in_syntax_group "Comment"
   end,
-
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
   },
-
   mapping = cmp.mapping.preset.insert {
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -45,7 +43,6 @@ cmp.setup {
       end
     end, { "i", "s" }),
   },
-
   sources = cmp.config.sources({
     { name = "nvim_lua", max_item_count = 8 },
     { name = "nvim_lsp", max_item_count = 8 },
