@@ -113,8 +113,8 @@ Bind.on("l", FULL_MODIFIERS, () => {
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
 
-[...Array(Space.all().length).keys()].forEach((space) => {
-  Bind.on(`${space + 1}`, MODIFIERS, () => {
-    Space.all()[space].moveWindows([Window.focused()].filter(Boolean));
+[...Array(Space.all().length).keys()].forEach((index) => {
+  Bind.on(`${index + 1}`, MODIFIERS, () => {
+    Space.at(index).moveWindows([Window.focused()].filter(Boolean));
   });
 });
