@@ -1,6 +1,6 @@
-local null_ls = require "null-ls"
-
 local U = require "tombell.plugins.lsp.utils"
+
+local null_ls = require "null-ls"
 
 local prefer_local = "node_modules/.bin"
 
