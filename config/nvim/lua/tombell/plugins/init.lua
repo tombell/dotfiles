@@ -42,6 +42,13 @@ packer.startup(function()
   }
 
   use {
+    "anuvyklack/pretty-fold.nvim",
+    config = function()
+      require("pretty-fold").setup()
+    end,
+  }
+
+  use {
     "nvim-telescope/telescope.nvim",
     config = function()
       require "tombell.plugins.telescope"
