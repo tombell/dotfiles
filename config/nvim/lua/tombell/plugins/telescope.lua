@@ -12,15 +12,13 @@ telescope.setup {
       },
     },
   },
-}
-
-nmap {
-  "<C-p>",
-  function()
-    builtin.find_files {
+  pickers = {
+    find_files = {
       find_command = { "rg", "--files", "--glob", "!.git/*" },
       hidden = true,
       previewer = false,
-    }
-  end,
+    },
+  },
 }
+
+nmap { "<C-p>", builtin.find_files }
