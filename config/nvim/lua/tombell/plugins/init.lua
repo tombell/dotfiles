@@ -3,14 +3,14 @@ local packer = require "packer"
 packer.startup(function()
   use "wbthomason/packer.nvim"
 
-  use "stevearc/dressing.nvim"
-
   use {
     "lukas-reineke/virt-column.nvim",
     config = function()
       require("virt-column").setup()
     end,
   }
+
+  use "stevearc/dressing.nvim"
 
   use {
     "lukas-reineke/indent-blankline.nvim",
@@ -44,7 +44,13 @@ packer.startup(function()
   use {
     "anuvyklack/pretty-fold.nvim",
     config = function()
-      require("pretty-fold").setup()
+      require("pretty-fold").setup {
+        sections = {
+          left = { "content", "" },
+          right = { "(", "number_of_folded_lines", ")" },
+        },
+        fill_char = " ",
+      }
     end,
   }
 
