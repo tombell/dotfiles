@@ -7,11 +7,8 @@ catpuccin.setup {
   no_italic = true,
   highlight_overrides = {
     mocha = {
-      Todo = { fg = mocha.yellow, bg = mocha.base },
+      Folded = { fg = mocha.blue, bg = mocha.mantle },
       VertSplit = { fg = mocha.surface0, bg = mocha.base },
-      commentTSDanger = { fg = mocha.red, bg = mocha.base },
-      commentTSNote = { fg = mocha.blue, bg = mocha.base },
-      commentTSWarning = { fg = mocha.yellow, bg = mocha.base },
     },
   },
 }
