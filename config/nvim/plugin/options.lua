@@ -36,7 +36,7 @@ o.colorcolumn = "+1"
 
 -- Setup line numbers and sign coloumn
 o.number = true
-o.signcolumn = "yes:2"
+o.signcolumn = "yes:1"
 
 -- Enable the cursor line
 o.cursorline = true
