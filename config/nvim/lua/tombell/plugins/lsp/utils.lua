@@ -1,4 +1,3 @@
-local imap = require("tombell.keymap").imap
 local nmap = require("tombell.keymap").nmap
 
 local U = {}
