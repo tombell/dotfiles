@@ -13,17 +13,7 @@ telescope.setup {
       },
     },
   },
-
-  extensions = {
-    file_browser = {
-      disable_devicons = true,
-      hijack_netrw = true,
-      previewer = false,
-    },
-  },
 }
-
-telescope.load_extension "file_browser"
 
 nmap {
   "<C-p>",

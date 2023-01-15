@@ -8,14 +8,14 @@ packer.startup(function()
   use {
     "lukas-reineke/virt-column.nvim",
     config = function()
-      require "tombell.plugins.virt-column"
+      require("virt-column").setup()
     end,
   }
 
   use {
-    "lewis6991/gitsigns.nvim",
+    "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require "tombell.plugins.gitsigns"
+      require("indent_blankline").setup()
     end,
   }
 
@@ -24,6 +24,49 @@ packer.startup(function()
     as = "catppuccin",
     config = function()
       require "tombell.plugins.catppuccin"
+    end,
+  }
+
+  use {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("lualine").setup()
+    end,
+  }
+
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  }
+
+  use {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require "tombell.plugins.telescope"
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
+
+  use {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+    requires = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+  }
+
+  use {
+    "rafaelsq/nvim-goc.lua",
+    config = function()
+      require("nvim-goc").setup()
     end,
   }
 
@@ -63,40 +106,5 @@ packer.startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
     },
-  }
-
-  use {
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require "tombell.plugins.telescope"
-    end,
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
-    },
-  }
-
-  use {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require "tombell.plugins.lualine"
-    end,
-  }
-
-  use {
-    "numToStr/Comment.nvim",
-    config = function()
-      require "tombell.plugins.comment"
-    end,
-    requires = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-  }
-
-  use {
-    "rafaelsq/nvim-goc.lua",
-    config = function()
-      require "tombell.plugins.gocoverage"
-    end,
   }
 end)
