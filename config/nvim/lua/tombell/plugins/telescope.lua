@@ -22,3 +22,5 @@ telescope.setup {
 }
 
 nmap { "<C-p>", builtin.find_files }
+nmap { "<C-r>", builtin.live_grep }
+nmap { "<Leader>f", builtin.grep_string }
