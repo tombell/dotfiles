@@ -47,3 +47,8 @@ o.completeopt = "menu,menuone,noselect"
 -- Enable intuitive splits
 o.splitbelow = true
 o.splitright = true
+
+-- Enable tree-sitter based folding
+o.foldlevel = 20
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
