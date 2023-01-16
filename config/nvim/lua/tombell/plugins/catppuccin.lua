@@ -1,9 +1,8 @@
 local catpuccin = require "catppuccin"
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 
-vim.g.catppuccin_flavour = "mocha"
-
 catpuccin.setup {
+  flavour = "mocha",
   no_italic = true,
   highlight_overrides = {
     mocha = {
@@ -13,4 +12,4 @@ catpuccin.setup {
   },
 }
 
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd.colorscheme "catppuccin"
