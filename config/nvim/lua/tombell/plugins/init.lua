@@ -3,13 +3,6 @@ local packer = require "packer"
 packer.startup(function()
   use "wbthomason/packer.nvim"
 
-  use {
-    "lukas-reineke/virt-column.nvim",
-    config = function()
-      require("virt-column").setup()
-    end,
-  }
-
   use "stevearc/dressing.nvim"
 
   use {
@@ -119,5 +112,12 @@ packer.startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
     },
+  }
+
+  use {
+    "lukas-reineke/virt-column.nvim",
+    config = function()
+      require("virt-column").setup()
+    end,
   }
 end)
