@@ -1,7 +1,7 @@
 export CLICOLOR=1
 
 export PROJECTS="$HOME/Code"
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/.local/share/go
 
 export LESSHISTFILE=-
 
