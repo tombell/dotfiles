@@ -101,3 +101,5 @@ alias j="npx jest"
 alias tc="npx tsc --noEmit"
 
 alias bdep="brew leaves | xargs brew deps --formula --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
+
+export HOMEBREW_NO_ENV_HINTS=1
