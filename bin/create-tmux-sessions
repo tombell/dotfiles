@@ -33,7 +33,7 @@ start_memoir_sessions() {
   local arr=("$@")
 
   for c in "${arr[@]}"; do
-    cd "$HOME/Code/$c"
+    cd "$HOME/Code/tombell/$c"
     tmux new-session -d -s "$c" -n "server"
     tmux new-window -t "$c:2" -n "editor"
   done
@@ -43,7 +43,7 @@ start_stark_sessions() {
   local arr=("$@")
 
   for c in "${arr[@]}"; do
-    cd "$HOME/Code/$c"
+    cd "$HOME/Code/starkwm/$c"
     tmux new-session -d -s "$c" -n "editor"
   done
 }
