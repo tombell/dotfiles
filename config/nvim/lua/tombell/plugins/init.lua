@@ -101,6 +101,7 @@ packer.startup(function()
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
+      "roobert/tailwindcss-colorizer-cmp.nvim",
     },
   }
 
