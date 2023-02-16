@@ -59,6 +59,6 @@ end
 if File.exists? "/tmp/work-mobile"
   brew "watchman"
 
-  cask "adoptopenjdk8"
   cask "android-studio"
+  cask "zulu11"
 end
