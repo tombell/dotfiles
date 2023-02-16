@@ -27,8 +27,8 @@ o.softtabstop = 2
 o.expandtab = true
 
 -- Enable list characters
-o.list = true
-o.listchars = "tab:»·,trail:·,nbsp:·"
+-- o.list = true
+-- o.listchars = "tab:»·,trail:·,nbsp:·"
 
 -- Enable the text width and indicator
 o.textwidth = 80
