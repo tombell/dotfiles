@@ -1,11 +1,7 @@
 local cmp = require "cmp"
 local luasnip = require "luasnip"
-local tailwindcss_colorizer = require "tailwindcss-colorizer-cmp"
 
 cmp.setup {
-  formatting = {
-    format = tailwindcss_colorizer.formatter,
-  },
   enabled = function()
     local buftype = vim.api.nvim_buf_get_option(0, "buftype")
     if buftype == "prompt" then
