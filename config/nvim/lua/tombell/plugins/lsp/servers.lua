@@ -1,6 +1,6 @@
-local lspconfig = require "lspconfig"
-
 local U = require "tombell.plugins.lsp.utils"
+
+local lspconfig = require "lspconfig"
 
 local flags = {
   allow_incremental_sync = true,
