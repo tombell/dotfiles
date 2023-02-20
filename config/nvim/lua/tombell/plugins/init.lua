@@ -1,3 +1,5 @@
+local nmap = require("tombell.keymap").nmap
+
 local lazy = require "lazy"
 
 lazy.setup {
@@ -6,51 +8,83 @@ lazy.setup {
   "stevearc/dressing.nvim",
 
   {
+    "lukas-reineke/virt-column.nvim",
+    opts = {},
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("indent_blankline").setup { show_current_context = true }
-    end,
+    opts = {
+      show_current_context = true,
+    },
   },
 
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    opts = {
+      no_italic = true,
+      highlight_overrides = {
+        mocha = function(mocha)
+          return {
+            Folded = { fg = mocha.blue, bg = mocha.mantle },
+            VertSplit = { fg = mocha.surface0, bg = mocha.base },
+          }
+        end,
+      },
+    },
     config = function()
-      require "tombell.plugins.catppuccin"
+      vim.cmd.colorscheme "catppuccin"
     end,
   },
 
   {
     "nvim-lualine/lualine.nvim",
-    config = function()
-      require("lualine").setup()
-    end,
+    opts = {},
   },
 
   {
     "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
+    opts = {},
   },
 
   {
     "anuvyklack/pretty-fold.nvim",
-    config = function()
-      require("pretty-fold").setup {
-        sections = {
-          left = { "content", "" },
-          right = { "(", "number_of_folded_lines", ")" },
-        },
-        fill_char = " ",
-      }
-    end,
+    opts = {
+      sections = {
+        left = { "content", "" },
+        right = { "(", "number_of_folded_lines", ")" },
+      },
+      fill_char = " ",
+    },
   },
 
   {
     "nvim-telescope/telescope.nvim",
-    config = function()
-      require "tombell.plugins.telescope"
+    init = function()
+      local builtin = require "telescope.builtin"
+      nmap { "<C-p>", builtin.find_files }
+      nmap { "<C-g>", builtin.live_grep }
+      nmap { "<Leader>f", builtin.grep_string }
+    end,
+    opts = function()
+      local actions = require "telescope.actions"
+      return {
+        defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = actions.close,
+            },
+          },
+        },
+        pickers = {
+          find_files = {
+            find_command = { "rg", "--files", "--glob", "!.git/*" },
+            hidden = true,
+            previewer = false,
+          },
+        },
+      }
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -71,16 +105,45 @@ lazy.setup {
 
   {
     "rafaelsq/nvim-goc.lua",
-    config = function()
-      require("nvim-goc").setup()
+    opts = {},
+    init = function()
+      local goc = require "nvim-goc"
+      nmap { "<Leader>gcr", goc.Coverage }
+      nmap { "<Leader>gcc", goc.ClearCoverage }
     end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
     cmd = "TSUpdate",
-    config = function()
-      require "tombell.plugins.treesitter"
+    opts = {
+      highlight = { enable = true },
+      indent = { enable = true },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+      ensure_installed = {
+        "bash",
+        "css",
+        "go",
+        "gomod",
+        "html",
+        "javascript",
+        "latex",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "scss",
+        "swift",
+        "toml",
+        "tsx",
+        "typescript",
+        "yaml",
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
   },
 
@@ -112,12 +175,5 @@ lazy.setup {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-  },
-
-  {
-    "lukas-reineke/virt-column.nvim",
-    config = function()
-      require("virt-column").setup()
-    end,
   },
 }
