@@ -1,0 +1,27 @@
+root: ~/Code/tombell
+
+sessions:
+  - name: memoir
+    root: ./memoir
+    windows:
+      - name: server
+        commands:
+          - make watch
+      - name: editor
+        commands:
+          - nvim .
+  - name: memoir-app
+    root: ./memoir-app
+    windows:
+      - name: server
+        commands:
+          - MEMOIR_API_KEY=asdfasdf npm run dev
+      - name: storybook
+        commands:
+          - npm run storybook
+      - name: tests
+        commands:
+          - npm test
+      - name: editor
+        commands:
+          - nvim .
