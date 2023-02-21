@@ -1,8 +1,5 @@
 root: ~/Code
 
-after_stop:
-  - fuckoffpuma || true
-
 sessions:
   - name: backstage
     root: ./backstage
