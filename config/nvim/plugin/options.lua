@@ -32,7 +32,7 @@ o.expandtab = true
 
 -- Enable the text width and indicator
 o.textwidth = 80
-o.colorcolumn = "+1"
+-- o.colorcolumn = "+1"
 
 -- Setup line numbers and sign coloumn
 o.number = true

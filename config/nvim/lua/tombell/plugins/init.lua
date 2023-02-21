@@ -13,6 +13,11 @@ lazy.setup {
   },
 
   {
+    "m4xshen/smartcolumn.nvim",
+    opts = { colorcolumn = 81 },
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
       show_current_context = true,
