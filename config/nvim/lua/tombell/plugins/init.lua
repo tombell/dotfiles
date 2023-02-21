@@ -1,5 +1,3 @@
-local nmap = require("tombell.keymap").nmap
-
 local lazy = require "lazy"
 
 lazy.setup {
@@ -66,12 +64,6 @@ lazy.setup {
 
   {
     "nvim-telescope/telescope.nvim",
-    init = function()
-      local builtin = require "telescope.builtin"
-      nmap { "<C-p>", builtin.find_files }
-      nmap { "<C-g>", builtin.live_grep }
-      nmap { "<Leader>f", builtin.grep_string }
-    end,
     opts = function()
       local actions = require "telescope.actions"
       return {
@@ -91,6 +83,11 @@ lazy.setup {
         },
       }
     end,
+    keys = {
+      { "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
+      { "<C-g>", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
+      { "<Leader>f", "<cmd>lua require('telescope.builtin').grep_string()<cr>" },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -116,11 +113,10 @@ lazy.setup {
   {
     "rafaelsq/nvim-goc.lua",
     opts = {},
-    init = function()
-      local goc = require "nvim-goc"
-      nmap { "<Leader>gcr", goc.Coverage }
-      nmap { "<Leader>gcc", goc.ClearCoverage }
-    end,
+    keys = {
+      { "<Leader>gcr", '<cmd>lua require("nvim-goc").Coverage()<cr>' },
+      { "<Leader>gcc", '<cmd>lua require("nvim-goc").ClearCoverage()<cr>' },
+    },
   },
 
   {
