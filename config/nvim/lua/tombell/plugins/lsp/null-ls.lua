@@ -5,9 +5,8 @@ local null_ls = require "null-ls"
 local prefer_local = "node_modules/.bin"
 
 local sources = {
-  null_ls.builtins.formatting.prettier.with {
+  null_ls.builtins.formatting.prettierd.with {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    prefer_local = prefer_local,
   },
   null_ls.builtins.formatting.gofmt,
 }
