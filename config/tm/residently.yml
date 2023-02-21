@@ -1,0 +1,129 @@
+root: ~/Code
+
+sessions:
+  - name: backstage
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: contractor
+    root: ./contractor
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: doorbell
+    root: ./doorbell
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: foundations
+    root: ./foundations
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: frontdoor
+    root: ./frontdoor
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: knock-knock
+    root: ./knock-knock
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: ledger
+    root: ./ledger
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: letterbox
+    root: ./letterbox
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: living
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: log-book
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: marketing
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: neighbourhood
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: storybook
+      - name: editor
+
+  - name: piggybank
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
+
+  - name: switchboard
+    root: ./backstage
+    windows:
+      - name: server
+        commands:
+          - ./go install
+          - ./go run
+      - name: editor
