@@ -7,12 +7,14 @@ sessions:
       - name: editor
         commands:
           - nvim .
+
   - name: skbd
     root: ./skbd
     windows:
       - name: editor
         commands:
           - nvim .
+
   - name: swm
     root: ./swm
     windows:
