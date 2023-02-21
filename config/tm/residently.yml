@@ -1,7 +1,7 @@
 root: ~/Code
 
 after_stop:
-  - fuckoffpuma
+  - fuckoffpuma || true
 
 sessions:
   - name: backstage
@@ -9,7 +9,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -18,7 +17,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -27,7 +25,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -36,7 +33,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -45,7 +41,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -54,7 +49,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -63,7 +57,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -72,7 +65,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -81,7 +73,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -90,7 +81,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -99,7 +89,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -108,7 +97,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: storybook
       - name: editor
@@ -118,7 +106,6 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
 
@@ -127,6 +114,5 @@ sessions:
     windows:
       - name: server
         commands:
-          - ./go install
           - ./go run
       - name: editor
