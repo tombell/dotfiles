@@ -22,6 +22,7 @@ brew "ripgrep"
 brew "skbd"
 brew "stylua"
 brew "tmux"
+brew "tombell/formulae/tm"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
