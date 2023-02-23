@@ -17,15 +17,33 @@ end
 function U.mappings(buf)
   vim.api.nvim_buf_set_option(buf, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  nmap { "gd", vim.lsp.buf.definition, { buffer = buf } }
-  nmap { "gy", vim.lsp.buf.type_definition, { buffer = buf } }
-  nmap { "gi", vim.lsp.buf.implementation, { buffer = buf } }
-  nmap { "gr", require("telescope.builtin").lsp_references, { buffer = buf } }
+  opts = { buffer = buf }
 
-  nmap { "K", vim.lsp.buf.hover, { buffer = buf } }
+  nmap { "gd", vim.lsp.buf.definition, opts }
+  nmap { "gy", vim.lsp.buf.type_definition, opts }
+  nmap { "gi", vim.lsp.buf.implementation, opts }
+  nmap { "gr", vim.lsp.buf.references, opts }
+  nmap { "gR", require("telescope.builtin").lsp_references, opts }
 
-  nmap { "<Leader>a", vim.lsp.buf.code_action, { buffer = buf } }
-  nmap { "<Leader>r", vim.lsp.buf.rename, { buffer = buf } }
+  nmap { "K", vim.lsp.buf.hover, opts }
+
+  nmap {
+    "[d",
+    function()
+      vim.diagnostic.goto_prev { float = false }
+    end,
+    opts,
+  }
+  nmap {
+    "]d",
+    function()
+      vim.diagnostic.goto_next { float = false }
+    end,
+    opts,
+  }
+
+  nmap { "<Leader>a", vim.lsp.buf.code_action, opts }
+  nmap { "<Leader>r", vim.lsp.buf.rename, opts }
 end
 
 function U.fmt_on_save(client, buf)
