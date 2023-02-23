@@ -19,11 +19,6 @@ if vim.fn.executable "goimports" == 1 then
   table.insert(sources, null_ls.builtins.formatting.goimports)
 end
 
-if vim.fn.filereadable ".eslintrc.js" == 1 then
-  table.insert(sources, null_ls.builtins.code_actions.eslint.with { prefer_local = prefer_local })
-  table.insert(sources, null_ls.builtins.diagnostics.eslint.with { prefer_local = prefer_local })
-end
-
 if vim.fn.filereadable ".rubocop.yml" == 1 then
   table.insert(sources, null_ls.builtins.diagnostics.rubocop)
 end
