@@ -8,4 +8,8 @@ M.nmap = function(t)
   vim.keymap.set("n", t[1], t[2], t[3])
 end
 
+M.vmap = function(t)
+  vim.keymap.set("v", t[1], t[2], t[3])
+end
+
 return M
