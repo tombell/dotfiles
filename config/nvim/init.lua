@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 require "tombell.globals"
 
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
