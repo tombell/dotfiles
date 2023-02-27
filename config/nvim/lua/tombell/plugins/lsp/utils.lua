@@ -42,8 +42,8 @@ function U.mappings(buf)
     opts,
   }
 
-  nmap { "<Leader>a", vim.lsp.buf.code_action, opts }
-  nmap { "<Leader>r", vim.lsp.buf.rename, opts }
+  nmap { "<leader>a", vim.lsp.buf.code_action, opts }
+  nmap { "<leader>r", vim.lsp.buf.rename, opts }
 end
 
 function U.fmt_on_save(client, buf)

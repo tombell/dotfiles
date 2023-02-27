@@ -1,11 +1,11 @@
 local nmap = require("tombell.keymap").nmap
 
-nmap { "<Leader>c", ":cclose|:lclose<CR>", { silent = true } }
+nmap { "<leader>c", ":cclose|:lclose<cr>", { silent = true } }
 
-nmap { "<C-j>", "<C-w>j" }
-nmap { "<C-k>", "<C-w>k" }
-nmap { "<C-h>", "<C-w>h" }
-nmap { "<C-l>", "<C-w>l" }
+nmap { "<c-j>", "<c-w>j" }
+nmap { "<c-k>", "<c-w>k" }
+nmap { "<c-h>", "<c-w>h" }
+nmap { "<c-l>", "<c-w>l" }
 
 nmap { "n", "nzzzv" }
 nmap { "N", "Nzzzv" }

@@ -84,9 +84,9 @@ lazy.setup {
       }
     end,
     keys = {
-      { "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
-      { "<C-g>", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
-      { "<Leader>f", "<cmd>lua require('telescope.builtin').grep_string()<cr>" },
+      { "<c-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
+      { "<c-g>", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
+      { "<leader>f", "<cmd>lua require('telescope.builtin').grep_string()<cr>" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -114,8 +114,8 @@ lazy.setup {
     "rafaelsq/nvim-goc.lua",
     opts = {},
     keys = {
-      { "<Leader>gcr", '<cmd>lua require("nvim-goc").Coverage()<cr>' },
-      { "<Leader>gcc", '<cmd>lua require("nvim-goc").ClearCoverage()<cr>' },
+      { "<leader>gcr", '<cmd>lua require("nvim-goc").Coverage()<cr>' },
+      { "<leader>gcc", '<cmd>lua require("nvim-goc").ClearCoverage()<cr>' },
     },
   },
 
