@@ -13,4 +13,4 @@ nmap { "N", "Nzzzv" }
 nmap { "Q", "gqap" }
 nmap { "Q", "gq" }
 
-nmap { "<Space>", "za" }
+nmap { "<space>", "za" }
