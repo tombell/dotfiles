@@ -2,8 +2,6 @@ local nmap = require("tombell.keymap").nmap
 
 local U = {}
 
-local fmt_group = vim.api.nvim_create_augroup("FORMATTING", { clear = true })
-
 function U.capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   return require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -49,7 +47,7 @@ end
 function U.fmt_on_save(client, buf)
   if client.supports_method "textDocument/formatting" then
     vim.api.nvim_create_autocmd("BufWritePre", {
-      group = fmt_group,
+      group = vim.api.nvim_create_augroup("FORMATTING", { clear = true }),
       buffer = buf,
       callback = function()
         vim.lsp.buf.format { timeout_ms = 3000, buffer = buf }
