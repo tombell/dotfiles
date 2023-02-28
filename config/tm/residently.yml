@@ -1,5 +1,9 @@
 root: ~/Code
 
+after_stop:
+  - fuckoffpuma || true
+  - fuckoffruby || true
+
 sessions:
   - name: backstage
     root: ./backstage
@@ -100,6 +104,14 @@ sessions:
 
   - name: piggybank
     root: ./piggybank
+    windows:
+      - name: server
+        commands:
+          - ./go run
+      - name: editor
+
+  - name: porch
+    root: ./porch
     windows:
       - name: server
         commands:

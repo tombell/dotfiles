@@ -1,4 +1,6 @@
 if vim.g.vscode then
+  vim.keymap.set({ "n", "o", "x" }, "gc", "<Plug>VSCodeCommentary", { remap = true })
+  vim.keymap.set("n", "gcc", "<Plug>VSCodeCommentaryLine", { remap = true })
   return
 end
 
