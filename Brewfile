@@ -42,24 +42,22 @@ cask "stark"
 cask "telegram"
 cask "the-unarchiver"
 
-if File.exist? "/tmp/work"
+hostname = `scutil --get ComputerName`.chomp
+
+if hostname == "Poppi"
   tap "heroku/brew"
 
   brew "git-lfs"
   brew "heroku"
   brew "postgresql@14"
   brew "redis"
+  brew "watchman"
 
+  cask "android-studio"
   cask "chromedriver"
   cask "rapidapi"
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
-end
-
-if File.exists? "/tmp/work-mobile"
-  brew "watchman"
-
-  cask "android-studio"
   cask "zulu11"
 end
