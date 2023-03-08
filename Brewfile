@@ -24,6 +24,7 @@ cask "stark"
 
 if ["Pyra"].include?(hostname)
   brew "amfora"
+  brew "ensong"
   brew "entr"
 
   cask "mpv"
