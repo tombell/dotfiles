@@ -17,7 +17,7 @@ const MARGIN = 16;
 // Small
 Bind.on("z", MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: (width / GRID_WIDTH) * 2,
@@ -30,7 +30,7 @@ Bind.on("z", MODIFIERS, () => {
 // Medium
 Bind.on("x", MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: width / GRID_WIDTH,
@@ -43,7 +43,7 @@ Bind.on("x", MODIFIERS, () => {
 // Full
 Bind.on("c", MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: x + MARGIN,
@@ -60,7 +60,7 @@ Bind.on("c", MODIFIERS, () => {
 // Left-half
 Bind.on("h", MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: x + MARGIN,
@@ -73,12 +73,12 @@ Bind.on("h", MODIFIERS, () => {
 // Left-two thirds
 Bind.on("h", FULL_MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: x + MARGIN,
     y: y + MARGIN,
-    width: ((width / 3) * 2) - (MARGIN + MARGIN / 2),
+    width: (width / 3) * 2 - (MARGIN + MARGIN / 2),
     height: height - MARGIN * 2,
   });
 });
@@ -86,7 +86,7 @@ Bind.on("h", FULL_MODIFIERS, () => {
 // Right-half
 Bind.on("l", MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
     x: x + width / 2 + MARGIN / 2,
@@ -99,12 +99,12 @@ Bind.on("l", MODIFIERS, () => {
 // Right-one third
 Bind.on("l", FULL_MODIFIERS, () => {
   const win = Window.focused();
-  const { width, height, x, y } = win?.screen.frameWithoutDockOrMenu;
+  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
 
   win?.setFrame({
-    x: x + ((width / 3) * 2) + MARGIN / 2,
+    x: x + (width / 3) * 2 + MARGIN / 2,
     y: y + MARGIN,
-    width: (width / 3) - (MARGIN + MARGIN / 2),
+    width: width / 3 - (MARGIN + MARGIN / 2),
     height: height - MARGIN * 2,
   });
 });
