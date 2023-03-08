@@ -19,6 +19,7 @@ brew "zsh-syntax-highlighting"
 cask "1password"
 cask "alacritty"
 cask "appcleaner"
+cask "font-caskaydia-cove-nerd-font"
 cask "font-iosevka-nerd-font"
 cask "stark"
 
