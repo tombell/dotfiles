@@ -75,7 +75,7 @@ export FZF_DEFAULT_OPTS=" \
 git_prompt_info() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
   if [[ -n $current_branch ]]; then
-    echo "%{$fg[blue]%}⸤$current_branch⸣ "
+    echo "%{$fg[blue]%}$current_branch "
   fi
 }
 
