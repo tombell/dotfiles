@@ -33,6 +33,7 @@ end
 
 if ["Poppi"].include?(hostname)
   tap "heroku/brew"
+  tap "homebrew/cask-drivers"
 
   brew "git-lfs"
   brew "heroku"
@@ -43,6 +44,7 @@ if ["Poppi"].include?(hostname)
 
   cask "android-studio"
   cask "chromedriver"
+  cask "logi-options-plus"
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
@@ -50,7 +52,6 @@ if ["Poppi"].include?(hostname)
 end
 
 if ["Pyra", "Poppi"].include?(hostname)
-  tap "homebrew/cask-drivers"
   tap "tombell/formulae"
 
   brew "git"
@@ -62,7 +63,6 @@ if ["Pyra", "Poppi"].include?(hostname)
 
   cask "discord"
   cask "google-chrome"
-  cask "logi-options-plus"
   cask "rapidapi"
   cask "soundsource"
   cask "telegram"
