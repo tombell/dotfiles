@@ -46,6 +46,7 @@ if ["Poppi"].include?(hostname)
   cask "chromedriver"
   cask "logi-options-plus"
   cask "logitech-g-hub"
+  cask "ngrok"
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
