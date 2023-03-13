@@ -47,7 +47,6 @@ cmp.setup {
     end, { "i", "s" }),
   },
   sources = cmp.config.sources({
-    { name = "nvim_lua", max_item_count = 8 },
     { name = "nvim_lsp", max_item_count = 8 },
   }, {
     { name = "buffer", keyword_length = 5 },
