@@ -23,5 +23,10 @@ for _, server in ipairs(servers) do
     flags = flags,
     capabilities = capabilities,
     on_attach = on_attach,
+    settings = {
+      gopls = {
+        env = { GOFLAGS = "-tags=mutation" },
+      },
+    },
   }
 end
