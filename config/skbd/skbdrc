@@ -28,11 +28,11 @@
 # Hue Lights
 ################################################################################
 
-⌥ - 1:
-  shortcuts run "Guest Bedroom On"
-
-⌥ - 2:
-  shortcuts run "Guest Bedroom Off"
+# ⌥ - 1:
+#   shortcuts run "Guest Bedroom On"
+#
+# ⌥ - 2:
+#   shortcuts run "Guest Bedroom Off"
 
 ⌃ + ⌥ - 1:
   shortcuts run "Living Room On"
