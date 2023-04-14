@@ -33,7 +33,6 @@ end
 
 if ["Poppi"].include?(hostname)
   tap "heroku/brew"
-  tap "homebrew/cask-drivers"
 
   brew "git-lfs"
   brew "heroku"
