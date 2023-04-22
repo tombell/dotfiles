@@ -91,7 +91,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 alias d="cd ~/.dotfiles"
 
-alias bcu="brew cleanup -s"
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
 
