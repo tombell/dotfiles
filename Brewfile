@@ -23,6 +23,8 @@ cask "font-iosevka-nerd-font"
 cask "stark"
 
 if ["Pyra"].include?(hostname)
+  tap "tombell/formulae"
+
   brew "amfora"
   brew "ensong"
   brew "entr"
