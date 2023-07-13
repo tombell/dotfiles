@@ -10,10 +10,10 @@ lazy.setup {
     opts = {},
   },
 
-  {
-    "m4xshen/smartcolumn.nvim",
-    opts = { colorcolumn = 81 },
-  },
+  -- {
+  --   "m4xshen/smartcolumn.nvim",
+  --   opts = { colorcolumn = 81 },
+  -- },
 
   {
     "lukas-reineke/indent-blankline.nvim",
