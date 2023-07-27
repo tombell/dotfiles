@@ -1,6 +1,6 @@
-if vim.g.vscode then
-  vim.keymap.set({ "n", "o", "x" }, "gc", "<Plug>VSCodeCommentary", { remap = true })
-  vim.keymap.set("n", "gcc", "<Plug>VSCodeCommentaryLine", { remap = true })
+if vim.fn.exists "g:vscode" == 1 then
+  vim.keymap.set({ "n", "o", "x" }, "gc", "<cmd>call VSCodeCall('editor.action.commentLine')<cr><esc>", { remap = true })
+  vim.keymap.set("n", "gcc", "<cmd>call VSCodeCall('editor.action.commentLine')<cr><esc>", { remap = true })
   return
 end
 
