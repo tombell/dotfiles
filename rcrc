@@ -1,2 +1,2 @@
-EXCLUDES="bin/* config/nvim/stylua.toml Brewfile Brewfile.lock.json LICENSE README.md install"
+EXCLUDES="bin/* stylua.toml Brewfile Brewfile.lock.json LICENSE README.md install"
 DOTFILES_DIRS="$HOME/.dotfiles"
