@@ -1,8 +1,6 @@
 local lazy = require "lazy"
 
 lazy.setup {
-  "wbthomason/packer.nvim",
-
   "stevearc/dressing.nvim",
 
   {
