@@ -8,11 +8,6 @@ lazy.setup {
     opts = {},
   },
 
-  -- {
-  --   "m4xshen/smartcolumn.nvim",
-  --   opts = { colorcolumn = 81 },
-  -- },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
@@ -106,15 +101,6 @@ lazy.setup {
     end,
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-  },
-
-  {
-    "rafaelsq/nvim-goc.lua",
-    opts = {},
-    keys = {
-      { "<leader>gcr", '<cmd>lua require("nvim-goc").Coverage()<cr>' },
-      { "<leader>gcc", '<cmd>lua require("nvim-goc").ClearCoverage()<cr>' },
     },
   },
 
