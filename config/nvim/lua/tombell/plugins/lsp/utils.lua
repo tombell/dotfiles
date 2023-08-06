@@ -17,11 +17,10 @@ function U.mappings(buf)
 
   opts = { buffer = buf }
 
-  nmap { "gd", vim.lsp.buf.definition, opts }
-  nmap { "gy", vim.lsp.buf.type_definition, opts }
-  nmap { "gi", vim.lsp.buf.implementation, opts }
-  nmap { "gr", vim.lsp.buf.references, opts }
-  nmap { "gR", require("telescope.builtin").lsp_references, opts }
+  nmap { "gd", require("telescope.builtin").lsp_definitions, opts }
+  nmap { "gy", require("telescope.builtin").lsp_type_definitions, opts }
+  nmap { "gi", require("telescope.builtin").lsp_implementations, opts }
+  nmap { "gr", require("telescope.builtin").lsp_references, opts }
 
   nmap { "K", vim.lsp.buf.hover, opts }
 
