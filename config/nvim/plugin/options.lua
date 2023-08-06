@@ -1,4 +1,5 @@
 local o = vim.o
+local g = vim.g
 
 -- Enable 24-bit RGB colours in the terminal
 o.termguicolors = true
@@ -52,3 +53,6 @@ o.splitright = true
 o.foldlevel = 20
 o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Use pgsql syntax for sql files
+g.sql_type_default = "pgsql"

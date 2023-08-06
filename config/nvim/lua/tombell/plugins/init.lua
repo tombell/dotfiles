@@ -138,6 +138,8 @@ lazy.setup {
     end,
   },
 
+  "lifepillar/pgsql.vim",
+
   {
     "neovim/nvim-lspconfig",
     config = function()
