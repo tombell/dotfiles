@@ -26,7 +26,7 @@ if ["Pyra"].include?(hostname)
   tap "tombell/formulae"
 
   brew "amfora"
-  brew "ensong"
+  brew "tombell/formulae/ensong"
   brew "entr"
 
   cask "mpv"
@@ -61,7 +61,7 @@ if ["Pyra", "Poppi"].include?(hostname)
   brew "go"
   brew "gopls"
   brew "postgresql@14"
-  brew "tm"
+  brew "tombell/formulae/tm"
   brew "tmux"
 
   cask "discord"
