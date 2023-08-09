@@ -11,10 +11,6 @@ local sources = {
   null_ls.builtins.formatting.stylua,
 }
 
-if vim.fn.filereadable ".rubocop.yml" == 1 then
-  table.insert(sources, null_ls.builtins.diagnostics.rubocop)
-end
-
 null_ls.setup {
   sources = sources,
   on_attach = function(client, buf)
