@@ -4,7 +4,9 @@ local U = {}
 
 function U.capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  return require("cmp_nvim_lsp").default_capabilities(capabilities)
+  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+  return capabilities
 end
 
 function U.disable_formatting(client)
