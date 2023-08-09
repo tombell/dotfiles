@@ -25,47 +25,19 @@ cask "stark"
 if ["Pyra"].include?(hostname)
   tap "tombell/formulae"
 
-  brew "amfora"
-  brew "tombell/formulae/ensong"
   brew "entr"
-
-  cask "mpv"
-  cask "paragon-ntfs"
-end
-
-if ["Poppi"].include?(hostname)
-  tap "heroku/brew"
-
-  brew "git-lfs"
-  brew "heroku"
-  brew "rbenv"
-  brew "rbenv-gemset"
-  brew "redis"
-  brew "watchman"
-
-  cask "android-studio"
-  cask "chromedriver"
-  cask "logi-options-plus"
-  cask "logitech-g-hub"
-  cask "ngrok"
-  cask "slack"
-  cask "visual-studio-code"
-  cask "zoom"
-  cask "zulu11"
-end
-
-if ["Pyra", "Poppi"].include?(hostname)
-  tap "tombell/formulae"
-
   brew "git"
   brew "go"
   brew "gopls"
   brew "postgresql@14"
+  brew "tombell/formulae/ensong"
   brew "tombell/formulae/tm"
   brew "tmux"
 
   cask "discord"
   cask "google-chrome"
+  cask "mpv"
+  cask "paragon-ntfs"
   cask "rapidapi"
   cask "soundsource"
   cask "telegram"
