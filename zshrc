@@ -58,10 +58,8 @@ export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 
 if command -v brew >/dev/null; then
   if [[ $(uname -p) == "arm" ]]; then
-    source "/opt/homebrew/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   else
-    source "/usr/local/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     source "/usr/local/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   fi
 fi
