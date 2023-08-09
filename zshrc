@@ -93,12 +93,11 @@ alias d="cd ~/.dotfiles"
 
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
+alias bd="brew leaves | xargs brew deps --formula --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
 
 alias todo="rg -F 'TODO'"
 
 alias j="npx jest"
 alias tc="npx tsc --noEmit"
-
-alias bdep="brew leaves | xargs brew deps --formula --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
 
 export HOMEBREW_NO_ENV_HINTS=1
