@@ -14,7 +14,6 @@ brew "ripgrep"
 brew "skbd"
 brew "stylua"
 brew "zsh-autosuggestions"
-brew "zsh-syntax-highlighting"
 
 cask "1password"
 cask "alacritty"
