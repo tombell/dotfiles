@@ -98,4 +98,6 @@ alias todo="rg -F 'TODO'"
 alias j="npx jest"
 alias tc="npx tsc --noEmit"
 
+alias urepo='for d in *; do; (cd $d && pwd && git pull && echo); done'
+
 export HOMEBREW_NO_ENV_HINTS=1
