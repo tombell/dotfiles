@@ -56,3 +56,6 @@ o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Use pgsql syntax for sql files
 g.sql_type_default = "pgsql"
+
+-- Integrate with the system clipboard
+o.clipboard = "unnamedplus"
