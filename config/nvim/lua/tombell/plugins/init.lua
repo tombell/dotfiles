@@ -168,4 +168,24 @@ lazy.setup {
       "nvim-lua/plenary.nvim",
     },
   },
+
+  {
+    "nvim-neotest/neotest",
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-go",
+          require "neotest-vitest",
+        },
+      }
+    end,
+    keys = {
+      { "<leader>t", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>" },
+      { "<leader>o", "<cmd>lua require('neotest').output_panel.toggle()<cr>" },
+    },
+    dependencies = {
+      "marilari88/neotest-vitest",
+      "nvim-neotest/neotest-go",
+    },
+  },
 }
