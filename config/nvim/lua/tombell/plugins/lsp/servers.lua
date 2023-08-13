@@ -16,7 +16,7 @@ end
 
 vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
 
-local servers = { "gopls", "tsserver" }
+local servers = { "gopls", "sourcekit", "tsserver" }
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
