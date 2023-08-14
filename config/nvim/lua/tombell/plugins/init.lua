@@ -175,6 +175,8 @@ lazy.setup {
       require("neotest").setup {
         adapters = {
           require "neotest-go",
+          require "neotest-jest",
+          require "neotest-rspec",
           require "neotest-vitest",
         },
       }
@@ -184,8 +186,10 @@ lazy.setup {
       { "<leader>o", "<cmd>lua require('neotest').output_panel.toggle()<cr>" },
     },
     dependencies = {
+      "haydenmeade/neotest-jest",
       "marilari88/neotest-vitest",
       "nvim-neotest/neotest-go",
+      "olimorris/neotest-rspec",
     },
   },
 }
