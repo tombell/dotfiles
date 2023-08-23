@@ -58,4 +58,4 @@ o.foldexpr = "nvim_treesitter#foldexpr()"
 g.sql_type_default = "pgsql"
 
 -- Integrate with the system clipboard
-o.clipboard = "unnamedplus"
+-- o.clipboard = "unnamedplus"
