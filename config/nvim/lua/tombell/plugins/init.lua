@@ -184,6 +184,7 @@ lazy.setup {
     keys = {
       { "<leader>t", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>" },
       { "<leader>o", "<cmd>lua require('neotest').output_panel.toggle()<cr>" },
+      { "<leader>s", "<cmd>lua require('neotest').summary.toggle()<cr>" },
     },
     dependencies = {
       "haydenmeade/neotest-jest",
