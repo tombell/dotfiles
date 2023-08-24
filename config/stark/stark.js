@@ -8,7 +8,7 @@ const FULL_MODIFIERS = MODIFIERS.concat(["⌥"]);
 const GRID_WIDTH = 12;
 const GRID_HEIGHT = 10;
 
-const MARGIN = 16;
+const MARGIN = 8;
 
 // -----------------------------------------------------------------------------
 // WINDOW CENTERING
