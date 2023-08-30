@@ -41,7 +41,7 @@
   shortcuts run "Living Room Off"
 
 ⌃ + ⌥ - 3:
-  shortcuts run "Bedside On"
+  shortcuts run "Master Bedroom On"
 
 ⌃ + ⌥ - 4:
-  shortcuts run "Bedside off"
+  shortcuts run "Master Bedroom Off"
