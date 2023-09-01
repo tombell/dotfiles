@@ -19,29 +19,17 @@
 ################################################################################
 
 ⌃ + ⇧ - [:
-  shortcuts run "Enable Headphone EQ"
-
-⌃ + ⇧ - ]:
-  shortcuts run "Disable Headphone EQ"
+  shortcuts run "Toggle Headphone EQ"
 
 ################################################################################
 # Hue Lights
 ################################################################################
 
-# ⌥ - 1:
-#   shortcuts run "Guest Bedroom On"
-#
-# ⌥ - 2:
-#   shortcuts run "Guest Bedroom Off"
-
 ⌃ + ⌥ - 1:
-  shortcuts run "Living Room On"
+  shortcuts run "Toggle Master Bedroom"
 
 ⌃ + ⌥ - 2:
-  shortcuts run "Living Room Off"
+  shortcuts run "Toggle Living Room"
 
 ⌃ + ⌥ - 3:
-  shortcuts run "Master Bedroom On"
-
-⌃ + ⌥ - 4:
-  shortcuts run "Master Bedroom Off"
+  shortcuts run "Toggle Guest Bedroom"
