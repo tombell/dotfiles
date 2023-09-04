@@ -23,7 +23,6 @@ if ["Pyra", "Poppi"].include?(hostname)
   brew "go"
   brew "gopls"
   brew "tmux"
-  brew "tombell/formulae/ensong"
   brew "tombell/formulae/tm"
 
   cask "discord"
@@ -36,6 +35,7 @@ end
 
 if ["Pyra"].include?(hostname)
   brew "entr"
+  brew "tombell/formulae/ensong"
 
   cask "mpv"
   cask "paragon-ntfs"
