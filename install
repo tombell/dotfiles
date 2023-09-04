@@ -10,3 +10,7 @@ fi
 
 echo "==> Installing dotfiles..."
 env RCRC=$HOME/.dotfiles/rcrc rcup
+
+defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock size-immutable -bool yes
+killall Dock
