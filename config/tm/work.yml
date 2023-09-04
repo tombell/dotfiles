@@ -108,6 +108,7 @@ sessions:
       - name: server
         commands:
           - ./go run
+      - name: stripe
       - name: editor
 
   - name: porch
