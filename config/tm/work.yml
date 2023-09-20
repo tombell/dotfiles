@@ -108,7 +108,7 @@ sessions:
       - name: server
         commands:
           - ./go run
-      - name: stripe
+      # - name: stripe
       - name: editor
 
   - name: porch
@@ -127,8 +127,8 @@ sessions:
           - ./go run
       - name: editor
 
-  - name: mobile-app
-    root: ./mobile-app
-    windows:
-      - name: metro
-      - name: editor
+  # - name: mobile-app
+  #   root: ./mobile-app
+  #   windows:
+  #     - name: metro
+  #     - name: editor
