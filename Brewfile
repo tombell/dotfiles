@@ -33,7 +33,6 @@ if ["Pyra", "Poppi"].include?(hostname)
 
   cask "discord"
   cask "google-chrome"
-  cask "rapidapi"
   cask "soundsource"
   cask "telegram"
   cask "the-unarchiver"
@@ -58,6 +57,7 @@ if ["Poppi"].include?(hostname)
   cask "chromedriver"
   cask "displaylink"
   cask "logi-options-plus"
+  cask "rapidapi"
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
