@@ -1,54 +1,57 @@
 # vim: set ft=ruby:
 
+hostname = `scutil --get ComputerName`.chomp
+
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "starkwm/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
 
-hostname = `scutil --get ComputerName`.chomp
-
 brew "fzf"
-brew "neovim", args: ['HEAD']
-brew "nodenv"
+brew "neovim"
+brew "rcm"
 brew "ripgrep"
-brew "starkwm/formulae/skbd"
-brew "stylua"
-brew "thoughtbot/formulae/rcm"
+brew "skbd"
 brew "zsh-autosuggestions"
 
 cask "1password"
 cask "alacritty"
 cask "appcleaner"
-cask "homebrew/cask-fonts/font-iosevka-nerd-font"
-cask "homebrew/cask-versions/zulu11"
-cask "starkwm/formulae/stark"
+cask "font-iosevka-nerd-font"
+cask "stark"
 
 if ["Pyra", "Poppi"].include?(hostname)
   brew "git"
   brew "go"
   brew "gopls"
+  brew "nodenv"
+  brew "stylua"
+  brew "tm"
   brew "tmux"
-  brew "tombell/formulae/tm"
 
   cask "discord"
   cask "google-chrome"
   cask "soundsource"
   cask "telegram"
   cask "the-unarchiver"
+  cask "zulu11"
 end
 
 if ["Pyra"].include?(hostname)
   brew "entr"
-  brew "tombell/formulae/ensong"
+  brew "ensong"
 
-  cask "mpv"
+  cask "iina"
   cask "paragon-ntfs"
 end
 
 if ["Poppi"].include?(hostname)
-  brew "auth0/auth0-cli/auth0"
-  brew "heroku/brew/heroku"
+  tap "auth0/auth0-cli"
+  tap "heroku/brew"
+
+  brew "auth0"
+  brew "heroku"
   brew "postgresql@14"
   brew "redis"
   brew "watchman"
@@ -61,8 +64,4 @@ if ["Poppi"].include?(hostname)
   cask "slack"
   cask "visual-studio-code"
   cask "zoom"
-end
-
-if ["Brighid"].include?(hostname)
-  cask "rekordbox"
 end
