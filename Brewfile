@@ -1,5 +1,11 @@
 # vim: set ft=ruby:
 
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "starkwm/formulae"
+tap "thoughtbot/formulae"
+tap "tombell/formulae"
+
 hostname = `scutil --get ComputerName`.chomp
 
 brew "fzf"
