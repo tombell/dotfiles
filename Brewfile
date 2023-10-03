@@ -42,7 +42,7 @@ if ["Pyra"].include?(hostname)
   brew "entr"
   brew "ensong"
 
-  cask "iina"
+  cask "mpv"
   cask "paragon-ntfs"
 end
 
