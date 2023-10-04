@@ -1,6 +1,10 @@
 # vim: set ft=ruby:
 
 hostname = `scutil --get ComputerName`.chomp
+personal = "Pyra"
+work = "Poppi"
+dj = "Mythra"
+both = [personal, work]
 
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
@@ -8,37 +12,35 @@ tap "starkwm/formulae"
 tap "thoughtbot/formulae"
 tap "tombell/formulae"
 
-brew "fzf"
-brew "neovim"
-brew "rcm"
-brew "ripgrep"
-brew "skbd"
-brew "zsh-autosuggestions"
-
-cask "1password"
-cask "alacritty"
-cask "appcleaner"
-cask "font-iosevka-nerd-font"
-cask "stark"
-
-if ["Pyra", "Poppi"].include?(hostname)
+if both.include?(hostname)
+  brew "fzf"
   brew "git"
   brew "go"
   brew "gopls"
+  brew "neovim"
   brew "nodenv"
+  brew "rcm"
+  brew "ripgrep"
+  brew "skbd"
   brew "stylua"
   brew "tm"
   brew "tmux"
+  brew "zsh-autosuggestions"
 
+  cask "1password"
+  cask "alacritty"
+  cask "appcleaner"
   cask "discord"
+  cask "font-iosevka-nerd-font"
   cask "google-chrome"
   cask "soundsource"
+  cask "stark"
   cask "telegram"
   cask "the-unarchiver"
   cask "zulu11"
 end
 
-if ["Pyra"].include?(hostname)
+if hostname == personal
   brew "entr"
   brew "ensong"
 
@@ -46,7 +48,7 @@ if ["Pyra"].include?(hostname)
   cask "paragon-ntfs"
 end
 
-if ["Poppi"].include?(hostname)
+if hostname == work
   tap "auth0/auth0-cli"
   tap "heroku/brew"
 
