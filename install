@@ -1,16 +1,174 @@
 #!/usr/bin/env bash
 set -e
 
-OS=$(uname)
+###############################################################################
+# HOMEBREW
+###############################################################################
 
-if [[ $OS == "Darwin" ]]; then
-  echo "==> Installing homebrew formulae and casks..."
-  brew bundle
-fi
+echo "==> Installing homebrew formulae and casks..."
+brew bundle
+
+###############################################################################
+# RCM
+###############################################################################
 
 echo "==> Installing dotfiles..."
 env RCRC=$HOME/.dotfiles/rcrc rcup
 
-defaults write com.apple.dock tilesize -int 36
-defaults write com.apple.dock size-immutable -bool yes
+###############################################################################
+# SETTINGS
+###############################################################################
+
+echo "==> Setting macOS defaults..."
+
+###############################################################################
+# SOUND
+###############################################################################
+
+# Play feedback when volume is changed
+defaults write NSGlobalDomain com.apple.sound.beep.feedback -int 1
+
+###############################################################################
+# APPEARANCE
+###############################################################################
+
+# Sidebar icon size
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Show scroll bars
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+
+###############################################################################
+# CONTROL CENTRE
+###############################################################################
+
+# Set visible and hidden control centre icons
+defaults write com.apple.controlcenter "NSStatusItem Preferred Position Battery" -int 97
+defaults write com.apple.controlcenter "NSStatusItem Preferred Position BentoBox" -int 63
+defaults write com.apple.controlcenter "NSStatusItem Preferred Position WiFi" -int 139
+defaults write com.apple.controlcenter "NSStatusItem Visible AudioVideoModule" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -int 1
+defaults write com.apple.controlcenter "NSStatusItem Visible BentoBox" -int 1
+defaults write com.apple.controlcenter "NSStatusItem Visible Clock" -int 1
+defaults write com.apple.controlcenter "NSStatusItem Visible Shortcuts" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -int 1
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-0" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-1" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-2" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-3" -int 0
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-4" -int 0
+
+###############################################################################
+# DESKTOP AND DOCK
+###############################################################################
+
+# Autohide
+defaults write com.apple.dock autohide -int 1
+
+# Reent applications
+defaults write com.apple.dock show-recents -int 0
+
+# Icon size
+defaults write com.apple.dock tilesize -int 34
+
+# Resizing
+defaults write com.apple.dock size-immutable -int 0
+
+# Click wallpaper to reveal desktop
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -int 0
+
+# Show widgets on desktop
+defaults write com.apple.WindowManager StandardHideWidgets -int 1
+
+# Show widgets in stage manager
+defaults write com.apple.WindowManager StageManagerHideWidgets -int 1
+
+# Automatically rearrange spaces based on most recent use
+defaults write com.apple.dock mru-spaces -int 0
+
+# When switching to an application, switch to a space with open windows for the
+# application
+defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -int 0
+
+# Bottom right hot corner
+defaults write com.apple.dock wvous-br-corner -int 1
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############################################################################
+# KEYBOARD
+###############################################################################
+
+# Press and hold
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -int 0
+
+# Full keyboard control in dialogs
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Correct spelling automatically
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -int 0
+
+# Capitalise words automatically
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -int 0
+
+# Show inline predictive text
+defaults write NSGlobalDomain NSAutomaticInlinePredictionEnabled -int 0
+
+# Add full stop with double-space
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
+
+# Smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -int 0
+
+# Smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
+
+# Text replacements
+defaults write NSGlobalDomain NSUserDictionaryReplacementItems -dict
+
+###############################################################################
+# TRACKPAD
+###############################################################################
+
+# Tap to click
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+
+###############################################################################
+# FINDER
+###############################################################################
+
+# Show hard disks on the desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -int 0
+
+# Show external disks on the desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -int 1
+
+# Show CDs, DVDs, and iPods on the desktop
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -int 0
+
+# Show connected servers on the desktop
+defaults write com.apple.finder ShowMountedServersOnDesktop -int 0
+
+# New Finder windows show
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -int 1
+
+# Show warning before changing an extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -int 0
+
+# Show library folder
+chflags nohidden ~/Library
+
+# Preferred view style
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+###############################################################################
+# RESTART APPS
+###############################################################################
+
 killall Dock
+killall Finder
