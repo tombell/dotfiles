@@ -53,7 +53,6 @@ if command -v nodenv >/dev/null; then
 fi
 
 export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
 [[ -f ~/.localrc ]] && source ~/.localrc
 
