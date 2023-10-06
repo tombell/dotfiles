@@ -1,51 +1,65 @@
 # vim: set ft=ruby:
 # frozen_string_literal: true
 
-hostname = `scutil --get ComputerName`.chomp
-personal = 'Pyra'
-work = 'Poppi'
-both = [personal, work]
-
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'starkwm/formulae'
 tap 'thoughtbot/formulae'
 tap 'tombell/formulae'
 
-if both.include?(hostname)
+personal = 'Pyra'
+work = 'Poppi'
+music = 'Mythra'
+
+all = [personal, work, music]
+dev = [personal, work]
+
+hostname = `scutil --get ComputerName`.chomp
+
+if all.include?(hostname)
+  brew 'neovim'
+  brew 'rcm'
+  brew 'skbd'
+
+  cask '1password'
+  cask 'stark'
+end
+
+if dev.include?(hostname)
   brew 'fzf'
   brew 'git'
   brew 'go'
   brew 'gopls'
-  brew 'neovim'
+  brew 'jq'
   brew 'nodenv'
-  brew 'rcm'
+  brew 'rbenv'
   brew 'ripgrep'
-  brew 'skbd'
   brew 'stylua'
   brew 'tm'
   brew 'tmux'
   brew 'zsh-autosuggestions'
 
-  cask '1password'
   cask 'alacritty'
   cask 'appcleaner'
   cask 'discord'
   cask 'font-iosevka-nerd-font'
   cask 'google-chrome'
   cask 'soundsource'
-  cask 'stark'
   cask 'telegram'
   cask 'the-unarchiver'
   cask 'zulu11'
 end
 
 if hostname == personal
-  brew 'entr'
   brew 'ensong'
+  brew 'entr'
+  brew 'libusb'
+  brew 'python@3.11'
+  brew 'transmission-cli'
 
   cask 'mpv'
   cask 'paragon-ntfs'
+  cask 'xld'
 end
 
 if hostname == work
@@ -54,7 +68,8 @@ if hostname == work
 
   brew 'auth0'
   brew 'heroku'
-  brew 'postgresql@14'
+  brew 'mas'
+  brew 'postgresql@15'
   brew 'redis'
   brew 'watchman'
 
@@ -66,4 +81,11 @@ if hostname == work
   cask 'slack'
   cask 'visual-studio-code'
   cask 'zoom'
+
+  mas 'Xcode', id: 497799835
+end
+
+if hostname == music
+  cask 'dupeguru'
+  cask 'rekordbox'
 end
