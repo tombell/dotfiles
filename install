@@ -13,7 +13,7 @@ brew bundle
 ###############################################################################
 
 echo "==> Installing dotfiles..."
-env RCRC=$HOME/.dotfiles/rcrc rcup
+env RCRC="$(pwd)/rcrc" rcup
 
 ###############################################################################
 # SETTINGS
