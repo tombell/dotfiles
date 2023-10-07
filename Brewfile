@@ -57,6 +57,8 @@ if hostname == personal
   brew 'python@3.11'
   brew 'transmission-cli'
 
+  cask 'doppler'
+  cask 'meta'
   cask 'mpv'
   cask 'paragon-ntfs'
   cask 'xld'
