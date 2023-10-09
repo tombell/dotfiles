@@ -55,7 +55,7 @@ defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
 # Autohide
 defaults write com.apple.dock autohide -int 1
 
-# Reent applications
+# Recent applications
 defaults write com.apple.dock show-recents -int 0
 
 # Icon size
