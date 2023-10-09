@@ -112,8 +112,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -int 0
 # Smart dashes
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
 
-# Text replacements
-defaults write NSGlobalDomain NSUserDictionaryReplacementItems -dict
+# Keyboard Shortcuts
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "^$s"
 
 ###############################################################################
 # TRACKPAD
