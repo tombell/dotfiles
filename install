@@ -42,21 +42,11 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # CONTROL CENTRE
 ###############################################################################
 
-# Set visible and hidden control centre icons
-defaults write com.apple.controlcenter "NSStatusItem Preferred Position Battery" -int 97
-defaults write com.apple.controlcenter "NSStatusItem Preferred Position BentoBox" -int 63
-defaults write com.apple.controlcenter "NSStatusItem Preferred Position WiFi" -int 139
-defaults write com.apple.controlcenter "NSStatusItem Visible AudioVideoModule" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -int 1
-defaults write com.apple.controlcenter "NSStatusItem Visible BentoBox" -int 1
-defaults write com.apple.controlcenter "NSStatusItem Visible Clock" -int 1
-defaults write com.apple.controlcenter "NSStatusItem Visible Shortcuts" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -int 1
-defaults write com.apple.controlcenter "NSStatusItem Visible Item-0" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible Item-1" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible Item-2" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible Item-3" -int 0
-defaults write com.apple.controlcenter "NSStatusItem Visible Item-4" -int 0
+# Show date
+defaults write com.apple.menuextra.clock ShowDate -int 2
+
+# Show the day of the week
+defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
 
 ###############################################################################
 # DESKTOP AND DOCK
