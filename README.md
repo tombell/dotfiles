@@ -16,7 +16,7 @@ These are my dotfiles for macOS (and Linux).
 
 These are things I like to setup and configure that I haven't automated yet.
 
-- Enable or disable **Bluetooth** depending on machine
+- Update Display size to **More Space**
 - Disable notifications (and **Play sound for notification**) for certain applications
 - Add `~/Downloads` and `~/Code` to directories for **Spotlight** to ignore
 - Turn off the following search results for **Spotlight**
@@ -34,6 +34,24 @@ These are things I like to setup and configure that I haven't automated yet.
     * Tips
     * Websites
 - Add **Terminal** and **Alacritty** to **Full Disk Access** and **Developer Tools** in **Privacy and Security**
-- Update Display size to **More Space**
-- Update *Start Screen Saver when inactive* to **Never**
 - Update *Require password after screen saver begins or display is turned off* to **Immediately**
+
+### Status Bar Items
+
+- 1Password
+- Stark
+- SoundSource
+- WiFi
+- Battery
+- Control Centre
+
+### Dock Icons
+
+- Mail
+- Messages
+- Telegram
+- Discord
+- Doppler
+- mpv
+- Google Chrome
+- Alacritty
