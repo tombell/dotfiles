@@ -1,7 +1,3 @@
-if vim.g.vscode then
-  return
-end
-
 if statuscolumn then
   return
 end
@@ -47,3 +43,5 @@ vim.opt.statuscolumn = table.concat {
   "%#StatusColumnBuffer#",
   " ",
 }
+
+return {}

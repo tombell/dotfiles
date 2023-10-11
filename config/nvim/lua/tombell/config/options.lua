@@ -27,13 +27,8 @@ o.shiftwidth = 2
 o.softtabstop = 2
 o.expandtab = true
 
--- Enable list characters
--- o.list = true
--- o.listchars = "tab:»·,trail:·,nbsp:·"
-
 -- Enable the text width and indicator
 o.textwidth = 80
--- o.colorcolumn = "+1"
 
 -- Setup line numbers and sign coloumn
 o.number = true
@@ -42,20 +37,15 @@ o.signcolumn = "yes:1"
 -- Enable the cursor line
 o.cursorline = true
 
--- Setup the completion options
-o.completeopt = "menu,menuone,noselect"
-
 -- Enable intuitive splits
 o.splitbelow = true
 o.splitright = true
 
 -- Enable tree-sitter based folding
 o.foldlevel = 20
+o.foldcolumn = "0"
 o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Use pgsql syntax for sql files
 g.sql_type_default = "pgsql"
-
--- Integrate with the system clipboard
--- o.clipboard = "unnamedplus"
