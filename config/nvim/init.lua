@@ -1,16 +1,3 @@
-if vim.fn.exists "g:vscode" == 1 then
-  vim.keymap.set(
-    { "n", "o", "x" },
-    "gc",
-    "<cmd>call VSCodeCall('editor.action.commentLine')<cr><esc>",
-    { remap = true }
-  )
-  vim.keymap.set("n", "gcc", "<cmd>call VSCodeCall('editor.action.commentLine')<cr><esc>", { remap = true })
-  return
-end
-
-require "tombell.globals"
-
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -26,7 +13,4 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ","
-
-require "tombell.plugins"
-require "tombell.autocmd"
+require("tombell").setup {}

@@ -5,11 +5,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = { "*" },
-  command = "normal zx",
-})
-
-vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("dotenv_group", { clear = true }),
   pattern = {
     ".env",
     ".env.development",
