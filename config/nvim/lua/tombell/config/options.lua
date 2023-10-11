@@ -1,5 +1,9 @@
-local o = vim.o
-local g = vim.g
+vim.g.mapleader = ","
+
+-- Use pgsql syntax for sql files
+vim.g.sql_type_default = "pgsql"
+
+local o = vim.opt
 
 -- Enable 24-bit RGB colours in the terminal
 o.termguicolors = true
@@ -18,6 +22,14 @@ o.cmdheight = 2
 -- Setup the short
 o.shortmess = "filtIoOA"
 
+-- Fill characters
+o.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+}
+
 -- Only show statusbar for current buffer
 o.laststatus = 3
 
@@ -27,13 +39,8 @@ o.shiftwidth = 2
 o.softtabstop = 2
 o.expandtab = true
 
--- Enable list characters
--- o.list = true
--- o.listchars = "tab:»·,trail:·,nbsp:·"
-
 -- Enable the text width and indicator
 o.textwidth = 80
--- o.colorcolumn = "+1"
 
 -- Setup line numbers and sign coloumn
 o.number = true
@@ -42,20 +49,15 @@ o.signcolumn = "yes:1"
 -- Enable the cursor line
 o.cursorline = true
 
--- Setup the completion options
-o.completeopt = "menu,menuone,noselect"
-
 -- Enable intuitive splits
 o.splitbelow = true
 o.splitright = true
 
 -- Enable tree-sitter based folding
-o.foldlevel = 20
+o.foldlevel = 99
+o.foldtext = "v:lua.require'tombell.util.ui'.foldtext()"
 o.foldmethod = "expr"
-o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
--- Use pgsql syntax for sql files
-g.sql_type_default = "pgsql"
-
--- Integrate with the system clipboard
--- o.clipboard = "unnamedplus"
+-- Status coloumn
+o.statuscolumn = [[%!v:lua.require'tombell.util.ui'.statuscolumn()]]
