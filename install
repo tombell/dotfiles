@@ -163,6 +163,15 @@ chflags nohidden ~/Library
 # Preferred view style
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+# Desktop sort by
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy name" ~/Library/Preferences/com.apple.finder.plist
+
+# Desktop label position
+/usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
+
+# Desktop icon size
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 38" ~/Library/Preferences/com.apple.finder.plist
+
 ###############################################################################
 # RESTART APPS
 ###############################################################################
