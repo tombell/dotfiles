@@ -1,9 +1,9 @@
 return {
   {
     "catppuccin/nvim",
+    lazy = true,
     name = "catppuccin",
     opts = {
-      no_italic = true,
       highlight_overrides = {
         mocha = function(mocha)
           return {
