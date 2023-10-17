@@ -54,7 +54,7 @@ if hostname == personal
   brew 'ensong'
   brew 'entr'
   brew 'libusb'
-  brew 'python@3.11'
+  brew 'python@3.12'
   brew 'transmission-cli'
 
   cask 'doppler'
