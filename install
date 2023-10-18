@@ -127,10 +127,10 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Lock Screen" "^$s"
 ###############################################################################
 
 # Tap to click
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Natural scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
 
 ###############################################################################
 # FINDER
