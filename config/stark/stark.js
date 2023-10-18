@@ -2,119 +2,79 @@
 // CONSTANTS
 // -----------------------------------------------------------------------------
 
-const MODIFIERS = ["⌃", "⇧"];
-const FULL_MODIFIERS = MODIFIERS.concat(["⌥"]);
+const ctrlShift = ["ctrl", "shift"];
+const ctrlOpt = ["ctrl", "opt"];
+const ctrlShiftOpt = ["ctrl", "shift", "opt"];
 
-const GRID_WIDTH = 12;
-const GRID_HEIGHT = 10;
+const margin = 12;
 
-const MARGIN = 12;
+const gridColumns = 12;
+const gridRoes = 10;
 
 // -----------------------------------------------------------------------------
-// WINDOW CENTERING
+// WINDOW MANAGEMENT
 // -----------------------------------------------------------------------------
 
-// Small
-Bind.on("z", MODIFIERS, () => {
+const grid = (columns, rows, x, y) => {
   const win = Window.focused();
-  const { width, height, y } = win?.screen.flippedVisibleFrame;
 
-  win?.setFrame({
-    x: (width / GRID_WIDTH) * 2,
-    y: y + (height / GRID_HEIGHT) * 2,
-    width: (width / GRID_WIDTH) * 8,
-    height: (height / GRID_HEIGHT) * 6,
+  if (!win) {
+    return;
+  }
+
+  const { width, height, y: baseY } = win.screen.flippedVisibleFrame;
+  const cellWidth = width / gridColumns;
+  const cellHeight = height / gridRoes;
+
+  win.setFrame({
+    width: cellWidth * columns - margin * 2,
+    height: cellHeight * rows - margin * 2,
+    x: margin + cellWidth * x,
+    y: margin + baseY + cellHeight * y,
   });
-});
+};
 
-// Medium
-Bind.on("x", MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, y } = win?.screen.flippedVisibleFrame;
+// Centre full
+Bind.on("c", ctrlShift, () => grid(12, 10, 0, 0));
 
-  win?.setFrame({
-    x: width / GRID_WIDTH,
-    y: y + height / GRID_HEIGHT,
-    width: (width / GRID_WIDTH) * 10,
-    height: (height / GRID_HEIGHT) * 8,
-  });
-});
+// Centre medium
+Bind.on("x", ctrlShift, () => grid(10, 8, 1, 1));
 
-// Full
-Bind.on("c", MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
-
-  win?.setFrame({
-    x: x + MARGIN,
-    y: y + MARGIN,
-    width: width - MARGIN * 2,
-    height: height - MARGIN * 2,
-  });
-});
-
-// -----------------------------------------------------------------------------
-// WINDOW POSITIONING
-// -----------------------------------------------------------------------------
+// Centre small
+Bind.on("z", ctrlShift, () => grid(8, 6, 2, 2));
 
 // Left-half
-Bind.on("h", MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
-
-  win?.setFrame({
-    x: x + MARGIN,
-    y: y + MARGIN,
-    width: width / 2 - (MARGIN + MARGIN / 2),
-    height: height - MARGIN * 2,
-  });
-});
-
-// Left-two thirds
-Bind.on("h", FULL_MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
-
-  win?.setFrame({
-    x: x + MARGIN,
-    y: y + MARGIN,
-    width: (width / 3) * 2 - (MARGIN + MARGIN / 2),
-    height: height - MARGIN * 2,
-  });
-});
+Bind.on("h", ctrlShift, () => grid(6, 10, 0, 0));
 
 // Right-half
-Bind.on("l", MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
+Bind.on("l", ctrlShift, () => grid(6, 10, 6, 0));
 
-  win?.setFrame({
-    x: x + width / 2 + MARGIN / 2,
-    y: y + MARGIN,
-    width: width / 2 - (MARGIN + MARGIN / 2),
-    height: height - MARGIN * 2,
-  });
-});
+// Left-one third
+Bind.on("h", ctrlOpt, () => grid(4, 10, 0, 0));
 
 // Right-one third
-Bind.on("l", FULL_MODIFIERS, () => {
-  const win = Window.focused();
-  const { width, height, x, y } = win?.screen.flippedVisibleFrame;
+Bind.on("l", ctrlOpt, () => grid(4, 10, 8, 0));
 
-  win?.setFrame({
-    x: x + (width / 3) * 2 + MARGIN / 2,
-    y: y + MARGIN,
-    width: width / 3 - (MARGIN + MARGIN / 2),
-    height: height - MARGIN * 2,
-  });
-});
+// Left-two thirds
+Bind.on("h", ctrlShiftOpt, () => grid(8, 10, 0, 0));
+
+// Right-two thirds
+Bind.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
 
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
 
-[...Array(Space.all().length).keys()].forEach((index) => {
-  Bind.on(`${index + 1}`, MODIFIERS, () => {
-    Space.at(index).moveWindows([Window.focused()].filter(Boolean));
+[...Array(Space.all().length).keys()].forEach((i) => {
+  const key = `${i + 1}`;
+
+  Bind.on(key, ctrlShift, () => {
+    Space.at(i).moveWindows([Window.focused()].filter(Boolean));
+  });
+
+  Bind.on(key, ctrlShiftOpt, () => {
+    const win = Window.focused();
+    Space.at(i).moveWindows([win].filter(Boolean));
+    win.focus();
   });
 });
