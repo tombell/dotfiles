@@ -15,7 +15,7 @@ const gridRoes = 10;
 // WINDOW MANAGEMENT
 // -----------------------------------------------------------------------------
 
-const grid = (columns, rows, x, y) => {
+const grid = (columns, rows, x, y, addMargin = true) => {
   const win = Window.focused();
 
   if (!win) {
@@ -26,11 +26,13 @@ const grid = (columns, rows, x, y) => {
   const cellWidth = width / gridColumns;
   const cellHeight = height / gridRoes;
 
+  const marginValue = addMargin ? margin : 0;
+
   win.setFrame({
-    width: cellWidth * columns - margin * 2,
-    height: cellHeight * rows - margin * 2,
-    x: margin + cellWidth * x,
-    y: margin + baseY + cellHeight * y,
+    width: cellWidth * columns - marginValue * 2,
+    height: cellHeight * rows - marginValue * 2,
+    x: marginValue + cellWidth * x,
+    y: marginValue + baseY + cellHeight * y,
   });
 };
 
@@ -38,10 +40,10 @@ const grid = (columns, rows, x, y) => {
 Bind.on("c", ctrlShift, () => grid(12, 10, 0, 0));
 
 // Centre medium
-Bind.on("x", ctrlShift, () => grid(10, 8, 1, 1));
+Bind.on("x", ctrlShift, () => grid(10, 8, 1, 1, false));
 
 // Centre small
-Bind.on("z", ctrlShift, () => grid(8, 6, 2, 2));
+Bind.on("z", ctrlShift, () => grid(8, 6, 2, 2, false));
 
 // Left-half
 Bind.on("h", ctrlShift, () => grid(6, 10, 0, 0));
