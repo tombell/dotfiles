@@ -1,37 +1,16 @@
 vim.g.mapleader = ","
 
--- Use pgsql syntax for sql files
 vim.g.sql_type_default = "pgsql"
 
 local o = vim.opt
 
--- Enable 24-bit RGB colours in the terminal
+-- Enable 24-bit RGB colours
 o.termguicolors = true
 
--- Disable backup files and swap files
+-- Disable backup and swap files
 o.backup = false
 o.writebackup = false
 o.swapfile = false
-
--- Disable highlighting search results
-o.hlsearch = false
-
--- Setup the command height
-o.cmdheight = 2
-
--- Setup the short
-o.shortmess = "filtIoOA"
-
--- Fill characters
-o.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-}
-
--- Only show statusbar for current buffer
-o.laststatus = 3
 
 -- Setup tab settings
 o.tabstop = 2
@@ -39,19 +18,35 @@ o.shiftwidth = 2
 o.softtabstop = 2
 o.expandtab = true
 
--- Enable the text width and indicator
+-- Enable text width
 o.textwidth = 80
 
--- Setup line numbers and sign coloumn
-o.number = true
-o.signcolumn = "yes:1"
+-- Disable highlighting search results
+o.hlsearch = false
 
--- Enable the cursor line
+-- Enable statusline for current buffer only
+o.laststatus = 3
+
+-- Setup short message
+o.shortmess:append { W = true, I = true, c = true, C = true }
+
+-- Enable cursor line
 o.cursorline = true
 
--- Enable intuitive splits
+-- Enable splitting new windows below
 o.splitbelow = true
+
+-- Enable splitting new windows to the right
 o.splitright = true
+
+-- Enable line numbers
+o.number = true
+
+-- Enable sign column
+o.signcolumn = "yes"
+
+-- Enable status column
+o.statuscolumn = "%!v:lua.require'tombell.util.ui'.statuscolumn()"
 
 -- Enable tree-sitter based folding
 o.foldlevel = 99
@@ -59,5 +54,5 @@ o.foldtext = "v:lua.require'tombell.util.ui'.foldtext()"
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
--- Status coloumn
-o.statuscolumn = [[%!v:lua.require'tombell.util.ui'.statuscolumn()]]
+-- Setup fill characters
+o.fillchars = { fold = " ", foldsep = " " }
