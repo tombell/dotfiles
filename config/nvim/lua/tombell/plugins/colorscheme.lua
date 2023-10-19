@@ -4,6 +4,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
+      flavour = "macchiato",
       highlight_overrides = {
         mocha = function(mocha)
           return {
