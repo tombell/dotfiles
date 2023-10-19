@@ -1,5 +1,8 @@
 return {
-  "lifepillar/pgsql.vim",
+  {
+    "lifepillar/pgsql.vim",
+    ft = "sql",
+  },
 
   {
     "hrsh7th/nvim-cmp",
