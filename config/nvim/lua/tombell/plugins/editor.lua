@@ -22,9 +22,7 @@ return {
         },
         pickers = {
           find_files = {
-            find_command = { "rg", "--files", "--glob", "!.git/*" },
-            hidden = true,
-            previewer = false,
+            follow = true,
           },
         },
       }
