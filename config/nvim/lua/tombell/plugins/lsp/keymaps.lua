@@ -8,8 +8,8 @@ function M.on_attach(_, buffer)
   vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations, { buffer = buffer })
   vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, { buffer = buffer })
 
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = buffer })
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { buffer = buffer })
+  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { buffer = buffer })
 
   vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = buffer })
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = buffer })
