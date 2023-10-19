@@ -20,10 +20,33 @@ return {
   },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        filetypes = {
+          "help",
+          "lazy",
+          "neotest-output",
+          "neotest-output-panel",
+          "neotest-summary",
+        },
+      },
+    },
+    main = "ibl",
+  },
+
+  {
     "echasnovski/mini.indentscope",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
     opts = function()
       return {
-        symbol = "▎",
+        symbol = "│",
         draw = {
           animation = require("mini.indentscope").gen_animation.none(),
           delay = 10,
@@ -35,6 +58,8 @@ return {
         pattern = {
           "help",
           "lazy",
+          "neotest-output",
+          "neotest-output-panel",
           "neotest-summary",
         },
         callback = function()
