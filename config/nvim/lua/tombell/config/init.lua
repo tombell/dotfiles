@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup(opts)
+function M.setup()
   require "tombell.config.options"
   require "tombell.config.autocmd"
   require "tombell.config.keymaps"
