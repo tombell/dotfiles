@@ -4,12 +4,12 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      flavour = "macchiato",
+      flavour = "frappe",
       highlight_overrides = {
-        mocha = function(mocha)
+        frappe = function(frappe)
           return {
-            Folded = { fg = mocha.blue, bg = mocha.mantle },
-            VertSplit = { fg = mocha.surface0, bg = mocha.base },
+            Folded = { fg = frappe.blue, bg = frappe.mantle },
+            VertSplit = { fg = frappe.surface0, bg = frappe.base },
           }
         end,
       },
