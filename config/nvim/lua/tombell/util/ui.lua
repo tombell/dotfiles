@@ -1,24 +1,24 @@
+local util = require "tombell.util"
+
 local M = {}
 
+M.exclude_foldend_filetypes = {
+  "markdown",
+  "python",
+}
+
 function M.foldtext()
-  local ok = pcall(vim.treesitter.get_parser, vim.api.nvim_get_current_buf())
-  local ret = ok and vim.treesitter.foldtext and vim.treesitter.foldtext()
+  local ret = {
+    util.expand_tabs(vim.api.nvim_buf_get_lines(0, vim.v.foldstart - 1, vim.v.foldstart, true)[1], vim.bo.tabstop),
+    "󰇘",
+  }
 
-  if not ret or type(ret) == "string" then
-    ret = { { vim.api.nvim_buf_get_lines(0, vim.v.lnum - 1, vim.v.lnum, false)[1], {} } }
+  if not vim.tbl_contains(M.exclude_foldend_filetypes, vim.bo.filetype) then
+    local line = util.trim(vim.api.nvim_buf_get_lines(0, vim.v.foldend - 1, vim.v.foldend, true)[1])
+    table.insert(ret, line)
   end
 
-  table.insert(ret, { " 󰇘 " })
-
-  if not vim.treesitter.foldtext then
-    return table.concat(
-      vim.tbl_map(function(line)
-        return line[1]
-      end, ret),
-      " "
-    )
-  end
-  return ret
+  return table.concat(ret, " ")
 end
 
 function M.linenr()
