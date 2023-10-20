@@ -42,37 +42,21 @@ function M.linenr()
 end
 
 function M.fold()
-  if vim.v.wrap then
-    return ""
+  if vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1) then
+    if vim.fn.foldclosed(vim.v.lnum) == -1 then
+      return "%#FoldColumn#"
+    else
+      return "%#FoldColumn#"
+    end
+  else
+    return " "
   end
-
-  local lnum = vim.v.lnum
-
-  if vim.fn.foldlevel(lnum) <= 0 then
-    return "  "
-  end
-
-  if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
-    return "  "
-  end
-
-  if vim.fn.foldclosed(lnum) == -1 then
-    return " "
-  end
-
-  return " "
 end
 
 function M.statuscolumn()
-  return table.concat {
-    "%s",
-    "%=" .. M.linenr(),
-    " ",
-    "%#FoldColumn#",
-    M.fold(),
-    "%#StatusColumnBuffer#",
-    " ",
-  }
+  local foldcolumn = M.fold()
+  local lnum = vim.v.lnum
+  return string.format("%d %s ", lnum, foldcolumn)
 end
 
 return M
