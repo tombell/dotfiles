@@ -85,7 +85,7 @@ if hostname == work
   cask 'visual-studio-code'
   cask 'zoom'
 
-  mas 'Xcode', id: 497799835
+  mas 'Xcode', id: 497_799_835
 end
 
 if hostname == music
