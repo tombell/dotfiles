@@ -5,7 +5,11 @@ function M.setup()
   require "tombell.config.autocmd"
   require "tombell.config.keymaps"
 
-  require("lazy").setup { import = "tombell/plugins" }
+  require("lazy").setup({ { import = "tombell/plugins" } }, {
+    install = {
+      colorscheme = { "catppuccin" },
+    },
+  })
 
   vim.cmd.colorscheme "catppuccin"
 end
