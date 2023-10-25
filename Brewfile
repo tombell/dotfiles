@@ -82,7 +82,6 @@ if hostname == work
   casl 'postico'
   cask 'rapidapi'
   cask 'slack'
-  cask 'visual-studio-code'
   cask 'zoom'
 
   mas 'Xcode', id: 497_799_835
