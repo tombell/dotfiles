@@ -22,7 +22,13 @@ const grid = (columns, rows, x, y, addMargin = true) => {
     return;
   }
 
-  const { width, height, y: baseY } = win.screen.flippedVisibleFrame;
+  const {
+    width,
+    height,
+    x: offsetX,
+    y: offsetY,
+  } = win.screen.flippedVisibleFrame;
+
   const cellWidth = width / gridColumns;
   const cellHeight = height / gridRoes;
 
@@ -31,8 +37,8 @@ const grid = (columns, rows, x, y, addMargin = true) => {
   win.setFrame({
     width: cellWidth * columns - marginValue * 2,
     height: cellHeight * rows - marginValue * 2,
-    x: marginValue + cellWidth * x,
-    y: marginValue + baseY + cellHeight * y,
+    x: offsetX + marginValue + cellWidth * x,
+    y: offsetY + marginValue + cellHeight * y,
   });
 };
 
