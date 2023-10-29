@@ -62,7 +62,7 @@ defaults write com.apple.dock show-recents -int 0
 defaults write com.apple.dock tilesize -int 34
 
 # Resizing
-defaults write com.apple.dock size-immutable -int 0
+defaults write com.apple.dock size-immutable -int 1
 
 # Click wallpaper to reveal desktop
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -int 0
