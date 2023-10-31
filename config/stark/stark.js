@@ -48,8 +48,14 @@ Bind.on("c", ctrlShift, () => grid(12, 10, 0, 0));
 // Centre medium
 Bind.on("x", ctrlShift, () => grid(10, 8, 1, 1, false));
 
+// Centre medium, full height
+Bind.on("x", ctrlShiftOpt, () => grid(8, 10, 2, 0));
+
 // Centre small
 Bind.on("z", ctrlShift, () => grid(8, 6, 2, 2, false));
+
+// Centre small, full height
+Bind.on("z", ctrlShiftOpt, () => grid(6, 10, 3, 0));
 
 // Left-half
 Bind.on("h", ctrlShift, () => grid(6, 10, 0, 0));
