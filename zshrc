@@ -101,6 +101,8 @@ alias tc="npx tsc --noEmit"
 alias urepo='for d in *; do (cd $d && pwd && git pull && echo); done'
 alias brepo='for d in *; do (cd "$d" && pwd && git branch && echo); done'
 
-alias ds='find . -name ".DS_Store" -type f -print -delete'
+alias ds='find . -name ".DS_Store" -type f -delete'
+
+alias safe='xattr -r -d com.apple.quarantine'
 
 export HOMEBREW_NO_ENV_HINTS=1
