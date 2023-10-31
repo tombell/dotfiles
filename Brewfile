@@ -33,7 +33,7 @@ if dev.include?(hostname)
   brew 'nodenv'
   brew 'rbenv'
   brew 'ripgrep'
-  brew 'tm'
+  brew 'tombell/formula/tm'
   brew 'tmux'
   brew 'zsh-autosuggestions'
 
