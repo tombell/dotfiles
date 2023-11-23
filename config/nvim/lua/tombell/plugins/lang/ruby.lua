@@ -11,7 +11,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        solargraph = {},
+        solargraph = {
+          diagnostics = true,
+        },
       },
     },
   },

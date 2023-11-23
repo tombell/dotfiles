@@ -2,6 +2,12 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("tombell_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = augroup "trim_whitespace",
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup "highlight_yank",
   callback = function()
