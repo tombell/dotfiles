@@ -5,6 +5,7 @@ local M = {}
 M.exclude_foldend_filetypes = {
   "markdown",
   "python",
+  "tex",
 }
 
 function M.foldtext()
