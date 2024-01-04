@@ -14,7 +14,7 @@ function M.telescope(builtin, opts)
     opts = vim.tbl_deep_extend("force", { cwd = util.root() }, opts or {})
 
     if builtin == "files" then
-      if vim.loop.fs_stat((opts.cwd or vim.loop.cwd()) .. "/.git") then
+      if vim.loop.fs_stat((opts.cwd or vim.loop.cwd()) .. "/.git") and opts.git then
         opts.show_untracked = true
         builtin = "git_files"
       else

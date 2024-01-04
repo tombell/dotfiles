@@ -15,8 +15,8 @@ return {
       -- Find
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
       { "<leader>fc", util.telescope.config_files(), desc = "Find Config File" },
-      { "<leader>ff", util.telescope "files", desc = "Find Files (root dir)" },
-      { "<leader>fF", util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>ff", util.telescope("files", { git = true }), desc = "Find Files (root dir)" },
+      { "<leader>fF", util.telescope("files", { git = true, cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
       { "<leader>fR", util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
 
