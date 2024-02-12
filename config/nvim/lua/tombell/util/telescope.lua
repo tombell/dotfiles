@@ -18,6 +18,8 @@ function M.telescope(builtin, opts)
         opts.show_untracked = true
         builtin = "git_files"
       else
+        opts.find_command = { "rg", "--files", "--color", "never", "--glob", "!.git/*" }
+        opts.hidden = true
         builtin = "find_files"
       end
     end
