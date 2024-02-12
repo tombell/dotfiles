@@ -80,3 +80,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.opt_local.filetype = "sh"
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = augroup "gotmpl",
+  pattern = { "*.gotmpl", "*.gohtml", "*.tmpl.html", "*.tmlp.txt" },
+  callback = function()
+    vim.opt_local.filetype = "gotmpl"
+  end,
+})
