@@ -137,7 +137,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
 defaults write com.apple.finder ShowHardDrivesOnDesktop -int 0
 
 # Show external disks on the desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -int 1
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -int 0
 
 # Show CDs, DVDs, and iPods on the desktop
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -int 0
@@ -162,12 +162,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Desktop sort by
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy name" ~/Library/Preferences/com.apple.finder.plist
-
-# Desktop label position
-/usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
-
-# Desktop icon size
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 38" ~/Library/Preferences/com.apple.finder.plist
 
 ###############################################################################
 # RESTART APPS
