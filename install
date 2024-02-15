@@ -160,9 +160,6 @@ chflags nohidden ~/Library
 # Preferred view style
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Desktop sort by
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy name" ~/Library/Preferences/com.apple.finder.plist
-
 ###############################################################################
 # RESTART APPS
 ###############################################################################
