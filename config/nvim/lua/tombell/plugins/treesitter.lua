@@ -10,7 +10,6 @@ return {
         "c",
         "css",
         "diff",
-        "embedded_template",
         "git_config",
         "git_rebase",
         "html",
