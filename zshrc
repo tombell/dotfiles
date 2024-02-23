@@ -40,10 +40,6 @@ fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' insert-tab pending
 
-if [[ -d "/opt/homebrew/bin" ]]; then
-  PATH="/opt/homebrew/bin:$PATH"
-fi
-
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
 fi
