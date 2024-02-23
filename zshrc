@@ -50,21 +50,13 @@ fi
 
 export PATH="$HOME/.dotfiles/bin:$GOPATH/bin:$PATH"
 
-[[ -f ~/.localrc ]] && source ~/.localrc
-
-if command -v brew >/dev/null; then
-  if [[ $(uname -p) == "arm" ]]; then
-    source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  else
-    source "/usr/local/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  fi
+if [[ $(uname -p) == "arm" ]]; then
+  source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+else
+  source "/usr/local/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-# export FZF_DEFAULT_OPTS="
-# --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284
-# --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf
-# --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 export FZF_DEFAULT_OPTS="
 	--color=fg:#908caa,bg:#232136,hl:#ea9a97
 	--color=fg+:#e0def4,bg+:#393552,hl+:#ea9a97
@@ -108,3 +100,5 @@ alias ds='find . -name ".DS_Store" -type f -delete'
 alias safe='xattr -r -d com.apple.quarantine'
 
 export HOMEBREW_NO_ENV_HINTS=1
+
+[[ -f ~/.localrc ]] && source ~/.localrc
