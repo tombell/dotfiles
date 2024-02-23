@@ -16,13 +16,13 @@ sessions:
     windows:
       - name: server
         commands:
-          - npm run dev
+          - pnpm run dev
       - name: storybook
         commands:
-          - npm run storybook
+          - pnpm run storybook
       - name: tests
         commands:
-          - npm test
+          - pnpm test
       - name: editor
         commands:
           - nvim .
