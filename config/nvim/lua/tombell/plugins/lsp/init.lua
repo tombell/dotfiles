@@ -37,6 +37,8 @@ return {
         opts.capabilities or {}
       )
 
+      capabilities.textDocument.completion.completionItem.snippetSupport = false
+
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
