@@ -68,7 +68,7 @@ if hostname == work
   brew 'auth0'
   brew 'heroku'
   brew 'mas'
-  brew 'postgresql@15'
+  brew 'postgresql@16'
   brew 'redis'
   brew 'watchman'
 
