@@ -10,7 +10,7 @@ text = "#303446"
 cursor = "#F2D5CF"
 
 [font]
-size = 11.0
+size = 12.0
 
 [font.bold]
 family = "Iosevka NFM"
