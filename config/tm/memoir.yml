@@ -16,13 +16,13 @@ sessions:
     windows:
       - name: server
         commands:
-          - MEMOIR_API_KEY=asdfasdf npm run dev
+          - MEMOIR_API_KEY=asdfasdf pnpm run dev
       - name: storybook
         commands:
-          - npm run storybook
+          - pnpm run storybook
       - name: tests
         commands:
-          - npm test
+          - pnpm test
       - name: editor
         commands:
           - nvim .
