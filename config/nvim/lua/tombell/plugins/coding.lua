@@ -8,7 +8,6 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
@@ -23,7 +22,7 @@ return {
         },
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            vim.snippet.expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert {
@@ -32,7 +31,7 @@ return {
           ["<c-d>"] = cmp.mapping.scroll_docs(-4),
           ["<c-f>"] = cmp.mapping.scroll_docs(4),
           ["<c-space>"] = cmp.mapping.complete(),
-          ["<cr>"] = cmp.mapping.confirm { select = true },
+          ["<cr>"] = cmp.mapping.confirm { select = false },
         },
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
