@@ -40,6 +40,9 @@ return {
         }, {
           { name = "buffer" },
         }),
+        performance = {
+          max_view_entries = 5,
+        },
       }
     end,
   },
