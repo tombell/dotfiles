@@ -12,6 +12,7 @@ return {
     opts = {
       servers = {
         svelte = {},
+        tailwindcss = {},
       },
     },
   },
@@ -19,7 +20,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "svelte-language-server" })
+      vim.list_extend(opts.ensure_installed, { "prettierd", "svelte-language-server" })
     end,
   },
   {
@@ -27,7 +28,9 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        svelte = { "prettier" },
+        svelte = { "prettierd" },
+        typescript = { "prettierd" },
+        javascript = { "prettierd" },
       },
     },
   },
