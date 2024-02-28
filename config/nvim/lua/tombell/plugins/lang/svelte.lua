@@ -12,7 +12,9 @@ return {
     opts = {
       servers = {
         svelte = {},
-        tailwindcss = {},
+        tailwindcss = {
+          filetypes = { "svelte" },
+        },
       },
     },
   },
@@ -29,8 +31,6 @@ return {
     opts = {
       formatters_by_ft = {
         svelte = { "prettierd" },
-        typescript = { "prettierd" },
-        javascript = { "prettierd" },
       },
     },
   },
