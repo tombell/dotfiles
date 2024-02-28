@@ -3,6 +3,7 @@ return {
     "stevearc/conform.nvim",
     dependencies = { "mason.nvim" },
     opts = {
+      notify_on_error = false,
       formatters_by_ft = {
         lua = { "stylua" },
       },
