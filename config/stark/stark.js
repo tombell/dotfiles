@@ -43,37 +43,37 @@ const grid = (columns, rows, x, y, addMargin = true) => {
 };
 
 // Centre full
-Bind.on("c", ctrlShift, () => grid(12, 10, 0, 0));
+Keymap.on("c", ctrlShift, () => grid(12, 10, 0, 0));
 
 // Centre medium
-Bind.on("x", ctrlShift, () => grid(10, 8, 1, 1, false));
+Keymap.on("x", ctrlShift, () => grid(10, 8, 1, 1, false));
 
 // Centre medium, full height
-Bind.on("x", ctrlShiftOpt, () => grid(8, 10, 2, 0));
+Keymap.on("x", ctrlShiftOpt, () => grid(8, 10, 2, 0));
 
 // Centre small
-Bind.on("z", ctrlShift, () => grid(8, 6, 2, 2, false));
+Keymap.on("z", ctrlShift, () => grid(8, 6, 2, 2, false));
 
 // Centre small, full height
-Bind.on("z", ctrlShiftOpt, () => grid(6, 10, 3, 0));
+Keymap.on("z", ctrlShiftOpt, () => grid(6, 10, 3, 0));
 
 // Left-half
-Bind.on("h", ctrlShift, () => grid(6, 10, 0, 0));
+Keymap.on("h", ctrlShift, () => grid(6, 10, 0, 0));
 
 // Right-half
-Bind.on("l", ctrlShift, () => grid(6, 10, 6, 0));
+Keymap.on("l", ctrlShift, () => grid(6, 10, 6, 0));
 
 // Left-one third
-Bind.on("h", ctrlOpt, () => grid(4, 10, 0, 0));
+Keymap.on("h", ctrlOpt, () => grid(4, 10, 0, 0));
 
 // Right-one third
-Bind.on("l", ctrlOpt, () => grid(4, 10, 8, 0));
+Keymap.on("l", ctrlOpt, () => grid(4, 10, 8, 0));
 
 // Left-two thirds
-Bind.on("h", ctrlShiftOpt, () => grid(8, 10, 0, 0));
+Keymap.on("h", ctrlShiftOpt, () => grid(8, 10, 0, 0));
 
 // Right-two thirds
-Bind.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
+Keymap.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
 
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
@@ -82,11 +82,11 @@ Bind.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
 [...Array(Space.all().length).keys()].forEach((i) => {
   const key = `${i + 1}`;
 
-  Bind.on(key, ctrlShift, () => {
+  Keymap.on(key, ctrlShift, () => {
     Space.at(i).moveWindows([Window.focused()].filter(Boolean));
   });
 
-  Bind.on(key, ctrlShiftOpt, () => {
+  Keymap.on(key, ctrlShiftOpt, () => {
     const win = Window.focused();
     Space.at(i).moveWindows([win].filter(Boolean));
     win.focus();
