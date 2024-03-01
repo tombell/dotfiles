@@ -31,6 +31,7 @@ if dev.include?(hostname)
   brew 'go'
   brew 'jq'
   brew 'nodenv'
+  brew 'postgresql@16'
   brew 'rbenv'
   brew 'ripgrep'
   brew 'tombell/formula/tm'
@@ -68,7 +69,6 @@ if hostname == work
   brew 'auth0'
   brew 'heroku'
   brew 'mas'
-  brew 'postgresql@16'
   brew 'redis'
   brew 'watchman'
 
