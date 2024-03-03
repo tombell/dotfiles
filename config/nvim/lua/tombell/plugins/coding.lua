@@ -40,8 +40,14 @@ return {
         }, {
           { name = "buffer" },
         }),
+        sorting = {
+          comparators = {
+            cmp.config.compare.score,
+            cmp.config.compare.offset,
+          },
+        },
         performance = {
-          max_view_entries = 5,
+          max_view_entries = 8,
         },
       }
     end,
