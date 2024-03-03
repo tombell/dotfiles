@@ -1,15 +1,13 @@
 root: ~/Code/scribblog
 
 sessions:
-  - name: scribblog
+  - name: scribblog-api
     root: ./api
     windows:
       - name: server
         commands:
           - make watch
       - name: editor
-        commands:
-          - nvim .
 
   - name: scribblog-web
     root: ./web
@@ -20,9 +18,4 @@ sessions:
       - name: storybook
         commands:
           - pnpm run storybook
-      - name: tests
-        commands:
-          - pnpm test
       - name: editor
-        commands:
-          - nvim .
