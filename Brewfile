@@ -11,13 +11,12 @@ personal = 'Pyra'
 work = 'Poppi'
 music = 'Mythra'
 
-all = [personal, work, music]
-dev = [personal, work]
+ALL = [personal, work, music].freeze
+DEV = [personal, work].freeze
 
 hostname = `scutil --get ComputerName`.chomp
 
-if all.include?(hostname)
-  brew 'neovim'
+if ALL.include?(hostname)
   brew 'rcm'
   brew 'skbd'
 
@@ -25,16 +24,16 @@ if all.include?(hostname)
   cask 'stark'
 end
 
-if dev.include?(hostname)
+if DEV.include?(hostname)
+  brew 'asdf'
   brew 'fzf'
   brew 'git'
   brew 'go'
   brew 'jq'
-  brew 'nodenv'
+  brew 'neovim'
   brew 'postgresql@16'
-  brew 'rbenv'
   brew 'ripgrep'
-  brew 'tombell/formula/tm'
+  brew 'tombell/formulae/tm'
   brew 'tmux'
   brew 'zsh-autosuggestions'
 
