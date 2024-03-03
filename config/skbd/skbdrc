@@ -1,35 +1,35 @@
 ################################################################################
-# Applications
+# Apps
 ################################################################################
 
-⌃ + ⇧ - return:
+ctrl + shift - return:
   if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
 
-⌃ + ⇧ - b:
+ctrl + shift - b:
   open -na "Google Chrome" --args --new-window
 
-⌃ + ⇧ - f:
+ctrl + shift - f:
   open -a Finder
 
-⌃ + ⇧ - m:
+ctrl + shift - m:
   open -a Messages
 
 ################################################################################
 # Sound
 ################################################################################
 
-⌃ + ⇧ - [:
+ctrl + shift - [:
   shortcuts run "Toggle Headphone EQ"
 
 ################################################################################
-# Hue Lights
+# Smart home
 ################################################################################
 
-⌃ + ⌥ - 1:
+ctrl + opt - 1:
   shortcuts run "Toggle Master Bedroom"
 
-⌃ + ⌥ - 2:
+ctrl + opt - 2:
   shortcuts run "Toggle Living Room"
 
-⌃ + ⌥ - 3:
+ctrl + opt - 3:
   shortcuts run "Toggle Guest Bedroom"
