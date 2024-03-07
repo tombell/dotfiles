@@ -14,11 +14,11 @@ function M.setup()
     { import = "tombell.plugins.lang.typescript" },
   }, {
     install = {
-      colorscheme = { "rose-pine-moon" },
+      colorscheme = { "rose-pine" },
     },
   })
 
-  vim.cmd.colorscheme "rose-pine-moon"
+  vim.cmd.colorscheme "rose-pine"
 end
 
 return M
