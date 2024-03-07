@@ -1,0 +1,14 @@
+root: ~/Code
+
+after_stop:
+  - fuckoffpuma || true
+  - fuckoffruby || true
+
+sessions:
+  - name: mobile-app
+    root: ./mobile-app
+    windows:
+      - name: metro
+        commands:
+          - npm start
+      - name: editor
