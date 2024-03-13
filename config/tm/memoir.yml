@@ -22,17 +22,3 @@ sessions:
         commands:
           - pnpm test
       - name: editor
-
-  - name: memoir-sveltekit
-    root: ./memoir-sveltekit
-    windows:
-      - name: server
-        commands:
-          - npm run dev
-      - name: storybook
-        commands:
-          - npm run storybook
-      - name: tests
-        commands:
-          - npm test
-      - name: editor
