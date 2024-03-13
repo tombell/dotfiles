@@ -4,6 +4,7 @@ function M.setup()
   require "tombell.config.options"
   require "tombell.config.autocmds"
   require "tombell.config.keymaps"
+  require "tombell.config.filetypes"
 
   require("lazy").setup({
     { import = "tombell.plugins" },
@@ -11,6 +12,7 @@ function M.setup()
     { import = "tombell.plugins.lang.javascript" },
     { import = "tombell.plugins.lang.ruby" },
     { import = "tombell.plugins.lang.svelte" },
+    { import = "tombell.plugins.lang.templ" },
     { import = "tombell.plugins.lang.typescript" },
   }, {
     install = {
