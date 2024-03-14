@@ -9,3 +9,6 @@ setopt inc_append_history
 
 # allow [ or ] whereever you want
 unsetopt nomatch
+
+HISTSIZE=4096
+SAVEHIST=4096
