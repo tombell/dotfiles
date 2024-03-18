@@ -63,14 +63,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "markdown",
-  pattern = { "markdown" },
-  callback = function()
-    vim.bo.textwidth = 80
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
   group = augroup "make",
   pattern = { "make" },
   callback = function()
@@ -78,5 +70,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.shiftwidth = 4
     vim.bo.softtabstop = 4
     vim.bo.expandtab = false
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = augroup "dotenv",
+  pattern = { ".env", ".env.*" },
+  callback = function()
+    vim.opt_local.filetype = "sh"
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = augroup "gotmpl",
+  pattern = { "*.gotmpl", "*.gohtml", "*.tmpl.html", "*.tmpl.txt" },
+  callback = function()
+    vim.opt_local.filetype = "gotmpl"
   end,
 })
