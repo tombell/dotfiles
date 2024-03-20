@@ -11,6 +11,7 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      "nvim-neotest/nvim-nio",
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
