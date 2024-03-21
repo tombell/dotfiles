@@ -11,7 +11,6 @@ function M.setup()
     { import = "tombell.plugins.lang.javascript" },
     { import = "tombell.plugins.lang.ruby" },
     { import = "tombell.plugins.lang.svelte" },
-    { import = "tombell.plugins.lang.templ" },
     { import = "tombell.plugins.lang.typescript" },
   }, {
     install = {
