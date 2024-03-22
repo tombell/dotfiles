@@ -41,6 +41,7 @@ if DEV.include?(hostname)
   cask 'appcleaner'
   cask 'discord'
   cask 'font-iosevka-nerd-font'
+  cask 'font-monaspace-nerd-font'
   cask 'google-chrome'
   cask 'soundsource'
   cask 'telegram'
