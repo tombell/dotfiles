@@ -99,7 +99,6 @@ sessions:
       - name: server
         commands:
           - ./go run
-      - name: storybook
       - name: editor
 
   - name: piggybank
@@ -108,7 +107,6 @@ sessions:
       - name: server
         commands:
           - ./go run
-      # - name: stripe
       - name: editor
 
   - name: porch
@@ -126,9 +124,3 @@ sessions:
         commands:
           - ./go run
       - name: editor
-
-  # - name: mobile-app
-  #   root: ./mobile-app
-  #   windows:
-  #     - name: metro
-  #     - name: editor
