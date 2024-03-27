@@ -29,6 +29,7 @@ return {
       formatters_by_ft = {
         javascript = { "prettierd" },
         javascriptreact = { "prettierd" },
+        json = { "prettierd" },
       },
     },
   },
