@@ -13,7 +13,7 @@ return {
       servers = {
         svelte = {},
         tailwindcss = {
-          filetypes = { "svelte" },
+          filetypes = { "html", "svelte" },
         },
       },
     },
