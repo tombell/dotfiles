@@ -22,6 +22,7 @@ return {
         "scss",
         "toml",
         "vim",
+        "vimdoc",
         "yaml",
       },
     },
