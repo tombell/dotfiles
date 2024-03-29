@@ -1,9 +1,18 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
     opts = {
-      styles = { italic = false },
+      flavour = "mocha",
+      highlight_overrides = {
+        mocha = function(mocha)
+          return {
+            Folded = { fg = mocha.blue, bg = mocha.mantle },
+            WinSeparator = { fg = mocha.surface0, bg = mocha.base },
+          }
+        end,
+      },
     },
   },
 }
