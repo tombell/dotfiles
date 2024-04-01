@@ -3,7 +3,9 @@
 ################################################################################
 
 ctrl + shift - return:
-  if ! alacritty msg create-window > /dev/null; then open -a Alacritty; fi
+  if ! alacritty msg create-window > /dev/null; then \
+    open -a Alacritty; \
+  fi
 
 ctrl + shift - b:
   open -na "Google Chrome" --args --new-window
@@ -11,8 +13,7 @@ ctrl + shift - b:
 ctrl + shift - f:
   open -a Finder
 
-ctrl + shift - m:
-  open -a Messages
+ctrl + shift - m: open -a Messages
 
 ################################################################################
 # Sound
