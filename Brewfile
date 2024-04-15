@@ -57,8 +57,8 @@ if hostname == personal
   brew 'transmission-cli'
 
   cask 'doppler'
-  cask 'mpv'
   cask 'paragon-ntfs'
+  cask 'stolendata-mpv'
   cask 'xld'
 end
 
