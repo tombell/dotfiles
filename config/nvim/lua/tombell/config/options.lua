@@ -1,4 +1,5 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.sql_type_default = "pgsql"
 
