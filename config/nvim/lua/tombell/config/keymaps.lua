@@ -39,7 +39,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Toggle folding
-vim.keymap.set("n", "<space>", "za")
+-- vim.keymap.set("n", "<space>", "za")
 
 -- Diagnostics
 local diagnostic_goto = function(next, severity)
