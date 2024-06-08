@@ -83,12 +83,19 @@ Keymap.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
   const key = `${i + 1}`;
 
   Keymap.on(key, ctrlShift, () => {
-    Space.at(i).moveWindows([Window.focused()].filter(Boolean));
+    const win = Window.focused();
+
+    if (win) {
+      Space.at(i).moveWindow(win);
+    }
   });
 
   Keymap.on(key, ctrlShiftOpt, () => {
     const win = Window.focused();
-    Space.at(i).moveWindows([win].filter(Boolean));
-    win.focus();
+
+    if (win) {
+      Space.at(i).moveWindow(win);
+      win.focus();
+    }
   });
 });
