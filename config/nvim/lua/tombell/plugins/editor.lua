@@ -83,6 +83,7 @@ return {
         pickers = {
           find_files = {
             follow = true,
+            previewer = false,
           },
         },
       }
