@@ -25,13 +25,14 @@ if ALL.include?(hostname)
 end
 
 if DEV.include?(hostname)
-  brew 'asdf'
+  # brew 'asdf'
   brew 'fzf'
   brew 'git'
   brew 'go'
   brew 'jq'
   brew 'neovim'
   brew 'postgresql@16'
+  brew 'redis'
   brew 'ripgrep'
   brew 'tombell/formulae/tm'
   brew 'tmux'
@@ -41,7 +42,6 @@ if DEV.include?(hostname)
   cask 'appcleaner'
   cask 'discord'
   cask 'font-iosevka-nerd-font'
-  cask 'font-monaspace-nerd-font'
   cask 'google-chrome'
   cask 'soundsource'
   cask 'telegram'
@@ -53,11 +53,11 @@ if hostname == personal
   brew 'ensong'
   brew 'entr'
   brew 'libusb'
-  brew 'python@3.12'
+  brew 'python@3.11'
   brew 'transmission-cli'
 
-  cask 'doppler'
-  cask 'paragon-ntfs'
+  # cask 'doppler'
+  # cask 'paragon-ntfs'
   cask 'stolendata-mpv'
   cask 'xld'
 end
@@ -69,7 +69,6 @@ if hostname == work
   brew 'auth0'
   brew 'heroku'
   brew 'mas'
-  brew 'redis'
   brew 'watchman'
 
   cask 'android-studio'
