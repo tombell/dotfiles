@@ -70,6 +70,8 @@ if hostname == work
   brew 'heroku/brew/heroku'
   brew 'libffi'
   brew 'libpq'
+  brew 'libxml2'
+  brew 'libyaml'
   brew 'mas'
 
   cask 'android-studio'
