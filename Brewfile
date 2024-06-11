@@ -17,8 +17,7 @@ if ALL.include?(hostname)
   brew 'starkwm/formulae/skbd'
 
   cask '1password@nightly'
-  # TODO: need to make "nightly" version
-  # cask 'starkwm/formulae/stark'
+  cask 'starkwm/formulae/stark@beta'
 end
 
 if DEV.include?(hostname)
