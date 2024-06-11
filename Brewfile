@@ -1,27 +1,24 @@
 # vim: set ft=ruby:
 # frozen_string_literal: true
 
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'starkwm/formulae'
-tap 'thoughtbot/formulae'
-tap 'tombell/formulae'
-
 personal = 'Pyra'
 work = 'Poppi'
 music = 'Mythra'
 
 ALL = [personal, work, music].freeze
 DEV = [personal, work].freeze
+WOW = [work].freeze
+STREAM = [work].freeze
 
 hostname = `scutil --get ComputerName`.chomp
 
 if ALL.include?(hostname)
-  brew 'rcm'
-  brew 'skbd'
+  brew 'thoughtbot/formulae/rcm'
+  brew 'starkwm/formulae/skbd'
 
-  cask '1password'
-  cask 'stark'
+  cask '1password@nightly'
+  # TODO: need to make "nightly" version
+  # cask 'starkwm/formulae/stark'
 end
 
 if DEV.include?(hostname)
@@ -29,12 +26,12 @@ if DEV.include?(hostname)
   brew 'git'
   brew 'jq'
   brew 'mise'
-  brew 'neovim'
+  brew 'neovim', args: ['HEAD']
   brew 'postgresql@16'
   brew 'redis'
   brew 'ripgrep'
-  brew 'tombell/formulae/tm'
   brew 'tmux'
+  brew 'tombell/formulae/tm'
   brew 'zsh-autosuggestions'
 
   cask 'alacritty'
@@ -42,38 +39,41 @@ if DEV.include?(hostname)
   cask 'discord'
   cask 'font-iosevka-nerd-font'
   cask 'google-chrome'
+  cask 'keyboardcleantool'
   cask 'soundsource'
   cask 'telegram'
   cask 'the-unarchiver'
-  cask 'zulu11'
+  cask 'zulu@11'
+end
+
+if WOW.include?(hostname)
+  cask 'battle-net'
+  cask 'curseforge'
+  cask 'weakauras-companion'
+end
+
+if STREAM.include?(hostname)
+  cask 'obs'
 end
 
 if hostname == personal
-  brew 'ensong'
   brew 'entr'
   brew 'libusb'
-  brew 'python@3.11'
+  brew 'tombell/formulae/ensong'
   brew 'transmission-cli'
 
-  # cask 'doppler'
-  # cask 'paragon-ntfs'
   cask 'stolendata-mpv'
   cask 'xld'
 end
 
 if hostname == work
-  tap 'auth0/auth0-cli'
-  tap 'heroku/brew'
-
-  brew 'auth0'
-  brew 'heroku'
+  brew 'auth0/auth0-cli/auth0'
+  brew 'heroku/brew/heroku'
   brew 'mas'
-  brew 'watchman'
 
   cask 'android-studio'
   cask 'chromedriver'
   cask 'displaylink'
-  cask 'logi-options-plus'
   cask 'postico'
   cask 'rapidapi'
   cask 'slack'
