@@ -74,7 +74,7 @@ if hostname == work
   cask 'chromedriver'
   cask 'displaylink'
   cask 'logi-options-plus'
-  casl 'postico'
+  cask 'postico'
   cask 'rapidapi'
   cask 'slack'
   cask 'zoom'
