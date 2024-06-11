@@ -69,6 +69,8 @@ end
 if hostname == work
   brew 'auth0/auth0-cli/auth0'
   brew 'heroku/brew/heroku'
+  brew 'libffi'
+  brew 'libpq'
   brew 'mas'
 
   cask 'android-studio'
