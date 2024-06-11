@@ -21,10 +21,10 @@ if ALL.include?(hostname)
 end
 
 if DEV.include?(hostname)
+  brew 'asdf'
   brew 'fzf'
   brew 'git'
   brew 'jq'
-  brew 'mise'
   brew 'neovim', args: ['HEAD']
   brew 'postgresql@16'
   brew 'redis'
