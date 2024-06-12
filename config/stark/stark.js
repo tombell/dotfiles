@@ -75,6 +75,42 @@ Keymap.on("h", ctrlShiftOpt, () => grid(8, 10, 0, 0));
 // Right-two thirds
 Keymap.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
 
+Keymap.on("left", ctrlShift, () => {
+  const win = Window.focused();
+
+  if (!win || win.screen.id === win.screen.previous.id) {
+    return;
+  }
+
+  const { x, y, width, height } = win.frame;
+  const frame = win.screen.previous.flippedVisibleFrame;
+
+  win.setFrame({
+    x: x - frame.x,
+    y: y - frame.y,
+    width,
+    height,
+  });
+});
+
+Keymap.on("right", ctrlShift, () => {
+  const win = Window.focused();
+
+  if (!win || win.screen.id === win.screen.next.id) {
+    return;
+  }
+
+  const { x, y, width, height } = win.frame;
+  const frame = win.screen.next.flippedVisibleFrame;
+
+  win.setFrame({
+    x: x + frame.x,
+    y: y + frame.y,
+    width,
+    height,
+  });
+});
+
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
 // -----------------------------------------------------------------------------
