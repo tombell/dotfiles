@@ -8,5 +8,5 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # golang binaries
 export PATH="$GOPATH/bin:$PATH"
 
-# mise shims
-export PATH="$HOME/.local/share/mise/shims:$PATH"
+# asdf
+source "$(brew --prefix asdf)/libexec/asdf.sh"
