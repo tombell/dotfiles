@@ -34,10 +34,14 @@ _load_settings() {
 }
 _load_settings "$HOME/.config/zsh/configs"
 
-if [[ $(uname -p) == "arm" ]]; then
-  source "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-else
-  source "/usr/local/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# zsh-autosuggestions
+if command -v brew &> /dev/null; then
+  source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+# asdf
+if command -v brew &> /dev/null; then
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
 [[ -f ~/.localrc ]] && source ~/.localrc

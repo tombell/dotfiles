@@ -7,6 +7,3 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # golang binaries
 export PATH="$GOPATH/bin:$PATH"
-
-# asdf
-source "$(brew --prefix asdf)/libexec/asdf.sh"
