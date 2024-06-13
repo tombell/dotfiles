@@ -75,6 +75,7 @@ Keymap.on("h", ctrlShiftOpt, () => grid(8, 10, 0, 0));
 // Right-two thirds
 Keymap.on("l", ctrlShiftOpt, () => grid(8, 10, 4, 0));
 
+// Move window to previous display
 Keymap.on("left", ctrlShift, () => {
   const win = Window.focused();
 
@@ -82,17 +83,13 @@ Keymap.on("left", ctrlShift, () => {
     return;
   }
 
-  const { x, y, width, height } = win.frame;
+  const { x, y } = win.frame;
   const frame = win.screen.previous.flippedVisibleFrame;
 
-  win.setFrame({
-    x: x - frame.x,
-    y: y - frame.y,
-    width,
-    height,
-  });
+  win.setFrame({ ...win.frame, x: x - frame.x, y: y - frame.y });
 });
 
+// Move window to next display
 Keymap.on("right", ctrlShift, () => {
   const win = Window.focused();
 
@@ -100,15 +97,10 @@ Keymap.on("right", ctrlShift, () => {
     return;
   }
 
-  const { x, y, width, height } = win.frame;
+  const { x, y } = win.frame;
   const frame = win.screen.next.flippedVisibleFrame;
 
-  win.setFrame({
-    x: x + frame.x,
-    y: y + frame.y,
-    width,
-    height,
-  });
+  win.setFrame({ ...win.frame, x: x + frame.x, y: y + frame.y });
 });
 
 // -----------------------------------------------------------------------------
