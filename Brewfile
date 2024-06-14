@@ -5,22 +5,19 @@ personal = 'Pyra'
 work = 'Poppi'
 music = 'Mythra'
 
-ALL = [personal, work, music].freeze
-DEV = [personal, work].freeze
-WOW = [work].freeze
-STREAM = [work].freeze
-
 hostname = `scutil --get ComputerName`.chomp
 
-if ALL.include?(hostname)
-  brew 'thoughtbot/formulae/rcm'
-  brew 'starkwm/formulae/skbd'
+brew 'ripgrep'
+brew 'starkwm/formulae/skbd'
+brew 'thoughtbot/formulae/rcm'
+brew 'zsh-autosuggestions'
 
-  cask '1password@nightly'
-  cask 'starkwm/formulae/stark@beta'
-end
+cask '1password@nightly'
+cask 'alacritty'
+cask 'font-iosevka-nerd-font'
+cask 'starkwm/formulae/stark@beta'
 
-if DEV.include?(hostname)
+if [personal, work].include?(hostname)
   brew 'asdf'
   brew 'fzf'
   brew 'git'
@@ -28,31 +25,17 @@ if DEV.include?(hostname)
   brew 'neovim', args: ['HEAD']
   brew 'postgresql@16'
   brew 'redis'
-  brew 'ripgrep'
   brew 'tmux'
   brew 'tombell/formulae/tm'
-  brew 'zsh-autosuggestions'
 
-  cask 'alacritty'
   cask 'appcleaner'
   cask 'discord'
-  cask 'font-iosevka-nerd-font'
   cask 'google-chrome'
   cask 'keyboardcleantool'
   cask 'soundsource'
   cask 'telegram'
   cask 'the-unarchiver'
   cask 'zulu@11'
-end
-
-if WOW.include?(hostname)
-  cask 'battle-net'
-  cask 'curseforge'
-  cask 'weakauras-companion'
-end
-
-if STREAM.include?(hostname)
-  cask 'obs'
 end
 
 if hostname == personal
@@ -86,6 +69,5 @@ if hostname == work
 end
 
 if hostname == music
-  cask 'dupeguru'
   cask 'rekordbox'
 end
