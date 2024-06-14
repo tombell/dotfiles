@@ -7,11 +7,9 @@ ctrl + shift - return:
     open -a Alacritty; \
   fi
 
-ctrl + shift - b:
-  open -na "Google Chrome" --args --new-window
+ctrl + shift - b: open -na "Google Chrome" --args --new-window
 
-ctrl + shift - f:
-  open -a Finder
+ctrl + shift - f: open -a Finder
 
 ctrl + shift - m: open -a Messages
 
@@ -27,10 +25,13 @@ ctrl + shift - [:
 ################################################################################
 
 ctrl + opt - 1:
-  shortcuts run "Toggle Master Bedroom"
+  shortcuts run "Bedroom"
 
 ctrl + opt - 2:
-  shortcuts run "Toggle Living Room"
+  shortcuts run "Living Room"
 
 ctrl + opt - 3:
-  shortcuts run "Toggle Guest Bedroom"
+  shortcuts run "Guest Bedroom"
+
+ctrl + opt - 4:
+  shortcuts run "All Off"
