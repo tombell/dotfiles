@@ -2,10 +2,9 @@
 # Apps
 ################################################################################
 
-ctrl + shift - return:
-  if ! alacritty msg create-window > /dev/null; then \
-    open -a Alacritty; \
-  fi
+ctrl + shift - enter: ~/.dotfiles/bin/launch-alacritty
+
+cmd + shift - enter: ~/.dotfiles/bin/launch-wezterm
 
 ctrl + shift - b: open -na "Google Chrome" --args --new-window
 
