@@ -2,6 +2,8 @@
 # Apps
 ################################################################################
 
+cmd - enter: ~/.dotfiles/bin/launch-alacritty
+
 ctrl + shift - enter: ~/.dotfiles/bin/launch-alacritty
 
 cmd + shift - enter: ~/.dotfiles/bin/launch-wezterm
