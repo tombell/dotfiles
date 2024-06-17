@@ -20,6 +20,7 @@ cask 'starkwm/formulae/stark@beta'
 if [personal, work].include?(hostname)
   brew 'asdf'
   brew 'fzf'
+  brew 'gh'
   brew 'git'
   brew 'jq'
   brew 'neovim', args: ['HEAD']
