@@ -4,8 +4,6 @@
 
 cmd - enter: ~/.dotfiles/bin/launch-alacritty
 
-ctrl + shift - enter: ~/.dotfiles/bin/launch-alacritty
-
 cmd + shift - enter: ~/.dotfiles/bin/launch-wezterm
 
 ctrl + shift - b: open -na "Google Chrome" --args --new-window
