@@ -95,9 +95,14 @@ Keymap.on("left", ctrlShift, () => {
   if (win && win.screen.id !== win.screen.previous.id) {
     const { x, y } = win.frame;
     const frame = win.screen.previous.flippedVisibleFrame;
+    const diff = frame.height - win.screen.flippedVisibleFrame.height;
 
-    // TODO: adjust for the menu bar
-    win.setFrame({ ...win.frame, x: x - frame.width, y: y - frame.height });
+    win.setFrame({
+      width: win.frame.width,
+      height: win.frame.height - diff,
+      x: x - frame.width,
+      y: y - frame.height + diff,
+    });
   }
 });
 
@@ -108,9 +113,14 @@ Keymap.on("right", ctrlShift, () => {
   if (win && win.screen.id !== win.screen.next.id) {
     const { x, y } = win.frame;
     const frame = win.screen.next.flippedVisibleFrame;
+    const diff = win.screen.flippedVisibleFrame.height - frame.height;
 
-    // TODO: adjust for no menu bar
-    win.setFrame({ ...win.frame, x: x + frame.x, y: y + frame.y });
+    win.setFrame({
+      width: win.frame.width,
+      height: win.frame.height + diff,
+      x: x + frame.x,
+      y: y + frame.y - diff,
+    });
   }
 });
 
