@@ -20,6 +20,7 @@ return {
       })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -28,6 +29,7 @@ return {
       },
     },
   },
+
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
@@ -35,6 +37,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "goimports", "gofumpt" })
     end,
   },
+
   {
     "stevearc/conform.nvim",
     optional = true,
@@ -44,6 +47,7 @@ return {
       },
     },
   },
+
   {
     "nvim-neotest/neotest",
     optional = true,

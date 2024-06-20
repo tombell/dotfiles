@@ -8,6 +8,7 @@ return {
       })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -18,6 +19,7 @@ return {
       },
     },
   },
+
   {
     "nvim-neotest/neotest",
     dependencies = {

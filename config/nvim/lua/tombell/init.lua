@@ -1,7 +1,7 @@
 local M = {}
 
-function M.setup(opts)
-  require("tombell.config").setup(opts)
+function M.setup()
+  require("tombell.config").setup()
 end
 
 return M

@@ -19,9 +19,6 @@ o.shiftwidth = 2
 o.softtabstop = 2
 o.expandtab = true
 
--- Enable text width
--- o.textwidth = 80
-
 -- Disable highlighting search results
 o.hlsearch = false
 
