@@ -96,11 +96,8 @@ Keymap.on("left", ctrlShift, () => {
     const { x, y } = win.frame;
     const frame = win.screen.previous.flippedVisibleFrame;
 
-    win.setFrame({
-      ...win.frame,
-      x: x - frame.x,
-      y: y - frame.y,
-    });
+    // TODO: adjust for the menu bar
+    win.setFrame({ ...win.frame, x: x - frame.width, y: y - frame.height });
   }
 });
 
@@ -112,11 +109,8 @@ Keymap.on("right", ctrlShift, () => {
     const { x, y } = win.frame;
     const frame = win.screen.next.flippedVisibleFrame;
 
-    win.setFrame({
-      ...win.frame,
-      x: x + frame.x,
-      y: y + frame.y,
-    });
+    // TODO: adjust for no menu bar
+    win.setFrame({ ...win.frame, x: x + frame.x, y: y + frame.y });
   }
 });
 
