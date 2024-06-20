@@ -36,10 +36,12 @@ return {
       exclude = {
         filetypes = {
           "help",
-          "lazy",
+          "neo-tree",
           "neotest-output",
           "neotest-output-panel",
           "neotest-summary",
+          "Trouble",
+          "trouble",
         },
       },
     },
@@ -62,10 +64,12 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = {
           "help",
-          "lazy",
+          "neo-tree",
           "neotest-output",
           "neotest-output-panel",
           "neotest-summary",
+          "Trouble",
+          "trouble",
         },
         callback = function()
           vim.b.miniindentscope_disable = true
