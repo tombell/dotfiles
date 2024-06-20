@@ -96,16 +96,20 @@ Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
 Keymap.on("left", ctrlShift, () => {
   const win = Window.focused();
 
+  // TODO: better check for detecting if not an the left most screen
   if (win && win.screen.id !== win.screen.previous.id) {
-    const { x, y } = win.frame;
-    const frame = win.screen.previous.flippedVisibleFrame;
-    const diff = frame.height - win.screen.flippedVisibleFrame.height;
+    const { x, y, width, height } = win.frame;
+
+    const curr = win.screen.flippedVisibleFrame;
+    const next = win.screen.previous.flippedVisibleFrame;
+
+    const delta = curr.height - next.height;
 
     win.setFrame({
-      width: win.frame.width,
-      height: win.frame.height - diff,
-      x: x - frame.width,
-      y: y - frame.height + diff,
+      width,
+      height: height - delta,
+      x: x - curr.width,
+      y: y - delta,
     });
   }
 });
@@ -114,16 +118,20 @@ Keymap.on("left", ctrlShift, () => {
 Keymap.on("right", ctrlShift, () => {
   const win = Window.focused();
 
+  // TODO: better check for detecting if not an the right most screen
   if (win && win.screen.id !== win.screen.next.id) {
-    const { x, y } = win.frame;
-    const frame = win.screen.next.flippedVisibleFrame;
-    const diff = win.screen.flippedVisibleFrame.height - frame.height;
+    const { x, y, width, height } = win.frame;
+
+    const curr = win.screen.flippedVisibleFrame;
+    const next = win.screen.next.flippedVisibleFrame;
+
+    const delta = next.height - curr.height;
 
     win.setFrame({
-      width: win.frame.width,
-      height: win.frame.height + diff,
-      x: x + frame.x,
-      y: y + frame.y - diff,
+      width,
+      height: height + delta,
+      x: x + curr.width,
+      y: y + delta,
     });
   }
 });
