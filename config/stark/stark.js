@@ -16,9 +16,7 @@ const gap = 12;
 const grid = (c, r, w, h, x, y) => {
   const win = Window.focused();
 
-  if (!win) {
-    return;
-  }
+  if (!win) return;
 
   if (x >= c) x = c - 1;
   if (y >= r) y = r - 1;
@@ -96,44 +94,50 @@ Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
 Keymap.on("left", ctrlShift, () => {
   const win = Window.focused();
 
-  // TODO: better check for detecting if not an the left most screen
-  if (win && win.screen.id !== win.screen.previous.id) {
-    const { x, y, width, height } = win.frame;
+  if (!win) return;
 
-    const curr = win.screen.flippedVisibleFrame;
-    const next = win.screen.previous.flippedVisibleFrame;
+  const primary = Screen.all()[0];
 
-    const delta = curr.height - next.height;
+  if (win.screen.id === primary.id) return;
 
-    win.setFrame({
-      width,
-      height: height - delta,
-      x: x - curr.width,
-      y: y - delta,
-    });
-  }
+  const { x, y, width, height } = win.frame;
+
+  const curr = win.screen.flippedVisibleFrame;
+  const next = primary.flippedVisibleFrame;
+
+  const delta = next.height - curr.height;
+
+  win.setFrame({
+    width,
+    height: height - delta,
+    x: x - curr.width,
+    y: y + delta,
+  });
 });
 
 // Move window to next display
 Keymap.on("right", ctrlShift, () => {
   const win = Window.focused();
 
-  // TODO: better check for detecting if not an the right most screen
-  if (win && win.screen.id !== win.screen.next.id) {
-    const { x, y, width, height } = win.frame;
+  if (!win) return;
 
-    const curr = win.screen.flippedVisibleFrame;
-    const next = win.screen.next.flippedVisibleFrame;
+  const secondary = Screen.all()[1];
 
-    const delta = next.height - curr.height;
+  if (win.screen.id === secondary.id) return;
 
-    win.setFrame({
-      width,
-      height: height + delta,
-      x: x + curr.width,
-      y: y + delta,
-    });
-  }
+  const { x, y, width, height } = win.frame;
+
+  const curr = win.screen.flippedVisibleFrame;
+  const next = secondary.flippedVisibleFrame;
+
+  const delta = curr.height - next.height;
+
+  win.setFrame({
+    width,
+    height: height + delta,
+    x: x + curr.width,
+    y: y - delta,
+  });
 });
 
 // -----------------------------------------------------------------------------
@@ -146,17 +150,17 @@ Keymap.on("right", ctrlShift, () => {
   Keymap.on(key, ctrlShift, () => {
     const win = Window.focused();
 
-    if (win) {
-      Space.at(i).moveWindow(win);
-    }
+    if (!win) return;
+
+    Space.at(i).moveWindow(win);
   });
 
   Keymap.on(key, ctrlShiftOpt, () => {
     const win = Window.focused();
 
-    if (win) {
-      Space.at(i).moveWindow(win);
-      win.focus();
-    }
+    if (!win) return;
+
+    Space.at(i).moveWindow(win);
+    win.focus();
   });
 });
