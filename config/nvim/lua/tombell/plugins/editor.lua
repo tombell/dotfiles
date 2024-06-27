@@ -8,8 +8,8 @@ return {
     },
     branch = "v3.x",
     cmd = "Neotree",
+    -- stylua: ignore
     keys = {
-      -- stylua: ignore start
       { "<leader>fe", function() require("neo-tree.command").execute { toggle = true, dir = util.root() } end, desc = "Explorer NeoTree (Root Dir)" },
       { "<leader>fE", function() require("neo-tree.command").execute { toggle = true, dir = vim.uv.cwd() } end, desc = "Explorer NeoTree (cwd)" },
       { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
@@ -201,6 +201,7 @@ return {
         vim.keymap.set("n", "<leader>ghd", gs.diffthis, { desc = "Diff This", buffer = buffer })
         vim.keymap.set("n", "<leader>ghD", function() gs.diffthis("~") end, { desc = "Diff This ~", buffer = buffer })
         vim.keymap.set({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "GitSigns Select Hunk", buffer = buffer })
+        -- stylua: ignore end
       end,
     },
   },
@@ -222,8 +223,8 @@ return {
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {},
+    -- stylua: ignore
     keys = {
-      -- stylua: ignore start
       { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
       { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
       { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
