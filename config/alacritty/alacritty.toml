@@ -35,5 +35,5 @@ decorations = "buttonless"
 option_as_alt = "Both"
 
 [window.padding]
-x = 15
-y = 15
+x = 20
+y = 20
