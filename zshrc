@@ -2,7 +2,7 @@ for function in ~/.config/zsh/functions/*; do
   source $function
 done
 
-# extra files in ~/.config/zsh/configs/pre , ~/.config/zsh/configs, and
+# extra files in ~/.config/zsh/configs/pre, ~/.config/zsh/configs, and
 # ~/.config/zsh/configs/post these are loaded first, second, and third,
 # respectively.
 _load_settings() {
