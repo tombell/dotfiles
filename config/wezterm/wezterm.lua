@@ -33,7 +33,7 @@ config.keys = {
   {
     key = "k",
     mods = "SUPER",
-    action = wezterm.action.ClearScrollback "ScrollbackAndViewport",
+    action = wezterm.action.SendKey { key = "l", mods = "CTRL" },
   },
   {
     key = "3",
