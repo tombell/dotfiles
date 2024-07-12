@@ -18,6 +18,8 @@ cask 'font-iosevka-nerd-font'
 cask 'starkwm/formulae/stark@beta'
 
 if [personal, work].include?(hostname)
+  tap 'tombell/formulae'
+
   brew 'asdf'
   brew 'fzf'
   brew 'gh'
@@ -49,6 +51,9 @@ if hostname == personal
 end
 
 if hostname == work
+  tap 'auth0/auth0-cli'
+  tap 'heroku/brew'
+
   brew 'auth0/auth0-cli/auth0'
   brew 'heroku/brew/heroku'
   brew 'libffi'
