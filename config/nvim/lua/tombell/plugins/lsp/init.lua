@@ -7,15 +7,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     opts = {
-      servers = {
-        lua_ls = {
-          settings = {
-            Lua = {
-              diagnostics = { globals = { "vim" } },
-            },
-          },
-        },
-      },
+      servers = {},
       setup = {},
     },
     config = function(_, opts)
@@ -90,9 +82,7 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
     opts = {
-      ensure_installed = {
-        "stylua",
-      },
+      ensure_installed = {},
     },
     config = function(_, opts)
       require("mason").setup(opts)
