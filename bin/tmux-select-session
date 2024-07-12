@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+tmux list-sessions -F '#{session_name}' | \
+  fzf --reverse --header jump-to-session | \
+  xargs tmux switch-client -t
