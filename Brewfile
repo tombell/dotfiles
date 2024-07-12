@@ -12,7 +12,7 @@ brew 'starkwm/formulae/skbd'
 brew 'thoughtbot/formulae/rcm'
 brew 'zsh-autosuggestions'
 
-cask '1password@nightly'
+cask '1password'
 cask 'alacritty'
 cask 'font-iosevka-nerd-font'
 cask 'starkwm/formulae/stark@beta'
@@ -41,7 +41,6 @@ end
 
 if hostname == personal
   brew 'entr'
-  brew 'libusb'
   brew 'tombell/formulae/ensong'
   brew 'transmission-cli'
 
