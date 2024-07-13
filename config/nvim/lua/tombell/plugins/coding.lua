@@ -1,10 +1,5 @@
 return {
   {
-    "lifepillar/pgsql.vim",
-    ft = "sql",
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
