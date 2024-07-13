@@ -1,2 +1,2 @@
-EXCLUDES="bin/* Brewfile Brewfile.lock.json LICENSE README.md install"
+EXCLUDES="bin/* Brewfile Brewfile.lock.json LICENSE README.md install-macos"
 DOTFILES_DIRS="$HOME/.dotfiles"
