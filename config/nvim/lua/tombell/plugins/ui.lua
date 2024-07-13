@@ -1,10 +1,5 @@
 return {
   {
-    "nvim-tree/nvim-web-devicons",
-    lazy = true,
-  },
-
-  {
     "stevearc/dressing.nvim",
     lazy = true,
     init = function()
@@ -48,35 +43,24 @@ return {
     main = "ibl",
   },
 
-  { "MunifTanjim/nui.nvim", lazy = true },
-
   {
-    "echasnovski/mini.indentscope",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
-    opts = function()
-      return {
-        symbol = "│",
-        draw = {
-          animation = require("mini.indentscope").gen_animation.none(),
-          delay = 10,
-        },
-      }
-    end,
+    "echasnovski/mini.icons",
+    lazy = true,
+    opts = {
+      file = {
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+      },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
+      },
+    },
     init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "help",
-          "neo-tree",
-          "neotest-output",
-          "neotest-output-panel",
-          "neotest-summary",
-          "Trouble",
-          "trouble",
-        },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
-      })
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
     end,
   },
+
+  { "MunifTanjim/nui.nvim", lazy = true },
 }
