@@ -44,4 +44,7 @@ if command -v brew &> /dev/null; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
+export VISUAL=nvim
+export EDITOR=$VISUAL
+
 [[ -f ~/.localrc ]] && source ~/.localrc
