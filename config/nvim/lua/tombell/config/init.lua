@@ -15,6 +15,9 @@ function M.setup()
     ui = {
       backdrop = 100,
     },
+    change_detection = {
+      notify = false,
+    },
   })
 end
 
