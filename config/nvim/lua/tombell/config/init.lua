@@ -16,8 +16,6 @@ function M.setup()
       backdrop = 100,
     },
   })
-
-  vim.cmd.colorscheme "catppuccin"
 end
 
 return M
