@@ -22,7 +22,6 @@ return {
         "python",
         "query",
         "scss",
-        "skbdrc",
         "toml",
         "vim",
         "vimdoc",
@@ -31,13 +30,5 @@ return {
     },
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     main = "nvim-treesitter.configs",
-    dependencies = {
-      "starkwm/tree-sitter-skbdrc",
-    },
-  },
-
-  {
-    "starkwm/tree-sitter-skbdrc",
-    config = true,
   },
 }
