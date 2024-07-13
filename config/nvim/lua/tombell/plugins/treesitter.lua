@@ -1,7 +1,11 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    version = false,
     event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
+    lazy = vim.fn.argc(-1) == 0,
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    opts_extend = { "ensure_installed" },
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
@@ -29,7 +33,8 @@ return {
         "yaml",
       },
     },
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    main = "nvim-treesitter.configs",
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
   },
 }
