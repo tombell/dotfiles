@@ -3,10 +3,6 @@ local util = require "tombell.util"
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    branch = "v3.x",
     cmd = "Neotree",
     -- stylua: ignore
     keys = {
@@ -100,42 +96,33 @@ return {
       -- UI
       { "<leader>uC", util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
     },
-    opts = function()
-      local actions = require "telescope.actions"
+    opts = {
+      defaults = {
+        prompt_prefix = " ",
+        selection_caret = " ",
+        get_selection_window = function()
+          local wins = vim.api.nvim_list_wins()
+          table.insert(wins, 1, vim.api.nvim_get_current_win())
 
-      return {
-        defaults = {
-          prompt_prefix = " ",
-          selection_caret = " ",
-          get_selection_window = function()
-            local wins = vim.api.nvim_list_wins()
-            table.insert(wins, 1, vim.api.nvim_get_current_win())
+          for _, win in ipairs(wins) do
+            local buf = vim.api.nvim_win_get_buf(win)
 
-            for _, win in ipairs(wins) do
-              local buf = vim.api.nvim_win_get_buf(win)
-
-              if vim.bo[buf].buftype == "" then
-                return win
-              end
+            if vim.bo[buf].buftype == "" then
+              return win
             end
+          end
 
-            return 0
-          end,
-          mappings = {
-            i = {
-              ["<C-Down>"] = actions.cycle_history_next,
-              ["<C-Up>"] = actions.cycle_history_prev,
-            },
-          },
+          return 0
+        end,
+        mappings = {},
+      },
+      pickers = {
+        find_files = {
+          follow = true,
+          previewer = false,
         },
-        pickers = {
-          find_files = {
-            follow = true,
-            previewer = false,
-          },
-        },
-      }
-    end,
+      },
+    },
   },
 
   {
@@ -175,7 +162,7 @@ return {
 
   {
     "lewis6991/gitsigns.nvim",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       signs = {
         add = { text = "▎" },
@@ -184,6 +171,13 @@ return {
         topdelete = { text = "" },
         changedelete = { text = "▎" },
         untracked = { text = "▎" },
+      },
+      signs_staged = {
+        add = { text = "▎" },
+        change = { text = "▎" },
+        delete = { text = "" },
+        topdelete = { text = "" },
+        changedelete = { text = "▎" },
       },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
@@ -208,13 +202,15 @@ return {
 
   {
     "folke/trouble.nvim",
-    cmd = { "TroubleToggle", "Trouble" },
-    opts = { use_diagnostic_signs = true },
+    cmd = { "Trouble" },
+    opts = {},
     keys = {
-      { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-      { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>cs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
+      { "<leader>cS", "<cmd>Trouble lsp toggle<cr>", desc = "LSP references/definitions/... (Trouble)" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
     },
   },
 
@@ -227,8 +223,8 @@ return {
     keys = {
       { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
       { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
-      { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
-      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
+      { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+      { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
       { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },

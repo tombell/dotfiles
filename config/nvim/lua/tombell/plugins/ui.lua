@@ -48,6 +48,8 @@ return {
     main = "ibl",
   },
 
+  { "MunifTanjim/nui.nvim", lazy = true },
+
   {
     "echasnovski/mini.indentscope",
     event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
