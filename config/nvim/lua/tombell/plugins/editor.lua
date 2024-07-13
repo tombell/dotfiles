@@ -130,6 +130,7 @@ return {
     event = "VeryLazy",
     opts_extend = { "spec" },
     opts = {
+      preset = "modern",
       icons = {
         separator = "",
       },
