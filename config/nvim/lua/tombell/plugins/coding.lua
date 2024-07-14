@@ -12,8 +12,12 @@ return {
       local cmp = require "cmp"
 
       return {
-        completion = {
-          completeopt = "menu,menuone,noselect",
+        window = {
+          completion = cmp.config.window.bordered { scrollbar = false },
+          documentation = cmp.config.window.bordered { scrollbar = false },
+        },
+        experimental = {
+          ghost_text = true,
         },
         mapping = cmp.mapping.preset.insert {
           ["<tab>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
@@ -30,9 +34,6 @@ return {
         }, {
           { name = "buffer" },
         }),
-        performance = {
-          max_view_entries = 10,
-        },
       }
     end,
   },
