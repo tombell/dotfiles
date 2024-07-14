@@ -7,6 +7,17 @@ setmetatable(M, {
   end,
 })
 
+function M.opts(name)
+  local plugin = require("lazy.core.config").spec.plugins[name]
+
+  if not plugin then
+    return {}
+  end
+
+  local Plugin = require "lazy.core.plugin"
+  return Plugin.values(plugin, "opts", false)
+end
+
 function M.expand_tabs(str, ts)
   local new = str:sub(1, 0)
   local pad = " "
