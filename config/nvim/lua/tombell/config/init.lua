@@ -2,6 +2,17 @@ _G.tombell = require "tombell.util"
 
 local M = {}
 
+tombell.config = M
+
+M.icons = {
+  diagnostics = {
+    error = "",
+    warn = "",
+    hint = "",
+    info = "",
+  },
+}
+
 function M.setup()
   require "tombell.config.options"
   require "tombell.config.autocmds"
