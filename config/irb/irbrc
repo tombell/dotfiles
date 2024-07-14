@@ -1,8 +1,0 @@
-#!/usr/bin/ruby
-
-require 'irb/completion'
-
-IRB.conf[:PROMPT_MODE] = :SIMPLE
-IRB.conf[:AUTO_INDENT] = true
-
-Reline.autocompletion = IRB.conf[:USE_AUTOCOMPLETE] = false if defined?(Reline) && Reline.respond_to?(:autocompletion=)
