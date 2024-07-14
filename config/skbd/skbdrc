@@ -4,8 +4,6 @@
 
 cmd - enter: ~/.dotfiles/bin/launch-wezterm
 
-cmd + shift - enter: ~/.dotfiles/bin/launch-alacritty
-
 ctrl + shift - b: open -na "Google Chrome" --args --new-window
 
 ctrl + shift - f: open -a Finder
@@ -20,6 +18,9 @@ ctrl + shift - n: open -a Notes
 
 ctrl + shift - [:
   shortcuts run "Toggle Headphone EQ"
+
+ctrl + shift - ]:
+  shortcuts run "Toggle Input Mute"
 
 ################################################################################
 # Smart home
