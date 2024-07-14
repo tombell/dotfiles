@@ -22,7 +22,7 @@ end)
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Iosevka NFM", { weight = "Bold", italic = false })
+config.font = wezterm.font("Iosevka NFM", { weight = "Bold" })
 config.font_size = 12
 config.color_scheme = "Catppuccin Mocha"
 config.enable_tab_bar = false
