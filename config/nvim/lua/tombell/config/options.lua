@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.sql_type_default = "pgsql"
-
 local o = vim.opt
 
 -- Enable 24-bit RGB colours
