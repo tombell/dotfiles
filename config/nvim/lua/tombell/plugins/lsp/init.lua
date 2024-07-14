@@ -1,23 +1,86 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     dependencies = {
       "mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      { "williamboman/mason-lspconfig.nvim" },
     },
     opts = {
+      diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = {
+          spacing = 4,
+          source = "if_many",
+          prefix = "icons",
+        },
+        severity_sort = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = tombell.config.icons.diagnostics.error,
+            [vim.diagnostic.severity.WARN] = tombell.config.icons.diagnostics.warn,
+            [vim.diagnostic.severity.HINT] = tombell.config.icons.diagnostics.hint,
+            [vim.diagnostic.severity.INFO] = tombell.config.icons.diagnostics.info,
+          },
+        },
+      },
+      inlay_hints = {
+        enabled = false,
+        exclude = {},
+      },
+      codelens = {
+        enabled = false,
+      },
+      capabilities = {},
+      handlers = {
+        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+      },
       servers = {},
       setup = {},
     },
     config = function(_, opts)
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local buffer = args.buf
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
-        end,
-      })
+      tombell.lsp.on_attach(function(client, buffer)
+        require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
+      end)
+
+      tombell.lsp.setup()
+      tombell.lsp.on_dynamic_capability(require("tombell.plugins.lsp.keymaps").on_attach)
+
+      if opts.inlay_hints.enabled then
+        tombell.lsp.on_supports_method("textDocument/inlayHint", function(_, buffer)
+          if
+            vim.api.nvim_buf_is_valid(buffer)
+            and vim.bo[buffer].buftype == ""
+            and not vim.tbl_contains(opts.inlay_hints.exclude or {}, vim.bo[buffer].filetype)
+          then
+            tombell.toggle.inlay_hints(buffer, true)
+          end
+        end)
+      end
+
+      if opts.codelens.enabled then
+        tombell.lsp.on_supports_method("textDocument/codeLens", function(_, buffer)
+          vim.lsp.codelens.refresh()
+          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = buffer,
+            callback = vim.lsp.codelens.refresh,
+          })
+        end)
+      end
+
+      if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
+        opts.diagnostics.virtual_text.prefix = function(diagnostic)
+          for d, icon in pairs(tombell.config.icons.diagnostics) do
+            if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
+              return icon
+            end
+          end
+        end
+      end
+
+      vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
       local servers = opts.servers
       local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -28,12 +91,12 @@ return {
         has_cmp and cmp_nvim_lsp.default_capabilities() or {},
         opts.capabilities or {}
       )
-
-      capabilities.textDocument.completion.completionItem.snippetSupport = false
+      local handlers = vim.tbl_deep_extend("force", {}, opts.handlers or {})
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
+          handlers = handlers,
         }, servers[server] or {})
 
         if opts.setup[server] then
@@ -81,6 +144,7 @@ return {
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
+    opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {},
     },
@@ -95,19 +159,15 @@ return {
           }
         end, 100)
       end)
-      local function ensure_installed()
+
+      mr.refresh(function()
         for _, tool in ipairs(opts.ensure_installed) do
           local p = mr.get_package(tool)
           if not p:is_installed() then
             p:install()
           end
         end
-      end
-      if mr.refresh then
-        mr.refresh(ensure_installed)
-      else
-        ensure_installed()
-      end
+      end)
     end,
   },
 }
