@@ -37,9 +37,4 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
-
-  {
-    "starkwm/tree-sitter-skbdrc",
-    config = true,
-  },
 }
