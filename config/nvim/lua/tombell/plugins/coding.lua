@@ -15,11 +15,6 @@ return {
         completion = {
           completeopt = "menu,menuone,noselect",
         },
-        snippet = {
-          expand = function(args)
-            vim.snippet.expand(args.body)
-          end,
-        },
         mapping = cmp.mapping.preset.insert {
           ["<tab>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
           ["<s-tab>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
