@@ -24,20 +24,14 @@ return {
           ["<cr>"] = cmp.mapping.confirm { select = false },
         },
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
           { name = "nvim_lua" },
+          { name = "nvim_lsp" },
           { name = "path" },
         }, {
           { name = "buffer" },
         }),
-        sorting = {
-          comparators = {
-            cmp.config.compare.score,
-            cmp.config.compare.offset,
-          },
-        },
         performance = {
-          max_view_entries = 8,
+          max_view_entries = 10,
         },
       }
     end,
