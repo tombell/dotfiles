@@ -1,12 +1,10 @@
-local util = require "tombell.util"
-
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
     -- stylua: ignore
     keys = {
-      { "<leader>fe", function() require("neo-tree.command").execute { toggle = true, dir = util.root() } end, desc = "Explorer NeoTree (Root Dir)" },
+      { "<leader>fe", function() require("neo-tree.command").execute { toggle = true, dir = tombell.root() } end, desc = "Explorer NeoTree (Root Dir)" },
       { "<leader>fE", function() require("neo-tree.command").execute { toggle = true, dir = vim.uv.cwd() } end, desc = "Explorer NeoTree (cwd)" },
       { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
       { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
@@ -55,17 +53,17 @@ return {
     },
     keys = {
       { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
-      { "<leader>/", util.telescope "live_grep", desc = "Grep (root dir)" },
+      { "<leader>/", tombell.telescope "live_grep", desc = "Grep (root dir)" },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>", util.telescope "files", desc = "Find Files (root dir)" },
+      { "<leader><space>", tombell.telescope "files", desc = "Find Files (root dir)" },
 
       -- Find
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-      { "<leader>fc", util.telescope.config_files(), desc = "Find Config File" },
-      { "<leader>ff", util.telescope("files", { git = true }), desc = "Find Files (root dir)" },
-      { "<leader>fF", util.telescope("files", { git = true, cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>fc", tombell.telescope.config_files(), desc = "Find Config File" },
+      { "<leader>ff", tombell.telescope("files", { git = true }), desc = "Find Files (root dir)" },
+      { "<leader>fF", tombell.telescope("files", { git = true, cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      { "<leader>fR", util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fR", tombell.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
 
       -- Git
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
@@ -79,8 +77,8 @@ return {
       { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-      { "<leader>sg", util.telescope "live_grep", desc = "Grep (root dir)" },
-      { "<leader>sG", util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+      { "<leader>sg", tombell.telescope "live_grep", desc = "Grep (root dir)" },
+      { "<leader>sG", tombell.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
@@ -88,13 +86,13 @@ return {
       { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
       { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      { "<leader>sw", util.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
-      { "<leader>sW", util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
-      { "<leader>sw", util.telescope "grep_string", mode = "v", desc = "Selection (root dir)" },
-      { "<leader>sW", util.telescope("grep_string", { cwd = false }), mode = "v", desc = "Selection (cwd)" },
+      { "<leader>sw", tombell.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
+      { "<leader>sW", tombell.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
+      { "<leader>sw", tombell.telescope "grep_string", mode = "v", desc = "Selection (root dir)" },
+      { "<leader>sW", tombell.telescope("grep_string", { cwd = false }), mode = "v", desc = "Selection (cwd)" },
 
       -- UI
-      { "<leader>uC", util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+      { "<leader>uC", tombell.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
     },
     opts = {
       defaults = {

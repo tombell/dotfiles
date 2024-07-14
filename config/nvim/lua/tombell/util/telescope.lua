@@ -1,5 +1,3 @@
-local util = require "tombell.util"
-
 local M = setmetatable({}, {
   __call = function(m, ...)
     return m.telescope(...)
@@ -11,7 +9,7 @@ function M.telescope(builtin, opts)
 
   return function()
     builtin = params.builtin
-    opts = vim.tbl_deep_extend("force", { cwd = util.root() }, opts or {})
+    opts = vim.tbl_deep_extend("force", { cwd = tombell.root() }, opts or {})
 
     if builtin == "files" then
       if vim.loop.fs_stat((opts.cwd or vim.loop.cwd()) .. "/.git") and opts.git then

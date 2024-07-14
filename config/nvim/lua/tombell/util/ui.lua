@@ -1,5 +1,3 @@
-local util = require "tombell.util"
-
 local M = {}
 
 M.exclude_foldend_filetypes = {
@@ -11,12 +9,12 @@ M.exclude_foldend_filetypes = {
 
 function M.foldtext()
   local ret = {
-    util.expand_tabs(vim.api.nvim_buf_get_lines(0, vim.v.foldstart - 1, vim.v.foldstart, true)[1], vim.bo.tabstop),
+    tombell.expand_tabs(vim.api.nvim_buf_get_lines(0, vim.v.foldstart - 1, vim.v.foldstart, true)[1], vim.bo.tabstop),
     "󰇘",
   }
 
   if not vim.tbl_contains(M.exclude_foldend_filetypes, vim.bo.filetype) then
-    local line = util.trim(vim.api.nvim_buf_get_lines(0, vim.v.foldend - 1, vim.v.foldend, true)[1])
+    local line = tombell.trim(vim.api.nvim_buf_get_lines(0, vim.v.foldend - 1, vim.v.foldend, true)[1])
     table.insert(ret, line)
   end
 
