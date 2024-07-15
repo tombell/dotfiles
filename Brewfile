@@ -7,22 +7,25 @@ music = 'Mythra'
 
 hostname = `scutil --get ComputerName`.chomp
 
+tap 'starkwm/formulae'
+tap 'thoughtbot/formulae'
+
+brew 'bat'
 brew 'ripgrep'
 brew 'starkwm/formulae/skbd'
 brew 'thoughtbot/formulae/rcm'
 brew 'zsh-autosuggestions'
 
 cask '1password'
-cask 'alacritty'
 cask 'font-iosevka-nerd-font'
 cask 'starkwm/formulae/stark@beta'
+cask 'wezterm'
 
 if [personal, work].include?(hostname)
   tap 'tombell/formulae'
 
   brew 'asdf'
   brew 'fzf'
-  brew 'gh'
   brew 'git'
   brew 'jq'
   brew 'neovim', args: ['HEAD']
