@@ -25,7 +25,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    optional = true,
     opts = {
       formatters_by_ft = {
         swift = { "swift_format" },
@@ -35,7 +34,6 @@ return {
 
   {
     "nvim-neotest/neotest",
-    optional = true,
     dependencies = {},
     opts = {
       adapters = {},

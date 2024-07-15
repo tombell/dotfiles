@@ -31,7 +31,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    optional = true,
     opts = function(_, opts)
       local function add_formatters(tbl)
         for ft, formatters in pairs(tbl) do

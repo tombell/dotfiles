@@ -31,7 +31,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    optional = true,
     opts = {
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
@@ -41,7 +40,6 @@ return {
 
   {
     "nvim-neotest/neotest",
-    optional = true,
     dependencies = {
       "nvim-neotest/neotest-go",
     },
