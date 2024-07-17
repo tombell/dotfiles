@@ -52,8 +52,4 @@ function M.expand_tabs(str, ts)
   return new
 end
 
-function M.trim(str)
-  return str:gsub("^%s*(.-)%s*$", "%1")
-end
-
 return M

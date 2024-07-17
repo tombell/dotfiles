@@ -14,7 +14,7 @@ function M.foldtext()
   }
 
   if not vim.tbl_contains(M.exclude_foldend_filetypes, vim.bo.filetype) then
-    local line = tombell.trim(vim.api.nvim_buf_get_lines(0, vim.v.foldend - 1, vim.v.foldend, true)[1])
+    local line = vim.api.nvim_buf_get_lines(0, vim.v.foldend - 1, vim.v.foldend, true)[1]:gsub("^%s*(.-)%s*$", "%1")
     table.insert(ret, line)
   end
 
