@@ -9,17 +9,13 @@ function M.telescope(builtin, opts)
 
   return function()
     builtin = params.builtin
+    opts = params.opts
     opts = vim.tbl_deep_extend("force", { cwd = tombell.root() }, opts or {})
 
     if builtin == "files" then
-      if vim.loop.fs_stat((opts.cwd or vim.loop.cwd()) .. "/.git") and opts.git then
-        opts.show_untracked = true
-        builtin = "git_files"
-      else
-        opts.find_command = { "rg", "--files", "--color", "never", "--glob", "!.git/*" }
-        opts.hidden = true
-        builtin = "find_files"
-      end
+      opts.find_command = { "rg", "--files", "--color", "never", "--glob", "!.git/*" }
+      opts.hidden = true
+      builtin = "find_files"
     end
 
     require("telescope.builtin")[builtin](opts)
