@@ -17,7 +17,7 @@ return {
           documentation = cmp.config.window.bordered { scrollbar = false },
         },
         experimental = {
-          ghost_text = true,
+          ghost_text = false,
         },
         mapping = cmp.mapping.preset.insert {
           ["<tab>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
