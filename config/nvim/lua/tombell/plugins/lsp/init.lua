@@ -42,6 +42,7 @@ return {
     },
     config = function(_, opts)
       tombell.lsp.on_attach(function(client, buffer)
+        require("lspconfig.ui.windows").default_options.border = "rounded"
         require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
       end)
 
