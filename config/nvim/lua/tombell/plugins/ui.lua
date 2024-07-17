@@ -50,9 +50,6 @@ return {
       file = {
         [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
       },
-      filetype = {
-        dotenv = { glyph = "", hl = "MiniIconsYellow" },
-      },
     },
     init = function()
       package.preload["nvim-web-devicons"] = function()
