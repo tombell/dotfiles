@@ -41,11 +41,11 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      "nvim-neotest/neotest-go",
+      "fredrikaverpil/neotest-golang",
     },
     opts = {
       adapters = {
-        ["neotest-go"] = {},
+        ["neotest-golang"] = {},
       },
     },
   },
