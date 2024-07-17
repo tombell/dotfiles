@@ -1,4 +1,4 @@
-local util = require "lazy.core.util"
+local Util = require "lazy.core.util"
 
 local M = setmetatable({}, {
   __call = function(m)
@@ -6,12 +6,35 @@ local M = setmetatable({}, {
   end,
 })
 
-M.detectors = {}
+M.spec = { "lsp", { ".git", "lua" }, "cwd" }
 
-M.cache = {}
+M.detectors = {}
 
 function M.detectors.cwd()
   return { vim.loop.cwd() }
+end
+
+function M.detectors.lsp(buf)
+  local bufpath = M.bufpath(buf)
+
+  if not bufpath then
+    return {}
+  end
+
+  local roots = {}
+
+  for _, client in pairs(tombell.lsp.get_clients { bufnr = buf }) do
+    local workspace = client.config.workspace_folders
+
+    for _, ws in pairs(workspace or {}) do
+      roots[#roots + 1] = vim.uri_to_fname(ws.uri)
+    end
+  end
+
+  return vim.tbl_filter(function(path)
+    path = Util.norm(path)
+    return path and bufpath:find(path, 1, true) == 1
+  end, roots)
 end
 
 function M.detectors.pattern(buf, patterns)
@@ -37,7 +60,7 @@ function M.realpath(path)
   end
 
   path = vim.loop.fs_realpath(path) or path
-  return util.norm(path)
+  return Util.norm(path)
 end
 
 function M.resolve(spec)
@@ -46,17 +69,19 @@ function M.resolve(spec)
   end
 
   return function(buf)
-    M.detectors.pattern(buf, spec)
+    return M.detectors.pattern(buf, spec)
   end
 end
 
 function M.detect(opts)
   opts = opts or {}
+  opts.spec = opts.spec or type(vim.g.root_spec) == "table" and vim.g.root_spec or M.spec
+  opts.buf = (opts.buf == nil or opts.buf == 0) and vim.api.nvim_get_current_buf() or opts.buf
 
   local ret = {}
 
-  for _, spec in ipairs { { ".git", "lua" }, "cwd" } do
-    local paths = M.resolve(spec)(vim.api.nvim_get_current_buf())
+  for _, spec in ipairs(opts.spec) do
+    local paths = M.resolve(spec)(opts.buf)
     paths = paths or {}
     paths = type(paths) == "table" and paths or { paths }
 
@@ -86,13 +111,15 @@ function M.detect(opts)
   return ret
 end
 
+M.cache = {}
+
 function M.get()
   local buf = vim.api.nvim_get_current_buf()
   local ret = M.cache[buf]
 
   if not ret then
     local roots = M.detect { all = false }
-    ret = roots and roots[1] and roots[1].paths[1] or vim.loop.cwd()
+    ret = roots[1] and roots[1].paths[1] or vim.loop.cwd()
     M.cache[buf] = ret
   end
 
