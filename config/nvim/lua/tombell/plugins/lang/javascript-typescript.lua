@@ -14,11 +14,17 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        vtsls = {},
-      },
-    },
+    opts = function(_, opts)
+      local v = vim.version.parse(vim.fn.system { "node", "-v" })
+      local old_node = vim.version.lt(v, { 16, 0, 0 })
+
+      opts.servers = {
+        tsserver = { enabled = old_node },
+        vtsls = { enabled = not old_node },
+      }
+
+      return opts
+    end,
   },
 
   {
