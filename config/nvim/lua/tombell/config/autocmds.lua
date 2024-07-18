@@ -2,6 +2,13 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("tombell_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = augroup "formatoptions",
+  callback = function()
+    vim.opt_local.formatoptions:remove { "o" }
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = augroup "trim_whitespace",
   pattern = { "*" },
