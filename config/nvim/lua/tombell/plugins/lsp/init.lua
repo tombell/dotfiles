@@ -4,7 +4,7 @@ return {
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     dependencies = {
       "mason.nvim",
-      { "williamboman/mason-lspconfig.nvim" },
+      { "williamboman/mason-lspconfig.nvim", config = function() end },
     },
     opts = {
       diagnostics = {
@@ -41,8 +41,9 @@ return {
       setup = {},
     },
     config = function(_, opts)
+      require("lspconfig.ui.windows").default_options.border = "rounded"
+
       tombell.lsp.on_attach(function(client, buffer)
-        require("lspconfig.ui.windows").default_options.border = "rounded"
         require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
       end)
 
@@ -54,9 +55,9 @@ return {
           if
             vim.api.nvim_buf_is_valid(buffer)
             and vim.bo[buffer].buftype == ""
-            and not vim.tbl_contains(opts.inlay_hints.exclude or {}, vim.bo[buffer].filetype)
+            and not vim.tbl_contains(opts.inlay_hints.exclude, vim.bo[buffer].filetype)
           then
-            tombell.toggle.inlay_hints(buffer, true)
+            vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
           end
         end)
       end
