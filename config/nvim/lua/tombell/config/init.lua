@@ -4,6 +4,12 @@ local M = {}
 
 tombell.config = M
 
+M.ui = {
+  foldend = {
+    exclude = { "markdown", "python", "skbdrc", "tex" },
+  },
+}
+
 M.icons = {
   diagnostics = {
     error = "",
