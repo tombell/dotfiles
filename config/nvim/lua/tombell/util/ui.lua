@@ -51,17 +51,23 @@ end
 function M.fold()
   if vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1) then
     if vim.fn.foldclosed(vim.v.lnum) == -1 then
-      return "%#FoldColumn#"
+      return ""
     end
 
-    return "%#FoldColumn#"
+    return ""
   end
 
   return " "
 end
 
 function M.statuscolumn()
-  return string.format("%d %s ", vim.v.lnum, M.fold())
+  return table.concat {
+    "%l",
+    " ",
+    "%s",
+    M.fold(),
+    " ",
+  }
 end
 
 return M
