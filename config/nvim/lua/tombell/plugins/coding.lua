@@ -24,7 +24,6 @@ return {
           ["<s-tab>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
           ["<c-d>"] = cmp.mapping.scroll_docs(-4),
           ["<c-f>"] = cmp.mapping.scroll_docs(4),
-          ["<c-space>"] = cmp.mapping.complete(),
           ["<cr>"] = cmp.mapping.confirm { select = false },
         },
         sources = cmp.config.sources({
