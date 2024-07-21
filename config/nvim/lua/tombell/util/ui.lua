@@ -49,15 +49,15 @@ function M.foldtext()
 end
 
 function M.fold()
-  if vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1) then
-    if vim.fn.foldclosed(vim.v.lnum) == -1 then
-      return ""
+  return vim.api.nvim_win_call(vim.g.statusline_winid, function()
+    if vim.fn.foldclosed(vim.v.lnum) >= 0 then
+      return vim.opt.fillchars:get().foldclose
+    elseif tostring(vim.treesitter.foldexpr(vim.v.lnum)):sub(1, 1) == ">" then
+      return vim.opt.fillchars:get().foldopen
+    else
+      return " "
     end
-
-    return ""
-  end
-
-  return " "
+  end)
 end
 
 function M.statuscolumn()
