@@ -42,7 +42,7 @@ o.number = true
 o.signcolumn = "yes"
 
 -- Enable status column
-o.statuscolumn = "%=%{%v:lua.require'tombell.util'.ui.statuscolumn()%}"
+o.statuscolumn = "%!v:lua.require'tombell.util'.ui.statuscolumn()"
 
 -- Enable tree-sitter based folding
 o.foldlevel = 99
@@ -51,4 +51,9 @@ o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- Setup fill characters
-o.fillchars = { fold = " ", foldsep = " " }
+o.fillchars = {
+  fold = " ",
+  foldopen = "",
+  foldclose = "",
+  foldsep = " ",
+}
