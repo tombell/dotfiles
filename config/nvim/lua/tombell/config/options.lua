@@ -38,6 +38,9 @@ o.splitright = true
 -- Enable line numbers
 o.number = true
 
+-- Nicer wrapping
+o.linebreak = true
+
 -- Enable sign column
 o.signcolumn = "yes"
 
