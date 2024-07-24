@@ -53,6 +53,9 @@ o.foldtext = "v:lua.require'tombell.util.ui'.foldtext()"
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
+-- Line wrap character
+o.showbreak = "↳  "
+
 -- Setup fill characters
 o.fillchars = {
   fold = " ",
