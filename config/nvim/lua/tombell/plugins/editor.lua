@@ -123,6 +123,7 @@ return {
           { "<leader>u", group = "ui" },
           { "<leader>w", group = "windows" },
           { "<leader>x", group = "diagnostics/quickfix" },
+          { "gs", group = "surround" },
           { "[", group = "prev" },
           { "]", group = "next" },
           { "g", group = "goto" },
