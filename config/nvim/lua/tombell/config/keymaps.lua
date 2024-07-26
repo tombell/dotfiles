@@ -18,14 +18,6 @@ vim.keymap.set("n", "<c-down>", "<cmd>resize -2<cr>", { desc = "Decrease window 
 vim.keymap.set("n", "<c-left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 vim.keymap.set("n", "<c-right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
--- Move lines
-vim.keymap.set("n", "<m-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-vim.keymap.set("n", "<m-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-vim.keymap.set("i", "<m-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-vim.keymap.set("i", "<m-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-vim.keymap.set("v", "<m-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-vim.keymap.set("v", "<m-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
-
 -- New file
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 

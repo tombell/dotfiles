@@ -201,4 +201,10 @@ return {
       { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
   },
+
+  {
+    "echasnovski/mini.move",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
