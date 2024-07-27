@@ -17,6 +17,7 @@ return {
     opts = {
       servers = {
         vtsls = {},
+        biome = { enabled = false },
       },
     },
   },
