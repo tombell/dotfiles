@@ -6,7 +6,12 @@ tombell.config = M
 
 M.ui = {
   foldend = {
-    exclude = { "markdown", "python", "skbdrc", "tex" },
+    exclude = {
+      "markdown",
+      "python",
+      "skbdrc",
+      "tex",
+    },
   },
 }
 
