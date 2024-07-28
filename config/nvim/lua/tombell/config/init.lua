@@ -26,7 +26,6 @@ function M.setup()
 
   require("lazy").setup({
     { import = "tombell.plugins" },
-    { import = "tombell.plugins.lang" },
   }, {
     install = {
       colorscheme = { "catppuccin" },

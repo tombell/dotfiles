@@ -37,7 +37,17 @@ return {
         ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
         ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
       },
-      servers = {},
+      servers = {
+        biome = { enabled = false },
+        gopls = {},
+        lua_ls = {},
+        solargraph = { diagnostics = true },
+        svelte = {},
+        tailwindcss = {
+          filetypes = { "html", "svelte" },
+        },
+        vtsls = {},
+      },
       setup = {},
     },
     config = function(_, opts)
@@ -150,7 +160,13 @@ return {
     build = ":MasonUpdate",
     opts_extend = { "ensure_installed" },
     opts = {
-      ensure_installed = {},
+      ensure_installed = {
+        "biome",
+        "gofumpt",
+        "goimports",
+        "prettierd",
+        "stylua",
+      },
       ui = { border = "rounded" },
     },
     config = function(_, opts)

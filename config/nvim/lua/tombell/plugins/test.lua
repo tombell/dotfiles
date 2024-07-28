@@ -2,11 +2,20 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      "fredrikaverpil/neotest-golang",
+      "haydenmeade/neotest-jest",
+      "marilari88/neotest-vitest",
       "nvim-neotest/nvim-nio",
       "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-rspec",
     },
     opts = {
-      adapters = {},
+      adapters = {
+        ["neotest-golang"] = {},
+        ["neotest-jest"] = {},
+        ["neotest-rspec"] = {},
+        ["neotest-vitest"] = {},
+      },
     },
     config = function(_, opts)
       if opts.adapters then
