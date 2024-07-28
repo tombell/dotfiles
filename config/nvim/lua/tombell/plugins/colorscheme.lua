@@ -1,8 +1,9 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
     name = "catppuccin",
+    lazy = true,
+    priority = 1000,
     opts = {
       flavour = "mocha",
       highlight_overrides = {
