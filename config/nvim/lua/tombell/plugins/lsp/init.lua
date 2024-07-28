@@ -144,7 +144,9 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = "Mason",
-    keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+    keys = {
+      { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
+    },
     build = ":MasonUpdate",
     opts_extend = { "ensure_installed" },
     opts = {
@@ -153,6 +155,7 @@ return {
     },
     config = function(_, opts)
       require("mason").setup(opts)
+
       local mr = require "mason-registry"
       mr:on("package:install:success", function()
         vim.defer_fn(function()
