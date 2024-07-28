@@ -41,45 +41,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "wrap_spell",
-  pattern = { "markdown", "gitcomit" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "go",
-  pattern = { "go" },
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-    vim.bo.softtabstop = 4
-    vim.bo.expandtab = false
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "gitcommit",
-  pattern = { "gitcommit" },
-  callback = function()
-    vim.bo.textwidth = 72
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "make",
-  pattern = { "make" },
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-    vim.bo.softtabstop = 4
-    vim.bo.expandtab = false
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   group = augroup "dotenv",
   pattern = { ".env", ".env.*" },
