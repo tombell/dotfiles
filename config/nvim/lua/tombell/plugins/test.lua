@@ -1,16 +1,5 @@
 return {
   {
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        {
-          { "<leader>t", group = "+test" },
-        },
-      },
-    },
-  },
-
-  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/nvim-nio",
