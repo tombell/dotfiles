@@ -64,7 +64,6 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts_extend = { "spec" },
     opts = {
       delay = 800,
       preset = "modern",
