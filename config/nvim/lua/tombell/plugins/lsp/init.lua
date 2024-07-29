@@ -6,46 +6,67 @@ return {
       "mason.nvim",
       { "williamboman/mason-lspconfig.nvim", config = function() end },
     },
-    opts = {
-      diagnostics = {
-        underline = true,
-        update_in_insert = false,
-        virtual_text = {
-          spacing = 4,
-          source = "if_many",
-          prefix = "icons",
-        },
-        severity_sort = true,
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = tombell.config.icons.diagnostics.error,
-            [vim.diagnostic.severity.WARN] = tombell.config.icons.diagnostics.warn,
-            [vim.diagnostic.severity.HINT] = tombell.config.icons.diagnostics.hint,
-            [vim.diagnostic.severity.INFO] = tombell.config.icons.diagnostics.info,
+    opts = function()
+      local is_at_least_three =
+        vim.version.ge(vim.version.parse(vim.fn.system "asdf current ruby | awk '{print $2}'"), "3.0.0")
+
+      return {
+        diagnostics = {
+          underline = true,
+          update_in_insert = false,
+          virtual_text = {
+            spacing = 4,
+            source = "if_many",
+            prefix = "icons",
+          },
+          severity_sort = true,
+          signs = {
+            text = {
+              [vim.diagnostic.severity.ERROR] = tombell.config.icons.diagnostics.error,
+              [vim.diagnostic.severity.WARN] = tombell.config.icons.diagnostics.warn,
+              [vim.diagnostic.severity.HINT] = tombell.config.icons.diagnostics.hint,
+              [vim.diagnostic.severity.INFO] = tombell.config.icons.diagnostics.info,
+            },
           },
         },
-      },
-      inlay_hints = {
-        enabled = false,
-        exclude = {},
-      },
-      codelens = {
-        enabled = false,
-      },
-      capabilities = {},
-      handlers = {
-        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-      },
-      servers = {
-        biome = { enabled = false },
-        gopls = {},
-        lua_ls = {},
-        solargraph = { diagnostics = true },
-        vtsls = {},
-      },
-      setup = {},
-    },
+        inlay_hints = {
+          enabled = false,
+          exclude = {},
+        },
+        codelens = {
+          enabled = false,
+        },
+        capabilities = {},
+        handlers = {
+          ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+          ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+        },
+        servers = {
+          biome = { enabled = false },
+          gopls = {},
+          lua_ls = {},
+          ruby_lsp = {
+            mason = false,
+            enabled = is_at_least_three,
+            cmd = { "asdf", "exec", "ruby-lsp" },
+            diagnostics = true,
+            init_options = {
+              enabledFeatures = {
+                semanticHighlighting = false,
+              },
+            },
+          },
+          solargraph = {
+            mason = false,
+            enabled = not is_at_least_three,
+            cmd = { "asdf", "exec", "solargraph", "stdio" },
+            diagnostics = true,
+          },
+          vtsls = {},
+        },
+        setup = {},
+      }
+    end,
     config = function(_, opts)
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
