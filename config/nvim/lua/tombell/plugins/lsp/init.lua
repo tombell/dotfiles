@@ -42,10 +42,6 @@ return {
         gopls = {},
         lua_ls = {},
         solargraph = { diagnostics = true },
-        svelte = {},
-        tailwindcss = {
-          filetypes = { "html", "svelte" },
-        },
         vtsls = {},
       },
       setup = {},
