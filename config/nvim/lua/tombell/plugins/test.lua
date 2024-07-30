@@ -8,11 +8,13 @@ return {
       "nvim-neotest/nvim-nio",
       "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
+      "zidhuss/neotest-minitest",
     },
     opts = {
       adapters = {
         ["neotest-golang"] = {},
         ["neotest-jest"] = {},
+        ["neotest-minitest"] = {},
         ["neotest-rspec"] = {},
         ["neotest-vitest"] = {},
       },
