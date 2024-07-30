@@ -189,6 +189,7 @@ return {
       require("mason").setup(opts)
 
       local mr = require "mason-registry"
+
       mr:on("package:install:success", function()
         vim.defer_fn(function()
           require("lazy.core.handler.event").trigger {
