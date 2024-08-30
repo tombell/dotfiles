@@ -34,6 +34,8 @@ _load_settings() {
 }
 _load_settings "$HOME/.config/zsh/configs"
 
+[[ -f ~/.localrc ]] && source ~/.localrc
+
 # zsh-autosuggestions
 source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
@@ -42,5 +44,3 @@ source "$(brew --prefix asdf)/libexec/asdf.sh"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
-
-[[ -f ~/.localrc ]] && source ~/.localrc
