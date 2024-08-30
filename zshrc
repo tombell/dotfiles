@@ -35,14 +35,10 @@ _load_settings() {
 _load_settings "$HOME/.config/zsh/configs"
 
 # zsh-autosuggestions
-if command -v brew &> /dev/null; then
-  source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
+source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # asdf
-if command -v brew &> /dev/null; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
-fi
+source "$(brew --prefix asdf)/libexec/asdf.sh"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
