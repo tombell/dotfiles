@@ -1,8 +1,8 @@
 root: ~/Code
 
 after_stop:
-  - fuckoffpuma || true
   - fuckoffruby || true
+  - fuckoffpuma || true
 
 sessions:
   - name: backstage
