@@ -42,7 +42,7 @@ if [personal, work].include?(hostname)
   cask 'soundsource'
   cask 'telegram'
   cask 'the-unarchiver'
-  cask 'zulu@11'
+  cask 'zulu@17'
 end
 
 if hostname == personal
