@@ -41,17 +41,6 @@ return {
         biome = { enabled = false },
         gopls = {},
         lua_ls = {},
-        ruby_lsp = {
-          mason = false,
-          enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] == nil,
-          cmd = { "asdf", "exec", "ruby-lsp" },
-          diagnostics = true,
-          init_options = {
-            enabledFeatures = {
-              semanticHighlighting = false,
-            },
-          },
-        },
         solargraph = {
           mason = false,
           enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
