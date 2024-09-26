@@ -47,7 +47,7 @@ return {
           cmd = { "asdf", "exec", "solargraph", "stdio" },
           diagnostics = true,
         },
-        vtsls = {},
+        tsserver = {},
       },
       setup = {},
     },
