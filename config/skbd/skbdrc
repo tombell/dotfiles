@@ -2,7 +2,7 @@
 # Apps
 ################################################################################
 
-cmd - enter: ~/.dotfiles/bin/launch-wezterm
+ctrl + shift - enter: ~/.dotfiles/bin/launch-wezterm
 
 ctrl + shift - b: open -na "Google Chrome" --args --new-window
 
