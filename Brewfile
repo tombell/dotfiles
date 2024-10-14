@@ -39,7 +39,8 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'keyboardcleantool'
-  cask 'soundsource'
+  # NOTE: using older version, due to ARK crap
+  # cask 'soundsource'
   cask 'telegram'
   cask 'the-unarchiver'
   cask 'zulu@17'
