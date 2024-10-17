@@ -1,8 +1,14 @@
 root: ~/Code
 
+after_stop:
+  - fuckoffpuma || true
+  - fuckoffruby || true
+
 sessions:
   - name: backstage
     root: ./backstage
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -11,6 +17,8 @@ sessions:
 
   - name: contractor
     root: ./contractor
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -19,6 +27,8 @@ sessions:
 
   - name: doorbell
     root: ./doorbell
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -27,6 +37,8 @@ sessions:
 
   - name: foundations
     root: ./foundations
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -35,6 +47,8 @@ sessions:
 
   - name: frontdoor
     root: ./frontdoor
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -43,6 +57,8 @@ sessions:
 
   - name: knock-knock
     root: ./knock-knock
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -51,6 +67,8 @@ sessions:
 
   - name: ledger
     root: ./ledger
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -59,6 +77,8 @@ sessions:
 
   - name: letterbox
     root: ./letterbox
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -67,6 +87,8 @@ sessions:
 
   - name: living
     root: ./living
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -75,6 +97,8 @@ sessions:
 
   - name: log-book
     root: ./log-book
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -83,6 +107,8 @@ sessions:
 
   - name: marketing
     root: ./marketing
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -91,6 +117,8 @@ sessions:
 
   - name: neighbourhood
     root: ./neighbourhood
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -99,6 +127,8 @@ sessions:
 
   - name: piggybank
     root: ./piggybank
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -107,6 +137,8 @@ sessions:
 
   - name: porch
     root: ./porch
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
@@ -115,6 +147,8 @@ sessions:
 
   - name: switchboard
     root: ./switchboard
+    after_start:
+      - tmux select-window -t 1
     windows:
       - name: server
         commands:
