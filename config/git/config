@@ -2,7 +2,7 @@
 
 [user]
   name = Tom Bell
-  email = tomb@tomb.io
+  email = tomb@tombell.dev
 
 [alias]
   aa = add --all
