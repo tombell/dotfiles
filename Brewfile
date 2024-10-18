@@ -3,7 +3,6 @@
 
 personal = 'Pyra'
 work = 'Poppi'
-music = 'Mythra'
 
 hostname = `scutil --get ComputerName`.chomp
 
@@ -28,8 +27,6 @@ if [personal, work].include?(hostname)
   brew 'git'
   brew 'jq'
   brew 'neovim', args: ['HEAD']
-  brew 'postgresql@16'
-  brew 'redis'
   brew 'tmux'
   brew 'tombell/formulae/tm'
 
@@ -45,7 +42,6 @@ if [personal, work].include?(hostname)
 end
 
 if hostname == personal
-  brew 'entr'
   brew 'tombell/formulae/ensong'
   brew 'transmission-cli'
 
@@ -64,6 +60,8 @@ if hostname == work
   brew 'libxml2'
   brew 'libyaml'
   brew 'mas'
+  brew 'postgresql@16'
+  brew 'redis'
 
   cask 'android-studio'
   cask 'chromedriver'
@@ -74,8 +72,4 @@ if hostname == work
   cask 'zoom'
 
   mas 'Xcode', id: 497_799_835
-end
-
-if hostname == music
-  cask 'rekordbox'
 end
