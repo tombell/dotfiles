@@ -11,6 +11,7 @@ M.ui = {
       "python",
       "skbdrc",
       "tex",
+      "yaml",
     },
   },
 }
