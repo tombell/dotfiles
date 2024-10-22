@@ -20,8 +20,3 @@ alias brepo='for d in *; do (cd "$d" && pwd && git branch && echo); done'
 alias ds='find . -name ".DS_Store" -type f -delete'
 
 alias safe='xattr -r -d com.apple.quarantine'
-
-alias fuckoffruby="ps aux | rg ruby | awk '{print \$2}' | xargs -n1 kill -9"
-alias fuckoffpuma="ps aux | rg puma | awk '{print \$2}' | xargs -n1 kill -9"
-
-alias stopwork="(tmux kill-server || true) && (fuckoffruby || true) && (fuckoffpuma || true)"
