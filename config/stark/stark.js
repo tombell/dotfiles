@@ -145,22 +145,11 @@ Keymap.on("right", ctrlShift, () => {
 // -----------------------------------------------------------------------------
 
 [...Array(Space.all().length).keys()].forEach((i) => {
-  const key = `${i + 1}`;
-
-  Keymap.on(key, ctrlShift, () => {
+  Keymap.on(`${i + 1}`, ctrlShift, () => {
     const win = Window.focused();
 
     if (!win) return;
 
     Space.at(i).moveWindow(win);
-  });
-
-  Keymap.on(key, ctrlShiftOpt, () => {
-    const win = Window.focused();
-
-    if (!win) return;
-
-    Space.at(i).moveWindow(win);
-    win.focus();
   });
 });
