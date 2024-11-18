@@ -1,6 +1,7 @@
 if vim.fn.has "nvim-0.11" == 1 then
   -- Remove new neovim (0.11) default mappings
   vim.keymap.del("n", "grn")
+  vim.keymap.del("n", "gri")
   vim.keymap.del("n", "gra")
   vim.keymap.del("n", "grr")
 end
