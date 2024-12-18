@@ -170,4 +170,9 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+
+  {
+    "folke/snacks.nvim",
+    opts = {},
+  },
 }
