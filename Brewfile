@@ -34,11 +34,8 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'keyboardcleantool'
-  # NOTE: using older version, due to ARK crap
-  # cask 'soundsource'
   cask 'telegram'
   cask 'the-unarchiver'
-  cask 'zulu@17'
 end
 
 if hostname == personal
@@ -69,7 +66,9 @@ if hostname == work
   cask 'postico'
   cask 'rapidapi'
   cask 'slack'
+  cask 'soundsource'
   cask 'zoom'
+  cask 'zulu@17'
 
   mas 'Xcode', id: 497_799_835
 end
