@@ -66,7 +66,7 @@ function M.statuscolumn()
     " ",
     "%s",
     M.fold(),
-    " ",
+    "  ",
   }
 end
 
