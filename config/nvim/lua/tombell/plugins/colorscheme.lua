@@ -20,8 +20,18 @@ return {
         blink_cmp = true,
       },
     },
+    -- init = function()
+    --   vim.cmd.colorscheme "catppuccin"
+    -- end,
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
     init = function()
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.colorscheme "tokyonight-night"
     end,
   },
 }
