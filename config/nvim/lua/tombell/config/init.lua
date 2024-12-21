@@ -34,7 +34,7 @@ function M.setup()
     { import = "tombell.plugins" },
   }, {
     install = {
-      colorscheme = { "catppuccin" },
+      colorscheme = { "tokyonight-night" },
     },
     ui = {
       backdrop = 100,
