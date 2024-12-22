@@ -5,11 +5,7 @@ local M = setmetatable({}, {
 })
 
 function M.telescope(builtin, opts)
-  local params = { builtin = builtin, opts = opts }
-
   return function()
-    builtin = params.builtin
-    opts = params.opts
     opts = vim.tbl_deep_extend("force", { cwd = tombell.root() }, opts or {})
 
     if builtin == "files" then
