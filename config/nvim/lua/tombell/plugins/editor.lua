@@ -43,7 +43,7 @@ return {
   -- telescope.nvim
   {
     "nvim-telescope/telescope.nvim",
-    event = "VimEnter",
+    event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -108,8 +108,8 @@ return {
   -- todo-comments.nvim
   {
     "folke/todo-comments.nvim",
+    event = "VeryLazy",
     cmd = { "TodoTrouble", "TodoTelescope" },
-    event = "VimEnter",
     opts = {
       signs = false,
     },
@@ -143,7 +143,7 @@ return {
   -- which-key.nvim
   {
     "folke/which-key.nvim",
-    event = "VimEnter",
+    event = "VeryLazy",
     opts = {
       delay = 800,
       preset = "helix",
