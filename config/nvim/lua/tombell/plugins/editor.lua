@@ -56,7 +56,7 @@ return {
 
       -- Find
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-      { "<leader>fc", tombell.telescope.config_files(), desc = "Find Config File" },
+      { "<leader>fc", tombell.telescope("find_files", { cwd = vim.fn.stdpath "config" }), desc = "Find Config File" },
       { "<leader>ff", tombell.telescope "files", desc = "Find Files (root dir)" },
       { "<leader>fF", tombell.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
