@@ -4,6 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    -- stylua: ignore
     keys = {
       { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
       { "<leader>/", tombell.telescope "live_grep", desc = "Grep (root dir)" },
@@ -85,7 +86,6 @@ return {
           { "<leader>u", group = "ui" },
           { "<leader>w", group = "windows" },
           { "<leader>x", group = "diagnostics/quickfix" },
-          { "gs", group = "surround" },
           { "[", group = "prev" },
           { "]", group = "next" },
           { "g", group = "goto" },
@@ -139,6 +139,7 @@ return {
     "folke/trouble.nvim",
     cmd = { "Trouble" },
     opts = {},
+    -- stylua: ignore
     keys = {
       { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
       { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
