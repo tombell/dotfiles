@@ -1,4 +1,5 @@
 return {
+  -- blink.cmp
   {
     "saghen/blink.cmp",
     version = "v0.*",
@@ -27,12 +28,7 @@ return {
     },
   },
 
-  {
-    "folke/ts-comments.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-
+  -- lazydev.nvim
   {
     "folke/lazydev.nvim",
     ft = "lua",
@@ -41,5 +37,12 @@ return {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       },
     },
+  },
+
+  -- ts-comments.nvim
+  {
+    "folke/ts-comments.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }

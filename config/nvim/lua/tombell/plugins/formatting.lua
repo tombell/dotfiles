@@ -1,4 +1,5 @@
 return {
+  -- conform.nvim
   {
     "stevearc/conform.nvim",
     event = "VeryLazy",

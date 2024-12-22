@@ -1,4 +1,5 @@
 return {
+  -- nvim-lspconfig
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
@@ -153,6 +154,7 @@ return {
     end,
   },
 
+  -- mason.nvim
   {
     "williamboman/mason.nvim",
     cmd = "Mason",

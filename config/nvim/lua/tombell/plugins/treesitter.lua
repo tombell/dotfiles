@@ -1,4 +1,5 @@
 return {
+  -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },

@@ -1,4 +1,5 @@
 return {
+  -- dressing.nvim
   {
     "stevearc/dressing.nvim",
     lazy = true,
@@ -14,13 +15,7 @@ return {
     end,
   },
 
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      theme = "tokyonight",
-    },
-  },
-
+  -- indent-blankline.nvim
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
@@ -45,6 +40,15 @@ return {
     main = "ibl",
   },
 
+  -- lualine.nvim
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      theme = "tokyonight",
+    },
+  },
+
+  -- mini.icons
   {
     "echasnovski/mini.icons",
     lazy = true,

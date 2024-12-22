@@ -1,4 +1,5 @@
 return {
+  -- tokyonight.nvim
   {
     "folke/tokyonight.nvim",
     lazy = false,
