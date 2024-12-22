@@ -26,9 +26,9 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc, mode)
+          local map = function(lhs, rhs, desc, mode)
             mode = mode or "n"
-            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
+            vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
           end
 
           -- stylua: ignore start
