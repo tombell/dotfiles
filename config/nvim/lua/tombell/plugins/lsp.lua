@@ -37,7 +37,7 @@ return {
           map("gd", function() require("telescope.builtin").lsp_definitions { reuse_win = true } end, "Goto Definition")
           map("gr", function() require("telescope.builtin").lsp_references { reuse_win = true } end, "References")
           map("gI", function() require("telescope.builtin").lsp_implementations { reuse_win = true } end, "Goto Implementation")
-          map("gy", function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end,"Goto T[y]pe Definition")
+          map("gy", function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end,"Goto Type Definition")
           map("gD", vim.lsp.buf.declaration, "Goto Declaration")
           map("K", vim.lsp.buf.hover, "Hover")
           map("gK", vim.lsp.buf.signature_help, "Signature Help")
