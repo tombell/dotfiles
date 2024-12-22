@@ -22,13 +22,6 @@ return {
           },
         },
       },
-      inlay_hints = {
-        enabled = false,
-        exclude = {},
-      },
-      codelens = {
-        enabled = false,
-      },
       capabilities = {},
       servers = {
         biome = { enabled = false },
@@ -47,34 +40,16 @@ return {
     config = function(_, opts)
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
-      tombell.lsp.on_attach(function(client, buffer)
-        require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
-      end)
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local buffer = args.buf
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-      tombell.lsp.setup()
-      tombell.lsp.on_dynamic_capability(require("tombell.plugins.lsp.keymaps").on_attach)
-
-      if opts.inlay_hints.enabled then
-        tombell.lsp.on_supports_method("textDocument/inlayHint", function(_, buffer)
-          if
-            vim.api.nvim_buf_is_valid(buffer)
-            and vim.bo[buffer].buftype == ""
-            and not vim.tbl_contains(opts.inlay_hints.exclude, vim.bo[buffer].filetype)
-          then
-            vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
+          if client then
+            return require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
           end
-        end)
-      end
-
-      if opts.codelens.enabled then
-        tombell.lsp.on_supports_method("textDocument/codeLens", function(_, buffer)
-          vim.lsp.codelens.refresh()
-          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-            buffer = buffer,
-            callback = vim.lsp.codelens.refresh,
-          })
-        end)
-      end
+        end,
+      })
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 

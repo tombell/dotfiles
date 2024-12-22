@@ -23,7 +23,7 @@ function M.detectors.lsp(buf)
 
   local roots = {}
 
-  for _, client in pairs(tombell.lsp.get_clients { bufnr = buf }) do
+  for _, client in pairs(vim.lsp.get_clients { bufnr = buf }) do
     local workspace = client.config.workspace_folders
 
     for _, ws in pairs(workspace or {}) do

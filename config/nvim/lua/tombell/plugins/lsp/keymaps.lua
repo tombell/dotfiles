@@ -22,7 +22,6 @@ function M.get()
     { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "v" }, has = "codeLens" },
     { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-    { "<leader>cA", tombell.lsp.action.source, desc = "Source Action", has = "codeAction" },
   }
 
   return M._keys
@@ -41,7 +40,7 @@ function M.has(buffer, method)
 
   method = method:find "/" and method or "textDocument/" .. method
 
-  local clients = tombell.lsp.get_clients { bufnr = buffer }
+  local clients = vim.lsp.get_clients { bufnr = buffer }
 
   for _, client in ipairs(clients) do
     if client.supports_method(method) then
@@ -61,7 +60,7 @@ function M.resolve(buffer)
 
   local spec = M.get()
   local opts = tombell.opts "nvim-lspconfig"
-  local clients = tombell.lsp.get_clients { bufnr = buffer }
+  local clients = vim.lsp.get_clients { bufnr = buffer }
 
   for _, client in ipairs(clients) do
     local maps = opts.servers[client.name] and opts.servers[client.name].keys or {}
