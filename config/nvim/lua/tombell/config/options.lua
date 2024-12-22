@@ -59,8 +59,6 @@ o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- Setup fill characters
 o.fillchars = {
   fold = " ",
-  -- foldopen = "",
-  -- foldclose = "",
   foldopen = "",
   foldclose = "",
   foldsep = " ",
