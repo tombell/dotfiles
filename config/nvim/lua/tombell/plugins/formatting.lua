@@ -18,8 +18,6 @@ return {
         javascriptreact = { "biome", "prettierd" },
         json = { "biome", "prettierd" },
         lua = { "stylua" },
-        svelte = { "prettierd" },
-        swift = { "swift_format" },
         typescript = { "biome", "prettierd" },
         typescriptreact = { "biome", "prettierd" },
       },
