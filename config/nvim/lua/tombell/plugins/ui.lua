@@ -28,7 +28,6 @@ return {
       exclude = {
         filetypes = {
           "help",
-          "neo-tree",
           "neotest-output",
           "neotest-output-panel",
           "neotest-summary",
