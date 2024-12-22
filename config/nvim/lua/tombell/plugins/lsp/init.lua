@@ -12,18 +12,13 @@ return {
       diagnostics = {
         underline = true,
         update_in_insert = false,
-        virtual_text = {
-          spacing = 4,
-          source = "if_many",
-          prefix = "icons",
-        },
         severity_sort = true,
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = tombell.config.icons.diagnostics.error,
-            [vim.diagnostic.severity.WARN] = tombell.config.icons.diagnostics.warn,
-            [vim.diagnostic.severity.HINT] = tombell.config.icons.diagnostics.hint,
-            [vim.diagnostic.severity.INFO] = tombell.config.icons.diagnostics.info,
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = ",",
           },
         },
       },
@@ -79,16 +74,6 @@ return {
             callback = vim.lsp.codelens.refresh,
           })
         end)
-      end
-
-      if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
-        opts.diagnostics.virtual_text.prefix = function(diagnostic)
-          for d, icon in pairs(tombell.config.icons.diagnostics) do
-            if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
-              return icon
-            end
-          end
-        end
       end
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
