@@ -16,7 +16,7 @@ return {
       { "<leader>ff", tombell.telescope "files", desc = "Find Files (root dir)" },
       { "<leader>fF", tombell.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      { "<leader>fR", tombell.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fR", tombell.telescope("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
 
       -- Git
       { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
