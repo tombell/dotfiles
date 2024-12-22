@@ -1,93 +1,26 @@
 local M = {}
 
-M._keys = nil
-
-function M.get()
-  if M._keys then
-    return M._keys
-  end
-
-  -- stylua: ignore
-  M._keys = {
-    { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-    { "gd", function() require("telescope.builtin").lsp_definitions { reuse_win = true } end, desc = "Goto Definition", has = "definition" },
-    { "gr", function() require("telescope.builtin").lsp_references { reuse_win = true } end, desc = "References", nowait = true },
-    { "gI", function() require("telescope.builtin").lsp_implementations { reuse_win = true } end, desc = "Goto Implementation" },
-    { "gy", function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end, desc = "Goto T[y]pe Definition" },
-    { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-    { "K", vim.lsp.buf.hover, desc = "Hover" },
-    { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
-    { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
-    { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "v" }, has = "codeLens" },
-    { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
-    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
-  }
-
-  return M._keys
-end
-
-function M.has(buffer, method)
-  if type(method) == "table" then
-    for _, m in ipairs(method) do
-      if M.has(buffer, m) then
-        return true
-      end
-    end
-
-    return false
-  end
-
-  method = method:find "/" and method or "textDocument/" .. method
-
-  local clients = vim.lsp.get_clients { bufnr = buffer }
-
-  for _, client in ipairs(clients) do
-    if client.supports_method(method) then
-      return true
-    end
-  end
-
-  return false
-end
-
-function M.resolve(buffer)
-  local Keys = require "lazy.core.handler.keys"
-
-  if not Keys.resolve then
-    return {}
-  end
-
-  local spec = M.get()
-  local opts = tombell.opts "nvim-lspconfig"
-  local clients = vim.lsp.get_clients { bufnr = buffer }
-
-  for _, client in ipairs(clients) do
-    local maps = opts.servers[client.name] and opts.servers[client.name].keys or {}
-    vim.list_extend(spec, maps)
-  end
-
-  return Keys.resolve(spec)
-end
-
 function M.on_attach(_, buffer)
-  local Keys = require "lazy.core.handler.keys"
-  local keymaps = M.resolve(buffer)
-
-  for _, keys in pairs(keymaps) do
-    local has = not keys.has or M.has(buffer, keys.has)
-    local cond = not (keys.cond == false or ((type(keys.cond) == "function") and not keys.cond()))
-
-    if has and cond then
-      local opts = Keys.opts(keys)
-      opts.cond = nil
-      opts.has = nil
-      opts.silent = opts.silent ~= false
-      opts.buffer = buffer
-
-      vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
-    end
+  local map = function(keys, func, desc, mode)
+    mode = mode or "n"
+    vim.keymap.set(mode, keys, func, { buffer = buffer, desc = desc })
   end
+
+  -- stylua: ignore start
+  map("<leader>cl", "<cmd>LspInfo<cr>", "Lsp Info")
+  map("gd", function() require("telescope.builtin").lsp_definitions { reuse_win = true } end, "Goto Definition")
+  map("gr", function() require("telescope.builtin").lsp_references { reuse_win = true } end, "References")
+  map("gI", function() require("telescope.builtin").lsp_implementations { reuse_win = true } end, "Goto Implementation")
+  map("gy", function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end,"Goto T[y]pe Definition")
+  map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+  map("K", vim.lsp.buf.hover, "Hover")
+  map("gK", vim.lsp.buf.signature_help, "Signature Help")
+  map("<c-k>", vim.lsp.buf.signature_help, "Signature Help", "i")
+  map("<leader>ca", vim.lsp.buf.code_action, "Code Action", { "n", "v" })
+  map("<leader>cc", vim.lsp.codelens.run, "Run Codelens", { "n", "v" })
+  map("<leader>cC", vim.lsp.codelens.refresh, "Refresh & Display Codelens", "n")
+  map("<leader>cr", vim.lsp.buf.rename, "Rename")
+  -- stylua: ignore end
 end
 
 return M
