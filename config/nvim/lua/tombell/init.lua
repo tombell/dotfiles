@@ -15,7 +15,6 @@ function M.setup()
     },
     ui = {
       backdrop = 100,
-      border = "rounded",
     },
     change_detection = {
       notify = false,
