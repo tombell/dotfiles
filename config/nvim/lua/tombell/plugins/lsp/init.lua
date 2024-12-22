@@ -25,13 +25,9 @@ return {
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
-        callback = function(args)
-          local buffer = args.buf
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-          if client then
-            require("tombell.plugins.lsp.keymaps").on_attach(client, buffer)
-          end
+        callback = function(event)
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          require("tombell.plugins.lsp.keymaps").on_attach(client, event.buf)
         end,
       })
 
