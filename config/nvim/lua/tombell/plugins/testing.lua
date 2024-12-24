@@ -11,41 +11,16 @@ return {
       "olimorris/neotest-rspec",
       "zidhuss/neotest-minitest",
     },
-    opts = {
-      adapters = {
-        ["neotest-golang"] = {},
-        ["neotest-jest"] = {},
-        ["neotest-minitest"] = {},
-        ["neotest-rspec"] = {},
-        ["neotest-vitest"] = {},
-      },
-    },
-    config = function(_, opts)
-      if opts.adapters then
-        local adapters = {}
-
-        for name, config in pairs(opts.adapters or {}) do
-          if config ~= false then
-            local adapter = require(name)
-            if type(config) == "table" and not vim.tbl_isempty(config) then
-              local meta = getmetatable(adapter)
-
-              if adapter.setup then
-                adapter.setup(config)
-              elseif meta and meta.__call then
-                adapter(config)
-              else
-                error("Adapter " .. name .. " does not support setup")
-              end
-            end
-
-            adapters[#adapters + 1] = adapter
-          end
-        end
-        opts.adapters = adapters
-      end
-
-      require("neotest").setup(opts)
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-golang",
+          require "neotest-jest",
+          require "neotest-minitest",
+          require "neotest-rspec",
+          require "neotest-vitest",
+        },
+      }
     end,
     -- stylua: ignore
     keys = {
