@@ -1,44 +1,4 @@
 return {
-  -- dressing.nvim
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-    init = function()
-      vim.ui.select = function(...)
-        require("lazy").load { plugins = { "dressing.nvim" } }
-        return vim.ui.select(...)
-      end
-      vim.ui.input = function(...)
-        require("lazy").load { plugins = { "dressing.nvim" } }
-        return vim.ui.input(...)
-      end
-    end,
-  },
-
-  -- indent-blankline.nvim
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
-    opts = {
-      indent = {
-        char = "│",
-        tab_char = "│",
-      },
-      scope = { enabled = false },
-      exclude = {
-        filetypes = {
-          "help",
-          "neotest-output",
-          "neotest-output-panel",
-          "neotest-summary",
-          "Trouble",
-          "trouble",
-        },
-      },
-    },
-    main = "ibl",
-  },
-
   -- lualine.nvim
   {
     "nvim-lualine/lualine.nvim",
@@ -62,5 +22,20 @@ return {
         return package.loaded["nvim-web-devicons"]
       end
     end,
+  },
+
+  -- snacks.nvim
+  {
+    "folke/snacks.nvim",
+    event = "VeryLazy",
+    opts = {
+      indent = {
+        char = "│",
+        scope = {
+          enabled = false,
+        },
+      },
+      input = { enabled = true },
+    },
   },
 }
