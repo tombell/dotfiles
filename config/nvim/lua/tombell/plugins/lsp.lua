@@ -8,6 +8,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "saghen/blink.cmp",
     },
+    event = "VeryLazy",
     config = function()
       vim.diagnostic.config {
         underline = true,
