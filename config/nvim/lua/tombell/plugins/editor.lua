@@ -46,6 +46,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     -- stylua: ignore
     keys = {
@@ -102,7 +103,16 @@ return {
           follow = true,
         },
       },
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown(),
+        },
+      },
     },
+    config = function(_, opts)
+      require("telescope").setup(opts)
+      require("telescope").load_extension "ui-select"
+    end,
   },
 
   -- todo-comments.nvim
