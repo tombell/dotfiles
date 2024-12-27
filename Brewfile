@@ -16,8 +16,8 @@ brew 'zsh-autosuggestions'
 
 cask '1password'
 cask 'font-iosevka-nerd-font'
+cask 'ghostty'
 cask 'starkwm/formulae/stark@beta'
-cask 'wezterm'
 
 if [personal, work].include?(hostname)
   tap 'tombell/formulae'
