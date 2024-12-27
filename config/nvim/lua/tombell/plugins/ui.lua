@@ -30,12 +30,10 @@ return {
     event = "VeryLazy",
     opts = {
       indent = {
-        char = "│",
-        scope = {
-          enabled = false,
-        },
+        scope = { enabled = false },
       },
       input = { enabled = true },
+      words = { enabled = true },
     },
   },
 }
