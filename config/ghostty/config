@@ -1,9 +1,9 @@
 # vim: set ft=conf:
 
-font-family             = "Iosevka NFM"
-font-family-bold        = "Iosevka NFM Bold"
-font-family-italic      = "Iosevka NFM Italic"
-font-family-bold-italic = "Iosevka NFM Bold Italic"
+font-family             = "Iosevka NFP"
+font-family-bold        = "Iosevka NFP Bold"
+font-family-italic      = "Iosevka NFP Italic"
+font-family-bold-italic = "Iosevka NFP Bold Italic"
 font-style = Bold
 font-size = 12
 
