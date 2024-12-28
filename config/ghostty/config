@@ -1,10 +1,5 @@
-# vim: set ft=conf:
-
-font-family             = "Iosevka NFP"
-font-family-bold        = "Iosevka NFP Bold"
-font-family-italic      = "Iosevka NFP Italic"
-font-family-bold-italic = "Iosevka NFP Bold Italic"
-font-style = Bold
+font-family = Iosevka NFP
+font-thicken = true
 font-size = 12
 
 shell-integration-features = no-cursor
@@ -15,7 +10,4 @@ theme = tokyonight
 window-padding-x = 24
 window-padding-y = 18
 
-window-decoration = false
 macos-titlebar-style = hidden
-
-resize-overlay = never
