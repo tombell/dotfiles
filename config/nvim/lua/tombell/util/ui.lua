@@ -9,34 +9,21 @@ local foldend_exclude = {
 }
 
 function M.expand_tabs(str, ts)
-  local new = str:sub(1, 0)
-  local pad = " "
+  local new = ""
   local ti = 0
-  local i = 0
 
   while true do
-    i = str:find("\t", i, true)
+    local i = str:find("\t", ti + 1, true)
 
     if not i then
-      if ti == 0 then
-        new = str
-      else
-        new = new .. str:sub(ti + 1)
-      end
-
+      new = new .. str:sub(ti + 1)
       break
     end
 
-    if ti + 1 == i then
-      new = new .. pad:rep(ts)
-    else
-      local append = str:sub(ti + 1, i - 1)
-
-      new = new .. append .. pad:rep(ts - vim.api.nvim_strwidth(append) % ts)
-    end
+    new = new .. str:sub(ti + 1, i - 1)
+    new = new .. string.rep(" ", ts - (vim.api.nvim_strwidth(new) % ts))
 
     ti = i
-    i = i + 1
   end
 
   return new
