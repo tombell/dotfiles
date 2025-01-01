@@ -61,6 +61,7 @@ return {
           diagnostics = true,
         },
         ts_ls = {},
+        zls = {},
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -90,6 +91,7 @@ return {
         "biome",
         "gofumpt",
         "goimports",
+        "luacheck",
         "prettierd",
         "stylua",
       })
