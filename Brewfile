@@ -39,11 +39,11 @@ if [personal, work].include?(hostname)
 end
 
 if hostname == personal
-  brew 'tombell/formulae/ensong'
+  # brew 'tombell/formulae/ensong'
   brew 'transmission-cli'
 
   cask 'stolendata-mpv'
-  cask 'xld'
+  # cask 'xld'
 end
 
 if hostname == work
