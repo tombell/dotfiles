@@ -8,25 +8,11 @@ local foldend_exclude = {
   "yaml",
 }
 
-function M.expand_tabs(str, ts)
-  local new = ""
-  local ti = 0
-
-  while true do
-    local i = str:find("\t", ti + 1, true)
-
-    if not i then
-      new = new .. str:sub(ti + 1)
-      break
-    end
-
-    new = new .. str:sub(ti + 1, i - 1)
-    new = new .. string.rep(" ", ts - (vim.api.nvim_strwidth(new) % ts))
-
-    ti = i
-  end
-
-  return new
+function M.expand_tabs(str, tabstop)
+  return str:gsub("\t", function()
+    local spaces = tabstop - (vim.api.nvim_strwidth(str) % tabstop)
+    return string.rep(" ", spaces)
+  end)
 end
 
 function M.foldtext()
