@@ -4,6 +4,7 @@ font-size = 12
 
 shell-integration-features = no-cursor
 cursor-style = block
+cursor-style-blink = false
 
 theme = tokyonight
 split-divider-color = 474951
