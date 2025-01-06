@@ -52,7 +52,7 @@ o.statuscolumn = "%!v:lua.require'tombell.util'.ui.statuscolumn()"
 
 -- Enable tree-sitter based folding
 o.foldlevel = 99
-o.foldtext = "v:lua.require'tombell.util'.ui.foldtext()"
+o.foldtext = "v:lua.require'pleat'.foldtext()"
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 

@@ -36,4 +36,19 @@ return {
       words = { enabled = true },
     },
   },
+
+  -- pleat.nvim
+  {
+    "tombell/pleat.nvim",
+    event = "VeryLazy",
+    opts = {
+      foldend_exclude_filetypes = {
+        "markdown",
+        "python",
+        "skbdrc",
+        "tex",
+        "yaml",
+      },
+    },
+  },
 }
