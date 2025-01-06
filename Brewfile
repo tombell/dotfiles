@@ -16,7 +16,7 @@ brew 'zsh-autosuggestions'
 
 cask '1password'
 cask 'font-iosevka-nerd-font'
-cask 'ghostty'
+cask 'ghostty@tip'
 cask 'starkwm/formulae/stark@beta'
 
 if [personal, work].include?(hostname)
