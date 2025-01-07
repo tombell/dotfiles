@@ -9,7 +9,8 @@ cursor-style-blink = false
 theme = tokyonight
 split-divider-color = 474951
 
-window-padding-x = 24
-window-padding-y = 18
+window-padding-x = 20
+window-padding-y = 20
+window-padding-balance = true
 
 macos-titlebar-style = hidden
