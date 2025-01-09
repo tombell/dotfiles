@@ -90,55 +90,45 @@ Keymap.on("h", ctrlShiftOpt, () => grid(12, 10, 8, 10, 0, 0));
 // Right-two thirds
 Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
 
-// Move window to previous display
-Keymap.on("left", ctrlShift, () => {
+function moveWindow(direction) {
   const win = Window.focused();
 
   if (!win) return;
 
   const primary = Screen.all()[0];
-
-  if (win.screen.id === primary.id) return;
-
-  const { x, y, width, height } = win.frame;
-
-  const curr = win.screen.flippedVisibleFrame;
-  const next = primary.flippedVisibleFrame;
-
-  const delta = next.height - curr.height;
-
-  win.setFrame({
-    width,
-    height: height - delta,
-    x: x - curr.width,
-    y: y + delta,
-  });
-});
-
-// Move window to next display
-Keymap.on("right", ctrlShift, () => {
-  const win = Window.focused();
-
-  if (!win) return;
-
   const secondary = Screen.all()[1];
 
-  if (win.screen.id === secondary.id) return;
+  let deltaX, deltaY, deltaHeight;
+
+  if (direction === "left" && win.screen.id === primary.id) {
+    deltaX = -win.screen.flippedVisibleFrame.width;
+    deltaY =
+      primary.flippedVisibleFrame.height -
+      win.screen.flippedVisibleFrame.height;
+    deltaHeight = -deltaY;
+  } else if (direction === "right" && win.screen.id === secondary.id) {
+    deltaX = win.screen.flippedVisibleFrame.width;
+    deltaY =
+      win.screen.flippedVisibleFrame.height -
+      secondary.flippedVisibleFrame.height;
+    deltaHeight = deltaY;
+  }
 
   const { x, y, width, height } = win.frame;
 
-  const curr = win.screen.flippedVisibleFrame;
-  const next = secondary.flippedVisibleFrame;
-
-  const delta = curr.height - next.height;
-
   win.setFrame({
     width,
-    height: height + delta,
-    x: x + curr.width,
-    y: y - delta,
+    height: height + deltaHeight,
+    x: x + deltaX,
+    y: y - deltaY,
   });
-});
+}
+
+// Move window to previous display
+Keymap.on("left", ctrlShift, () => moveWindow("left"));
+
+// Move window to next display
+Keymap.on("right", ctrlShift, () => moveWindow("right"));
 
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
