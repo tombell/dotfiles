@@ -12,7 +12,9 @@ return {
       },
       signature = { enabled = true },
       completion = {
-        list = { selection = "auto_insert" },
+        list = {
+          selection = { preselect = false, auto_insert = true },
+        },
       },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },

@@ -6,7 +6,6 @@ return {
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      "saghen/blink.cmp",
     },
     event = "VeryLazy",
     config = function()
@@ -65,7 +64,6 @@ return {
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", {}, capabilities, require("blink.cmp").get_lsp_capabilities())
 
       local function setup(server)
         if servers[server] == nil then
