@@ -12,6 +12,7 @@ return {
       "zidhuss/neotest-minitest",
     },
     config = function()
+      ---@diagnostic disable: missing-fields
       require("neotest").setup {
         adapters = {
           require "neotest-golang",
