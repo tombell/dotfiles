@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd("BufWritePre", {
   group = augroup "trim_whitespace",
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
