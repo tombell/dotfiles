@@ -27,7 +27,8 @@ o.laststatus = 3
 o.shortmess:append { W = true, I = true, c = true, C = true }
 
 -- Enable cursor line
-o.cursorline = true
+-- TODO: maybe remove?
+-- o.cursorline = true
 
 -- Enable splitting new windows below
 o.splitbelow = true
