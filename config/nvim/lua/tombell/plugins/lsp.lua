@@ -90,6 +90,7 @@ return {
         "gofumpt",
         "goimports",
         "prettierd",
+        "rubocop",
         "stylua",
       })
 
