@@ -89,22 +89,14 @@ return {
         "biome",
         "gofumpt",
         "goimports",
-        "luacheck",
         "prettierd",
         "stylua",
       })
 
       require("mason").setup()
-
-      require("mason-tool-installer").setup {
-        ensure_installed = ensure_installed,
-      }
-
-      require("mason-lspconfig").setup {
-        automatic_installation = false,
-        ensure_installed = {},
-        handlers = { setup },
-      }
+      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+      ---@diagnostic disable: missing-fields
+      require("mason-lspconfig").setup { handlers = { setup } }
     end,
   },
 
