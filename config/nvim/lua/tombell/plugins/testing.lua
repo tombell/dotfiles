@@ -3,11 +3,11 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      "nvim-neotest/nvim-nio",
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
+      "lawrence-laz/neotest-zig",
       "marilari88/neotest-vitest",
-      "nvim-neotest/nvim-nio",
-      "nvim-treesitter/nvim-treesitter",
       "olimorris/neotest-rspec",
       "zidhuss/neotest-minitest",
     },
@@ -20,6 +20,7 @@ return {
           require "neotest-minitest",
           require "neotest-rspec",
           require "neotest-vitest",
+          require "neotest-zig",
         },
       }
     end,
