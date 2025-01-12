@@ -24,6 +24,23 @@ return {
     end,
   },
 
+  -- pleat.nvim
+  {
+    "tombell/pleat.nvim",
+    event = "VeryLazy",
+    opts = {},
+    init = function()
+      local o = vim.opt
+
+      o.foldlevel = 99
+      o.foldtext = "v:lua.require'pleat.ui'.foldtext()"
+      o.foldmethod = "expr"
+      o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+      o.fillchars = { fold = " " }
+    end,
+  },
+
   -- snacks.nvim
   {
     "folke/snacks.nvim",
@@ -35,12 +52,5 @@ return {
       input = { enabled = true },
       words = { enabled = true },
     },
-  },
-
-  -- pleat.nvim
-  {
-    "tombell/pleat.nvim",
-    event = "VeryLazy",
-    opts = {},
   },
 }
