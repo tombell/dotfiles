@@ -44,7 +44,6 @@ return {
   -- snacks.nvim
   {
     "folke/snacks.nvim",
-    event = "VeryLazy",
     opts = {
       indent = {
         scope = { enabled = false },
