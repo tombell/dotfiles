@@ -1,5 +1,3 @@
-local Util = require "lazy.core.util"
-
 local M = setmetatable({}, {
   __call = function(m)
     return m.get()
@@ -32,7 +30,6 @@ function M.detectors.lsp(buf)
   end
 
   return vim.tbl_filter(function(path)
-    path = Util.norm(path)
     return path and bufpath:find(path, 1, true) == 1
   end, roots)
 end
@@ -50,17 +47,12 @@ function M.bufpath(buf)
   return M.realpath(vim.api.nvim_buf_get_name(assert(buf)))
 end
 
-function M.cwd()
-  return M.realpath(vim.uv.cwd()) or ""
-end
-
 function M.realpath(path)
   if path == "" or path == nil then
     return nil
   end
 
-  path = vim.uv.fs_realpath(path) or path
-  return Util.norm(path)
+  return vim.uv.fs_realpath(path) or path
 end
 
 function M.resolve(spec)
