@@ -26,10 +26,6 @@ o.laststatus = 3
 -- Setup short message
 o.shortmess:append { W = true, I = true, c = true, C = true }
 
--- Enable cursor line
--- TODO: maybe remove?
--- o.cursorline = true
-
 -- Enable splitting new windows below
 o.splitbelow = true
 
