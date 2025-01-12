@@ -49,6 +49,7 @@ return {
         scope = { enabled = false },
       },
       input = { enabled = true },
+      toggle = { notify = false },
       words = { enabled = true },
     },
   },
