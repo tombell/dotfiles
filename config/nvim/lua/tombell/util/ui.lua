@@ -5,7 +5,7 @@ function M.statuscolumn()
     "%l",
     " ",
     "%s",
-    require("pleat.ui").fold(),
+    require("pleat.ui").foldicon(),
     "  ",
   }
 end
