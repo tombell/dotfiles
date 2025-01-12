@@ -4,8 +4,6 @@ local M = {}
 
 function M.setup()
   require "tombell.config.options"
-  require "tombell.config.autocmds"
-  require "tombell.config.keymaps"
 
   require("lazy").setup({
     { import = "tombell.plugins" },
@@ -17,6 +15,9 @@ function M.setup()
       backdrop = 100,
     },
   })
+
+  require "tombell.config.autocmds"
+  require "tombell.config.keymaps"
 end
 
 return M
