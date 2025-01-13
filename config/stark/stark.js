@@ -100,6 +100,9 @@ function moveWindow(direction) {
 
   let deltaX, deltaY, deltaHeight;
 
+  // TODO: when going to secondary monitor, need to adjust X and height to add space for menu bar
+  // TODO: when going to primary monitor, need to adjust X and height to remove space for menu bar
+
   if (direction === "left" && win.screen.id === secondary.id) {
     deltaX = -win.screen.flippedVisibleFrame.width;
   } else if (direction === "right" && win.screen.id === primary.id) {
