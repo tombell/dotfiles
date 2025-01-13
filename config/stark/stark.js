@@ -100,13 +100,13 @@ function moveWindow(direction) {
 
   let deltaX, deltaY, deltaHeight;
 
-  if (direction === "left" && win.screen.id === primary.id) {
+  if (direction === "left" && win.screen.id === secondary.id) {
     deltaX = -win.screen.flippedVisibleFrame.width;
     deltaY =
       primary.flippedVisibleFrame.height -
       win.screen.flippedVisibleFrame.height;
     deltaHeight = -deltaY;
-  } else if (direction === "right" && win.screen.id === secondary.id) {
+  } else if (direction === "right" && win.screen.id === primary.id) {
     deltaX = win.screen.flippedVisibleFrame.width;
     deltaY =
       win.screen.flippedVisibleFrame.height -
