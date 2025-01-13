@@ -102,25 +102,17 @@ function moveWindow(direction) {
 
   if (direction === "left" && win.screen.id === secondary.id) {
     deltaX = -win.screen.flippedVisibleFrame.width;
-    deltaY =
-      primary.flippedVisibleFrame.height -
-      win.screen.flippedVisibleFrame.height;
-    deltaHeight = -deltaY;
   } else if (direction === "right" && win.screen.id === primary.id) {
     deltaX = win.screen.flippedVisibleFrame.width;
-    deltaY =
-      win.screen.flippedVisibleFrame.height -
-      secondary.flippedVisibleFrame.height;
-    deltaHeight = deltaY;
   }
 
   const { x, y, width, height } = win.frame;
 
   win.setFrame({
     width,
-    height: height + deltaHeight,
+    height,
     x: x + deltaX,
-    y: y - deltaY,
+    y: y,
   });
 }
 
