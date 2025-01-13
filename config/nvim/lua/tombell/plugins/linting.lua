@@ -25,7 +25,7 @@ return {
         },
         rubocop = {
           condition = function(ctx)
-            return vim.fs.find({ ".rubocop.yml" }, { path = ctx.filename, upward = true })[1]
+            return not vim.fs.find({ ".solargraph.yml" }, { path = ctx.filename, upward = true })[1]
           end,
         },
       },
