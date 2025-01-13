@@ -57,7 +57,6 @@ return {
           mason = false,
           enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
           cmd = { "asdf", "exec", "solargraph", "stdio" },
-          diagnostics = true,
         },
         ts_ls = {},
         zls = {},
