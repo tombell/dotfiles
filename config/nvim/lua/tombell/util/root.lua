@@ -105,8 +105,10 @@ end
 
 M.cache = {}
 
-function M.get()
-  local buf = vim.api.nvim_get_current_buf()
+function M.get(opts)
+  opts = opts or {}
+
+  local buf = opts.buf or vim.api.nvim_get_current_buf()
   local ret = M.cache[buf]
 
   if not ret then
