@@ -90,7 +90,7 @@ Keymap.on("h", ctrlShiftOpt, () => grid(12, 10, 8, 10, 0, 0));
 // Right-two thirds
 Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
 
-function moveWindow(direction) {
+const moveWindowToScreen = (direction) => {
   const win = Window.focused();
 
   if (!win) return;
@@ -98,14 +98,13 @@ function moveWindow(direction) {
   const primary = Screen.all()[0];
   const secondary = Screen.all()[1];
 
-  let deltaX, deltaY, deltaHeight;
-
-  // TODO: when going to secondary monitor, need to adjust X and height to add space for menu bar
-  // TODO: when going to primary monitor, need to adjust X and height to remove space for menu bar
+  let deltaX;
 
   if (direction === "left" && win.screen.id === secondary.id) {
+    // TODO: when going to primary monitor, need to adjust X and height to remove space for menu bar
     deltaX = -win.screen.flippedVisibleFrame.width;
   } else if (direction === "right" && win.screen.id === primary.id) {
+    // TODO: when going to secondary monitor, need to adjust X and height to add space for menu bar
     deltaX = win.screen.flippedVisibleFrame.width;
   }
 
@@ -117,12 +116,12 @@ function moveWindow(direction) {
     x: x + deltaX,
     y: y,
   });
-}
+};
 
-// Move window to previous display
+// Move window to primary display
 Keymap.on("left", ctrlShift, () => moveWindow("left"));
 
-// Move window to next display
+// Move window to secondary display
 Keymap.on("right", ctrlShift, () => moveWindow("right"));
 
 // -----------------------------------------------------------------------------
