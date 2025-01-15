@@ -50,22 +50,23 @@ return {
     },
     -- stylua: ignore
     keys = {
-      { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
-      { "<leader>/", tombell.telescope "live_grep", desc = "Grep (root dir)" },
+      { "<leader>,", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
+      { "<leader>/", tombell.pick "live_grep", desc = "Grep (Root Dir)" },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>", tombell.telescope "files", desc = "Find Files (root dir)" },
+      { "<leader><space>", tombell.pick "find_files", desc = "Find Files (Root Dir)" },
 
       -- Find
-      { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-      { "<leader>fc", tombell.telescope("find_files", { cwd = vim.fn.stdpath "config" }), desc = "Find Config File" },
-      { "<leader>ff", tombell.telescope "files", desc = "Find Files (root dir)" },
-      { "<leader>fF", tombell.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>", desc = "Buffers" },
+      { "<leader>fc", tombell.pick("find_files", { cwd = vim.fn.stdpath "config" }), desc = "Find Config File" },
+      { "<leader>ff", tombell.pick "find_files", desc = "Find Files (Root Dir)" },
+      { "<leader>fF", tombell.pick("find_files", { root = false }), desc = "Find Files (cwd)" },
+      { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (Git)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      { "<leader>fR", tombell.telescope("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fR", tombell.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
 
       -- Git
-      { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
-      { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Status" },
+      { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+      { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
 
       -- Search
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
@@ -75,22 +76,25 @@ return {
       { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-      { "<leader>sg", tombell.telescope "live_grep", desc = "Grep (root dir)" },
-      { "<leader>sG", tombell.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+      { "<leader>sg", tombell.pick "live_grep", desc = "Grep (Root Dir)" },
+      { "<leader>sG", tombell.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
+      { "<leader>sj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
+      { "<leader>sl", "<cmd>Telescope loclist<cr>", desc = "Location List" },
       { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
       { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
       { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      { "<leader>sw", tombell.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
-      { "<leader>sW", tombell.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
-      { "<leader>sw", tombell.telescope "grep_string", mode = "v", desc = "Selection (root dir)" },
-      { "<leader>sW", tombell.telescope("grep_string", { cwd = false }), mode = "v", desc = "Selection (cwd)" },
+      { "<leader>sq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix List" },
+      { "<leader>sw", tombell.pick("grep_string", { word_match = "-w" }), desc = "Word (Root Dir)" },
+      { "<leader>sW", tombell.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (cwd)" },
+      { "<leader>sw", tombell.pick "grep_string", mode = "v", desc = "Selection (Root Dir)" },
+      { "<leader>sW", tombell.pick("grep_string", { root = false }), mode = "v", desc = "Selection (cwd)" },
 
       -- UI
-      { "<leader>uC", tombell.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+      { "<leader>uC", tombell.pick("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
     },
     opts = {
       defaults = {
@@ -100,6 +104,8 @@ return {
       },
       pickers = {
         find_files = {
+          find_command = { "rg", "--files", "--color", "never", "--glob", "!.git/*" },
+          hidden = true,
           follow = true,
         },
       },
