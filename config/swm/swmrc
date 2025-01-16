@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-echo "swm config"
+echo "==> swm config"
+
+if [ -f /Users/tombell/Code/starkwm/swm/.build/debug/swm ]; then
+  /Users/tombell/Code/starkwm/swm/.build/debug/swm --message config --foo=bar --baz -q
+fi
