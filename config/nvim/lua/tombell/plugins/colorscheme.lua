@@ -7,7 +7,7 @@ return {
     opts = {
       on_highlights = function(highlights, colors)
         highlights.Folded = { fg = colors.blue0, bg = colors.bg_float }
-        highlights.WinSeparator = { fg = colors.blue7, bg = colors.bg }
+        highlights.WinSeparator = { fg = colors.bg_visual, bg = colors.bg }
       end,
     },
     init = function()
