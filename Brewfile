@@ -9,6 +9,7 @@ hostname = `scutil --get ComputerName`.chomp
 tap 'starkwm/formulae'
 tap 'thoughtbot/formulae'
 
+brew 'fd'
 brew 'ripgrep'
 brew 'starkwm/formulae/skbd'
 brew 'thoughtbot/formulae/rcm'
