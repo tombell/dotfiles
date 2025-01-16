@@ -26,7 +26,7 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
         callback = function(event)
-          local map = function(lhs, rhs, desc, mode, opts)
+          local function map(lhs, rhs, desc, mode, opts)
             mode = mode or "n"
             opts = opts or { buffer = event.buf, desc = desc }
             vim.keymap.set(mode, lhs, rhs, opts)
