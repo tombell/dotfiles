@@ -45,6 +45,7 @@ return {
           map("<leader>ca", vim.lsp.buf.code_action, "Code Action", { "n", "v" })
           map("<leader>cc", vim.lsp.codelens.run, "Run Codelens", { "n", "v" })
           map("<leader>cC", vim.lsp.codelens.refresh, "Refresh & Display Codelens", "n")
+          map("<leader>cR", function() Snacks.rename.rename_file() end, "Rename File", "n")
           map("<leader>cr", vim.lsp.buf.rename, "Rename")
           -- stylua: ignore end
         end,
