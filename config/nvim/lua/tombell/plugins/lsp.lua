@@ -34,10 +34,11 @@ return {
 
           -- stylua: ignore start
           map("<leader>cl", "<cmd>LspInfo<cr>", "Lsp Info")
-          map("gd", function() require("telescope.builtin").lsp_definitions { reuse_win = true } end, "Goto Definition")
-          map("gr", function() require("telescope.builtin").lsp_references { reuse_win = true } end, "References")
-          map("gI", function() require("telescope.builtin").lsp_implementations { reuse_win = true } end, "Goto Implementation")
-          map("gy", function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end,"Goto Type Definition")
+          map("gd", function() Snacks.picker.lsp_definitions() end, "Goto Definition")
+          map("gr", function() Snacks.picker.lsp_references() end, "References")
+          map("gI", function() Snacks.picker.lsp_implementations() end, "Goto Implementation")
+          map("gy", function() Snacks.picker.lsp_type_definitions() end,"Goto Type Definition")
+          map("<leader>ss", function() Snacks.picker.lsp_symbols() end,"LSP Symbols")
           map("gD", vim.lsp.buf.declaration, "Goto Declaration")
           map("K", vim.lsp.buf.hover, "Hover")
           map("gK", vim.lsp.buf.signature_help, "Signature Help")

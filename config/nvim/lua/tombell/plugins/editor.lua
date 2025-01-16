@@ -40,85 +40,62 @@ return {
     },
   },
 
-  -- telescope.nvim
+  -- snacks.nvim
   {
-    "nvim-telescope/telescope.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-ui-select.nvim",
-    },
+    "folke/snacks.nvim",
     -- stylua: ignore
     keys = {
-      { "<leader>,", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
-      { "<leader>/", tombell.pick "live_grep", desc = "Grep (Root Dir)" },
-      { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>", tombell.pick "find_files", desc = "Find Files (Root Dir)" },
+      { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>/", tombell.pick("grep"), desc = "Grep (Root Dir)" },
+      { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader><space>", tombell.pick("files"), desc = "Find Files (Root Dir)" },
 
       -- Find
-      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>", desc = "Buffers" },
-      { "<leader>fc", tombell.pick("find_files", { cwd = vim.fn.stdpath "config" }), desc = "Find Config File" },
-      { "<leader>ff", tombell.pick "find_files", desc = "Find Files (Root Dir)" },
-      { "<leader>fF", tombell.pick("find_files", { root = false }), desc = "Find Files (cwd)" },
-      { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (Git)" },
-      { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-      { "<leader>fR", tombell.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+      { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>fc", tombell.pick("files", { cwd = vim.fn.stdpath "config", follow = true }), desc = "Find Config File" },
+      { "<leader>ff", tombell.pick "files", desc = "Find Files (Root Dir)" },
+      { "<leader>fF", tombell.pick("files", { root = false }), desc = "Find Files (cwd)" },
+      { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (Git)" },
+      { "<leader>fr", tombell.pick("oldfiles"), desc = "Recent" },
+      { "<leader>fR", tombell.pick("oldfiles", { filter = { cwd = true }}), desc = "Recent (cwd)" },
 
       -- Git
-      { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
-      { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
+      { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
+      { "<leader>gc", function() Snacks.picker.git_status() end, desc = "Git Status" },
+
+      -- Grep
+      { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+      { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
+      { "<leader>sg", tombell.pick("grep"), desc = "Grep (Root Dir)" },
+      { "<leader>sG", tombell.pick("grep", { root = false }), desc = "Grep (cwd)" },
+      { "<leader>sw", tombell.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
+      { "<leader>sW", tombell.pick("grep_word", { root = false }), desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
 
       -- Search
-      { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
-      { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
-      { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
-      { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-      { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
-      { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-      { "<leader>sg", tombell.pick "live_grep", desc = "Grep (Root Dir)" },
-      { "<leader>sG", tombell.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
-      { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
-      { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
-      { "<leader>sj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
-      { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
-      { "<leader>sl", "<cmd>Telescope loclist<cr>", desc = "Location List" },
-      { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
-      { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
-      { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
-      { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      { "<leader>sq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix List" },
-      { "<leader>sw", tombell.pick("grep_string", { word_match = "-w" }), desc = "Word (Root Dir)" },
-      { "<leader>sW", tombell.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (cwd)" },
-      { "<leader>sw", tombell.pick "grep_string", mode = "v", desc = "Selection (Root Dir)" },
-      { "<leader>sW", tombell.pick("grep_string", { root = false }), mode = "v", desc = "Selection (cwd)" },
+      { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
+      { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
+      { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
+      { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+      { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
+      { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
+      { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
+      { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+      { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
+      { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
+      { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+      { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
+      { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+      { "<leader>qp", function() Snacks.picker.projects() end, desc = "Projects" },
 
       -- UI
-      { "<leader>uC", tombell.pick("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+      { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     },
     opts = {
-      defaults = {
-        layout_strategy = "vertical",
-        prompt_prefix = " ",
-        selection_caret = " ",
+      picker = {
+        layout = "vertical",
       },
-      pickers = {
-        find_files = {
-          find_command = { "rg", "--files", "--color", "never", "--glob", "!.git/*" },
-          hidden = true,
-          follow = true,
-        },
-      },
-      extensions = {},
     },
-    config = function(_, opts)
-      opts.extensions["ui-select"] = {
-        require("telescope.themes").get_dropdown(),
-      }
-
-      require("telescope").setup(opts)
-      require("telescope").load_extension "ui-select"
-    end,
   },
 
   -- todo-comments.nvim
@@ -137,6 +114,11 @@ return {
       { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
       { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+
+      ---@diagnostic disable-next-line: undefined-field
+      { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+      ---@diagnostic disable-next-line: undefined-field
+      { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
     },
   },
 

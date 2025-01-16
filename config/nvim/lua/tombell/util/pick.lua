@@ -13,7 +13,7 @@ function M.open(command, opts)
     opts.cwd = tombell.root { buf = opts.buf }
   end
 
-  tombell.telescope(command, opts)
+  Snacks.picker.pick(command, opts)
 end
 
 function M.wrap(command, opts)
