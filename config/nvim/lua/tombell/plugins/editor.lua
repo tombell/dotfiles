@@ -109,13 +109,13 @@ return {
           follow = true,
         },
       },
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown(),
-        },
-      },
+      extensions = {},
     },
     config = function(_, opts)
+      opts.extensions["ui-select"] = {
+        require("telescope.themes").get_dropdown(),
+      }
+
       require("telescope").setup(opts)
       require("telescope").load_extension "ui-select"
     end,
