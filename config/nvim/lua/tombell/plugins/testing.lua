@@ -3,6 +3,7 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      "nvim-lua/plenary.nvim",
       "nvim-neotest/nvim-nio",
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
