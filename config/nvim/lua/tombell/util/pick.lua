@@ -5,9 +5,8 @@ local M = setmetatable({}, {
 })
 
 function M.open(command, opts)
-  command = command ~= "auto" and command or "files"
+  command = command or "files"
   opts = opts or {}
-
   opts = vim.deepcopy(opts)
 
   if not opts.cwd and opts.root ~= false then
