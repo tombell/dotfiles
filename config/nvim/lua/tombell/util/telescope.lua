@@ -1,10 +1,10 @@
 local M = setmetatable({}, {
   __call = function(m, ...)
-    return m.telescope(...)
+    return m.open(...)
   end,
 })
 
-function M.telescope(builtin, opts)
+function M.open(builtin, opts)
   require("telescope.builtin")[builtin](opts)
 end
 
