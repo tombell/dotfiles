@@ -47,6 +47,8 @@ return {
           map("<leader>cC", vim.lsp.codelens.refresh, "Refresh & Display Codelens", "n")
           map("<leader>cR", function() Snacks.rename.rename_file() end, "Rename File", "n")
           map("<leader>cr", vim.lsp.buf.rename, "Rename")
+          map("]]", function() Snacks.words.jump(vim.v.count1) end, "Next Reference")
+          map("[[", function() Snacks.words.jump(-vim.v.count1) end, "Prev Reference")
           -- stylua: ignore end
         end,
       })
