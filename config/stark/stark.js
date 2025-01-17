@@ -119,10 +119,10 @@ const moveWindowToScreen = (direction) => {
 };
 
 // Move window to primary display
-Keymap.on("left", ctrlShift, () => moveWindow("left"));
+Keymap.on("left", ctrlShift, () => moveWindowToScreen("left"));
 
 // Move window to secondary display
-Keymap.on("right", ctrlShift, () => moveWindow("right"));
+Keymap.on("right", ctrlShift, () => moveWindowToScreen("right"));
 
 // -----------------------------------------------------------------------------
 // SPACES MANAGEMENT
