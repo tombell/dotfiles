@@ -25,6 +25,7 @@ o.splitright = true
 
 o.number = true
 
+o.wrap = false
 o.linebreak = true
 o.showbreak = "↳  "
 
