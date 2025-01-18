@@ -46,18 +46,18 @@ return {
     -- stylua: ignore
     keys = {
       { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
-      { "<leader>/", tombell.pick("grep"), desc = "Grep (Root Dir)" },
+      { "<leader>/", function() Snacks.picker.grep({ cwd = tombell.root() }) end, desc = "Grep (Root Dir)" },
       { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
-      { "<leader><space>", tombell.pick("files"), desc = "Find Files (Root Dir)" },
+      { "<leader><space>", function() Snacks.picker.files({ cwd = tombell.root() }) end, desc = "Find Files (Root Dir)" },
 
       -- Find
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-      { "<leader>fc", tombell.pick("files", { cwd = vim.fn.stdpath "config", follow = true }), desc = "Find Config File" },
-      { "<leader>ff", tombell.pick "files", desc = "Find Files (Root Dir)" },
-      { "<leader>fF", tombell.pick("files", { root = false }), desc = "Find Files (cwd)" },
+      { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath "config", follow = true }) end, desc = "Find Config File" },
+      { "<leader>ff", function() Snacks.picker.files({ cwd = tombell.root() }) end, desc = "Find Files (Root Dir)" },
+      { "<leader>fF", function() Snacks.picker.files() end, desc = "Find Files (cwd)" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (Git)" },
-      { "<leader>fr", tombell.pick("oldfiles"), desc = "Recent" },
-      { "<leader>fR", tombell.pick("oldfiles", { filter = { cwd = true }}), desc = "Recent (cwd)" },
+      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+      { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true } }) end, desc = "Recent (cwd)" },
 
       -- Git
       { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
@@ -66,10 +66,10 @@ return {
       -- Grep
       { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
       { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-      { "<leader>sg", tombell.pick("grep"), desc = "Grep (Root Dir)" },
-      { "<leader>sG", tombell.pick("grep", { root = false }), desc = "Grep (cwd)" },
-      { "<leader>sw", tombell.pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
-      { "<leader>sW", tombell.pick("grep_word", { root = false }), desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
+      { "<leader>sg", function() Snacks.picker.grep({ cwd = tombell.root() }) end, desc = "Grep (Root Dir)" },
+      { "<leader>sG", function() Snacks.picker.grep() end, desc = "Grep (cwd)" },
+      { "<leader>sw", function() Snacks.picker.grep_word({ cwd = tombell.root() }) end, desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
+      { "<leader>sW", function() Snacks.picker.grep_word() end, desc = "Visual selection or word (cwd)", mode = { "n", "x" } },
 
       -- Search
       { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
