@@ -52,7 +52,7 @@ return {
 
       -- Find
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-      { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath "config" --[[@as string]], follow = true }) end, desc = "Find Config File" },
+      { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath "config" --[[@as string]] }) end, desc = "Find Config File" },
       { "<leader>ff", function() Snacks.picker.files({ cwd = tombell.root() }) end, desc = "Find Files (Root Dir)" },
       { "<leader>fF", function() Snacks.picker.files() end, desc = "Find Files (cwd)" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Files (Git)" },
@@ -94,6 +94,12 @@ return {
     opts = {
       picker = {
         layout = "vertical",
+        sources = {
+          files = {
+            hidden = true,
+            follow = true,
+          },
+        },
       },
     },
   },
