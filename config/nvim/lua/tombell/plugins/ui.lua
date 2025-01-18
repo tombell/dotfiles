@@ -1,4 +1,12 @@
 return {
+  -- hem.nvim
+  {
+    "tombell/hem.nvim",
+    dev = true,
+    event = "VeryLazy",
+    opts = {},
+  },
+
   -- lualine.nvim
   {
     "nvim-lualine/lualine.nvim",
