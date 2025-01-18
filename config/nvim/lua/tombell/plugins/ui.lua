@@ -27,6 +27,7 @@ return {
   -- pleat.nvim
   {
     "tombell/pleat.nvim",
+    dev = true,
     event = "VeryLazy",
     opts = {},
     init = function()
