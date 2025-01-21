@@ -42,7 +42,7 @@ return {
       local o = vim.opt
 
       o.foldlevel = 99
-      o.foldtext = "v:lua.require'pleat.ui'.foldtext()"
+      o.foldtext = "v:lua.require'pleat'.get()"
       o.foldmethod = "expr"
       o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
