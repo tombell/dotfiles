@@ -20,6 +20,8 @@ o.laststatus = 3
 
 o.shortmess:append { W = true, I = true, c = true, C = true }
 
+o.showmode = false
+
 o.splitbelow = true
 o.splitright = true
 
