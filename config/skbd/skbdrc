@@ -20,7 +20,7 @@ ctrl + shift - [:
   shortcuts run "Toggle Headphone EQ"
 
 ctrl + shift - ]:
-  shortcuts run "Toggle Input Mute"
+  shortcuts run "Toggle Global Mute"
 
 ################################################################################
 # Smart home
