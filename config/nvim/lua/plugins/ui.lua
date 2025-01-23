@@ -37,16 +37,6 @@ return {
     "tombell/pleat.nvim",
     dev = true,
     event = "VeryLazy",
-    init = function()
-      local o = vim.opt
-
-      o.foldlevel = 99
-      o.foldmethod = "expr"
-      o.foldexpr = "v:lua.require'util'.ui.foldexpr()"
-      o.foldtext = "v:lua.require'pleat'.get()"
-
-      o.fillchars:append "fold: "
-    end,
   },
 
   -- snacks.nvim
