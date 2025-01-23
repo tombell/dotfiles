@@ -6,8 +6,9 @@ return {
     priority = 1000,
     opts = {
       on_highlights = function(highlights, colors)
-        highlights.Folded = { fg = colors.blue0, bg = colors.bg_float }
-        highlights.WinSeparator = { fg = colors.bg_visual, bg = colors.bg }
+        highlights.Folded = { fg = colors.blue0 }
+        highlights.WinSeparator = { fg = colors.bg_visual }
+        highlights.SnacksIndentScope = { fg = colors.blue0 }
       end,
     },
     init = function()
