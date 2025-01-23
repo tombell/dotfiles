@@ -30,4 +30,4 @@ o.linebreak = true
 o.showbreak = "↳  "
 
 o.signcolumn = "yes"
-o.statuscolumn = "%!v:lua.require'tombell.util'.ui.statuscolumn()"
+o.statuscolumn = "%!v:lua.require'util'.ui.statuscolumn()"
