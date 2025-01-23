@@ -32,7 +32,7 @@ o.linebreak = true
 o.showbreak = "↳  "
 
 o.signcolumn = "yes"
-o.statuscolumn = "%!v:lua.require'util'.ui.statuscolumn()"
+o.statuscolumn = "%!v:lua.require'hem'.get()"
 
 o.foldlevel = 99
 o.foldmethod = "expr"
