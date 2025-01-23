@@ -2,15 +2,34 @@
 # Apps
 ################################################################################
 
-ctrl + shift - enter: ~/.dotfiles/bin/launch-ghostty
+ctrl + shift - enter:
+  osascript -e 'if application "Ghostty" is running then' \
+            -e '  tell application "System Events"' \
+            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"' \
+            -e '  end tell' \
+            -e 'else' \
+            -e '  tell application "Ghostty" to activate' \
+            -e 'end if' > /dev/null
 
-ctrl + shift - b: open -na "Google Chrome" --args --new-window
+ctrl + shift - b:
+  open -na "Google Chrome" --args --new-window
 
-ctrl + shift - f: open -a Finder
+ctrl + shift - d:
+  osascript -e 'tell application "Discord" to activate'
 
-ctrl + shift - m: osascript -e 'tell application "Messages" to activate'
+ctrl + shift - e:
+  osascript -e 'tell application "Mail" to activate'
 
-ctrl + shift - n: osascript -e 'tell application "Notes" to activate'
+ctrl + shift - f:
+  osascript -e 'tell application "System Events"' \
+            -e '  click menu item "New Finder Window" of menu "File" of menu bar 1 of process "Finder"' \
+            -e 'end tell' > /dev/null
+
+ctrl + shift - m:
+  osascript -e 'tell application "Messages" to activate'
+
+ctrl + shift - n:
+  osascript -e 'tell application "Notes" to activate'
 
 ################################################################################
 # Sound
