@@ -36,7 +36,7 @@ o.statuscolumn = "%!v:lua.require'util'.ui.statuscolumn()"
 
 o.foldlevel = 99
 o.foldmethod = "expr"
-o.foldexpr = "v:lua.require'util'.ui.foldexpr()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldtext = "v:lua.require'pleat'.get()"
 
 o.fillchars:append "fold: "
