@@ -1,3 +1,6 @@
+# enable extended globbing
+setopt extendedglob
+
 for function in ~/.config/zsh/functions/*; do
   source $function
 done
