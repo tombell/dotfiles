@@ -44,7 +44,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       indent = {
-        scope = { enabled = false },
+        animate = { enabled = false },
       },
       input = { enabled = true },
       toggle = { notify = false },
