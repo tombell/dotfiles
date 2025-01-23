@@ -78,7 +78,7 @@ defaults write com.apple.dock mru-spaces -int 0
 
 # When switching to an application, switch to a space with open windows for the
 # application
-defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -int 0
+# defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -int 0
 
 # Bottom right hot corner
 defaults write com.apple.dock wvous-br-corner -int 1
