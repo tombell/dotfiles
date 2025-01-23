@@ -11,12 +11,12 @@ return {
       },
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
-        javascript = { "biome", "prettierd" },
-        javascriptreact = { "biome", "prettierd" },
-        json = { "biome", "prettierd" },
+        javascript = { "biome", "prettier" },
+        javascriptreact = { "biome", "prettier" },
+        json = { "biome", "prettier" },
         lua = { "stylua" },
-        typescript = { "biome", "prettierd" },
-        typescriptreact = { "biome", "prettierd" },
+        typescript = { "biome", "prettier" },
+        typescriptreact = { "biome", "prettier" },
       },
       formatters = {
         biome = {
@@ -24,7 +24,7 @@ return {
             return vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
           end,
         },
-        prettierd = {
+        prettier = {
           condition = function(_, ctx)
             return not vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
           end,

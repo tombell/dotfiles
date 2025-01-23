@@ -92,7 +92,7 @@ return {
         "biome",
         "gofumpt",
         "goimports",
-        "prettierd",
+        "prettier",
         "rubocop",
         "stylua",
       })
