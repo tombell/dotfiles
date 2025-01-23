@@ -110,12 +110,7 @@ const moveWindowToScreen = (direction) => {
 
   const { x, y, width, height } = win.frame;
 
-  win.setFrame({
-    width,
-    height,
-    x: x + deltaX,
-    y: y,
-  });
+  win.setFrame({ width, height, x: x + deltaX, y: y });
 };
 
 // Move window to primary display
