@@ -8,9 +8,9 @@ ctrl + shift - b: open -na "Google Chrome" --args --new-window
 
 ctrl + shift - f: open -a Finder
 
-ctrl + shift - m: open -a Messages
+ctrl + shift - m: osascript -e 'tell application "Messages" to activate'
 
-ctrl + shift - n: open -a Notes
+ctrl + shift - n: osascript -e 'tell application "Notes" to activate'
 
 ################################################################################
 # Sound
