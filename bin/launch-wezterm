@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-osascript -e "if application \"WezTerm\" is running then" \
-          -e "  Do Shell Script \"wezterm cli spawn --new-window\"" \
-          -e "else" \
-          -e "  tell application \"WezTerm\" to activate" \
-          -e "end if"
