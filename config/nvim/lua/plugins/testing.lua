@@ -3,12 +3,15 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
+      -- main
       "nvim-lua/plenary.nvim",
       "nvim-neotest/nvim-nio",
+      -- adapters
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
       "lawrence-laz/neotest-zig",
       "marilari88/neotest-vitest",
+      "mmllr/neotest-swift-testing",
       "olimorris/neotest-rspec",
       "zidhuss/neotest-minitest",
     },
@@ -20,6 +23,7 @@ return {
           require "neotest-jest",
           require "neotest-minitest",
           require "neotest-rspec",
+          require "neotest-swift-testing",
           require "neotest-vitest",
           require "neotest-zig",
         },
