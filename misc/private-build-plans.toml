@@ -1,0 +1,20 @@
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "term"
+noCvSs = true
+exportGlyphNames = false
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 500
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCustom.variants]
+inherits = "ss08"
+
+[buildPlans.IosevkaCustom.ligations]
+inherits = "default-calt"
+disables = ["slash-asterisk"]
+
+[collectPlans.IosevkaCustom]
+from = ["IosevkaCustom"]
