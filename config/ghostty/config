@@ -1,6 +1,7 @@
 font-family = Iosevka Custom
 font-thicken = true
 font-size = 12
+font-feature = -dlig
 
 shell-integration-features = no-cursor
 cursor-style = block
