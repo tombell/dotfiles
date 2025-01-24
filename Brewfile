@@ -17,7 +17,7 @@ brew 'zsh-autosuggestions'
 
 cask '1password'
 cask 'ghostty@tip'
-cask 'starkwm/formulae/stark@beta'
+cask 'starkwm/formulae/stark@tip'
 
 if [personal, work].include?(hostname)
   tap 'tombell/formulae'
