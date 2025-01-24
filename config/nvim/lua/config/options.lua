@@ -30,6 +30,7 @@ o.number = true
 o.wrap = false
 o.linebreak = true
 o.showbreak = "↳  "
+o.mousescroll = "ver:3,hor:0"
 
 o.signcolumn = "yes"
 o.statuscolumn = "%!v:lua.require'hem'.get()"
