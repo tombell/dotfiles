@@ -36,6 +36,16 @@ return {
     "tombell/pleat.nvim",
     dev = true,
     event = "VeryLazy",
+    opts = {
+      foldend_exclude_filetypes = {
+        "markdown",
+        "python",
+        "skbdrc",
+        "tex",
+        "toml",
+        "yaml",
+      },
+    },
   },
 
   -- snacks.nvim
