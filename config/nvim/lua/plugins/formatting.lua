@@ -14,6 +14,7 @@ return {
         javascript = { "biome", "prettier" },
         javascriptreact = { "biome", "prettier" },
         json = { "biome", "prettier" },
+        jsonc = { "biome", "prettier" },
         lua = { "stylua" },
         typescript = { "biome", "prettier" },
         typescriptreact = { "biome", "prettier" },

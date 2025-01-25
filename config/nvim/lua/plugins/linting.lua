@@ -8,6 +8,8 @@ return {
       linters_by_ft = {
         javascript = { "biomejs", "eslint" },
         javascriptreact = { "biomejs", "eslint" },
+        json = { "biomejs" },
+        jsonc = { "biomejs" },
         ruby = { "rubocop" },
         typescript = { "biomejs", "eslint" },
         typescriptreact = { "biomejs", "eslint" },
