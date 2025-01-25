@@ -59,7 +59,9 @@ return {
       },
       input = { enabled = true },
       toggle = { notify = false },
-      words = { enabled = true },
+      words = {
+        modes = { "n", "c" },
+      },
     },
   },
 }
