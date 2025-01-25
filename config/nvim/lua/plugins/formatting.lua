@@ -2,7 +2,7 @@ return {
   -- conform.nvim
   {
     "stevearc/conform.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       notify_on_error = false,
       format_on_save = {
