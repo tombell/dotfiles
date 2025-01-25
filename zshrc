@@ -1,5 +1,9 @@
 fpath=(~/.config/zsh/completion /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh/site-functions $fpath)
 
+for function in ~/.config/zsh/functions/*; do
+  source $function
+done
+
 setopt extendedglob promptsubst
 
 autoload -U colors
