@@ -35,7 +35,7 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'keyboardcleantool'
-  cask 'telegram'
+  cask 'telegram-desktop'
   cask 'the-unarchiver'
 end
 
