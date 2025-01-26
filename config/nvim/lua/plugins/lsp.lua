@@ -62,7 +62,13 @@ return {
           enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
           cmd = { "asdf", "exec", "solargraph", "stdio" },
         },
-        ts_ls = {},
+        ts_ls = {
+          init_options = {
+            preferences = {
+              importModuleSpecifierPreference = "non-relative",
+            },
+          },
+        },
         zls = {},
       }
 
@@ -93,7 +99,6 @@ return {
         "gofumpt",
         "goimports",
         "prettier",
-        "rubocop",
         "stylua",
       })
 
