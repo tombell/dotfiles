@@ -30,7 +30,7 @@ return {
           end
 
           -- stylua: ignore start
-          map("<leader>cl", "<cmd>LspInfo<cr>", "Lsp Info")
+          map("<leader>cl", "<cmd>LspInfo<cr>", "LSP Info")
           map("gd", function() Snacks.picker.lsp_definitions() end, "Goto Definition")
           map("gr", function() Snacks.picker.lsp_references() end, "References")
           map("gI", function() Snacks.picker.lsp_implementations() end, "Goto Implementation")
