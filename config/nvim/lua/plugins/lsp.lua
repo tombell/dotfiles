@@ -10,9 +10,6 @@ return {
     event = "VeryLazy",
     config = function()
       vim.diagnostic.config {
-        underline = true,
-        update_in_insert = false,
-        severity_sort = true,
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = "",
