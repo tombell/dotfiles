@@ -7,7 +7,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
-    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
