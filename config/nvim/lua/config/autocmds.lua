@@ -40,24 +40,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
   end,
 })
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = augroup "dotenv",
-  pattern = { ".env", ".env.*" },
-  callback = function()
-    vim.opt_local.filetype = "sh"
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = augroup "gotmpl",
-  pattern = {
-    "*.tmpl.html",
-    "*.tmpl.txt",
-    "*.html.tmpl",
-    "*.txt.tmpl",
-  },
-  callback = function()
-    vim.opt_local.filetype = "gotmpl"
-  end,
-})
