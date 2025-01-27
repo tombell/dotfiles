@@ -8,14 +8,31 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
+    opts = {
+      servers = {
+        gopls = {},
+        lua_ls = {},
+        solargraph = {
+          mason = false,
+          enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
+          cmd = { "asdf", "exec", "solargraph", "stdio" },
+        },
+        ts_ls = {
+          init_options = {
+            preferences = { importModuleSpecifierPreference = "non-relative" },
+          },
+        },
+        zls = {},
+      },
+    },
+    config = function(_, opts)
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
         callback = function(event)
-          local function map(lhs, rhs, desc, mode, opts)
+          local function map(lhs, rhs, desc, mode, o)
             mode = mode or "n"
-            opts = opts or { buffer = event.buf, desc = desc }
-            vim.keymap.set(mode, lhs, rhs, opts)
+            o = o or { buffer = event.buf, desc = desc }
+            vim.keymap.set(mode, lhs, rhs, o)
           end
 
           -- stylua: ignore start
@@ -40,24 +57,7 @@ return {
         end,
       })
 
-      local servers = {
-        gopls = {},
-        lua_ls = {},
-        solargraph = {
-          mason = false,
-          enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
-          cmd = { "asdf", "exec", "solargraph", "stdio" },
-        },
-        ts_ls = {
-          init_options = {
-            preferences = {
-              importModuleSpecifierPreference = "non-relative",
-            },
-          },
-        },
-        zls = {},
-      }
-
+      local servers = opts.servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       local function setup(server)
