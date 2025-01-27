@@ -7,7 +7,8 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
-    event = "VeryLazy",
+    -- TODO: why does using these events, cause folds to break?
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     config = function()
       vim.diagnostic.config {
         underline = true,
