@@ -4,7 +4,6 @@ return {
     "mfussenegger/nvim-lint",
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
-      events = { "BufWritePost", "BufReadPost", "InsertLeave" },
       linters_by_ft = {
         javascript = { "biomejs", "eslint" },
         javascriptreact = { "biomejs", "eslint" },
@@ -76,7 +75,7 @@ return {
         end
       end
 
-      vim.api.nvim_create_autocmd(opts.events, {
+      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
         group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
         callback = M.debounce(100, M.lint),
       })
