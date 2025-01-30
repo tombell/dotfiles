@@ -1,5 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local g = vim.g
+
+g.mapleader = " "
+g.maplocalleader = " "
 
 local o = vim.opt
 
@@ -37,7 +39,7 @@ o.statuscolumn = "%!v:lua.require'hem'.get()"
 
 o.foldlevel = 99
 o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldexpr = "v:lua.require'util'.ui.foldexpr()"
 o.foldtext = "v:lua.require'pleat'.get()"
 
 o.fillchars:append "fold: "
