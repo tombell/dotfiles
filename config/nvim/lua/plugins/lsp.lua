@@ -5,7 +5,6 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     event = { "BufReadPost", "BufNewFile" },
     opts = {
@@ -65,6 +64,10 @@ return {
           return
         end
 
+        if servers[server].enabled == false then
+          return
+        end
+
         require("lspconfig")[server].setup(vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
         }, servers[server]))
@@ -80,17 +83,7 @@ return {
         end
       end
 
-      vim.list_extend(ensure_installed, {
-        "biome",
-        "gofumpt",
-        "goimports",
-        "prettier",
-        "stylua",
-      })
-
       require("mason").setup()
-      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
-      ---@diagnostic disable: missing-fields
       require("mason-lspconfig").setup { handlers = { setup } }
     end,
   },
