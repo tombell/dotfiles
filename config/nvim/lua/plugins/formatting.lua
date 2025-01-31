@@ -5,7 +5,9 @@ return {
     dependencies = { "mason.nvim" },
     event = "VeryLazy",
     opts = {
-      format_on_save = true,
+      format_on_save = {
+        timeout_ms = 3000,
+      },
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
         javascript = { "biome", "biome-organize-imports", "prettier" },
