@@ -25,6 +25,9 @@ ctrl + shift - f:
             -e '  click menu item "New Finder Window" of menu "File" of menu bar 1 of process "Finder"' \
             -e 'end tell' > /dev/null
 
+ctrl + shift - g:
+  osascript -e 'tell application "Ghostty" to activate'
+
 ctrl + shift - m:
   osascript -e 'tell application "Messages" to activate'
 
