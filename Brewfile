@@ -17,7 +17,7 @@ brew 'zsh-autosuggestions'
 
 cask '1password'
 cask 'font-iosevka-custom'
-cask 'ghostty@tip'
+cask 'ghostty'
 cask 'itsycal'
 cask 'keka'
 cask 'stark@tip'
