@@ -72,10 +72,10 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#ff007c \
 "
 
-[[ -f ~/.localrc ]] && source ~/.localrc
-
 source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix asdf)/libexec/asdf.sh"
+
+[[ -f ~/.localrc ]] && source ~/.localrc
 
 git_prompt_info() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
