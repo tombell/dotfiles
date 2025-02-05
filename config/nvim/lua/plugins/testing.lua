@@ -2,6 +2,7 @@ return {
   -- neotest
   {
     "nvim-neotest/neotest",
+    lazy = true,
     dependencies = {
       -- main
       "nvim-lua/plenary.nvim",
@@ -11,7 +12,6 @@ return {
       "haydenmeade/neotest-jest",
       "lawrence-laz/neotest-zig",
       "marilari88/neotest-vitest",
-      "mmllr/neotest-swift-testing",
       "olimorris/neotest-rspec",
       "zidhuss/neotest-minitest",
     },
@@ -23,7 +23,6 @@ return {
           require "neotest-jest",
           require "neotest-minitest",
           require "neotest-rspec",
-          require "neotest-swift-testing",
           require "neotest-vitest",
           require "neotest-zig",
         },
@@ -31,6 +30,7 @@ return {
     end,
     -- stylua: ignore
     keys = {
+      { "<leader>t", group = "test" },
       { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
       { "<leader>tT", function() require("neotest").run.run(vim.uv.cwd()) end, desc = "Run All Test Files" },
       { "<leader>tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
