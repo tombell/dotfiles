@@ -2,31 +2,34 @@ return {
   -- nvim-lint
   {
     "mfussenegger/nvim-lint",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       linters_by_ft = {
-        javascript = { "biomejs", "eslint" },
-        javascriptreact = { "biomejs", "eslint" },
-        json = { "biomejs" },
-        jsonc = { "biomejs" },
+        javascript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
         ruby = { "rubocop" },
-        typescript = { "biomejs", "eslint" },
-        typescriptreact = { "biomejs", "eslint" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
       },
       linters = {
-        biomejs = {
+        eslint_d = {
           condition = function(ctx)
-            return vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
-          end,
-        },
-        eslint = {
-          condition = function(ctx)
-            return vim.fs.find({ "eslint.config.js" }, { path = ctx.filename, upward = true })[1]
+            return vim.fs.find({
+              "eslint.config.js",
+              "eslint.config.mjs",
+              "eslint.config.cjs",
+              "eslint.config.ts",
+              "eslint.config.mts",
+              "eslint.config.cts",
+            }, { path = ctx.filename, upward = true })[1] ~= nil
           end,
         },
         rubocop = {
           condition = function(ctx)
-            return not vim.fs.find({ ".solargraph.yml" }, { path = ctx.filename, upward = true })[1]
+            return vim.fs.find({ ".solargraph.yml" }, { path = ctx.filename, upward = true })[1] == nil
           end,
         },
       },
