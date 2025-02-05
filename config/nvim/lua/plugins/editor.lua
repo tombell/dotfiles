@@ -43,6 +43,17 @@ return {
   -- snacks.nvim
   {
     "folke/snacks.nvim",
+    opts = {
+      picker = {
+        layout = "vertical",
+        sources = {
+          files = {
+            hidden = true,
+            follow = true,
+          },
+        },
+      },
+    },
     -- stylua: ignore
     keys = {
       { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
@@ -90,17 +101,6 @@ return {
 
       -- UI
       { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
-    },
-    opts = {
-      picker = {
-        layout = "vertical",
-        sources = {
-          files = {
-            hidden = true,
-            follow = true,
-          },
-        },
-      },
     },
   },
 
