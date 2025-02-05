@@ -2,34 +2,41 @@ return {
   -- conform.nvim
   {
     "stevearc/conform.nvim",
-    dependencies = { "mason.nvim" },
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
     event = "VeryLazy",
     opts = {
-      format_on_save = true,
+      format_on_save = {
+        timeout_ms = 3000,
+        lsp_format = "fallback",
+      },
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
-        javascript = { "biome", "biome-organize-imports", "prettier" },
-        javascriptreact = { "biome", "biome-organize-imports", "prettier" },
-        json = { "biome", "prettier" },
-        jsonc = { "biome", "prettier" },
+        javascript = { "prettierd" },
+        javascriptreact = { "prettierd" },
+        json = { "prettierd" },
+        jsonc = { "prettierd" },
         lua = { "stylua" },
-        typescript = { "biome", "biome-organize-imports", "prettier" },
-        typescriptreact = { "biome", "biome-organize-imports", "prettier" },
+        typescript = { "prettierd" },
+        typescriptreact = { "prettierd" },
       },
       formatters = {
-        biome = {
+        prettierd = {
           condition = function(_, ctx)
-            return vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
-          end,
-        },
-        ["biome-organize-imports"] = {
-          condition = function(_, ctx)
-            return vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
-          end,
-        },
-        prettier = {
-          condition = function(_, ctx)
-            return not vim.fs.find({ "biome.json" }, { path = ctx.filename, upward = true })[1]
+            return vim.fs.find({
+              ".prettierrc",
+              ".prettierrc.json",
+              ".prettierrc.yml",
+              ".prettierrc.yaml",
+              ".prettierrc.js",
+              "prettier.config.js",
+              ".prettierrc.mjs",
+              "prettier.config.mjs",
+              ".prettierrc.cjs",
+              "prettier.config.cjs",
+              ".prettierrc.toml",
+            }, { path = ctx.filename, upward = true })[1] ~= nil
           end,
         },
       },
