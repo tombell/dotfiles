@@ -3,7 +3,8 @@ return {
   {
     "tombell/hem.nvim",
     dev = true,
-    event = "VeryLazy",
+    lazy = true,
+    opts = {},
   },
 
   -- lualine.nvim
@@ -35,7 +36,7 @@ return {
   {
     "tombell/pleat.nvim",
     dev = true,
-    event = "VeryLazy",
+    lazy = true,
     opts = {
       foldend_exclude_filetypes = {
         "markdown",
