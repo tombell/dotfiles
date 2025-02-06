@@ -15,7 +15,15 @@ function M.load()
   ---@type LazyConfig
   local opts = {
     spec = {
-      { import = "plugins" },
+      { import = "plugins.colorscheme" },
+      { import = "plugins.treesitter" },
+      { import = "plugins.ui" },
+      { import = "plugins.editor" },
+      { import = "plugins.coding" },
+      { import = "plugins.lsp" },
+      { import = "plugins.linting" },
+      { import = "plugins.formatting" },
+      { import = "plugins.testing" },
     },
     install = {
       colorscheme = { "tokyonight-night" },
