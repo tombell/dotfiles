@@ -7,6 +7,4 @@ if vim.env.PROF then
   }
 end
 
-_G.tombell = require "util"
-
 require("config.lazy").load()
