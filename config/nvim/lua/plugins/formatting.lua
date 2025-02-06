@@ -2,10 +2,7 @@ return {
   -- conform.nvim
   {
     "stevearc/conform.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       format_on_save = {
         timeout_ms = 3000,
@@ -39,6 +36,19 @@ return {
             }, { path = ctx.filename, upward = true })[1] ~= nil
           end,
         },
+      },
+    },
+  },
+
+  -- mason.nvim
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gofumpt",
+        "goimports",
+        "prettierd",
+        "stylua",
       },
     },
   },
