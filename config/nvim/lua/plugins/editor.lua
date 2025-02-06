@@ -146,14 +146,12 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      delay = 800,
+      -- delay = 800,
       preset = "helix",
-      icons = {
-        separator = "",
-      },
       spec = {
         {
           mode = { "n", "v" },
+          { "<leader><tab>", group = "tabs" },
           { "<leader>b", group = "buffer" },
           { "<leader>c", group = "code" },
           { "<leader>f", group = "file/find" },
@@ -168,6 +166,7 @@ return {
           { "[", group = "prev" },
           { "]", group = "next" },
           { "g", group = "goto" },
+          -- { "gs", group = "surround" },
           { "z", group = "fold" },
         },
       },
