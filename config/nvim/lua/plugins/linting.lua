@@ -2,9 +2,6 @@ return {
   -- nvim-lint
   {
     "mfussenegger/nvim-lint",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       linters_by_ft = {
@@ -83,5 +80,16 @@ return {
         callback = M.debounce(100, M.lint),
       })
     end,
+  },
+
+  -- mason.nvim
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "eslint_d",
+        "rubocop",
+      },
+    },
   },
 }

@@ -16,6 +16,8 @@ function M.load()
   local opts = {
     spec = {
       { import = "plugins" },
+      { import = "plugins.formatting" },
+      { import = "plugins.linting" },
     },
     install = {
       colorscheme = { "tokyonight-night" },

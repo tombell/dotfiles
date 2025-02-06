@@ -2,9 +2,6 @@ return {
   -- conform.nvim
   {
     "stevearc/conform.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
     event = "VeryLazy",
     opts = {
       format_on_save = {
@@ -39,6 +36,19 @@ return {
             }, { path = ctx.filename, upward = true })[1] ~= nil
           end,
         },
+      },
+    },
+  },
+
+  -- mason.nvim
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gofumpt",
+        "goimports",
+        "prettierd",
+        "stylua",
       },
     },
   },
