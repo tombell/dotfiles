@@ -107,8 +107,8 @@ return {
   -- todo-comments.nvim
   {
     "folke/todo-comments.nvim",
-    event = "VeryLazy",
-    cmd = { "TodoTrouble", "TodoTelescope" },
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+    cmd = { "TodoTrouble" },
     opts = {
       signs = false,
     },
