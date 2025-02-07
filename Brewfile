@@ -25,11 +25,11 @@ cask 'stark@tip'
 if [personal, work].include?(hostname)
   tap 'tombell/formulae'
 
-  brew 'asdf'
   brew 'fzf'
   brew 'git'
   brew 'jq'
-  brew 'neovim', args: ['HEAD']
+  brew 'libyaml'
+  brew 'mise'
   brew 'tmux'
   brew 'tombell/formulae/tm'
 
@@ -41,9 +41,6 @@ if [personal, work].include?(hostname)
 end
 
 if hostname == personal
-  tap 'oven-sh/bun'
-
-  brew 'bun'
   brew 'ensong'
   brew 'transmission-cli'
 
@@ -60,7 +57,6 @@ if hostname == work
   brew 'libffi'
   brew 'libpq'
   brew 'libxml2'
-  brew 'libyaml'
   brew 'mas'
   brew 'postgresql@16'
   brew 'redis'
