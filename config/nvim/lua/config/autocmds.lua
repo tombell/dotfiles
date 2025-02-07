@@ -1,23 +1,19 @@
-local function augroup(name)
-  return vim.api.nvim_create_augroup("tombell_" .. name, { clear = true })
-end
-
 vim.api.nvim_create_autocmd("BufEnter", {
-  group = augroup "formatoptions",
+  group = vim.api.nvim_create_augroup("tombell-formatoptions", { clear = true }),
   callback = function()
     vim.opt_local.formatoptions:remove { "o" }
   end,
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup "highlight_yank",
+  group = vim.api.nvim_create_augroup("tombell-highlight-yaml", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup "close_with_q",
+  group = vim.api.nvim_create_augroup("tombell-close-with-q", { clear = true }),
   pattern = {
     "checkhealth",
     "help",
