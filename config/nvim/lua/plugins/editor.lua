@@ -63,6 +63,10 @@ return {
       { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
       { "<leader><space>", function() Snacks.picker.files({ cwd = util.root() }) end, desc = "Find Files (Root Dir)" },
 
+      -- Explorer
+      { "<leader>fe", function() Snacks.explorer({ cwd = util.root() }) end, desc = "Explorer (Root Dir)" },
+      { "<leader>fE", function() Snacks.explorer() end, desc = "Explorer" },
+
       -- Find
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
       { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath "config" --[[@as string]] }) end, desc = "Find Config File" },
