@@ -10,36 +10,13 @@ These are my dotfiles for macOS (and Linux).
 4. Save SSH key to `.ssh` directory
 5. Check the SSH key works with `ssh git@github.com`
 6. Clone the dotfiles repository with `git clone git@github.com:tombell/dotfiles.git .dotfiles`
-7. Run the `install` script with `./install`
-
-## Follow Up Setup
-
-These are things I like to setup and configure that I haven't automated yet.
-
-- Update Display size to **More Space**
-- Disable notifications (and **Play sound for notification**) for certain applications
-- Add `~/Downloads` and `~/Code` to directories for **Spotlight** to ignore
-- Turn off the following search results for **Spotlight**
-    * Documents
-    * Folders
-    * Fonts
-    * Images
-    * Movies
-    * Music
-    * Other
-    * PDF Documents
-    * Presentations
-    * Siri Suggestions
-    * Spreadsheets
-    * Tips
-    * Websites
-- Add **Terminal** and **Alacritty** to **Full Disk Access** and **Developer Tools** in **Privacy and Security**
-- Update *Require password after screen saver begins or display is turned off* to **Immediately**
+7. Run the `install-macos` script with `./install-macos`
 
 ### Status Bar Items
 
 - 1Password
 - Stark
+- Itsycal
 - SoundSource
 - WiFi
 - Battery
@@ -51,7 +28,6 @@ These are things I like to setup and configure that I haven't automated yet.
 - Messages
 - Telegram
 - Discord
-- Doppler
-- mpv
+- Mpv
 - Google Chrome
-- Alacritty
+- Ghostty
