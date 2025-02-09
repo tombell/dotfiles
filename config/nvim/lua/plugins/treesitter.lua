@@ -2,7 +2,7 @@ return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre", "VeryLazy" },
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     lazy = vim.fn.argc(-1) == 0,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     opts = {
