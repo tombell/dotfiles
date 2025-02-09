@@ -5,6 +5,7 @@ return {
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       linters_by_ft = {
+        go = { "golangcilint" },
         javascript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
         ruby = { "rubocop" },
@@ -88,6 +89,7 @@ return {
     opts = {
       ensure_installed = {
         "eslint_d",
+        "golangci-lint",
         "rubocop",
       },
     },
