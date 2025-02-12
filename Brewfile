@@ -8,6 +8,7 @@ hostname = `scutil --get ComputerName`.chomp
 
 tap 'starkwm/formulae'
 tap 'thoughtbot/formulae'
+tap 'tombell/formulae'
 
 brew 'fd'
 brew 'rcm'
@@ -23,8 +24,6 @@ cask 'keka'
 cask 'stark@tip'
 
 if [personal, work].include?(hostname)
-  tap 'tombell/formulae'
-
   brew 'fzf'
   brew 'git'
   brew 'jq'
