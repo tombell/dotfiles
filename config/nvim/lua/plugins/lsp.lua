@@ -16,11 +16,17 @@ return {
         },
         tailwindcss = {},
         ts_ls = {
+          enabled = false,
           init_options = {
             preferences = { importModuleSpecifierPreference = "non-relative" },
           },
         },
-        vtsls = { enabled = false },
+        vtsls = {
+          settings = {
+            typescript = { preferences = { importModuleSpecifier = "non-relative" } },
+            javascript = { preferences = { importModuleSpecifier = "non-relative" } },
+          },
+        },
         zls = {},
       },
     },
