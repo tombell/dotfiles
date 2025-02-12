@@ -2,6 +2,6 @@
 
 echo "==> swm config"
 
-if [ -f /Users/tombell/Code/starkwm/swm/.build/debug/swm ]; then
-  /Users/tombell/Code/starkwm/swm/.build/debug/swm --message config --foo=bar --baz -q
+if [ -f "$PROJECTS/starkwm/swm/.build/debug/swm" ]; then
+  $PROJECTS/starkwm/swm/.build/debug/swm --message config --foo=bar --baz -q
 fi
