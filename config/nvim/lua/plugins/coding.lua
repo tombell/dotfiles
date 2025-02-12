@@ -2,7 +2,7 @@ return {
   -- blink.cmp
   {
     "saghen/blink.cmp",
-    version = "v0.*",
+    build = "cargo build --release",
     event = "InsertEnter",
     opts = {
       keymap = {
