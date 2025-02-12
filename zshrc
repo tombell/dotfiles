@@ -41,6 +41,7 @@ export CLICOLOR=1
 export PROJECTS="$HOME/Code"
 export GOPATH=$HOME/.local/share/go
 
+export PATH="$HOME/.neovim/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
@@ -76,7 +77,8 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 
 eval "$(mise activate zsh)"
 
-source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -s "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 git_prompt_info() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
