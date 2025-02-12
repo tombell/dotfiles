@@ -6,7 +6,7 @@ return {
     dependencies = {
       -- main
       "nvim-lua/plenary.nvim",
-      "nvim-neotest/nvim-nio",
+      { "nvim-neotest/nvim-nio", lazy = true },
       -- adapters
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
@@ -14,8 +14,10 @@ return {
       "marilari88/neotest-vitest",
       "olimorris/neotest-rspec",
       "zidhuss/neotest-minitest",
+      { "mmllr/neotest-swift-testing", lazy = true },
     },
     config = function()
+      vim.print "does this get called..."
       ---@diagnostic disable: missing-fields
       require("neotest").setup {
         adapters = {
@@ -25,6 +27,7 @@ return {
           require "neotest-rspec",
           require "neotest-vitest",
           require "neotest-zig",
+          require "neotest-swift-testing",
         },
       }
     end,
