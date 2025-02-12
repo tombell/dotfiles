@@ -14,6 +14,10 @@ return {
         solargraph = {
           enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
         },
+        sourcekit = {
+          mason = false,
+          filetypes = { "swift", "objc" },
+        },
         tailwindcss = {},
         ts_ls = {
           enabled = false,
