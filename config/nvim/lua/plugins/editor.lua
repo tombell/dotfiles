@@ -78,7 +78,7 @@ return {
 
       -- Git
       { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
-      { "<leader>gc", function() Snacks.picker.git_status() end, desc = "Git Status" },
+      { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
 
       -- Grep
       { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
