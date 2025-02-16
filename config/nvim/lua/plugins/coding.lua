@@ -2,7 +2,7 @@ return {
   -- blink.cmp
   {
     "saghen/blink.cmp",
-    build = "cargo build --release",
+    version = "v0.*",
     event = "InsertEnter",
     opts = {
       keymap = {
@@ -18,7 +18,6 @@ return {
       },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-        cmdline = {},
         providers = {
           lazydev = {
             name = "LazyDev",
@@ -27,6 +26,7 @@ return {
           },
         },
       },
+      cmdline = { sources = {} },
     },
   },
 
