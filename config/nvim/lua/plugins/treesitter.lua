@@ -2,6 +2,9 @@ return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      { "starkwm/tree-sitter-skbdrc", config = true },
+    },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     lazy = vim.fn.argc(-1) == 0,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
