@@ -34,6 +34,7 @@ function M.load()
       fallback = true,
     },
     ui = {
+      border = "rounded",
       backdrop = 100,
     },
   }
