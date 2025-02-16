@@ -17,7 +17,6 @@ return {
       { "mmllr/neotest-swift-testing", lazy = true },
     },
     config = function()
-      vim.print "does this get called..."
       ---@diagnostic disable: missing-fields
       require("neotest").setup {
         adapters = {
