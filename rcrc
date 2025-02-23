@@ -1,2 +1,3 @@
+DOTFILES_DIRS="${HOME}/.dotfiles"
 EXCLUDES="bin/* misc/* Brewfile Brewfile.lock.json LICENSE README.md install-macos"
-DOTFILES_DIRS="$HOME/.dotfiles"
+SYMLINK_DIRS="config/karabiner"
