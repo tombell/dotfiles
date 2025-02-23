@@ -11,17 +11,17 @@ tap 'thoughtbot/formulae'
 tap 'tombell/formulae'
 
 brew 'fd'
-brew 'rcm'
 brew 'ripgrep'
-brew 'skbd'
+brew 'starkwm/formulae/skbd'
+brew 'thoughtbot/formulae/rcm'
 brew 'zsh-autosuggestions'
 
 cask '1password'
-cask 'font-iosevka-custom'
 cask 'ghostty'
 cask 'itsycal'
 cask 'keka'
 cask 'stark@tip'
+cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
   brew 'fzf'
@@ -36,7 +36,7 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'keyboardcleantool'
-  cask 'telegram-desktop'
+  cask 'telegram'
 end
 
 if hostname == personal
@@ -51,7 +51,7 @@ if hostname == work
   tap 'auth0/auth0-cli'
   tap 'heroku/brew'
 
-  brew 'auth0'
+  brew 'auth0/auth0-cli/auth0'
   brew 'heroku/brew/heroku'
   brew 'libffi'
   brew 'libpq'
