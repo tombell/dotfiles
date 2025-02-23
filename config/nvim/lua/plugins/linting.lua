@@ -26,6 +26,7 @@ return {
           end,
         },
         rubocop = {
+          enabled = false,
           condition = function(ctx)
             return vim.fs.find({ ".solargraph.yml" }, { path = ctx.filename, upward = true })[1] == nil
           end,
