@@ -1,39 +1,46 @@
 {
-  "global": { "show_in_menu_bar": false },
-  "profiles": [
-    {
-      "complex_modifications": {
-        "rules": [
-          {
-            "description": "Caps Lock -> Escape if pressed alone, else Left Control",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [{ "key_code": "left_control" }],
-                "to_if_alone": [{ "key_code": "escape" }],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "devices": [
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
         {
-          "identifiers": {
-            "is_keyboard": true,
-            "product_id": 34304,
-            "vendor_id": 1452
-          },
-          "ignore": true
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Caps Lock -> Escape if pressed alone, else Left Control",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 4641,
+                        "vendor_id": 17498
+                    },
+                    "ignore": true
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
-      ],
-      "name": "Default profile",
-      "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
-  ]
+    ]
 }
-
