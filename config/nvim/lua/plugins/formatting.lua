@@ -19,23 +19,23 @@ return {
         typescriptreact = { "prettierd" },
       },
       formatters = {
-        -- prettierd = {
-        --   condition = function(_, ctx)
-        --     return vim.fs.find({
-        --       ".prettierrc",
-        --       ".prettierrc.json",
-        --       ".prettierrc.yml",
-        --       ".prettierrc.yaml",
-        --       ".prettierrc.js",
-        --       "prettier.config.js",
-        --       ".prettierrc.mjs",
-        --       "prettier.config.mjs",
-        --       ".prettierrc.cjs",
-        --       "prettier.config.cjs",
-        --       ".prettierrc.toml",
-        --     }, { path = ctx.filename, upward = true })[1] ~= nil
-        --   end,
-        -- },
+        prettierd = {
+          condition = function(_, ctx)
+            return vim.fs.find({
+              ".prettierrc",
+              ".prettierrc.json",
+              ".prettierrc.yml",
+              ".prettierrc.yaml",
+              ".prettierrc.js",
+              "prettier.config.js",
+              ".prettierrc.mjs",
+              "prettier.config.mjs",
+              ".prettierrc.cjs",
+              "prettier.config.cjs",
+              ".prettierrc.toml",
+            }, { path = ctx.filename, upward = true })[1] ~= nil
+          end,
+        },
       },
     },
   },
