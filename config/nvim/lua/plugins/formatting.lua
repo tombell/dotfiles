@@ -10,16 +10,16 @@ return {
       },
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
-        javascript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        json = { "prettierd" },
-        jsonc = { "prettierd" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        json = { "prettier" },
+        jsonc = { "prettier" },
         lua = { "stylua" },
-        typescript = { "prettierd" },
-        typescriptreact = { "prettierd" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
       },
       formatters = {
-        prettierd = {
+        prettier = {
           condition = function(_, ctx)
             return vim.fs.find({
               ".prettierrc",
@@ -47,7 +47,7 @@ return {
       ensure_installed = {
         "gofumpt",
         "goimports",
-        "prettierd",
+        "prettier",
         "stylua",
       },
     },
