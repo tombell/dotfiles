@@ -18,6 +18,7 @@ return {
         },
         sourcekit = {
           mason = false,
+          filetypes = { "swift" },
         },
         tailwindcss = {},
         ts_ls = {
