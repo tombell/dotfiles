@@ -6,14 +6,14 @@ return {
     opts = {
       linters_by_ft = {
         go = { "golangcilint" },
-        javascript = { "eslint_d" },
-        javascriptreact = { "eslint_d" },
+        javascript = { "eslint" },
+        javascriptreact = { "eslint" },
         ruby = { "rubocop" },
-        typescript = { "eslint_d" },
-        typescriptreact = { "eslint_d" },
+        typescript = { "eslint" },
+        typescriptreact = { "eslint" },
       },
       linters = {
-        eslint_d = {
+        eslint = {
           condition = function(ctx)
             return vim.fs.find({
               "eslint.config.js",
@@ -89,7 +89,6 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "eslint_d",
         "golangci-lint",
         "rubocop",
       },
