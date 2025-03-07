@@ -48,4 +48,9 @@ return {
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {},
   },
+
+  {
+    "vim-scripts/applescript.vim",
+    ft = "applescript",
+  },
 }
