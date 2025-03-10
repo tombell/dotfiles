@@ -5,9 +5,6 @@
 hyper - enter:
   osascript ~/.dotfiles/bin/launch-ghostty.scpt > /dev/null
 
-ctrl + shift - enter:
-  osascript ~/.dotfiles/bin/launch-ghostty.scpt > /dev/null
-
 ctrl + shift - b:
   open -na "Google Chrome" --args --new-window
 
