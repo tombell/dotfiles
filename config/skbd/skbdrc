@@ -5,30 +5,25 @@
 hyper - enter:
   osascript ~/.dotfiles/bin/launch-ghostty.scpt > /dev/null
 
-ctrl + shift - b:
+hyper - b:
   open -na "Google Chrome" --args --new-window
 
-ctrl + shift - d:
+hyper - d:
   osascript -e 'tell application "Discord" to activate'
 
-ctrl + shift - e:
+hyper - e:
   osascript -e 'tell application "Mail" to activate'
 
-ctrl + shift - f:
-  osascript -e 'tell application "System Events"' \
-            -e '  click menu item "New Finder Window" of menu "File" of menu bar 1 of process "Finder"' \
-            -e 'end tell' > /dev/null
+hyper - f:
+  osascript ~/.dotfiles/bin/launch-finder.scpt > /dev/null
 
-ctrl + shift - g:
-  osascript -e 'tell application "Ghostty" to activate'
-
-ctrl + shift - m:
+hyper - m:
   osascript -e 'tell application "Messages" to activate'
 
-ctrl + shift - n:
+hyper - n:
   osascript -e 'tell application "Notes" to activate'
 
-ctrl + shift - t:
+hyper - t:
   osascript -e 'tell application "Telegram" to activate'
 
 ################################################################################
