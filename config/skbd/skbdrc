@@ -9,22 +9,22 @@ hyper - b:
   open -na "Google Chrome" --args --new-window
 
 hyper - d:
-  osascript -e 'tell application "Discord" to activate'
+  osascript ~/.dotfiles/bin/launch-discord.scpt > /dev/null
 
 hyper - e:
-  osascript -e 'tell application "Mail" to activate'
+  osascript ~/.dotfiles/bin/launch-mail.scpt > /dev/null
 
 hyper - f:
   osascript ~/.dotfiles/bin/launch-finder.scpt > /dev/null
 
 hyper - m:
-  osascript -e 'tell application "Messages" to activate'
+  osascript ~/.dotfiles/bin/launch-messages.scpt > /dev/null
 
 hyper - n:
-  osascript -e 'tell application "Notes" to activate'
+  osascript ~/.dotfiles/bin/launch-notes.scpt > /dev/null
 
 hyper - t:
-  osascript -e 'tell application "Telegram" to activate'
+  osascript ~/.dotfiles/bin/launch-telegram.scpt > /dev/null
 
 ################################################################################
 # Audio
