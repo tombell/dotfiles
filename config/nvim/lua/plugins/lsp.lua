@@ -10,9 +10,6 @@ return {
       servers = {
         gopls = {},
         lua_ls = {},
-        ruby_lsp = {
-          enabled = false,
-        },
         solargraph = {
           enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
         },
@@ -20,7 +17,9 @@ return {
           mason = false,
           filetypes = { "swift" },
         },
-        tailwindcss = {},
+        tailwindcss = {
+          enabled = false,
+        },
         ts_ls = {
           enabled = false, -- TODO: enable for older node versions, not supported by vtsls
           init_options = {
@@ -34,7 +33,6 @@ return {
             javascript = { preferences = { importModuleSpecifier = "non-relative" } },
           },
         },
-        zls = {},
       },
     },
     config = function(_, opts)
