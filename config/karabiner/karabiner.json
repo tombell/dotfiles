@@ -9,6 +9,7 @@
                 "rules": [
                     {
                         "description": "Remap: Fn to Meh",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
