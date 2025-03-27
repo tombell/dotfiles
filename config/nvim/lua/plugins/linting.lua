@@ -8,7 +8,7 @@ return {
         go = { "golangcilint" },
         javascript = { "eslint" },
         javascriptreact = { "eslint" },
-        ruby = { "rubocop" },
+        -- ruby = { "rubocop" },
         typescript = { "eslint" },
         typescriptreact = { "eslint" },
       },
@@ -90,7 +90,6 @@ return {
     opts = {
       ensure_installed = {
         "golangci-lint",
-        "rubocop",
       },
     },
   },
