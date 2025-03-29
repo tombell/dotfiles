@@ -43,3 +43,5 @@ o.foldexpr = "v:lua.require'util'.ui.foldexpr()"
 o.foldtext = "v:lua.require'pleat'.get()"
 
 o.fillchars:append "fold: "
+
+o.winborder = "rounded"
