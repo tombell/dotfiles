@@ -17,17 +17,8 @@ return {
           mason = false,
           filetypes = { "swift" },
         },
-        tailwindcss = {
-          enabled = false,
-        },
-        ts_ls = {
-          enabled = false, -- TODO: enable for older node versions, not supported by vtsls
-          init_options = {
-            preferences = { importModuleSpecifierPreference = "non-relative" },
-          },
-        },
+        tailwindcss = {},
         vtsls = {
-          enabled = true, -- TODO: disable for older node versions, not supported by vtsls
           settings = {
             typescript = { preferences = { importModuleSpecifier = "non-relative" } },
             javascript = { preferences = { importModuleSpecifier = "non-relative" } },
