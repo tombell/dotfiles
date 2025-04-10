@@ -7,26 +7,26 @@ work = 'Poppi'
 hostname = `scutil --get ComputerName`.chomp
 
 tap 'starkwm/formulae'
-tap 'thoughtbot/formulae'
 tap 'tombell/formulae'
 
 brew 'fd'
+brew 'rcm'
 brew 'ripgrep'
 brew 'starkwm/formulae/skbd'
-brew 'thoughtbot/formulae/rcm'
 brew 'zsh-autosuggestions'
 
 cask '1password'
 cask 'ghostty'
 cask 'itsycal'
 cask 'keka'
-cask 'stark@tip'
+cask 'starkwm/formulae/stark@tip'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
   brew 'fzf'
   brew 'git'
   brew 'jq'
+  brew 'libyaml'
   brew 'mise'
   brew 'tmux'
   brew 'tombell/formulae/tm'
@@ -53,7 +53,6 @@ if hostname == work
   brew 'libffi'
   brew 'libpq'
   brew 'libxml2'
-  brew 'libyaml'
   brew 'mas'
   brew 'postgresql@16'
   brew 'redis'
