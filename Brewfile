@@ -27,7 +27,6 @@ if [personal, work].include?(hostname)
   brew 'fzf'
   brew 'git'
   brew 'jq'
-  brew 'libyaml'
   brew 'mise'
   brew 'tmux'
   brew 'tombell/formulae/tm'
@@ -40,11 +39,9 @@ if [personal, work].include?(hostname)
 end
 
 if hostname == personal
-  brew 'ensong'
   brew 'transmission-cli'
 
   cask 'stolendata-mpv'
-  cask 'xld'
 end
 
 if hostname == work
@@ -56,6 +53,7 @@ if hostname == work
   brew 'libffi'
   brew 'libpq'
   brew 'libxml2'
+  brew 'libyaml'
   brew 'mas'
   brew 'postgresql@16'
   brew 'redis'
