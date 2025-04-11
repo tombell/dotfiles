@@ -41,7 +41,6 @@ export CLICOLOR=1
 export PROJECTS="$HOME/Code"
 export GOPATH=$HOME/.local/share/go
 
-export PATH="$HOME/.local/share/neovim/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
