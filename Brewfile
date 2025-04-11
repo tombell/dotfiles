@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 personal = 'Pyra'
+music = 'Brighid'
 work = 'Poppi'
 
 hostname = `scutil --get ComputerName`.chomp
@@ -16,10 +17,13 @@ brew 'starkwm/formulae/skbd'
 brew 'zsh-autosuggestions'
 
 cask '1password'
+cask 'appcleaner'
 cask 'ghostty'
+cask 'google-chrome'
 cask 'itsycal'
 cask 'keka'
-cask 'starkwm/formulae/stark@tip'
+cask 'keyboardcleantool'
+#cask 'starkwm/formulae/stark@tip'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
@@ -31,10 +35,7 @@ if [personal, work].include?(hostname)
   brew 'tmux'
   brew 'tombell/formulae/tm'
 
-  cask 'appcleaner'
   cask 'discord'
-  cask 'google-chrome'
-  cask 'keyboardcleantool'
   cask 'telegram'
 end
 
