@@ -23,7 +23,7 @@ cask 'google-chrome'
 cask 'itsycal'
 cask 'keka'
 cask 'keyboardcleantool'
-#cask 'starkwm/formulae/stark@tip'
+cask 'starkwm/formulae/stark@tip'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
@@ -36,13 +36,15 @@ if [personal, work].include?(hostname)
   brew 'tombell/formulae/tm'
 
   cask 'discord'
+  cask 'karabiner-elements'
   cask 'telegram'
 end
 
 if hostname == personal
   brew 'transmission-cli'
 
-  cask 'stolendata-mpv'
+  # NOTE: download site not working
+  # cask 'stolendata-mpv'
 end
 
 if hostname == work
