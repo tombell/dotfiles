@@ -32,6 +32,7 @@ if [personal, work].include?(hostname)
   brew 'jq'
   brew 'libyaml'
   brew 'mise'
+  brew 'neovim'
   brew 'tmux'
   brew 'tombell/formulae/tm'
 
