@@ -68,7 +68,6 @@ if hostname == work
   cask 'rapidapi'
   cask 'slack'
   cask 'soundsource'
-  cask 'zoom'
   cask 'zulu@17'
 
   mas 'Xcode', id: 497_799_835
