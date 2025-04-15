@@ -10,9 +10,7 @@ hostname = `scutil --get ComputerName`.chomp
 tap 'starkwm/formulae'
 tap 'tombell/formulae'
 
-brew 'fd'
 brew 'rcm'
-brew 'ripgrep'
 brew 'starkwm/formulae/skbd'
 brew 'zsh-autosuggestions'
 
@@ -20,32 +18,40 @@ cask '1password'
 cask 'appcleaner'
 cask 'ghostty'
 cask 'google-chrome'
-cask 'itsycal'
 cask 'keka'
 cask 'keyboardcleantool'
 cask 'starkwm/formulae/stark@tip'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
+  brew 'fd'
   brew 'fzf'
   brew 'git'
   brew 'jq'
   brew 'libyaml'
+  brew 'mas'
   brew 'mise'
   brew 'neovim'
+  brew 'ripgrep'
   brew 'tmux'
   brew 'tombell/formulae/tm'
 
   cask 'discord'
+  cask 'itsycal'
   cask 'karabiner-elements'
   cask 'telegram'
+
+  mas 'Xcode', id: 497_799_835
 end
 
 if hostname == personal
   brew 'transmission-cli'
 
-  # NOTE: download site not working
-  # cask 'stolendata-mpv'
+  cask 'stolendata-mpv'
+end
+
+if hostname == music
+  cask 'rekordbox'
 end
 
 if hostname == work
@@ -57,7 +63,6 @@ if hostname == work
   brew 'libffi'
   brew 'libpq'
   brew 'libxml2'
-  brew 'mas'
   brew 'postgresql@16'
   brew 'redis'
 
@@ -69,6 +74,4 @@ if hostname == work
   cask 'slack'
   cask 'soundsource'
   cask 'zulu@17'
-
-  mas 'Xcode', id: 497_799_835
 end
