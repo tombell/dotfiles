@@ -76,10 +76,6 @@ defaults write com.apple.WindowManager StageManagerHideWidgets -int 1
 # Automatically rearrange spaces based on most recent use
 defaults write com.apple.dock mru-spaces -int 0
 
-# When switching to an application, switch to a space with open windows for the
-# application
-# defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -int 0
-
 # Bottom right hot corner
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 0
@@ -124,10 +120,10 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
 ###############################################################################
 
 # Tap to click
-# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Natural scrolling
-# defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
 
 ###############################################################################
 # FINDER
