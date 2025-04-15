@@ -74,12 +74,10 @@ Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map "<leade
 Snacks.toggle.diagnostics():map "<leader>ud"
 Snacks.toggle.inlay_hints():map "<leader>uh"
 
-if vim.fn.has "nvim-0.11" == 1 then
-  vim.keymap.set("n", "<leader>uv", function()
-    vim.diagnostic.config {
-      virtual_lines = {
-        current_line = not vim.diagnostic.config().virtual_lines,
-      },
-    }
-  end, { desc = "Toggle diagnostic virtual lines" })
-end
+vim.keymap.set("n", "<leader>uv", function()
+  if not vim.diagnostic.config().virtual_lines then
+    vim.diagnostic.config { virtual_lines = { current_line = true } }
+  else
+    vim.diagnostic.config { virtual_lines = false }
+  end
+end, { desc = "Toggle diagnostic virtual lines" })
