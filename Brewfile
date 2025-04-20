@@ -39,6 +39,7 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'itsycal'
   cask 'karabiner-elements'
+  cask 'spotify'
   cask 'telegram'
 
   mas 'Xcode', id: 497_799_835
