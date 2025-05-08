@@ -31,10 +31,10 @@ hyper - t:
 ################################################################################
 
 ctrl + shift - [:
-  shortcuts run "Toggle Headphone EQ"
+  shortcuts run "Lower Chrome Volume"
 
 ctrl + shift - ]:
-  shortcuts run "Toggle Global Mute"
+  shortcuts run "Raise CHrome Volume"
 
 ################################################################################
 # Home
