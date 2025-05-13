@@ -23,6 +23,9 @@ hyper - m:
 hyper - n:
   osascript ~/.dotfiles/bin/launch-notes.scpt > /dev/null
 
+hyper - s:
+  osascript ~/.dotfiles/bin/launch-spotify.scpt > /dev/null
+
 hyper - t:
   osascript ~/.dotfiles/bin/launch-telegram.scpt > /dev/null
 
