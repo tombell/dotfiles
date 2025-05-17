@@ -6,7 +6,7 @@ hyper - enter:
   osascript ~/.dotfiles/bin/launch-ghostty.scpt > /dev/null
 
 hyper - b:
-  open -na "Google Chrome" --args --new-window
+  osascript ~/.dotfiles/bin/launch-chrome.scpt > /dev/null
 
 hyper - d:
   osascript ~/.dotfiles/bin/launch-discord.scpt > /dev/null
