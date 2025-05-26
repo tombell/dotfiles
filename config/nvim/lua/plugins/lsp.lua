@@ -6,55 +6,32 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      servers = {
-        gopls = {},
-        lua_ls = {},
-        solargraph = {
-          enabled = vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil,
-        },
-        sourcekit = {
-          mason = false,
-          filetypes = { "swift" },
-        },
-        tailwindcss = {},
-        vtsls = {
-          settings = {
-            typescript = { preferences = { importModuleSpecifier = "non-relative" } },
-            javascript = { preferences = { importModuleSpecifier = "non-relative" } },
-          },
-        },
-      },
-    },
-    config = function(_, opts)
-      local servers = opts.servers
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-      local function setup(server)
-        if servers[server] == nil then
-          return
-        end
-
-        require("lspconfig")[server].setup(vim.tbl_deep_extend("force", {
-          capabilities = vim.deepcopy(capabilities),
-        }, servers[server]))
-      end
-
-      local ensure_installed = {}
-
-      for server, server_opts in pairs(servers) do
-        if server_opts.mason == false then
-          setup(server)
-        else
-          ensure_installed[#ensure_installed + 1] = server
-        end
-      end
-
+    config = function()
       require("mason-lspconfig").setup {
+        automatic_enable = false,
         automatic_installation = true,
-        ensure_installed = ensure_installed,
-        handlers = { setup },
+        ensure_installed = {
+          "gopls",
+          "lua_ls",
+          "solargraph",
+          "tailwindcss",
+          "vtsls",
+        },
       }
+
+      vim.lsp.config("sourcekit", { filetypes = { "swift" } })
+      vim.lsp.config("vtsls", {
+        settings = {
+          typescript = { preferences = { importModuleSpecifier = "non-relative" } },
+          javascript = { preferences = { importModuleSpecifier = "non-relative" } },
+        },
+      })
+
+      vim.lsp.enable "gopls"
+      vim.lsp.enable "lua_ls"
+      vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
+      vim.lsp.enable "tailwindcss"
+      vim.lsp.enable "vtsls"
     end,
   },
 
