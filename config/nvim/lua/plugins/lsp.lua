@@ -8,8 +8,9 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mason-lspconfig").setup {
-        automatic_enable = false,
-        automatic_installation = true,
+        automatic_enable = {
+          exclude = { "solargraph" },
+        },
         ensure_installed = {
           "gopls",
           "lua_ls",
@@ -27,11 +28,7 @@ return {
         },
       })
 
-      vim.lsp.enable "gopls"
-      vim.lsp.enable "lua_ls"
       vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
-      vim.lsp.enable "tailwindcss"
-      vim.lsp.enable "vtsls"
     end,
   },
 
