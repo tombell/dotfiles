@@ -131,16 +131,6 @@ sessions:
           - ./go run
       - name: editor
 
-  - name: signage
-    root: ./signage
-    after_start:
-      - tmux select-window -t 1
-    windows:
-      - name: server
-        commands:
-          - ./go run
-      - name: editor
-
   - name: switchboard
     root: ./switchboard
     after_start:
