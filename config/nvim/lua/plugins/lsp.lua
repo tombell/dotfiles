@@ -3,47 +3,26 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason-lspconfig.nvim",
+      "williamboman/mason.nvim",
     },
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("mason-lspconfig").setup {
-        automatic_enable = {
-          exclude = { "solargraph" },
-        },
-        ensure_installed = {
-          "gopls",
-          "lua_ls",
-          "solargraph",
-          "tailwindcss",
-          "vtsls",
-        },
-      }
-
-      vim.lsp.config("sourcekit", { filetypes = { "swift" } })
-      vim.lsp.config("vtsls", {
-        settings = {
-          typescript = { preferences = { importModuleSpecifier = "non-relative" } },
-          javascript = { preferences = { importModuleSpecifier = "non-relative" } },
-        },
-      })
-
-      vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
-    end,
   },
 
   -- mason.nvim
   {
     "williamboman/mason.nvim",
-    cmd = "Mason",
     keys = {
       { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
     },
     opts_extend = { "ensure_installed" },
     opts = {
-      ensure_installed = {},
+      ensure_installed = {
+        "gopls",
+        "lua-language-server",
+        "solargraph",
+        "tailwindcss-language-server",
+        "vtsls",
+      },
       ui = {
-        border = "rounded",
         backdrop = 100,
       },
     },
