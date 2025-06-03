@@ -118,17 +118,3 @@ Keymap.on("left", ctrlShift, () => moveWindowToScreen("left"));
 
 // Move window to secondary display
 Keymap.on("right", ctrlShift, () => moveWindowToScreen("right"));
-
-// -----------------------------------------------------------------------------
-// SPACES MANAGEMENT
-// -----------------------------------------------------------------------------
-
-[...Array(Space.all().length).keys()].forEach((i) => {
-  Keymap.on(`${i + 1}`, ctrlShift, () => {
-    const win = Window.focused();
-
-    if (!win) return;
-
-    Space.at(i).moveWindow(win);
-  });
-});
