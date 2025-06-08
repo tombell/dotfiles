@@ -5,8 +5,5 @@ vim.lsp.config("vtsls", {
   },
 })
 
-vim.lsp.enable "gopls"
-vim.lsp.enable "lua_ls"
 vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
-vim.lsp.enable "tailwindcss"
-vim.lsp.enable "vtsls"
+vim.lsp.enable { "gopls", "lua_ls", "tailwindcss", "vtsls" }
