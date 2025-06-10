@@ -31,6 +31,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    vim.iter(vim.lsp.get_clients()):each(function(client)
+      client:stop()
+    end)
+  end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
   callback = function(event)
