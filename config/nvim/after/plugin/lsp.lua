@@ -1,3 +1,5 @@
+vim.lsp.set_log_level "OFF"
+
 vim.lsp.config("vtsls", {
   settings = {
     typescript = { preferences = { importModuleSpecifier = "non-relative" } },
