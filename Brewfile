@@ -34,7 +34,6 @@ if [personal, work].include?(hostname)
   brew 'neovim'
   brew 'ripgrep'
   brew 'tmux'
-  brew 'tombell/formulae/tm'
 
   cask 'discord'
   cask 'itsycal'
@@ -66,6 +65,7 @@ if hostname == work
   brew 'libxml2'
   brew 'postgresql@16'
   brew 'redis'
+  brew 'tombell/formulae/tm'
 
   cask 'android-studio'
   cask 'chromedriver'
