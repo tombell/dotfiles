@@ -36,14 +36,14 @@ hyper - t:
 # Home
 ################################################################################
 
+ctrl + opt - 0:
+  shortcuts run "All Off"
+
 ctrl + opt - 1:
-  shortcuts run "Bedroom"
+  shortcuts run "Main Bedroom"
 
 ctrl + opt - 2:
-  shortcuts run "Living Room"
-
-ctrl + opt - 3:
   shortcuts run "Guest Bedroom"
 
-ctrl + opt - 4:
-  shortcuts run "All Off"
+ctrl + opt - 3:
+  shortcuts run "Living Room"
