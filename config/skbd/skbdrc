@@ -32,6 +32,9 @@ hyper - s:
 hyper - t:
   osascript ~/.dotfiles/bin/launch-telegram.scpt > /dev/null
 
+hyper - x:
+  osascript ~/.dotfiles/bin/launch-xcode.scpt > /dev/null
+
 ################################################################################
 # Home
 ################################################################################
