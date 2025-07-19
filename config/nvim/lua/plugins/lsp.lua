@@ -21,6 +21,7 @@ return {
         "solargraph",
         "tailwindcss-language-server",
         "vtsls",
+        "zls",
       },
       ui = {
         backdrop = 100,

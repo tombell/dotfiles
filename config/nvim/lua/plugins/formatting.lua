@@ -17,6 +17,7 @@ return {
         lua = { "stylua" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        zig = { "zigfmt" },
       },
       formatters = {
         prettier = {
