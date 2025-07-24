@@ -15,6 +15,7 @@ return {
         json = { "prettier" },
         jsonc = { "prettier" },
         lua = { "stylua" },
+        swift = { "swift_format" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         zig = { "zigfmt" },
