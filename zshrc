@@ -38,7 +38,7 @@ bindkey "^P" history-search-backward
 
 export CLICOLOR=1
 
-export PROJECTS="$HOME/Documents"
+export PROJECTS="$HOME/Code"
 export GOPATH=$HOME/.local/share/go
 
 export PATH="$HOME/.dotfiles/bin:$PATH"
