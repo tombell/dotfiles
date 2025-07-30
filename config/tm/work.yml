@@ -1,4 +1,4 @@
-root: ~/Documents/residently
+root: ~/Code/residently
 
 sessions:
   - name: backstage
