@@ -10,7 +10,7 @@ return {
         ["<tab>"] = { "select_next", "fallback" },
         ["<s-tab>"] = { "select_prev", "fallback" },
       },
-      signature = { enabled = true },
+      signature = { enabled = false },
       completion = {
         list = {
           selection = { preselect = false, auto_insert = true },
