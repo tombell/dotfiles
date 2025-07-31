@@ -60,6 +60,7 @@ if hostname == work
   tap 'heroku/brew'
 
   brew 'auth0/auth0-cli/auth0'
+  brew 'git-lfs'
   brew 'heroku/brew/heroku'
   brew 'libffi'
   brew 'libpq'
