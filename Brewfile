@@ -70,7 +70,6 @@ if hostname == work
 
   cask 'android-studio'
   cask 'chromedriver'
-  cask 'displaylink'
   cask 'postico'
   cask 'rapidapi'
   cask 'slack'
