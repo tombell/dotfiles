@@ -76,7 +76,7 @@ Snacks.toggle.inlay_hints():map "<leader>uh"
 
 vim.keymap.set("n", "<leader>uv", function()
   if not vim.diagnostic.config().virtual_lines then
-    vim.diagnostic.config { virtual_lines = { current_line = true } }
+    vim.diagnostic.config { virtual_lines = true }
   else
     vim.diagnostic.config { virtual_lines = false }
   end
