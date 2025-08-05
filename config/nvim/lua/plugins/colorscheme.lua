@@ -5,9 +5,6 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      styles = {
-        comments = { italic = false },
-      },
       on_highlights = function(highlights, colors)
         highlights.Folded = { fg = colors.blue0 }
         highlights.WinSeparator = { fg = colors.bg_visual }
