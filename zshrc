@@ -97,6 +97,7 @@ alias e="nvim"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 alias d="cd ~/.dotfiles"
+alias n="cd ~/.dotfiles/config/nvim"
 
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
