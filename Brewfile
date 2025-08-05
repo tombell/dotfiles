@@ -42,7 +42,8 @@ if [personal, work].include?(hostname)
   cask 'spotify'
   cask 'telegram'
 
-  mas 'Xcode', id: 497_799_835
+  mas 'Xcode', id: 497799835
+  mas 'uBlock Origin Lite', id: 6745342698
 end
 
 if hostname == personal
