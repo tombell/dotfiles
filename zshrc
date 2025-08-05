@@ -1,6 +1,6 @@
-fpath=(~/.config/zsh/completion /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh/site-functions $fpath)
+fpath=($HOME/.config/zsh/completion /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh/site-functions $fpath)
 
-for function in ~/.config/zsh/functions/*; do
+for function in $HOME/.config/zsh/functions/*; do
   source $function
 done
 
@@ -72,7 +72,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#ff007c \
 "
 
-[[ -f ~/.localrc ]] && source ~/.localrc
+[[ -f $HOME/.localrc ]] && source $HOME/.localrc
 
 eval "$(mise activate zsh)"
 
@@ -96,8 +96,8 @@ alias e="nvim"
 
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias d="cd ~/.dotfiles"
-alias n="cd ~/.dotfiles/config/nvim"
+alias d="cd $HOME/.dotfiles"
+alias n="cd $HOME/.dotfiles/config/nvim"
 
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
