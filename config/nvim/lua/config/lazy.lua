@@ -26,7 +26,7 @@ function M.load()
       { import = "plugins.testing" },
     },
     install = {
-      colorscheme = { "tokyonight-night" },
+      colorscheme = { "vague" },
     },
     dev = {
       path = "~/Code/tombell",

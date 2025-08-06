@@ -11,8 +11,25 @@ return {
         highlights.SnacksIndentScope = { fg = colors.blue0 }
       end,
     },
+    -- init = function()
+    --   vim.cmd.colorscheme "tokyonight-night"
+    -- end,
+  },
+
+  -- vague.nvim
+  {
+    "vague2k/vague.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      on_highlights = function(highlights, colors)
+        -- highlights.Folded = { fg = colors.blue0 }
+        -- highlights.WinSeparator = { fg = colors.bg_visual }
+        -- highlights.SnacksIndentScope = { fg = colors.blue0 }
+      end,
+    },
     init = function()
-      vim.cmd.colorscheme "tokyonight-night"
+      vim.cmd.colorscheme "vague"
     end,
   },
 }
