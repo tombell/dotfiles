@@ -27,6 +27,7 @@ if [personal, work].include?(hostname)
   brew 'fd'
   brew 'fzf'
   brew 'git'
+  brew 'jj'
   brew 'jq'
   brew 'libyaml'
   brew 'mas'
@@ -42,6 +43,7 @@ if [personal, work].include?(hostname)
   cask 'spotify'
   cask 'telegram'
 
+  mas 'Kagi for Safari', id: 1622835804
   mas 'Xcode', id: 497799835
   mas 'uBlock Origin Lite', id: 6745342698
 end
