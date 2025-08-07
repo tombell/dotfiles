@@ -19,7 +19,6 @@ return {
         "gopls",
         "lua-language-server",
         "solargraph",
-        "tailwindcss-language-server",
         "vtsls",
         "zls",
       },
