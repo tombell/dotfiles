@@ -13,6 +13,7 @@ return {
     opts = {
       sections = {
         lualine_c = { { "filename", path = 1 } },
+        lualine_x = { { "lsp_status", icon = "" }, "encoding", "fileformat", "filetype" },
       },
     },
   },
