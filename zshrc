@@ -100,6 +100,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias d="cd $HOME/.dotfiles"
 alias n="cd $HOME/.dotfiles/config/nvim"
 
+alias bup="brew upgrade && brew cleanup -s --prune=all"
 alias bl="brew list -1 --formula"
 alias blc="brew list -1 --cask"
 alias bd="brew leaves | xargs brew deps --formula --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
