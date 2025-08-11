@@ -20,7 +20,7 @@ o.hlsearch = false
 
 o.laststatus = 3
 
-o.shortmess:append { W = true, I = true, c = true, C = true }
+o.shortmess:append { I = true }
 
 o.showmode = false
 
