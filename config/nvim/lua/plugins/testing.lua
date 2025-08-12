@@ -10,7 +10,6 @@ return {
       -- adapters
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
-      "lawrence-laz/neotest-zig",
       "marilari88/neotest-vitest",
       { "mmllr/neotest-swift-testing", lazy = true },
       "olimorris/neotest-rspec",
@@ -25,7 +24,6 @@ return {
           require "neotest-minitest",
           require "neotest-rspec",
           require "neotest-vitest",
-          require "neotest-zig",
           require "neotest-swift-testing",
         },
       }
