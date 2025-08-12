@@ -5,7 +5,6 @@ font-feature = -dlig
 adjust-underline-position = 6
 
 shell-integration-features = no-cursor
-cursor-style = block
 cursor-style-blink = false
 
 theme = tokyonight
