@@ -8,23 +8,21 @@ return {
       "nvim-lua/plenary.nvim",
       { "nvim-neotest/nvim-nio", lazy = true },
       -- adapters
+      -- "Arthur944/neotest-bun",
       "fredrikaverpil/neotest-golang",
       "haydenmeade/neotest-jest",
       "marilari88/neotest-vitest",
-      { "mmllr/neotest-swift-testing", lazy = true },
       "olimorris/neotest-rspec",
-      "zidhuss/neotest-minitest",
     },
     config = function()
       ---@diagnostic disable: missing-fields
       require("neotest").setup {
         adapters = {
+          -- require "neotest-bun",
           require "neotest-golang",
           require "neotest-jest",
-          require "neotest-minitest",
           require "neotest-rspec",
           require "neotest-vitest",
-          require "neotest-swift-testing",
         },
       }
     end,
