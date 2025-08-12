@@ -16,6 +16,5 @@ window-padding-balance = true
 
 macos-titlebar-style = hidden
 
-working-directory = home
 window-inherit-working-directory = false
 window-save-state = never
