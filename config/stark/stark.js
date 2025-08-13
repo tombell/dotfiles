@@ -90,27 +90,38 @@ Keymap.on("h", ctrlShiftOpt, () => grid(12, 10, 8, 10, 0, 0));
 // Right-two thirds
 Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
 
+const menuBarOffset = (screen) =>
+  screen.flippedFrame.height - screen.flippedVisibleFrame.height;
+
 const moveWindowToScreen = (direction) => {
   const win = Window.focused();
-
   if (!win) return;
 
-  const primary = Screen.all()[0];
-  const secondary = Screen.all()[1];
-
-  let deltaX;
-
-  if (direction === "left" && win.screen.id === secondary.id) {
-    // TODO: when going to primary monitor, need to adjust X and height to remove space for menu bar
-    deltaX = -win.screen.flippedVisibleFrame.width;
-  } else if (direction === "right" && win.screen.id === primary.id) {
-    // TODO: when going to secondary monitor, need to adjust X and height to add space for menu bar
-    deltaX = win.screen.flippedVisibleFrame.width;
-  }
-
+  const [primary, secondary] = Screen.all();
   const { x, y, width, height } = win.frame;
 
-  win.setFrame({ width, height, x: x + deltaX, y: y });
+  let deltaX = 0;
+  let newY = y;
+  let newHeight = height;
+
+  if (direction === "left" && win.screen.id === secondary.id) {
+    deltaX = -win.screen.flippedVisibleFrame.width;
+    const offset = menuBarOffset(primary);
+    newY += offset;
+    newHeight -= offset;
+  } else if (direction === "right" && win.screen.id === primary.id) {
+    deltaX = win.screen.flippedVisibleFrame.width;
+    const offset = menuBarOffset(primary);
+    newY -= offset;
+    newHeight += offset;
+  }
+
+  win.setFrame({
+    x: x + deltaX,
+    y: newY,
+    width,
+    height: newHeight,
+  });
 };
 
 // Move window to primary display
