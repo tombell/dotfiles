@@ -1,8 +1,3 @@
-local g = vim.g
-
-g.mapleader = " "
-g.maplocalleader = " "
-
 local o = vim.opt
 
 o.termguicolors = true
