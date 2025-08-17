@@ -79,7 +79,6 @@ if command -v mise >/dev/null 2>&1; then
 fi
 
 [ -s "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 git_prompt_info() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
