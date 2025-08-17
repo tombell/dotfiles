@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+alias d="cd $HOME/.dotfiles"
+alias n="cd $HOME/.dotfiles/config/nvim"

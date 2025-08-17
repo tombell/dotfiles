@@ -74,7 +74,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 
 [[ -f $HOME/.localrc ]] && source $HOME/.localrc
 
-eval "$(mise activate zsh)"
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
 
 [ -s "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -88,27 +90,6 @@ git_prompt_info() {
 
 PROMPT='%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%}--- %{$reset_color%}'
 
-alias l="ls -lAh"
-alias ll="ls -al"
-alias la="ls -A"
-
-alias e="nvim"
-
-alias path='echo $PATH | tr -s ":" "\n"'
-
-alias d="cd $HOME/.dotfiles"
-alias n="cd $HOME/.dotfiles/config/nvim"
-
-alias bup="brew upgrade && brew cleanup -s --prune=all"
-alias bl="brew list -1 --formula"
-alias blc="brew list -1 --cask"
-alias bd="brew leaves | xargs brew deps --formula --for-each | sed \"s/^.*:/$(tput setaf 4)&$(tput sgr0)/\""
-
-alias todo="rg -F 'TODO'"
-
-alias urepo='for d in *; do (cd $d && pwd && git pull && echo); done'
-alias brepo='for d in *; do (cd "$d" && pwd && git branch && echo); done'
-
-alias ds='find . -name ".DS_Store" -type f -delete'
-
-alias safe='xattr -r -d com.apple.quarantine'
+for file in "$HOME/.config/zsh/aliases/"*; do
+  [ -f "$file" ] && source "$file"
+done
