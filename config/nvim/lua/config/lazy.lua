@@ -7,14 +7,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local g = vim.g
-
-g.mapleader = " "
-g.maplocalleader = " "
-
 local M = {}
 
 function M.load()
+  require "config.options"
+
   ---@type LazyConfig
   local opts = {
     spec = {
@@ -44,7 +41,6 @@ function M.load()
 
   require("lazy").setup(opts)
 
-  require "config.options"
   require "config.autocmds"
   require "config.keymaps"
 end
