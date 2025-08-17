@@ -25,7 +25,7 @@ autoload -U colors
 colors
 
 autoload -Uz compinit
-if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+if [ -n $HOME/.zcompdump(#qN.mh+24) ]; then
   compinit -d $HOME/.zcompdump
 else
   compinit -C
@@ -72,7 +72,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=spinner:#ff007c \
 "
 
-[[ -f $HOME/.localrc ]] && source $HOME/.localrc
+[ -f $HOME/.localrc ] && source $HOME/.localrc
 
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
@@ -83,7 +83,7 @@ fi
 
 git_prompt_info() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-  if [[ -n $current_branch ]]; then
+  if [ -n $current_branch ]; then
     echo "%{$fg[blue]%}$current_branch "
   fi
 }
