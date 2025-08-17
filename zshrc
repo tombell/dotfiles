@@ -41,7 +41,7 @@ export CLICOLOR=1
 export PROJECTS="$HOME/Code"
 export GOPATH=$HOME/.local/share/go
 
-export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 export VISUAL=nvim

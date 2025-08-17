@@ -18,7 +18,7 @@ echo "==> Installing dotfiles..."
 rcup -d "${HOME}/.dotfiles" \
      -t macos \
      -S karabiner \
-     -x bin -x Brewfile -x LICENSE -x README.md -x install
+     -x Brewfile -x LICENSE -x README.md -x install
 
 ###############################################################################
 # SETTINGS
