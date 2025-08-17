@@ -1,19 +1,24 @@
 #!/usr/bin/env bash
 set -e
 
+DOTFILES="${HOME}/.dotfiles"
+
 ###############################################################################
 # HOMEBREW
 ###############################################################################
 
 echo "==> Installing homebrew formulae and casks..."
-brew bundle
+brew bundle --file "${DOTFILES}/tag-macos/Brewfile"
 
 ###############################################################################
 # RCM
 ###############################################################################
 
 echo "==> Installing dotfiles..."
-env RCRC="$(pwd)/rcrc" rcup
+rcup -d "${HOME}/.dotfiles" \
+     -t macos \
+     -S karabiner \
+     -x bin -x misc -x Brewfile -x LICENSE -x README.md -x install
 
 ###############################################################################
 # SETTINGS
