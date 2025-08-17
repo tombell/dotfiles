@@ -3,37 +3,37 @@
 ################################################################################
 
 hyper - enter:
-  osascript ~/.dotfiles/bin/launch-ghostty.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-ghostty.scpt > /dev/null
 
 hyper - b:
-  osascript ~/.dotfiles/bin/launch-chrome.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-chrome.scpt > /dev/null
 
 hyper - d:
-  osascript ~/.dotfiles/bin/launch-discord.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-discord.scpt > /dev/null
 
 hyper - e:
-  osascript ~/.dotfiles/bin/launch-mail.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-mail.scpt > /dev/null
 
 hyper - f:
-  osascript ~/.dotfiles/bin/launch-finder.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-finder.scpt > /dev/null
 
 hyper - m:
-  osascript ~/.dotfiles/bin/launch-messages.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-messages.scpt > /dev/null
 
 hyper - n:
-  osascript ~/.dotfiles/bin/launch-notes.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-notes.scpt > /dev/null
 
 hyper - p:
-  osascript ~/.dotfiles/bin/launch-photos.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-photos.scpt > /dev/null
 
 hyper - s:
-  osascript ~/.dotfiles/bin/launch-spotify.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-spotify.scpt > /dev/null
 
 hyper - t:
-  osascript ~/.dotfiles/bin/launch-telegram.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-telegram.scpt > /dev/null
 
 hyper - x:
-  osascript ~/.dotfiles/bin/launch-xcode.scpt > /dev/null
+  osascript ~/.dotfiles/tag-macos/bin/launch-xcode.scpt > /dev/null
 
 ################################################################################
 # Home
