@@ -87,7 +87,6 @@ git_prompt_info() {
 }
 
 PROMPT='%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%}--- %{$reset_color%}'
-# PROMPT='%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%} %{$reset_color%}'
 
 alias l="ls -lAh"
 alias ll="ls -al"
