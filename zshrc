@@ -34,5 +34,3 @@ _load_settings "$HOME/.config/zsh/configs"
 export PROJECTS="$HOME/Code"
 
 [ -f $HOME/.localrc ] && source $HOME/.localrc
-
-[ -s "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
