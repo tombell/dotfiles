@@ -3,37 +3,37 @@
 ################################################################################
 
 hyper - enter:
-  osascript ~/.bin/launch-ghostty.scpt > /dev/null
+  osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
 hyper - b:
-  osascript ~/.bin/launch-chrome.scpt > /dev/null
+  osascript ~/.local/bin/launch-chrome.scpt > /dev/null
 
 hyper - d:
-  osascript ~/.bin/launch-discord.scpt > /dev/null
+  osascript ~/.local/bin/launch-discord.scpt > /dev/null
 
 hyper - e:
-  osascript ~/.bin/launch-mail.scpt > /dev/null
+  osascript ~/.local/bin/launch-mail.scpt > /dev/null
 
 hyper - f:
-  osascript ~/.bin/launch-finder.scpt > /dev/null
+  osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
 hyper - m:
-  osascript ~/.bin/launch-messages.scpt > /dev/null
+  osascript ~/.local/bin/launch-messages.scpt > /dev/null
 
 hyper - n:
-  osascript ~/.bin/launch-notes.scpt > /dev/null
+  osascript ~/.local/bin/launch-notes.scpt > /dev/null
 
 hyper - p:
-  osascript ~/.bin/launch-photos.scpt > /dev/null
+  osascript ~/.local/bin/launch-photos.scpt > /dev/null
 
 hyper - s:
-  osascript ~/.bin/launch-spotify.scpt > /dev/null
+  osascript ~/.local/bin/launch-spotify.scpt > /dev/null
 
 hyper - t:
-  osascript ~/.bin/launch-telegram.scpt > /dev/null
+  osascript ~/.local/bin/launch-telegram.scpt > /dev/null
 
 hyper - x:
-  osascript ~/.bin/launch-xcode.scpt > /dev/null
+  osascript ~/.local/bin/launch-xcode.scpt > /dev/null
 
 ################################################################################
 # Home
