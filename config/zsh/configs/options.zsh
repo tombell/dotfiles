@@ -1,0 +1,3 @@
+setopt extendedglob
+
+unsetopt nomatch

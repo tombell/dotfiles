@@ -1,4 +1,6 @@
-#!/usr/bin/env zsh
+alias ds='find . -name ".DS_Store" -type f -delete'
+
+alias safe='xattr -r -d com.apple.quarantine'
 
 alias bup="brew upgrade && brew cleanup -s --prune=all"
 

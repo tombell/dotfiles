@@ -1,94 +1,38 @@
-fpath=($HOME/.config/zsh/completion /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh/site-functions $fpath)
-
 for function in $HOME/.config/zsh/functions/*; do
   source $function
 done
 
-# enable extended globbing
-setopt extendedglob
+_load_settings() {
+  _dir="$1"
+  if [ -d "$_dir" ]; then
+    if [ -d "$_dir/pre" ]; then
+      for config in "$_dir"/pre/**/*~*.zwc(N-.); do
+        . $config
+      done
+    fi
 
-# better history handling
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
-setopt inc_append_history
+    for config in "$_dir"/**/*(N-.); do
+      case "$config" in
+        "$_dir"/(pre|post)/*|*.zwc)
+          :
+          ;;
+        *)
+          . $config
+          ;;
+      esac
+    done
 
-# allow [ or ] whereever you want
-unsetopt nomatch
-
-setopt promptsubst
-
-HISTSIZE=4096
-SAVEHIST=4096
-
-autoload -U colors
-colors
-
-autoload -Uz compinit
-if [ -n $HOME/.zcompdump(#qN.mh+24) ]; then
-  compinit -d $HOME/.zcompdump
-else
-  compinit -C
-fi
-
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^R" history-incremental-search-backward
-bindkey "^P" history-search-backward
-
-export CLICOLOR=1
+    if [ -d "$_dir/post" ]; then
+      for config in "$_dir"/post/**/*~*.zwc(N-.); do
+        . $config
+      done
+    fi
+  fi
+}
+_load_settings "$HOME/.config/zsh/configs"
 
 export PROJECTS="$HOME/Code"
-export GOPATH=$HOME/.local/share/go
-
-export PATH="$HOME/.bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-
-export VISUAL=nvim
-export EDITOR=$VISUAL
-
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
-"
 
 [ -f $HOME/.localrc ] && source $HOME/.localrc
 
-if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh)"
-fi
-
 [ -s "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-git_prompt_info() {
-  local current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-  if [ -n "$current_branch" ]; then
-    echo "%{$fg[blue]%}$current_branch%{$reset_color%} "
-  fi
-}
-
-PROMPT='%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%}--- %{$reset_color%}'
-
-for file in "$HOME/.config/zsh/aliases/"*; do
-  [ -f "$file" ] && source "$file"
-done
