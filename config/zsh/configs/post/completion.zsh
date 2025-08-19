@@ -1,4 +1,4 @@
-fpath=($HOME/.config/zsh/completion /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh/site-functions $fpath)
+fpath=($HOME/.config/zsh/completion $fpath)
 
 autoload -Uz compinit
 if [ -n $HOME/.zcompdump(#qN.mh+24) ]; then
