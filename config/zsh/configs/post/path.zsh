@@ -1,6 +1,6 @@
-export GOPATH=$HOME/.local/share/go
+GOPATH=$HOME/.local/share/go
 
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
-export -U PATH
+export -U GOPATH PATH
