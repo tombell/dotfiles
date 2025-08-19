@@ -47,41 +47,41 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # CONTROL CENTRE
 ###############################################################################
 
-# Show date
+# Clock Options: Show date
 defaults write com.apple.menuextra.clock ShowDate -int 2
 
-# Show the day of the week
+# Clock Options: Show the day of the week
 defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
 
 ###############################################################################
 # DESKTOP AND DOCK
 ###############################################################################
 
-# Autohide
+# Automatically hide and show the Dock
 defaults write com.apple.dock autohide -int 1
 
-# Recent applications
+# Show suggested and recent apps in Dock
 defaults write com.apple.dock show-recents -int 0
 
-# Icon size
+# Dock: Size
 defaults write com.apple.dock tilesize -int 34
 
-# Resizing
+# Dock: Disable resizing
 defaults write com.apple.dock size-immutable -int 1
 
-# Click wallpaper to reveal desktop
+# Desktop & Stage Manager: Click wallpaper to reveal desktop
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -int 0
 
-# Show widgets on desktop
+# Widgets: Show widgets on desktop
 defaults write com.apple.WindowManager StandardHideWidgets -int 1
 
-# Show widgets in stage manager
+# Widgets: Show widgets in stage manager
 defaults write com.apple.WindowManager StageManagerHideWidgets -int 1
 
-# Automatically rearrange spaces based on most recent use
+# Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -int 0
 
-# Bottom right hot corner
+# Hot Corners: Disable bottom right
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 0
 
@@ -125,10 +125,10 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
 ###############################################################################
 
 # Tap to click
-# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# TODO: figure out on Sequoia?
 
 # Natural scrolling
-# defaults write NSGlobalDomain com.apple.swipescrolldirection -int 0
+# TODO: figure out on Sequoia?
 
 ###############################################################################
 # FINDER
