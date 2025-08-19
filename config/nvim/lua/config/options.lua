@@ -44,4 +44,6 @@ o.foldtext = "v:lua.require'pleat'.get()"
 
 o.fillchars:append "fold: "
 
-o.winborder = "rounded"
+if vim.fn.has "nvim-0.11" == 1 then
+  o.winborder = "rounded"
+end
