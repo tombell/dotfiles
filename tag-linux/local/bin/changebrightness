@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+send_notification() {
+  brightness=$(printf "%.0f" "$(brillo -G)")
+  notify-send -a "changebrightness" -u low -h string:x-canonical-private-synchronous:brightness -h int:value:"$brightness" -t 2000 "Brightness" "$brightness%"
+}
+
+case $1 in
+up)
+  brillo -A 5
+  send_notification "$1"
+  ;;
+down)
+  brillo -U 5
+  send_notification "$1"
+  ;;
+esac
