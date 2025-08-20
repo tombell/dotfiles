@@ -1,0 +1,56 @@
+# vim: set ft=cfg:
+
+[global]
+font = Liberation Sans 12
+
+# do not timeout notifications if idle for this long
+idle_threshold = 120
+
+# size and position
+offset = (10, 35)
+width = 350
+
+# border size
+frame_width = 1
+
+# TODO: figure this out...
+# gap between notifications, needs picom running for transparency
+separator_height = 5
+separator_color = "#ffffff00"
+
+# icon
+min_icon_size = 0
+max_icon_size = 32
+icon_path = /home/tombell/.local/share/icons/dunst
+
+# summary and body
+markup = full
+ellipsize = end
+
+# progress bar
+highlight = "#7dcfff"
+progress_bar_height = 5
+progress_bar_max_width = 400
+
+# mouse actions
+mouse_left_click = do_action, close_current
+mouse_middle_click = none
+mouse_right_click = close_all
+
+[urgency_low]
+background = "#414868"
+foreground = "#a9b1d6"
+frame_color = "#a9b1d6"
+timeout = 10
+
+[urgency_normal]
+background = "#414868"
+foreground = "#a9b1d6"
+frame_color = "#a9b1d6"
+timeout = 10
+
+[urgency_critical]
+background = "#414868"
+foreground = "#ff899d"
+frame_color = "#ff899d"
+timeout = -1
