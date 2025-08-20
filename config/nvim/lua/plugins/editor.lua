@@ -42,6 +42,16 @@ return {
     },
   },
 
+  -- nvim-highlight-colors
+  {
+    "brenoprata10/nvim-highlight-colors",
+    opts = {
+      render = "virtual",
+      virtual_symbol_prefix = " ",
+      virtual_symbol_position = "eow",
+    },
+  },
+
   -- snacks.nvim
   {
     "folke/snacks.nvim",
