@@ -1,0 +1,68 @@
+# vim: set ft=config:
+
+fontname "xft:Iosevka Custom:style=Regular:size=12"
+
+borderwidth 1
+
+gap 35 10 10 10
+
+# border colors
+color activeborder "#c7a9ff"
+color inactiveborder "#414868"
+color urgencyborder "#ff899d"
+color groupborder "#faba4a"
+color ungroupborder "#a4daff"
+
+color font "#a9b1d6"
+color selfont "#414868"
+
+color menubg "#414868"
+color menufg "#a9b1d6"
+
+# ignore the polybar window
+ignore polybar
+
+# opened windows inherit current group
+sticky yes
+
+# remove all default keybinds
+unbind-key all
+
+# manage cwm
+bind-key CMS-q quit
+bind-key CMS-r restart
+
+bind-key M-q window-close
+bind-key M-f window-fullscreen
+bind-key M-c window-maximize
+
+# raise/lower windows
+bind-key M-Up window-raise
+bind-key M-Down window-lower
+
+# cycle through all windows
+bind-key M-Tab window-cycle-ingroup
+bind-key MS-Tab window-rcycle-ingroup
+
+# cycle through windows of the same class
+bind-key M-grave window-cycle-inclass
+bind-key MS-grave window-rcycle-inclass
+
+# move windows to groups
+bind-key MS-1 window-movetogroup-1
+bind-key MS-2 window-movetogroup-2
+bind-key MS-3 window-movetogroup-3
+bind-key MS-4 window-movetogroup-4
+
+# switch to groups
+bind-key M-1 group-only-1
+bind-key M-2 group-only-2
+bind-key M-3 group-only-3
+bind-key M-4 group-only-4
+
+# remove all default mouse binds
+unbind-mouse all
+
+# mouse move/resize windows
+bind-mouse M-1 window-move
+bind-mouse M-3 window-resize
