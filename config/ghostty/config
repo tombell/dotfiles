@@ -10,11 +10,10 @@ cursor-style-blink = false
 theme = tokyonight
 split-divider-color = 474951
 
-window-padding-x = 20
-window-padding-y = 20
 window-padding-balance = true
-
-macos-titlebar-style = hidden
 
 window-inherit-working-directory = false
 window-save-state = never
+
+config-file =?~/.config/ghostty/linux
+config-file =?~/.config/ghostty/macos
