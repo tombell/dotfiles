@@ -8,7 +8,7 @@ shell-integration-features = no-cursor
 cursor-style-blink = false
 
 theme = tokyonight
-split-divider-color = 474951
+split-divider-color = #474951
 
 window-padding-balance = true
 
