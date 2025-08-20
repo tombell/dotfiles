@@ -7,4 +7,4 @@ git_prompt_info() {
   fi
 }
 
-PROMPT='%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%}--- %{$reset_color%}'
+PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m "}%{$fg[yellow]%}%c $(git_prompt_info)%{$fg[magenta]%}--- %{$reset_color%}'
