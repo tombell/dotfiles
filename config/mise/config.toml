@@ -6,3 +6,6 @@ node = "lts"
 ruby = "3.4"
 tree-sitter = "latest"
 zig = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
