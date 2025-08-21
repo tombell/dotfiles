@@ -2,7 +2,7 @@ return {
   -- neotest
   {
     "nvim-neotest/neotest",
-    tag = "v5.9.1",
+    commit = "52fca6717ef972113ddd6ca223e30ad0abb2800c",
     lazy = true,
     dependencies = {
       -- main
