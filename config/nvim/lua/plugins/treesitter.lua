@@ -2,6 +2,7 @@ return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    commit = "42fc28",
     dependencies = {
       { "starkwm/tree-sitter-skbdrc", config = true },
     },
