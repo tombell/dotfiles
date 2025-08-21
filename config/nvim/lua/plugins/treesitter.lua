@@ -44,6 +44,7 @@ return {
         "ruby",
         "rust",
         "scss",
+        "skbdrc",
         "sql",
         "svelte",
         "swift",
