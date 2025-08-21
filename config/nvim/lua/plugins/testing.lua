@@ -2,6 +2,7 @@ return {
   -- neotest
   {
     "nvim-neotest/neotest",
+    tag = "v5.9.1",
     lazy = true,
     dependencies = {
       -- main
@@ -13,6 +14,7 @@ return {
       "haydenmeade/neotest-jest",
       "marilari88/neotest-vitest",
       "olimorris/neotest-rspec",
+      "zidhuss/neotest-minitest",
     },
     config = function()
       ---@diagnostic disable: missing-fields
@@ -21,6 +23,7 @@ return {
           -- require "neotest-bun",
           require "neotest-golang",
           require "neotest-jest",
+          require "neotest-minitest",
           require "neotest-rspec",
           require "neotest-vitest",
         },
