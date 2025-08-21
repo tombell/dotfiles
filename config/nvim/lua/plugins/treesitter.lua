@@ -5,7 +5,6 @@ return {
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     lazy = vim.fn.argc(-1) == 0,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    build = ":TSUpdate",
     opts = {
       highlight = { enable = true },
       indent = { enable = false },
