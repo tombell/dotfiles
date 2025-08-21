@@ -2,13 +2,13 @@ return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    commit = "42fc28",
     dependencies = {
       { "starkwm/tree-sitter-skbdrc", config = true },
     },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     lazy = vim.fn.argc(-1) == 0,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    build = ":TSUpdate",
     opts = {
       highlight = { enable = true },
       indent = { enable = false },
