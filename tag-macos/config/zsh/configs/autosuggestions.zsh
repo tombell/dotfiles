@@ -1,2 +1,2 @@
-plugin="$(brew --prefix zsh-autosuggestions)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+plugin="/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 [ -f "$plugin" ] && source "$plugin"
