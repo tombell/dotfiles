@@ -1,68 +1,79 @@
+local ensure_installed = {
+  "bash",
+  "c",
+  "cpp",
+  "css",
+  "diff",
+  "dockerfile",
+  "editorconfig",
+  "embedded_template",
+  "git_config",
+  "git_rebase",
+  "go",
+  "gomod",
+  "gosum",
+  "gotmpl",
+  "gowork",
+  "html",
+  "javascript",
+  "jsdoc",
+  "json",
+  "latex",
+  "lua",
+  "luadoc",
+  "make",
+  "markdown",
+  "markdown_inline",
+  "objc",
+  "python",
+  "query",
+  "ruby",
+  "rust",
+  "scss",
+  "skbdrc",
+  "sql",
+  "svelte",
+  "swift",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "xml",
+  "yaml",
+  "zig",
+}
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  callback = function()
+    ---@diagnostic disable: missing-fields
+    require("nvim-treesitter.parsers").skbdrc = {
+      install_info = {
+        url = "https://github.com/starkwm/tree-sitter-skbdrc",
+        queries = "queries/skbdrc",
+      },
+    }
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = ensure_installed,
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
+
 return {
   -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-    lazy = vim.fn.argc(-1) == 0,
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    opts = {
-      highlight = { enable = true },
-      indent = { enable = false },
-      ensure_installed = {
-        "bash",
-        "c",
-        "cpp",
-        "css",
-        "diff",
-        "dockerfile",
-        "editorconfig",
-        "embedded_template",
-        "git_config",
-        "git_rebase",
-        "go",
-        "gomod",
-        "gosum",
-        "gotmpl",
-        "gowork",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "latex",
-        "lua",
-        "luadoc",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "objc",
-        "python",
-        "query",
-        "ruby",
-        "rust",
-        "scss",
-        "sql",
-        "svelte",
-        "swift",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-        "zig",
-      },
-    },
-    main = "nvim-treesitter.configs",
-  },
-
-  -- tree-sitter-skbdrc
-  {
-    "starkwm/tree-sitter-skbdrc",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    branch = "main",
     config = function()
-      require("tree-sitter-skbdrc").setup()
-      require("nvim-treesitter.configs").setup { ensure_installed = { "skbdrc" } }
+      require("nvim-treesitter").setup {
+        install_dir = vim.fn.stdpath "data" .. "/site",
+      }
+      require("nvim-treesitter").install(ensure_installed)
     end,
   },
 }
