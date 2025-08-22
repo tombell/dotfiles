@@ -1,21 +1,25 @@
-// -----------------------------------------------------------------------------
-// CONSTANTS
+// Modifier combinations
 // -----------------------------------------------------------------------------
 
 const ctrlShift = ["ctrl", "shift"];
 const ctrlOpt = ["ctrl", "opt"];
 const ctrlShiftOpt = ["ctrl", "shift", "opt"];
+const shiftOpt = ["shift", "opt"];
 
+// Window gaps
+// -----------------------------------------------------------------------------
+
+// The space between window and screen edge
 const padding = 12;
+
+// The space between windows
 const gap = 12;
 
-// -----------------------------------------------------------------------------
-// WINDOW MANAGEMENT
+// Move and reize window
 // -----------------------------------------------------------------------------
 
 const grid = (c, r, w, h, x, y) => {
   const win = Window.focused();
-
   if (!win) return;
 
   if (x >= c) x = c - 1;
@@ -57,41 +61,25 @@ const grid = (c, r, w, h, x, y) => {
   win.setFrame({ x: fx, y: fy, width: fw, height: fh });
 };
 
-// Centre full
-Keymap.on("c", ctrlShift, () => grid(12, 10, 12, 10, 0, 0));
+const moveAndResizeWindow = (key, mods, ...args) =>
+  Keymap.on(key, mods, () => grid(...args));
 
-// Centre medium
-Keymap.on("x", ctrlShift, () => grid(12, 10, 10, 8, 1, 1));
+moveAndResizeWindow("c", ctrlShift, 12, 10, 12, 10, 0, 0); // Centre full
+moveAndResizeWindow("x", ctrlShift, 12, 10, 10, 8, 1, 1); // Centre medium
+moveAndResizeWindow("x", ctrlShiftOpt, 12, 10, 8, 10, 2, 0); // Centre medium, full height
+moveAndResizeWindow("z", ctrlShift, 12, 10, 8, 6, 2, 2); // Centre small
+moveAndResizeWindow("z", ctrlShiftOpt, 12, 10, 6, 10, 3, 0); // Centre small, full height
 
-// Centre medium, full height
-Keymap.on("x", ctrlShiftOpt, () => grid(12, 10, 8, 10, 2, 0));
+moveAndResizeWindow("h", ctrlOpt, 12, 10, 4, 10, 0, 0); // Left-one third
+moveAndResizeWindow("h", ctrlShift, 12, 10, 6, 10, 0, 0); // Left-half
+moveAndResizeWindow("h", ctrlShiftOpt, 12, 10, 8, 10, 0, 0); // Left-two thirds
 
-// Centre small
-Keymap.on("z", ctrlShift, () => grid(12, 10, 8, 6, 2, 2));
+moveAndResizeWindow("l", ctrlOpt, 12, 10, 4, 10, 8, 0); // Right-one third
+moveAndResizeWindow("l", ctrlShift, 12, 10, 6, 10, 6, 0); // Right-half
+moveAndResizeWindow("l", ctrlShiftOpt, 12, 10, 8, 10, 4, 0); // Right-two thirds
 
-// Centre small, full height
-Keymap.on("z", ctrlShiftOpt, () => grid(12, 10, 6, 10, 3, 0));
-
-// Left-half
-Keymap.on("h", ctrlShift, () => grid(12, 10, 6, 10, 0, 0));
-
-// Right-half
-Keymap.on("l", ctrlShift, () => grid(12, 10, 6, 10, 6, 0));
-
-// Left-one third
-Keymap.on("h", ctrlOpt, () => grid(12, 10, 4, 10, 0, 0));
-
-// Right-one third
-Keymap.on("l", ctrlOpt, () => grid(12, 10, 4, 10, 8, 0));
-
-// Left-two thirds
-Keymap.on("h", ctrlShiftOpt, () => grid(12, 10, 8, 10, 0, 0));
-
-// Right-two thirds
-Keymap.on("l", ctrlShiftOpt, () => grid(12, 10, 8, 10, 4, 0));
-
-const menuBarOffset = (screen) =>
-  screen.flippedFrame.height - screen.flippedVisibleFrame.height;
+// Move windows to screen
+// -----------------------------------------------------------------------------
 
 const moveWindowToScreen = (direction) => {
   const win = Window.focused();
@@ -106,12 +94,14 @@ const moveWindowToScreen = (direction) => {
 
   if (direction === "left" && win.screen.id === secondary.id) {
     deltaX = -win.screen.flippedVisibleFrame.width;
-    const offset = menuBarOffset(primary);
+    const offset =
+      primary.flippedFrame.height - primary.flippedVisibleFrame.height;
     newY += offset;
     newHeight -= offset;
   } else if (direction === "right" && win.screen.id === primary.id) {
     deltaX = win.screen.flippedVisibleFrame.width;
-    const offset = menuBarOffset(primary);
+    const offset =
+      secondary.flippedFrame.height - secondary.flippedVisibleFrame.height;
     newY -= offset;
     newHeight += offset;
   }
@@ -124,8 +114,20 @@ const moveWindowToScreen = (direction) => {
   });
 };
 
-// Move window to primary display
 Keymap.on("left", ctrlShift, () => moveWindowToScreen("left"));
-
-// Move window to secondary display
 Keymap.on("right", ctrlShift, () => moveWindowToScreen("right"));
+
+// Nudge windows
+// -----------------------------------------------------------------------------
+
+const nudgeWindow = (dx, dy) => {
+  const win = Window.focused();
+  if (!win) return;
+  const { x, y, width, height } = win.frame;
+  win.setFrame({ x: x + dx, y: y + dy, width, height });
+};
+
+Keymap.on("h", shiftOpt, () => nudgeWindow(-10, 0));
+Keymap.on("j", shiftOpt, () => nudgeWindow(0, 10));
+Keymap.on("k", shiftOpt, () => nudgeWindow(0, -10));
+Keymap.on("l", shiftOpt, () => nudgeWindow(10, 0));
