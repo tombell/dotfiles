@@ -22,6 +22,6 @@ rcup_install() {
 
   rcup -d "${HOME}/.dotfiles" \
     "${tag_args[@]}" \
-    -x LICENSE -x README.md -x install \
+    -x LICENSE -x README.md -x scripts \
     "${extra_args[@]}"
 }
