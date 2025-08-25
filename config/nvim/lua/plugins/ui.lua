@@ -42,6 +42,7 @@ return {
     lazy = true,
     opts = {
       foldend_exclude_filetypes = {
+        "dosini",
         "markdown",
         "python",
         "skbdrc",
