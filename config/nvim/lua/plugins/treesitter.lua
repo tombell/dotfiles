@@ -36,6 +36,7 @@ local ensure_installed = {
   "sql",
   "svelte",
   "swift",
+  "sxhkdrc",
   "toml",
   "tsx",
   "typescript",

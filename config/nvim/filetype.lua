@@ -8,5 +8,8 @@ vim.filetype.add {
 
     -- skbd config files
     ["skbdrc"] = "skbdrc",
+
+    -- sxhkd config files
+    ["sxhkdrc"] = "sxhkdrc",
   },
 }
