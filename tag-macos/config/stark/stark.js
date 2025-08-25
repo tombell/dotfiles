@@ -5,6 +5,7 @@ const ctrlShift = ["ctrl", "shift"];
 const ctrlOpt = ["ctrl", "opt"];
 const ctrlShiftOpt = ["ctrl", "shift", "opt"];
 const shiftOpt = ["shift", "opt"];
+const cmdShift = ["cmd", "shift"];
 
 // Window gaps
 // -----------------------------------------------------------------------------
@@ -64,18 +65,18 @@ const grid = (c, r, w, h, x, y) => {
 const moveAndResizeWindow = (key, mods, ...args) =>
   Keymap.on(key, mods, () => grid(...args));
 
-moveAndResizeWindow("c", ctrlShift, 12, 10, 12, 10, 0, 0); // Centre full
-moveAndResizeWindow("x", ctrlShift, 12, 10, 10, 8, 1, 1); // Centre medium
+moveAndResizeWindow("c", ctrlShift, 12, 10, 12, 10, 0, 0);   // Centre full
+moveAndResizeWindow("x", ctrlShift, 12, 10, 10, 8, 1, 1);    // Centre medium
 moveAndResizeWindow("x", ctrlShiftOpt, 12, 10, 8, 10, 2, 0); // Centre medium, full height
-moveAndResizeWindow("z", ctrlShift, 12, 10, 8, 6, 2, 2); // Centre small
+moveAndResizeWindow("z", ctrlShift, 12, 10, 8, 6, 2, 2);     // Centre small
 moveAndResizeWindow("z", ctrlShiftOpt, 12, 10, 6, 10, 3, 0); // Centre small, full height
 
-moveAndResizeWindow("h", ctrlOpt, 12, 10, 4, 10, 0, 0); // Left-one third
-moveAndResizeWindow("h", ctrlShift, 12, 10, 6, 10, 0, 0); // Left-half
+moveAndResizeWindow("h", ctrlOpt, 12, 10, 4, 10, 0, 0);      // Left-one third
+moveAndResizeWindow("h", ctrlShift, 12, 10, 6, 10, 0, 0);    // Left-half
 moveAndResizeWindow("h", ctrlShiftOpt, 12, 10, 8, 10, 0, 0); // Left-two thirds
 
-moveAndResizeWindow("l", ctrlOpt, 12, 10, 4, 10, 8, 0); // Right-one third
-moveAndResizeWindow("l", ctrlShift, 12, 10, 6, 10, 6, 0); // Right-half
+moveAndResizeWindow("l", ctrlOpt, 12, 10, 4, 10, 8, 0);      // Right-one third
+moveAndResizeWindow("l", ctrlShift, 12, 10, 6, 10, 6, 0);    // Right-half
 moveAndResizeWindow("l", ctrlShiftOpt, 12, 10, 8, 10, 4, 0); // Right-two thirds
 
 // Move windows to screen
@@ -131,3 +132,18 @@ Keymap.on("h", shiftOpt, () => nudgeWindow(-10, 0));
 Keymap.on("j", shiftOpt, () => nudgeWindow(0, 10));
 Keymap.on("k", shiftOpt, () => nudgeWindow(0, -10));
 Keymap.on("l", shiftOpt, () => nudgeWindow(10, 0));
+
+// Resize windows
+// -----------------------------------------------------------------------------
+
+const resizeWindow = (dw, dh) => {
+  const win = Window.focused();
+  if (!win) return;
+  const { x, y, width, height } = win.frame;
+  win.setFrame({ x, y, width: width + dw, height: height + dh });
+};
+
+Keymap.on("h", cmdShift, () => resizeWindow(-10, 0)); 
+Keymap.on("l", cmdShift, () => resizeWindow(10, 0));
+Keymap.on("j", cmdShift, () => resizeWindow(0, 10));
+Keymap.on("k", cmdShift, () => resizeWindow(0, -10));
