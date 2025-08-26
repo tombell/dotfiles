@@ -6,8 +6,14 @@ rcup_install() {
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --) shift; break ;;
-      *)  tags+=("$1"); shift ;;
+    --)
+      shift
+      break
+      ;;
+    *)
+      tags+=("$1")
+      shift
+      ;;
     esac
   done
 
