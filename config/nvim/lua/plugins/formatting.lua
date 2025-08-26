@@ -15,6 +15,7 @@ return {
         json = { "prettier" },
         jsonc = { "prettier" },
         lua = { "stylua" },
+        ruby = { lsp_format = "never" },
         swift = { "swift_format" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
