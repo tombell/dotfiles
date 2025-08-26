@@ -143,7 +143,7 @@ const resizeWindow = (dw, dh) => {
   win.setFrame({ x, y, width: width + dw, height: height + dh });
 };
 
-Keymap.on("h", cmdShift, () => resizeWindow(-10, 0)); 
+Keymap.on("h", cmdShift, () => resizeWindow(-10, 0));
 Keymap.on("l", cmdShift, () => resizeWindow(10, 0));
 Keymap.on("j", cmdShift, () => resizeWindow(0, 10));
 Keymap.on("k", cmdShift, () => resizeWindow(0, -10));
