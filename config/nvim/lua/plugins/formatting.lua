@@ -6,19 +6,17 @@ return {
     opts = {
       format_on_save = {
         timeout_ms = 3000,
-        lsp_format = "fallback",
       },
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
-        javascript = { "prettier" },
-        javascriptreact = { "prettier" },
-        json = { "prettier" },
-        jsonc = { "prettier" },
+        javascript = { "prettier", lsp_format = "fallback" },
+        javascriptreact = { "prettier", lsp_format = "fallback" },
+        json = { "prettier", lsp_format = "fallback" },
+        jsonc = { "prettier", lsp_format = "fallback" },
         lua = { "stylua" },
-        ruby = { lsp_format = "never" },
         swift = { "swift_format" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
+        typescript = { "prettier", lsp_format = "fallback" },
+        typescriptreact = { "prettier", lsp_format = "fallback" },
         zig = { "zigfmt" },
       },
       formatters = {
