@@ -1,4 +1,7 @@
 font-style = bold
+#font-style-bold = bold
+font-style-italic = bold italic
+#font-style-bold-italic = bold italic
 
 window-padding-x = 10
 window-padding-y = 10
