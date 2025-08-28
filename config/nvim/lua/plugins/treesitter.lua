@@ -13,7 +13,6 @@ local ensure_installed = {
   "gomod",
   "gosum",
   "gotmpl",
-  "gowork",
   "html",
   "ini",
   "javascript",
@@ -31,16 +30,16 @@ local ensure_installed = {
   "ron",
   "ruby",
   "rust",
-  "scss",
   "skbdrc",
   "sql",
-  "svelte",
+  "ssh_config",
   "swift",
   "sxhkdrc",
+  "tmux",
   "toml",
   "tsx",
   "typescript",
-  "vim",
+  "udev",
   "vimdoc",
   "xml",
   "yaml",
@@ -61,9 +60,15 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = ensure_installed,
-  callback = function()
-    vim.treesitter.start()
+  pattern = "*",
+  callback = function(ev)
+    local ok = pcall(function()
+      vim.treesitter.get_parser(ev.buf, vim.treesitter.language.get_lang(vim.bo.filetype))
+    end)
+
+    if ok then
+      vim.treesitter.start()
+    end
   end,
 })
 
