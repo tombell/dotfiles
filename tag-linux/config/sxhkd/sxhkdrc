@@ -1,0 +1,23 @@
+XF86AudioMute
+  volume mute
+
+XF86AudioRaiseVolume
+  volume up
+
+XF86AudioLowerVolume
+  volume down
+
+XF86MonBrightnessUp
+  backlight up
+
+XF86MonBrightnessDown
+  backlight down
+
+alt + Return
+  ghostty
+
+alt + space
+  rofi -show drun
+
+alt + shift + space
+  1password --quick-access
