@@ -1,0 +1,98 @@
+configuration {
+  modi: "window,run,drun,filebrowser";
+
+  display-window: "Windows:";
+  display-run: "Run:";
+  display-drun: "Apps:";
+  display-filebrowser: "Files:";
+
+  drun-display-format: "{name}";
+
+  show-icons: true;
+
+  font: "SF Compact Display Bold 14";
+
+  kb-cancel: "Alt+space,Escape";
+
+  filebrowser {
+    directory: "/home/tombell";
+  }
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #1a1b26;
+  bg-alt: #15161e;
+  bg-selected: #414868;
+
+  fg: #c0caf5;
+  fg-alt: #a9b1d6;
+
+  magenta: #c7a9ff;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+  background-color: @bg;
+  border: 2px;
+  border-radius: 10;
+  border-color: @magenta;
+}
+
+element {
+  background-color: transparent;
+  text-color: @fg-alt;
+  padding: 12 10;
+}
+
+element selected {
+  background-color: @bg-selected;
+  text-color: @fg;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  background-color: transparent;
+  padding: 0 10 0 0;
+  size: 24;
+}
+
+entry {
+  background-color: @bg-alt;
+  text-color: @fg;
+  padding: 12;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @bg;
+  border: 0 0 2px;
+  border-color: @magenta;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 5;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg-alt;
+  text-color: @magenta;
+  padding: 12 0 0 12;
+}
