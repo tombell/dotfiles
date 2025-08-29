@@ -16,7 +16,6 @@ return {
         jsonc = { "prettier", lsp_format = "fallback" },
         lua = { "stylua" },
         sh = { "shfmt" },
-        swift = { "swift_format" },
         typescript = { "prettier", lsp_format = "fallback" },
         typescriptreact = { "prettier", lsp_format = "fallback" },
         zig = { "zigfmt" },
