@@ -1,0 +1,34 @@
+#!/bin/sh
+
+case $1 in
+up)
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+  wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+  ;;
+down)
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+  wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-
+  ;;
+mute)
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+  ;;
+esac
+
+VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
+
+send_notification() {
+  if [ "$1" = "mute" ]; then TEXT="Muted"; else TEXT="${VOLUME}%"; fi
+  notify-send -a "Volume" -u low -h string:x-canonical-private-synchronous:volume -h int:value:$VOLUME -t 1000 "Volume" "$TEXT"
+}
+
+case $1 in
+mute)
+  case "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" in
+  *MUTED*) send_notification mute ;;
+  *) send_notification ;;
+  esac
+  ;;
+*)
+  send_notification
+  ;;
+esac
