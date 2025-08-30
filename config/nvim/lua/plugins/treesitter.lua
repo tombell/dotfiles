@@ -61,14 +61,8 @@ vim.api.nvim_create_autocmd("User", {
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
-  callback = function(ev)
-    local ok = pcall(function()
-      vim.treesitter.get_parser(ev.buf, vim.treesitter.language.get_lang(vim.bo.filetype))
-    end)
-
-    if ok then
-      vim.treesitter.start()
-    end
+  callback = function()
+    pcall(vim.treesitter.start)
   end,
 })
 
