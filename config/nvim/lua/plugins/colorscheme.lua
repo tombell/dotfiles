@@ -9,11 +9,6 @@ return {
         highlights.Folded = { fg = colors.blue0 }
         highlights.WinSeparator = { fg = colors.bg_visual }
         highlights.SnacksIndentScope = { fg = colors.blue0 }
-        -- highlights.SnacksPicker = { bg = colors.bg }
-        -- highlights.SnacksPickerBorder = { fg = colors.border_highlight, bg = colors.bg }
-        -- highlights.SnacksPickerBoxTitle = { fg = colors.orange, bg = colors.bg }
-        -- highlights.SnacksPickerInputTitle = { fg = colors.orange, bg = colors.bg }
-        -- highlights.SnacksPickerInputBorder = { fg = colors.orange, bg = colors.bg }
       end,
     },
     init = function()
