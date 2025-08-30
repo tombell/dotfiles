@@ -47,9 +47,10 @@ return {
     "brenoprata10/nvim-highlight-colors",
     opts = {
       render = "virtual",
-      enable_hsl_without_function = false,
       virtual_symbol_prefix = " ",
-      virtual_symbol_position = "eow",
+      virtual_symbol_suffix = "",
+      virtual_symbol_position = "eol",
+      enable_hsl_without_function = false,
     },
   },
 
