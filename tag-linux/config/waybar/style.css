@@ -1,0 +1,45 @@
+@define-color background #1a1b26;
+@define-color foreground #a9b1d6;
+
+* {
+  background-color: @background;
+  color: @foreground;
+
+  font-family: "SF Compact Display";
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  /* all: initial; */
+  /* padding: 0 8px; */
+  /* margin: 0 1.5px; */
+  /* min-width: 9px; */
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#battery,
+#network,
+#pulseaudio {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
