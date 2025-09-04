@@ -1,0 +1,42 @@
+* {
+  background-color: transparent;
+  color: #a9b1d6;
+  font-family: SF Pro Rounded, IosevkaTerm Nerd Font Propo;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 15px;
+}
+
+#workspaces button.active label {
+  color: #c7a9ff;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#pulseaudio,
+#network,
+#battery {
+  margin: 0 7.5px;
+  min-width: 12px;
+}
+
+tooltip {
+  background-color: #1a1b26;
+  border-color: #c7a9ff;
+}
