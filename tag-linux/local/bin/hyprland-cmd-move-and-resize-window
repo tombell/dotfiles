@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+c=$1
+r=$2
+w=$3
+h=$4
+x=$5
+y=$6
+
+if ((x >= c)); then x=$((c - 1)); fi
+if ((y >= r)); then y=$((r - 1)); fi
+
+if ((w <= 0)); then w=1; fi
+if ((h <= 0)); then h=1; fi
+
+if ((w > c - x)); then w=$((c - x)); fi
+if ((h > r - y)); then h=$((r - y)); fi
+
+active_monitor=$(hyprctl activewindow -j | jq .monitor)
+dimensions=$(hyprctl monitors -j | jq -r --argjson mon "$active_monitor" '"\(.[$mon].width)x\(.[$mon].height)"')
+
+IFS='x' read -r monitor_width monitor_height <<<"$dimensions"
+
+gaps_out=$(hyprctl getoption general:gaps_out -j | jq -r '.custom' | awk '{print $1}')
+gaps_in=$(hyprctl getoption general:gaps_in -j | jq -r '.custom' | awk '{print $1}')
+gaps_in=$((gaps_in * 2))
+
+bx=$((0 + gaps_out))
+bw=$((monitor_width - (gaps_out * 2)))
+by=$((0 + gaps_out))
+bh=$((monitor_height - (gaps_out * 2)))
+
+if ((x > 0)); then
+  bx=$((bx + gaps_in))
+  bw=$((bw - gaps_in))
+fi
+
+if ((y > 0)); then
+  by=$((by + gaps_in))
+  bh=$((bh - gaps_in))
+fi
+
+if ((c > x + w)); then bw=$((bw - gaps_in)); fi
+if ((r > y + h)); then bh=$((bh - gaps_in)); fi
+
+cw=$(echo "scale=2; $bw / $c" | bc)
+ch=$(echo "scale=2; $bh / $r" | bc)
+
+fx=$(printf "%.0f" "$(echo "$bx + $bw - $cw * ($c - $x)" | bc)")
+fy=$(printf "%.0f" "$(echo "$by + $bh - $ch * ($r - $y)" | bc)")
+
+fw=$(printf "%.0f" "$(echo "$cw * $w" | bc)")
+fh=$(printf "%.0f" "$(echo "$ch * $h" | bc)")
+
+hyprctl --batch "dispatch resizeactive exact $fw $fh; dispatch moveactive exact $fx $fy"
