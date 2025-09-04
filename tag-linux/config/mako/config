@@ -1,0 +1,26 @@
+# vim: set ft=ini:
+
+font=SF Compact Display 12
+
+background-color=#1a1b26
+text-color=#a9b1d6
+border-color=#c7a9ff
+
+width=420
+height=110
+padding=10
+
+border-radius=5
+
+max-icon-size=32
+
+default-timeout=5000
+
+[mode=do-not-disturb]
+invisible=true
+
+[urgency=critical]
+text-color=#ff899d
+border-color=#ff899d
+
+default-timeout=0
