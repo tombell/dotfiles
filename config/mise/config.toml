@@ -1,8 +1,6 @@
 [tools]
-go = "1.25"
 lua = "5.1.5"
 node = "lts"
-ruby = "3.4"
 tree-sitter = "latest"
 
 [settings]
