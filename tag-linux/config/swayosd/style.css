@@ -1,0 +1,26 @@
+window {
+  border-radius: 10px;
+  opacity: 0.97;
+  border: 2px solid #c7a9ff;
+
+  background-color: #1a1b26;
+}
+
+label {
+  font-family: 'Liberation Sans';
+  font-size: 11pt;
+
+  color: #a9b1d6;
+}
+
+image {
+  color: #c7a9ff;
+}
+
+progressbar {
+  border-radius: 0;
+}
+
+progress {
+  background-color: #c7a9ff;
+}
