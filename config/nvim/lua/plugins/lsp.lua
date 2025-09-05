@@ -17,6 +17,7 @@ return {
     opts = {
       ensure_installed = {
         "gopls",
+        "hyprls",
         "lua-language-server",
         "solargraph",
         "vtsls",
