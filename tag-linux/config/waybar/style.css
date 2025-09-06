@@ -1,4 +1,4 @@
-@define-color background #1a1b26;
+@define-color background #24283b;
 @define-color foreground #a9b1d6;
 
 * {
@@ -29,6 +29,10 @@
   opacity: 0.5;
 }
 
+/* #clock { */
+/*   margin-left: 8.75px; */
+/* } */
+
 #battery,
 #network,
 #pulseaudio {
@@ -38,8 +42,4 @@
 
 tooltip {
   padding: 2px;
-}
-
-#clock {
-  margin-left: 8.75px;
 }
