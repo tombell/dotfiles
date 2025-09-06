@@ -6,34 +6,34 @@ hyper - enter:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
 hyper - b:
-  osascript ~/.local/bin/launch-chrome.scpt > /dev/null
+  osascript -e "tell application \"Google Chrome\" to activate" &> /dev/null
 
 hyper - d:
-  osascript ~/.local/bin/launch-discord.scpt > /dev/null
+  osascript -e "tell application \"Discord\" to activate" &> /dev/null
 
 hyper - e:
-  osascript ~/.local/bin/launch-mail.scpt > /dev/null
+  osascript -e "tell application \"Mail\" to activate" &> /dev/null
 
 hyper - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
 hyper - m:
-  osascript ~/.local/bin/launch-messages.scpt > /dev/null
+  osascript -e "tell application \"Messages\" to activate" &> /dev/null
 
 hyper - n:
-  osascript ~/.local/bin/launch-notes.scpt > /dev/null
+  osascript -e "tell application \"Notes\" to activate" &> /dev/null
 
 hyper - p:
-  osascript ~/.local/bin/launch-photos.scpt > /dev/null
+  osascript -e "tell application \"Photos\" to activate" &> /dev/null
 
 hyper - s:
-  osascript ~/.local/bin/launch-spotify.scpt > /dev/null
+  osascript -e "tell application \"Spotify\" to activate" &> /dev/null
 
 hyper - t:
-  osascript ~/.local/bin/launch-telegram.scpt > /dev/null
+  osascript -e "tell application \"Telegram\" to activate" &> /dev/null
 
 hyper - x:
-  osascript ~/.local/bin/launch-xcode.scpt > /dev/null
+  osascript -e "tell application \"Xcode\" to activate" &> /dev/null
 
 ################################################################################
 # Home
