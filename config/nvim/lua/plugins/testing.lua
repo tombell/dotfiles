@@ -2,7 +2,6 @@ return {
   -- neotest
   {
     "nvim-neotest/neotest",
-    branch = "fix/subprocess/load-adapters",
     lazy = true,
     dependencies = {
       -- main
