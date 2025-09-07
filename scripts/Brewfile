@@ -11,17 +11,16 @@ tap 'starkwm/formulae'
 tap 'tombell/formulae'
 
 brew 'rcm'
-brew 'starkwm/formulae/skbd'
 brew 'zsh-autosuggestions'
 
 cask '1password'
 cask '1password-cli'
 cask 'appcleaner'
+cask 'font-symbols-only-nerd-font'
 cask 'ghostty'
 cask 'google-chrome'
 cask 'keka'
 cask 'keyboardcleantool'
-cask 'starkwm/formulae/stark@tip'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
@@ -35,6 +34,7 @@ if [personal, work].include?(hostname)
   brew 'mise'
   brew 'neovim'
   brew 'ripgrep'
+  brew 'starkwm/formulae/skbd'
   brew 'tmux'
   brew 'tombell/formulae/tmux-manager'
 
@@ -42,6 +42,7 @@ if [personal, work].include?(hostname)
   cask 'itsycal'
   cask 'karabiner-elements'
   cask 'spotify'
+  cask 'starkwm/formulae/stark@tip'
   cask 'telegram'
 
   mas 'Kagi for Safari', id: 1622835804
