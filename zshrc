@@ -34,3 +34,6 @@ _load_settings "$HOME/.config/zsh/configs"
 export PROJECTS="$HOME/Code"
 
 [ -f $HOME/.localrc ] && source $HOME/.localrc
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
