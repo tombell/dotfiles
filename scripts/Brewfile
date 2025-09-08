@@ -39,7 +39,6 @@ if [personal, work].include?(hostname)
   brew 'tombell/formulae/tmux-manager'
 
   cask 'discord'
-  cask 'itsycal'
   cask 'karabiner-elements'
   cask 'spotify'
   cask 'starkwm/formulae/stark@tip'
