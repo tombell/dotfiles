@@ -14,6 +14,7 @@ local ensure_installed = {
   "gosum",
   "gotmpl",
   "html",
+  "hyprlang",
   "ini",
   "javascript",
   "jsdoc",
