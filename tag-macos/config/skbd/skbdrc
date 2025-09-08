@@ -8,6 +8,9 @@ hyper - enter:
 hyper - b:
   osascript -e "tell application \"Google Chrome\" to activate" &> /dev/null
 
+hyper - c:
+  osascript -e "tell application \"Calendar\" to activate" &> /dev/null
+
 hyper - d:
   osascript -e "tell application \"Discord\" to activate" &> /dev/null
 
