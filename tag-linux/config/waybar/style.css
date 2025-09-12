@@ -30,8 +30,10 @@
 }
 
 #pulseaudio,
+#bluetooth,
 #network,
 #battery {
+  font-size: 18px;
   margin: 0 7.5px;
   min-width: 12px;
 }
