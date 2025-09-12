@@ -51,6 +51,7 @@ return {
       virtual_symbol_suffix = "",
       virtual_symbol_position = "eol",
       enable_hsl_without_function = false,
+      exclude_filetypes = { "lazy" },
     },
   },
 
