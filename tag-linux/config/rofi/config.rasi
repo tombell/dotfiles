@@ -1,22 +1,17 @@
 configuration {
-  modi: "window,run,drun,filebrowser";
+  modi: "window,run,drun";
 
-  display-window: "Windows:";
-  display-run: "Run:";
-  display-drun: "Apps:";
-  display-filebrowser: "Files:";
+  display-window: "Windows";
+  display-run: "Run";
+  display-drun: "Apps";
 
   drun-display-format: "{name}";
 
   show-icons: true;
 
-  font: "SF Compact Rounded Semibold 13";
+  font: "SF Compact Display Bold 12";
 
   kb-cancel: "Escape";
-
-  filebrowser {
-    directory: "/home/tombell";
-  }
 }
 
 @theme "/dev/null"
