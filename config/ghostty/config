@@ -6,7 +6,7 @@ adjust-underline-position = 6
 shell-integration-features = no-cursor
 cursor-style-blink = false
 
-theme = tokyonight
+theme = TokyoNight
 split-divider-color = #474951
 
 window-padding-balance = true
