@@ -16,7 +16,6 @@ return {
           selection = { preselect = false, auto_insert = true },
         },
       },
-      cmdline = { enabled = false },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
         providers = {
