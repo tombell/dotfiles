@@ -9,7 +9,7 @@ return {
       { "nvim-neotest/nvim-nio", lazy = true },
       -- adapters
       -- "Arthur944/neotest-bun",
-      "fredrikaverpil/neotest-golang",
+      { "fredrikaverpil/neotest-golang", branch = "feat/treesitter-main" },
       "haydenmeade/neotest-jest",
       "marilari88/neotest-vitest",
       "olimorris/neotest-rspec",
