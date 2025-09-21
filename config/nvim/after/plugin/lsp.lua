@@ -8,6 +8,15 @@ if vim.fn.has "nvim-0.11" == 1 then
     },
   })
 
+  vim.lsp.config("gopls", {
+    settings = {
+      codelenses = {
+        test = true,
+        tidy = true,
+      },
+    },
+  })
+
   vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
   vim.lsp.enable { "gopls", "hyprls", "lua_ls", "sourcekit", "vtsls", "zls" }
 end
