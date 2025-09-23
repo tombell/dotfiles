@@ -14,5 +14,5 @@ border_type = "Rounded"
 progress_bar_type = "Rectangle"
 progress_bar_position = "Bottom"
 
-enable_media_control = true
+enable_media_control = false
 enable_notify = false
