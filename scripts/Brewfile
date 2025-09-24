@@ -20,7 +20,6 @@ cask 'ghostty'
 cask 'google-chrome'
 cask 'keka'
 cask 'keyboardcleantool'
-cask 'orion'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
