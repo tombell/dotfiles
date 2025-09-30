@@ -19,6 +19,7 @@ cask 'appcleaner'
 cask 'ghostty'
 cask 'google-chrome'
 cask 'keka'
+cask 'kekaexternalhelper'
 cask 'keyboardcleantool'
 cask 'tombell/formulae/font-iosevka-custom'
 
@@ -40,7 +41,7 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'karabiner-elements'
   cask 'spotify'
-  cask 'starkwm/formulae/stark@tip'
+  cask 'starkwm/formulae/stark'
   cask 'telegram'
 
   mas 'Kagi for Safari', id: 1622835804
