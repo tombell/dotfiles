@@ -1,0 +1,45 @@
+# vim: ft=cfg
+
+[global]
+width = 450
+offset = (10, 10)
+
+progress_bar_max_width = 450
+progress_bar_corner_radius = 3
+
+frame_width = 2
+corner_radius = 5
+
+padding = 15
+horizontal_padding = 15
+gap_size = 10
+
+font = SF Display Compact 14
+
+idle_threshold = 120
+min_icon_size = 50
+max_icon_size = 60
+
+mouse_left_click = do_action, close_current
+mouse_middle_click = none
+mouse_right_click = close_all
+
+[urgency_low]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+frame_color = "#c7a9ff"
+highlight = "#c7a9ff"
+timeout = 5
+
+[urgency_normal]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+frame_color = "#c7a9ff"
+highlight = "#c7a9ff"
+timeout = 5
+
+[urgency_critical]
+background = "#1a1b26"
+foreground = "#ff899d"
+frame_color = "#ff899d"
+timeout = 0
