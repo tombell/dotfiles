@@ -71,6 +71,7 @@ if hostname == work
   brew 'libxml2'
   brew 'postgresql@16'
   brew 'redis'
+  brew 'stripe-mock'
 
   cask 'android-studio'
   cask 'chromedriver'
