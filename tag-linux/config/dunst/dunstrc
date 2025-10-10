@@ -4,7 +4,7 @@
 width = 450
 offset = (10, 10)
 
-progress_bar_max_width = 400
+progress_bar_max_width = 450
 progress_bar_corner_radius = 5
 
 frame_width = 2
