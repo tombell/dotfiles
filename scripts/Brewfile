@@ -12,7 +12,6 @@ tap 'tombell/formulae'
 
 brew 'rcm'
 brew 'zsh-autosuggestions'
-brew 'zsh-fast-syntax-highlighting'
 
 cask '1password'
 cask '1password-cli'
