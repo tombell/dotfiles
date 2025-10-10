@@ -1,15 +1,12 @@
-if vim.fn.has "nvim-0.11" == 1 then
-  -- Remove new neovim (0.11) default mappings
-  vim.keymap.del("n", "grn")
-  vim.keymap.del({ "n", "x" }, "gra")
-  vim.keymap.del("n", "grr")
-  vim.keymap.del("n", "gri")
-  vim.keymap.del("n", "gO")
-  vim.keymap.del({ "i", "s" }, "<C-s>")
-end
+-- Remove new neovim (0.11) default mappings
+vim.keymap.del("n", "grn")
+vim.keymap.del({ "n", "x" }, "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "gO")
+vim.keymap.del({ "i", "s" }, "<C-s>")
 
--- Lazy
-vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>l", "<cmd>lua vim.pack.update()<cr>", { desc = "Update plugins" })
 
 -- Move to windows
 vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "Go to left window", remap = true })

@@ -1,3 +1,6 @@
+vim.pack.add({
+})
+
 local ensure_installed = {
   "bash",
   "c",
@@ -68,16 +71,5 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-return {
-  -- nvim-treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    config = function()
-      require("nvim-treesitter").setup {
-        install_dir = vim.fn.stdpath "data" .. "/site",
-      }
-      require("nvim-treesitter").install(ensure_installed)
-    end,
-  },
-}
+require("nvim-treesitter").setup { install_dir = vim.fn.stdpath "data" .. "/site" }
+require("nvim-treesitter").install(ensure_installed)
