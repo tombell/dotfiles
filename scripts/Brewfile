@@ -12,12 +12,12 @@ tap 'tombell/formulae'
 
 brew 'rcm'
 brew 'zsh-autosuggestions'
+brew 'zsh-fast-syntax-highlighting'
 
 cask '1password'
 cask '1password-cli'
 cask 'appcleaner'
 cask 'ghostty'
-cask 'google-chrome'
 cask 'keka'
 cask 'kekaexternalhelper'
 cask 'keyboardcleantool'
@@ -38,6 +38,7 @@ if [personal, work].include?(hostname)
   brew 'tmux'
 
   cask 'discord'
+  cask 'google-chrome'
   cask 'karabiner-elements'
   cask 'spotify'
   cask 'starkwm/formulae/stark'
