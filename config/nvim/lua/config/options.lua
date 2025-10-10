@@ -45,3 +45,4 @@ o.foldtext = "v:lua.require'pleat'.get()"
 o.fillchars:append "fold: "
 
 o.winborder = "rounded"
+o.pumborder = "rounded"
