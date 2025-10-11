@@ -5,7 +5,7 @@ return {
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {
       linters_by_ft = {
-        go = { "golangcilint" },
+        -- go = { "golangcilint" },
         javascript = { "eslint" },
         javascriptreact = { "eslint" },
         -- ruby = { "rubocop" },
