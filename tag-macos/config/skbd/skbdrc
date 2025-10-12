@@ -20,6 +20,9 @@ hyper - e:
 hyper - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
+hyper -g:
+  osascript -e "tell application \"Ghostty\" to activate" &> /dev/null
+
 hyper - m:
   osascript -e "tell application \"Messages\" to activate" &> /dev/null
 
