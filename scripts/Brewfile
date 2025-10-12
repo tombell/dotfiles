@@ -35,6 +35,7 @@ if [personal, work].include?(hostname)
   brew 'ripgrep'
   brew 'starkwm/formulae/skbd'
   brew 'tmux'
+  brew 'zoxide'
 
   cask 'discord'
   cask 'google-chrome'
