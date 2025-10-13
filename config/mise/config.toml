@@ -4,7 +4,7 @@ lua = "5.1.5"
 node = "lts"
 ruby = "3.4.7"
 tree-sitter = "latest"
-zig = "0.15.2"
+zig = "0.15.1"
 
 [settings]
 idiomatic_version_file_enable_tools = []
