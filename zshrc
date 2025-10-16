@@ -1,7 +1,3 @@
-for function in $HOME/.config/zsh/functions/*; do
-  source $function
-done
-
 _load_settings() {
   _dir="$1"
   if [ -d "$_dir" ]; then
