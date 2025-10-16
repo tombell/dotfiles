@@ -6,6 +6,7 @@ alias e="nvim"
 
 alias path='echo $PATH | tr -s ":" "\n"'
 
+alias c="z"
 alias d="cd $HOME/.dotfiles"
 alias n="cd $HOME/.dotfiles/config/nvim"
 
