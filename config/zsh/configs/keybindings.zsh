@@ -3,3 +3,5 @@ bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
 bindkey "^P" history-search-backward
 bindkey '^H' backward-kill-word
+
+bindkey '^ ' autosuggest-accept
