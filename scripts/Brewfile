@@ -40,9 +40,9 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'karabiner-elements'
-  cask 'spotify'
   cask 'starkwm/formulae/stark'
   cask 'telegram'
+  cask 'tidal'
 
   mas 'Kagi for Safari', id: 1622835804
   mas 'Xcode', id: 497799835
