@@ -33,7 +33,7 @@ hyper - p:
   osascript -e "tell application \"Photos\" to activate" &> /dev/null
 
 hyper - s:
-  osascript -e "tell application \"Spotify\" to activate" &> /dev/null
+  osascript -e "tell application \"TIDAL\" to activate" &> /dev/null
 
 hyper - t:
   osascript -e "tell application \"Telegram\" to activate" &> /dev/null
