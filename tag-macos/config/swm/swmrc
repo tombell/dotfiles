@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-echo "==> swm config"
-
-if [ -f "$PROJECTS/starkwm/swm/.build/debug/swm" ]; then
-  $PROJECTS/starkwm/swm/.build/debug/swm --message config --foo=bar --baz -q
-fi
