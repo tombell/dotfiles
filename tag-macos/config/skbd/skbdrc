@@ -29,6 +29,9 @@ meh - m:
 meh - n:
   osascript -e "tell application \"Notes\" to activate" &> /dev/null
 
+meh - o:
+  osascript -e "tell application \"Orion\" to activate" &> /dev/null
+
 meh - p:
   osascript -e "tell application \"Photos\" to activate" &> /dev/null
 
