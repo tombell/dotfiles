@@ -42,6 +42,14 @@ meh - x:
   osascript -e "tell application \"Xcode\" to activate" &> /dev/null
 
 ################################################################################
+# Web Applications
+################################################################################
+
+cmd + meh - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
+
+cmd + meh - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
+
+################################################################################
 # Home
 ################################################################################
 
