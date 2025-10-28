@@ -48,6 +48,8 @@ meh - x:
 # Web Applications
 ################################################################################
 
+cmd + meh - a: open -n -a "Google Chrome" --args --app=https://kagi.com/assistant
+
 cmd + meh - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
 
 cmd + meh - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
