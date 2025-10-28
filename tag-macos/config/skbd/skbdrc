@@ -2,43 +2,43 @@
 # Applications
 ################################################################################
 
-hyper - enter:
+meh - enter:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
-hyper - b:
+meh - b:
   osascript -e "tell application \"Google Chrome\" to activate" &> /dev/null
 
-hyper - c:
+meh - c:
   osascript -e "tell application \"Calendar\" to activate" &> /dev/null
 
-hyper - d:
+meh - d:
   osascript -e "tell application \"Discord\" to activate" &> /dev/null
 
-hyper - e:
+meh - e:
   osascript -e "tell application \"Mail\" to activate" &> /dev/null
 
-hyper - f:
+meh - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
-hyper -g:
+meh -g:
   osascript -e "tell application \"Ghostty\" to activate" &> /dev/null
 
-hyper - m:
+meh - m:
   osascript -e "tell application \"Messages\" to activate" &> /dev/null
 
-hyper - n:
+meh - n:
   osascript -e "tell application \"Notes\" to activate" &> /dev/null
 
-hyper - p:
+meh - p:
   osascript -e "tell application \"Photos\" to activate" &> /dev/null
 
-hyper - s:
+meh - s:
   osascript -e "tell application \"TIDAL\" to activate" &> /dev/null
 
-hyper - t:
+meh - t:
   osascript -e "tell application \"Telegram\" to activate" &> /dev/null
 
-hyper - x:
+meh - x:
   osascript -e "tell application \"Xcode\" to activate" &> /dev/null
 
 ################################################################################
