@@ -8,7 +8,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Mod Tap: Right Option/Hyper",
+                        "description": "Mod Tap: Right Option/Meh",
                         "manipulators": [
                             {
                                 "from": {
@@ -18,7 +18,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_control",
-                                        "modifiers": ["left_option", "left_shift", "left_command"]
+                                        "modifiers": ["left_option", "left_shift"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "right_option" }],
