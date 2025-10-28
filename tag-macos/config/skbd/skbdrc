@@ -52,6 +52,8 @@ cmd + meh - a: open -n -a "Google Chrome" --args --app=https://kagi.com/assistan
 
 cmd + meh - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
 
+cmd + meh - n: open -n -a "Google Chrome" --args --app=https://news.kagi.com
+
 cmd + meh - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
 
 ################################################################################
