@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 personal = 'Pyra'
-music = 'Brighid'
 work = 'Poppi'
 
 hostname = `scutil --get ComputerName`.chomp
@@ -16,7 +15,7 @@ brew 'zsh-autosuggestions'
 cask '1password'
 cask '1password-cli'
 cask 'appcleaner'
-cask 'ghostty@tip'
+cask 'ghostty'
 cask 'keka'
 cask 'kekaexternalhelper'
 cask 'keyboardcleantool'
@@ -53,11 +52,7 @@ end
 if hostname == personal
   brew 'transmission-cli'
 
-  cask 'stolendata-mpv'
-end
-
-if hostname == music
-  cask 'rekordbox'
+  cask 'optimus-player'
 end
 
 if hostname == work
