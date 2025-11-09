@@ -41,7 +41,7 @@ defaults write com.apple.dock autohide -int 1
 defaults write com.apple.dock show-recents -int 0
 
 # Dock: Size
-defaults write com.apple.dock tilesize -int 34
+defaults write com.apple.dock tilesize -int 30
 
 # Dock: Disable resizing
 defaults write com.apple.dock size-immutable -int 1
