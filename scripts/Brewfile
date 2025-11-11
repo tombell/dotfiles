@@ -40,7 +40,6 @@ if [personal, work].include?(hostname)
   cask 'discord'
   cask 'google-chrome'
   cask 'karabiner-elements'
-  cask 'orion'
   cask 'starkwm/formulae/stark'
   cask 'telegram'
   cask 'tidal'
