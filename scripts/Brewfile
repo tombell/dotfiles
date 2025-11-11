@@ -24,6 +24,7 @@ cask 'tombell/formulae/font-iosevka-custom'
 if [personal, work].include?(hostname)
   brew 'fd'
   brew 'fzf'
+  brew 'gh'
   brew 'git'
   brew 'jj'
   brew 'jq'
