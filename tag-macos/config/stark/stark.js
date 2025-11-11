@@ -113,33 +113,3 @@ const moveWindowToScreen = (direction) => {
 
 Keymap.on("left", ctrlShift, () => moveWindowToScreen("left"));
 Keymap.on("right", ctrlShift, () => moveWindowToScreen("right"));
-
-// Nudge windows
-// -----------------------------------------------------------------------------
-
-const nudgeWindow = (dx, dy) => {
-  const win = Window.focused();
-  if (!win) return;
-  const { x, y, width, height } = win.frame;
-  win.setFrame({ x: x + dx, y: y + dy, width, height });
-};
-
-// Keymap.on("h", shiftOpt, () => nudgeWindow(-10, 0));
-// Keymap.on("j", shiftOpt, () => nudgeWindow(0, 10));
-// Keymap.on("k", shiftOpt, () => nudgeWindow(0, -10));
-// Keymap.on("l", shiftOpt, () => nudgeWindow(10, 0));
-
-// Resize windows
-// -----------------------------------------------------------------------------
-
-const resizeWindow = (dw, dh) => {
-  const win = Window.focused();
-  if (!win) return;
-  const { x, y, width, height } = win.frame;
-  win.setFrame({ x, y, width: width + dw, height: height + dh });
-};
-
-// Keymap.on("h", cmdShift, () => resizeWindow(-10, 0));
-// Keymap.on("l", cmdShift, () => resizeWindow(10, 0));
-// Keymap.on("j", cmdShift, () => resizeWindow(0, 10));
-// Keymap.on("k", cmdShift, () => resizeWindow(0, -10));
