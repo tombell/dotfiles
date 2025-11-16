@@ -13,6 +13,7 @@
   cp = cherry-pick
   dc = diff --cached
   di = diff
+  ds = -c diff.external=difft show --ext-diff
   l = log --pretty=oneline --abbrev-commit --max-count=15
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
