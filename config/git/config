@@ -41,10 +41,11 @@
   autosquash = true
 
 [rerere]
-	enabled = true
+  enabled = true
 
 [diff]
-	wsErrorHighlight = all
+  wsErrorHighlight = all
+  external = difft
 
 [pretty]
   colored = format:%C(yellow)%h%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset
