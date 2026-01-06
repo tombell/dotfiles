@@ -1,18 +1,8 @@
 return {
-  -- nvim-lint
-  {
-    "mfussenegger/nvim-lint",
-    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-    opts = {
-      linters_by_ft = {
-        -- go = { "golangcilint" },
-        javascript = { "eslint" },
-        javascriptreact = { "eslint" },
-        -- ruby = { "rubocop" },
-        typescript = { "eslint" },
-        typescriptreact = { "eslint" },
-      },
-      linters = {
+  src = "https://github.com/mfussenegger/nvim-lint",
+  data = {
+    setup = function()
+      local linters = {
         eslint = {
           condition = function(ctx)
             return vim.fs.find({
@@ -25,37 +15,21 @@ return {
             }, { path = ctx.filename, upward = true })[1] ~= nil
           end,
         },
-        rubocop = {
-          enabled = false,
-          condition = function(ctx)
-            return vim.fs.find({ ".solargraph.yml" }, { path = ctx.filename, upward = true })[1] == nil
-          end,
-        },
-      },
-    },
-    config = function(_, opts)
+      }
+
       local M = {}
 
       local lint = require "lint"
-      lint.linters_by_ft = opts.linters_by_ft
+      lint.linters_by_ft = {
+        javascript = { "eslint" },
+        javascriptreact = { "eslint" },
+        typescript = { "eslint" },
+        typescriptreact = { "eslint" },
+      }
 
-      for name, linter in pairs(opts.linters) do
+      for name, linter in pairs(linters) do
         if type(linter) == "table" and type(lint.linters[name]) == "table" then
           lint.linters[name] = vim.tbl_deep_extend("force", {}, lint.linters[name], linter)
-        end
-      end
-
-      function M.debounce(ms, fn)
-        local timer = vim.uv.new_timer()
-
-        return function(...)
-          if timer ~= nil then
-            local argv = { ... }
-            timer:start(ms, 0, function()
-              timer:stop()
-              vim.schedule_wrap(fn)(unpack(argv))
-            end)
-          end
         end
       end
 
@@ -79,18 +53,8 @@ return {
 
       vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
         group = vim.api.nvim_create_augroup("tombell-lint", { clear = true }),
-        callback = M.debounce(100, M.lint),
+        callback = require("util").debounce(100, M.lint),
       })
     end,
-  },
-
-  -- mason.nvim
-  {
-    "mason-org/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "golangci-lint",
-      },
-    },
   },
 }
