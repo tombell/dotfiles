@@ -1,6 +1,6 @@
 vim.filetype.add {
   extension = {
-    skbd = "skbdrc",
+    ["jbuilder"] = "ruby",
   },
   pattern = {
     -- dotenv files

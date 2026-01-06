@@ -52,7 +52,8 @@ function M.realpath(path)
     return nil
   end
 
-  return vim.uv.fs_realpath(path) or path
+  local ok, real = pcall(vim.uv.fs_realpath, path)
+  return ok and real or path
 end
 
 function M.resolve(spec)
