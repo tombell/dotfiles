@@ -1,22 +1,27 @@
-vim.lsp.set_log_level "OFF"
+vim.lsp.log.set_level "ERROR"
 
-if vim.fn.has "nvim-0.11" == 1 then
-  vim.lsp.config("vtsls", {
-    settings = {
-      typescript = { preferences = { importModuleSpecifier = "non-relative" } },
-      javascript = { preferences = { importModuleSpecifier = "non-relative" } },
-    },
-  })
+vim.lsp.config("gopls", {
+  settings = {
+    gopls = { gofumpt = true },
+  },
+})
 
-  vim.lsp.config("gopls", {
-    settings = {
-      codelenses = {
-        test = true,
-        tidy = true,
+-- NOTE: https://github.com/folke/lazydev.nvim/issues/136
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      workspace = {
+        library = { vim.env.VIMRUNTIME },
       },
     },
-  })
+  },
+})
 
-  vim.lsp.enable("solargraph", vim.fs.find(".solargraph.yml", { path = vim.uv.cwd(), upward = true })[1] ~= nil)
-  vim.lsp.enable { "gopls", "lua_ls", "sourcekit", "vtsls", "zls" }
-end
+vim.lsp.config("vtsls", {
+  settings = {
+    typescript = { preferences = { importModuleSpecifier = "non-relative" } },
+    javascript = { preferences = { importModuleSpecifier = "non-relative" } },
+  },
+})
+
+vim.lsp.enable { "gopls", "lua_ls", "ruby_lsp", "sourcekit", "vtsls", "zls" }

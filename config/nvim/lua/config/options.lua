@@ -35,15 +35,10 @@ o.showbreak = "↳  "
 o.mousescroll = "ver:3,hor:0"
 
 o.signcolumn = "yes"
-o.statuscolumn = "%!v:lua.require'hem'.get()"
 
 o.foldlevel = 99
-o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-o.foldtext = "v:lua.require'pleat'.get()"
+o.foldmethod = "indent"
 
 o.fillchars:append "fold: "
 
-if vim.fn.has "nvim-0.11" == 1 then
-  o.winborder = "rounded"
-end
+o.winborder = "rounded"
