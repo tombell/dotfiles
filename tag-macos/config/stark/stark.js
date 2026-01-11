@@ -69,9 +69,11 @@ moveAndResizeWindow("c", ctrlShift, 12, 10, 12, 10, 0, 0); // Centre full
 moveAndResizeWindow("x", ctrlShift, 12, 10, 10, 8, 1, 1); // Centre medium
 moveAndResizeWindow("z", ctrlShift, 12, 10, 8, 6, 2, 2); // Centre small
 
+moveAndResizeWindow("h", shiftOpt, 12, 10, 8, 10, 0, 0); // Left-two thirds
 moveAndResizeWindow("h", ctrlOpt, 12, 10, 4, 10, 0, 0); // Left-one third
 moveAndResizeWindow("h", ctrlShift, 12, 10, 6, 10, 0, 0); // Left-half
 
+moveAndResizeWindow("l", shiftOpt, 12, 10, 8, 10, 4, 0); // Right-two thirds
 moveAndResizeWindow("l", ctrlOpt, 12, 10, 4, 10, 8, 0); // Right-one third
 moveAndResizeWindow("l", ctrlShift, 12, 10, 6, 10, 6, 0); // Right-half
 
