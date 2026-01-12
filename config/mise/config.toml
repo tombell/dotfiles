@@ -2,9 +2,10 @@
 go = "latest"
 lua = "5.1"
 node = "lts"
-ruby = "4.0"
+opencode = "latest"
+ruby = "latest"
 tree-sitter = "latest"
-zig = "0.15"
+zig = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []
