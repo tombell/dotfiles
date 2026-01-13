@@ -37,11 +37,13 @@ if [personal, work].include?(hostname)
   brew 'starkwm/formulae/skbd'
   brew 'tmux'
   brew 'tree'
+  brew 'xz'
   brew 'zoxide'
 
   cask 'discord'
   cask 'google-chrome'
   cask 'karabiner-elements'
+  cask 'soundsource'
   cask 'starkwm/formulae/stark'
   cask 'telegram'
   cask 'tidal'
@@ -75,6 +77,5 @@ if hostname == work
   cask 'postico'
   cask 'rapidapi'
   cask 'slack'
-  cask 'soundsource'
   cask 'zulu@17'
 end
