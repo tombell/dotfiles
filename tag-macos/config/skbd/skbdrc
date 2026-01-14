@@ -20,7 +20,7 @@ meh - e:
 meh - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
-meh -g:
+meh - g:
   osascript -e "tell application \"Ghostty\" to activate" &> /dev/null
 
 meh - m:
@@ -43,6 +43,9 @@ meh - t:
 
 meh - x:
   osascript -e "tell application \"Xcode\" to activate" &> /dev/null
+
+meh - z:
+  shortcuts run "Make it so"
 
 ################################################################################
 # Web Applications
