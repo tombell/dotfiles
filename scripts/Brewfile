@@ -22,11 +22,11 @@ cask 'keyboardcleantool'
 cask 'tombell/formulae/font-iosevka-custom'
 
 if [personal, work].include?(hostname)
-  brew 'difftastic'
   brew 'fd'
   brew 'fzf'
   brew 'gh'
   brew 'git'
+  brew 'git-delta'
   brew 'jj'
   brew 'jq'
   brew 'libyaml'
