@@ -1,5 +1,8 @@
 ; vim: set ft=gitconfig:
 
+[include]
+  path = ~/.config/git/delta-theme
+
 [user]
   name = Tom Bell
   email = tomb@tombell.dev
@@ -13,7 +16,6 @@
   cp = cherry-pick
   dc = diff --cached
   di = diff
-  ds = -c diff.external=difft show --ext-diff
   l = log --pretty=oneline --abbrev-commit --max-count=15
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
@@ -25,32 +27,42 @@
   rs = rebase --skip
   st = status -sb
 
+[core]
+  autocrlf = input
+  excludesfile = ~/.config/git/ignore
+  pager = delta
+
+[fetch]
+  prune = true
+
 [push]
   default = current
 
 [pull]
   ff = only
 
-[fetch]
-  prune = true
-
-[core]
-  autocrlf = input
-  excludesfile = ~/.config/git/ignore
+[merge]
+  conflictStyle = zdiff3
 
 [rebase]
   autosquash = true
 
+[diff]
+  wsErrorHighlight = all
+
 [rerere]
   enabled = true
 
-[diff]
-  wsErrorHighlight = all
-  external = difft
+[interactive]
+  diffFilter = delta --color-only
 
 [pretty]
   colored = format:%C(yellow)%h%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset
   graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[delta]
+  navigate = true
+  side-by-side = true
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
