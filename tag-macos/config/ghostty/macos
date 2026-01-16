@@ -5,3 +5,5 @@ window-padding-y = 20
 window-padding-color = extend
 
 macos-titlebar-style = hidden
+
+macos-icon = xray
