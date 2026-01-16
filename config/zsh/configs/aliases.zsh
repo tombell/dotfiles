@@ -8,3 +8,4 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 alias urepo='for d in *; do (cd $d && pwd && git pull && echo); done'
 alias brepo='for d in *; do (cd "$d" && pwd && git branch && echo); done'
+alias stashed='for d in *; do (cd "$d" && pwd && git stash list && echo); done'
