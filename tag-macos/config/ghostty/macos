@@ -2,5 +2,6 @@ font-thicken = true
 
 window-padding-x = 20
 window-padding-y = 20
+window-padding-color = extend
 
 macos-titlebar-style = hidden
