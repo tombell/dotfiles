@@ -6,43 +6,46 @@ meh - enter:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
 meh - b:
-  osascript -e "tell application \"Google Chrome\" to activate" &> /dev/null
+  osascript -e 'tell application "Google Chrome" to activate' &> /dev/null
 
 meh - c:
-  osascript -e "tell application \"Calendar\" to activate" &> /dev/null
+  osascript -e 'tell application "Calendar" to activate' &> /dev/null
 
 meh - d:
-  osascript -e "tell application \"Discord\" to activate" &> /dev/null
+  osascript -e 'tell application "Discord" to activate' &> /dev/null
 
 meh - e:
-  osascript -e "tell application \"Mail\" to activate" &> /dev/null
+  osascript -e 'tell application "Mail" to activate' &> /dev/null
 
 meh - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
 meh - g:
-  osascript -e "tell application \"Ghostty\" to activate" &> /dev/null
+  osascript -e 'tell application "Ghostty" to activate' &> /dev/null
 
 meh - m:
-  osascript -e "tell application \"Messages\" to activate" &> /dev/null
+  osascript -e 'tell application "Messages" to activate' &> /dev/null
 
 meh - n:
-  osascript -e "tell application \"Notes\" to activate" &> /dev/null
+  osascript -e 'tell application "Notes" to activate' &> /dev/null
 
 meh - o:
-  osascript -e "tell application \"Orion\" to activate" &> /dev/null
+  osascript -e 'tell application "Orion" to activate' &> /dev/null
 
 meh - p:
-  osascript -e "tell application \"Photos\" to activate" &> /dev/null
+  osascript -e 'tell application "Photos" to activate' &> /dev/null
 
 meh - s:
-  osascript -e "tell application \"TIDAL\" to activate" &> /dev/null
+  osascript -e 'tell application "TIDAL" to activate' &> /dev/null
 
 meh - t:
-  osascript -e "tell application \"Telegram\" to activate" &> /dev/null
+  osascript -e 'tell application "Telegram" to activate' &> /dev/null
 
 meh - x:
-  osascript -e "tell application \"Xcode\" to activate" &> /dev/null
+  osascript -e 'tell application "Xcode" to activate' &> /dev/null
+
+meh - y:
+  osascript -e 'tell application "Yaak" to activate' &> /dev/null
 
 meh - z:
   shortcuts run "Make it so"
