@@ -45,35 +45,34 @@ meh - x:
   osascript -e 'tell application "Xcode" to activate' &> /dev/null
 
 meh - y:
-  osascript -e 'tell application "Yaak" to activate' &> /dev/null
+  osascript -e 'tell application "yaak" to activate' &> /dev/null
 
-meh - z:
-  shortcuts run "Make it so"
+################################################################################
+# Shortcuts
+################################################################################
+
+meh - z: shortcuts run "Make it so"
 
 ################################################################################
 # Web Applications
 ################################################################################
 
-hyper - a: open -n -a "Google Chrome" --args --app=https://kagi.com/assistant
+# hyper - a: open -n -a "Google Chrome" --args --app=https://kagi.com/assistant
 
-hyper - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
+# hyper - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
 
-hyper - n: open -n -a "Google Chrome" --args --app=https://news.kagi.com
+# hyper - n: open -n -a "Google Chrome" --args --app=https://news.kagi.com
 
-hyper - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
+# hyper - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
 
 ################################################################################
 # Home
 ################################################################################
 
-ctrl + opt - 0:
-  shortcuts run "All Off"
+ctrl + opt - 0: shortcuts run "All Off"
 
-ctrl + opt - 1:
-  shortcuts run "Main Bedroom"
+ctrl + opt - 1: shortcuts run "Main Bedroom"
 
-ctrl + opt - 2:
-  shortcuts run "Guest Bedroom"
+ctrl + opt - 2: shortcuts run "Guest Bedroom"
 
-ctrl + opt - 3:
-  shortcuts run "Living Room"
+ctrl + opt - 3: shortcuts run "Living Room"
