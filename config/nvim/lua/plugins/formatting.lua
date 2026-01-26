@@ -1,6 +1,6 @@
 require("conform").setup {
   format_on_save = {
-    timeout_ms = 3000,
+    -- timeout_ms = 3000,
   },
   formatters_by_ft = {
     bash = { "shfmt" },
@@ -10,6 +10,8 @@ require("conform").setup {
     json = { "prettier", lsp_format = "fallback" },
     jsonc = { "prettier", lsp_format = "fallback" },
     lua = { "stylua" },
+    graphql = { "prettier" },
+    ruby = { "standardrb" },
     sh = { "shfmt" },
     swift = { "swift" },
     typescript = { "prettier", lsp_format = "fallback" },
