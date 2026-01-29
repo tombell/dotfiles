@@ -102,10 +102,10 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -int 0
 ###############################################################################
 
 # Tap to click
-# TODO: figure out on Sequoia?
+# TODO: figure out on Tahoe?
 
 # Natural scrolling
-# TODO: figure out on Sequoia?
+# TODO: figure out on Tahoe?
 
 ###############################################################################
 # FINDER
