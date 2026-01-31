@@ -7,3 +7,4 @@ source "$(dirname "$0")/common.sh"
 rcup_install macos -- -S karabiner
 "$(dirname "$0")/defaults.sh"
 "$(dirname "$0")/mise.sh"
+"$(dirname "$0")/ssh.sh"
