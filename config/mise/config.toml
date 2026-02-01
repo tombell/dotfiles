@@ -5,6 +5,7 @@ node = "lts"
 opencode = "latest"
 ruby = "latest"
 tree-sitter = "latest"
+uv = "0.9"
 zig = "latest"
 
 [settings]
