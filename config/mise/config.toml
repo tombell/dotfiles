@@ -1,4 +1,5 @@
 [tools]
+bun = "1.3"
 go = "latest"
 lua = "5.1"
 node = "lts"
