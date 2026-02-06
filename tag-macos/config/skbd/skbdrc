@@ -23,14 +23,17 @@ meh - f:
 meh - g:
   osascript -e 'tell application "Ghostty" to activate' &> /dev/null
 
+meh - h:
+  osascript -e 'tell application "Home" to activate' &> /dev/null
+
 meh - m:
   osascript -e 'tell application "Messages" to activate' &> /dev/null
 
 meh - n:
   osascript -e 'tell application "Notes" to activate' &> /dev/null
 
-meh - o:
-  osascript -e 'tell application "Orion" to activate' &> /dev/null
+# meh - o:
+#   osascript -e 'tell application "Orion" to activate' &> /dev/null
 
 meh - p:
   osascript -e 'tell application "Photos" to activate' &> /dev/null
@@ -54,25 +57,13 @@ meh - y:
 meh - z: shortcuts run "Make it so"
 
 ################################################################################
-# Web Applications
-################################################################################
-
-# hyper - a: open -n -a "Google Chrome" --args --app=https://kagi.com/assistant
-
-# hyper - m: open -n -a "Google Chrome" --args --app=https://maps.kagi.com
-
-# hyper - n: open -n -a "Google Chrome" --args --app=https://news.kagi.com
-
-# hyper - t: open -n -a "Google Chrome" --args --app=https://translate.kagi.com
-
-################################################################################
 # Home
 ################################################################################
-
-ctrl + opt - 0: shortcuts run "All Off"
 
 ctrl + opt - 1: shortcuts run "Main Bedroom"
 
 ctrl + opt - 2: shortcuts run "Guest Bedroom"
 
 ctrl + opt - 3: shortcuts run "Living Room"
+
+ctrl + opt - 4: shortcuts run "All Off"
