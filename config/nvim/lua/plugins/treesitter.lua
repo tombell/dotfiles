@@ -1,4 +1,38 @@
-local ensure_installed = {
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  callback = function()
+    local parsers = require "nvim-treesitter.parsers"
+
+    ---@diagnostic disable: missing-fields
+
+    parsers.applescript = {
+      install_info = {
+        url = "https://github.com/waddie/tree-sitter-applescript",
+        queries = "queries",
+      },
+    }
+
+    parsers.skbdrc = {
+      install_info = {
+        url = "https://github.com/starkwm/tree-sitter-skbdrc",
+        queries = "queries/skbdrc",
+      },
+    }
+
+    ---@diagnostic enable: missing-fields
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
+
+require("nvim-treesitter").setup()
+require("nvim-treesitter").install {
+  "applescript",
   "bash",
   "c",
   "cpp",
@@ -19,7 +53,6 @@ local ensure_installed = {
   "javascript",
   "jsdoc",
   "json",
-  "jsonc",
   "latex",
   "lua",
   "luadoc",
@@ -29,55 +62,19 @@ local ensure_installed = {
   "objc",
   "python",
   "query",
-  "ron",
+  "regex",
   "ruby",
   "rust",
   "skbdrc",
   "sql",
   "ssh_config",
   "swift",
-  "sxhkdrc",
   "tmux",
   "toml",
   "tsx",
   "typescript",
-  "udev",
   "vimdoc",
   "xml",
   "yaml",
   "zig",
-}
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "TSUpdate",
-  callback = function()
-    ---@diagnostic disable: missing-fields
-    require("nvim-treesitter.parsers").skbdrc = {
-      install_info = {
-        url = "https://github.com/starkwm/tree-sitter-skbdrc",
-        queries = "queries/skbdrc",
-      },
-    }
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    pcall(vim.treesitter.start)
-  end,
-})
-
-return {
-  -- nvim-treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    config = function()
-      require("nvim-treesitter").setup {
-        install_dir = vim.fn.stdpath "data" .. "/site",
-      }
-      require("nvim-treesitter").install(ensure_installed)
-    end,
-  },
 }

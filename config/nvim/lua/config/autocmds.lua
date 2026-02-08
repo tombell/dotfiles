@@ -21,6 +21,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "neotest-output",
     "neotest-output-panel",
     "neotest-summary",
+    "nvim-pack",
     "qf",
     "query",
     "startuptime",
@@ -28,14 +29,6 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
-  end,
-})
-
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    vim.iter(vim.lsp.get_clients()):each(function(client)
-      client:stop()
-    end)
   end,
 })
 
@@ -49,12 +42,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- stylua: ignore start
-    map("<leader>cl", "<cmd>LspInfo<cr>", "LSP Info")
+    map("<leader>cl", function() Snacks.picker.lsp_config() end, "LSP Info")
+    -- stylua: ignore end
+
+    -- stylua: ignore start
     map("gd", function() Snacks.picker.lsp_definitions() end, "Goto Definition")
     map("gr", function() Snacks.picker.lsp_references() end, "References")
     map("gI", function() Snacks.picker.lsp_implementations() end, "Goto Implementation")
     map("gy", function() Snacks.picker.lsp_type_definitions() end, "Goto Type Definition")
     map("<leader>ss", function() Snacks.picker.lsp_symbols() end, "LSP Symbols")
+    map("<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, "LSP Workspace Symbols")
+    map("gai", function() Snacks.picker.lsp_incoming_calls() end, "Calls Incoming")
+    map("gao", function() Snacks.picker.lsp_outgoing_calls() end, "Calls Outgoing")
+
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("K", vim.lsp.buf.hover, "Hover")
     map("gK", vim.lsp.buf.signature_help, "Signature Help")
