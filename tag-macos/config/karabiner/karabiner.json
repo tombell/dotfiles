@@ -8,7 +8,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change: fn+hjkl to arrow keys",
+                        "description": "Map fn+hjkl to arrows",
                         "manipulators": [
                             {
                                 "from": {
@@ -57,7 +57,7 @@
                         ]
                     },
                     {
-                        "description": "Mod Tap: Right Option/Meh",
+                        "description": "Map right opt to ctrl+opt",
                         "manipulators": [
                             {
                                 "from": {
@@ -67,7 +67,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_control",
-                                        "modifiers": ["left_option", "left_shift"]
+                                        "modifiers": ["left_option"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "right_option" }],
@@ -76,7 +76,7 @@
                         ]
                     },
                     {
-                        "description": "Mod Tap: Esc/Control",
+                        "description": "Map caps lock to ctrl (hold)/escape (tap)",
                         "manipulators": [
                             {
                                 "from": {
