@@ -1,0 +1,8 @@
+root: ~/Code/madesuper
+
+sessions:
+  - name: supercycle
+    root: ./supercycle
+    after_start:
+      - tmux select-window -t 1
+    windows:
