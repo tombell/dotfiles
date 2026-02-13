@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 personal = "Pyra"
-work = "Poppi"
+work = "Haze"
 
 hostname = `scutil --get ComputerName`.chomp
 
@@ -44,7 +44,6 @@ if [personal, work].include? hostname
   cask "tombell/formulae/font-iosevka-custom"
   cask "google-chrome"
   cask "karabiner-elements"
-  cask "orion"
   cask "postico"
   cask "soundsource"
   cask "starkwm/formulae/stark@tip"
@@ -59,4 +58,8 @@ end
 
 if [personal].include? hostname
   brew "transmission-cli"
+end
+
+if [work].include? hostname
+  brew "tombell/formulae/tmux-manager"
 end
