@@ -32,6 +32,9 @@
   excludesfile = ~/.config/git/ignore
   pager = delta
 
+[init]
+  defaultBranch = main
+
 [fetch]
   prune = true
 
@@ -65,8 +68,3 @@
   side-by-side = true
   syntax-theme = tokyonight_night
 
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
