@@ -2,59 +2,59 @@
 # Applications
 ################################################################################
 
-ctrl + opt - enter:
+meh - enter:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
-ctrl + opt - b:
+meh - b:
   osascript -e 'tell application "Google Chrome" to activate' &> /dev/null
 
-ctrl + opt - c:
+meh - c:
   osascript -e 'tell application "Calendar" to activate' &> /dev/null
 
-ctrl + opt - d:
+meh - d:
   osascript -e 'tell application "Discord" to activate' &> /dev/null
 
-ctrl + opt - e:
+meh - e:
   osascript -e 'tell application "Mail" to activate' &> /dev/null
 
-ctrl + opt - f:
+meh - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
-ctrl + opt - g:
+meh - g:
   osascript -e 'tell application "Ghostty" to activate' &> /dev/null
 
-ctrl + opt - h:
+meh - h:
   osascript -e 'tell application "Home" to activate' &> /dev/null
 
-ctrl + opt - m:
+meh - m:
   osascript -e 'tell application "Messages" to activate' &> /dev/null
 
-ctrl + opt - n:
+meh - n:
   osascript -e 'tell application "Notes" to activate' &> /dev/null
 
-ctrl + opt - o:
+meh - o:
   osascript -e 'tell application "Orion" to activate' &> /dev/null
 
-ctrl + opt - p:
+meh - p:
   osascript -e 'tell application "Photos" to activate' &> /dev/null
 
-ctrl + opt - s:
+meh - s:
   osascript -e 'tell application "TIDAL" to activate' &> /dev/null
 
-ctrl + opt - t:
+meh - t:
   osascript -e 'tell application "Telegram" to activate' &> /dev/null
 
-ctrl + opt - x:
+meh - x:
   osascript -e 'tell application "Xcode" to activate' &> /dev/null
 
-ctrl + opt - y:
+meh - y:
   osascript -e 'tell application "yaak" to activate' &> /dev/null
 
 ################################################################################
 # Shortcuts
 ################################################################################
 
-ctrl + opt - z: shortcuts run "Make it so"
+meh - z: shortcuts run "Make it so"
 
 ################################################################################
 # Home

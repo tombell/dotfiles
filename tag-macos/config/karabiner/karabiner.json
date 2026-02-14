@@ -67,7 +67,7 @@
                                 "to": [
                                     {
                                         "key_code": "left_control",
-                                        "modifiers": ["left_option"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "right_option" }],
