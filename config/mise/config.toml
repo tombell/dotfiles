@@ -1,13 +1,10 @@
 [tools]
-bun = "1.3"
 go = "latest"
 lua = "5.1"
 node = "lts"
 opencode = "latest"
 ruby = "latest"
 tree-sitter = "latest"
-uv = "0.9"
-zig = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []
