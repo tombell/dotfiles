@@ -6,3 +6,7 @@ email = "tomb@tombell.dev"
 
 [ui]
 default-command = "log"
+
+[aliases]
+l = ["log", "-r", "(main..@):: | (main..@)-"]
+log-all = ["log", "-r", "all()"]
