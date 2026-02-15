@@ -12,9 +12,9 @@ return {
           "rubocop",
           "ruby-lsp",
           "shfmt",
+          "standardrb",
           "stylua",
           "vtsls",
-          "zls",
         },
       }
     end,

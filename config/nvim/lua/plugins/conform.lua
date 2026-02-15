@@ -22,7 +22,6 @@ return {
           swift = { "swift" },
           typescript = { "prettier", lsp_format = "fallback" },
           typescriptreact = { "prettier", lsp_format = "fallback" },
-          zig = { "zigfmt" },
         },
       }
     end,
