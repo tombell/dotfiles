@@ -24,4 +24,4 @@ vim.lsp.config("vtsls", {
   },
 })
 
-vim.lsp.enable { "gopls", "lua_ls", "ruby_lsp", "sourcekit", "vtsls", "zls" }
+vim.lsp.enable { "gopls", "lua_ls", "rubocop", "ruby_lsp", "sourcekit", "vtsls", "zls" }

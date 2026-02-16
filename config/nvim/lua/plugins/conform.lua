@@ -4,7 +4,7 @@ return {
     setup = function()
       require("conform").setup {
         format_on_save = {
-          timeout_ms = 1000,
+          timeout_ms = 1500,
         },
         formatters_by_ft = {
           bash = { "shfmt" },
