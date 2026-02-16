@@ -6,3 +6,29 @@ sessions:
     after_start:
       - tmux select-window -t 1
     windows:
+      - name: rails
+        root: ./web
+        commands:
+          - bin/rails s -p 58802
+      - name: queue
+        root: ./web
+        commands:
+          - bin/jobs
+      - name: vite(theme)
+        root: ./extensions/theme
+        commands:
+          - yarn run vite:dev
+      - name: vite(frontend)
+        root: ./web/frontend
+        commands:
+          - yarn run vite --port 3000
+      - name: shopify
+        root: ./
+        commands:
+          - yarn run shopify app dev
+      - name: tunnel
+        root: ./
+        commands:
+          - bin/tunnel -n tom
+      - name: editor
+        root: ./web
