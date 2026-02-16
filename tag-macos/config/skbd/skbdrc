@@ -5,6 +5,9 @@
 meh - enter:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
+meh - 1:
+  open -a 1Password
+
 meh - b:
   osascript -e 'tell application "Google Chrome" to activate' &> /dev/null
 
