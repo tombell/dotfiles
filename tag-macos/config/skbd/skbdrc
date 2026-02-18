@@ -2,7 +2,7 @@
 # Applications
 ################################################################################
 
-meh - enter:
+meh - return:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
 meh - 1:
