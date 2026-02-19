@@ -9,6 +9,9 @@ return {
             split = "below",
           },
         },
+        lsp = {
+          enabled = false,
+        },
       }
 
       -- stylua: ignore start
