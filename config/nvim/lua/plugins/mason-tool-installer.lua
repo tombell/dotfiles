@@ -14,6 +14,7 @@ return {
           "shfmt",
           "standardrb",
           "stylua",
+          "tailwindcss-language-server",
           "vtsls",
         },
       }
