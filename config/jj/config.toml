@@ -6,6 +6,11 @@ email = "tomb@tombell.dev"
 
 [ui]
 default-command = "log"
+diff-formatter = "delta"
+
+[merge-tools.delta]
+diff-args=["--side-by-side", "$left", "$right", "--width=$width"]
+diff-expected-exit-codes = [0, 1]
 
 [aliases]
 l = ["log", "-r", "(main..@):: | (main..@)-"]
