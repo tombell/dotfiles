@@ -14,4 +14,4 @@ diff-expected-exit-codes = [0, 1]
 
 [aliases]
 l = ["log", "-r", "(main..@):: | (main..@)-"]
-log-all = ["log", "-r", "all()"]
+ll = ["log", "-r", "all()"]
