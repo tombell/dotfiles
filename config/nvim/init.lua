@@ -30,6 +30,7 @@ vim.pack.add({
 
   -- editor
   require "plugins.gitsigns",
+  require "plugins.nvim-colorizer",
   require "plugins.todo-comments",
   require "plugins.trouble",
   require "plugins.which-key",
