@@ -5,7 +5,8 @@ return {
       require("colorizer").setup {
         user_default_options = {
           names = false,
-          tailwind = true,
+          css = true,
+          -- tailwind = true,
           mode = "virtualtext",
           virtualtext_inline = "before",
         },
