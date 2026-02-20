@@ -1,8 +1,15 @@
-Host *
-  IdentityFile ~/.ssh/Work
-  IdentitiesOnly yes
-
 Host github.com-personal
   HostName github.com
-  IdentityFile ~/.ssh/Personal
+  AddKeysToAgent yes
   IdentitiesOnly yes
+  IdentityFile ~/.ssh/Personal
+
+Host github.com
+  HostName github.com
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/Work
+
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/Work
