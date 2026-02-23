@@ -17,9 +17,6 @@ vim.pack.add({
   -- treesitter
   require "plugins.treesitter",
 
-  -- ai
-  require "plugins.opencode",
-
   -- coding
   require "plugins.blink-cmp",
   require "plugins.lazydev",
