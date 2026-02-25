@@ -13,6 +13,7 @@ diff-args=["--side-by-side", "$left", "$right", "--width=$width"]
 diff-expected-exit-codes = [0, 1]
 
 [aliases]
+d = ["diff"]
 l = ["log", "-r", "(main..@):: | (main..@)-"]
 ll = ["log", "-r", "all()"]
 upload = ["git", "push"]
