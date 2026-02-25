@@ -71,7 +71,7 @@ vim.pack.add({
 require("vim._core.ui2").enable {
   enable = true,
   msg = {
-    target = "cmd",
+    target = "msg",
     timeout = 4000,
   },
 }
