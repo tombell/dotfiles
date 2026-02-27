@@ -1,5 +1,6 @@
 plugins=(
-  "/opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 )
 
 for plugin in "${plugins[@]}"; do
