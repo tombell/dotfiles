@@ -2,71 +2,71 @@
 # Applications
 ################################################################################
 
-meh - return:
+ralt - return:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
-meh - 1:
+ralt - 1:
   open -a 1Password
 
-meh - b:
+ralt - b:
   osascript -e 'tell application "Google Chrome" to activate' &> /dev/null
 
-meh - c:
+ralt - c:
   osascript -e 'tell application "Calendar" to activate' &> /dev/null
 
-meh - d:
+ralt - d:
   osascript -e 'tell application "Discord" to activate' &> /dev/null
 
-meh - e:
+ralt - e:
   osascript -e 'tell application "Mail" to activate' &> /dev/null
 
-meh - f:
+ralt - f:
   osascript ~/.local/bin/launch-finder.scpt > /dev/null
 
-meh - g:
+ralt - g:
   osascript -e 'tell application "Ghostty" to activate' &> /dev/null
 
-meh - h:
+ralt - h:
   osascript -e 'tell application "Home" to activate' &> /dev/null
 
-meh - m:
+ralt - m:
   osascript -e 'tell application "Messages" to activate' &> /dev/null
 
-meh - n:
+ralt - n:
   osascript -e 'tell application "Notes" to activate' &> /dev/null
 
-meh - o:
+ralt - o:
   osascript -e 'tell application "Orion" to activate' &> /dev/null
 
-meh - p:
+ralt - p:
   osascript -e 'tell application "Photos" to activate' &> /dev/null
 
-meh - s:
+ralt - s:
   osascript -e 'tell application "TIDAL" to activate' &> /dev/null
 
-meh - t:
+ralt - t:
   osascript -e 'tell application "Telegram" to activate' &> /dev/null
 
-meh - x:
+ralt - x:
   osascript -e 'tell application "Xcode" to activate' &> /dev/null
 
-meh - y:
+ralt - y:
   osascript -e 'tell application "yaak" to activate' &> /dev/null
 
 ################################################################################
 # Shortcuts
 ################################################################################
 
-meh - z: shortcuts run "Make it so"
+ralt - z: shortcuts run "Make it so"
 
 ################################################################################
 # Home
 ################################################################################
 
-ctrl + opt - 1: shortcuts run "Main Bedroom"
+ctrl + alt - 1: shortcuts run "Main Bedroom"
 
-ctrl + opt - 2: shortcuts run "Guest Bedroom"
+ctrl + alt - 2: shortcuts run "Guest Bedroom"
 
-ctrl + opt - 3: shortcuts run "Living Room"
+ctrl + alt - 3: shortcuts run "Living Room"
 
-ctrl + opt - 4: shortcuts run "All Off"
+ctrl + alt - 4: shortcuts run "All Off"
