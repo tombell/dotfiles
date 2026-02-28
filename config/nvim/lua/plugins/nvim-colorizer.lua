@@ -4,12 +4,16 @@ return {
     setup = function()
       require("colorizer").setup {
         filetypes = { "*", "!nvim-pack" },
-        user_default_options = {
-          names = false,
-          css = true,
-          css_fn = true,
-          mode = "virtualtext",
-          virtualtext_inline = "before",
+        options = {
+          parsers = {
+            css = true,
+            css_fn = true,
+            names = { enable = false },
+          },
+          display = {
+            mode = "virtualtext",
+            virtualtext = { position = "before" },
+          },
         },
       }
     end,
