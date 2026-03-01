@@ -3,7 +3,7 @@ go = "latest"
 lua = "5.1"
 node = "lts"
 opencode = "latest"
-ruby = "latest"
+ruby = "3.3.4"
 tree-sitter = "latest"
 
 [settings]
