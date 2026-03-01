@@ -62,8 +62,7 @@ const grid = (c, r, w, h, x, y) => {
   win.setFrame({ x: fx, y: fy, width: fw, height: fh });
 };
 
-const moveAndResizeWindow = (key, mods, ...args) =>
-  Keymap.on(key, mods, () => grid(...args));
+const moveAndResizeWindow = (key, mods, ...args) => Keymap.on(key, mods, () => grid(...args));
 
 moveAndResizeWindow("c", ctrlShift, 12, 10, 12, 10, 0, 0); // Centre full
 moveAndResizeWindow("x", ctrlShift, 12, 10, 10, 8, 1, 1); // Centre medium
@@ -93,14 +92,12 @@ const moveWindowToScreen = (direction) => {
 
   if (direction === "left" && win.screen.id === secondary.id) {
     deltaX = -win.screen.flippedVisibleFrame.width;
-    const offset =
-      primary.flippedFrame.height - primary.flippedVisibleFrame.height;
+    const offset = primary.flippedFrame.height - primary.flippedVisibleFrame.height;
     newY += offset;
     newHeight -= offset;
   } else if (direction === "right" && win.screen.id === primary.id) {
     deltaX = win.screen.flippedVisibleFrame.width;
-    const offset =
-      secondary.flippedFrame.height - secondary.flippedVisibleFrame.height;
+    const offset = secondary.flippedFrame.height - secondary.flippedVisibleFrame.height;
     newY -= offset;
     newHeight += offset;
   }
