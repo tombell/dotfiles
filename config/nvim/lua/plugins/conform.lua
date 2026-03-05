@@ -20,8 +20,10 @@ return {
           ruby = { lsp_format = "fallback" },
           sh = { "shfmt" },
           swift = { "swift" },
+          toml = { "oxfmt" },
           typescript = { "oxfmt" },
           typescriptreact = { "oxfmt" },
+          yaml = { "oxfmt" },
         },
       }
     end,
