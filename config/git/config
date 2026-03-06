@@ -15,6 +15,7 @@
   co = checkout
   cp = cherry-pick
   dc = diff --cached
+  d = diff
   di = diff
   ll = log --pretty=colored --abbrev-commit --max-count=25
   lll = log --pretty=graph --graph --abbrev-commit --date=relative
