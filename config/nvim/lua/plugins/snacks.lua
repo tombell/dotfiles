@@ -30,6 +30,8 @@ return {
       -- stylua: ignore start
       vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "Buffers" })
       vim.keymap.set("n", "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath "config" --[[@as string]] }) end, { desc = "Find Config Files" })
+      vim.keymap.set("n", "<leader>fe", require("util").picker("explorer"), { desc = "Find Files (Root Dir)" })
+      vim.keymap.set("n", "<leader>fE", function() Snacks.picker.explorer() end, { desc = "Find Files" })
       vim.keymap.set("n", "<leader>ff", require("util").picker("files"), { desc = "Find Files (Root Dir)" })
       vim.keymap.set("n", "<leader>fF", function() Snacks.picker.files() end, { desc = "Find Files" })
       vim.keymap.set("n", "<leader>fg", function() Snacks.picker.git_files() end, { desc = "Find Files (Git)" })
