@@ -2,6 +2,9 @@ alias l='ls -lAh'
 alias ll='ls -al'
 alias la='ls -A'
 
+alias ..="cd .."
+alias ...="cd ../.."
+
 alias e='nvim'
 
 alias path='echo $PATH | tr -s ":" "\n"'
