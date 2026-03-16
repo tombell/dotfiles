@@ -6,7 +6,7 @@ sessions:
     after_start:
       - tmux select-window -t 1
     windows:
-      - name: rails
+      - name: app
         root: ./web
         commands:
           - bin/rails s -p 58802
@@ -34,5 +34,3 @@ sessions:
         root: ./
         commands:
           - bin/tunnel -n tom
-      - name: editor
-        root: ./web
