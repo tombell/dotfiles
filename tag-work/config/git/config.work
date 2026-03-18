@@ -1,0 +1,4 @@
+; vim: set ft=gitconfig:
+
+[user]
+  email = tom@supercycle.com

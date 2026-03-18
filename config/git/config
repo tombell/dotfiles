@@ -7,6 +7,9 @@
   name = Tom Bell
   email = tomb@tombell.dev
 
+[includeIf "gitdir:~/Code/madesuper/"]
+  path = ~/.config/git/config.work
+
 [alias]
   aa = add --all
   ap = add --patch
