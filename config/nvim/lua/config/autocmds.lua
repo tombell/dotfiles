@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("tombell-lsp-attach", { clear = true }),
   callback = function(event)
-    vim.lsp.document_color.enable(true, event.buf, { style = "■ " })
+    vim.lsp.document_color.enable(true, { bufnr = event.buf }, { style = "■ " })
 
     local function map(lhs, rhs, desc, mode, o)
       mode = mode or "n"
