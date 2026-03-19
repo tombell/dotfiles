@@ -76,6 +76,10 @@ moveAndResizeWindow("l", shiftOpt, 12, 10, 8, 10, 4, 0); // Right-two thirds
 moveAndResizeWindow("l", ctrlOpt, 12, 10, 4, 10, 8, 0); // Right-one third
 moveAndResizeWindow("l", ctrlShift, 12, 10, 6, 10, 6, 0); // Right-half
 
+moveAndResizeWindow("1", ctrlShift, 12, 10, 4, 10, 0, 0); // First third
+moveAndResizeWindow("2", ctrlShift, 12, 10, 4, 10, 4, 0); // Second third
+moveAndResizeWindow("3", ctrlShift, 12, 10, 4, 10, 8, 0); // Third third
+
 // Move windows to screen
 // -----------------------------------------------------------------------------
 
