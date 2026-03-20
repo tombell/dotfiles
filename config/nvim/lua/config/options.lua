@@ -37,7 +37,6 @@ o.mousescroll = "ver:3,hor:0"
 o.signcolumn = "yes"
 
 o.foldlevel = 99
-o.foldmethod = "indent"
 
 o.fillchars:append "fold: "
 
