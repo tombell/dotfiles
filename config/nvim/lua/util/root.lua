@@ -29,9 +29,12 @@ function M.detectors.lsp(buf)
     end
   end
 
-  return vim.tbl_filter(function(path)
-    return path and bufpath:find(path, 1, true) == 1
-  end, roots)
+  return vim
+    .iter(roots)
+    :filter(function(path)
+      return path and bufpath:find(path, 1, true) == 1
+    end)
+    :totable()
 end
 
 function M.detectors.pattern(buf, patterns)
@@ -82,7 +85,7 @@ function M.detect(opts)
     for _, p in ipairs(paths) do
       local pp = M.realpath(p)
 
-      if pp and not vim.tbl_contains(roots, pp) then
+      if pp and not vim.list_contains(roots, pp) then
         roots[#roots + 1] = pp
       end
     end
