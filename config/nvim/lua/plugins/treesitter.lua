@@ -29,8 +29,8 @@ return {
         pattern = "*",
         callback = function()
           if pcall(vim.treesitter.start) then
-            vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-            vim.wo[0][0].foldmethod = "expr"
+            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+            vim.wo.foldmethod = "expr"
 
             -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
           end
