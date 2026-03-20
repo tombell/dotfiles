@@ -19,7 +19,7 @@ return {
           changedelete = { text = "▎" },
         },
         on_attach = function(buffer)
-          local gs = package.loaded.gitsigns
+          local gs = require "gitsigns"
 
           vim.keymap.set("n", "]h", function()
             if vim.wo.diff then
