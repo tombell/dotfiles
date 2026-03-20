@@ -9,7 +9,7 @@ default-command = "log"
 diff-formatter = "delta"
 
 [merge-tools.delta]
-diff-args=["--side-by-side", "$left", "$right", "--width=$width"]
+diff-args = ["--side-by-side", "$left", "$right", "--width=$width"]
 diff-expected-exit-codes = [0, 1]
 
 [aliases]
@@ -18,4 +18,5 @@ d = ["diff"]
 fetch = ["git", "fetch"]
 l = ["log", "-r", "(main..@):: | (main..@)-"]
 ll = ["log", "-r", "all()"]
+r = ["rebase"]
 upload = ["git", "push"]
