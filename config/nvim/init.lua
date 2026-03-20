@@ -70,6 +70,8 @@ vim.pack.add({
   end,
 })
 
+-- NOTE: this is an experimental feature
+-- https://github.com/neovim/neovim/blob/master/runtime/lua/vim/_core/ui2.lua
 require("vim._core.ui2").enable {
   enable = true,
   msg = {
