@@ -9,6 +9,7 @@ return {
             css = true,
             css_fn = true,
             names = { enable = false },
+            tailwind = { enable = true },
           },
           display = {
             mode = "virtualtext",
