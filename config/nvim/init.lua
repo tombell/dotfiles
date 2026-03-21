@@ -16,6 +16,13 @@ vim.pack.add({
   -- misc
   { src = gh "neovim/nvim-lspconfig" },
 
+  -- editor
+  require "plugins.gitsigns",
+  require "plugins.nvim-colorizer",
+  require "plugins.todo-comments",
+  require "plugins.trouble",
+  require "plugins.which-key",
+
   -- treesitter
   require "plugins.treesitter",
 
@@ -26,13 +33,6 @@ vim.pack.add({
 
   -- colorscheme
   require "plugins.tokyonight",
-
-  -- editor
-  require "plugins.gitsigns",
-  require "plugins.nvim-colorizer",
-  require "plugins.todo-comments",
-  require "plugins.trouble",
-  require "plugins.which-key",
 
   -- formatting
   require "plugins.conform",
