@@ -20,8 +20,6 @@ o.hlsearch = false
 
 o.laststatus = 3
 
-o.shortmess:append { I = true }
-
 o.showmode = false
 
 o.splitbelow = true
