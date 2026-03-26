@@ -1,2 +1,2 @@
-alias c="claude"
+alias c="claude && tput reset"
 alias rw="railway"
