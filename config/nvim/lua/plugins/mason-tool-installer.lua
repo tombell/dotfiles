@@ -9,8 +9,6 @@ return {
           "gopls",
           "lua-language-server",
           "oxfmt",
-          "rubocop",
-          "ruby-lsp",
           "shfmt",
           "stylua",
           "tailwindcss-language-server",
