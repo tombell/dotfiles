@@ -16,6 +16,7 @@ vim.lsp.config("vtsls", {
 vim.lsp.enable {
   "gopls",
   "lua_ls",
+  "oxlint",
   "rubocop",
   "ruby_lsp",
   "sourcekit",
