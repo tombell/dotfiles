@@ -1,3 +1,6 @@
 personality = "pragmatic"
 model = "gpt-5.4"
 model_reasoning_effort = "medium"
+
+[mcp_servers.sentry]
+url = "https://mcp.sentry.dev/mcp"
