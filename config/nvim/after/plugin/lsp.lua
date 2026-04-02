@@ -6,6 +6,14 @@ vim.lsp.config("gopls", {
   },
 })
 
+local filetypes = vim.tbl_filter(function(ft)
+  return ft ~= "eruby"
+end, vim.lsp.config["tailwindcss"].filetypes)
+
+vim.lsp.config("tailwindcss", {
+  filetypes = filetypes,
+})
+
 vim.lsp.config("vtsls", {
   settings = {
     typescript = { preferences = { importModuleSpecifier = "non-relative" } },
