@@ -9,6 +9,7 @@ return {
           "gopls",
           "lua-language-server",
           "oxfmt",
+          "oxlint",
           "shfmt",
           "stylua",
           "tailwindcss-language-server",
