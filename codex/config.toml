@@ -4,3 +4,10 @@ model_reasoning_effort = "medium"
 
 [mcp_servers.sentry]
 url = "https://mcp.sentry.dev/mcp"
+
+[mcp_servers.xcode]
+command = "xcrun"
+args = ["mcpbridge"]
+
+[projects."/Users/tombell/Code/starkwm/stark"]
+trust_level = "trusted"
