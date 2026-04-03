@@ -2,9 +2,9 @@
 // -----------------------------------------------------------------------------
 
 const ctrlShift = ["ctrl", "shift"];
-const ctrlOpt = ["ctrl", "opt"];
-const ctrlShiftOpt = ["ctrl", "shift", "opt"];
-const shiftOpt = ["shift", "opt"];
+const ctrlOpt = ["ctrl", "alt"];
+const ctrlShiftOpt = ["ctrl", "shift", "alt"];
+const shiftOpt = ["shift", "alt"];
 const cmdShift = ["cmd", "shift"];
 
 // Window gaps
