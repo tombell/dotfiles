@@ -11,10 +11,10 @@ const cmdShift = ["cmd", "shift"];
 // -----------------------------------------------------------------------------
 
 // The space between window and screen edge
-const padding = 12;
+const padding = 6;
 
 // The space between windows
-const gap = 12;
+const gap = 6;
 
 // Move and reize window
 // -----------------------------------------------------------------------------
