@@ -31,8 +31,6 @@ return {
           if pcall(vim.treesitter.start) then
             vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
             vim.wo.foldmethod = "expr"
-
-            -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
           end
         end,
       })
@@ -66,7 +64,6 @@ return {
         "json",
         "jsx",
         "latex",
-        -- TODO: https://github.com/hankthetank27/tree-sitter-liquid?tab=readme-ov-file#usage-in-neovim-with-nvim-treesitter
         "liquid",
         "lua",
         "luadoc",
