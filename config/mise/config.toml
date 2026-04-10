@@ -2,7 +2,6 @@
 go = "latest"
 lua = "5.1"
 node = "lts"
-opencode = "latest"
 ruby = "4.0.2"
 tree-sitter = "latest"
 
@@ -10,4 +9,4 @@ tree-sitter = "latest"
 idiomatic_version_file_enable_tools = []
 
 [settings.ruby]
-compile = true
+compile = false
