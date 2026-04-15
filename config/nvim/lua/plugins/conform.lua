@@ -20,7 +20,7 @@ return {
           ruby = {},
           sh = { "shfmt" },
           swift = { "swift" },
-          toml = { "oxfmt" },
+          -- toml = { "oxfmt" },
           typescript = { "oxfmt" },
           typescriptreact = { "oxfmt" },
           yaml = { "oxfmt" },
