@@ -10,7 +10,7 @@ end
 
 vim.pack.add({
   -- dependencies
-  -- { src = gh "nvim-lua/plenary.nvim" },
+  { src = gh "nvim-lua/plenary.nvim" },
   { src = gh "nvim-neotest/nvim-nio" },
 
   -- misc
@@ -45,11 +45,12 @@ vim.pack.add({
   require "plugins.mason-tool-installer",
 
   -- testing
-  -- { src = gh "Arthur944/neotest-bun" },
-  -- { src = gh "fredrikaverpil/neotest-golang" },
-  -- { src = gh "zidhuss/neotest-minitest" },
-  -- { src = gh "marilari88/neotest-vitest" },
-  -- require "plugins.neotest",
+  { src = gh "fredrikaverpil/neotest-golang" },
+  { src = gh "marilari88/neotest-vitest" },
+  { src = gh "mmllr/neotest-swift-testing" },
+  { src = gh "tombell/neotest-bun" },
+  { src = gh "zidhuss/neotest-minitest" },
+  require "plugins.neotest",
 
   -- ui
   require "plugins.hem",
