@@ -2,7 +2,7 @@
 go = "latest"
 lua = "5.1"
 node = "lts"
-ruby = "4.0.2"
+ruby = "4.0.3"
 tree-sitter = "latest"
 
 [settings]
