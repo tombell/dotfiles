@@ -1,97 +1,72 @@
 return {
-  src = "https://github.com/nvim-treesitter/nvim-treesitter",
+  src = "https://github.com/arborist-ts/arborist.nvim",
   data = {
     setup = function()
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "TSUpdate",
-        callback = function()
-          local parsers = require "nvim-treesitter.parsers"
-
-          ---@diagnostic disable: missing-fields
-          parsers.applescript = {
-            install_info = {
-              url = "https://github.com/waddie/tree-sitter-applescript",
-              queries = "queries",
-            },
-          }
-
-          parsers.skbdrc = {
-            install_info = {
-              url = "https://github.com/starkwm/tree-sitter-skbdrc",
-              queries = "queries/skbdrc",
-            },
-          }
-          ---@diagnostic enable: missing-fields
-        end,
-      })
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "*",
-        callback = function()
-          if pcall(vim.treesitter.start) then
-            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-            vim.wo.foldmethod = "expr"
-          end
-        end,
-      })
-
-      require("nvim-treesitter").setup()
-      require("nvim-treesitter").install {
-        "bash",
-        "c",
-        "cpp",
-        "css",
-        "desktop",
-        "diff",
-        "dockerfile",
-        "editorconfig",
-        "embedded_template",
-        "git_config",
-        "git_rebase",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "gomod",
-        "gosum",
-        "gotmpl",
-        "gowork",
-        "graphql",
-        "html",
-        "hyprlang",
-        "ini",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsx",
-        "latex",
-        "liquid",
-        "lua",
-        "luadoc",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "objc",
-        "python",
-        "query",
-        "regex",
-        "ruby",
-        "rust",
-        "sql",
-        "ssh_config",
-        "swift",
-        "tmux",
-        "toml",
-        "tsx",
-        "typescript",
-        "vimdoc",
-        "xml",
-        "yaml",
-        "zig",
-        "zsh",
-
-        -- external
-        "applescript",
-        "skbdrc",
+      require("arborist").setup {
+        prefer_wasm = false,
+        update_cadence = "manual",
+        ensure_installed = {
+          "applescript",
+          "bash",
+          "c",
+          "cpp",
+          "css",
+          "desktop",
+          "diff",
+          "dockerfile",
+          "editorconfig",
+          "embedded_template",
+          "git_config",
+          "git_rebase",
+          "gitcommit",
+          "gitignore",
+          "go",
+          "gomod",
+          "gosum",
+          "gotmpl",
+          "gowork",
+          "graphql",
+          "html",
+          "hyprlang",
+          "ini",
+          "javascript",
+          "jsdoc",
+          "json",
+          "latex",
+          "liquid",
+          "lua",
+          "luadoc",
+          "make",
+          "markdown",
+          "markdown_inline",
+          "objc",
+          "python",
+          "query",
+          "regex",
+          "ruby",
+          "rust",
+          "skbdrc",
+          "sql",
+          "ssh_config",
+          "swift",
+          "tmux",
+          "toml",
+          "tsx",
+          "typescript",
+          "vimdoc",
+          "xml",
+          "yaml",
+          "zig",
+          "zsh",
+        },
+        overrides = {
+          applescript = {
+            url = "https://github.com/waddie/tree-sitter-applescript",
+          },
+          skbdrc = {
+            url = "https://github.com/starkwm/tree-sitter-skbdrc",
+          },
+        },
       }
     end,
   },
