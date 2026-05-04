@@ -39,3 +39,8 @@ o.foldlevel = 99
 o.fillchars:append "fold: "
 
 o.winborder = "rounded"
+
+local wo = vim.wo
+
+wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+wo.foldmethod = "expr"
