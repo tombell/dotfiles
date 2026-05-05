@@ -16,8 +16,8 @@ sessions:
           - bin/jobs
       - name: mcp
         root: ./web
-        commands:
-          - bin/rails s -p 62770 -c mcp.ru -P tmp/pids/mcp.pid
+        # commands:
+        #   - bin/rails s -p 62770 -c mcp.ru -P tmp/pids/mcp.pid
       - name: vite(theme)
         root: ./extensions/theme
         commands:
