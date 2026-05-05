@@ -2,9 +2,9 @@
 
 echo "swm configuration"
 
-/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config window_gap 6
+swm -m config window-gap 6
 
-/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config top_padding 6
-/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config right_padding 6
-/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config bottom_padding 6
-/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config left_padding 6
+swm -m config top-padding 6
+swm -m config right-padding 6
+swm -m config bottom-padding 6
+swm -m config left-padding 6
