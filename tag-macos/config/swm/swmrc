@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "swm configuration"
+
+/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config window_gap 6
+
+/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config top_padding 6
+/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config right_padding 6
+/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config bottom_padding 6
+/Users/tombell/Code/starkwm/swm/.build/debug/swm -m config left_padding 6
