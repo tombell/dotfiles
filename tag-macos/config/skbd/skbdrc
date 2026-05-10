@@ -16,6 +16,8 @@ ctrl + shift - 1: swm -m window --grid 12:10:0:0:4:10
 ctrl + shift - 2: swm -m window --grid 12:10:4:0:4:10
 ctrl + shift - 3: swm -m window --grid 12:10:8:0:4:10
 
+ctrl + shift - r: swm -m window --focus recent
+
 ################################################################################
 # Applications
 ################################################################################
