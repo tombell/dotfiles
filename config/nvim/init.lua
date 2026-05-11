@@ -48,7 +48,6 @@ vim.pack.add({
   { src = gh "fredrikaverpil/neotest-golang" },
   { src = gh "marilari88/neotest-vitest" },
   { src = gh "mmllr/neotest-swift-testing" },
-  { src = gh "tombell/neotest-bun" },
   { src = gh "zidhuss/neotest-minitest" },
   require "plugins.neotest",
 
