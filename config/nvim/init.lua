@@ -75,7 +75,7 @@ vim.pack.add({
 require("vim._core.ui2").enable {
   enable = true,
   msg = {
-    target = "msg",
+    targets = "msg",
     timeout = 4000,
   },
 }
