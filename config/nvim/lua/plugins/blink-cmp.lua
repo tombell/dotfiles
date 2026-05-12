@@ -14,7 +14,7 @@ return {
         },
         signature = { enabled = false },
         sources = {
-          default = { "lazydev", "lsp", "path", "snippets" },
+          default = { "lazydev", "lsp", "path" },
           providers = {
             lazydev = {
               name = "LazyDev",
