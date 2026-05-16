@@ -37,9 +37,6 @@ vim.pack.add({
   -- formatting
   require "plugins.conform",
 
-  -- linting
-  require "plugins.nvim-lint",
-
   -- mason
   require "plugins.mason",
   require "plugins.mason-tool-installer",
