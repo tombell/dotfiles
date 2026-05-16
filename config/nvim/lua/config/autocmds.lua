@@ -5,6 +5,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("tombell-lsp-format", { clear = true }),
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("tombell-highlight-yaml", { clear = true }),
   callback = function()
@@ -62,6 +69,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>ca", vim.lsp.buf.code_action, "Code Action", { "n", "v" })
     map("<leader>cc", vim.lsp.codelens.run, "Run Codelens", { "n", "v" })
     map("<leader>cC", vim.lsp.codelens.refresh, "Refresh & Display Codelens", "n")
+    map("<leader>cf", function() vim.lsp.buf.format({ async = true }) end, "Format", { "n", "x" })
     map("<leader>cR", function() Snacks.rename.rename_file() end, "Rename File", "n")
     map("<leader>cr", vim.lsp.buf.rename, "Rename")
     map("]]", function() Snacks.words.jump(vim.v.count1) end, "Next Reference")
