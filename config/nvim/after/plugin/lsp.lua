@@ -6,12 +6,10 @@ vim.lsp.config("gopls", {
   },
 })
 
-local filetypes = vim.tbl_filter(function(ft)
-  return ft ~= "eruby"
-end, vim.lsp.config["tailwindcss"].filetypes)
-
 vim.lsp.config("tailwindcss", {
-  filetypes = filetypes,
+  filetypes = vim.tbl_filter(function(ft)
+    return ft ~= "eruby"
+  end, vim.lsp.config["tailwindcss"].filetypes),
 })
 
 vim.lsp.config("vtsls", {
@@ -22,8 +20,10 @@ vim.lsp.config("vtsls", {
 })
 
 vim.lsp.enable {
+  "bashls",
   "gopls",
   "lua_ls",
+  "oxfmt",
   "oxlint",
   "rubocop",
   "ruby_lsp",
