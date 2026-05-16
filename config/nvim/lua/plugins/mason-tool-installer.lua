@@ -6,7 +6,6 @@ return {
         ensure_installed = {
           "bash-language-server",
           "gofumpt",
-          "goimports",
           "gopls",
           "lua-language-server",
           "oxfmt",
