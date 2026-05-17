@@ -28,6 +28,7 @@ vim.lsp.enable {
   "rubocop",
   "ruby_lsp",
   "sourcekit",
+  "stylua",
   "tailwindcss",
   "vtsls",
 }
