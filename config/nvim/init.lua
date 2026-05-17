@@ -4,17 +4,13 @@ require "config.options"
 require "config.autocmds"
 require "config.keymaps"
 
-local gh = function(x)
-  return "https://github.com/" .. x
-end
-
 vim.pack.add({
   -- dependencies
-  { src = gh "nvim-lua/plenary.nvim" },
-  { src = gh "nvim-neotest/nvim-nio" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-neotest/nvim-nio" },
 
   -- misc
-  { src = gh "neovim/nvim-lspconfig" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
 
   -- editor
   require "plugins.gitsigns",
@@ -39,10 +35,10 @@ vim.pack.add({
   require "plugins.mason-tool-installer",
 
   -- testing
-  { src = gh "fredrikaverpil/neotest-golang" },
-  { src = gh "marilari88/neotest-vitest" },
-  { src = gh "mmllr/neotest-swift-testing" },
-  { src = gh "zidhuss/neotest-minitest" },
+  { src = "https://github.com/fredrikaverpil/neotest-golang" },
+  { src = "https://github.com/marilari88/neotest-vitest" },
+  { src = "https://github.com/mmllr/neotest-swift-testing" },
+  { src = "https://github.com/zidhuss/neotest-minitest" },
   require "plugins.neotest",
 
   -- ui
