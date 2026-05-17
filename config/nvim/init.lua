@@ -34,9 +34,6 @@ vim.pack.add({
   -- colorscheme
   require "plugins.tokyonight",
 
-  -- formatting
-  require "plugins.conform",
-
   -- mason
   require "plugins.mason",
   require "plugins.mason-tool-installer",
