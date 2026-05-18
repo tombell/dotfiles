@@ -34,6 +34,9 @@ vim.pack.add({
   require "plugins.mason",
   require "plugins.mason-tool-installer",
 
+  -- formatting
+  require "plugins.conform",
+
   -- testing
   { src = "https://github.com/fredrikaverpil/neotest-golang" },
   { src = "https://github.com/marilari88/neotest-vitest" },

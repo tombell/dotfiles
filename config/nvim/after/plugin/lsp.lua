@@ -20,15 +20,12 @@ vim.lsp.config("vtsls", {
 })
 
 vim.lsp.enable {
-  "bashls",
   "gopls",
   "lua_ls",
-  "oxfmt",
   "oxlint",
   "rubocop",
   "ruby_lsp",
   "sourcekit",
-  "stylua",
   "tailwindcss",
   "vtsls",
 }

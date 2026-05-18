@@ -4,8 +4,8 @@ return {
     setup = function()
       require("mason-tool-installer").setup {
         ensure_installed = {
-          "bash-language-server",
           "gofumpt",
+          "goimports",
           "gopls",
           "lua-language-server",
           "oxfmt",

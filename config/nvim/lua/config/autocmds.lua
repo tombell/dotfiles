@@ -5,13 +5,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = vim.api.nvim_create_augroup("tombell-lsp-format", { clear = true }),
-  callback = function()
-    vim.lsp.buf.format { async = false }
-  end,
-})
-
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("tombell-highlight-yaml", { clear = true }),
   callback = function()
@@ -75,5 +68,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("]]", function() Snacks.words.jump(vim.v.count1) end, "Next Reference")
     map("[[", function() Snacks.words.jump(-vim.v.count1) end, "Prev Reference")
     -- stylua: ignore end
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = vim.api.nvim_create_augroup("tombell-lsp-format", { clear = true }),
+      callback = function()
+        vim.lsp.buf.format { async = false }
+      end,
+    })
   end,
 })
