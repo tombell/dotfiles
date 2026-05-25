@@ -3,5 +3,7 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "low",
-  "theme": "tokyo-night"
+  "theme": "tokyo-night",
+  "packages": ["npm:@narumitw/pi-codex-usage"]
 }
+
