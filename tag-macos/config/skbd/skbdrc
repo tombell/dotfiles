@@ -28,6 +28,9 @@ ctrl + shift - right: swm -m window --display 2
 ralt - return:
   osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
 
+ctrl + shift - return:
+  osascript ~/.local/bin/launch-ghostty-split.scpt > /dev/null
+
 ralt - 1:
   open -a 1Password
 
