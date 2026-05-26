@@ -1,9 +1,0 @@
-{
-  "lastChangelogVersion": "0.75.5",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "low",
-  "theme": "tokyo-night",
-  "packages": ["npm:@narumitw/pi-codex-usage"]
-}
-
