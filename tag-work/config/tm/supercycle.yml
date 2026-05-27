@@ -21,15 +21,15 @@ sessions:
       - name: vite(theme)
         root: ./extensions/theme
         commands:
-          - yarn run vite:dev
+          - yarn vite:dev
       - name: vite(frontend)
         root: ./web/frontend
         commands:
-          - yarn run vite --port 3000
+          - yarn vite --port 3000
       - name: shopify
         root: ./
         commands:
-          - yarn run shopify app dev
+          - shopify app dev
       - name: tunnel
         root: ./
         commands:
