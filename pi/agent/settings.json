@@ -8,13 +8,11 @@
     "npm:@narumitw/pi-codex-usage",
     "npm:@tombell/pi-diff",
     "npm:@tombell/pi-exit",
-    "npm:@tombell/pi-plan-mode",
-    "npm:@tombell/pi-sessions-manager",
+    "npm:@tombell/pi-input",
+    "npm:@tombell/pi-plan",
+    "npm:@tombell/pi-sessions",
     "npm:@mjakl/pi-kagi-search"
   ],
   "hideThinkingBlock": false,
-  "enabledModels": [
-    "openai-codex/gpt-5.5",
-    "openai-codex/gpt-5.3-codex-spark"
-  ]
+  "enabledModels": ["openai-codex/gpt-5.5", "openai-codex/gpt-5.3-codex-spark"]
 }
