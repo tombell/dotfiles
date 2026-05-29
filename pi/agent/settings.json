@@ -4,6 +4,7 @@
   "defaultProvider": "openai-codex",
   "defaultThinkingLevel": "low",
   "theme": "tokyo-night",
+  "editorPaddingX": 1,
   "packages": [
     "npm:@narumitw/pi-codex-usage",
     "npm:@tombell/pi-diff",
@@ -14,6 +15,11 @@
     "npm:@mjakl/pi-kagi-search"
   ],
   "hideThinkingBlock": false,
-  "enabledModels": ["openai-codex/gpt-5.5", "openai-codex/gpt-5.3-codex-spark"]
+  "enabledModels": [
+    "ollama/gemma4:26b-a4b-it-q4_K_M",
+    "ollama/gemma4:e2b-mlx",
+    "openai-codex/gpt-5.3-codex-spark",
+    "openai-codex/gpt-5.5",
+    "opencode/big-pickle"
+  ]
 }
-
