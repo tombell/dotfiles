@@ -6,20 +6,22 @@
   "theme": "tokyo-night",
   "editorPaddingX": 1,
   "packages": [
-    "npm:@narumitw/pi-codex-usage",
+    "npm:@mjakl/pi-kagi-search",
     "npm:@tombell/pi-diff",
     "npm:@tombell/pi-exit",
     "npm:@tombell/pi-input",
     "npm:@tombell/pi-plan",
     "npm:@tombell/pi-sessions",
-    "npm:@mjakl/pi-kagi-search"
+    "npm:@tombell/pi-status"
   ],
   "hideThinkingBlock": false,
   "enabledModels": [
     "ollama/gemma4:26b-a4b-it-q4_K_M",
-    "ollama/gemma4:e2b-mlx",
+    "ollama/gemma4:e4b",
+    "ollama/gemma4:e4b-mlx",
     "openai-codex/gpt-5.3-codex-spark",
     "openai-codex/gpt-5.5",
     "opencode/big-pickle"
   ]
 }
+
