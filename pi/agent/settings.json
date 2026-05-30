@@ -18,7 +18,6 @@
   "enabledModels": [
     "ollama/gemma4:26b-a4b-it-q4_K_M",
     "ollama/gemma4:e4b",
-    "ollama/gemma4:e4b-mlx",
     "openai-codex/gpt-5.3-codex-spark",
     "openai-codex/gpt-5.5",
     "opencode/big-pickle"
