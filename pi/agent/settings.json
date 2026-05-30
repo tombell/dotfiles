@@ -6,13 +6,13 @@
   "theme": "tokyo-night",
   "editorPaddingX": 1,
   "packages": [
-    "npm:@mjakl/pi-kagi-search",
     "npm:@tombell/pi-diff",
     "npm:@tombell/pi-exit",
     "npm:@tombell/pi-input",
     "npm:@tombell/pi-plan",
     "npm:@tombell/pi-sessions",
-    "npm:@tombell/pi-status"
+    "npm:@tombell/pi-status",
+    "npm:@mjakl/pi-kagi-api"
   ],
   "hideThinkingBlock": false,
   "enabledModels": [
