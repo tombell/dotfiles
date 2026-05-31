@@ -14,13 +14,5 @@
     "npm:@tombell/pi-status",
     "npm:@mjakl/pi-kagi-api"
   ],
-  "hideThinkingBlock": false,
-  "enabledModels": [
-    "ollama/gemma4:26b-a4b-it-q4_K_M",
-    "ollama/gemma4:e4b",
-    "openai-codex/gpt-5.3-codex-spark",
-    "openai-codex/gpt-5.5",
-    "opencode/big-pickle"
-  ]
+  "hideThinkingBlock": false
 }
-
