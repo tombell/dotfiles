@@ -1,5 +1,7 @@
 .DS_Store
 neotest-bun-debug-xml.txt
 
+**/.pi/
+
 **/.claude/settings.local.json
 **/.claude/worktrees
