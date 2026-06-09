@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+#
+# git branches — list local branches, grouping AI-generated branches
+# (claude/*, cursor/*, codex/*) under their own coloured headers.
+#
+# Usage: git branches
+
+set -euo pipefail
+
+# Branch-name prefixes treated as AI-generated and shown in their own group.
+ai_prefixes=(claude cursor codex)
+
+# Colours — disabled when output isn't a terminal or NO_COLOR is set.
+if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
+  reset=$'\e[0m'; bold=$'\e[1m'; dim=$'\e[2m'
+  green=$'\e[32m'; yellow=$'\e[33m'; blue=$'\e[34m'
+  magenta=$'\e[35m'; cyan=$'\e[36m'
+else
+  reset=''; bold=''; dim=''
+  green=''; yellow=''; blue=''; magenta=''; cyan=''
+fi
+
+sep=$'\x1f'
+fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate:relative)"
+
+# Header/accent colour for a given AI prefix.
+prefix_color() {
+  case "$1" in
+    claude) printf '%s' "$magenta" ;;
+    cursor) printf '%s' "$cyan" ;;
+    codex)  printf '%s' "$green" ;;
+    *)      printf '%s' "$blue" ;;
+  esac
+}
+
+group_printed=0
+
+# print_group <label> <colour> <strip-prefix> <for-each-ref args...>
+print_group() {
+  local label="$1" color="$2" strip="$3"; shift 3
+  local out
+  out="$(git for-each-ref --sort=-committerdate --format="$fmt" "$@")"
+  [ -z "$out" ] && return
+
+  [ "$group_printed" = 1 ] && printf '\n'
+  group_printed=1
+  printf '%s%s%s%s\n' "$bold" "$color" "$label" "$reset"
+
+  local head name sha date display marker nc padded
+  while IFS="$sep" read -r head name sha date; do
+    display="$name"
+    [ -n "$strip" ] && display="${name#"$strip"}"
+
+    if [ "$head" = '*' ]; then
+      marker="${green}*${reset} "
+      nc="${bold}${green}"
+    else
+      marker='  '
+      nc=''
+    fi
+
+    padded="$(printf '%-32s' "$display")"
+    printf '%s%s%s%s  %s%s%s  %s%s%s\n' \
+      "$marker" "$nc" "$padded" "$reset" \
+      "$yellow" "$sha" "$reset" \
+      "$dim" "$date" "$reset"
+  done <<EOF
+$out
+EOF
+}
+
+# Main list: every local branch except the AI-prefixed ones.
+exclude_args=()
+for p in "${ai_prefixes[@]}"; do
+  exclude_args+=(--exclude="refs/heads/$p/*")
+done
+print_group "Branches" "$blue" "" "${exclude_args[@]}" refs/heads
+
+# One group per AI prefix, e.g. "claude/", "cursor/".
+for p in "${ai_prefixes[@]}"; do
+  print_group "$p/" "$(prefix_color "$p")" "$p/" "refs/heads/$p/*"
+done
