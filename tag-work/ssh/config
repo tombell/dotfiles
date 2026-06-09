@@ -4,6 +4,11 @@ Host github.com-personal
   IdentitiesOnly yes
   IdentityFile ~/.ssh/Personal
 
+Host agent.tomb.computer
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/Personal
+
 Host github.com
   HostName github.com
   AddKeysToAgent yes
