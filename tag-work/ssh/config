@@ -1,21 +1,20 @@
-Host agent.tomb.computer
-  HostName agent.tomb.computer
-  AddKeysToAgent yes
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/Personal
-
 Host github.com-personal
   HostName github.com
-  AddKeysToAgent yes
-  IdentitiesOnly yes
+  User git
   IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
 
 Host github.com
   HostName github.com
-  AddKeysToAgent yes
-  IdentitiesOnly yes
+  User git
   IdentityFile ~/.ssh/Work
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
 
 Host *
   AddKeysToAgent yes
+  UseKeychain yes
   IdentitiesOnly yes
