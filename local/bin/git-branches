@@ -35,9 +35,9 @@ prefix_color() {
 
 group_printed=0
 
-# print_group <label> <colour> <strip-prefix> <for-each-ref args...>
+# print_group <label> <colour> <for-each-ref args...>
 print_group() {
-  local label="$1" color="$2" strip="$3"; shift 3
+  local label="$1" color="$2"; shift 2
   local out
   out="$(git for-each-ref --sort=-committerdate --format="$fmt" "$@")"
   [ -z "$out" ] && return
@@ -46,11 +46,8 @@ print_group() {
   group_printed=1
   printf '%s%s%s%s\n' "$bold" "$color" "$label" "$reset"
 
-  local head name sha date author display marker nc padded
+  local head name sha date author marker nc padded
   while IFS="$sep" read -r head name sha date author; do
-    display="$name"
-    [ -n "$strip" ] && display="${name#"$strip"}"
-
     if [ "$head" = '*' ]; then
       marker="${green}*${reset} "
       nc="${bold}${green}"
@@ -59,7 +56,8 @@ print_group() {
       nc=''
     fi
 
-    padded="$(printf '%-32s' "$display")"
+    # Full ref name (incl. prefix) so it can be copied straight to `git checkout`.
+    padded="$(printf '%-38s' "$name")"
     printf '%s%s%s%s  %s%s%s  %s%s%s  %s%s%s\n' \
       "$marker" "$nc" "$padded" "$reset" \
       "$yellow" "$sha" "$reset" \
@@ -75,9 +73,9 @@ exclude_args=()
 for p in "${ai_prefixes[@]}"; do
   exclude_args+=(--exclude="refs/heads/$p/*")
 done
-print_group "Branches" "$blue" "" "${exclude_args[@]}" refs/heads
+print_group "Branches" "$blue" "${exclude_args[@]}" refs/heads
 
 # One group per AI prefix, e.g. "claude/", "cursor/".
 for p in "${ai_prefixes[@]}"; do
-  print_group "$p/" "$(prefix_color "$p")" "$p/" "refs/heads/$p/*"
+  print_group "$p/" "$(prefix_color "$p")" "refs/heads/$p/*"
 done
