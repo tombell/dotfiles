@@ -21,7 +21,7 @@ else
 fi
 
 sep=$'\x1f'
-fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate:relative)"
+fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate:relative)${sep}%(authorname)"
 
 # Header/accent colour for a given AI prefix.
 prefix_color() {
@@ -46,8 +46,8 @@ print_group() {
   group_printed=1
   printf '%s%s%s%s\n' "$bold" "$color" "$label" "$reset"
 
-  local head name sha date display marker nc padded
-  while IFS="$sep" read -r head name sha date; do
+  local head name sha date author display marker nc padded
+  while IFS="$sep" read -r head name sha date author; do
     display="$name"
     [ -n "$strip" ] && display="${name#"$strip"}"
 
@@ -60,10 +60,11 @@ print_group() {
     fi
 
     padded="$(printf '%-32s' "$display")"
-    printf '%s%s%s%s  %s%s%s  %s%s%s\n' \
+    printf '%s%s%s%s  %s%s%s  %s%s%s  %s%s%s\n' \
       "$marker" "$nc" "$padded" "$reset" \
       "$yellow" "$sha" "$reset" \
-      "$dim" "$date" "$reset"
+      "$dim" "$date" "$reset" \
+      "$blue" "$author" "$reset"
   done <<EOF
 $out
 EOF
