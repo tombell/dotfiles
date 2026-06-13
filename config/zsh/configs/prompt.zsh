@@ -36,4 +36,10 @@ vcs_prompt_info() {
   git_prompt_info
 }
 
-PROMPT='%F{yellow}%c $(vcs_prompt_info)%F{cyan}--- %f'
+ssh_prompt_info() {
+  if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "%F{green}%n@%m %f"
+  fi
+}
+
+PROMPT='$(ssh_prompt_info)%F{yellow}%c $(vcs_prompt_info)%F{cyan}--- %f'
