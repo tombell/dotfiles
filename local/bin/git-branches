@@ -12,12 +12,23 @@ ai_prefixes=(claude cursor codex)
 
 # Colours — disabled when output isn't a terminal or NO_COLOR is set.
 if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
-  reset=$'\e[0m'; bold=$'\e[1m'; dim=$'\e[2m'
-  green=$'\e[32m'; yellow=$'\e[33m'; blue=$'\e[34m'
-  magenta=$'\e[35m'; cyan=$'\e[36m'
+  reset=$'\e[0m'
+  bold=$'\e[1m'
+  dim=$'\e[2m'
+  green=$'\e[32m'
+  yellow=$'\e[33m'
+  blue=$'\e[34m'
+  magenta=$'\e[35m'
+  cyan=$'\e[36m'
 else
-  reset=''; bold=''; dim=''
-  green=''; yellow=''; blue=''; magenta=''; cyan=''
+  reset=''
+  bold=''
+  dim=''
+  green=''
+  yellow=''
+  blue=''
+  magenta=''
+  cyan=''
 fi
 
 sep=$'\x1f'
@@ -26,10 +37,10 @@ fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate
 # Header/accent colour for a given AI prefix.
 prefix_color() {
   case "$1" in
-    claude) printf '%s' "$magenta" ;;
-    cursor) printf '%s' "$cyan" ;;
-    codex)  printf '%s' "$green" ;;
-    *)      printf '%s' "$blue" ;;
+  claude) printf '%s' "$magenta" ;;
+  cursor) printf '%s' "$cyan" ;;
+  codex) printf '%s' "$green" ;;
+  *) printf '%s' "$blue" ;;
   esac
 }
 
@@ -37,7 +48,8 @@ group_printed=0
 
 # print_group <label> <colour> <for-each-ref args...>
 print_group() {
-  local label="$1" color="$2"; shift 2
+  local label="$1" color="$2"
+  shift 2
   local out
   out="$(git for-each-ref --sort=-committerdate --format="$fmt" "$@")"
   [ -z "$out" ] && return
