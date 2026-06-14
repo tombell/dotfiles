@@ -1,0 +1,13 @@
+root: ~/Code/tombell/tomb.io
+
+sessions:
+  - name: tomb-io
+    root: .
+    windows:
+      - name: server
+        commands:
+          - hugo server
+      - name: editor
+      - name: pi
+        commands:
+          - pi
