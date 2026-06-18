@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
+
+if [ ! -f "$db" ]; then
+  echo "TCC DB not found at: $db" >&2
+  exit 1
+fi
+
+sqlite3 "$db" <<'SQL'
+.headers on
+.mode column
+SELECT
+  service,
+  client,
+  client_type,
+  auth_value,
+  auth_reason,
+  auth_version,
+  flags,
+  datetime(last_modified, 'unixepoch') AS last_modified
+FROM access
+ORDER BY client;
+SQL
