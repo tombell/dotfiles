@@ -1,6 +1,6 @@
 personality = "pragmatic"
 model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "low"
 
 notify = [
   "/Users/tombell/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
@@ -11,12 +11,12 @@ notify = [
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-21T07:40:09Z"
+last_updated = "2026-06-27T00:45:42Z"
 source_type = "local"
 source = "/Users/tombell/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-20T05:40:57Z"
+last_updated = "2026-06-24T05:41:16Z"
 source_type = "local"
 source = "/Users/tombell/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -30,18 +30,18 @@ enabled = true
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
-enabled = false
+enabled = true
 
 [plugins."spreadsheets@openai-primary-runtime"]
-enabled = false
+enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
-enabled = false
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
 [desktop]
@@ -120,10 +120,6 @@ enabled = false
 name = "build-web-apps:supabase-postgres-best-practices"
 enabled = false
 
-[[skills.config]]
-name = "build-ios-apps:ios-debugger-agent"
-enabled = false
-
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
@@ -135,12 +131,12 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_nod
 NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/tombell/.codex"
 CODEX_HOME = "/Users/tombell/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2c20141b13bec5a64cd2874d8e2df011430d5b1a70e4f5425aa10d01743311a8"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "85aecd42bf7542da8fd962aa9551d7ccfca3e4e8b41d6fa095d7d4e96d44c22f"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
+BROWSER_USE_CODEX_APP_VERSION = "26.623.41415"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [memories]
