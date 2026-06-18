@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
+
+usage() {
+  echo "Usage: $(basename "$0") <client_path>"
+  exit 1
+}
+
+if [ "${1:-}" = "" ]; then
+  usage
+fi
+
+client="$1"
+
+if [ ! -f "$db" ]; then
+  echo "TCC DB not found at: $db" >&2
+  exit 1
+fi
+
+backup="$db.bak.$(date +%Y%m%d%H%M%S)"
+cp "$db" "$backup"
+echo "Backup created: $backup"
+
+sqlite3 "$db" "DELETE FROM access WHERE client='${client//\'/\'\'}';"
+
+echo "Deleted matching TCC entries for client:"
+echo "  $client"
