@@ -1,3 +1,7 @@
+## Writing
+
+- Avoid using — in text.
+
 ## Plan mode
 
 - Make the plan extremely concise. Sacrifice grammar for the sake of concision.
@@ -5,7 +9,7 @@
 
 ## Source control
 
-- Use `jj` if `.jj` directory exists
+- Use `jj` if `.jj` directory exists, else use `git`
 
 ## GitHub replies
 
