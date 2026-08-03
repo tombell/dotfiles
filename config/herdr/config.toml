@@ -5,15 +5,25 @@ name = "tokyo-night"
 auto_switch = false
 
 [ui]
-agent_panel_sort = "spaces"
-show_agent_labels_on_pane_borders = false
+# in 0.8.0
+# pane_scrollbars = false
 
 [ui.sound]
 enabled = false
 
 [ui.sidebar.spaces]
 rows = [["state_icon", "workspace"], ["branch", "git_status"], ["$jj_bookmark", "$jj_status"]]
+row_gap = 1
+
+[ui.sidebar.agents]
+row_gap = 1
 
 [keys]
 prefix = "ctrl+b"
 detach = "prefix+d"
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "jump to anything"
