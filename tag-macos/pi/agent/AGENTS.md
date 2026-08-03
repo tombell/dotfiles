@@ -1,1 +1,1 @@
-/Users/tombell/.codex/AGENTS.md
+../../codex/AGENTS.md
