@@ -14,6 +14,42 @@ Host github.com
   AddKeysToAgent yes
   UseKeychain yes
 
+Host brighid.solarflare-skink.ts.net
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host Brighid.local
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host mythra.solarflare-skink.ts.net
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host Mythra.local
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host rpi.solarflare-skink.ts.net
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host rpi
+  IdentityFile ~/.ssh/Personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+  UseKeychain yes
+
 Host *
   AddKeysToAgent yes
   UseKeychain yes
