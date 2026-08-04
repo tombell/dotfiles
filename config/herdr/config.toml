@@ -5,8 +5,7 @@ name = "tokyo-night"
 auto_switch = false
 
 [ui]
-# in 0.8.0
-# pane_scrollbars = false
+pane_scrollbars = false
 
 [ui.sound]
 enabled = false
