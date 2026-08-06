@@ -2,6 +2,7 @@ vim.loader.enable()
 
 require "config.options"
 require "config.autocmds"
+require "config.commands"
 require "config.keymaps"
 
 vim.pack.add({
