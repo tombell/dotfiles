@@ -5,8 +5,6 @@ alias la='ls -A'
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias e='nvim'
-
 alias path='echo $PATH | tr -s ":" "\n"'
 
 alias urepo='for d in *; do (cd $d && pwd && git pull && echo); done'
