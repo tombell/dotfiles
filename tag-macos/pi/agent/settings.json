@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.83.0",
+  "lastChangelogVersion": "0.84.0",
   "defaultModel": "gpt-5.6-sol",
   "defaultProvider": "openai-codex",
   "defaultThinkingLevel": "high",
@@ -9,6 +9,7 @@
     "npm:@tombell/pi-exit",
     "npm:@tombell/pi-input",
     "npm:@tombell/pi-sessions",
-    "npm:@tombell/pi-status"
+    "npm:@tombell/pi-status",
+    "npm:@tombell/pi-logo"
   ]
 }
