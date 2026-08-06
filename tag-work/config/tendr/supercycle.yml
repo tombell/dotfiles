@@ -35,14 +35,21 @@ workspaces:
       - label: tunnel
         commands:
           - bin/tunnel -n tom
+      - label: console
+        root: ./web
+        commands:
+          - bin/rails console
       - label: agent
+        commands:
+          - claude
+      - label: terminal
   - label: supercycle:cli
     root: ./supercycle-cli
     tabs:
-      - label: editor
       - label: agent
+      - label: editor
   - label: supercycle:docs
     root: ./supercycle-docs
     tabs:
-      - label: editor
       - label: agent
+      - label: editor
