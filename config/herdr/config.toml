@@ -4,6 +4,9 @@ onboarding = false
 name = "tokyo-night"
 auto_switch = false
 
+[theme.custom]
+surface_dim = "#292e42"
+
 [ui]
 pane_scrollbars = false
 
