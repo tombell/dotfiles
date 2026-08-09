@@ -9,23 +9,13 @@ workspaces:
   - label: design
     root: ./design
     tabs:
-      - label: editor
       - label: agent
-  - label: docs
-    root: ./documentation
-    tabs:
       - label: editor
-      - label: agent
   - label: website
     root: ./website
     tabs:
       - label: server
         commands:
           - hugo server
-      - label: editor
       - label: agent
-  - label: app
-    root: ./app
-    tabs:
       - label: editor
-      - label: agent
