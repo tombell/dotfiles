@@ -7,7 +7,6 @@ return {
         adapters = {
           require "neotest-golang",
           require "neotest-minitest",
-          require "neotest-swift-testing",
           require "neotest-vitest",
         },
       }
