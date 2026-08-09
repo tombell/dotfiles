@@ -2,7 +2,15 @@ return {
   src = "https://github.com/arborist-ts/arborist.nvim",
   data = {
     setup = function()
-      require("arborist").setup {
+      local arborist = require "arborist"
+      local plugin_root = vim.fn.fnamemodify(debug.getinfo(arborist.setup, "S").source:sub(2), ":h:h:h")
+
+      -- Neovim's runtimepath prepend no longer moves an existing entry, so
+      -- remove Arborist first to ensure its curated queries precede generated ones.
+      vim.opt.runtimepath:remove(plugin_root)
+      vim.opt.runtimepath:prepend(plugin_root)
+
+      arborist.setup {
         prefer_wasm = false,
         update_cadence = "manual",
         ensure_installed = {
