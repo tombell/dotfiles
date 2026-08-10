@@ -1,77 +1,27 @@
 #!/usr/bin/env bash
 #
-# git branches — list local branches, grouping AI-generated branches
-# (claude/*, cursor/*, codex/*) and optional custom prefixes under their own
-# coloured headers.
-#
-# Usage: git branches [--prefix <prefix>]...
+# git branches — list local branches, grouping every <prefix>/<suffix> branch
+# under a coloured <prefix>/ header.
 
 set -euo pipefail
 
-# Branch-name prefixes treated as AI-generated and shown in their own group.
-ai_prefixes=(claude cursor codex)
-
-usage() {
-  printf 'Usage: git branches [--prefix <prefix>]...\n'
-}
-
-requested_prefixes=()
-while [ "$#" -gt 0 ]; do
-  case "$1" in
-  --prefix)
-    if [ "$#" -lt 2 ] || [ -z "$2" ]; then
-      printf 'git branches: --prefix requires a value\n' >&2
-      usage >&2
-      exit 2
-    fi
-    requested_prefixes+=("$2")
-    shift 2
-    ;;
-  --prefix=*)
-    prefix_value="${1#--prefix=}"
-    if [ -z "$prefix_value" ]; then
-      printf 'git branches: --prefix requires a value\n' >&2
-      usage >&2
-      exit 2
-    fi
-    requested_prefixes+=("$prefix_value")
-    shift
-    ;;
-  -h | --help)
-    usage
-    exit 0
-    ;;
-  *)
-    printf 'git branches: unknown argument: %s\n' "$1" >&2
-    usage >&2
-    exit 2
+# Discover and deduplicate the first path component of every namespaced branch.
+prefixes=()
+while IFS= read -r name; do
+  case "$name" in
+  */*)
+    prefix="${name%%/*}"
+    prefix_exists=0
+    for existing_prefix in "${prefixes[@]+"${prefixes[@]}"}"; do
+      if [ "$prefix" = "$existing_prefix" ]; then
+        prefix_exists=1
+        break
+      fi
+    done
+    [ "$prefix_exists" = 1 ] || prefixes+=("$prefix")
     ;;
   esac
-done
-
-# Validate and deduplicate custom prefixes. Built-in AI prefixes are already
-# grouped, so requesting one does not add a second copy of its group.
-custom_prefixes=()
-for p in "${requested_prefixes[@]+"${requested_prefixes[@]}"}"; do
-  if ! git check-ref-format "refs/heads/$p/branch-name" >/dev/null 2>&1; then
-    printf 'git branches: invalid prefix: %s\n' "$p" >&2
-    exit 2
-  fi
-
-  prefix_exists=0
-  for existing_prefix in \
-    "${ai_prefixes[@]}" \
-    "${custom_prefixes[@]+"${custom_prefixes[@]}"}"; do
-    if [ "$p" = "$existing_prefix" ]; then
-      prefix_exists=1
-      break
-    fi
-  done
-
-  if [ "$prefix_exists" = 0 ]; then
-    custom_prefixes+=("$p")
-  fi
-done
+done < <(git for-each-ref --sort=refname --format='%(refname:lstrip=2)' refs/heads)
 
 # Colours — disabled when output isn't a terminal or NO_COLOR is set.
 if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
@@ -98,20 +48,10 @@ else
   cyan=''
 fi
 
-custom_colors=("$yellow" "$red" "$bright_blue")
+group_colors=("$magenta" "$cyan" "$green" "$yellow" "$red" "$bright_blue")
 
 sep=$'\x1f'
 fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate:relative)${sep}%(authorname)"
-
-# Header/accent colour for a given AI prefix.
-prefix_color() {
-  case "$1" in
-  claude) printf '%s' "$magenta" ;;
-  cursor) printf '%s' "$cyan" ;;
-  codex) printf '%s' "$green" ;;
-  *) printf '%s' "$blue" ;;
-  esac
-}
 
 group_printed=0
 
@@ -149,25 +89,17 @@ $out
 EOF
 }
 
-# Main list: every local branch except the AI-prefixed ones.
+# Main list: every local branch without a namespace.
 exclude_args=()
-for p in "${ai_prefixes[@]}"; do
-  exclude_args+=(--exclude="refs/heads/$p/*")
+for p in "${prefixes[@]+"${prefixes[@]}"}"; do
+  exclude_args+=(--exclude="refs/heads/$p")
 done
-for p in "${custom_prefixes[@]+"${custom_prefixes[@]}"}"; do
-  exclude_args+=(--exclude="refs/heads/$p/*")
-done
-print_group "Branches" "$blue" "${exclude_args[@]}" refs/heads
+print_group "Branches" "$blue" "${exclude_args[@]+"${exclude_args[@]}"}" refs/heads
 
-# One group per AI prefix, e.g. "claude/", "cursor/".
-for p in "${ai_prefixes[@]}"; do
-  print_group "$p/" "$(prefix_color "$p")" "refs/heads/$p/*"
-done
-
-# One group per custom prefix, cycling through distinct header colours.
-custom_color_index=0
-for p in "${custom_prefixes[@]+"${custom_prefixes[@]}"}"; do
-  color="${custom_colors[$((custom_color_index % ${#custom_colors[@]}))]}"
-  print_group "$p/" "$color" "refs/heads/$p/*"
-  custom_color_index=$((custom_color_index + 1))
+# One group per discovered prefix, cycling through header colours.
+group_color_index=0
+for p in "${prefixes[@]+"${prefixes[@]}"}"; do
+  color="${group_colors[$((group_color_index % ${#group_colors[@]}))]}"
+  print_group "$p/" "$color" "refs/heads/$p"
+  group_color_index=$((group_color_index + 1))
 done
