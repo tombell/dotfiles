@@ -1,4 +1,4 @@
-root: ~/Code/tombell
+root: ~/Code/conjuror-app
 
 after_start:
   - |
@@ -12,5 +12,12 @@ workspaces:
       - label: agent
         commands:
           - pi
+      - label: editor
+      - label: terminal
+  - label: website
+    root: ./website
+    tabs:
+      - label: server
+      - label: agent
       - label: editor
       - label: terminal
