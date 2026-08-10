@@ -11,7 +11,6 @@ Host github.com
 Host pyra brighid mythra rpi *.solarflare-skink.ts.net
   IdentityFile ~/.ssh/Personal
 
-
 Host *
   AddKeysToAgent yes
   UseKeychain yes
