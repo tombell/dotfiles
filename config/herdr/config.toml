@@ -23,6 +23,8 @@ row_gap = 1
 [keys]
 prefix = "ctrl+b"
 detach = "prefix+d"
+previous_tab = "prefix+["
+next_tab = "prefix+]"
 
 [[keys.command]]
 key = "prefix+t"
