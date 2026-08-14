@@ -1,29 +1,69 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
-
 usage() {
-  echo "Usage: $(basename "$0") <client_path>"
-  exit 1
+  echo "Usage: $(basename "$0") [--system] <client>"
+  exit "${1:-1}"
 }
 
-if [ "${1:-}" = "" ]; then
+system=false
+case "${1:-}" in
+  --system|--root)
+    system=true
+    shift
+    ;;
+  -h|--help)
+    usage 0
+    ;;
+esac
+
+if [ "$#" -ne 1 ]; then
   usage
 fi
 
 client="$1"
 
-if [ ! -f "$db" ]; then
+if $system; then
+  db="/Library/Application Support/com.apple.TCC/TCC.db"
+  sqlite=(sudo sqlite3)
+  copy=(sudo cp)
+else
+  db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
+  sqlite=(sqlite3)
+  copy=(cp)
+fi
+
+if $system; then
+  sudo test -f "$db" || {
+    echo "TCC DB not found at: $db" >&2
+    exit 1
+  }
+elif [ ! -f "$db" ]; then
   echo "TCC DB not found at: $db" >&2
   exit 1
 fi
 
-backup="$db.bak.$(date +%Y%m%d%H%M%S)"
-cp "$db" "$backup"
+timestamp=$(date +%Y%m%d%H%M%S)
+if $system; then
+  # macOS prevents creating backup files alongside the protected system DB.
+  backup="/var/tmp/TCC.system.db.bak.$timestamp"
+else
+  backup="$db.bak.$timestamp"
+fi
+"${copy[@]}" "$db" "$backup"
 echo "Backup created: $backup"
 
-sqlite3 "$db" "DELETE FROM access WHERE client='${client//\'/\'\'}';"
-
-echo "Deleted matching TCC entries for client:"
-echo "  $client"
+if $system; then
+  # SIP makes the system database read-only, even to root. Ask tccd to
+  # remove this bundle identifier through Apple's supported interface.
+  sudo tccutil reset All "$client"
+  echo "Reset matching system TCC entries for client:"
+  echo "  $client"
+else
+  quote="'"
+  escaped_quote="''"
+  escaped_client=${client//$quote/$escaped_quote}
+  "${sqlite[@]}" "$db" "DELETE FROM access WHERE client='$escaped_client';"
+  echo "Deleted matching TCC entries for client:"
+  echo "  $client"
+fi

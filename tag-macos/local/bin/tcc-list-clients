@@ -1,14 +1,45 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
+usage() {
+  echo "Usage: $(basename "$0") [--system]"
+  exit "${1:-1}"
+}
 
-if [ ! -f "$db" ]; then
+system=false
+case "${1:-}" in
+  --system|--root)
+    system=true
+    shift
+    ;;
+  -h|--help)
+    usage 0
+    ;;
+esac
+
+if [ "$#" -ne 0 ]; then
+  usage
+fi
+
+if $system; then
+  db="/Library/Application Support/com.apple.TCC/TCC.db"
+  sqlite=(sudo sqlite3)
+else
+  db="$HOME/Library/Application Support/com.apple.TCC/TCC.db"
+  sqlite=(sqlite3)
+fi
+
+if $system; then
+  sudo test -f "$db" || {
+    echo "TCC DB not found at: $db" >&2
+    exit 1
+  }
+elif [ ! -f "$db" ]; then
   echo "TCC DB not found at: $db" >&2
   exit 1
 fi
 
-sqlite3 "$db" <<'SQL'
+"${sqlite[@]}" "$db" <<'SQL'
 .headers on
 .mode column
 SELECT
