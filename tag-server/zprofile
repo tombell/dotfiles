@@ -1,0 +1,5 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export HOMEBREW_NO_ASK=1
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
+
+eval "$(/usr/local/bin/brew shellenv)"
