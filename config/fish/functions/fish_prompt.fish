@@ -54,7 +54,7 @@ end
 function fish_prompt
     if set -q SSH_CONNECTION; or set -q SSH_CLIENT; or set -q SSH_TTY
         set_color green
-        printf '%s@%s ' "$USER" (prompt_hostname)
+        printf '%s ' (prompt_hostname)
     end
 
     set_color yellow

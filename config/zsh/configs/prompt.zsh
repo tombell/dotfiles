@@ -38,7 +38,7 @@ vcs_prompt_info() {
 
 ssh_prompt_info() {
   if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    echo "%F{green}%n@%m %f"
+    echo "%F{green}%m %f"
   fi
 }
 
