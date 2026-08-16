@@ -7,8 +7,8 @@ return {
         formatters_by_ft = {
           bash = { "shfmt" },
           css = { "oxfmt" },
+          fish = { "fish_indent" },
           go = { "goimports" },
-          -- html = { "oxfmt" },
           javascript = { "oxfmt" },
           javascriptreact = { "oxfmt" },
           json = { "oxfmt" },
@@ -19,7 +19,6 @@ return {
           ruby = { lsp_format = "fallback" },
           sh = { "shfmt" },
           swift = { "swift" },
-          -- toml = { "oxfmt" },
           typescript = { "oxfmt" },
           typescriptreact = { "oxfmt" },
           yaml = { "oxfmt" },
