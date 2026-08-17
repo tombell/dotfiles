@@ -1,4 +1,4 @@
-hl.config({
+hl.config {
   input = {
     kb_layout = "gb",
     kb_options = "ctrl:nocaps",
@@ -7,4 +7,4 @@ hl.config({
       clickfinger_behavior = true,
     },
   },
-})
+}

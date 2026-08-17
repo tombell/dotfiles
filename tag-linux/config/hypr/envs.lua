@@ -13,7 +13,7 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
-hl.config({
+hl.config {
   xwayland = {
     force_zero_scaling = true,
   },
@@ -22,4 +22,4 @@ hl.config({
     no_update_news = true,
     no_donation_nag = true,
   },
-})
+}

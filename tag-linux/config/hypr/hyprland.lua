@@ -1,10 +1,10 @@
-require("autostart")
-require("envs")
-require("looknfeel")
-require("monitors")
-require("input")
-require("windows")
-require("bindings")
-require("bindings.media")
-require("bindings.tiling")
-require("bindings.utilities")
+require "autostart"
+require "envs"
+require "looknfeel"
+require "monitors"
+require "input"
+require "windows"
+require "bindings"
+require "bindings.media"
+require "bindings.tiling"
+require "bindings.utilities"
