@@ -4,6 +4,7 @@ import Quickshell.Io
 import Quickshell.Wayland
 import Quickshell.Widgets
 
+import qs.Commons
 Scope {
     id: launcherRoot
 
@@ -83,10 +84,10 @@ Scope {
             anchors.centerIn: parent
             width: Math.max(420, launcher.width * 0.3)
             height: 344
-            color: "#1a1b26"
-            border.color: "#c7a9ff"
+            color: Color.background
+            border.color: Color.accent
             border.width: 2
-            radius: 5
+            radius: Style.cornerRadius
 
             MouseArea {
                 anchors.fill: parent
@@ -100,15 +101,15 @@ Scope {
                 Rectangle {
                     width: parent.width
                     height: 54
-                    color: "#15161e"
+                    color: Color.surface
 
                     Text {
                         anchors.left: parent.left
                         anchors.leftMargin: 12
                         anchors.verticalCenter: parent.verticalCenter
                         text: "Apps"
-                        color: "#c7a9ff"
-                        font.family: "SF Compact Display"
+                        color: Color.accent
+                        font.family: Style.textFont
                         font.pixelSize: 14
                         font.bold: true
                     }
@@ -121,9 +122,9 @@ Scope {
                         anchors.right: parent.right
                         anchors.rightMargin: 12
                         anchors.verticalCenter: parent.verticalCenter
-                        color: "#c0caf5"
-                        selectionColor: "#414868"
-                        font.family: "SF Compact Display"
+                        color: Color.foregroundStrong
+                        selectionColor: Color.subdued
+                        font.family: Style.textFont
                         font.pixelSize: 14
                         font.bold: true
                         clip: true
@@ -139,7 +140,7 @@ Scope {
                 Rectangle {
                     width: parent.width
                     height: 2
-                    color: "#c7a9ff"
+                    color: Color.accent
                 }
 
                 Repeater {
@@ -151,7 +152,7 @@ Scope {
 
                         width: parent.width
                         height: 56.8
-                        color: index === launcherRoot.selectedApplication ? "#414868" : "transparent"
+                        color: index === launcherRoot.selectedApplication ? Color.subdued : "transparent"
 
                         IconImage {
                             anchors.left: parent.left
@@ -169,9 +170,9 @@ Scope {
                             anchors.rightMargin: 12
                             anchors.verticalCenter: parent.verticalCenter
                             text: parent.entry.name
-                            color: parent.index === launcherRoot.selectedApplication ? "#c0caf5" : "#a9b1d6"
+                            color: parent.index === launcherRoot.selectedApplication ? Color.foregroundStrong : Color.foreground
                             elide: Text.ElideRight
-                            font.family: "SF Compact Display"
+                            font.family: Style.textFont
                             font.pixelSize: 14
                             font.bold: true
                         }

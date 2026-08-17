@@ -6,6 +6,7 @@ import Quickshell.Services.Notifications
 import Quickshell.Wayland
 import Quickshell.Widgets
 
+import qs.Commons
 Scope {
     id: notificationsRoot
 
@@ -54,14 +55,14 @@ Scope {
             bottom: true
             right: true
         }
-        margins.top: 35
+        margins.top: Style.barHeight
 
         WlrLayershell.namespace: "quickshell-notification-history"
 
         Rectangle {
             anchors.fill: parent
-            color: "#1a1b26"
-            border.color: "#c7a9ff"
+            color: Color.background
+            border.color: Color.accent
             border.width: 2
         }
 
@@ -78,8 +79,8 @@ Scope {
                     width: parent.width - dndButton.width - clearButton.width - 16
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Notifications"
-                    color: "#c0caf5"
-                    font.family: "SF Compact Display"
+                    color: Color.foregroundStrong
+                    font.family: Style.textFont
                     font.pixelSize: 18
                     font.bold: true
                 }
@@ -88,14 +89,14 @@ Scope {
                     id: dndButton
                     width: 44
                     height: 30
-                    color: notificationsRoot.doNotDisturb ? "#c7a9ff" : "#414868"
-                    radius: 4
+                    color: notificationsRoot.doNotDisturb ? Color.accent : Color.subdued
+                    radius: Style.controlRadius
 
                     Text {
                         anchors.centerIn: parent
                         text: notificationsRoot.doNotDisturb ? "󰂛" : "󰂚"
-                        color: notificationsRoot.doNotDisturb ? "#1a1b26" : "#a9b1d6"
-                        font.family: "IosevkaTerm Nerd Font Propo"
+                        color: notificationsRoot.doNotDisturb ? Color.background : Color.foreground
+                        font.family: Style.iconFont
                         font.pixelSize: 17
                     }
 
@@ -112,14 +113,14 @@ Scope {
                     id: clearButton
                     width: 44
                     height: 30
-                    color: "#414868"
-                    radius: 4
+                    color: Color.subdued
+                    radius: Style.controlRadius
 
                     Text {
                         anchors.centerIn: parent
                         text: "󰆴"
-                        color: "#a9b1d6"
-                        font.family: "IosevkaTerm Nerd Font Propo"
+                        color: Color.foreground
+                        font.family: Style.iconFont
                         font.pixelSize: 17
                     }
 
@@ -134,7 +135,7 @@ Scope {
             Rectangle {
                 width: parent.width
                 height: 1
-                color: "#414868"
+                color: Color.subdued
             }
 
             ListView {
@@ -153,10 +154,10 @@ Scope {
 
                     width: ListView.view.width
                     height: historyContent.implicitHeight + 24
-                    color: "#15161e"
-                    border.color: critical ? "#ff899d" : "#414868"
+                    color: Color.surface
+                    border.color: critical ? Color.urgent : Color.subdued
                     border.width: 1
-                    radius: 5
+                    radius: Style.cornerRadius
 
                     Row {
                         id: historyContent
@@ -181,8 +182,8 @@ Scope {
                             Text {
                                 width: parent.width
                                 text: summary || appName
-                                color: critical ? "#ff899d" : "#c0caf5"
-                                font.family: "SF Compact Display"
+                                color: critical ? Color.urgent : Color.foregroundStrong
+                                font.family: Style.textFont
                                 font.pixelSize: 13
                                 font.bold: true
                                 wrapMode: Text.Wrap
@@ -192,8 +193,8 @@ Scope {
                                 width: parent.width
                                 visible: body !== ""
                                 text: body
-                                color: "#a9b1d6"
-                                font.family: "SF Compact Display"
+                                color: Color.foreground
+                                font.family: Style.textFont
                                 font.pixelSize: 12
                                 wrapMode: Text.Wrap
                                 textFormat: Text.PlainText
@@ -206,8 +207,8 @@ Scope {
                     anchors.centerIn: parent
                     visible: notificationHistory.count === 0
                     text: "No notifications"
-                    color: "#565f89"
-                    font.family: "SF Compact Display"
+                    color: Color.muted
+                    font.family: Style.textFont
                     font.pixelSize: 14
                 }
             }
@@ -279,10 +280,10 @@ Scope {
 
                     width: 450
                     height: notificationContent.implicitHeight + 30 + (progress >= 0 ? 8 : 0)
-                    color: "#1a1b26"
-                    border.color: critical ? "#ff899d" : "#c7a9ff"
+                    color: Color.background
+                    border.color: critical ? Color.urgent : Color.accent
                     border.width: 2
-                    radius: 5
+                    radius: Style.cornerRadius
 
                     Timer {
                         interval: modelData.expireTimeout > 0 ? modelData.expireTimeout : 5000
@@ -329,8 +330,8 @@ Scope {
                             Text {
                                 width: parent.width
                                 text: modelData.summary || modelData.appName
-                                color: notificationItem.critical ? "#ff899d" : "#c0caf5"
-                                font.family: "SF Compact Display"
+                                color: notificationItem.critical ? Color.urgent : Color.foregroundStrong
+                                font.family: Style.textFont
                                 font.pixelSize: 14
                                 font.bold: true
                                 wrapMode: Text.Wrap
@@ -340,8 +341,8 @@ Scope {
                                 width: parent.width
                                 visible: text !== ""
                                 text: modelData.body
-                                color: "#a9b1d6"
-                                font.family: "SF Compact Display"
+                                color: Color.foreground
+                                font.family: Style.textFont
                                 font.pixelSize: 13
                                 wrapMode: Text.Wrap
                                 textFormat: Text.PlainText
@@ -359,15 +360,15 @@ Scope {
 
                                         width: actionText.implicitWidth + 16
                                         height: 28
-                                        color: "#414868"
-                                        radius: 4
+                                        color: Color.subdued
+                                        radius: Style.controlRadius
 
                                         Text {
                                             id: actionText
                                             anchors.centerIn: parent
                                             text: modelData.text
-                                            color: "#c0caf5"
-                                            font.family: "SF Compact Display"
+                                            color: Color.foregroundStrong
+                                            font.family: Style.textFont
                                             font.pixelSize: 12
                                             font.bold: true
                                         }
@@ -393,13 +394,13 @@ Scope {
                             bottomMargin: 4
                         }
                         height: 4
-                        color: "#414868"
-                        radius: 2
+                        color: Color.subdued
+                        radius: Style.progressRadius
 
                         Rectangle {
                             width: parent.width * notificationItem.progress
                             height: parent.height
-                            color: notificationItem.critical ? "#ff899d" : "#c7a9ff"
+                            color: notificationItem.critical ? Color.urgent : Color.accent
                         }
                     }
                 }

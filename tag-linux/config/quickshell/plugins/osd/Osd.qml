@@ -4,6 +4,7 @@ import Quickshell.Io
 import Quickshell.Services.Pipewire
 import Quickshell.Wayland
 
+import qs.Commons
 Scope {
     id: osdRoot
 
@@ -137,18 +138,18 @@ Scope {
 
         Rectangle {
             anchors.fill: parent
-            color: "#1a1b26"
-            border.color: "#c7a9ff"
+            color: Color.background
+            border.color: Color.accent
             border.width: 2
-            radius: 5
+            radius: Style.cornerRadius
 
             Text {
                 anchors.left: parent.left
                 anchors.leftMargin: 18
                 anchors.verticalCenter: parent.verticalCenter
                 text: osdRoot.osdIcon
-                color: osdRoot.osdMuted ? "#ff899d" : "#a9b1d6"
-                font.family: "IosevkaTerm Nerd Font Propo"
+                color: osdRoot.osdMuted ? Color.urgent : Color.foreground
+                font.family: Style.iconFont
                 font.pixelSize: 22
             }
 
@@ -159,14 +160,14 @@ Scope {
                 anchors.rightMargin: 18
                 anchors.verticalCenter: parent.verticalCenter
                 height: 8
-                color: "#414868"
-                radius: 4
+                color: Color.subdued
+                radius: Style.controlRadius
 
                 Rectangle {
                     width: parent.width * osdRoot.osdValue
                     height: parent.height
-                    color: osdRoot.osdMuted ? "#ff899d" : "#c7a9ff"
-                    radius: 4
+                    color: osdRoot.osdMuted ? Color.urgent : Color.accent
+                    radius: Style.controlRadius
                 }
             }
         }

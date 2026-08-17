@@ -8,6 +8,7 @@ import Quickshell.Services.Pipewire
 import Quickshell.Services.UPower
 import Quickshell.Wayland
 
+import qs.Commons
 Scope {
     id: barRoot
 
@@ -99,13 +100,13 @@ Scope {
         property var clicked: null
 
         implicitWidth: 33
-        implicitHeight: 35
+        implicitHeight: Style.barHeight
 
         Text {
             anchors.centerIn: parent
             text: parent.icon
-            color: "#a9b1d6"
-            font.family: "IosevkaTerm Nerd Font Propo"
+            color: Color.foreground
+            font.family: Style.iconFont
             font.pixelSize: 18
             font.bold: true
         }
@@ -138,18 +139,18 @@ Scope {
 
             Rectangle {
                 anchors.fill: parent
-                color: "#1a1b26"
-                border.color: "#c7a9ff"
+                color: Color.background
+                border.color: Color.accent
                 border.width: 1
-                radius: 5
+                radius: Style.cornerRadius
 
                 Text {
                     id: tooltipLabel
 
                     anchors.centerIn: parent
                     text: statusIcon.tooltipText
-                    color: "#a9b1d6"
-                    font.family: "SF Compact Display"
+                    color: Color.foreground
+                    font.family: Style.textFont
                     font.pixelSize: 13
                     font.bold: true
                 }
@@ -166,8 +167,8 @@ Scope {
             required property var modelData
 
             screen: modelData
-            color: "#1a1b26"
-            implicitHeight: 35
+            color: Color.background
+            implicitHeight: Style.barHeight
             anchors {
                 top: true
                 left: true
@@ -199,15 +200,15 @@ Scope {
 
                             visible: workspaceId <= 5 || onThisMonitor
                             width: 30
-                            height: 35
+                            height: Style.barHeight
                             color: "transparent"
                             opacity: active || occupied ? 1 : 0.5
 
                             Text {
                                 anchors.centerIn: parent
                                 text: parent.active ? "" : parent.workspaceId
-                                color: parent.active ? "#c7a9ff" : "#a9b1d6"
-                                font.family: "SF Compact Display, IosevkaTerm Nerd Font Propo"
+                                color: parent.active ? Color.accent : Color.foreground
+                                font.family: Style.mixedFont
                                 font.pixelSize: 14
                                 font.bold: true
                             }
@@ -229,8 +230,8 @@ Scope {
                 Text {
                     anchors.centerIn: parent
                     text: Qt.formatDateTime(clock.date, "HH:mm")
-                    color: "#a9b1d6"
-                    font.family: "SF Compact Display, IosevkaTerm Nerd Font Propo"
+                    color: Color.foreground
+                    font.family: Style.mixedFont
                     font.pixelSize: 14
                     font.bold: true
                 }
@@ -290,10 +291,10 @@ Scope {
 
                             Rectangle {
                                 anchors.fill: parent
-                                color: "#1a1b26"
-                                border.color: "#c7a9ff"
+                                color: Color.background
+                                border.color: Color.accent
                                 border.width: 2
-                                radius: 5
+                                radius: Style.cornerRadius
 
                                 Column {
                                     anchors.fill: parent
@@ -306,8 +307,8 @@ Scope {
                                         Text {
                                             width: parent.width / 2
                                             text: batteryIcon.percentage + "%"
-                                            color: "#c0caf5"
-                                            font.family: "SF Compact Display"
+                                            color: Color.foregroundStrong
+                                            font.family: Style.textFont
                                             font.pixelSize: 24
                                             font.bold: true
                                         }
@@ -316,8 +317,8 @@ Scope {
                                             width: parent.width / 2
                                             horizontalAlignment: Text.AlignRight
                                             text: barRoot.batteryPower.toFixed(1) + " W"
-                                            color: "#a9b1d6"
-                                            font.family: "SF Compact Display"
+                                            color: Color.foreground
+                                            font.family: Style.textFont
                                             font.pixelSize: 16
                                             font.bold: true
                                         }
@@ -325,29 +326,29 @@ Scope {
 
                                     Text {
                                         text: (UPower.onBattery ? "Remaining: " : "Until full: ") + batteryIcon.remainingText
-                                        color: "#a9b1d6"
-                                        font.family: "SF Compact Display"
+                                        color: Color.foreground
+                                        font.family: Style.textFont
                                         font.pixelSize: 13
                                     }
 
                                     Rectangle {
                                         width: parent.width
                                         height: 8
-                                        color: "#414868"
-                                        radius: 4
+                                        color: Color.subdued
+                                        radius: Style.controlRadius
 
                                         Rectangle {
                                             width: parent.width * batteryIcon.percentage / 100
                                             height: parent.height
-                                            color: "#c7a9ff"
-                                            radius: 4
+                                            color: Color.accent
+                                            radius: Style.controlRadius
                                         }
                                     }
 
                                     Text {
                                         text: "Power profile"
-                                        color: "#c0caf5"
-                                        font.family: "SF Compact Display"
+                                        color: Color.foregroundStrong
+                                        font.family: Style.textFont
                                         font.pixelSize: 13
                                         font.bold: true
                                     }
@@ -369,14 +370,14 @@ Scope {
                                                 visible: modelData.profile !== PowerProfile.Performance || PowerProfiles.hasPerformanceProfile
                                                 width: 82
                                                 height: 32
-                                                color: selected ? "#c7a9ff" : "#414868"
-                                                radius: 4
+                                                color: selected ? Color.accent : Color.subdued
+                                                radius: Style.controlRadius
 
                                                 Text {
                                                     anchors.centerIn: parent
                                                     text: parent.modelData.label
-                                                    color: parent.selected ? "#1a1b26" : "#a9b1d6"
-                                                    font.family: "SF Compact Display"
+                                                    color: parent.selected ? Color.background : Color.foreground
+                                                    font.family: Style.textFont
                                                     font.pixelSize: 12
                                                     font.bold: true
                                                 }
