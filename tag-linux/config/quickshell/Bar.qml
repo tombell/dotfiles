@@ -161,6 +161,8 @@ Scope {
         model: Quickshell.screens
 
         PanelWindow {
+            id: barWindow
+
             required property var modelData
 
             screen: modelData
@@ -190,12 +192,16 @@ Scope {
                         Rectangle {
                             required property int index
                             readonly property int workspaceId: index + 1
-                            readonly property bool active: Hyprland.focusedWorkspace?.id === workspaceId
+                            readonly property var workspace: Hyprland.workspaces.values.find(candidate => candidate.id === workspaceId)
+                            readonly property bool onThisMonitor: workspace?.monitor?.name === barWindow.screen.name
+                            readonly property bool active: onThisMonitor && workspace.active
+                            readonly property bool occupied: onThisMonitor && workspace.toplevels.values.length > 0
 
+                            visible: workspaceId <= 5 || onThisMonitor
                             width: 30
                             height: 35
                             color: "transparent"
-                            opacity: workspaceId <= 5 || active ? 1 : 0.5
+                            opacity: active || occupied ? 1 : 0.5
 
                             Text {
                                 anchors.centerIn: parent
@@ -241,8 +247,17 @@ Scope {
                     }
 
                     StatusIcon {
+                        id: batteryIcon
+
                         readonly property var battery: UPower.displayDevice
                         readonly property int percentage: battery ? Math.round(battery.percentage * 100) : 0
+                        readonly property double remainingSeconds: UPower.onBattery ? battery?.timeToEmpty ?? 0 : battery?.timeToFull ?? 0
+                        readonly property string remainingText: {
+                            if (remainingSeconds <= 0) return "Estimating…"
+                            const hours = Math.floor(remainingSeconds / 3600)
+                            const minutes = Math.floor((remainingSeconds % 3600) / 60)
+                            return hours > 0 ? hours + "h " + minutes + "m" : minutes + "m"
+                        }
                         icon: {
                             if (!battery || !battery.ready) return ""
                             if (!UPower.onBattery) return percentage >= 100 ? "󰂅" : ""
@@ -250,6 +265,126 @@ Scope {
                             return icons[Math.min(9, Math.floor(percentage / 10))]
                         }
                         tooltipText: barRoot.batteryPower.toFixed(1) + "W" + (UPower.onBattery ? "↓ " : "↑ ") + percentage + "%"
+                        clicked: () => batteryPopup.visible = !batteryPopup.visible
+
+                        PopupWindow {
+                            id: batteryPopup
+
+                            visible: false
+                            color: "transparent"
+                            implicitWidth: 300
+                            implicitHeight: 190
+
+                            anchor {
+                                item: batteryIcon
+                                edges: Edges.Bottom
+                                gravity: Edges.Bottom
+                            }
+
+                            Rectangle {
+                                anchors.fill: parent
+                                color: "#1a1b26"
+                                border.color: "#c7a9ff"
+                                border.width: 2
+                                radius: 5
+
+                                Column {
+                                    anchors.fill: parent
+                                    anchors.margins: 16
+                                    spacing: 12
+
+                                    Row {
+                                        width: parent.width
+
+                                        Text {
+                                            width: parent.width / 2
+                                            text: batteryIcon.percentage + "%"
+                                            color: "#c0caf5"
+                                            font.family: "SF Compact Display"
+                                            font.pixelSize: 24
+                                            font.bold: true
+                                        }
+
+                                        Text {
+                                            width: parent.width / 2
+                                            horizontalAlignment: Text.AlignRight
+                                            text: barRoot.batteryPower.toFixed(1) + " W"
+                                            color: "#a9b1d6"
+                                            font.family: "SF Compact Display"
+                                            font.pixelSize: 16
+                                            font.bold: true
+                                        }
+                                    }
+
+                                    Text {
+                                        text: (UPower.onBattery ? "Remaining: " : "Until full: ") + batteryIcon.remainingText
+                                        color: "#a9b1d6"
+                                        font.family: "SF Compact Display"
+                                        font.pixelSize: 13
+                                    }
+
+                                    Rectangle {
+                                        width: parent.width
+                                        height: 8
+                                        color: "#414868"
+                                        radius: 4
+
+                                        Rectangle {
+                                            width: parent.width * batteryIcon.percentage / 100
+                                            height: parent.height
+                                            color: "#c7a9ff"
+                                            radius: 4
+                                        }
+                                    }
+
+                                    Text {
+                                        text: "Power profile"
+                                        color: "#c0caf5"
+                                        font.family: "SF Compact Display"
+                                        font.pixelSize: 13
+                                        font.bold: true
+                                    }
+
+                                    Row {
+                                        spacing: 8
+
+                                        Repeater {
+                                            model: [
+                                                { "label": "Saver", "profile": PowerProfile.PowerSaver },
+                                                { "label": "Balanced", "profile": PowerProfile.Balanced },
+                                                { "label": "Performance", "profile": PowerProfile.Performance }
+                                            ]
+
+                                            Rectangle {
+                                                required property var modelData
+                                                readonly property bool selected: PowerProfiles.profile === modelData.profile
+
+                                                visible: modelData.profile !== PowerProfile.Performance || PowerProfiles.hasPerformanceProfile
+                                                width: 82
+                                                height: 32
+                                                color: selected ? "#c7a9ff" : "#414868"
+                                                radius: 4
+
+                                                Text {
+                                                    anchors.centerIn: parent
+                                                    text: parent.modelData.label
+                                                    color: parent.selected ? "#1a1b26" : "#a9b1d6"
+                                                    font.family: "SF Compact Display"
+                                                    font.pixelSize: 12
+                                                    font.bold: true
+                                                }
+
+                                                MouseArea {
+                                                    anchors.fill: parent
+                                                    cursorShape: Qt.PointingHandCursor
+                                                    onClicked: PowerProfiles.profile = parent.modelData.profile
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     StatusIcon {
