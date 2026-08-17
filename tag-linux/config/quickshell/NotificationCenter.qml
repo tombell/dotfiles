@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
 import Quickshell.Services.Notifications
 import Quickshell.Wayland
@@ -33,6 +34,12 @@ Scope {
         function toggleHistory(): void { notificationHistoryWindow.visible = !notificationHistoryWindow.visible }
         function toggleDoNotDisturb(): void { notificationsRoot.doNotDisturb = !notificationsRoot.doNotDisturb }
         function clear(): void { notificationHistory.clear() }
+    }
+
+    HyprlandFocusGrab {
+        windows: [notificationHistoryWindow]
+        active: notificationHistoryWindow.visible
+        onCleared: notificationHistoryWindow.visible = false
     }
 
     PanelWindow {

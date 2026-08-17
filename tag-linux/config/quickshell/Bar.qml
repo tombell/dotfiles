@@ -267,11 +267,18 @@ Scope {
                         tooltipText: barRoot.batteryPower.toFixed(1) + "W" + (UPower.onBattery ? "↓ " : "↑ ") + percentage + "%"
                         clicked: () => batteryPopup.visible = !batteryPopup.visible
 
+                        HyprlandFocusGrab {
+                            windows: [batteryPopup]
+                            active: batteryPopup.visible
+                            onCleared: batteryPopup.visible = false
+                        }
+
                         PopupWindow {
                             id: batteryPopup
 
                             visible: false
                             color: "transparent"
+                            grabFocus: true
                             implicitWidth: 300
                             implicitHeight: 190
 
