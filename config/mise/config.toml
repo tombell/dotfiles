@@ -4,7 +4,6 @@ lua = "5.1"
 node = "lts"
 pi = "latest"
 ruby = "4.0.6"
-rust = "latest"
 tree-sitter = "latest"
 
 [settings]
