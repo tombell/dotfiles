@@ -52,7 +52,10 @@ Scope {
         const entry = filteredApplications[selectedApplication]
         if (!entry) return
         launcher.visible = false
-        Quickshell.execDetached(["uwsm", "app", "--"].concat(entry.command))
+        const command = entry.runInTerminal
+            ? ["uwsm", "app", "--", "ghostty", "-e"].concat(entry.command)
+            : ["uwsm", "app", "--"].concat(entry.command)
+        Quickshell.execDetached(command)
     }
 
     PanelWindow {
