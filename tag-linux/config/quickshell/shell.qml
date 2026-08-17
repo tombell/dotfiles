@@ -1,5 +1,11 @@
 import Quickshell
 
+import "plugins/bar"
+import "plugins/launcher"
+import "plugins/notifications"
+import "plugins/osd"
+import "plugins/wallpaper"
+
 ShellRoot {
     Wallpaper {}
 
