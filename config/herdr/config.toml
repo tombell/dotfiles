@@ -14,8 +14,12 @@ pane_scrollbars = false
 enabled = false
 
 [ui.sidebar.spaces]
-rows = [["state_icon", "workspace"], ["branch", "git_status"], ["$jj_bookmark", "$jj_status"]]
 row_gap = 1
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+  ["$jj_bookmark", "$jj_status"]
+]
 
 [ui.sidebar.agents]
 row_gap = 1
@@ -23,8 +27,8 @@ row_gap = 1
 [keys]
 prefix = "ctrl+b"
 detach = "prefix+d"
-previous_tab = "prefix+["
-next_tab = "prefix+]"
+previous_tab = ["prefix+p", "prefix+["]
+next_tab = ["prefix+n", "prefix+]"]
 
 [[keys.command]]
 key = "prefix+t"
