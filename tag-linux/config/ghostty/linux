@@ -1,6 +1,7 @@
 font-size = 11
 font-style = bold
 font-style-italic = bold italic
+adjust-underline-position = 3
 
 window-padding-x = 10
 window-padding-y = 10
