@@ -49,10 +49,10 @@ Scope {
         visible: false
         color: "transparent"
         implicitWidth: 350
+        implicitHeight: 500
         exclusionMode: ExclusionMode.Ignore
         anchors {
             top: true
-            bottom: true
             right: true
         }
         margins.top: Style.barHeight
