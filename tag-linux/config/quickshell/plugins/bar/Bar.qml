@@ -293,7 +293,7 @@ Scope {
                                 anchors.fill: parent
                                 color: Color.background
                                 border.color: Color.accent
-                                border.width: 2
+                                border.width: 1
                                 radius: Style.cornerRadius
 
                                 Column {

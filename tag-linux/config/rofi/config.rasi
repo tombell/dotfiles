@@ -35,8 +35,8 @@ configuration {
 window {
   width: 30%;
   background-color: @bg;
-  border: 2px;
-  border-radius: 5;
+  border: 1px;
+  border-radius: 0;
   border-color: @magenta;
 }
 
@@ -72,7 +72,7 @@ entry {
 inputbar {
   children: [prompt, entry];
   background-color: @bg;
-  border: 0 0 2px;
+  border: 0 0 1px;
   border-color: @magenta;
 }
 

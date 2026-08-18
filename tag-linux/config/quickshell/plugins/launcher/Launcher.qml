@@ -86,7 +86,7 @@ Scope {
             height: 344
             color: Color.background
             border.color: Color.accent
-            border.width: 2
+            border.width: 1
             radius: Style.cornerRadius
 
             MouseArea {

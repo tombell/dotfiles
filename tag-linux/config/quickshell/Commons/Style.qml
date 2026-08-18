@@ -7,7 +7,7 @@ QtObject {
     readonly property string mixedFont: textFont + ", " + iconFont
 
     readonly property int barHeight: 35
-    readonly property int cornerRadius: 5
-    readonly property int controlRadius: 4
-    readonly property int progressRadius: 2
+    readonly property int cornerRadius: 0
+    readonly property int controlRadius: 0
+    readonly property int progressRadius: 0
 }

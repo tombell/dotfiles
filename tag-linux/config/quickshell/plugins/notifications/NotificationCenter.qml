@@ -48,7 +48,7 @@ Scope {
 
         visible: false
         color: "transparent"
-        implicitWidth: 400
+        implicitWidth: 350
         exclusionMode: ExclusionMode.Ignore
         anchors {
             top: true
@@ -63,7 +63,7 @@ Scope {
             anchors.fill: parent
             color: Color.background
             border.color: Color.accent
-            border.width: 2
+            border.width: 1
         }
 
         Column {
@@ -282,7 +282,7 @@ Scope {
                     height: notificationContent.implicitHeight + 30 + (progress >= 0 ? 8 : 0)
                     color: Color.background
                     border.color: critical ? Color.urgent : Color.accent
-                    border.width: 2
+                    border.width: 1
                     radius: Style.cornerRadius
 
                     Timer {

@@ -5,10 +5,10 @@ width = 450
 offset = (10, 10)
 
 progress_bar_max_width = 450
-progress_bar_corner_radius = 3
+progress_bar_corner_radius = 0
 
-frame_width = 2
-corner_radius = 5
+frame_width = 1
+corner_radius = 0
 
 padding = 15
 horizontal_padding = 15
