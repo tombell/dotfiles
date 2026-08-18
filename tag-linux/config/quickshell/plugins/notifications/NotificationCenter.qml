@@ -197,7 +197,7 @@ Scope {
                                 font.family: Style.textFont
                                 font.pixelSize: 12
                                 wrapMode: Text.Wrap
-                                textFormat: Text.PlainText
+                                textFormat: Text.StyledText
                             }
                         }
                     }
@@ -220,7 +220,7 @@ Scope {
 
         keepOnReload: true
         bodySupported: true
-        bodyMarkupSupported: false
+        bodyMarkupSupported: true
         actionsSupported: true
         imageSupported: true
         persistenceSupported: true
@@ -345,7 +345,7 @@ Scope {
                                 font.family: Style.textFont
                                 font.pixelSize: 13
                                 wrapMode: Text.Wrap
-                                textFormat: Text.PlainText
+                                textFormat: Text.StyledText
                             }
 
                             Row {
