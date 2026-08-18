@@ -7,6 +7,7 @@ import Quickshell.Wayland
 import Quickshell.Widgets
 
 import qs.Commons
+import qs.Ui
 Scope {
     id: notificationsRoot
 
@@ -75,12 +76,11 @@ Scope {
                 width: parent.width
                 height: 36
 
-                Text {
+                Label {
                     width: parent.width - dndButton.width - clearButton.width - 16
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Notifications"
                     color: Color.foregroundStrong
-                    font.family: Style.textFont
                     font.pixelSize: 18
                     font.bold: true
                 }
@@ -92,11 +92,10 @@ Scope {
                     color: notificationsRoot.doNotDisturb ? Color.accent : Color.subdued
                     radius: Style.controlRadius
 
-                    Text {
+                    IconLabel {
                         anchors.centerIn: parent
                         text: notificationsRoot.doNotDisturb ? "󰂛" : "󰂚"
                         color: notificationsRoot.doNotDisturb ? Color.background : Color.foreground
-                        font.family: Style.iconFont
                         font.pixelSize: 17
                     }
 
@@ -116,11 +115,10 @@ Scope {
                     color: Color.subdued
                     radius: Style.controlRadius
 
-                    Text {
+                    IconLabel {
                         anchors.centerIn: parent
                         text: "󰆴"
                         color: Color.foreground
-                        font.family: Style.iconFont
                         font.pixelSize: 17
                     }
 
@@ -179,22 +177,20 @@ Scope {
                             width: parent.width - 46
                             spacing: 4
 
-                            Text {
+                            Label {
                                 width: parent.width
                                 text: summary || appName
                                 color: critical ? Color.urgent : Color.foregroundStrong
-                                font.family: Style.textFont
                                 font.pixelSize: 13
                                 font.bold: true
                                 wrapMode: Text.Wrap
                             }
 
-                            Text {
+                            Label {
                                 width: parent.width
                                 visible: body !== ""
                                 text: body
                                 color: Color.foreground
-                                font.family: Style.textFont
                                 font.pixelSize: 12
                                 wrapMode: Text.Wrap
                                 textFormat: Text.StyledText
@@ -203,12 +199,11 @@ Scope {
                     }
                 }
 
-                Text {
+                Label {
                     anchors.centerIn: parent
                     visible: notificationHistory.count === 0
                     text: "No notifications"
                     color: Color.muted
-                    font.family: Style.textFont
                     font.pixelSize: 14
                 }
             }
@@ -327,22 +322,20 @@ Scope {
                             width: notificationItem.width - 30 - notificationContent.spacing - (notificationContent.children[0].visible ? 50 : 0)
                             spacing: 5
 
-                            Text {
+                            Label {
                                 width: parent.width
                                 text: modelData.summary || modelData.appName
                                 color: notificationItem.critical ? Color.urgent : Color.foregroundStrong
-                                font.family: Style.textFont
                                 font.pixelSize: 14
                                 font.bold: true
                                 wrapMode: Text.Wrap
                             }
 
-                            Text {
+                            Label {
                                 width: parent.width
                                 visible: text !== ""
                                 text: modelData.body
                                 color: Color.foreground
-                                font.family: Style.textFont
                                 font.pixelSize: 13
                                 wrapMode: Text.Wrap
                                 textFormat: Text.StyledText
@@ -363,12 +356,11 @@ Scope {
                                         color: Color.subdued
                                         radius: Style.controlRadius
 
-                                        Text {
+                                        Label {
                                             id: actionText
                                             anchors.centerIn: parent
                                             text: modelData.text
                                             color: Color.foregroundStrong
-                                            font.family: Style.textFont
                                             font.pixelSize: 12
                                             font.bold: true
                                         }
@@ -383,7 +375,7 @@ Scope {
                         }
                     }
 
-                    Rectangle {
+                    ProgressBar {
                         visible: notificationItem.progress >= 0
                         anchors {
                             left: parent.left
@@ -394,14 +386,8 @@ Scope {
                             bottomMargin: 4
                         }
                         height: 4
-                        color: Color.subdued
-                        radius: Style.progressRadius
-
-                        Rectangle {
-                            width: parent.width * notificationItem.progress
-                            height: parent.height
-                            color: notificationItem.critical ? Color.urgent : Color.accent
-                        }
+                        value: notificationItem.progress
+                        fillColor: notificationItem.critical ? Color.urgent : Color.accent
                     }
                 }
             }

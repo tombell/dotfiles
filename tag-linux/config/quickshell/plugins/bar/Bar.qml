@@ -9,6 +9,7 @@ import Quickshell.Services.UPower
 import Quickshell.Wayland
 
 import qs.Commons
+import qs.Ui
 Scope {
     id: barRoot
 
@@ -102,11 +103,10 @@ Scope {
         implicitWidth: 33
         implicitHeight: Style.barHeight
 
-        Text {
+        IconLabel {
             anchors.centerIn: parent
             text: parent.icon
             color: Color.foreground
-            font.family: Style.iconFont
             font.pixelSize: 18
             font.bold: true
         }
@@ -137,20 +137,15 @@ Scope {
                 gravity: Edges.Bottom
             }
 
-            Rectangle {
+            PanelSurface {
                 anchors.fill: parent
-                color: Color.background
-                border.color: Color.accent
-                border.width: 1
-                radius: Style.cornerRadius
 
-                Text {
+                Label {
                     id: tooltipLabel
 
                     anchors.centerIn: parent
                     text: statusIcon.tooltipText
                     color: Color.foreground
-                    font.family: Style.textFont
                     font.pixelSize: 13
                     font.bold: true
                 }
@@ -204,7 +199,7 @@ Scope {
                             color: "transparent"
                             opacity: active || occupied ? 1 : 0.5
 
-                            Text {
+                            Label {
                                 anchors.centerIn: parent
                                 text: parent.active ? "" : parent.workspaceId
                                 color: parent.active ? Color.accent : Color.foreground
@@ -227,7 +222,7 @@ Scope {
                     precision: SystemClock.Minutes
                 }
 
-                Text {
+                Label {
                     anchors.centerIn: parent
                     text: Qt.formatDateTime(clock.date, "HH:mm")
                     color: Color.foreground
@@ -289,12 +284,8 @@ Scope {
                                 gravity: Edges.Bottom
                             }
 
-                            Rectangle {
+                            PanelSurface {
                                 anchors.fill: parent
-                                color: Color.background
-                                border.color: Color.accent
-                                border.width: 1
-                                radius: Style.cornerRadius
 
                                 Column {
                                     anchors.fill: parent
@@ -304,51 +295,39 @@ Scope {
                                     Row {
                                         width: parent.width
 
-                                        Text {
+                                        Label {
                                             width: parent.width / 2
                                             text: batteryIcon.percentage + "%"
                                             color: Color.foregroundStrong
-                                            font.family: Style.textFont
                                             font.pixelSize: 24
                                             font.bold: true
                                         }
 
-                                        Text {
+                                        Label {
                                             width: parent.width / 2
                                             horizontalAlignment: Text.AlignRight
                                             text: barRoot.batteryPower.toFixed(1) + " W"
                                             color: Color.foreground
-                                            font.family: Style.textFont
                                             font.pixelSize: 16
                                             font.bold: true
                                         }
                                     }
 
-                                    Text {
+                                    Label {
                                         text: (UPower.onBattery ? "Remaining: " : "Until full: ") + batteryIcon.remainingText
                                         color: Color.foreground
-                                        font.family: Style.textFont
                                         font.pixelSize: 13
                                     }
 
-                                    Rectangle {
+                                    ProgressBar {
                                         width: parent.width
                                         height: 8
-                                        color: Color.subdued
-                                        radius: Style.controlRadius
-
-                                        Rectangle {
-                                            width: parent.width * batteryIcon.percentage / 100
-                                            height: parent.height
-                                            color: Color.accent
-                                            radius: Style.controlRadius
-                                        }
+                                        value: batteryIcon.percentage / 100
                                     }
 
-                                    Text {
+                                    Label {
                                         text: "Power profile"
                                         color: Color.foregroundStrong
-                                        font.family: Style.textFont
                                         font.pixelSize: 13
                                         font.bold: true
                                     }
@@ -373,11 +352,10 @@ Scope {
                                                 color: selected ? Color.accent : Color.subdued
                                                 radius: Style.controlRadius
 
-                                                Text {
+                                                Label {
                                                     anchors.centerIn: parent
                                                     text: parent.modelData.label
                                                     color: parent.selected ? Color.background : Color.foreground
-                                                    font.family: Style.textFont
                                                     font.pixelSize: 12
                                                     font.bold: true
                                                 }

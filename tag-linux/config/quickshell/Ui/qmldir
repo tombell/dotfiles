@@ -1,0 +1,5 @@
+module qs.Ui
+Label 1.0 Label.qml
+IconLabel 1.0 IconLabel.qml
+PanelSurface 1.0 PanelSurface.qml
+ProgressBar 1.0 ProgressBar.qml

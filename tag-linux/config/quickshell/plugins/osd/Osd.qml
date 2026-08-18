@@ -5,6 +5,7 @@ import Quickshell.Services.Pipewire
 import Quickshell.Wayland
 
 import qs.Commons
+import qs.Ui
 Scope {
     id: osdRoot
 
@@ -136,39 +137,27 @@ Scope {
 
         WlrLayershell.namespace: "quickshell-osd"
 
-        Rectangle {
+        PanelSurface {
             anchors.fill: parent
-            color: Color.background
-            border.color: Color.accent
-            border.width: 1
-            radius: Style.cornerRadius
 
-            Text {
+            IconLabel {
                 anchors.left: parent.left
                 anchors.leftMargin: 18
                 anchors.verticalCenter: parent.verticalCenter
                 text: osdRoot.osdIcon
                 color: osdRoot.osdMuted ? Color.urgent : Color.foreground
-                font.family: Style.iconFont
                 font.pixelSize: 22
             }
 
-            Rectangle {
+            ProgressBar {
                 anchors.left: parent.left
                 anchors.leftMargin: 58
                 anchors.right: parent.right
                 anchors.rightMargin: 18
                 anchors.verticalCenter: parent.verticalCenter
                 height: 8
-                color: Color.subdued
-                radius: Style.controlRadius
-
-                Rectangle {
-                    width: parent.width * osdRoot.osdValue
-                    height: parent.height
-                    color: osdRoot.osdMuted ? Color.urgent : Color.accent
-                    radius: Style.controlRadius
-                }
+                value: osdRoot.osdValue
+                fillColor: osdRoot.osdMuted ? Color.urgent : Color.accent
             }
         }
     }

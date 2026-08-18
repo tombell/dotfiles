@@ -5,6 +5,7 @@ import Quickshell.Wayland
 import Quickshell.Widgets
 
 import qs.Commons
+import qs.Ui
 Scope {
     id: launcherRoot
 
@@ -80,14 +81,10 @@ Scope {
             onClicked: launcher.visible = false
         }
 
-        Rectangle {
+        PanelSurface {
             anchors.centerIn: parent
             width: Math.max(420, launcher.width * 0.3)
             height: 344
-            color: Color.background
-            border.color: Color.accent
-            border.width: 1
-            radius: Style.cornerRadius
 
             MouseArea {
                 anchors.fill: parent
@@ -103,13 +100,12 @@ Scope {
                     height: 54
                     color: Color.surface
 
-                    Text {
+                    Label {
                         anchors.left: parent.left
                         anchors.leftMargin: 12
                         anchors.verticalCenter: parent.verticalCenter
                         text: "Apps"
                         color: Color.accent
-                        font.family: Style.textFont
                         font.pixelSize: 14
                         font.bold: true
                     }
@@ -124,7 +120,6 @@ Scope {
                         anchors.verticalCenter: parent.verticalCenter
                         color: Color.foregroundStrong
                         selectionColor: Color.subdued
-                        font.family: Style.textFont
                         font.pixelSize: 14
                         font.bold: true
                         clip: true
@@ -163,7 +158,7 @@ Scope {
                             source: launcherRoot.applicationIcon(parent.entry.icon)
                         }
 
-                        Text {
+                        Label {
                             anchors.left: parent.left
                             anchors.leftMargin: 52
                             anchors.right: parent.right
@@ -172,7 +167,6 @@ Scope {
                             text: parent.entry.name
                             color: parent.index === launcherRoot.selectedApplication ? Color.foregroundStrong : Color.foreground
                             elide: Text.ElideRight
-                            font.family: Style.textFont
                             font.pixelSize: 14
                             font.bold: true
                         }
