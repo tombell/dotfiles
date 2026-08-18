@@ -10,7 +10,8 @@ workspaces:
     root: ./design
     tabs:
       - label: agent
-        command: pi
+        commands:
+          - pi
       - label: terminal
   - label: website
     root: ./website
