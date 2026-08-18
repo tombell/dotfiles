@@ -49,6 +49,7 @@ return {
           "markdown_inline",
           "objc",
           "python",
+          "qmljs",
           "query",
           "regex",
           "ruby",
