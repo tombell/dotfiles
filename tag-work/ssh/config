@@ -8,7 +8,7 @@ Host github.com
   User git
   IdentityFile ~/.ssh/Work
 
-Host pyra brighid mythra rpi *.solarflare-skink.ts.net
+Host pyra brighid mythra rpi *.local *.solarflare-skink.ts.net
   IdentityFile ~/.ssh/Personal
 
 Host *
