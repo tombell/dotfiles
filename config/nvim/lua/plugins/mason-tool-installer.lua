@@ -12,7 +12,6 @@ return {
           "oxlint",
           "shfmt",
           "stylua",
-          "tailwindcss-language-server",
           "vtsls",
         },
       }
