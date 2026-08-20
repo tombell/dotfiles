@@ -1,6 +1,6 @@
 ---
 name: fleet
-description: Manage Tom's fleet of Macs and Raspberry Pi over local networking or Tailscale. Use when checking hosts or updating Homebrew packages on Pyra, Haze, Brighid, or Mythra, or apt packages on rpi. Also use when the user refers to these computers collectively as the fleet.
+description: Manage Tom's fleet of Macs and Raspberry Pi over local networking or Tailscale. Use when checking hosts or updating Homebrew packages on Pyra, Haze, or Brighid, or apt packages on rpi. Also use when the user refers to these computers collectively as the fleet.
 ---
 
 # Fleet Management
@@ -16,7 +16,7 @@ Currently support:
 - Homebrew updates on macOS
 - apt updates on Raspbian
 
-Do not manage Hermes, Docker, Homebridge, fr24, UniFi, VLANs, or arbitrary services under this skill. Their presence is inventory context only. Suggest a dedicated skill when the request concerns those systems.
+Do not manage Hermes, container platforms, Homebridge, fr24, UniFi, VLANs, or arbitrary services under this skill. Their presence is inventory context only. Suggest a dedicated skill when the request concerns those systems.
 
 ## Resolve and Connect
 
