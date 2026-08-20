@@ -8,7 +8,6 @@ require "config.keymaps"
 vim.pack.add({
   -- dependencies
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-neotest/nvim-nio" },
 
   -- misc
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -37,12 +36,6 @@ vim.pack.add({
 
   -- formatting
   require "plugins.conform",
-
-  -- testing
-  { src = "https://github.com/fredrikaverpil/neotest-golang" },
-  { src = "https://github.com/marilari88/neotest-vitest" },
-  { src = "https://github.com/zidhuss/neotest-minitest" },
-  require "plugins.neotest",
 
   -- ui
   require "plugins.hem",

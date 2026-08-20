@@ -12,7 +12,6 @@ return {
             { "<leader>g", group = "git" },
             { "<leader>gh", group = "hunks" },
             { "<leader>s", group = "search" },
-            { "<leader>t", group = "test" },
             { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
             { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
             { "[", group = "prev" },
