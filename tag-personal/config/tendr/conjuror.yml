@@ -12,12 +12,14 @@ workspaces:
       - label: agent
         commands:
           - pi
-      - label: editor
       - label: terminal
   - label: website
     root: ./website
     tabs:
       - label: server
+        commands:
+          - hugo server
       - label: agent
-      - label: editor
+        commands:
+          - codex
       - label: terminal
