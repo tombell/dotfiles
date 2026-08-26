@@ -211,7 +211,7 @@ Scope {
                             MouseArea {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
-                                onClicked: Hyprland.dispatch("workspace " + parent.workspaceId)
+                                onClicked: Hyprland.dispatch("hl.dsp.focus { workspace = " + parent.workspaceId + " }")
                             }
                         }
                     }
