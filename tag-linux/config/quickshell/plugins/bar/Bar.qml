@@ -180,7 +180,7 @@ Scope {
                 Row {
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter
-                    spacing: 3
+                    spacing: 1
 
                     Repeater {
                         model: 9
@@ -194,7 +194,7 @@ Scope {
                             readonly property bool occupied: onThisMonitor && workspace.toplevels.values.length > 0
 
                             visible: workspaceId <= 5 || onThisMonitor
-                            width: 30
+                            width: 24
                             height: Style.barHeight
                             color: "transparent"
                             opacity: active || occupied ? 1 : 0.5
