@@ -12,14 +12,15 @@ ctrl + shift - h: swm -m window --grid 12:10:0:0:6:10
 shift + opt - l: swm -m window --grid 12:10:4:0:8:10
 ctrl + shift - l: swm -m window --grid 12:10:6:0:6:10
 
-ctrl + shift - 1: swm -m window --grid 12:10:0:0:4:10
-ctrl + shift - 2: swm -m window --grid 12:10:4:0:4:10
-ctrl + shift - 3: swm -m window --grid 12:10:8:0:4:10
-
 ctrl + shift - r: swm -m window --focus recent
 
 ctrl + shift - left: swm -m window --display 1
 ctrl + shift - right: swm -m window --display 2
+
+# ctrl + opt - h: swm -m window --swap left
+# ctrl + opt - j: swm -m window --swap down
+# ctrl + opt - k: swm -m window --swap up
+# ctrl + opt - l: swm -m window --swap right
 
 ################################################################################
 # Applications
