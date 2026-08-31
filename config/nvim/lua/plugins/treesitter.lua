@@ -18,7 +18,7 @@ return {
           parsers.skbdrc = {
             install_info = {
               url = "https://github.com/starkwm/tree-sitter-skbdrc",
-              queries = "queries/skbdrc",
+              queries = "queries",
             },
           }
           ---@diagnostic enable: missing-fields
