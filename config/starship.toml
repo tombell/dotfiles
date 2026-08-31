@@ -1,0 +1,65 @@
+add_newline = false
+command_timeout = 1000
+format = "$hostname$directory$custom$character"
+
+[hostname]
+ssh_only = true
+trim_at = ""
+format = "[$hostname](green) "
+
+[directory]
+truncation_length = 1
+truncate_to_repo = false
+home_symbol = "~"
+read_only = ""
+format = "[$path](yellow) "
+
+[custom.jj_bookmark]
+shell = ["sh"]
+when = '''
+root=$(git rev-parse --show-toplevel 2>/dev/null) && test -d "$root/.jj"
+'''
+command = '''
+jj log --ignore-working-copy --no-graph --color never \
+    -r 'latest(ancestors(@) & bookmarks())' \
+    -T 'bookmarks.map(|b| b.name()).join(",")' 2>/dev/null | head -n 1
+'''
+format = "[$output](bold green)[::](#585858) "
+
+[custom.jj_change]
+shell = ["sh"]
+style = "bold purple"
+when = '''
+root=$(git rev-parse --show-toplevel 2>/dev/null) && test -d "$root/.jj"
+'''
+command = '''
+jj log --ignore-working-copy --no-graph --color never -r @ -T 'change_id.shortest()' 2>/dev/null | head -n 1
+'''
+format = "[@](#585858)[$output]($style)"
+
+[custom.jj_change_remainder]
+shell = ["sh"]
+when = '''
+root=$(git rev-parse --show-toplevel 2>/dev/null) && test -d "$root/.jj"
+'''
+command = '''
+data=$(jj log --ignore-working-copy --no-graph --color never -r @ -T 'change_id.shortest() ++ "|" ++ change_id.short(4)' 2>/dev/null | head -n 1)
+shortest=${data%%|*}
+short4=${data#*|}
+printf '%s' "${short4#"$shortest"}"
+'''
+format = "[$output](#585858) "
+
+[custom.git_branch]
+shell = ["sh"]
+when = '''
+root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 1
+test ! -d "$root/.jj"
+'''
+command = "git rev-parse --abbrev-ref HEAD 2>/dev/null"
+format = "[$output](purple) "
+
+[character]
+success_symbol = "[---](cyan)"
+error_symbol = "[---](cyan)"
+format = "$symbol "
