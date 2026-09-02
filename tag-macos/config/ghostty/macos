@@ -8,3 +8,5 @@ macos-titlebar-style = hidden
 macos-icon = xray
 
 keybind = cmd+enter=unbind
+keybind = cmd+shift+[=unbind
+keybind = cmd+shift+]=unbind
