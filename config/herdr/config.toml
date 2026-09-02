@@ -29,6 +29,8 @@ prefix = "ctrl+b"
 detach = "prefix+d"
 previous_tab = ["prefix+p", "cmd+shift+["]
 next_tab = ["prefix+n", "cmd+shift+]"]
+previous_workspace = "alt+shift+["
+next_workspace = "alt+shift+]"
 
 [[keys.command]]
 key = "prefix+t"
