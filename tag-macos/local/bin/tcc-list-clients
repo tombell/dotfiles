@@ -39,18 +39,70 @@ elif [ ! -f "$db" ]; then
   exit 1
 fi
 
-"${sqlite[@]}" "$db" <<'SQL'
+"${sqlite[@]}" "$db" <<'SQL' | column -t -s $'\t'
 .headers on
-.mode column
+.mode tabs
+.nullvalue -
 SELECT
-  service,
-  client,
-  client_type,
-  auth_value,
-  auth_reason,
-  auth_version,
-  flags,
-  datetime(last_modified, 'unixepoch') AS last_modified
+  CASE service
+    WHEN 'kTCCServiceAccessibility' THEN 'Accessibility'
+    WHEN 'kTCCServiceAddressBook' THEN 'Contacts'
+    WHEN 'kTCCServiceAppleEvents' THEN 'Automation'
+    WHEN 'kTCCServiceAudioCapture' THEN 'Audio Capture'
+    WHEN 'kTCCServiceBluetoothAlways' THEN 'Bluetooth'
+    WHEN 'kTCCServiceCalendar' THEN 'Calendars'
+    WHEN 'kTCCServiceCamera' THEN 'Camera'
+    WHEN 'kTCCServiceDeveloperTool' THEN 'Developer Tools'
+    WHEN 'kTCCServiceFileProviderDomain' THEN 'File Provider'
+    WHEN 'kTCCServiceFocusStatus' THEN 'Focus Status'
+    WHEN 'kTCCServiceListenEvent' THEN 'Input Monitoring'
+    WHEN 'kTCCServiceLiverpool' THEN 'Location Services'
+    WHEN 'kTCCServiceMediaLibrary' THEN 'Media & Apple Music'
+    WHEN 'kTCCServiceMicrophone' THEN 'Microphone'
+    WHEN 'kTCCServicePhotos' THEN 'Photos'
+    WHEN 'kTCCServicePostEvent' THEN 'Post Events'
+    WHEN 'kTCCServiceReminders' THEN 'Reminders'
+    WHEN 'kTCCServiceScreenCapture' THEN 'Screen Recording'
+    WHEN 'kTCCServiceSystemPolicyAllFiles' THEN 'Full Disk Access'
+    WHEN 'kTCCServiceSystemPolicyAppBundles' THEN 'App Management'
+    WHEN 'kTCCServiceSystemPolicyAppData' THEN 'Application Data'
+    WHEN 'kTCCServiceSystemPolicyDesktopFolder' THEN 'Desktop Folder'
+    WHEN 'kTCCServiceSystemPolicyDocumentsFolder' THEN 'Documents Folder'
+    WHEN 'kTCCServiceSystemPolicyDownloadsFolder' THEN 'Downloads Folder'
+    WHEN 'kTCCServiceSystemPolicyNetworkVolumes' THEN 'Network Volumes'
+    WHEN 'kTCCServiceSystemPolicyRemovableVolumes' THEN 'Removable Volumes'
+    WHEN 'kTCCServiceUbiquity' THEN 'iCloud'
+    WHEN 'kTCCServiceWebBrowserPublicKeyCredential' THEN 'Passkeys'
+    ELSE replace(service, 'kTCCService', '')
+  END AS Permission,
+  client AS Client,
+  CASE auth_value
+    WHEN 0 THEN 'Denied'
+    WHEN 1 THEN 'Restricted'
+    WHEN 2 THEN 'Allowed'
+    WHEN 3 THEN 'Limited'
+    ELSE 'Value ' || auth_value
+  END AS Access,
+  CASE client_type
+    WHEN 0 THEN 'Bundle ID'
+    WHEN 1 THEN 'Path'
+    ELSE 'Type ' || client_type
+  END AS "Client type",
+  CASE auth_reason
+    WHEN 1 THEN 'Error'
+    WHEN 2 THEN 'User consent'
+    WHEN 3 THEN 'User setting'
+    WHEN 4 THEN 'System setting'
+    WHEN 5 THEN 'Service policy'
+    WHEN 6 THEN 'MDM policy'
+    WHEN 7 THEN 'Override policy'
+    WHEN 8 THEN 'Missing usage string'
+    WHEN 9 THEN 'Prompt timed out'
+    WHEN 10 THEN 'Preflight unknown'
+    WHEN 11 THEN 'Entitlement'
+    WHEN 12 THEN 'App type policy'
+    ELSE 'Reason ' || auth_reason
+  END AS "Set by"
 FROM access
-ORDER BY client;
+ORDER BY Permission COLLATE NOCASE, Client COLLATE NOCASE;
 SQL
