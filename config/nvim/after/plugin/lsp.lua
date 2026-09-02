@@ -19,12 +19,20 @@ vim.lsp.config("vtsls", {
   },
 })
 
-vim.lsp.enable {
+local servers = {
   "gopls",
   "lua_ls",
   "oxlint",
-  "rubocop",
-  "ruby_lsp",
   "sourcekit",
   "vtsls",
 }
+
+if vim.fn.executable "rubocop" == 1 then
+  table.insert(servers, "rubocop")
+end
+
+if vim.fn.executable "ruby-lsp" == 1 then
+  table.insert(servers, "ruby_lsp")
+end
+
+vim.lsp.enable(servers)
