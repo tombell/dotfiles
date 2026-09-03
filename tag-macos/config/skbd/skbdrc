@@ -2,25 +2,25 @@
 # Windows
 ################################################################################
 
-ctrl + shift - c: swm window grid 12:10:0:0:12:10
-ctrl + shift - x: swm window grid 12:10:1:1:10:8
-ctrl + shift - z: swm window grid 12:10:2:2:8:6
+lalt - c: swm window grid 12:10:0:0:12:10
+lalt - x: swm window grid 12:10:1:1:10:8
+lalt - z: swm window grid 12:10:2:2:8:6
 
-shift + opt - h: swm window grid 12:10:0:0:8:10
-ctrl + shift - h: swm window grid 12:10:0:0:6:10
+lalt - h: swm window grid 12:10:0:0:6:10
+lalt - l: swm window grid 12:10:6:0:6:10
 
-shift + opt - l: swm window grid 12:10:4:0:8:10
-ctrl + shift - l: swm window grid 12:10:6:0:6:10
+lalt + shift - h: swm window grid 12:10:0:0:8:10
+lalt + shift - l: swm window grid 12:10:4:0:8:10
 
-ctrl + shift - r: swm window focus --window recent
+# lalt + shift - left: swm window display 1
+# lalt + shift - right: swm window display 2
 
-ctrl + shift - left: swm window display 1
-ctrl + shift - right: swm window display 2
+# lalt + ctrl - h: swm window swap --direction left
+# lalt + ctrl - j: swm window swap --direction down
+# lalt + ctrl - k: swm window swap --direction up
+# lalt + ctrl - l: swm window swap --direction right
 
-# ctrl + opt - h: swm window swap --direction left
-# ctrl + opt - j: swm window swap --direction down
-# ctrl + opt - k: swm window swap --direction up
-# ctrl + opt - l: swm window swap --direction right
+opt - tab: swm window cycle --direction next
 
 ################################################################################
 # Applications

@@ -2,9 +2,9 @@
 
 echo "swm configuration"
 
-swm -m config window-gap 6
+swm config window-gap 6
 
-swm -m config top-padding 6
-swm -m config right-padding 6
-swm -m config bottom-padding 6
-swm -m config left-padding 6
+swm config top-padding 6
+swm config right-padding 6
+swm config bottom-padding 6
+swm config left-padding 6
