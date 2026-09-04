@@ -4,10 +4,9 @@ window-padding-x = 20
 window-padding-y = 20
 
 macos-titlebar-style = hidden
-macos-option-as-alt = true
-
-macos-icon = xray
 
 keybind = cmd+enter=unbind
 keybind = cmd+shift+[=unbind
 keybind = cmd+shift+]=unbind
+keybind = alt+shift+[=text:\x1b[91;4u
+keybind = alt+shift+]=text:\x1b[93;4u
