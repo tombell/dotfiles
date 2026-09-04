@@ -12,8 +12,8 @@ lalt - l: swm window grid 12:10:6:0:6:10
 lalt + shift - h: swm window grid 12:10:0:0:8:10
 lalt + shift - l: swm window grid 12:10:4:0:8:10
 
-# lalt + shift - left: swm window display 1
-# lalt + shift - right: swm window display 2
+# lalt + shift - comma: swm window display 1
+# lalt + shift - period: swm window display 2
 
 # lalt + ctrl - h: swm window swap --direction left
 # lalt + ctrl - j: swm window swap --direction down
