@@ -12,82 +12,82 @@ lalt - l: swm window grid 12:10:6:0:6:10
 lalt + shift - h: swm window grid 12:10:0:0:8:10
 lalt + shift - l: swm window grid 12:10:4:0:8:10
 
-# lalt + shift - comma: swm window display 1
-# lalt + shift - period: swm window display 2
+lalt - tab: swm window cycle --direction next
 
-# lalt + ctrl - h: swm window swap --direction left
-# lalt + ctrl - j: swm window swap --direction down
-# lalt + ctrl - k: swm window swap --direction up
-# lalt + ctrl - l: swm window swap --direction right
+lalt + shift - ,: swm window display 1
+lalt + shift - .: swm window display 2
 
-opt - tab: swm window cycle --direction next
+lalt + ctrl - h: swm window swap --direction left
+lalt + ctrl - j: swm window swap --direction down
+lalt + ctrl - k: swm window swap --direction up
+lalt + ctrl - l: swm window swap --direction right
 
 ################################################################################
 # Applications
 ################################################################################
 
-ralt - return:
-  osascript ~/.local/bin/launch-ghostty.scpt > /dev/null
+alt - return:
+  osascript -e 'if application "Ghostty" is running then' \
+            -e '  tell application "System Events"' \
+            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"' \
+            -e '  end tell' \
+            -e 'else' \
+            -e '  tell application "Ghostty" to activate' \
+            -e 'end if' > /dev/null
 
-ctrl + shift - return:
-  osascript ~/.local/bin/launch-ghostty-split.scpt > /dev/null
+alt + shift - return:
+  osascript -e 'tell application "Google Chrome" to make new window' \
+            -e 'tell application "Google Chrome" to activate' &> /dev/null
 
 ralt - 1:
   open -a 1Password
 
 ralt - b:
-  osascript -e 'tell application "Google Chrome" to activate' &> /dev/null
+  open -a "Google Chrome"
 
 ralt - c:
-  osascript -e 'tell application "Calendar" to activate' &> /dev/null
+  open -a Calendar
 
 ralt - d:
-  osascript -e 'tell application "Discord" to activate' &> /dev/null
+  open -a Discord
 
 ralt - e:
-  osascript -e 'tell application "Mail" to activate' &> /dev/null
+  open -a Mail
 
 ralt - f:
-  osascript ~/.local/bin/launch-finder.scpt > /dev/null
+  osascript -e 'tell application "System Events"' \
+            -e '  click menu item "New Finder Window" of menu "File" of menu bar 1 of process "Finder"' \
+            -e 'end tell' > /dev/null
 
 ralt - g:
-  osascript -e 'tell application "Ghostty" to activate' &> /dev/null
+  open -a Ghostty
 
 ralt - h:
-  osascript -e 'tell application "Home" to activate' &> /dev/null
+  open -a Home
 
 ralt - m:
-  osascript -e 'tell application "Messages" to activate' &> /dev/null
+  open -a Messages
 
 ralt - n:
-  osascript -e 'tell application "Notes" to activate' &> /dev/null
-
-ralt - o:
-  osascript -e 'tell application "Orion" to activate' &> /dev/null
+  open -a Notes
 
 ralt - p:
-  osascript -e 'tell application "Photos" to activate' &> /dev/null
-
-ralt - s:
-  osascript -e 'tell application "TIDAL" to activate' &> /dev/null
+  open -a Photos
 
 ralt - t:
-  osascript -e 'tell application "Telegram" to activate' &> /dev/null
+  open -a Telegram
 
 ralt - x:
-  osascript -e 'tell application "Xcode" to activate' &> /dev/null
-
-ralt - y:
-  osascript -e 'tell application "yaak" to activate' &> /dev/null
+  open -a Xcode
 
 ################################################################################
 # Home
 ################################################################################
 
-ctrl + alt - 1: shortcuts run "Main Bedroom"
+lalt + ctrl - 1: shortcuts run "Main Bedroom"
 
-ctrl + alt - 2: shortcuts run "Guest Bedroom"
+lalt + ctrl - 2: shortcuts run "Guest Bedroom"
 
-ctrl + alt - 3: shortcuts run "Living Room"
+lalt + ctrl - 3: shortcuts run "Living Room"
 
-ctrl + alt - 4: shortcuts run "All Off"
+lalt + ctrl - 4: shortcuts run "All Off"
