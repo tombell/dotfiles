@@ -8,3 +8,9 @@ hl.config {
     },
   },
 }
+
+hl.device {
+  name = "apple-inc.-apple-internal-keyboard-/-trackpad",
+  kb_layout = "gb",
+  kb_variant = "mac",
+}
