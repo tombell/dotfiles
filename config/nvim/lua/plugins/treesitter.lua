@@ -27,7 +27,9 @@ return {
 
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "*",
-        callback = function() pcall(vim.treesitter.start) end,
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
       })
 
       local treesitter = require "nvim-treesitter"
@@ -80,6 +82,7 @@ return {
         "toml",
         "tsx",
         "typescript",
+        "vim",
         "vimdoc",
         "xml",
         "yaml",
@@ -94,8 +97,13 @@ return {
         installed[language] = true
       end
 
-      local missing = vim.tbl_filter(function(language) return not installed[language] end, ensure_installed)
-      if #missing > 0 then treesitter.install(missing, { summary = true }) end
+      local missing = vim.tbl_filter(function(language)
+        return not installed[language]
+      end, ensure_installed)
+
+      if #missing > 0 then
+        treesitter.install(missing, { summary = true })
+      end
     end,
   },
 }
