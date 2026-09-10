@@ -129,8 +129,8 @@ Scope {
 
         visible: false
         color: "transparent"
-        implicitWidth: 260
-        implicitHeight: 58
+        implicitWidth: 262
+        implicitHeight: 60
         exclusionMode: ExclusionMode.Ignore
         anchors.bottom: true
         margins.bottom: 80
@@ -139,6 +139,7 @@ Scope {
 
         PanelSurface {
             anchors.fill: parent
+            anchors.margins: 1
 
             IconLabel {
                 anchors.left: parent.left

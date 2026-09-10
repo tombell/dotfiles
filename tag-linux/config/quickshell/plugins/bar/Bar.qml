@@ -128,8 +128,8 @@ Scope {
         PopupWindow {
             visible: statusMouse.containsMouse && statusIcon.tooltipText !== ""
             color: "transparent"
-            implicitWidth: tooltipLabel.implicitWidth + 20
-            implicitHeight: tooltipLabel.implicitHeight + 14
+            implicitWidth: tooltipLabel.implicitWidth + 22
+            implicitHeight: tooltipLabel.implicitHeight + 16
 
             anchor {
                 item: statusIcon
@@ -139,6 +139,7 @@ Scope {
 
             PanelSurface {
                 anchors.fill: parent
+                anchors.margins: 1
 
                 Label {
                     id: tooltipLabel
@@ -275,8 +276,8 @@ Scope {
                             visible: false
                             color: "transparent"
                             grabFocus: true
-                            implicitWidth: 300
-                            implicitHeight: 190
+                            implicitWidth: 302
+                            implicitHeight: 192
 
                             anchor {
                                 item: batteryIcon
@@ -286,6 +287,7 @@ Scope {
 
                             PanelSurface {
                                 anchors.fill: parent
+                                anchors.margins: 1
 
                                 Column {
                                     anchors.fill: parent
