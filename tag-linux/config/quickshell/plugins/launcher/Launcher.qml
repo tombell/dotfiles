@@ -2,13 +2,11 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
-import Quickshell.Widgets
 
 import qs.Commons
 import qs.Ui
-Scope {
-    id: launcherRoot
 
+Scope {
     IpcHandler {
         target: "launcher"
 
@@ -16,48 +14,20 @@ Scope {
             launcher.visible = !launcher.visible
             if (launcher.visible) {
                 launcherSearch.text = ""
-                launcherRoot.updateApplications()
-                launcherSearch.forceActiveFocus()
+                launcherState.updateApplications()
+                launcherSearch.focusInput()
             }
         }
     }
 
-    property var filteredApplications: []
-    property int selectedApplication: 0
+    LauncherState {
+        id: launcherState
 
-    function updateApplications() {
-        const query = launcherSearch.text.toLowerCase().trim()
-        filteredApplications = DesktopEntries.applications.values
-            .filter(entry => !entry.noDisplay && (query === ""
-                || entry.name.toLowerCase().includes(query)
-                || entry.genericName.toLowerCase().includes(query)
-                || entry.comment.toLowerCase().includes(query)))
-            .sort((a, b) => {
-                const aName = a.name.toLowerCase()
-                const bName = b.name.toLowerCase()
-                if (query !== "" && aName.startsWith(query) !== bName.startsWith(query))
-                    return aName.startsWith(query) ? -1 : 1
-                return aName.localeCompare(bName)
-            })
-        selectedApplication = 0
-    }
-
-    function applicationIcon(icon) {
-        if (icon === "network-wired")
-            return "file:///usr/share/icons/Adwaita/symbolic/devices/network-wired-symbolic.svg"
-        if (icon && (icon.startsWith("/") || Quickshell.hasThemeIcon(icon)))
-            return Quickshell.iconPath(icon)
-        return "file:///usr/share/icons/Adwaita/scalable/mimetypes/application-x-executable.svg"
-    }
-
-    function launchSelectedApplication() {
-        const entry = filteredApplications[selectedApplication]
-        if (!entry) return
-        launcher.visible = false
-        const command = entry.runInTerminal
-            ? ["uwsm", "app", "--", "ghostty", "-e"].concat(entry.command)
-            : ["uwsm", "app", "--"].concat(entry.command)
-        Quickshell.execDetached(command)
+        query: launcherSearch.text
+        onLaunchRequested: command => {
+            launcher.visible = false
+            Quickshell.execDetached(command)
+        }
     }
 
     PanelWindow {
@@ -95,41 +65,14 @@ Scope {
                 anchors.fill: parent
                 anchors.margins: 2
 
-                Rectangle {
+                SearchField {
+                    id: launcherSearch
+
                     width: parent.width
-                    height: 54
-                    color: Color.surface
-
-                    Label {
-                        anchors.left: parent.left
-                        anchors.leftMargin: 12
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: "Apps"
-                        color: Color.accent
-                        font.pixelSize: 14
-                        font.bold: true
-                    }
-
-                    TextInput {
-                        id: launcherSearch
-
-                        anchors.left: parent.left
-                        anchors.leftMargin: 58
-                        anchors.right: parent.right
-                        anchors.rightMargin: 12
-                        anchors.verticalCenter: parent.verticalCenter
-                        color: Color.foregroundStrong
-                        selectionColor: Color.subdued
-                        font.pixelSize: 14
-                        font.bold: true
-                        clip: true
-                        onTextChanged: launcherRoot.updateApplications()
-                        Keys.onEscapePressed: launcher.visible = false
-                        Keys.onUpPressed: launcherRoot.selectedApplication = Math.max(0, launcherRoot.selectedApplication - 1)
-                        Keys.onDownPressed: launcherRoot.selectedApplication = Math.min(Math.min(4, launcherRoot.filteredApplications.length - 1), launcherRoot.selectedApplication + 1)
-                        Keys.onReturnPressed: launcherRoot.launchSelectedApplication()
-                        Keys.onEnterPressed: launcherRoot.launchSelectedApplication()
-                    }
+                    onDismissRequested: launcher.visible = false
+                    onPreviousRequested: launcherState.selectPrevious()
+                    onNextRequested: launcherState.selectNext()
+                    onLaunchRequested: launcherState.launchSelectedApplication()
                 }
 
                 Rectangle {
@@ -138,49 +81,14 @@ Scope {
                     color: Color.accent
                 }
 
-                Repeater {
-                    model: Math.min(5, launcherRoot.filteredApplications.length)
-
-                    Rectangle {
-                        required property int index
-                        readonly property var entry: launcherRoot.filteredApplications[index]
-
-                        width: parent.width
-                        height: 56.8
-                        color: index === launcherRoot.selectedApplication ? Color.subdued : "transparent"
-
-                        IconImage {
-                            anchors.left: parent.left
-                            anchors.leftMargin: 12
-                            anchors.verticalCenter: parent.verticalCenter
-                            width: 28
-                            height: 28
-                            source: launcherRoot.applicationIcon(parent.entry.icon)
-                        }
-
-                        Label {
-                            anchors.left: parent.left
-                            anchors.leftMargin: 52
-                            anchors.right: parent.right
-                            anchors.rightMargin: 12
-                            anchors.verticalCenter: parent.verticalCenter
-                            text: parent.entry.name
-                            color: parent.index === launcherRoot.selectedApplication ? Color.foregroundStrong : Color.foreground
-                            elide: Text.ElideRight
-                            font.pixelSize: 14
-                            font.bold: true
-                        }
-
-                        MouseArea {
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            onEntered: launcherRoot.selectedApplication = parent.index
-                            onClicked: launcherRoot.launchSelectedApplication()
-                        }
-                    }
+                ApplicationList {
+                    width: parent.width
+                    applications: launcherState.visibleApplications
+                    selectedIndex: launcherState.selectedApplication
+                    onSelectionRequested: index => launcherState.selectedApplication = index
+                    onLaunchRequested: launcherState.launchSelectedApplication()
                 }
             }
         }
     }
-
 }
