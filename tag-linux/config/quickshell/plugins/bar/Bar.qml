@@ -9,13 +9,10 @@ Scope {
 
     property bool doNotDisturb: false
     property int notificationCount: 0
+
     signal toggleHistory()
 
     // Share service instances across screens instead of creating one per window.
-    AudioState {
-        id: audioState
-    }
-
     BatteryState {
         id: batteryState
     }
@@ -79,9 +76,7 @@ Scope {
 
                     BluetoothStatus {}
 
-                    AudioStatus {
-                        audio: audioState
-                    }
+                    AudioStatus {}
                 }
             }
         }

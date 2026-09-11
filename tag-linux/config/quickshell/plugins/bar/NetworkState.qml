@@ -7,8 +7,9 @@ Scope {
 
     property string icon: "󰖪"
     property string tooltipText: "Disconnected"
-    property double previousRxBytes: 0
-    property double previousTxBytes: 0
+    property real previousRxBytes: 0
+    property real previousTxBytes: 0
+    readonly property int pollInterval: 5000
 
     function formatRate(bytesPerSecond) {
         if (bytesPerSecond >= 1073741824) return (bytesPerSecond / 1073741824).toFixed(1) + " GiB/s"
@@ -33,8 +34,9 @@ Scope {
                     const wifi = fields[0] === "wifi"
                     const rx = Number(fields[wifi ? 4 : 1])
                     const tx = Number(fields[wifi ? 5 : 2])
-                    const down = networkState.previousRxBytes > 0 ? Math.max(0, rx - networkState.previousRxBytes) / 5 : 0
-                    const up = networkState.previousTxBytes > 0 ? Math.max(0, tx - networkState.previousTxBytes) / 5 : 0
+                    const seconds = networkState.pollInterval / 1000
+                    const down = networkState.previousRxBytes > 0 ? Math.max(0, rx - networkState.previousRxBytes) / seconds : 0
+                    const up = networkState.previousTxBytes > 0 ? Math.max(0, tx - networkState.previousTxBytes) / seconds : 0
                     networkState.previousRxBytes = rx
                     networkState.previousTxBytes = tx
 
@@ -54,7 +56,7 @@ Scope {
     }
 
     Timer {
-        interval: 5000
+        interval: networkState.pollInterval
         running: true
         repeat: true
         onTriggered: networkStatus.running = true

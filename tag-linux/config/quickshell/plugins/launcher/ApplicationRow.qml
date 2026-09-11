@@ -1,6 +1,4 @@
 import QtQuick
-import Quickshell
-import Quickshell.Widgets
 
 import qs.Commons
 import qs.Ui
@@ -17,21 +15,13 @@ Rectangle {
     height: 56.8
     color: selected ? Color.subdued : "transparent"
 
-    function applicationIcon(icon) {
-        if (icon === "network-wired")
-            return "file:///usr/share/icons/Adwaita/symbolic/devices/network-wired-symbolic.svg"
-        if (icon && (icon.startsWith("/") || Quickshell.hasThemeIcon(icon)))
-            return Quickshell.iconPath(icon)
-        return "file:///usr/share/icons/Adwaita/scalable/mimetypes/application-x-executable.svg"
-    }
-
-    IconImage {
+    ApplicationIcon {
         anchors.left: parent.left
         anchors.leftMargin: 12
         anchors.verticalCenter: parent.verticalCenter
         width: 28
         height: 28
-        source: applicationRow.applicationIcon(applicationRow.entry.icon)
+        icon: applicationRow.entry.icon
     }
 
     Label {

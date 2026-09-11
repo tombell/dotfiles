@@ -1,7 +1,10 @@
 import QtQuick
+
 import qs.Commons
 
 Rectangle {
+    id: progressBar
+
     property real value: 0
     property color fillColor: Color.accent
 
@@ -10,9 +13,9 @@ Rectangle {
     clip: true
 
     Rectangle {
-        width: parent.width * Math.max(0, Math.min(1, parent.value))
+        width: parent.width * Math.max(0, Math.min(1, progressBar.value))
         height: parent.height
-        color: parent.fillColor
+        color: progressBar.fillColor
         radius: parent.radius
     }
 }

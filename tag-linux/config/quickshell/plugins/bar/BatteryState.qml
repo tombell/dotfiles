@@ -5,7 +5,7 @@ import Quickshell.Io
 Scope {
     id: batteryState
 
-    property double power: 0
+    property real power: 0
 
     Process {
         id: batteryStatus

@@ -7,7 +7,7 @@ Column {
     required property int selectedIndex
 
     signal selectionRequested(int index)
-    signal launchRequested()
+    signal launchRequested(int index)
 
     Repeater {
         model: applicationList.applications.length
@@ -19,7 +19,7 @@ Column {
             selected: index === applicationList.selectedIndex
             width: applicationList.width
             onHovered: applicationList.selectionRequested(index)
-            onActivated: applicationList.launchRequested()
+            onActivated: applicationList.launchRequested(index)
         }
     }
 }

@@ -9,17 +9,15 @@ Item {
 
     required property string icon
     property string tooltipText: ""
-    property var command: []
-    property var clicked: null
+
+    signal clicked()
 
     implicitWidth: 33
     implicitHeight: Style.barHeight
 
     IconLabel {
         anchors.centerIn: parent
-        text: parent.icon
-        color: Color.foreground
-        font.pixelSize: 18
+        text: statusIcon.icon
         font.bold: true
     }
 
@@ -28,13 +26,8 @@ Item {
 
         anchors.fill: parent
         hoverEnabled: true
-        cursorShape: parent.command.length > 0 || parent.clicked ? Qt.PointingHandCursor : Qt.ArrowCursor
-        onClicked: {
-            if (parent.clicked)
-                parent.clicked()
-            else if (parent.command.length > 0)
-                Quickshell.execDetached(parent.command)
-        }
+        cursorShape: Qt.PointingHandCursor
+        onClicked: statusIcon.clicked()
     }
 
     PopupWindow {
@@ -58,8 +51,6 @@ Item {
 
                 anchors.centerIn: parent
                 text: statusIcon.tooltipText
-                color: Color.foreground
-                font.pixelSize: 13
                 font.bold: true
             }
         }

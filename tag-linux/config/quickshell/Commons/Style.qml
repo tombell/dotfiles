@@ -1,4 +1,5 @@
 pragma Singleton
+
 import QtQuick
 
 QtObject {
@@ -9,5 +10,4 @@ QtObject {
     readonly property int barHeight: 35
     readonly property int cornerRadius: 0
     readonly property int controlRadius: 0
-    readonly property int progressRadius: 0
 }

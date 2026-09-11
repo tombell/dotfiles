@@ -5,7 +5,7 @@ Scope {
 
     property string query: ""
     property var filteredApplications: []
-    property int selectedApplication: 0
+    property int selectedIndex: 0
     readonly property var visibleApplications: filteredApplications.slice(0, 5)
 
     signal launchRequested(var command)
@@ -26,19 +26,19 @@ Scope {
                     return aName.startsWith(query) ? -1 : 1
                 return aName.localeCompare(bName)
             })
-        selectedApplication = 0
+        selectedIndex = 0
     }
 
     function selectPrevious() {
-        selectedApplication = Math.max(0, selectedApplication - 1)
+        selectedIndex = Math.max(0, selectedIndex - 1)
     }
 
     function selectNext() {
-        selectedApplication = Math.min(visibleApplications.length - 1, selectedApplication + 1)
+        selectedIndex = Math.max(0, Math.min(visibleApplications.length - 1, selectedIndex + 1))
     }
 
-    function launchSelectedApplication() {
-        const entry = filteredApplications[selectedApplication]
+    function launchApplication(index) {
+        const entry = visibleApplications[index]
         if (!entry) return
         const command = entry.runInTerminal
             ? ["uwsm", "app", "--", "ghostty", "-e"].concat(entry.command)

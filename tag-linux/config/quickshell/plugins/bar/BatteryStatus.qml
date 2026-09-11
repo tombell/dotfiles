@@ -13,13 +13,14 @@ StatusIcon {
 
     readonly property var battery: UPower.displayDevice
     readonly property int percentage: battery ? Math.round(battery.percentage * 100) : 0
-    readonly property double remainingSeconds: UPower.onBattery ? battery?.timeToEmpty ?? 0 : battery?.timeToFull ?? 0
+    readonly property real remainingSeconds: UPower.onBattery ? battery?.timeToEmpty ?? 0 : battery?.timeToFull ?? 0
     readonly property string remainingText: {
         if (remainingSeconds <= 0) return "Estimating…"
         const hours = Math.floor(remainingSeconds / 3600)
         const minutes = Math.floor((remainingSeconds % 3600) / 60)
         return hours > 0 ? hours + "h " + minutes + "m" : minutes + "m"
     }
+
     icon: {
         if (!battery || !battery.ready) return ""
         if (!UPower.onBattery) return percentage >= 100 ? "󰂅" : ""
@@ -27,7 +28,7 @@ StatusIcon {
         return icons[Math.min(9, Math.floor(percentage / 10))]
     }
     tooltipText: batteryIcon.power.toFixed(1) + "W" + (UPower.onBattery ? "↓ " : "↑ ") + percentage + "%"
-    clicked: () => batteryPopup.visible = !batteryPopup.visible
+    onClicked: batteryPopup.visible = !batteryPopup.visible
 
     HyprlandFocusGrab {
         windows: [batteryPopup]
@@ -74,7 +75,6 @@ StatusIcon {
                         width: parent.width / 2
                         horizontalAlignment: Text.AlignRight
                         text: batteryIcon.power.toFixed(1) + " W"
-                        color: Color.foreground
                         font.pixelSize: 16
                         font.bold: true
                     }
@@ -82,8 +82,6 @@ StatusIcon {
 
                 Label {
                     text: (UPower.onBattery ? "Remaining: " : "Until full: ") + batteryIcon.remainingText
-                    color: Color.foreground
-                    font.pixelSize: 13
                 }
 
                 ProgressBar {
@@ -95,7 +93,6 @@ StatusIcon {
                 Label {
                     text: "Power profile"
                     color: Color.foregroundStrong
-                    font.pixelSize: 13
                     font.bold: true
                 }
 
@@ -109,7 +106,7 @@ StatusIcon {
                             { "label": "Performance", "profile": PowerProfile.Performance }
                         ]
 
-                        Rectangle {
+                        Button {
                             required property var modelData
                             readonly property bool selected: PowerProfiles.profile === modelData.profile
 
@@ -117,21 +114,9 @@ StatusIcon {
                             width: 82
                             height: 32
                             color: selected ? Color.accent : Color.subdued
-                            radius: Style.controlRadius
-
-                            Label {
-                                anchors.centerIn: parent
-                                text: parent.modelData.label
-                                color: parent.selected ? Color.background : Color.foreground
-                                font.pixelSize: 12
-                                font.bold: true
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
-                                onClicked: PowerProfiles.profile = parent.modelData.profile
-                            }
+                            text: modelData.label
+                            textColor: selected ? Color.background : Color.foreground
+                            onClicked: PowerProfiles.profile = modelData.profile
                         }
                     }
                 }

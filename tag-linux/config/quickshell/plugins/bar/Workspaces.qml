@@ -15,6 +15,8 @@ Row {
         model: 9
 
         Rectangle {
+            id: workspaceButton
+
             required property int index
             readonly property int workspaceId: index + 1
             readonly property var workspace: Hyprland.workspaces.values.find(candidate => candidate.id === workspaceId)
@@ -30,8 +32,8 @@ Row {
 
             Label {
                 anchors.centerIn: parent
-                text: parent.active ? "" : parent.workspaceId
-                color: parent.active ? Color.accent : Color.foreground
+                text: workspaceButton.active ? "" : workspaceButton.workspaceId
+                color: workspaceButton.active ? Color.accent : Color.foreground
                 font.family: Style.mixedFont
                 font.pixelSize: 14
                 font.bold: true
@@ -40,7 +42,7 @@ Row {
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: Hyprland.dispatch("hl.dsp.focus { workspace = " + parent.workspaceId + " }")
+                onClicked: Hyprland.dispatch("hl.dsp.focus { workspace = " + workspaceButton.workspaceId + " }")
             }
         }
     }

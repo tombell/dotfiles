@@ -58,7 +58,7 @@ Scope {
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: mouse.accepted = true
+                onClicked: mouse => mouse.accepted = true
             }
 
             Column {
@@ -72,7 +72,7 @@ Scope {
                     onDismissRequested: launcher.visible = false
                     onPreviousRequested: launcherState.selectPrevious()
                     onNextRequested: launcherState.selectNext()
-                    onLaunchRequested: launcherState.launchSelectedApplication()
+                    onLaunchRequested: launcherState.launchApplication(launcherState.selectedIndex)
                 }
 
                 Rectangle {
@@ -84,9 +84,9 @@ Scope {
                 ApplicationList {
                     width: parent.width
                     applications: launcherState.visibleApplications
-                    selectedIndex: launcherState.selectedApplication
-                    onSelectionRequested: index => launcherState.selectedApplication = index
-                    onLaunchRequested: launcherState.launchSelectedApplication()
+                    selectedIndex: launcherState.selectedIndex
+                    onSelectionRequested: index => launcherState.selectedIndex = index
+                    onLaunchRequested: index => launcherState.launchApplication(index)
                 }
             }
         }
