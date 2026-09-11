@@ -5,8 +5,8 @@ font-style = bold
 font-style-italic = bold italic
 adjust-underline-position = 3
 
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 5
+window-padding-y = 5
 
 window-decoration = server
 
