@@ -51,7 +51,7 @@ Scope {
                     monitorName: barWindow.screen.name
                 }
 
-                BarClock {
+                Clock {
                     anchors.centerIn: parent
                 }
 
