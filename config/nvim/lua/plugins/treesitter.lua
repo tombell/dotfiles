@@ -68,6 +68,7 @@ return {
         "make",
         "markdown",
         "markdown_inline",
+        "nix",
         "objc",
         "python",
         "qmljs",
