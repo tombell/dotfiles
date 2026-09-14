@@ -11,6 +11,8 @@ Scope {
         function inputMute(): void { audioController.inputMute() }
         function brightnessLower(): void { brightnessController.brightnessLower() }
         function brightnessRaise(): void { brightnessController.brightnessRaise() }
+        function keyboardBrightnessLower(): void { keyboardBrightnessController.brightnessLower() }
+        function keyboardBrightnessRaise(): void { keyboardBrightnessController.brightnessRaise() }
     }
 
     AudioController {
@@ -21,6 +23,14 @@ Scope {
 
     BrightnessController {
         id: brightnessController
+
+        onShowRequested: (icon, value, muted) => osd.showOsd(icon, value, muted)
+    }
+
+    BrightnessController {
+        id: keyboardBrightnessController
+        device: "apple::kbd_backlight"
+        icon: "󰌌"
 
         onShowRequested: (icon, value, muted) => osd.showOsd(icon, value, muted)
     }

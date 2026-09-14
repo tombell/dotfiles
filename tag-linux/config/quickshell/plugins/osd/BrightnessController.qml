@@ -4,6 +4,9 @@ import Quickshell.Io
 Scope {
     id: brightnessController
 
+    property string device: ""
+    property string icon: "󰃠"
+
     signal showRequested(string icon, real value, bool muted)
 
     Process {
@@ -11,19 +14,29 @@ Scope {
 
         stdout: StdioCollector {
             onStreamFinished: {
-                const value = Math.max(0, Math.min(1, Number(text.trim()) / 100))
-                brightnessController.showRequested("󰃠", value, false)
+                const fields = text.trim().split(",")
+                if (fields.length < 4) return
+                const percentage = Number(fields[3].replace("%", ""))
+                if (!Number.isFinite(percentage)) return
+                const value = Math.max(0, Math.min(1, percentage / 100))
+                brightnessController.showRequested(brightnessController.icon, value, false)
             }
         }
     }
 
-    function brightnessLower() {
-        brightnessOsdCommand.command = ["sh", "-c", "brightnessctl set 5%- >/dev/null; brightnessctl -m | cut -d, -f4 | tr -d '%'"]
+    function adjustBrightness(amount) {
+        const command = ["brightnessctl", "-m"]
+        if (device !== "") command.push("--device=" + device)
+        command.push("set", amount)
+        brightnessOsdCommand.command = command
         brightnessOsdCommand.running = true
     }
 
+    function brightnessLower() {
+        adjustBrightness("5%-")
+    }
+
     function brightnessRaise() {
-        brightnessOsdCommand.command = ["sh", "-c", "brightnessctl set +5% >/dev/null; brightnessctl -m | cut -d, -f4 | tr -d '%'"]
-        brightnessOsdCommand.running = true
+        adjustBrightness("+5%")
     }
 }

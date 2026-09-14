@@ -8,4 +8,7 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(osd .. " inputMute"), { description 
 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(osd .. " brightnessLower"), { description = "Decrease brightness", locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(osd .. " brightnessRaise"), { description = "Increase brightness", locked = true, repeating = true })
+
+hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd(osd .. " keyboardBrightnessLower"), { description = "Decrease keyboard brightness", locked = true, repeating = true })
+hl.bind("XF86KbdBrightnessUp", hl.dsp.exec_cmd(osd .. " keyboardBrightnessRaise"), { description = "Increase keyboard brightness", locked = true, repeating = true })
 -- stylua: ignore end
