@@ -1,0 +1,235 @@
+{
+  "$schema": "https://stark.software/sbar/config.schema.json",
+  "schemaVersion": 1,
+
+  "bar": {
+    "height": 44,
+    "mousePassThrough": true,
+  },
+
+  "theme": {
+    "background": "#00000000",
+    "itemSpacing": 6,
+    "itemStyle": {
+      "hoverTint": "#FFFFFF",
+      "hoverBackground": "#414868",
+      "fontSize": 12,
+      "fontWeight": "medium",
+      "horizontalPadding": 10,
+      "verticalPadding": 6,
+      "cornerRadius": 13,
+    },
+  },
+
+  "items": {
+    "left": [
+      // Spaces
+      {
+        "id": "spaces",
+        "type": "spaces",
+        "text": "{{#workspaces}}{{name}}{{#separator}} · {{/separator}}{{/workspaces}}{{^workspaces}}{{value}}{{/workspaces}}",
+        "priority": 40,
+        "style": {
+          "tint": "#7AA2F7",
+          "background": "#292E42",
+        },
+        "spaces": {
+          "showSymbol": false,
+          "scope": "display",
+          "tints": {
+            "active": "#7AA2F7",
+            "inactive": "#565F89",
+            "unavailable": "#F7768E",
+          },
+        },
+      },
+
+      // Focused application
+      {
+        "id": "front-app",
+        "type": "frontApplication",
+        "text": "{{name}}",
+        "priority": 80,
+        "style": {
+          "tint": "#C0CAF5",
+          "background": "#292E42",
+        },
+        "frontApplication": {
+          "showIcon": true,
+        },
+      },
+    ],
+
+    "right": [
+      // CPU
+      {
+        "id": "cpu",
+        "type": "cpu",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}—{{/available}}",
+        "priority": 20,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#BB9AF7",
+          "background": "#292E42",
+        },
+        "cpu": {
+          "smoothingSamples": 3,
+          "tints": {
+            "medium": "#E0AF68",
+            "high": "#F7768E",
+          },
+        },
+      },
+
+      // RAM
+      {
+        "id": "memory",
+        "type": "memory",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}—{{/available}}",
+        "priority": 20,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#7AA2F7",
+          "background": "#292E42",
+        },
+      },
+
+      // Mail
+      {
+        "id": "mail",
+        "type": "mail",
+        "text": "{{#available}}{{unreadCount}}{{/available}}{{^available}}{{value}}{{/available}}",
+        "symbolPosition": "right",
+        "priority": 70,
+        "style": {
+          "tint": "#A9B1D6",
+          "background": "#292E42",
+        },
+      },
+
+      // VPN
+      {
+        "id": "vpn",
+        "type": "vpn",
+        "text": "",
+        "priority": 70,
+        "style": {
+          "tint": "#A9B1D6",
+          "background": "#292E42",
+        },
+        "vpn": {
+          "hideWhenDisconnected": false,
+          "tints": {
+            "connected": "#9ECE6A",
+            "connecting": "#E0AF68",
+            "disconnecting": "#FF9E64",
+            "unavailable": "#F7768E",
+          },
+        },
+      },
+
+      // Network
+      {
+        "id": "network",
+        "type": "network",
+        "text": "",
+        "priority": 60,
+        "style": {
+          "tint": "#7DCFFF",
+          "background": "#292E42",
+        },
+        "network": {
+          "tints": {
+            "offline": "#F7768E",
+          },
+        },
+      },
+
+      // Sound
+      {
+        "id": "sound",
+        "type": "volume",
+        "text": "",
+        "priority": 50,
+        "style": {
+          "tint": "#73DACA",
+          "background": "#292E42",
+        },
+        "volume": {
+          "tints": {
+            "muted": "#E0AF68",
+          },
+        },
+      },
+
+      // Battery
+      {
+        "id": "battery",
+        "type": "battery",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}AC power{{/available}}",
+        "priority": 80,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#C0CAF5",
+          "background": "#292E42",
+        },
+        "battery": {
+          "lowThreshold": 20,
+          "tints": {
+            "low": "#F7768E",
+            "charging": "#9ECE6A",
+          },
+        },
+      },
+
+      // Weather
+      {
+        "id": "weather",
+        "type": "weather",
+        "symbolPosition": "right",
+        "style": {
+          "background": "#292E42",
+        },
+        "weather": {
+          "latitude": 53.4808,
+          "longitude": -2.2426,
+          "symbols": {
+            "clearDay": "sun.max.fill",
+            "clearNight": "moon.stars.fill",
+            "overcastDay": "cloud.sun.fill",
+            "overcastNight": "cloud.moon.fill",
+            "rain": "cloud.rain.fill",
+            "rainShowers": "cloud.rain.fill",
+            "snow": "cloud.snow.fill",
+          },
+        },
+      },
+
+      // Date
+      {
+        "id": "date",
+        "type": "datetime",
+        "text": "{{value}}",
+        "format": "EE, d MMM",
+        "priority": -10,
+        "style": {
+          "tint": "#A9B1D6",
+          "background": "#292E42",
+        },
+      },
+
+      // Time
+      {
+        "id": "clock",
+        "type": "datetime",
+        "text": "{{value}}",
+        "format": "HH:mm",
+        "priority": 100,
+        "style": {
+          "tint": "#7AA2F7",
+          "background": "#292E42",
+        },
+      },
+    ],
+  },
+}
