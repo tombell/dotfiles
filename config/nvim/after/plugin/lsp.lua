@@ -21,6 +21,7 @@ vim.lsp.config("vtsls", {
 
 local servers = {
   "gopls",
+  "jsonls",
   "lua_ls",
   "oxlint",
   "sourcekit",

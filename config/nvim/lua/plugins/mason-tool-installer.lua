@@ -7,6 +7,7 @@ return {
           "gofumpt",
           "goimports",
           "gopls",
+          "json-lsp",
           "lua-language-server",
           "oxfmt",
           "oxlint",
