@@ -13,7 +13,8 @@
     "itemStyle": {
       "hoverTint": "#FFFFFF",
       "hoverBackground": "#414868",
-      "fontSize": 12,
+      "fontFamily": "Departure Mono",
+      "fontSize": 11,
       "fontWeight": "medium",
       "horizontalPadding": 10,
       "verticalPadding": 6,
@@ -90,19 +91,6 @@
         "symbolPosition": "right",
         "style": {
           "tint": "#7AA2F7",
-          "background": "#292E42",
-        },
-      },
-
-      // Mail
-      {
-        "id": "mail",
-        "type": "mail",
-        "text": "{{#available}}{{unreadCount}}{{/available}}{{^available}}{{value}}{{/available}}",
-        "symbolPosition": "right",
-        "priority": 70,
-        "style": {
-          "tint": "#A9B1D6",
           "background": "#292E42",
         },
       },
