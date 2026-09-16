@@ -43,7 +43,6 @@ vim.pack.add({
   require "plugins.mini-icons",
   require "plugins.pleat",
   require "plugins.snacks",
-  require "plugins.tiny-cmdline",
 }, {
   load = function(plug)
     local data = plug.spec.data or {}
