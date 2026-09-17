@@ -4,6 +4,8 @@ return {
     setup = function()
       ---@diagnostic disable-next-line: missing-fields
       require("tokyonight").setup {
+        transparent = true,
+
         on_highlights = function(highlights, colors)
           highlights.Folded = { fg = colors.blue0 }
           highlights.WinSeparator = { fg = colors.bg_visual }
