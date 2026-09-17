@@ -12,9 +12,6 @@ diff-formatter = "delta"
 diff-args = ["--side-by-side", "$left", "$right", "--width=$width"]
 diff-expected-exit-codes = [0, 1]
 
-[revset-aliases]
-"closest_bookmark(to)" = "heads(::to & bookmarks())"
-
 [aliases]
 fetch = ["git", "fetch"]
 push = ["git", "push"]
@@ -27,7 +24,3 @@ r = ["rebase"]
 re = ["restore"]
 
 bsm = ["bookmark", "set", "main"]
-# Move the closest bookmark to the current commit. This is useful when
-# working on a named branch, creating a bunch of commits, and then needing
-# to update the bookmark before pushing.
-tug = ["bookmark", "move", "--from", "closest_bookmark(@-)", "--to", "@-"]
