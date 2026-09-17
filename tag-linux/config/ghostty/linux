@@ -10,6 +10,4 @@ window-padding-y = 10
 
 window-decoration = server
 
-resize-overlay = never
-
 gtk-single-instance = true
