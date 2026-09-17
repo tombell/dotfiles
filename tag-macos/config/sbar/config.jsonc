@@ -104,6 +104,7 @@
         "style": {
           "tint": "#A9B1D6",
           "background": "#292E42",
+          "verticalPadding": 6.5,
         },
         "vpn": {
           "hideWhenDisconnected": false,
@@ -125,6 +126,7 @@
         "style": {
           "tint": "#7DCFFF",
           "background": "#292E42",
+          "verticalPadding": 7.5,
         },
         "network": {
           "tints": {
@@ -142,6 +144,7 @@
         "style": {
           "tint": "#73DACA",
           "background": "#292E42",
+          "verticalPadding": 6.5,
         },
         "volume": {
           "tints": {
