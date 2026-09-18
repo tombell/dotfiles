@@ -13,9 +13,6 @@ resize-overlay = never
 
 window-padding-balance = true
 
-background-opacity = 0.95
-background-blur = true
-
 window-inherit-working-directory = false
 window-save-state = never
 
