@@ -4,11 +4,11 @@ status --is-interactive; or return
 # alias ll='ls -al'
 # alias la='ls -A'
 
-alias l='eza -lAg --icons=auto' # matches ls -lAh: excludes . and ..
-alias ll='eza -laag --icons=auto' # matches ls -al: includes . and ..
-alias la='eza -A --icons=auto' # matches ls -A: excludes . and ..
+alias l='eza -lAg' # matches ls -lAh: excludes . and ..
+alias ll='eza -laag' # matches ls -al: includes . and ..
+alias la='eza -A' # matches ls -A: excludes . and ..
 
-alias tree='eza -A --tree --icons'
+alias tree='eza -A --tree'
 
 alias ..='cd ..'
 alias ...='cd ../..'
