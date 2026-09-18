@@ -1,7 +1,7 @@
 hl.config {
   general = {
-    gaps_in = 10,
-    gaps_out = 20,
+    gaps_in = 5,
+    gaps_out = 10,
 
     border_size = 1,
 
@@ -13,7 +13,7 @@ hl.config {
       inactive_border = "rgba(65,72,104,0.666)",
     },
 
-    resize_on_border = true,
+    resize_on_border = false,
   },
 
   decoration = {
