@@ -11,82 +11,88 @@ Scope {
         target: "launcher"
 
         function toggle(): void {
-            launcher.visible = !launcher.visible
-            if (launcher.visible) {
-                launcherSearch.text = ""
+            launcherLoader.active = !launcherLoader.active
+        }
+    }
+
+    LazyLoader {
+        id: launcherLoader
+
+        active: false
+
+        PanelWindow {
+            id: launcher
+
+            visible: true
+            color: "transparent"
+            exclusionMode: ExclusionMode.Ignore
+            anchors {
+                top: true
+                bottom: true
+                left: true
+                right: true
+            }
+
+            WlrLayershell.namespace: "quickshell-launcher"
+            WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
+
+            Component.onCompleted: {
                 launcherState.updateApplications()
                 launcherSearch.focusInput()
             }
-        }
-    }
 
-    LauncherState {
-        id: launcherState
+            LauncherState {
+                id: launcherState
 
-        query: launcherSearch.text
-        onLaunchRequested: command => {
-            launcher.visible = false
-            Quickshell.execDetached(command)
-        }
-    }
-
-    PanelWindow {
-        id: launcher
-
-        visible: false
-        color: "transparent"
-        exclusionMode: ExclusionMode.Ignore
-        anchors {
-            top: true
-            bottom: true
-            left: true
-            right: true
-        }
-
-        WlrLayershell.namespace: "quickshell-launcher"
-        WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: launcher.visible = false
-        }
-
-        PanelSurface {
-            anchors.centerIn: parent
-            width: Math.max(420, launcher.width * 0.3)
-            height: 344
+                query: launcherSearch.text
+                onLaunchRequested: command => {
+                    Quickshell.execDetached(command)
+                    launcherLoader.active = false
+                }
+            }
 
             MouseArea {
                 anchors.fill: parent
-                onClicked: mouse => mouse.accepted = true
+                onClicked: launcherLoader.active = false
             }
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: 2
+            PanelSurface {
+                anchors.centerIn: parent
+                width: Math.max(420, launcher.width * 0.3)
+                height: 344
 
-                SearchField {
-                    id: launcherSearch
-
-                    width: parent.width
-                    onDismissRequested: launcher.visible = false
-                    onPreviousRequested: launcherState.selectPrevious()
-                    onNextRequested: launcherState.selectNext()
-                    onLaunchRequested: launcherState.launchApplication(launcherState.selectedIndex)
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: mouse => mouse.accepted = true
                 }
 
-                Rectangle {
-                    width: parent.width
-                    height: 2
-                    color: Color.accent
-                }
+                Column {
+                    anchors.fill: parent
+                    anchors.margins: 2
 
-                ApplicationList {
-                    width: parent.width
-                    applications: launcherState.visibleApplications
-                    selectedIndex: launcherState.selectedIndex
-                    onSelectionRequested: index => launcherState.selectedIndex = index
-                    onLaunchRequested: index => launcherState.launchApplication(index)
+                    SearchField {
+                        id: launcherSearch
+
+                        width: parent.width
+                        onDismissRequested: launcherLoader.active = false
+                        onPreviousRequested: launcherState.selectPrevious()
+                        onNextRequested: launcherState.selectNext()
+                        onLaunchRequested: launcherState.launchApplication(launcherState.selectedIndex)
+                    }
+
+                    Rectangle {
+                        width: parent.width
+                        height: 2
+                        color: Color.accent
+                    }
+
+                    ApplicationList {
+                        width: parent.width
+                        applications: launcherState.visibleApplications
+                        selectedIndex: launcherState.selectedIndex
+                        onSelectionRequested: index => launcherState.selectedIndex = index
+                        onLaunchRequested: index => launcherState.launchApplication(index)
+                    }
                 }
             }
         }

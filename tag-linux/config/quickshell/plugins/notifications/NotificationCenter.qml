@@ -8,7 +8,7 @@ Scope {
     readonly property int notificationCount: notificationState.notificationCount
 
     function toggleHistory() {
-        notificationHistoryWindow.visible = !notificationHistoryWindow.visible
+        historyLoader.active = !historyLoader.active
     }
 
     IpcHandler {
@@ -23,13 +23,18 @@ Scope {
         id: notificationState
     }
 
-    NotificationHistory {
-        id: notificationHistoryWindow
+    LazyLoader {
+        id: historyLoader
 
-        history: notificationState.history
-        doNotDisturb: notificationsRoot.doNotDisturb
-        onToggleDoNotDisturb: notificationsRoot.doNotDisturb = !notificationsRoot.doNotDisturb
-        onClearRequested: notificationState.clearHistory()
+        active: false
+
+        NotificationHistory {
+            history: notificationState.history
+            doNotDisturb: notificationsRoot.doNotDisturb
+            onToggleDoNotDisturb: notificationsRoot.doNotDisturb = !notificationsRoot.doNotDisturb
+            onClearRequested: notificationState.clearHistory()
+            onDismissRequested: historyLoader.active = false
+        }
     }
 
     NotificationPopups {

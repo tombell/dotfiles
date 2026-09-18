@@ -24,7 +24,9 @@ Scope {
 
             Image {
                 anchors.fill: parent
-                source: "file://" + Quickshell.env("HOME") + "/Pictures/Wallpaper/wallpaper.jpg"
+                source: "file://" + Quickshell.env("HOME") + "/Pictures/Wallpaper/wallpaper-4k.webp"
+                sourceSize.width: Math.min(3840, Math.ceil(width * Screen.devicePixelRatio))
+                sourceSize.height: Math.min(2160, Math.ceil(height * Screen.devicePixelRatio))
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
                 cache: true

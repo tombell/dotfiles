@@ -15,7 +15,9 @@ PanelWindow {
     signal toggleDoNotDisturb()
     signal clearRequested()
 
-    visible: false
+    signal dismissRequested()
+
+    visible: true
     color: "transparent"
     implicitWidth: 350
     implicitHeight: 500
@@ -31,7 +33,7 @@ PanelWindow {
     HyprlandFocusGrab {
         windows: [notificationHistoryWindow]
         active: notificationHistoryWindow.visible
-        onCleared: notificationHistoryWindow.visible = false
+        onCleared: notificationHistoryWindow.dismissRequested()
     }
 
     PanelSurface {
