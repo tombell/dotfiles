@@ -1,0 +1,226 @@
+{
+  "$schema": "https://stark.software/sbar/config.schema.json",
+  "schemaVersion": 1,
+
+  "bar": {
+    "height": 44,
+    "mousePassThrough": true,
+  },
+
+  "theme": {
+    "background": "#00000000",
+    "itemSpacing": 6,
+    "itemStyle": {
+      "hoverTint": "#FFF1C2",
+      "hoverBackground": "#302536",
+      "fontFamily": "Departure Mono",
+      "fontSize": 11,
+      "fontWeight": "medium",
+      "horizontalPadding": 10,
+      "verticalPadding": 6,
+      "cornerRadius": 13,
+    },
+  },
+
+  "items": {
+    "left": [
+      // Spaces
+      {
+        "id": "spaces",
+        "type": "spaces",
+        "text": "{{#workspaces}}{{name}}{{#separator}} · {{/separator}}{{/workspaces}}{{^workspaces}}{{value}}{{/workspaces}}",
+        "priority": 40,
+        "style": {
+          "tint": "#F2B49D",
+          "background": "#11101C",
+        },
+        "spaces": {
+          "showSymbol": false,
+          "scope": "display",
+          "tints": {
+            "active": "#F2B49D",
+            "inactive": "#9B8294",
+            "unavailable": "#E39494",
+          },
+        },
+      },
+
+      // Focused application
+      {
+        "id": "front-app",
+        "type": "frontApplication",
+        "text": "{{name}}",
+        "priority": 80,
+        "style": {
+          "tint": "#F4D9C4",
+          "background": "#11101C",
+        },
+        "frontApplication": {
+          "showIcon": true,
+        },
+      },
+    ],
+
+    "right": [
+      // CPU
+      {
+        "id": "cpu",
+        "type": "cpu",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}—{{/available}}",
+        "priority": 20,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#D59AAA",
+          "background": "#11101C",
+        },
+        "cpu": {
+          "smoothingSamples": 3,
+          "tints": {
+            "medium": "#F5D49D",
+            "high": "#E39494",
+          },
+        },
+      },
+
+      // RAM
+      {
+        "id": "memory",
+        "type": "memory",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}—{{/available}}",
+        "priority": 20,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#F2B49D",
+          "background": "#11101C",
+        },
+      },
+
+      // VPN
+      {
+        "id": "vpn",
+        "type": "vpn",
+        "text": "",
+        "priority": 70,
+        "style": {
+          "tint": "#C5A5AD",
+          "background": "#11101C",
+          "verticalPadding": 6.5,
+        },
+        "vpn": {
+          "hideWhenDisconnected": false,
+          "tints": {
+            "connected": "#8DBDE0",
+            "connecting": "#F5D49D",
+            "disconnecting": "#ECA080",
+            "unavailable": "#E39494",
+          },
+        },
+      },
+
+      // Network
+      {
+        "id": "network",
+        "type": "network",
+        "text": "",
+        "priority": 60,
+        "style": {
+          "tint": "#8DBDE0",
+          "background": "#11101C",
+          "verticalPadding": 7.5,
+        },
+        "network": {
+          "tints": {
+            "offline": "#E39494",
+          },
+        },
+      },
+
+      // Sound
+      {
+        "id": "sound",
+        "type": "volume",
+        "text": "",
+        "priority": 50,
+        "style": {
+          "tint": "#F2B49D",
+          "background": "#11101C",
+          "verticalPadding": 6.5,
+        },
+        "volume": {
+          "tints": {
+            "muted": "#F5D49D",
+          },
+        },
+      },
+
+      // Battery
+      {
+        "id": "battery",
+        "type": "battery",
+        "text": "{{#available}}{{percentage}}%{{/available}}{{^available}}AC power{{/available}}",
+        "priority": 80,
+        "symbolPosition": "right",
+        "style": {
+          "tint": "#F4D9C4",
+          "background": "#11101C",
+        },
+        "battery": {
+          "lowThreshold": 20,
+          "tints": {
+            "low": "#E39494",
+            "charging": "#8DBDE0",
+          },
+        },
+      },
+
+      // Weather
+      {
+        "id": "weather",
+        "type": "weather",
+        "symbolPosition": "right",
+        "style": {
+          "background": "#11101C",
+        },
+        "weather": {
+          "latitude": 53.4808,
+          "longitude": -2.2426,
+          "symbols": {
+            "clearDay": "sun.max.fill",
+            "clearNight": "moon.stars.fill",
+            "overcastDay": "cloud.sun.fill",
+            "overcastNight": "cloud.moon.fill",
+            "rain": "cloud.rain.fill",
+            "rainShowers": "cloud.rain.fill",
+            "snow": "cloud.snow.fill",
+          },
+        },
+      },
+
+      // Date
+      {
+        "id": "date",
+        "type": "datetime",
+        "text": "{{value}}",
+        "format": "EE, d MMM",
+        "priority": -10,
+        "style": {
+          "tint": "#C5A5AD",
+          "background": "#11101C",
+        },
+      },
+
+      // Time
+      {
+        "id": "clock",
+        "type": "datetime",
+        "text": "{{value}}",
+        "format": "HH:mm",
+        "priority": 100,
+        "style": {
+          "tint": "#F2B49D",
+          "background": "#11101C",
+        },
+      },
+    ],
+  },
+}
