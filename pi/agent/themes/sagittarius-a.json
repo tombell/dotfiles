@@ -15,7 +15,8 @@
     "red": "#E39494",
     "orange": "#ECA080",
     "blue": "#8DBDE0",
-    "successBg": "#1C2734",
+    "green": "#B6C99B",
+    "successBg": "#222B25",
     "errorBg": "#30202D"
   },
   "colors": {
@@ -23,7 +24,7 @@
     "border": "peach",
     "borderAccent": "cream",
     "borderMuted": "comment",
-    "success": "blue",
+    "success": "green",
     "error": "red",
     "warning": "gold",
     "muted": "muted",
@@ -58,7 +59,7 @@
     "mdHr": "comment",
     "mdListBullet": "peach",
 
-    "toolDiffAdded": "blue",
+    "toolDiffAdded": "green",
     "toolDiffRemoved": "red",
     "toolDiffContext": "comment",
 
@@ -66,7 +67,7 @@
     "syntaxKeyword": "rose",
     "syntaxFunction": "peach",
     "syntaxVariable": "fg",
-    "syntaxString": "gold",
+    "syntaxString": "green",
     "syntaxNumber": "orange",
     "syntaxType": "blue",
     "syntaxOperator": "muted",
