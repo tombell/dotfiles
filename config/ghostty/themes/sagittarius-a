@@ -1,0 +1,29 @@
+# Sagittarius A: matches the Neovim and sbar palettes.
+
+background = #11101C
+foreground = #F4D9C4
+cursor-color = #F2B49D
+cursor-text = #11101C
+selection-background = #302536
+selection-foreground = #F4D9C4
+split-divider-color = #302536
+
+# Normal ANSI colours.
+palette = 0=#11101C
+palette = 1=#E39494
+palette = 2=#8DBDE0
+palette = 3=#F5D49D
+palette = 4=#8DBDE0
+palette = 5=#D59AAA
+palette = 6=#F2B49D
+palette = 7=#F4D9C4
+
+# Bright ANSI colours.
+palette = 8=#9B8294
+palette = 9=#E39494
+palette = 10=#8DBDE0
+palette = 11=#FFF1C2
+palette = 12=#8DBDE0
+palette = 13=#D59AAA
+palette = 14=#F2B49D
+palette = 15=#FFF1C2
