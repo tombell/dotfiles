@@ -11,7 +11,7 @@ split-divider-color = #302536
 # Normal ANSI colours.
 palette = 0=#11101C
 palette = 1=#E39494
-palette = 2=#8DBDE0
+palette = 2=#B6C99B
 palette = 3=#F5D49D
 palette = 4=#8DBDE0
 palette = 5=#D59AAA
@@ -21,7 +21,7 @@ palette = 7=#F4D9C4
 # Bright ANSI colours.
 palette = 8=#9B8294
 palette = 9=#E39494
-palette = 10=#8DBDE0
+palette = 10=#B6C99B
 palette = 11=#FFF1C2
 palette = 12=#8DBDE0
 palette = 13=#D59AAA
