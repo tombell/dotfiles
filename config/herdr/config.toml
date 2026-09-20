@@ -5,7 +5,26 @@ name = "tokyo-night"
 auto_switch = false
 
 [theme.custom]
-surface_dim = "#292e42"
+# Sagittarius A palette, overriding the built-in base theme.
+accent = "#F2B49D"
+panel_bg = "#11101C"
+sidebar_bg = "#080711"
+active_row_bg = "#302536"
+selection_bg = "#4A3646"
+surface0 = "#211B2B"
+surface1 = "#443345"
+surface_dim = "#302536"
+overlay0 = "#9B8294"
+overlay1 = "#C5A5AD"
+text = "#F4D9C4"
+subtext0 = "#C5A5AD"
+mauve = "#D59AAA"
+green = "#8DBDE0"
+yellow = "#F5D49D"
+red = "#E39494"
+blue = "#8DBDE0"
+teal = "#F2B49D"
+peach = "#F2B49D"
 
 [ui]
 pane_scrollbars = false
