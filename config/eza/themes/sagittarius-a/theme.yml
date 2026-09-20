@@ -11,20 +11,20 @@ filekinds:
   char_device: { foreground: "#F5D49D" }
   socket: { foreground: "#9B8294" }
   special: { foreground: "#D59AAA" }
-  executable: { foreground: "#8DBDE0" }
+  executable: { foreground: "#B6C99B" }
   mount_point: { foreground: "#FFF1C2" }
 
 perms:
   user_read: { foreground: "#8DBDE0" }
   user_write: { foreground: "#D59AAA" }
-  user_execute_file: { foreground: "#8DBDE0" }
-  user_execute_other: { foreground: "#8DBDE0" }
+  user_execute_file: { foreground: "#B6C99B" }
+  user_execute_other: { foreground: "#B6C99B" }
   group_read: { foreground: "#8DBDE0" }
   group_write: { foreground: "#ECA080" }
-  group_execute: { foreground: "#8DBDE0" }
+  group_execute: { foreground: "#B6C99B" }
   other_read: { foreground: "#8DBDE0" }
   other_write: { foreground: "#E39494" }
-  other_execute: { foreground: "#8DBDE0" }
+  other_execute: { foreground: "#B6C99B" }
   special_user_file: { foreground: "#E39494" }
   special_other: { foreground: "#E39494" }
   attribute: { foreground: "#9B8294" }
@@ -56,7 +56,7 @@ links:
   multi_link_file: { foreground: "#8DBDE0" }
 
 git:
-  new: { foreground: "#8DBDE0" }
+  new: { foreground: "#B6C99B" }
   modified: { foreground: "#F5D49D" }
   deleted: { foreground: "#E39494" }
   renamed: { foreground: "#8DBDE0" }
@@ -67,7 +67,7 @@ git:
 git_repo:
   branch_main: { foreground: "#9B8294" }
   branch_other: { foreground: "#FFF1C2" }
-  git_clean: { foreground: "#9B8294" }
+  git_clean: { foreground: "#B6C99B" }
   git_dirty: { foreground: "#D59AAA" }
 
 security_context:
