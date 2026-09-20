@@ -70,7 +70,7 @@ function fish_prompt
     __vcs_prompt_info
 
     if test $last_status -eq 0
-        set_color F2B49D
+        set_color B6C99B
     else
         set_color E39494
     end
