@@ -3,6 +3,7 @@ go = "latest"
 node = "lts"
 pi = "latest"
 ruby = "4"
+rust = "stable"
 tree-sitter = "latest"
 
 [settings]
