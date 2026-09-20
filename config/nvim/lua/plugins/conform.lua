@@ -16,6 +16,7 @@ return {
           lua = { "stylua" },
           graphql = { "oxfmt" },
           markdown = { "oxfmt" },
+          nix = { "alejandra" },
           ruby = { lsp_format = "fallback" },
           sh = { "shfmt" },
           swift = { "swift" },

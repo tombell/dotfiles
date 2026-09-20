@@ -4,11 +4,13 @@ return {
     setup = function()
       require("mason-tool-installer").setup {
         ensure_installed = {
+          "alejandra",
           "gofumpt",
           "goimports",
           "gopls",
           "json-lsp",
           "lua-language-server",
+          "nil",
           "oxfmt",
           "oxlint",
           "shfmt",
