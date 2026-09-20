@@ -109,7 +109,7 @@
         "vpn": {
           "hideWhenDisconnected": false,
           "tints": {
-            "connected": "#8DBDE0",
+            "connected": "#B6C99B",
             "connecting": "#F5D49D",
             "disconnecting": "#ECA080",
             "unavailable": "#E39494",
@@ -168,7 +168,7 @@
           "lowThreshold": 20,
           "tints": {
             "low": "#E39494",
-            "charging": "#8DBDE0",
+            "charging": "#B6C99B",
           },
         },
       },
