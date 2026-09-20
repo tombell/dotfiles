@@ -19,6 +19,8 @@ local c = {
   red = "#E39494",
   orange = "#ECA080",
   blue = "#8DBDE0",
+  green = "#B6C99B",
+  added_bg = "#222B25",
 }
 
 local highlights = {
@@ -70,7 +72,7 @@ local highlights = {
   -- Traditional syntax groups also provide Tree-sitter and LSP fallbacks.
   Comment = { fg = c.comment, italic = true },
   Constant = { fg = c.orange },
-  String = { fg = c.gold },
+  String = { fg = c.green },
   Character = { link = "String" },
   Number = { fg = c.orange },
   Boolean = { link = "Number" },
@@ -110,7 +112,7 @@ local highlights = {
   DiagnosticWarn = { fg = c.gold },
   DiagnosticInfo = { fg = c.blue },
   DiagnosticHint = { fg = c.rose },
-  DiagnosticOk = { fg = c.blue },
+  DiagnosticOk = { fg = c.green },
   DiagnosticUnderlineError = { undercurl = true, sp = c.red },
   DiagnosticUnderlineWarn = { undercurl = true, sp = c.gold },
   DiagnosticUnderlineInfo = { undercurl = true, sp = c.blue },
@@ -127,11 +129,11 @@ local highlights = {
   LspInlayHint = { fg = c.comment },
 
   -- Diffs and the plugins used by this configuration.
-  DiffAdd = { fg = c.blue, bg = c.selection },
+  DiffAdd = { fg = c.green, bg = c.added_bg },
   DiffChange = { bg = c.selection },
   DiffDelete = { fg = c.red, bg = c.selection },
   DiffText = { fg = c.bg, bg = c.gold, bold = true },
-  Added = { fg = c.blue },
+  Added = { fg = c.green },
   Changed = { fg = c.gold },
   Removed = { fg = c.red },
   GitSignsAdd = { link = "Added" },
@@ -147,8 +149,8 @@ end
 
 -- ANSI slots keep terminal buffers within the same palette.
 local terminal = {
-  c.bg, c.red, c.blue, c.gold, c.blue, c.rose, c.peach, c.fg,
-  c.comment, c.red, c.blue, c.cream, c.blue, c.rose, c.peach, c.cream,
+  c.bg, c.red, c.green, c.gold, c.blue, c.rose, c.peach, c.fg,
+  c.comment, c.red, c.green, c.cream, c.blue, c.rose, c.peach, c.cream,
 }
 for index, colour in ipairs(terminal) do
   vim.g["terminal_color_" .. (index - 1)] = colour
