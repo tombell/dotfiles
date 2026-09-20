@@ -1,18 +1,27 @@
 add_newline = false
 command_timeout = 1000
 format = "$hostname$directory$custom$character"
+palette = "sagittarius_a"
+
+[palettes.sagittarius_a]
+peach = "#F2B49D"
+gold = "#F5D49D"
+rose = "#D59AAA"
+blue = "#8DBDE0"
+muted = "#9B8294"
+error = "#E39494"
 
 [hostname]
 ssh_only = true
 trim_at = ""
-format = "[$hostname](green) "
+format = "[$hostname](blue) "
 
 [directory]
 truncation_length = 1
 truncate_to_repo = false
 home_symbol = "~"
 read_only = ""
-format = "[$path](yellow) "
+format = "[$path](gold) "
 
 [custom.jj_bookmark]
 shell = ["sh"]
@@ -24,18 +33,18 @@ jj log --ignore-working-copy --no-graph --color never \
     -r 'latest(ancestors(@) & bookmarks())' \
     -T 'bookmarks.map(|b| b.name()).join(",")' 2>/dev/null | head -n 1
 '''
-format = "[$output](bold green)[::](#585858) "
+format = "[$output](bold blue)[::](muted) "
 
 [custom.jj_change]
 shell = ["sh"]
-style = "bold purple"
+style = "bold rose"
 when = '''
 root=$(git rev-parse --show-toplevel 2>/dev/null) && test -d "$root/.jj"
 '''
 command = '''
 jj log --ignore-working-copy --no-graph --color never -r @ -T 'change_id.shortest()' 2>/dev/null | head -n 1
 '''
-format = "[@](#585858)[$output]($style)"
+format = "[@](muted)[$output]($style)"
 
 [custom.jj_change_remainder]
 shell = ["sh"]
@@ -48,7 +57,7 @@ shortest=${data%%|*}
 short4=${data#*|}
 printf '%s' "${short4#"$shortest"}"
 '''
-format = "[$output](#585858) "
+format = "[$output](muted) "
 
 [custom.git_branch]
 shell = ["sh"]
@@ -57,9 +66,9 @@ root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 1
 test ! -d "$root/.jj"
 '''
 command = "git rev-parse --abbrev-ref HEAD 2>/dev/null"
-format = "[$output](purple) "
+format = "[$output](rose) "
 
 [character]
-success_symbol = "[---](cyan)"
-error_symbol = "[---](cyan)"
+success_symbol = "[---](peach)"
+error_symbol = "[---](error)"
 format = "$symbol "
