@@ -1,23 +1,27 @@
 ; vim: set ft=gitconfig:
 
 [delta]
-  minus-style                   = syntax "#4a272f"
-  minus-non-emph-style          = syntax "#4a272f"
-  minus-emph-style              = syntax "#713137"
-  minus-empty-line-marker-style = syntax "#4a272f"
+  ; Sagittarius A
+  dark = true
+  minus-style                   = syntax "#30202D"
+  minus-non-emph-style          = syntax "#30202D"
+  minus-emph-style              = syntax "#573543"
+  minus-empty-line-marker-style = syntax "#30202D"
 
-  plus-style                    = syntax "#243e4a"
-  plus-non-emph-style           = syntax "#243e4a"
-  plus-emph-style               = syntax "#2c5a66"
-  plus-empty-line-marker-style  = syntax "#243e4a"
+  plus-style                    = syntax "#1C2734"
+  plus-non-emph-style           = syntax "#1C2734"
+  plus-emph-style               = syntax "#30475B"
+  plus-empty-line-marker-style  = syntax "#1C2734"
 
-  line-numbers-plus-style       = "#449dab"
-  line-numbers-minus-style      = "#914c54"
-  line-numbers-zero-style       = "#3b4261"
-  line-numbers-left-style       = "#3b4261"
-  line-numbers-right-style      = "#3b4261"
+  line-numbers-plus-style       = "#8DBDE0"
+  line-numbers-minus-style      = "#E39494"
+  line-numbers-zero-style       = "#9B8294"
+  line-numbers-left-style       = "#9B8294"
+  line-numbers-right-style      = "#9B8294"
 
-  file-decoration-style         = "#3b4261" overline underline
-  file-style                    = white
+  file-decoration-style         = "#9B8294" overline underline
+  file-style                    = "#F2B49D"
+  commit-style                  = "#F5D49D"
+  whitespace-error-style        = "#E39494" reverse
 
   hunk-header-style             = omit
