@@ -8,12 +8,12 @@
   minus-emph-style              = syntax "#573543"
   minus-empty-line-marker-style = syntax "#30202D"
 
-  plus-style                    = syntax "#1C2734"
-  plus-non-emph-style           = syntax "#1C2734"
-  plus-emph-style               = syntax "#30475B"
-  plus-empty-line-marker-style  = syntax "#1C2734"
+  plus-style                    = syntax "#222B25"
+  plus-non-emph-style           = syntax "#222B25"
+  plus-emph-style               = syntax "#3B4B3D"
+  plus-empty-line-marker-style  = syntax "#222B25"
 
-  line-numbers-plus-style       = "#8DBDE0"
+  line-numbers-plus-style       = "#B6C99B"
   line-numbers-minus-style      = "#E39494"
   line-numbers-zero-style       = "#9B8294"
   line-numbers-left-style       = "#9B8294"
