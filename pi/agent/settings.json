@@ -4,7 +4,7 @@
   "defaultProvider": "openai-codex",
   "defaultThinkingLevel": "low",
   "editorPaddingX": 1,
-  "theme": "tokyo-night",
+  "theme": "sagittarius-a",
   "packages": [
     "npm:@tombell/pi-exit",
     "npm:@tombell/pi-input",
