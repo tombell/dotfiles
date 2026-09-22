@@ -7,8 +7,8 @@ swm config right-padding 6
 swm config bottom-padding 6
 swm config left-padding 6
 
-swm config animation-duration 0.10
-swm config animation-easing ease-out-circ
+# swm config animation-duration 0.10
+# swm config animation-easing ease-out-circ
 
 swm rule add label=finder bundle-id=com.apple.finder manage=off
 swm rule add label=settings bundle-id=com.apple.systempreferences manage=off
