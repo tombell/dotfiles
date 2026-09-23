@@ -17,10 +17,6 @@ workspaces:
         root: ./web
         commands:
           - bin/jobs
-      - label: mcp
-        root: ./web
-        # commands:
-        #   - bin/rails s -p 62770 -c mcp.ru -P tmp/pids/mcp.pid
       - label: vite:theme
         root: ./extensions/theme
         commands:
