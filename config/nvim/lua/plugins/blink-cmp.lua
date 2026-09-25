@@ -4,17 +4,8 @@ return {
   data = {
     setup = function()
       require("blink.cmp").setup {
-        completion = {
-          ghost_text = { enabled = false },
-        },
-        keymap = {
-          preset = "enter",
-          ["<Tab>"] = { "select_next", "fallback" },
-          ["<S-Tab>"] = { "select_prev", "fallback" },
-        },
-        signature = { enabled = false },
         sources = {
-          default = { "lazydev", "lsp", "path" },
+          default = { "lazydev", "lsp", "buffer", "snippets", "path" },
           providers = {
             lazydev = {
               name = "LazyDev",
