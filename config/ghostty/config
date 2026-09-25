@@ -6,7 +6,8 @@ adjust-underline-position = 6
 shell-integration-features = no-cursor
 cursor-style-blink = false
 
-theme = TokyoNight
+# theme = TokyoNight
+theme = sagittarius-a
 split-divider-color = #474951
 
 resize-overlay = never

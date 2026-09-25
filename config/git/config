@@ -70,7 +70,7 @@
 [delta]
   navigate = true
   side-by-side = true
-  syntax-theme = tokyonight_night
+  syntax-theme = sagittarius-a
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

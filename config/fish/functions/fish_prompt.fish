@@ -19,11 +19,11 @@ function __jj_prompt_info
     set -l short4 $parts[2]
     set -l remainder (string replace -- "$shortest" '' "$short4")
 
-    set_color --bold magenta
+    set_color --bold D59AAA
     printf '%s' "$shortest"
 
     set_color normal
-    set_color 585858
+    set_color 9B8294
     printf '%s ' "$remainder"
 
     set_color normal
@@ -35,7 +35,7 @@ function __git_prompt_info
     set -l branch (git rev-parse --abbrev-ref HEAD 2>/dev/null)
     test -n "$branch"; or return
 
-    set_color magenta
+    set_color D59AAA
     printf '%s ' "$branch"
     set_color normal
 end
@@ -52,12 +52,14 @@ function __vcs_prompt_info
 end
 
 function fish_prompt
+    set -l last_status $status
+
     if set -q SSH_CONNECTION; or set -q SSH_CLIENT; or set -q SSH_TTY
-        set_color green
+        set_color 8DBDE0
         printf '%s ' (string lower -- (prompt_hostname))
     end
 
-    set_color yellow
+    set_color F5D49D
 
     if test "$PWD" = "$HOME"
         printf '~ '
@@ -67,7 +69,11 @@ function fish_prompt
 
     __vcs_prompt_info
 
-    set_color cyan
+    if test $last_status -eq 0
+        set_color B6C99B
+    else
+        set_color E39494
+    end
     printf '%s ' ---
 
     set_color normal

@@ -10,6 +10,15 @@ local opts = {
   hide_delay = 1.0,
 }
 
+-- Sagittarius A palette. ASS colours use BGR rather than RGB.
+local colours = {
+  title = "&HC2F1FF&", -- #FFF1C2
+  time = "&HC4D9F4&", -- #F4D9C4
+  outline = "&H1C1011&", -- #11101C
+  track = "&H94829B&", -- #9B8294
+  progress = "&H9DB4F2&", -- #F2B49D
+}
+
 local overlay = mp.create_osd_overlay "ass-events"
 local visible = false
 local dragging = false
@@ -71,15 +80,17 @@ local function render()
   local g = geometry()
   local ass = assdraw.ass_new()
 
-  local function text(alignment, x, y, size, value)
+  local function text(alignment, x, y, size, colour, value)
     ass:new_event()
     ass:append(
       string.format(
-        "{\\an%d\\pos(%f,%f)\\fs%d\\bord1\\shad0\\1c&HFFFFFF&\\3c&H000000&}%s",
+        "{\\an%d\\pos(%f,%f)\\fs%d\\bord1\\shad0\\1c%s\\3c%s}%s",
         alignment,
         x,
         y,
         size,
+        colour,
+        colours.outline,
         value
       )
     )
@@ -95,15 +106,15 @@ local function render()
 
   local title = mp.get_property("media-title", "")
   title = title:gsub("\\", "\\\\"):gsub("{", "\\{"):gsub("}", "\\}")
-  text(2, (g.x1 + g.x2) / 2, g.y - 18, opts.title_size, title)
+  text(2, (g.x1 + g.x2) / 2, g.y - 18, opts.title_size, colours.title, title)
 
   local progress = clamp(mp.get_property_number("percent-pos", 0) / 100)
-  bar(g.x2, "\\1c&H666666&\\alpha&H60&")
-  bar(g.x1 + g.width * progress, "\\1c&HFFFFFF&")
+  bar(g.x2, "\\1c" .. colours.track .. "\\alpha&H60&")
+  bar(g.x1 + g.width * progress, "\\1c" .. colours.progress)
 
   local time_y = g.y + opts.bar_height + 10
-  text(7, g.x1, time_y, opts.time_size, format_time(mp.get_property_number "time-pos"))
-  text(9, g.x2, time_y, opts.time_size, format_time(mp.get_property_number "duration"))
+  text(7, g.x1, time_y, opts.time_size, colours.time, format_time(mp.get_property_number "time-pos"))
+  text(9, g.x2, time_y, opts.time_size, colours.time, format_time(mp.get_property_number "duration"))
 
   overlay.data = ass.text
   overlay:update()
