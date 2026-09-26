@@ -16,9 +16,9 @@ return {
         "vtsls",
       }
 
-      if vim.fn.executable "nix" == 1 then
-        table.insert(ensure_installed, "nil")
-      end
+      -- if vim.fn.executable "nix" == 1 then
+      --   table.insert(ensure_installed, "nil")
+      -- end
 
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }
     end,
