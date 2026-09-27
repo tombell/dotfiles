@@ -4,6 +4,11 @@ return {
   data = {
     setup = function()
       require("blink.cmp").setup {
+        keymap = {
+          preset = "enter",
+          ["<Tab>"] = { "select_next", "fallback" },
+          ["<S-Tab>"] = { "select_prev", "fallback" },
+        },
         sources = {
           default = { "lazydev", "lsp", "buffer", "snippets", "path" },
           providers = {

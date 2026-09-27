@@ -3,7 +3,6 @@ return {
   data = {
     setup = function()
       local ensure_installed = {
-        "alejandra",
         "gofumpt",
         "goimports",
         "gopls",
