@@ -23,6 +23,31 @@ lalt + ctrl - k: swm window swap --direction up
 lalt + ctrl - l: swm window swap --direction right
 
 ################################################################################
+# Tags
+################################################################################
+
+# Show one tag
+lalt - u: stags view 1
+lalt - i: stags view 2
+lalt - o: stags view 3
+lalt - p: stags view 4
+
+# Assign the focused window
+lalt + shift - u: stags window set 1
+lalt + shift - i: stags window set 2
+lalt + shift - o: stags window set 3
+lalt + shift - p: stags window set 4
+
+# Toggle a tag in the current view
+lalt + ctrl - u: stags view-toggle 1
+lalt + ctrl - i: stags view-toggle 2
+lalt + ctrl - o: stags view-toggle 3
+lalt + ctrl - p: stags view-toggle 4
+
+# Show everything
+lalt - 0: stags restore
+
+################################################################################
 # Applications
 ################################################################################
 
