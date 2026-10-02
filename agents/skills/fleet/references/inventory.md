@@ -15,7 +15,6 @@ Prefer the local hostname; fall back to the Tailnet FQDN. SSH usernames, ports, 
 | Name | Hostname | Platform | Role | Network | Package manager |
 |---|---|---|---|---|---|
 | Pyra | `pyra` | macOS, MacBook Air | Main personal computer | Primary LAN + Tailnet | Homebrew |
-| Haze | `haze` | macOS, MacBook Pro | Work computer | Primary LAN + Tailnet | Homebrew |
 | Brighid | `brighid` | macOS, Mac mini | AI-agent host; runs Hermes, an Executor instance via Apple Containers, and web services | Agents VLAN + Tailnet | Homebrew |
 | rpi | `rpi` | Raspbian, Raspberry Pi 3 Model B | Runs Homebridge and fr24 | Agents VLAN + Tailnet | apt |
 
