@@ -8,7 +8,6 @@
   "packages": [
     "npm:@tombell/pi-exit",
     "npm:@tombell/pi-input",
-    "npm:@tombell/pi-logo",
     "npm:@tombell/pi-sessions",
     "npm:@tombell/pi-status"
   ]
