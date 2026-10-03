@@ -109,7 +109,7 @@
         "vpn": {
           "hideWhenDisconnected": false,
           "tints": {
-            "connected": "#8DBDE0",
+            "connected": "#B6C99B",
             "connecting": "#F5D49D",
             "disconnecting": "#ECA080",
             "unavailable": "#E39494",
@@ -161,14 +161,14 @@
         "priority": 80,
         "symbolPosition": "right",
         "style": {
-          "tint": "#F4D9C4",
+          "tint": "#B6C99B",
           "background": "#11101C",
         },
         "battery": {
           "lowThreshold": 20,
           "tints": {
             "low": "#E39494",
-            "charging": "#8DBDE0",
+            "charging": "#B6C99B",
           },
         },
       },
