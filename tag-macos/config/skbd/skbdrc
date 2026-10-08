@@ -23,7 +23,23 @@ lalt + ctrl - k: swm window swap --direction up
 lalt + ctrl - l: swm window swap --direction right
 
 ################################################################################
-# Tags
+# Spaces
+################################################################################
+
+ctrl - 1: swm space activate 0
+ctrl - 2: swm space activate 1
+ctrl - 3: swm space activate 2
+ctrl - 4: swm space activate 3
+ctrl - 5: swm space activate 4
+
+lalt + shift - 1: swm window space 0
+lalt + shift - 2: swm window space 1
+lalt + shift - 3: swm window space 2
+lalt + shift - 4: swm window space 3
+lalt + shift - 5: swm window space 4
+
+################################################################################
+# Tags (beta)
 ################################################################################
 
 # Show one tag
