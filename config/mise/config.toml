@@ -1,9 +1,22 @@
 [tools]
 go = "latest"
+lua-language-server = "latest"
 node = "lts"
+oxfmt = "latest"
+oxlint = "latest"
 ruby = "4"
-rust = "stable"
+shfmt = "latest"
+stylua = "latest"
 tree-sitter = "latest"
+
+"gem:rubocop" = "latest"
+"gem:ruby-lsp" = "latest"
+
+"go:golang.org/x/tools/cmd/goimports" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"go:mvdan.cc/gofumpt" = "latest"
+
+"npm:@vtsls/language-server" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []
