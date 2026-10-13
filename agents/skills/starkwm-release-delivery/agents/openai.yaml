@@ -1,0 +1,5 @@
+interface:
+  display_name: "StarkWM release delivery"
+  short_description: "Release StarkWM tools with verified refs and notes"
+policy:
+  allow_implicit_invocation: true
