@@ -11,4 +11,5 @@ set -gx EZA_CONFIG_DIR "$XDG_CONFIG_HOME/eza"
 fish_add_path --move --path \
     "$HOME/.local/share/neovim/bin" \
     "$GOPATH/bin" \
-    "$HOME/.local/bin"
+    "$HOME/.local/bin" \
+    "$HOME/.bun/bin"
