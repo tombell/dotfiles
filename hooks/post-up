@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+
+src="$HOME/.agents/skills"
+dest="$HOME/.claude/skills"
+
+[ -d "$src" ] || exit 0
+
+mkdir -p "$dest"
+
+for skill in "$src"/*/; do
+  [ -d "$skill" ] || continue
+  name=$(basename "$skill")
+  ln -sfn "$src/$name" "$dest/$name"
+done
+
+# Remove links to skills that were deleted from the dotfiles
+for link in "$dest"/*; do
+  if [ -L "$link" ] && [ ! -e "$link" ]; then
+    rm "$link"
+  fi
+done
