@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-swm config window-gap 6
+swm config gap 6
 
-swm config top-padding 6
-swm config right-padding 6
-swm config bottom-padding 6
-swm config left-padding 6
+swm config padding --top 6 --right 6 --bottom 6 --left 6
 
 swm config animation-duration 0.18
 swm config animation-easing ease-out-circ
