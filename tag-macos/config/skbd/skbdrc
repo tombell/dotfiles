@@ -12,31 +12,31 @@ lalt - l: swm window grid 12:10:6:0:6:10
 lalt + shift - h: swm window grid 12:10:0:0:8:10
 lalt + shift - l: swm window grid 12:10:4:0:8:10
 
-lalt - tab: swm window cycle --direction next
+lalt - tab: swm window focus next
 
 lalt + shift - ,: swm window display 1
 lalt + shift - .: swm window display 2
 
-lalt + ctrl - h: swm window swap --direction left
-lalt + ctrl - j: swm window swap --direction down
-lalt + ctrl - k: swm window swap --direction up
-lalt + ctrl - l: swm window swap --direction right
+lalt + ctrl - h: swm window swap left
+lalt + ctrl - j: swm window swap down
+lalt + ctrl - k: swm window swap up
+lalt + ctrl - l: swm window swap right
 
 ################################################################################
 # Spaces
 ################################################################################
 
-ctrl - 1: swm space activate 0
-ctrl - 2: swm space activate 1
-ctrl - 3: swm space activate 2
-ctrl - 4: swm space activate 3
-ctrl - 5: swm space activate 4
+ctrl - 1: swm space activate 1
+ctrl - 2: swm space activate 2
+ctrl - 3: swm space activate 3
+ctrl - 4: swm space activate 4
+ctrl - 5: swm space activate 5
 
-lalt + shift - 1: swm window space 0
-lalt + shift - 2: swm window space 1
-lalt + shift - 3: swm window space 2
-lalt + shift - 4: swm window space 3
-lalt + shift - 5: swm window space 4
+lalt + shift - 1: swm window space 1
+lalt + shift - 2: swm window space 2
+lalt + shift - 3: swm window space 3
+lalt + shift - 4: swm window space 4
+lalt + shift - 5: swm window space 5
 
 ################################################################################
 # Tags (beta)
