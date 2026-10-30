@@ -5,5 +5,5 @@
   "defaultThinkingLevel": "high",
   "editorPaddingX": 1,
   "theme": "tokyo-night",
-  "packages": ["npm:@tombell/pi-input", "npm:@tombell/pi-status"]
+  "packages": ["npm:@tombell/pi-exit", "npm:@tombell/pi-input", "npm:@tombell/pi-status"]
 }
