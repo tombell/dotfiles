@@ -1,4 +1,5 @@
 [tools]
+bun = "1.4.4"
 go = "latest"
 lua-language-server = "latest"
 node = "lts"
