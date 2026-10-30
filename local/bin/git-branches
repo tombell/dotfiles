@@ -1,33 +1,43 @@
 #!/usr/bin/env bash
 #
 # git branches — list local branches, grouping every <prefix>/<suffix> branch
-# under a coloured <prefix>/ header.
+# under a coloured <prefix>/ header. The default branch is listed first.
 
 set -euo pipefail
 
-# Discover and deduplicate the first path component of every namespaced branch.
+# Default branch: origin's HEAD if set, else init.defaultBranch, main, or
+# master. Only used if it exists locally.
+if origin_head=$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null); then
+  candidates=("${origin_head#origin/}")
+else
+  candidates=("$(git config init.defaultBranch || true)" main master)
+fi
+default_branch=''
+for branch in "${candidates[@]}"; do
+  if [ -n "$branch" ] && git show-ref -q --verify "refs/heads/$branch"; then
+    default_branch=$branch
+    break
+  fi
+done
+
+# Keeps the default branch out of the sorted lists so it's only shown first.
+exclude_default=()
+if [ -n "$default_branch" ]; then
+  exclude_default=(--exclude="refs/heads/$default_branch")
+fi
+
+# Discover the first path component of every namespaced branch.
 prefixes=()
-while IFS= read -r name; do
-  case "$name" in
-  */*)
-    prefix="${name%%/*}"
-    prefix_exists=0
-    for existing_prefix in "${prefixes[@]+"${prefixes[@]}"}"; do
-      if [ "$prefix" = "$existing_prefix" ]; then
-        prefix_exists=1
-        break
-      fi
-    done
-    [ "$prefix_exists" = 1 ] || prefixes+=("$prefix")
-    ;;
-  esac
-done < <(git for-each-ref --sort=refname --format='%(refname:lstrip=2)' refs/heads)
+while IFS= read -r prefix; do
+  prefixes+=("$prefix")
+done < <(git for-each-ref --format='%(refname:lstrip=2)' refs/heads | awk -F/ 'NF>1 && !seen[$1]++ {print $1}')
 
 # Colours — disabled when output isn't a terminal or NO_COLOR is set.
+reset='' bold='' green='' red='' yellow='' blue='' bright_blue='' magenta='' cyan=''
+git_color=never
 if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
   reset=$'\e[0m'
   bold=$'\e[1m'
-  dim=$'\e[2m'
   green=$'\e[32m'
   red=$'\e[31m'
   yellow=$'\e[33m'
@@ -35,71 +45,50 @@ if [ -t 1 ] && [ -z "${NO_COLOR:-}" ]; then
   bright_blue=$'\e[94m'
   magenta=$'\e[35m'
   cyan=$'\e[36m'
-else
-  reset=''
-  bold=''
-  dim=''
-  green=''
-  red=''
-  yellow=''
-  blue=''
-  bright_blue=''
-  magenta=''
-  cyan=''
+  git_color=always
 fi
 
 group_colors=("$magenta" "$cyan" "$green" "$yellow" "$red" "$bright_blue")
 
-sep=$'\x1f'
-fmt="%(HEAD)${sep}%(refname:short)${sep}%(objectname:short)${sep}%(committerdate:relative)${sep}%(authorname)"
+# row_format <name suffix> — the suffix is padded with the name, so it can't
+# contain colours (align counts escape codes towards the width).
+row_format() {
+  # Full ref name (incl. prefix) so it can be copied straight to `git checkout`.
+  printf '%s' "%(if)%(HEAD)%(then)%(color:green)* %(color:bold green)%(else)  %(end)%(align:38)%(refname:short)$1%(end)%(color:reset)" \
+    '  %(color:yellow)%(objectname:short)%(color:reset)' \
+    '  %(color:dim)%(committerdate:relative)%(color:reset)' \
+    '  %(color:blue)%(authorname)%(color:reset)'
+}
+fmt=$(row_format '')
+default_fmt=$(row_format ' ◆')
 
 group_printed=0
 
-# print_group <label> <colour> <for-each-ref args...>
+# list_refs <format> <for-each-ref args...>
+list_refs() {
+  local format=$1
+  shift
+  git for-each-ref --color="$git_color" --sort=-committerdate --format="$format" "$@"
+}
+
+# print_group <label> <colour> <ref pattern> [<branch to list first>]
 print_group() {
-  local label="$1" color="$2"
-  shift 2
-  local out
-  out="$(git for-each-ref --sort=-committerdate --format="$fmt" "$@")"
-  [ -z "$out" ] && return
+  local label=$1 color=$2 out
+  out=$(
+    if [ -n "${4:-}" ]; then list_refs "$default_fmt" "refs/heads/$4"; fi
+    list_refs "$fmt" ${exclude_default[@]+"${exclude_default[@]}"} "$3"
+  )
+  [ -n "$out" ] || return 0
 
   [ "$group_printed" = 1 ] && printf '\n'
   group_printed=1
-  printf '%s%s%s%s\n' "$bold" "$color" "$label" "$reset"
-
-  local head name sha date author marker nc padded
-  while IFS="$sep" read -r head name sha date author; do
-    if [ "$head" = '*' ]; then
-      marker="${green}*${reset} "
-      nc="${bold}${green}"
-    else
-      marker='  '
-      nc=''
-    fi
-
-    # Full ref name (incl. prefix) so it can be copied straight to `git checkout`.
-    padded="$(printf '%-38s' "$name")"
-    printf '%s%s%s%s  %s%s%s  %s%s%s  %s%s%s\n' \
-      "$marker" "$nc" "$padded" "$reset" \
-      "$yellow" "$sha" "$reset" \
-      "$dim" "$date" "$reset" \
-      "$blue" "$author" "$reset"
-  done <<EOF
-$out
-EOF
+  printf '%s%s%s%s\n%s\n' "$bold" "$color" "$label" "$reset" "$out"
 }
 
-# Main list: every local branch without a namespace.
-exclude_args=()
-for p in "${prefixes[@]+"${prefixes[@]}"}"; do
-  exclude_args+=(--exclude="refs/heads/$p")
-done
-print_group "Branches" "$blue" "${exclude_args[@]+"${exclude_args[@]}"}" refs/heads
+# Main list: every local branch without a namespace (`*` doesn't match `/`).
+print_group "Branches" "$blue" 'refs/heads/*' "$default_branch"
 
 # One group per discovered prefix, cycling through header colours.
-group_color_index=0
-for p in "${prefixes[@]+"${prefixes[@]}"}"; do
-  color="${group_colors[$((group_color_index % ${#group_colors[@]}))]}"
-  print_group "$p/" "$color" "refs/heads/$p"
-  group_color_index=$((group_color_index + 1))
+for i in ${prefixes[@]+"${!prefixes[@]}"}; do
+  print_group "${prefixes[i]}/" "${group_colors[i % ${#group_colors[@]}]}" "refs/heads/${prefixes[i]}"
 done
