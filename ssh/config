@@ -1,3 +1,6 @@
+Host rpi.local
+  AddressFamily inet
+
 Host *
   AddKeysToAgent yes
   IdentitiesOnly yes
