@@ -80,6 +80,7 @@ alt - return:
   osascript -e 'if application "Rex Beta" is running then' \
             -e '  tell application "System Events"' \
             -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Rex Beta"' \
+            -e '    tell application "Rex Beta" to activate' \
             -e '  end tell' \
             -e 'else' \
             -e '  tell application "Rex Beta" to activate' \
