@@ -67,15 +67,6 @@ lalt - 0: stags restore
 # Applications
 ################################################################################
 
-# alt - return:
-#   osascript -e 'if application "Ghostty" is running then' \
-#             -e '  tell application "System Events"' \
-#             -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"' \
-#             -e '  end tell' \
-#             -e 'else' \
-#             -e '  tell application "Ghostty" to activate' \
-#             -e 'end if' > /dev/null
-
 alt - return:
   osascript -e 'if application "Rex Beta" is running then' \
             -e '  tell application "System Events"' \
@@ -87,14 +78,14 @@ alt - return:
             -e 'end if' > /dev/null
 
 alt + shift - return:
-  osascript -e 'tell application "Google Chrome" to make new window' \
-            -e 'tell application "Google Chrome" to activate' &> /dev/null
+  osascript -e 'tell application "Helium" to make new window' \
+            -e 'tell application "Helium" to activate' &> /dev/null
 
 ralt - 1:
   open -a 1Password
 
 ralt - b:
-  open -a "Google Chrome"
+  open -a Helium
 
 ralt - c:
   open -a Calendar
@@ -110,9 +101,6 @@ ralt - f:
             -e '  click menu item "New Finder Window" of menu "File" of menu bar 1 of process "Finder"' \
             -e 'end tell' > /dev/null
 
-ralt - g:
-  open -a Ghostty
-
 ralt - h:
   open -a Home
 
@@ -124,6 +112,9 @@ ralt - n:
 
 ralt - p:
   open -a Photos
+
+ralt - r:
+  open -a "Rex Beta"
 
 ralt - t:
   open -a Telegram
