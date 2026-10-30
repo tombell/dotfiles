@@ -67,13 +67,22 @@ lalt - 0: stags restore
 # Applications
 ################################################################################
 
+# alt - return:
+#   osascript -e 'if application "Ghostty" is running then' \
+#             -e '  tell application "System Events"' \
+#             -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"' \
+#             -e '  end tell' \
+#             -e 'else' \
+#             -e '  tell application "Ghostty" to activate' \
+#             -e 'end if' > /dev/null
+
 alt - return:
-  osascript -e 'if application "Ghostty" is running then' \
+  osascript -e 'if application "Rex Beta" is running then' \
             -e '  tell application "System Events"' \
-            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Ghostty"' \
+            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Rex Beta"' \
             -e '  end tell' \
             -e 'else' \
-            -e '  tell application "Ghostty" to activate' \
+            -e '  tell application "Rex Beta" to activate' \
             -e 'end if' > /dev/null
 
 alt + shift - return:
