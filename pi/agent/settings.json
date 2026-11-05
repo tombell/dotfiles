@@ -1,9 +1,0 @@
-{
-  "lastChangelogVersion": "1.5.0",
-  "defaultModel": "gpt-6.1-sol",
-  "defaultProvider": "openai-codex",
-  "defaultThinkingLevel": "high",
-  "editorPaddingX": 1,
-  "theme": "tokyo-night",
-  "packages": ["npm:@tombell/pi-exit", "npm:@tombell/pi-input", "npm:@tombell/pi-status"]
-}
