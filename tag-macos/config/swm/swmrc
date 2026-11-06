@@ -8,3 +8,18 @@ swm config animation-easing ease-out-circ
 
 swm rule add label=finder bundle-id=com.apple.finder manage=off
 swm rule add label=settings bundle-id=com.apple.systempreferences manage=off
+
+# Space 1
+swm rule add label=mail bundle-id=com.apple.mail manage=off space=1 grid=12:10:1:1:10:8
+
+# Space 2
+swm rule add label=discord bundle-id=com.hnc.Discord manage=off space=2 grid=12:10:1:1:10:8
+swm rule add label=messages bundle-id=com.apple.MobileSMS manage=off space=2 grid=12:10:1:1:10:8
+swm rule add label=telegram bundle-id=ru.keepcoder.Telegram manage=off space=2 grid=12:10:1:1:10:8
+
+# Space 4
+swm rule add label=helium bundle-id=net.imput.helium manage=off space=4 grid=12:10:0:0:12:10
+swm rule add label=chrome bundle-id=com.google.Chrome manage=off space=4 grid=12:10:0:0:12:10
+
+# Space 5
+swm rule add label=t3code bundle-id=com.t3tools.t3code manage=off space=5 grid=12:10:0:0:12:10
