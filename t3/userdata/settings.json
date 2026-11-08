@@ -1,0 +1,64 @@
+{
+  "providerModelPreferences": {
+    "claudeAgent": {
+      "hiddenModels": [
+        "claude-haiku-4-5",
+        "claude-sonnet-4-6",
+        "claude-opus-4-5",
+        "claude-opus-4-6",
+        "claude-opus-4-7",
+        "claude-opus-4-8",
+        "claude-opus-5",
+        "claude-fable-5",
+        "claude-sonnet-5",
+        "claude-fable-5-1"
+      ],
+      "modelOrder": []
+    },
+    "codex": {
+      "hiddenModels": [
+        "gpt-5.6-luna",
+        "gpt-5.6-terra",
+        "gpt-5.6-sol",
+        "gpt-6-sol"
+      ],
+      "modelOrder": []
+    }
+  },
+  "storageCleanup": {
+    "worktreeOnMerge": true,
+    "worktreeOnDelete": true
+  },
+  "defaultModelSelection": {
+    "instanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "options": [
+      {
+        "id": "reasoningEffort",
+        "value": "high"
+      },
+      {
+        "id": "serviceTier",
+        "value": "default"
+      }
+    ]
+  },
+  "fallbackModelSelection": {
+    "instanceId": "codex",
+    "model": "gpt-6.1-sol"
+  },
+  "projectSettingsFolded": true,
+  "sidebarAutoSettleAfterDays": null,
+  "idleCompaction": "onReturn",
+  "linkedEnvironmentsEnabled": true,
+  "addProjectBaseDirectory": "~/Code",
+  "removeAgentCreditsOnMerge": true,
+  "pullRequestMergeMethod": "rebase",
+  "providerInstances": {
+    "pi": {
+      "driver": "pi",
+      "displayName": "Pi",
+      "enabled": false
+    }
+  }
+}
