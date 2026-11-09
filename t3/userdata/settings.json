@@ -16,6 +16,12 @@
       "modelOrder": []
     },
     "codex": {
+      "hiddenModels": [
+        "gpt-5.6-sol",
+        "gpt-6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna"
+      ],
       "modelOrder": []
     }
   },
