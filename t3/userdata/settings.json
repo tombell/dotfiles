@@ -34,15 +34,10 @@
     "instanceId": "claudeAgent",
     "model": "claude-opus-5-5"
   },
-  "fallbackModelSelection": {
-    "instanceId": "codex",
-    "model": "gpt-6.1-sol"
-  },
   "projectSettingsFolded": true,
   "sidebarAutoSettleAfterDays": null,
   "idleCompaction": "onReturn",
   "linkedEnvironmentsEnabled": true,
-  "addProjectBaseDirectory": "~/Code",
-  "removeAgentCreditsOnMerge": true,
-  "pullRequestMergeMethod": "rebase"
+  "promptSuggestionsEnabled": true,
+  "addProjectBaseDirectory": "~/Code"
 }
