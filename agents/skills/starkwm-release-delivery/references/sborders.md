@@ -4,13 +4,11 @@ Usual checkout: `/Users/tombell/Code/starkwm/sborders`. Expected GitHub reposito
 
 ## Version and validation
 
-The inspected Makefile generates `Sources/Sborders/Version.swift` from `Sources/Sborders/Version.swift.tmpl` and rejects an empty `NEW_VERSION`. The generator embeds that value literally in `Version.current`, a string used by ArgumentParser's version option.
+`Sources/Sborders/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the chosen spelling. The diff should be that one line. `Version.current` is a plain string used by ArgumentParser's version option.
 
-For the current Makefile, run from the checkout using fish syntax:
+After the edit, run from the checkout using fish syntax:
 
 ```fish
-set release_tag X.Y.Z
-make bump_version NEW_VERSION=$release_tag
 make build
 make lint
 make test
@@ -18,7 +16,7 @@ make test
 git diff --check
 ```
 
-Replace `X.Y.Z` with the selected version, including a prefix only if that is the chosen spelling. The current source uses a bare semantic version, and the live repository had no tags or GitHub Releases when checked. Do not assume an established `v` prefix or previous release. Recheck before selecting a first-release version and channel. Publishing the current untagged version does not require incrementing it unless the user requested a new version.
+Use the selected version, including a prefix only if that is the chosen spelling. The current source uses a bare semantic version, and the live repository had no tags or GitHub Releases when checked. Do not assume an established `v` prefix or previous release. Recheck before selecting a first-release version and channel. Publishing the current untagged version does not require incrementing it unless the user requested a new version.
 
 The current lint target is strict. Tests use `swift test --parallel --disable-xctest`, and the Makefile does not forward `TEST_ARGS`. For an access-related test rerun, use `swift test --parallel --disable-xctest --disable-sandbox` with required agent permissions handled separately. Use writable temporary Swift/Clang caches when needed; do not alter code or dependencies to bypass access failures.
 

@@ -4,13 +4,11 @@ Usual checkout: `/Users/tombell/Code/starkwm/skbd`. Expected GitHub repository: 
 
 ## Version and validation
 
-The inspected Makefile generates `Sources/Skbd/Version.swift` from `Sources/Skbd/Version.swift.tmpl`. The source and published tags use a `v` prefix. The custom version path prints `skbd <embedded version>`, which differs from the `swm version ...` and `sbar version ...` wording.
+`Sources/Skbd/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the chosen spelling. The diff should be that one line. The source and published tags use a `v` prefix. The custom version path prints `skbd <embedded version>`, which differs from the `swm version ...` and `sbar version ...` wording.
 
-For the current Makefile, run from the checkout using fish syntax:
+After the edit, run from the checkout using fish syntax:
 
 ```fish
-set release_tag vX.Y.Z
-make bump_version NEW_VERSION=$release_tag
 make build
 make lint
 make test
@@ -18,7 +16,7 @@ make test
 git diff --check
 ```
 
-Set `release_tag` to the selected real tag and inspect the Makefile again before execution. Tests use `swift test --parallel --disable-xctest`, and the target does not forward `TEST_ARGS`. For an access-related rerun, use `swift test --parallel --disable-xctest --disable-sandbox` with required agent permissions handled separately. Use writable temporary Swift/Clang caches when needed.
+Inspect the Makefile again before execution. Tests use `swift test --parallel --disable-xctest`, and the target does not forward `TEST_ARGS`. For an access-related rerun, use `swift test --parallel --disable-xctest --disable-sandbox` with required agent permissions handled separately. Use writable temporary Swift/Clang caches when needed.
 
 `make release` depends on `clean`, then builds an optimized executable with `--disable-sandbox`. It can remove the debug binary and prior test build products. After that target, check `.build/release/skbd --version`; do not use a stale debug path or assume `--skip-build` tests can still run. Read `Package.swift`, `docs/development.md`, and the referenced CI workflow for current requirements and conventions.
 

@@ -4,15 +4,13 @@ Usual checkout: `/Users/tombell/Code/starkwm/stags`. Expected GitHub repository:
 
 ## Version and validation
 
-The current version-support change generates `Sources/Stags/Version.swift` from `Sources/Stags/Version.swift.tmpl` with `make bump_version`. It rejects an empty `NEW_VERSION`. The template embeds the exact selected value, including the `v` prefix. The custom CLI prints `stags version <embedded version>` for `--version` and exits before resolving a socket path, constructing a daemon, or connecting to a socket.
+`Sources/Stags/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the tag's `v` prefix. The diff should be that one line. The custom CLI prints `stags version <embedded version>` for `--version` and exits before resolving a socket path, constructing a daemon, or connecting to a socket.
 
 Recheck the actual checkout before execution. An older revision may predate this support, and local support changes must be included in the intended release commit/range before publication.
 
 Run the current commands from the checkout using fish syntax:
 
 ```fish
-set release_tag vX.Y.Z
-make bump_version NEW_VERSION=$release_tag
 make build
 make lint
 make test
@@ -20,7 +18,7 @@ make test
 git diff --check
 ```
 
-Set `release_tag` from the current source, live tags, and requested version. Version support does not itself create a tag or a release.
+Select the version from the current source, live tags, and requested version. Version support does not itself create a tag or a release.
 
 The current lint target is strict, and `make test` invokes `swift test` without the parallel/XCTest flags used by other StarkWM tools. Preserve that current setup. An access-related rerun can use `swift test --disable-sandbox` with required agent permissions handled separately. Use writable temporary Swift/Clang caches if needed.
 
