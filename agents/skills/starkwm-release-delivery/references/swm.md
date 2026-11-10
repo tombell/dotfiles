@@ -4,13 +4,11 @@ Usual checkout: `/Users/tombell/Code/starkwm/swm`. Expected GitHub repository: `
 
 ## Version and validation
 
-The inspected Makefile generates `Sources/Swm/Version.swift` from `Sources/Swm/Version.swift.tmpl`. Preserve the tag's `v` prefix in the embedded value.
+`Sources/Swm/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the string in `static let current = Self(value: "vX.Y.Z")`, preserving the tag's `v` prefix. The diff should be that one line.
 
-For the current Makefile, run from the checkout using fish syntax:
+After the edit, run from the checkout using fish syntax:
 
 ```fish
-set release_tag vX.Y.Z
-make bump_version NEW_VERSION=$release_tag
 make build
 make lint
 make test
@@ -18,7 +16,7 @@ make test
 git diff --check
 ```
 
-Set `release_tag` to the selected real tag. Inspect the Makefile again before execution. `make release` builds an optimized executable in `.build/release`; use it when the requested validation or artifact needs that build. If SwiftPM sandboxing prevents the build, the equivalent current debug build is `swift build --disable-sandbox`.
+Inspect the Makefile again before execution. `make release` builds an optimized executable in `.build/release`; use it when the requested validation or artifact needs that build. If SwiftPM sandboxing prevents the build, the equivalent current debug build is `swift build --disable-sandbox`.
 
 The current test target uses Swift Testing with `--parallel --disable-xctest` and forwards `TEST_ARGS`. An access-related rerun can use `make test TEST_ARGS=--disable-sandbox`, with required agent permissions handled separately. Focused tests can help diagnose a failure but do not replace full release validation. Read `docs/testing.md` for the current test setup.
 
