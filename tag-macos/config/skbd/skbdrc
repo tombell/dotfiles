@@ -84,6 +84,9 @@ alt + shift - return:
 ralt - 1:
   open -a 1Password
 
+ralt - 3:
+  open -a T3\ Code\ \(Nightly\)
+
 ralt - b:
   open -a Helium
 
