@@ -39,5 +39,6 @@
   "idleCompaction": "onReturn",
   "linkedEnvironmentsEnabled": true,
   "promptSuggestionsEnabled": true,
-  "addProjectBaseDirectory": "~/Code"
+  "addProjectBaseDirectory": "~/Code",
+  "pullRequestMergeMethod": "rebase"
 }
