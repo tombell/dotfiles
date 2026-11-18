@@ -122,6 +122,9 @@ ralt - r:
 ralt - t:
   open -a Telegram
 
+ralt - v:
+  open -a VMPal
+
 ralt - x:
   open -a Xcode
 
