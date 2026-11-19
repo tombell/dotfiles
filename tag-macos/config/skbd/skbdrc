@@ -68,14 +68,12 @@ lalt - 0: stags restore
 ################################################################################
 
 alt - return:
-  osascript -e 'if application "Rex Beta" is running then' \
+  osascript -e 'if application id "com.superlogical.rex" is running then' \
             -e '  tell application "System Events"' \
-            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Rex Beta"' \
-            -e '    tell application "Rex Beta" to activate' \
+            -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Rex"' \
             -e '  end tell' \
-            -e 'else' \
-            -e '  tell application "Rex Beta" to activate' \
-            -e 'end if' > /dev/null
+            -e 'end if' \
+            -e 'tell application id "com.superlogical.rex" to activate' > /dev/null
 
 alt + shift - return:
   osascript -e 'tell application "Helium" to make new window' \
@@ -117,7 +115,7 @@ ralt - p:
   open -a Photos
 
 ralt - r:
-  open -a "Rex Beta"
+  open -b com.superlogical.rex
 
 ralt - t:
   open -a Telegram
