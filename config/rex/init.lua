@@ -52,3 +52,6 @@ seq("t", "pane.go_to")
 seq("b", "client.sidebar.toggle")
 seq("s", "client.settings")
 seq("shift+r", "client.config.reload")
+
+-- Custom UI actions (project switcher, PR checkout, worktrees, commit, swm)
+require("custom_ui").bind_defaults()
