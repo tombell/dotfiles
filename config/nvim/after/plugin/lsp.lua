@@ -6,21 +6,6 @@ vim.lsp.config("gopls", {
   },
 })
 
--- vim.lsp.config("jsonls", {
---   filetypes = { "json" },
--- })
-
--- Separate clients keep JSON validation strict while allowing JSONC trailing commas.
--- vim.lsp.config(
---   "jsonls_jsonc",
---   vim.tbl_deep_extend("force", vim.lsp.config.jsonls, {
---     filetypes = { "jsonc" },
---     settings = {
---       json = { validate = { trailingCommas = "ignore" } },
---     },
---   })
--- )
-
 vim.lsp.config("vtsls", {
   settings = {
     typescript = { preferences = { importModuleSpecifier = "non-relative" } },

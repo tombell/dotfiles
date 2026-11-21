@@ -1,6 +1,4 @@
 .DS_Store
 
-**/.pi/
-
 **/.claude/settings.local.json
 **/.claude/worktrees

@@ -1,7 +1,9 @@
 font-family = Iosevka Custom
-font-size = 12
+font-size = 11
+font-style = bold
+font-style-italic = bold italic
 font-feature = -dlig
-adjust-underline-position = 6
+adjust-underline-position = 3
 
 shell-integration-features = no-cursor
 cursor-style-blink = false
@@ -11,10 +13,11 @@ split-divider-color = #474951
 
 resize-overlay = never
 
+window-padding-x = 10
+window-padding-y = 10
 window-padding-balance = true
 
+window-decoration = server
 window-inherit-working-directory = false
-window-save-state = never
 
-config-file = ?~/.config/ghostty/linux
-config-file = ?~/.config/ghostty/macos
+gtk-single-instance = true

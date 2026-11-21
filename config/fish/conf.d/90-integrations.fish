@@ -11,7 +11,3 @@ end
 if type -q zoxide
     zoxide init fish | source
 end
-
-if type -q tendr
-    tendr completion fish | source
-end
