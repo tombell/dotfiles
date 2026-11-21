@@ -1,10 +1,10 @@
 # swm
 
-Usual checkout: `/Users/tombell/Code/starkwm/swm`. Expected GitHub repository: `starkwm/swm`. Verify both against the actual checkout and remote.
+Use the requested checkout for `starkwm/swm`. Verify the actual checkout and remote before using the commands below.
 
 ## Version and validation
 
-`Sources/Swm/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the string in `static let current = Self(value: "vX.Y.Z")`, preserving the tag's `v` prefix. The diff should be that one line.
+`Sources/Swm/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the tag's `v` prefix. The diff should be that one line.
 
 After the edit, run from the checkout using fish syntax:
 
@@ -27,3 +27,7 @@ Read `Package.swift`, `docs/getting-started.md`, and CI for current platform and
 ## Release notes and desktop checks
 
 Use `docs/index.md` and the relevant CLI/configuration docs at the final tag for notes. Recent releases use the tag as the title and are prereleases; verify that convention live. `--version` exits without starting the window manager. Do not start the daemon just to validate a version bump, and keep any requested manual desktop testing separate from build/test evidence.
+
+## Release automation
+
+`.github/workflows/release.yml` builds the bottle, publishes the prerelease, and opens the tap PR when a `vX.Y.Z` tag is pushed. Follow [automated release](automated-release.md) instead of publishing by hand.

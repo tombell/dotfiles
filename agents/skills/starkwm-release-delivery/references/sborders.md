@@ -1,10 +1,10 @@
 # sborders
 
-Usual checkout: `/Users/tombell/Code/starkwm/sborders`. Expected GitHub repository: `starkwm/sborders`. Verify both against the actual checkout and remote.
+Use the requested checkout for `starkwm/sborders`. Verify the actual checkout and remote before using the commands below.
 
 ## Version and validation
 
-`Sources/Sborders/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the chosen spelling. The diff should be that one line. `Version.current` is a plain string used by ArgumentParser's version option.
+`Sources/Sborders/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the tag's `v` prefix. The diff should be that one line. `Version.current` is a plain string used by ArgumentParser's version option.
 
 After the edit, run from the checkout using fish syntax:
 
@@ -16,7 +16,7 @@ make test
 git diff --check
 ```
 
-Use the selected version, including a prefix only if that is the chosen spelling. The current source uses a bare semantic version, and the live repository had no tags or GitHub Releases when checked. Do not assume an established `v` prefix or previous release. Recheck before selecting a first-release version and channel. Publishing the current untagged version does not require incrementing it unless the user requested a new version.
+Releases use a `v` prefix, matching the source and the existing `v0.0.1` tag. Confirm the current source, tags, and releases before choosing the spelling, previous release, or channel. Publishing the current untagged version does not require incrementing it unless the user requested a new version.
 
 The current lint target is strict. Tests use `swift test --parallel --disable-xctest`, and the Makefile does not forward `TEST_ARGS`. For an access-related test rerun, use `swift test --parallel --disable-xctest --disable-sandbox` with required agent permissions handled separately. Use writable temporary Swift/Clang caches when needed; do not alter code or dependencies to bypass access failures.
 

@@ -1,6 +1,7 @@
 ---
 name: starkwm-release-delivery
-description: "Deliver swm, sbar, sborders, stags, or skbd releases when asked to bump, commit, tag, push, or publish them. Attach their Homebrew bottles or synchronize their StarkWM website documentation only when asked. Use github-release-notes alone for notes-only drafts; exclude ordinary feature work."
+license: BSD-3-Clause
+description: "Deliver swm, sbar, sborders, stags, or skbd releases when asked to bump, commit, tag, push, or publish them. Follow tag-triggered release automation where a project has it. Attach Homebrew bottles by hand or synchronize StarkWM website documentation only when asked. Use github-release-notes alone for notes-only drafts; exclude ordinary feature work."
 ---
 
 # StarkWM release delivery
@@ -9,15 +10,15 @@ Complete the release actions the user requested and verify the resulting local, 
 
 ## Establish the scope
 
-- A request to release or publish a new version covers the version bump, validation, focused commit, tag, push, notes, and GitHub Release. A request limited to bumping, tagging, or pushing stops at that boundary. Notes alone do not authorize publication.
+- A request to release or publish a new version covers the version bump, validation, focused commit, tag, push, notes, and GitHub Release. For a project with tag-triggered release automation, it also covers watching that workflow and verifying the release, bottle, and tap PR it produces. A request limited to bumping, tagging, or pushing stops at that boundary. Notes alone do not authorize publication.
 - For publication of an existing tag, skip the bump and branch push. For a bottle attachment or website update alone, do only that work.
 - Preserve the requested version, branch or bookmark, stable/prerelease choice, and any restriction on running the app. If the user asks for the next version without naming one, derive the next patch from the checked version and remote tags when the sequence is clear. Ask only when the intended version or release channel remains ambiguous.
 - Follow the project's current release channel when no channel is specified. For a first publication without project history, use the shared StarkWM prerelease convention unless the user selected another channel. Do not silently turn a prerelease series into a stable release.
-- Read the reference for the chosen project: [swm](references/swm.md), [sbar](references/sbar.md), [sborders](references/sborders.md), [stags](references/stags.md), or [skbd](references/skbd.md). Read [bottles](references/bottles.md) and [website documentation](references/website.md) only when requested. A release does not automatically include either follow-up or Homebrew formula edits.
+- Read the reference for the chosen project: [swm](references/swm.md), [sbar](references/sbar.md), [sborders](references/sborders.md), [stags](references/stags.md), or [skbd](references/skbd.md). If the checkout has a `.github/workflows/release.yml` that runs on version tag pushes, read [automated release](references/automated-release.md); it replaces the manual publish steps below. Read [bottles](references/bottles.md) and [website documentation](references/website.md) only when requested. Without automation, a release does not include a bottle or Homebrew formula edits.
 
 ## Inspect before changing files
 
-1. Locate the requested checkout, normally `/Users/tombell/Code/starkwm/<project>`. Read applicable `AGENTS.md` files, the Makefile, any version source and template, Package.swift, relevant docs, and CI workflow.
+1. Locate the requested checkout from the current workspace or the path supplied by the user. Read applicable `AGENTS.md` files, the Makefile, the version source, Package.swift, relevant docs, and CI workflow.
 2. Use `jj` whenever `.jj` exists. Inspect status, recent history, bookmarks, tags, and remotes. Otherwise use Git. Confirm that the chosen remote and GitHub owner/repository describe the same project. Keep unrelated edits and unpublished work out of the release commit and push range.
 3. Check live remote refs and recent GitHub Releases. Fetch before preparing a new release so the base is current. Record the previous release tag, requested tag state, release channel, and target branch. An existing tag or release is a state to inspect, not permission to replace it.
 4. Continue from a completed stage only when its files, commit, tag, and published metadata agree with the request. Do not create duplicate bumps or releases. If the intended changes are mixed with unrelated work, isolate them in a suitable checkout without discarding the user's edits.
@@ -35,9 +36,11 @@ Complete the release actions the user requested and verify the resulting local, 
 2. Fetch again immediately before pushing. The release commit must descend from the current remote target branch. If the remote advanced, rebase only the unpublished release commit onto it, resolve any version conflict deliberately, inspect the new diff, and rerun validation for the resulting revision. Do not rewrite published history or unrelated commits.
 3. Set the intended local bookmark/branch and tag to the final release commit. A tag created locally during this run may be moved after a rebase only while it has never been published. Check the remote tag first. Never move an existing remote release tag automatically.
 4. Inspect the push range and use an explicit bookmark/branch and tag. With current Jujutsu, the common shape is `jj git push --remote origin --bookmark main --tag <tag>`. With Git, use an ordinary fast-forward branch push and explicit tag push. Do not push all refs or force an update.
-5. Verify the local branch/bookmark and tag, then query the remote directly. For a new release, remote branch and tag must resolve to the recorded commit. Peel annotated tags to their commit. Use the commands in [publication verification](references/publication.md). If the branch advanced again, inspect the new commit and report the race; do not rewind it to manufacture equality.
+5. Verify the local branch/bookmark and tag, then query the remote directly. For a new release, remote branch and tag must resolve to the recorded commit. Peel annotated tags to their commit. Use [publication verification](references/publication.md) and the read-only helper there. If the branch advanced again, inspect the new commit and report the race; do not rewind it to manufacture equality.
 
 ## Publish and verify the GitHub Release
+
+For a project with tag-triggered release automation, the workflow creates and publishes the release. Do not run `gh release create` or upload assets yourself. Follow [automated release](references/automated-release.md) for waiting on the run, applying the prepared notes, and verifying the bottle and tap PR. The steps below apply to projects without it, and their verification rules apply to both.
 
 1. Load and use the existing [github-release-notes skill](../github-release-notes/SKILL.md). Draft from the final tagged revision and the previous release, checking actual source and docs. Recompute the range after a rebase. Keep the final Markdown in a notes file outside the application checkout.
 2. Complete the requested local work and checks before any final approval required by the environment. The release request supplies scope authorization; ask again only for a real missing decision or permission requirement.
@@ -46,4 +49,4 @@ Complete the release actions the user requested and verify the resulting local, 
 
 ## Finish
 
-Report the version, full release commit, completed validation, remote-ref result, and GitHub Release URL when published. Include any requested bottle or website verification, remaining failure, or manual desktop check. Inspect final checkout status and identify retained unrelated edits. Never report publication, asset delivery, or deployment complete from local validation alone.
+Report the version, full release commit, completed validation, remote-ref result, and GitHub Release URL when published. For an automated release, also report the workflow run URL and conclusion, the verified bottle asset, and the tap PR URL and state, or why the tap job was skipped. Include any requested bottle or website verification, remaining failure, or manual desktop check. Inspect final checkout status and identify retained unrelated edits. Never report publication, asset delivery, or deployment complete from local validation alone.

@@ -2,7 +2,9 @@
 
 Use only when the user asks to attach an existing bottle. This does not include building a bottle, updating formulae, or releasing another project unless requested.
 
-1. Confirm the intended repository, release tag, and exact local archive. A common location is `/Users/tombell/Code/starkwm/homebrew-formulae`, but inspect the actual files. Read checkout instructions and status if working there.
+Projects with tag-triggered release automation attach their bottle in the release workflow; see [automated release](automated-release.md). For those projects, attach by hand only as an approved recovery after a failed run, using the bottle from that run's artifact.
+
+1. Confirm the intended repository, release tag, and exact local archive. Bottles commonly live in the `starkwm/homebrew-formulae` checkout; locate the requested archive rather than assuming a local path. Read checkout instructions and status if working there.
 2. Run `tar -tzf` on the archive. Check that its contents describe the requested package/version and expected architecture/platform. Record its filename, size in bytes, and SHA-256 digest before upload. Do not extract into the repository.
 3. Confirm that the matching GitHub Release exists and is published. Inspect existing assets. If the same filename already has matching size and digest, report it as already attached. If it differs, report the conflict rather than overwriting it.
 4. Upload the selected archive, using explicit repository and tag:

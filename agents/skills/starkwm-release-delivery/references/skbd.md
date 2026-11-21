@@ -1,10 +1,10 @@
 # skbd
 
-Usual checkout: `/Users/tombell/Code/starkwm/skbd`. Expected GitHub repository: `starkwm/skbd`. Verify both against the actual checkout and remote.
+Use the requested checkout for `starkwm/skbd`. Verify the actual checkout and remote before using the commands below.
 
 ## Version and validation
 
-`Sources/Skbd/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the chosen spelling. The diff should be that one line. The source and published tags use a `v` prefix. The custom version path prints `skbd <embedded version>`, which differs from the `swm version ...` and `sbar version ...` wording.
+`Sources/Skbd/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the tag's `v` prefix. The diff should be that one line. The custom version path prints `skbd <embedded version>`, which differs from the `swm version ...` and `sbar version ...` wording.
 
 After the edit, run from the checkout using fish syntax:
 
@@ -27,3 +27,7 @@ Recent GitHub Releases use the tag as the title and are prereleases. Verify that
 Use `docs/index.md`, CLI/configuration docs, and key-binding docs at the final tag. `--version` exits before acquiring the single-instance lock, loading configuration, or creating an event tap. Do not start the daemon or restart a Homebrew service just to validate a release.
 
 When separately requested, the website entrypoint is `content/skbd/_index.md`. The existing Homebrew formula is named `Formula/skbd@2.rb`; its name is not the application release version. Bottle attachment requests do not authorize formula edits, service changes, or updates to the separate `tree-sitter-skbdrc` repository.
+
+## Release automation
+
+`.github/workflows/release.yml` calls the shared `starkwm/workflows` release workflow with formula name `skbd@2`. It builds the bottle, publishes the prerelease, and opens the tap PR when a `vX.Y.Z` tag is pushed. Follow [automated release](automated-release.md) instead of publishing by hand.

@@ -52,14 +52,17 @@ gh release create $release_tag --repo $release_repo --title $release_tag --notes
 
 For an explicitly selected stable release, omit `--prerelease` and choose latest-release behavior from the request and checked repository convention. Do not pass generated notes as a shell string. A publish command that returns an uncertain result must be followed by a state query before any retry. An existing matching publication is already complete; edit an existing body only when updating it is within the request.
 
-## Verify publication directly
+## Read-only verifier
 
-Inspect the published release with:
+Run [scripts/verify_release.py](../scripts/verify_release.py) after publication, using its absolute path and the final commit ID. It calls only `git ls-remote` and `gh release view`; it never commits, fetches, pushes, edits, uploads, or publishes.
 
 ```fish
-gh release view $release_tag --repo $release_repo --json tagName,name,isDraft,isPrerelease,publishedAt,body,url
+python3 /absolute/path/to/starkwm-release-delivery/scripts/verify_release.py \
+  --checkout $release_checkout --remote origin --branch main \
+  --repo $release_repo --tag $release_tag --commit $release_revision \
+  --notes-file $release_notes --prerelease
 ```
 
-Require the intended tag and title, `isDraft: false`, the selected release channel, and a publication timestamp and URL. Compare the body with the prepared notes, allowing CRLF normalization and one final newline. Verify the remote tag commit with `git ls-remote` as described above. For a new release, also require the remote branch to match the recorded commit. For an existing older tag, the branch may have advanced.
+For an automated release, add `--asset <bottle filename>` to require that asset to be uploaded with a `sha256:` digest. `--asset` can be repeated. Use `--stable` for stable releases. Omit `--branch` when verifying publication of an existing tag whose branch has advanced. The helper compares the resolved remote tag commit, optional branch commit, title, tag, published/non-draft state, release channel, prepared notes, and any requested assets. It allows CRLF normalization and one final newline in the notes body. Other differences fail verification. It uses Python's standard library and installed `git` and `gh`.
 
-After an uncertain publication response, inspect the release and remote refs before retrying. Do not trust `targetCommitish`, which may be a branch name, to establish tag equality. Resolve or report any mismatch before claiming publication is complete.
+Before publication, check refs with `git ls-remote` alone. `gh release view ... --json tagName,name,isDraft,isPrerelease,publishedAt,body,url` can inspect an uncertain outcome. Do not trust `targetCommitish`, which may be a branch name, to establish tag equality. Failures from the helper require inspecting the reported state; rerunning it cannot repair anything.

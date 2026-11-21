@@ -1,6 +1,6 @@
 # sbar
 
-Usual checkout: `/Users/tombell/Code/starkwm/sbar`. Expected GitHub repository: `starkwm/sbar`. Verify both against the actual checkout and remote.
+Use the requested checkout for `starkwm/sbar`. Verify the actual checkout and remote before using the commands below.
 
 ## Version and validation
 

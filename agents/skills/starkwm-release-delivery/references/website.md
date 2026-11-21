@@ -2,7 +2,7 @@
 
 Use only when the user requests website documentation or publication. A source release does not authorize a website change. Follow the requested delivery boundary, whether it is a local edit, commit, push, or deployed-page verification.
 
-Usual checkout: `/Users/tombell/Code/starkwm/website`. Verify the current instructions, checkout state, page structure, pinned tools, remote, and deployment workflow. Locate the requested project's actual pages before editing.
+Use the requested checkout for `starkwm/website`. Verify the current instructions, checkout state, page structure, pinned tools, remote, and deployment workflow. Locate the requested project's actual pages before editing.
 
 | Project | Current documentation entrypoint |
 | --- | --- |

@@ -1,12 +1,12 @@
 # stags
 
-Usual checkout: `/Users/tombell/Code/starkwm/stags`. Expected GitHub repository: `starkwm/stags`. Verify both against the actual checkout and remote.
+Use the requested checkout for `starkwm/stags`. Verify the actual checkout and remote before using the commands below.
 
 ## Version and validation
 
 `Sources/Stags/Version.swift` is checked in and edited directly; there is no template or `bump_version` target. Change only the version string in `Version.current`, preserving the tag's `v` prefix. The diff should be that one line. The custom CLI prints `stags version <embedded version>` for `--version` and exits before resolving a socket path, constructing a daemon, or connecting to a socket.
 
-Recheck the actual checkout before execution. An older revision may predate this support, and local support changes must be included in the intended release commit/range before publication.
+Recheck the actual checkout before execution.
 
 Run the current commands from the checkout using fish syntax:
 
@@ -26,8 +26,8 @@ The Makefile currently has no `release` target. If an optimized build is request
 
 Read `Package.swift`, `docs/development.md`, and the referenced CI workflow for current requirements and test conventions. Automated tests do not prove live Accessibility moves, Space transitions, or restoration of parked windows. Do not start the daemon or move the user's windows just to validate a release.
 
-## First publication
+## Release history
 
-The live repository had no tags or GitHub Releases when inspected. Recheck before selecting the previous release or channel. Publishing the current untagged version does not require incrementing it unless the user asks for a new version. Use the shared StarkWM prerelease convention when no channel is specified.
+Read live tags and GitHub Releases before selecting the previous release or channel. Publishing an already committed, untagged version does not require incrementing it unless the user asks for a new version. Follow the project's current channel, or use the shared StarkWM prerelease convention for a first publication when no channel is specified.
 
 Use `docs/index.md`, CLI docs, tag/view docs, and recovery docs at the final tag for notes. First-release notes should describe the project and the tagged capabilities, without a fabricated previous-release comparison. For a request to publish an existing tag, validate that revision rather than bumping or moving refs again.
