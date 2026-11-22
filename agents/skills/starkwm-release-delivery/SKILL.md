@@ -1,7 +1,7 @@
 ---
 name: starkwm-release-delivery
 license: BSD-3-Clause
-description: "Deliver swm, sbar, sborders, stags, or skbd releases when asked to bump, commit, tag, push, or publish them. Push the version tag and follow the tag-triggered release workflow. Attach Homebrew bottles by hand as a recovery or synchronize StarkWM website documentation only when asked. Use github-release-notes alone for notes-only drafts; exclude ordinary feature work."
+description: "Deliver swm, sbar, sborders, stags, or skbd releases when asked to bump, commit, tag, push, or publish them. Push the version tag and follow the tag-triggered release workflow. Attach Homebrew bottles by hand as a recovery or synchronize StarkWM website documentation only when asked. Also draft or update their GitHub Release notes, including notes-only requests that stop before any release action; exclude ordinary feature work."
 ---
 
 # StarkWM release delivery
@@ -10,7 +10,7 @@ Do the release actions the user asked for, then verify local, remote, and GitHub
 
 ## Scope
 
-- Releasing a new version covers the version bump, validation, commit, tag, push, watching the release workflow, applying notes, and verifying the release, bottle, and tap PR. A request to only bump, tag, or push stops there. Drafting notes alone does not authorize publication. Within the requested scope, ask only about a decision that is genuinely missing.
+- Releasing a new version covers the version bump, validation, commit, tag, push, watching the release workflow, applying notes, and verifying the release, bottle, and tap PR. A request to only bump, tag, or push stops there. Drafting notes alone does not authorize any release action; follow [release notes](references/release-notes.md) and stop. Within the requested scope, ask only about a decision that is genuinely missing.
 - Publishing an existing tag skips the bump and branch push, and validates that revision. An untagged version already committed can be published without incrementing it. A bottle recovery or website update alone is only that work.
 - Keep the requested version, branch, channel, and any restriction on running the app. For "the next version", derive the next patch from the source and remote tags; ask only if the version or channel is still ambiguous. Follow the project's current channel and never silently turn a prerelease series stable.
 - Read [projects](references/projects.md) and [release workflow](references/automated-release.md). Read [bottles](references/bottles.md) and [website](references/website.md) only when asked.
@@ -41,7 +41,7 @@ Commands are in [publication](references/publication.md).
 
 ## Publish
 
-The release workflow creates the release, so do not run `gh release create` or upload assets. Follow [release workflow](references/automated-release.md). Draft notes with [github-release-notes](../github-release-notes/SKILL.md) from the final tag and the previous release, keeping the file outside the checkout.
+The release workflow creates the release, so do not run `gh release create` or upload assets. Follow [release workflow](references/automated-release.md). Draft notes with [release notes](references/release-notes.md) from the final tag and the previous release, keeping the file outside the checkout.
 
 After any uncertain push, edit, or upload, inspect remote state before retrying. Never delete or replace a published release, tag, or asset. If the state cannot be reconciled within the request, stop and report it.
 
