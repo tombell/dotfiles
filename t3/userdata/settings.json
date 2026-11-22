@@ -30,7 +30,10 @@
       "modelOrder": []
     },
     "antigravity": {
-      "hiddenModels": ["gemini-3.8-flash", "gpt-oss-120b-medium"],
+      "hiddenModels": [
+        "gemini-3.8-flash",
+        "gpt-oss-120b-medium"
+      ],
       "modelOrder": []
     }
   },
