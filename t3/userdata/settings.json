@@ -28,6 +28,10 @@
         "gpt-6-luna"
       ],
       "modelOrder": []
+    },
+    "antigravity": {
+      "hiddenModels": ["gemini-3.8-flash", "gpt-oss-120b-medium"],
+      "modelOrder": []
     }
   },
   "storageCleanup": {
@@ -63,5 +67,12 @@
   "linkedEnvironmentsEnabled": true,
   "promptSuggestionsEnabled": true,
   "addProjectBaseDirectory": "~/Code",
-  "pullRequestMergeMethod": "rebase"
+  "pullRequestMergeMethod": "rebase",
+  "providerInstances": {
+    "antigravity": {
+      "driver": "antigravity",
+      "displayName": "Antigravity",
+      "enabled": true
+    }
+  }
 }
