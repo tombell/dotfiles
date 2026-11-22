@@ -1,17 +1,9 @@
-# Requested Homebrew bottle attachments
+# Manual bottle recovery
 
-Use only when the user asks to attach an existing bottle. This does not include building a bottle, updating formulae, or releasing another project unless requested.
+Only after a failed release run, with the user's approval. This does not cover building bottles or editing formulae.
 
-Projects with tag-triggered release automation attach their bottle in the release workflow; see [automated release](automated-release.md). For those projects, attach by hand only as an approved recovery after a failed run, using the bottle from that run's artifact.
-
-1. Confirm the intended repository, release tag, and exact local archive. Bottles commonly live in the `starkwm/homebrew-formulae` checkout; locate the requested archive rather than assuming a local path. Read checkout instructions and status if working there.
-2. Run `tar -tzf` on the archive. Check that its contents describe the requested package/version and expected architecture/platform. Record its filename, size in bytes, and SHA-256 digest before upload. Do not extract into the repository.
-3. Confirm that the matching GitHub Release exists and is published. Inspect existing assets. If the same filename already has matching size and digest, report it as already attached. If it differs, report the conflict rather than overwriting it.
-4. Upload the selected archive, using explicit repository and tag:
-
-```fish
-gh release upload $release_tag $bottle_path --repo $release_repo
-```
-
-5. Query assets after upload with `gh release view $release_tag --repo $release_repo --json assets,url`. Require the correct name, state `uploaded`, matching size, and GitHub's `sha256:` digest. If GitHub does not supply a digest, download that exact asset to a temporary directory and compare its SHA-256 before claiming integrity is verified.
-6. After a connection error or uncertain upload response, inspect assets before retrying. Do not use `--clobber` or delete an asset without explicit authorization. Report the release/asset URL and the verified digest.
+1. Download the run's artifact into a temporary directory outside any checkout: `gh run download $run_id --repo $release_repo`.
+2. Run `tar -tzf` on the bottle and confirm the package, version, and platform. Record its filename, size, and SHA-256, and match it against the artifact's `SHA256SUMS`.
+3. Check the release's assets. A same-named asset with matching size and digest is already attached; a different one is a conflict to report.
+4. Upload it: `gh release upload $release_tag $bottle_path --repo $release_repo`.
+5. Check `gh release view $release_tag --repo $release_repo --json assets,url` for the name, `uploaded` state, size, and `sha256:` digest. After an uncertain upload, inspect before retrying. Never use `--clobber` or delete an asset without approval.

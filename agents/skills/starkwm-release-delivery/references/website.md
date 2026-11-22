@@ -1,26 +1,22 @@
-# Requested release documentation synchronization
+# Website documentation
 
-Use only when the user requests website documentation or publication. A source release does not authorize a website change. Follow the requested delivery boundary, whether it is a local edit, commit, push, or deployed-page verification.
+Only when asked; a source release does not authorize website changes. Stop at the requested boundary: edit, commit, push, or verified deploy. Work in the `starkwm/website` checkout and read its instructions, `.mise.toml`, and deploy workflow.
 
-Use the requested checkout for `starkwm/website`. Verify the current instructions, checkout state, page structure, pinned tools, remote, and deployment workflow. Locate the requested project's actual pages before editing.
-
-| Project | Current documentation entrypoint |
+| Project | Entry point |
 | --- | --- |
 | swm | `content/swm/_index.md` |
-| sbar | `content/sbar/_index.md`, with configuration/provider pages |
+| sbar | `content/sbar/_index.md`, plus configuration and provider pages |
+| sborders | `content/sborders/_index.md`, plus CLI, setup, configuration, and compatibility pages |
 | skbd | `content/skbd/_index.md` |
-| stags | `content/stags/_index.md`, with CLI, setup, tag/view, and recovery pages |
-| sborders | No website section was present at inspection; check again and create one only within requested new-documentation work |
+| stags | `content/stags/_index.md`, plus CLI, setup, tag/view, and recovery pages |
 
-1. Compare the website page with source and docs at the exact released tag. Update version references, installation/source-checkout commands, behavior descriptions, and release-compatibility notes that the tagged evidence supports. Keep unreleased behavior clearly tied to its source revision. Preserve existing front matter, heading anchors, and the plain, text-led style.
-2. For sbar, inspect schema downloads, development-schema links, and example links as well as the entrypoint. A new release can make previously marked unreleased settings available. Check whether requested synchronization needs the published schema to change rather than only replacing a version string.
-   For a first stags release, replace source-only installation and the no-published-release statement only after the publication is verified. Check the linked guides as well as the entrypoint. For skbd, preserve the distinction between the `skbd@2` formula/service name and the application version.
-3. Build with the current pinned Hugo through `mise exec -- hugo`. Use temporary cache and output directories outside the checkout. Inspect `.mise.toml` and the workflow's Hugo version; validate with the deployment version too if they differ and compatibility is uncertain.
+1. Compare the pages with the source and docs at the released tag. Update only what the tag supports: versions, install commands, behavior, and compatibility. Keep front matter, heading anchors, and the plain style. For sbar, also check schema downloads and example links, since a release can make settings marked unreleased available. For skbd, keep the `skbd@2` formula name distinct from the app version.
+2. Build with cache and output directories outside the checkout. If the deploy workflow's Hugo version differs from `.mise.toml`, check with that one too.
 
 ```fish
 mise exec -- hugo --gc --minify --cacheDir $website_cache --destination $website_preview
 ```
 
-4. Check generated content and links, then inspect a real local browser preview of the affected pages. Include narrow layouts and both themes where the change affects rendering. A local Hugo success is separate from browser verification.
-5. If delivery was requested, make a focused website commit such as `Update <project> docs for <tag>` and push only its intended bookmark/branch with `jj` when `.jj` exists. Keep it separate from the application release commit and any formula changes.
-6. For requested publication, verify the remote commit, the Pages workflow for that commit, and the live page's changed content and links. Fetch the live page without relying on a cached response. If the deployment fails or live content is stale, report that result instead of calling the website published. Finish with checkout status and any retained unrelated edits.
+3. Check links and preview the changed pages in a browser, including narrow widths and both themes when rendering changes.
+4. To deliver, make a focused commit such as `Update <project> docs for <tag>`, separate from app and formula commits, and push only that branch.
+5. To publish, verify the remote commit, the Pages run for it, and the live page fetched without cache. Report a failed or stale deploy as such.
