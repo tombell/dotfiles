@@ -80,6 +80,9 @@ ralt - f:
 ralt - h:
   open -a Home
 
+ralt - i:
+  open -a "iPhone Mirroring"
+
 ralt - m:
   open -a Messages
 
