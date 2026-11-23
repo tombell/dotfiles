@@ -41,5 +41,8 @@ end
 seq("b", "client.sidebar.toggle")
 seq("s", "client.settings")
 
--- Custom UI actions (project switcher, PR checkout, worktrees)
-require("custom_ui").bind_defaults()
+-- Custom UI actions
+require "custom_ui"
+seq("o", "project_switch") -- [o]pen project
+seq("r", "pr_checkout") -- [r]eview PR
+seq("w", "worktree_jump") -- [w]orktree
