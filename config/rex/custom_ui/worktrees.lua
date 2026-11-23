@@ -27,7 +27,7 @@ rex.action {
   category = "Tom",
   keywords = "git worktree branch jump t3",
   args = { dir = "string?" },
-  run = function(_, args)
+  run = function(ctx, args)
     local root, why = repo.resolve_repo(args, "Worktrees")
     if root == nil then
       return util.bail("worktree_jump", why)
@@ -65,7 +65,7 @@ rex.action {
     if dir == nil then
       return util.bail("worktree_jump", pwhy)
     end
-    local w = util.open_dir(dir, label[dir])
+    local w = util.open_dir(ctx, dir, label[dir])
     return { window_id = w.window_id, dir = dir }
   end,
 }

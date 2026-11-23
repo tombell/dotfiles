@@ -71,9 +71,10 @@ function M.exec_out(argv, opts)
   return r.stdout
 end
 
--- Open a directory in a new tab. In Rex a "window" is a tab inside a session, so
--- session.new_window == new tab.
-function M.open_dir(dir, label)
+-- Open a directory in a new tab and show it. In Rex a "window" is a tab inside a session, so
+-- session.new_window == new tab. The app keeps its own selected tab, so ask the client that ran
+-- the action to show the new one.
+function M.open_dir(ctx, dir, label)
   local w, err = rex.session.new_window {
     window_label = label and label:sub(1, 128) or nil,
     layout = rex.layout.block { flavor = M.SHELL, options = { cwd = dir } },
@@ -81,6 +82,7 @@ function M.open_dir(dir, label)
   if w == nil then
     error("couldn't open " .. dir .. ": " .. tostring(err), 0)
   end
+  rex.client.queue("session.select", { session_id = ctx.session_id, window_id = w.window_id })
   return w
 end
 

@@ -10,7 +10,7 @@ rex.action {
   category = "Tom",
   keywords = "repo project folder code open cd",
   args = { dir = "string?" }, -- headless: rex do project_switch dir=/Users/tombell/Code/starkwm/swm
-  run = function(_, args)
+  run = function(ctx, args)
     local dir = args.dir
     if dir == nil then
       local why
@@ -19,7 +19,7 @@ rex.action {
         return util.bail("project_switch", why)
       end
     end
-    local w = util.open_dir(dir, util.basename(dir))
+    local w = util.open_dir(ctx, dir, util.basename(dir))
     return { window_id = w.window_id, dir = dir }
   end,
 }
