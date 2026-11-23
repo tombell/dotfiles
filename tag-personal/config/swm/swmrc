@@ -17,6 +17,9 @@ swm rule add label=discord bundle-id=com.hnc.Discord manage=off space=2 grid=12:
 swm rule add label=messages bundle-id=com.apple.MobileSMS manage=off space=2 grid=12:10:1:1:10:8
 swm rule add label=telegram bundle-id=ru.keepcoder.Telegram manage=off space=2 grid=12:10:1:1:10:8
 
+# Space 3
+swm rule add label=grok-bot bundle-id=com.anysphere.sand manage=off space=3 grid=12:10:1:1:10:8
+
 # Space 4
 swm rule add label=helium bundle-id=net.imput.helium manage=off space=4 grid=12:10:0:0:12:10
 swm rule add label=chrome bundle-id=com.google.Chrome manage=off space=4 grid=12:10:0:0:12:10
