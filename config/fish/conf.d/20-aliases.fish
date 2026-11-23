@@ -1,9 +1,5 @@
 status --is-interactive; or return
 
-# alias l 'ls -lAh'
-# alias ll 'ls -al'
-# alias la 'ls -A'
-
 alias l 'eza -lAg' # matches ls -lAh: excludes . and ..
 alias ll 'eza -laag' # matches ls -al: includes . and ..
 alias la 'eza -A' # matches ls -A: excludes . and ..
