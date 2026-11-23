@@ -7,30 +7,19 @@
 --   projects.lua   project_switch   Open a repo under ~/Code in a new tab
 --   github.lua     pr_checkout      Pick an open PR (gh) and type `gh pr checkout N` into the terminal
 --   worktrees.lua  worktree_jump    Pick a git worktree and open it in a new tab
---   commit.lua     stage_commit     Multi-select changed files, ask for a message, git add + git commit
---   swm.lua        swm, swm_reload  Picker of real swm CLI commands (and a one-shot reload)
---   confirm.lua    confirm_deploy   Example approval prompt that `rex do` can wait on
---   debug.lua      cwd_debug        Dumps what Rex reports for the focused terminal's directory
 --
 -- Install: link this directory to ~/.config/rex/custom_ui, then in ~/.config/rex/init.lua:
 --   require("custom_ui").bind_defaults()   -- or just require("custom_ui") and bind keys yourself
 --   -- then:  rex config check && rex config reload
---
--- Every API used is from the Rex docs (config, custom actions, custom UI, Lua API reference,
--- events). Things the docs do NOT specify are marked "UNVERIFIED".
 
-local util = require("custom_ui.util")
+local util = require "custom_ui.util"
 
-require("custom_ui.projects")
-require("custom_ui.github")
-require("custom_ui.worktrees")
-require("custom_ui.commit")
-require("custom_ui.swm")
-require("custom_ui.debug")
+require "custom_ui.projects"
+require "custom_ui.github"
+require "custom_ui.worktrees"
 
 local M = {}
 M.config = util.config
-M.confirm = require("custom_ui.confirm").confirm
 
 ----------------------------------------------------------------------------------------------
 -- Key bindings
@@ -40,13 +29,9 @@ M.confirm = require("custom_ui.confirm").confirm
 -- checked against Rex's own defaults.)
 ----------------------------------------------------------------------------------------------
 function M.bind_defaults()
-  rex.bind("ctrl+alt+cmd+p", "project_switch")   -- [P]rojects
-  rex.bind("ctrl+alt+cmd+r", "pr_checkout")      -- PR / [R]eview
-  rex.bind("ctrl+alt+cmd+w", "worktree_jump")    -- [W]orktrees
-  rex.bind("ctrl+alt+cmd+c", "stage_commit")     -- [C]ommit
-  rex.bind("ctrl+alt+cmd+s", "swm")              -- [S]wm
-  -- rex.bind("ctrl+alt+cmd+l", "swm_reload")    -- re[L]oad swm config
-  -- rex.bind("ctrl+alt+cmd+d", "confirm_deploy", { target = "staging" })
+  rex.bind("ctrl+alt+cmd+p", "project_switch") -- [P]rojects
+  rex.bind("ctrl+alt+cmd+r", "pr_checkout") -- PR / [R]eview
+  rex.bind("ctrl+alt+cmd+w", "worktree_jump") -- [W]orktrees
 end
 
 return M
