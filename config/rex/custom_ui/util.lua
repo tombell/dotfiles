@@ -86,6 +86,27 @@ function M.open_dir(ctx, dir, label)
   return w
 end
 
+local SHELLS = { fish = true, zsh = true, bash = true, sh = true, nu = true }
+
+-- Quote a path for the shell (fish single-quote rules: escape \ and ').
+function M.shell_quote(s)
+  return "'" .. s:gsub("[\\']", "\\%0") .. "'"
+end
+
+-- Type a command into the focused terminal, but only if a shell is at the prompt there.
+-- ctrl+u first clears anything half-typed on the prompt line.
+function M.type_in_shell(cmd)
+  local proc = rex.block.call(M.TERMINAL, "process", {})
+  local name = proc and proc.foreground and proc.foreground.name
+  if not SHELLS[name] then
+    error("the terminal isn't at a shell prompt (" .. tostring(name or "unknown") .. " is running)", 0)
+  end
+  local _, err = rex.block.call(M.TERMINAL, "write", { data = "\21" .. cmd .. "\r" })
+  if err ~= nil then
+    error("couldn't type into the terminal: " .. tostring(err), 0)
+  end
+end
+
 function M.bail(action, why)
   if why == "cancelled" then
     return

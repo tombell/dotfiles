@@ -45,4 +45,5 @@ seq("s", "client.settings")
 require "custom_ui"
 seq("o", "project_switch") -- [o]pen project
 seq("r", "pr_checkout") -- [r]eview PR
-seq("w", "worktree_jump") -- [w]orktree
+seq("w", "worktree_jump") -- [w]orktree, cd here
+seq("alt+w", "worktree_open") -- [w]orktree in a new tab
