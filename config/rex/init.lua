@@ -43,7 +43,8 @@ seq("s", "client.settings")
 
 -- Custom UI actions
 require "custom_ui"
-seq("o", "project_switch") -- [o]pen project
+seq("o", "project_switch") -- [o]pen project in its own session
+seq("shift+o", "project_open") -- [o]pen project in a new tab
 seq("r", "pr_checkout") -- [r]eview PR
 seq("w", "worktree_jump") -- [w]orktree, cd here
 seq("alt+w", "worktree_open") -- [w]orktree in a new tab
