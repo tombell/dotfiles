@@ -65,6 +65,9 @@
     ]
   },
   "projectSettingsFolded": true,
+  "enableAgentDeviceAccess": true,
+  "enableDeviceSupport": true,
+  "deviceOnboardingCompleted": true,
   "sidebarAutoSettleAfterDays": null,
   "idleCompaction": "onReturn",
   "linkedEnvironmentsEnabled": true,
