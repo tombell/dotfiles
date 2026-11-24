@@ -2,6 +2,7 @@ status --is-interactive; or return
 
 alias ds='find . -name ".DS_Store" -type f -delete'
 alias safe='xattr -r -d com.apple.quarantine'
+alias xcode='open -a Xcode'
 
 alias bl='brew list -1 --formula'
 alias blc='brew list -1 --cask'
