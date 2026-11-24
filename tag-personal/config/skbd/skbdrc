@@ -42,7 +42,7 @@ lalt + shift - 5: swm window move --space 5
 # Applications
 ################################################################################
 
-alt - return:
+ralt - return:
   osascript -e 'if application id "com.superlogical.rex" is running then' \
             -e '  tell application "System Events"' \
             -e '    click menu item "New Window" of menu "File" of menu bar 1 of process "Rex"' \
@@ -50,7 +50,7 @@ alt - return:
             -e 'end if' \
             -e 'tell application id "com.superlogical.rex" to activate' > /dev/null
 
-alt + shift - return:
+ralt + shift - return:
   osascript -e 'tell application "Helium" to make new window' \
             -e 'tell application "Helium" to activate' &> /dev/null
 
