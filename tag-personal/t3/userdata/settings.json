@@ -77,7 +77,6 @@
   "providerInstances": {
     "antigravity": {
       "driver": "antigravity",
-      "displayName": "Antigravity",
       "enabled": true
     }
   }
