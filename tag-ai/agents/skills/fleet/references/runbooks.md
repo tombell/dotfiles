@@ -210,3 +210,49 @@ set suffix (tailscale status --json | python3 -c 'import json,sys; print(json.lo
 ssh tombell@brighid.$suffix true
 ssh pi@rpi.$suffix true
 ```
+
+## 8. Disk usage and cleanup
+
+### Inspect
+
+Run the read-only report across all hosts (or name hosts to narrow it). It never deletes anything:
+
+```sh
+~/.agents/skills/fleet/scripts/fleet-disk.sh
+~/.agents/skills/fleet/scripts/fleet-disk.sh brighid
+```
+
+It covers volumes and APFS containers, local Time Machine snapshots, `~/.t3` scratch and runtime versions, Xcode/simulator data (flagging unused runtimes), package and browser caches, `mise prune --dry-run`, Apple `container` usage, `/macOS Install Data`, T5 torrents on `brighid`, and on `rpi` the apt caches, journal, old kernel modules, and `/boot.bak`. Sections that need root are skipped when `sudo -n` fails.
+
+### Clean up item by item
+
+1. Present a numbered list of candidates with sizes and safety notes, plus what is normal usage to leave alone.
+2. Walk through items one at a time and get the user's yes or no for each. Never offer a "clean everything" option.
+3. Run `df -h` after each deletion and report the change.
+
+### Safety tiers
+
+- **Usually safe:** old `~/.t3/scratch` sessions, `.build` / `node_modules` / `DerivedData`, package caches (`bun pm cache rm`, `brew cleanup --prune=all`, `npm cache clean --force`, `pnpm store prune`), browser caches, Playwright browsers, simulator runtimes with no devices (`xcrun simctl runtime delete <id>`), `mise prune` after a dry run, and older `~/.t3/runtime/versions` once `~/.t3/runtime/service-state.json` shows the update as `committed`.
+- **Ask with a recommendation:** Xcode DeviceSupport for the user's own devices (it is copied back on the next connection), `~/Library/Caches/t3code-updater` while an update is pending, scratch folders used by active automations (for example `~/.t3/scratch/poppet-docs-*`), large simulator devices (`simctl erase` vs `simctl delete`), `/boot.bak` and old `/lib/modules` on `rpi`.
+- **Only on an explicit choice:** torrents and other media on T5, Homebridge or Pi-hole data, Postgres data, `hem-web` volumes.
+
+### Root-only areas
+
+When `sudo -n true` fails, request the password with T3 `request_secret` (`delivery: "file"`), pipe it to remote `sudo -S` over SSH stdin, and delete the secret file once done:
+
+```sh
+ssh -o BatchMode=yes -o ConnectTimeout=5 tombell@<resolved-host> \
+  "sudo -S -p '' sh -c 'exec </dev/null; du -xhd1 /System/Volumes/Data | sort -rh | head'" < "$secret_file"
+rm -P "$secret_file"
+```
+
+On macOS most of the root-only space is `/System/Library/AssetsV2` (simulator runtimes, developer docs, Siri/ML models; macOS manages these), `/private/var/db/diagnostics` (rotated logs), and `/System/Library/Caches/com.apple.coresymbolicationd` (regrows). A stale `/macOS Install Data` from a past update is a real candidate.
+
+### Gotchas
+
+- `pnpm` may have no global `mise` version; run it once with `mise x pnpm@<version> -- pnpm store prune` instead of changing the global config. The prune often frees nothing.
+- `container image prune --all` can remove hidden builder and `vminit` images that `container system df` counts as reclaimable. Prefer the plain `container image prune`.
+- macOS protects `/macOS Install Data/Locked Files` even from `sudo`; deleting the rest still frees the space.
+- `~/Downloads` and `~/.Trash` are not readable over SSH or from agent processes (macOS privacy); ask the user to check them in Finder.
+- Clearing a running browser's cache leaves a few files it rewrites at once; this is harmless.
+- Automations such as the poppet docs check recreate scratch checkouts and the Bun cache on their next run, so those sizes come back.

@@ -6,8 +6,9 @@ description: >-
   commands, syncing ~/.dotfiles or ~/.laptop setup scripts, updating Homebrew/apt/mise
   packages, troubleshooting or controlling services on brighid (poppet, hem-web Apple
   container, transmission-cli, postgresql@18, t3code, Xcode/simulators) or rpi
-  (pihole-FTL, homebridge, fr24feed, rex), transferring files between hosts, or deciding
-  between SSH and T3 Code linked environments.
+  (pihole-FTL, homebridge, fr24feed, rex), checking disk usage or cleaning up disk space
+  (caches, simulators, T3 scratch and runtimes, old kernels), transferring files between
+  hosts, or deciding between SSH and T3 Code linked environments.
 ---
 
 # Fleet management
@@ -33,6 +34,8 @@ Read [devices](references/devices.md) for service names, paths, LaunchAgents, `s
      `~/.agents/skills/fleet/scripts/fleet-exec.sh <host> -- '<posix sh command>'`
    - Run a parallel read-only health check across all (or selected) hosts with [fleet-status.sh](scripts/fleet-status.sh):
      `~/.agents/skills/fleet/scripts/fleet-status.sh [host ...]`
+   - Report disk usage and cleanup candidates (read-only) with [fleet-disk.sh](scripts/fleet-disk.sh), then follow runbook section 8 to clean up item by item:
+     `~/.agents/skills/fleet/scripts/fleet-disk.sh [host ...]`
 4. **Non-interactive SSH:** Always pass `-o BatchMode=yes -o ConnectTimeout=5`. All three hosts authenticate with `~/.ssh/Personal` (managed in 1Password via `~/.laptop/common/ssh.sh` and loaded in `ssh-agent`). Never disable host key verification (`StrictHostKeyChecking=no`). If a tailnet host key is not yet in `~/.ssh/known_hosts`, fall back to `.local` and report that the tailnet host key needs a one-time trust.
 5. **Shell and PATH:** All hosts use `fish` interactively. Wrap remote commands in POSIX `sh -c '...'` for portability. Non-interactive SSH on macOS omits Homebrew and `mise` from `PATH`; `fleet-exec.sh` prepends `/opt/homebrew/bin`, `/usr/local/bin`, `~/.local/bin`, and `~/.local/share/mise/shims` automatically.
 6. **SSH vs T3 Code:**
