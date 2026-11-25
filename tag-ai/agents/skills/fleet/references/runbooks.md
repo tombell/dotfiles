@@ -51,15 +51,15 @@ Pull `~/.dotfiles`, then reapply `rcup` with the host's exact flags from `~/.lap
 
 - **`pyra`:**
   ```sh
-  rcup -d ~/.dotfiles -t macos -t personal -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md
+  rcup -d ~/.dotfiles -t macos -t personal -t ai -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md
   ```
 - **`brighid`:**
   ```sh
-  rcup -d ~/.dotfiles -t macos -t mini -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md
+  rcup -d ~/.dotfiles -t macos -t mini -t ai -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md
   ```
 - **`rpi`:**
   ```sh
-  rcup -d ~/.dotfiles -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md -K -x agents -x claude -x codex -x gemini -x t3 -x config/nvim -x ssh/config
+  rcup -d ~/.dotfiles -S agents/skills -S config/rex/custom_ui -x LICENSE -x README.md -K -x config/nvim -x ssh/config
   ```
 
 ### Full `~/.laptop` setup rerun
