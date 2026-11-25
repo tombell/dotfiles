@@ -1,8 +1,5 @@
 ; vim: set ft=gitconfig:
 
-[include]
-  path = ~/.config/git/delta-theme
-
 [user]
   name = Tom Bell
   email = tomb@tombell.dev
@@ -31,7 +28,6 @@
 [core]
   autocrlf = input
   excludesfile = ~/.config/git/ignore
-  pager = delta
 
 [init]
   defaultBranch = main
@@ -53,21 +49,14 @@
 
 [diff]
   wsErrorHighlight = all
+  colorMoved = default
 
 [rerere]
   enabled = true
 
-[interactive]
-  diffFilter = delta --color-only
-
 [pretty]
   colored = format:%C(yellow)%h%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset
   graph = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
-
-[delta]
-  navigate = true
-  side-by-side = true
-  syntax-theme = tokyonight_night
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
