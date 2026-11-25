@@ -2,22 +2,27 @@
 set -eu
 
 src="$HOME/.agents/skills"
-dest="$HOME/.claude/skills"
 
 [ -d "$src" ] || exit 0
 
-mkdir -p "$dest"
+sync_skills() {
+  dest="$1"
+  mkdir -p "$dest"
 
-for skill in "$src"/*/; do
-  [ -d "$skill" ] || continue
-  name=$(basename "$skill")
-  link="$dest/$name"
-  [ -e "$link" ] || [ -L "$link" ] || ln -s "$src/$name" "$link"
-done
+  for skill in "$src"/*/; do
+    [ -d "$skill" ] || continue
+    name=$(basename "$skill")
+    link="$dest/$name"
+    [ -e "$link" ] || [ -L "$link" ] || ln -s "$src/$name" "$link"
+  done
 
-# Remove stale links only when their target matches the one this hook creates.
-for link in "$dest"/*; do
-  if [ -L "$link" ] && [ ! -e "$link" ] && [ "$(readlink "$link")" = "$src/${link##*/}" ]; then
-    rm "$link"
-  fi
-done
+  # Remove stale links only when their target matches the one this hook creates.
+  for link in "$dest"/*; do
+    if [ -L "$link" ] && [ ! -e "$link" ] && [ "$(readlink "$link")" = "$src/${link##*/}" ]; then
+      rm "$link"
+    fi
+  done
+}
+
+sync_skills "$HOME/.claude/skills"
+sync_skills "$HOME/.gemini/config/skills"
