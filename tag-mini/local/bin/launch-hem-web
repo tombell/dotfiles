@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+
+container run -d \
+  --name hem-web \
+  --cpus 1 \
+  --memory 512M \
+  --network default,mtu=1280 \
+  --publish 127.0.0.1:3000:3000 \
+  --volume hem-web-data:/data \
+  --read-only \
+  --cap-drop ALL \
+  --tmpfs /tmp:size=64M,mode=1777 \
+  --env-file "$HOME/Code/tombell/hem-web/.env" \
+  --entrypoint /bin/sh \
+  hem-web:latest \
+  -c 'umask 077; exec node src/server.ts'

@@ -136,6 +136,11 @@ Always preview updates first; apply only when requested.
   container stop hem-web && container start hem-web
   container ls -a
   ```
+- Recreate container with its run flags (only when asked; brief outage). The script is `~/.local/bin/launch-hem-web`, managed by the `mini` tag in `~/.dotfiles`:
+  ```sh
+  container stop hem-web && container rm hem-web && ~/.local/bin/launch-hem-web
+  curl -fsS http://127.0.0.1:3000/health
+  ```
 
 ### Torrents (`transmission-cli`)
 
