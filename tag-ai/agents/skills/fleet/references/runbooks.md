@@ -158,11 +158,10 @@ Always preview updates first; apply only when requested.
   brew services restart transmission-cli
   ```
 
-### `postgresql@18` and `t3code`
+### `t3code`
 
 - Status:
   ```sh
-  brew services info postgresql@18
   launchctl list | grep -i t3code || true
   ```
 
@@ -234,7 +233,7 @@ It covers volumes and APFS containers, local Time Machine snapshots, `~/.t3` scr
 
 - **Usually safe:** old `~/.t3/scratch` sessions, `.build` / `node_modules` / `DerivedData`, package caches (`bun pm cache rm`, `brew cleanup --prune=all`, `npm cache clean --force`, `pnpm store prune`), browser caches, Playwright browsers, simulator runtimes with no devices (`xcrun simctl runtime delete <id>`), `mise prune` after a dry run, and older `~/.t3/runtime/versions` once `~/.t3/runtime/service-state.json` shows the update as `committed`.
 - **Ask with a recommendation:** Xcode DeviceSupport for the user's own devices (it is copied back on the next connection), `~/Library/Caches/t3code-updater` while an update is pending, scratch folders used by active automations (for example `~/.t3/scratch/poppet-docs-*`), large simulator devices (`simctl erase` vs `simctl delete`), `/boot.bak` and old `/lib/modules` on `rpi`.
-- **Only on an explicit choice:** torrents and other media on T5, Homebridge or Pi-hole data, Postgres data, `hem-web` volumes.
+- **Only on an explicit choice:** torrents and other media on T5, Homebridge or Pi-hole data, `hem-web` volumes.
 
 ### Root-only areas
 

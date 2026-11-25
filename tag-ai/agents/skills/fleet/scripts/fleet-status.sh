@@ -92,9 +92,8 @@ EOF
 poppet_state=$(pgrep -f 'poppet.*worker' >/dev/null 2>&1 && echo running || echo stopped)
 hem_state=$(container ls -a 2>/dev/null | awk '$1=="hem-web" {print $5; found=1} END {if (!found) print "missing"}')
 tx_state=$(brew services list 2>/dev/null | awk '$1=="transmission-cli" {print $2; found=1} END {if (!found) print "unknown"}')
-pg_state=$(brew services list 2>/dev/null | awk '$1=="postgresql@18" {print $2; found=1} END {if (!found) print "unknown"}')
 t3_state=$(launchctl list 2>/dev/null | awk '$3=="com.t3tools.t3code.service" {print ($1=="-" ? "loaded" : "running"); found=1} END {if (!found) print "unloaded"}')
-echo "Services:  poppet=$poppet_state hem-web=$hem_state transmission=$tx_state postgres=$pg_state t3code=$t3_state"
+echo "Services:  poppet=$poppet_state hem-web=$hem_state transmission=$tx_state t3code=$t3_state"
 EOF
     ;;
   rpi)

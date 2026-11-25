@@ -27,7 +27,6 @@ Operational reference for each machine. Always verify live state on the host bef
   - **`poppet`:** Background worker managed by LaunchAgent `~/Library/LaunchAgents/run.poppet.worker.*.plist`, running via `mise` Bun from `~/Code/poppet-run/poppet`.
   - **`hem-web` (Apple `container`):** Runs as a Linux `arm64` container via the Homebrew `container` CLI (`container ls -a`). Paired with the `buildkit` builder container. Managed by LaunchAgent `~/Library/LaunchAgents/sh.brew.container.plist` (`brew services`).
   - **Torrents (`transmission-cli`):** Managed by `brew services` (`~/Library/LaunchAgents/sh.brew.transmission-cli.plist`). Config and logs live in `/opt/homebrew/var/transmission/` (`transmission-daemon.log`). Control via `transmission-remote`.
-  - **PostgreSQL:** `postgresql@18` via `brew services` (`~/Library/LaunchAgents/sh.brew.postgresql@18.plist`).
   - **Xcode & Simulators:** Full Xcode installation (`xcodebuild`) with iOS and watchOS simulators (`xcrun simctl`) for offloading builds and tests.
   - **Rex:** Tailscale companion node (`brighid-rex`).
 

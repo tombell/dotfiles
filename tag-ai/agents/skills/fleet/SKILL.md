@@ -5,7 +5,7 @@ description: >-
   and rpi Raspberry Pi). Use when checking fleet health or uptime, running remote
   commands, syncing ~/.dotfiles or ~/.laptop setup scripts, updating Homebrew/apt/mise
   packages, troubleshooting or controlling services on brighid (poppet, hem-web Apple
-  container, transmission-cli, postgresql@18, t3code, Xcode/simulators) or rpi
+  container, transmission-cli, t3code, Xcode/simulators) or rpi
   (pihole-FTL, homebridge, fr24feed, rex), checking CPU load, temperature, or what is using
   CPU, checking disk usage or cleaning up disk space
   (caches, simulators, T3 scratch and runtimes, old kernels), transferring files between
