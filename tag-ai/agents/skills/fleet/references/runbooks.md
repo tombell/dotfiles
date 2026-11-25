@@ -256,3 +256,27 @@ On macOS most of the root-only space is `/System/Library/AssetsV2` (simulator ru
 - `~/Downloads` and `~/.Trash` are not readable over SSH or from agent processes (macOS privacy); ask the user to check them in Finder.
 - Clearing a running browser's cache leaves a few files it rewrites at once; this is harmless.
 - Automations such as the poppet docs check recreate scratch checkouts and the Bun cache on their next run, so those sizes come back.
+
+## 9. CPU and load checks
+
+Take a read-only snapshot across all hosts (or name hosts to narrow it). Each host is sampled for 3 seconds, so `%CPU` is current use rather than an average since process start:
+
+```sh
+~/.agents/skills/fleet/scripts/fleet-cpu.sh
+~/.agents/skills/fleet/scripts/fleet-cpu.sh pyra
+```
+
+It reports core counts, 1/5/15-minute load, the CPU user/system/idle split, memory and swap, power source and thermal warnings on macOS, temperature (and throttle flags when `vcgencmd` is readable) on `rpi`, and the top 10 processes.
+
+### Reading the results
+
+- Compare load with the idle percentage and core count. A load of ~4 on a 10-core Mac with ~70% idle is not a problem; on `rpi` (4 cores) a load above 4 with low idle is.
+- A process with a high `%CPU` but little accumulated `TIME` has just started (for example a restarted Homebridge child bridge); sample again before reporting it.
+- To dig into one process: `ps -o pid,etime,time,%cpu,command -p <pid>` (elapsed vs CPU time shows whether it is sustained).
+
+### Known normal load
+
+- **macOS:** `mediaanalysisd` (Photos and Visual Intelligence analysis) can hold ~2 cores for days on AC power at low priority; `WindowServer`, `kernel_task`, and Spotlight spikes are routine. Only flag `mediaanalysisd` if it persists for several more days; a reboot resets it.
+- **`brighid`:** near idle; the `poppet` worker shows as `bun`, plus `transmission-daemon` and `cloudflared` at around 1% or less.
+- **`rpi`:** `dump1090-mutability` (`fr24feed` ADS-B decoding) steadily uses ~35-40% of one core. `hb-service` and Homebridge child bridges briefly spike after restarts; check `/var/lib/homebridge/homebridge.log` for `Child bridge restarting` and whether the Homebridge UI triggered it.
+- `vcgencmd` needs the `pi` user in the `video` group; without it, rely on `/sys/class/thermal/thermal_zone0/temp`.
