@@ -26,7 +26,7 @@ Inspect, maintain, and run tasks across `pyra`, `brighid`, and `rpi`. Treat the 
 | `rpi` | Raspberry Pi 3B (Debian `trixie` ARM64) | `pi` | Always-on | `pihole-FTL`, `homebridge`, `fr24feed`, `rex` |
 
 Read [devices](references/devices.md) for service names, paths, LaunchAgents, `systemd` units, and `~/.laptop` / `rcm` details. Read [runbooks](references/runbooks.md) when executing maintenance, update, or service procedures.
-Read [backups](references/backups.md) when checking, maintaining, or restoring backups for Brighid or the Pi.
+Read [backups](references/backups.md) when checking, maintaining, or restoring fleet backups.
 
 ## Transport and execution
 
