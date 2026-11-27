@@ -2,9 +2,11 @@
 
 ## Daily jobs
 
-The Brighid and Pi backup jobs run in Brighid's logged-in macOS session. After a reboot, log in and make sure the Samsung T5 is mounted and unlocked. Their schedules use Europe/London.
+The Brighid and Pi backup jobs run in Brighid's logged-in macOS session. After a reboot, log in on Brighid and mount and unlock the Samsung T5 for jobs that use it. Their schedules use Europe/London.
 
-### Brighid at 03:00
+### Brighid at 02:00 and 03:00
+
+Brighid backs up directly to B2 at **02:00** and directly to the T5 at **03:00**. B2 needs internet access. The T5 job needs the drive mounted and unlocked. Each job captures both sources independently:
 
 - **`hem-web`** uses SQLite's online backup API inside the running container. Restic saves the copy as `/hem.sqlite` with tag `hem-web`.
 - **`~/Code`** is saved with tag `code`, including Git history and working files. The exclude file at `~/.config/brighid-backup/code-excludes` lists `node_modules`, `.build`, `.cache`, `DerivedData`, `.next`, and `.venv`. Tracked `vendor` content is included.
@@ -25,26 +27,27 @@ Pyra runs two independent jobs from its logged-in macOS session. At **18:00** it
 
 | Job | LaunchAgent | T5 repository | B2 prefix | Alert deadline |
 | --- | --- | --- | --- | --- |
-| Brighid | `local.brighid-backup` | `/Volumes/T5/Restic/Brighid` | `restic/brighid/` | 04:00 |
+| Brighid B2 | `local.brighid-backup-b2` | — | `restic/brighid/` | 04:00 (shared) |
+| Brighid T5 | `local.brighid-backup` | `/Volumes/T5/Restic/Brighid` | — | 04:00 (shared) |
 | Pi | `local.rpi-backup` | `/Volumes/T5/Restic/rpi` | `restic/rpi/` | 07:00 |
 | Pyra B2 | `local.pyra-backup` | — | `restic/pyra/` | — |
 | Pyra T5 | `local.pyra-backup-t5` | `/Volumes/T5/Restic/Pyra` | — | — |
 
-The three encrypted restic repositories share the private B2 bucket `tombell-restic-backups` at `s3.eu-central-003.backblazeb2.com`. The Brighid and Pi jobs apply retention on both destinations after the B2 copy succeeds. Each Pyra job applies retention to its own repository after a successful backup. Each source keeps every snapshot within 14 days of its newest snapshot, plus its 8 most recent weekly and 12 most recent monthly restore points.
+The three encrypted restic repositories share the private B2 bucket `tombell-restic-backups` at `s3.eu-central-003.backblazeb2.com`. Each Brighid and Pyra job applies retention to its own repository after a successful backup. The Pi job applies retention to both repositories after the B2 copy succeeds. Each source keeps every snapshot within 14 days of its newest snapshot, plus its 8 most recent weekly and 12 most recent monthly restore points.
 
-All three B2 prefixes delete hidden object versions after 30 days. Keep **Days Till Hide** blank so live restic objects do not expire based on upload age. Brighid and the Pi have separate Healthchecks.io email checks for failures and missed runs. The checks receive the job result without backup contents or logs. Pyra reports through its local launchd status and logs.
+All three B2 prefixes delete hidden object versions after 30 days. Keep **Days Till Hide** blank so live restic objects do not expire based on upload age. Brighid’s two jobs share one Healthchecks.io email check. Either job can report failure. A success ping requires both jobs to succeed on the same local date. The Pi has its own check for failures and missed runs. The checks receive only the status. Pyra reports through its local launchd status and logs.
 
 ## Inspect or run
 
 Run these on Brighid directly or through `fleet-exec.sh brighid`.
 
 ```fish
-for job in brighid-backup rpi-backup
+for job in brighid-backup brighid-backup-b2 rpi-backup
     launchctl print "gui/$(id -u)/local.$job"
     tail -n 60 ~/Library/Logs/$job/stdout.log ~/Library/Logs/$job/stderr.log
     ~/.local/bin/$job snapshots
-    ~/.local/bin/$job-b2 snapshots
 end
+~/.local/bin/rpi-backup-b2 snapshots
 ```
 
 Run these on Pyra.
@@ -58,7 +61,7 @@ end
 ~/.local/bin/pyra-backup --t5 snapshots
 ```
 
-To test an idle job, run `launchctl kickstart` with its service target from above. Verify the last exit code, new snapshots, and retention log. For Brighid and the Pi, also verify the B2 copy and Healthchecks result. If the Pi job reports a stale Teleporter export, check `systemctl status rpi-pihole-export.timer` and `journalctl -u rpi-pihole-export.service` on the Pi.
+To test an idle job, run `launchctl kickstart` with its service target from above. Verify the last exit code, new snapshots, and retention log. For Brighid, verify fresh snapshots in each destination and confirm that Healthchecks accepted the result after both jobs completed. For the Pi, also verify the B2 copy and Healthchecks result. If the Pi job reports a stale Teleporter export, check `systemctl status rpi-pihole-export.timer` and `journalctl -u rpi-pihole-export.service` on the Pi.
 
 ## Recover on another machine
 
@@ -78,4 +81,4 @@ Use `restic -r <repository> snapshots` to choose a restore point. Run `restic -r
 
 For the Pi, unpack the restored `rpi-services.tar` in a private directory. Import the Teleporter ZIP into Pi-hole and the Homebridge archive through Homebridge Backup & Restore. Use the Flightradar24 files to rebuild the feeder. The restored bundle may contain service credentials.
 
-On 2026-11-27, restores from B2 verified Brighid's `hem-web` database and a Code sample, the Pi bundle, and a Pyra Code sample. A restore from Pyra’s T5 snapshot `175d4ddc` also verified a dotfiles README byte for byte. Importing the Pi archives into replacement services remains untested.
+On 2026-11-27, restores from B2 verified Brighid's `hem-web` database and a Code sample, the Pi bundle, and a Pyra Code sample. Both Brighid jobs also ran successfully through launchd, and restoring `hem-web` from their T5 snapshot `b9325666` and B2 snapshot `a11e2691` passed SQLite integrity checks. A restore from Pyra’s T5 snapshot `175d4ddc` also verified a dotfiles README byte for byte. Importing the Pi archives into replacement services remains untested.
