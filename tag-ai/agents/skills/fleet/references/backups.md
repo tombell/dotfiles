@@ -18,8 +18,8 @@ The Brighid and Pi backup jobs run in Brighid's logged-in macOS session. After a
 
 Pyra backs up directly to B2 from its logged-in macOS session. It needs internet access and can run away from home.
 
-- The snapshot, tagged `pyra`, contains `~/Code`, `~/Desktop`, `~/Music/rekordbox`, `~/.dotfiles`, `~/.laptop`, and the selected app configuration listed in `~/.local/bin/pyra-backup`.
-- `~/.config/pyra-backup/excludes` lists the same generated directories as Brighid. The job skips cloud-only files. Photos, iCloud Documents, and Downloads are outside its scope.
+- The snapshot, tagged `pyra`, contains `~/Code`, `~/.dotfiles`, `~/.laptop`, and the selected app configuration listed in `~/.local/bin/pyra-backup`.
+- `~/.config/pyra-backup/excludes` lists the same generated directories as Brighid. The job skips cloud-only files. Desktop, Rekordbox, Photos, iCloud Documents, and Downloads are outside its scope.
 
 ## Storage, retention, and alerts
 
