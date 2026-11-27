@@ -30,10 +30,7 @@
       "modelOrder": []
     },
     "antigravity": {
-      "hiddenModels": [
-        "gemini-3.8-flash",
-        "gpt-oss-120b-medium"
-      ],
+      "hiddenModels": ["gemini-3.8-flash", "gpt-oss-120b-medium"],
       "modelOrder": []
     }
   },
@@ -52,7 +49,7 @@
     "options": [
       {
         "id": "reasoningEffort",
-        "value": "high"
+        "value": "medium"
       },
       {
         "id": "serviceTier",
@@ -77,6 +74,11 @@
   "providerInstances": {
     "antigravity": {
       "driver": "antigravity",
+      "enabled": true
+    },
+    "cursor": {
+      "driver": "cursor",
+      "displayName": "Cursor",
       "enabled": true
     }
   }
